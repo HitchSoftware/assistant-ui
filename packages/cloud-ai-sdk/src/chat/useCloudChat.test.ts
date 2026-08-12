@@ -43,7 +43,7 @@ const { mockUseChat, mockCloud } = vi.hoisted(() => {
   return { mockUseChat: useChat, mockCloud: cloud };
 });
 
-vi.mock("assistant-cloud", () => ({
+vi.mock("@hitchsoftware/assistant-cloud", () => ({
   AssistantCloud: vi.fn(() => mockCloud),
   CloudMessagePersistence: vi.fn(
     class {

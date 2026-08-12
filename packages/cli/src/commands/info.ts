@@ -106,7 +106,12 @@ function getAssistantUiPackageNames(
   projectPkg: Record<string, unknown>,
 ): string[] {
   const declaredPackages = Object.keys(readProjectDeps(projectPkg))
-    .filter((name) => name.startsWith("@assistant-ui/"))
+    .filter(
+      (name) =>
+        name.startsWith("@assistant-ui/") ||
+        name.startsWith("@hitchsoftware/assistant-ui") ||
+        name.startsWith("@hitchsoftware/assistant-"),
+    )
     .sort();
 
   return [...new Set([...ASSISTANT_UI_PACKAGES, ...declaredPackages])];

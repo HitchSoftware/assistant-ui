@@ -2,7 +2,7 @@
   "name": "@hitchsoftware/assistant-ui-x-generative-compiler",
   "private": false,
   "version": "0.0.12",
-  "description": "Internal: the framework-agnostic \"use generative\" compiler that splits a colocated tool (schema + server-only execute + client-only render) into per-target builds. Shared by @assistant-ui/next and @assistant-ui/vite.",
+  "description": "Internal: the framework-agnostic \"use generative\" compiler that splits a colocated tool (schema + server-only execute + client-only render) into per-target builds. Shared by @hitchsoftware/assistant-ui-next and @hitchsoftware/assistant-ui-vite.",
   "keywords": [
     "assistant-ui",
     "generative",

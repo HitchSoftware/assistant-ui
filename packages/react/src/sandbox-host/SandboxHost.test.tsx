@@ -5,7 +5,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const { renderHtmlMock } = vi.hoisted(() => ({ renderHtmlMock: vi.fn() }));
 
-vi.mock("safe-content-frame", () => ({
+vi.mock("@hitchsoftware/safe-content-frame", () => ({
   SafeContentFrame: class {
     renderHtml = renderHtmlMock;
   },

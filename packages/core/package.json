@@ -69,7 +69,7 @@
     "nanoid": "^6.0.1"
   },
   "optionalDevDependencies": {
-    "@assistant-ui/x-generative-compiler": ">=0.0.3"
+    "@hitchsoftware/assistant-ui-x-generative-compiler": ">=0.0.3"
   },
   "peerDependencies": {
     "@hitchsoftware/assistant-ui-store": "^0.3.0",

@@ -173,7 +173,9 @@ describe("compileGenerative — core/compiler compatibility", () => {
 
     expect(() =>
       compileGenerative(minimalSource, { target: "server", filename }),
-    ).toThrow(/requires @assistant-ui\/x-generative-compiler <0\.0\.3/);
+    ).toThrow(
+      /requires @hitchsoftware\/assistant-ui-x-generative-compiler <0\.0\.3/,
+    );
   });
 
   it("skips the check for older core packages without compatibility metadata", () => {
@@ -190,8 +192,8 @@ describe("compileGenerative — core/compiler compatibility", () => {
       nodePath.dirname(filename),
       "..",
       "node_modules",
-      "@assistant-ui",
-      "react",
+      "@hitchsoftware",
+      "assistant-ui-react",
       "package.json",
     );
     writeFileSync(packageJsonPath, "{");

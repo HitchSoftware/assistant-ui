@@ -9,7 +9,7 @@ import { getInstallCommand } from "../lib/utils/package-manager";
 export const update = new Command()
   .name("update")
   .description(
-    "Update all '@assistant-ui/*' and 'assistant-*' packages in package.json to latest versions using your package manager.",
+    "Update all '@hitchsoftware/assistant-ui-*' and related packages in package.json to latest versions using your package manager.",
   )
   .option("--dry", "Print the package manager command instead of running it.")
   .option(
@@ -41,8 +41,17 @@ export const update = new Command()
       for (const dep in pkg[section]) {
         if (
           dep.startsWith("@assistant-ui/") ||
+          dep.startsWith("@hitchsoftware/assistant-ui") ||
+          dep.startsWith("@hitchsoftware/assistant-") ||
           dep === "assistant-stream" ||
-          dep === "assistant-cloud"
+          dep === "assistant-cloud" ||
+          dep === "@hitchsoftware/assistant-stream" ||
+          dep === "@hitchsoftware/assistant-cloud" ||
+          dep === "@hitchsoftware/create-assistant-ui" ||
+          dep === "@hitchsoftware/safe-content-frame" ||
+          dep === "@hitchsoftware/tw-shimmer" ||
+          dep === "@hitchsoftware/tw-glass" ||
+          dep === "@hitchsoftware/heat-graph"
         ) {
           targets.push(dep);
         }

@@ -535,9 +535,9 @@ describe("transformProject — hasLocalComponents: false", () => {
 
       const args = addCalls[0]![1] as string[];
       expect(args).toContain("button");
-      expect(args).toContain("@hitchsoftware/assistant-ui-thread");
+      expect(args).toContain("@assistant-ui/thread");
       expect(args).not.toContain("button.tsx");
-      expect(args).not.toContain("@hitchsoftware/assistant-ui-thread.tsx");
+      expect(args).not.toContain("@assistant-ui/thread.tsx");
     });
 
     it("skips shadcn when skipInstall is true even without local components", async () => {

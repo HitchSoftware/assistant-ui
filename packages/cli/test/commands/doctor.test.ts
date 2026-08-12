@@ -197,8 +197,8 @@ describe("doctor — workspace package discovery", () => {
           installPath: path.join(
             realRoot,
             "node_modules",
-            "@assistant-ui",
-            "react",
+            "@hitchsoftware",
+            "assistant-ui-react",
           ),
         },
       ];

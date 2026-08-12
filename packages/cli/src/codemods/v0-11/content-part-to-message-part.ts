@@ -76,7 +76,7 @@ const migrateContentPartToMessagePart = createTransformer(
       const source = path.value.source.value;
 
       // Only process imports from @assistant-ui packages
-      if (typeof source === "string" && source.startsWith("@assistant-ui/")) {
+      if (typeof source === "string" && (source.startsWith("@assistant-ui/") || source.startsWith("@hitchsoftware/assistant-ui"))) {
         path.value.specifiers?.forEach((specifier: any) => {
           if (j.ImportSpecifier.check(specifier)) {
             const oldName = specifier.imported.name as string;

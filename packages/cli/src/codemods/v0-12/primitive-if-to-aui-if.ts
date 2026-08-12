@@ -169,7 +169,7 @@ const migratePrimitiveIfToAuiIf = createTransformer(
     const importedPrimitives = new Set<string>();
     root.find(j.ImportDeclaration).forEach((path: any) => {
       const source = path.value.source.value;
-      if (typeof source === "string" && source.startsWith("@assistant-ui/")) {
+      if (typeof source === "string" && (source.startsWith("@assistant-ui/") || source.startsWith("@hitchsoftware/assistant-ui"))) {
         path.value.specifiers?.forEach((specifier: any) => {
           if (j.ImportSpecifier.check(specifier)) {
             const name = String(
@@ -328,7 +328,7 @@ const migratePrimitiveIfToAuiIf = createTransformer(
 
       root.find(j.ImportDeclaration).forEach((path: any) => {
         const source = path.value.source.value;
-        if (typeof source === "string" && source.startsWith("@assistant-ui/")) {
+        if (typeof source === "string" && (source.startsWith("@assistant-ui/") || source.startsWith("@hitchsoftware/assistant-ui"))) {
           assistantUiImport = path;
           path.value.specifiers?.forEach((specifier: any) => {
             if (

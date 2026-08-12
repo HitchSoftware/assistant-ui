@@ -76,7 +76,7 @@ steps:
       - |
         corepack enable
         corepack prepare pnpm@11.10.0 --activate
-        pnpm turbo test --concurrency=4 --filter="./packages/*"
+        pnpm turbo test --concurrency=2 --filter="./packages/*"
 
   - id: publish
     name: node:24

@@ -9,11 +9,16 @@ const ASSISTANT_UI_PACKAGE_NAMES = new Set([
   "assistant-stream",
   "assistant-cloud",
   "assistant-ui",
+  "@hitchsoftware/assistant-stream",
+  "@hitchsoftware/assistant-cloud",
+  "@hitchsoftware/assistant-ui",
 ]);
 
 function isTrackedPackage(name: string | undefined): boolean {
   if (!name) return false;
   if (name.startsWith("@assistant-ui/")) return true;
+  if (name.startsWith("@hitchsoftware/assistant-ui-")) return true;
+  if (name.startsWith("@hitchsoftware/assistant-")) return true;
   return ASSISTANT_UI_PACKAGE_NAMES.has(name);
 }
 
@@ -335,7 +340,7 @@ function reportDuplicates(
   );
   lines.push(
     chalk.yellow(
-      "Fix by aligning all @assistant-ui/* packages to compatible versions — run:",
+      "Fix by aligning all @hitchsoftware/assistant-ui-* packages to compatible versions — run:",
     ),
   );
   lines.push(chalk.cyan("    npx assistant-ui update"));
