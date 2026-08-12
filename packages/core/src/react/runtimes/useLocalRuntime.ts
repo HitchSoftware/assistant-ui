@@ -6,11 +6,11 @@ import type {
 } from "../../index";
 import type { LocalRuntimeOptionsBase } from "../../runtimes/local/local-runtime-options";
 import { AssistantRuntimeImpl, LocalRuntimeCore } from "../../internal";
-import { useAuiState } from "@assistant-ui/store";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 import { useRemoteThreadListRuntime } from "./useRemoteThreadListRuntime";
 import { useCloudThreadListAdapter } from "./cloud/useCloudThreadListAdapter";
 import { useRuntimeAdapters } from "./RuntimeAdapterProvider";
-import type { AssistantCloud } from "assistant-cloud";
+import type { AssistantCloud } from "@hitchsoftware/assistant-cloud";
 
 export type LocalRuntimeOptions = Omit<LocalRuntimeOptionsBase, "adapters"> & {
   cloud?: AssistantCloud | undefined;

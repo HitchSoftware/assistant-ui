@@ -9,10 +9,10 @@ import type {
   SpeechSynthesisAdapter,
   ThreadHistoryAdapter,
   ThreadMessage,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import type { AbstractAgent } from "@ag-ui/client";
 import type { Logger } from "./logger";
-import type { ReadonlyJSONValue } from "assistant-stream/utils";
+import type { ReadonlyJSONValue } from "@hitchsoftware/assistant-stream/utils";
 import type { McpToolCallResult } from "./mcp-tool-result";
 
 /**

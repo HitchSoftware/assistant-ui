@@ -4,7 +4,7 @@ import { cleanup, render, waitFor } from "@testing-library/react";
 import type { FC } from "react";
 import { useState } from "react";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { AuiProvider, useAui } from "@assistant-ui/store";
+import { AuiProvider, useAui } from "@hitchsoftware/assistant-ui-store";
 import { ExternalThread } from "../store/clients/external-thread";
 import type { ThreadMessage } from "../types/message";
 

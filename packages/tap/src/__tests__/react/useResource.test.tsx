@@ -20,7 +20,7 @@ import {
 import { use as useResourceContext } from "../../react-hooks/use";
 import { createContext } from "../../react-shim";
 
-describe("@assistant-ui/tap/react resource API", () => {
+describe("@hitchsoftware/assistant-ui-tap/react resource API", () => {
   afterEach(() => {
     cleanupAllResources();
     cleanup();

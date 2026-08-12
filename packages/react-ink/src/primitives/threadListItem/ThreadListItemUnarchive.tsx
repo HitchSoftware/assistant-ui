@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { useThreadListItemUnarchive } from "@assistant-ui/core/react";
+import { useThreadListItemUnarchive } from "@hitchsoftware/assistant-ui-core/react";
 import { Pressable, type PressableProps } from "../internal/Pressable";
 
 export type ThreadListItemUnarchiveProps = Omit<PressableProps, "onPress"> & {

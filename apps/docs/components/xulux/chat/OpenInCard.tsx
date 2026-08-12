@@ -1,10 +1,10 @@
 "use client";
 
 import { useId } from "react";
-import type { SyntaxHighlighterProps } from "@assistant-ui/react-streamdown";
+import type { SyntaxHighlighterProps } from "@hitchsoftware/assistant-ui-react-streamdown";
 import { CheckIcon, CopyIcon, DownloadIcon } from "lucide-react";
 import { PreviewCard } from "@base-ui/react/preview-card";
-import { useCopyToClipboard } from "@assistant-ui/ui/hooks/use-copy-to-clipboard";
+import { useCopyToClipboard } from "@hitchsoftware/assistant-ui-ui/hooks/use-copy-to-clipboard";
 import { analytics } from "@/lib/analytics";
 import {
   trackXuluxDownload,

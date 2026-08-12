@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import { aui } from "./index";
 
 const SRC = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   a: { execute: async () => 1, render: () => null },
 });

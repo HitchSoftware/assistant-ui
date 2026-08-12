@@ -4,7 +4,7 @@ import {
   forwardRef,
 } from "react";
 import { Primitive } from "@radix-ui/react-primitive";
-import { useAui } from "@assistant-ui/store";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 import { useMcpElicitation } from "./context";
 
 export namespace McpElicitationPrimitiveDecline {

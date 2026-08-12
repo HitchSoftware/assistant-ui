@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { useScrollLock } from "@assistant-ui/react";
+import { useScrollLock } from "@hitchsoftware/assistant-ui-react";
 import { AlertCircle, ChevronRight } from "lucide-react";
 import { useRef, useState, type ReactNode } from "react";
 import {

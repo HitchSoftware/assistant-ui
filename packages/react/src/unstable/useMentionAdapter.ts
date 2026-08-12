@@ -1,15 +1,15 @@
 "use client";
 
 import { useMemo, type FC } from "react";
-import { useAui } from "@assistant-ui/store";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 import type {
   Unstable_DirectiveFormatter,
   Unstable_TriggerAdapter,
   Unstable_TriggerCategory,
   Unstable_TriggerItem,
-} from "@assistant-ui/core";
-import { unstable_defaultDirectiveFormatter } from "@assistant-ui/core";
-import type { ReadonlyJSONObject } from "assistant-stream/utils";
+} from "@hitchsoftware/assistant-ui-core";
+import { unstable_defaultDirectiveFormatter } from "@hitchsoftware/assistant-ui-core";
+import type { ReadonlyJSONObject } from "@hitchsoftware/assistant-stream/utils";
 
 /** Icon component shape consumed by `ComposerTriggerPopover`'s `iconMap`. */
 export type Unstable_IconComponent = FC<{ className?: string }>;

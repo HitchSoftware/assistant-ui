@@ -1,5 +1,5 @@
 import type { NextRequest } from "next/server";
-import type { PiThinkingLevel } from "@assistant-ui/react-pi";
+import type { PiThinkingLevel } from "@hitchsoftware/assistant-ui-react-pi";
 import { piClient } from "@/lib/pi-server";
 import { noContent, withFail } from "@/lib/http";
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { useAuiState } from "@assistant-ui/react";
+import { useAuiState } from "@hitchsoftware/assistant-ui-react";
 import {
   updateXuluxPendingUserMessage,
   updateXuluxThreadStatus,

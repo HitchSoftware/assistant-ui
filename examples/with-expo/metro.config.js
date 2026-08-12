@@ -1,5 +1,5 @@
 const { getDefaultConfig } = require("expo/metro-config");
-const { withAui } = require("@assistant-ui/metro");
+const { withAui } = require("@hitchsoftware/assistant-ui-metro");
 const path = require("node:path");
 
 const projectRoot = __dirname;

@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import type { MessageStatus } from "@assistant-ui/core";
+import type { MessageStatus } from "@hitchsoftware/assistant-ui-core";
 import type {
   AdkEvent,
   AdkEventPart,
@@ -10,7 +10,7 @@ import type {
   AdkAuthRequest,
   AdkMessageMetadata,
 } from "./types";
-import type { ReadonlyJSONObject } from "assistant-stream/utils";
+import type { ReadonlyJSONObject } from "@hitchsoftware/assistant-stream/utils";
 
 type InProgressMessage = AdkMessage & { type: "ai" };
 

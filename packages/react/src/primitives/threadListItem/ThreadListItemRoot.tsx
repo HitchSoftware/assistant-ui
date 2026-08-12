@@ -9,7 +9,7 @@ import {
   useMemo,
   useRef,
 } from "react";
-import { useAuiState } from "@assistant-ui/store";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 import { composeEventHandlers } from "@radix-ui/primitive";
 import { Direction } from "radix-ui";
 import {

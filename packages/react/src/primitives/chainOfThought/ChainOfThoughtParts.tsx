@@ -1,3 +1,3 @@
 "use client";
 
-export { ChainOfThoughtPrimitiveParts } from "@assistant-ui/core/react";
+export { ChainOfThoughtPrimitiveParts } from "@hitchsoftware/assistant-ui-core/react";

@@ -1,5 +1,5 @@
 import { z } from "zod";
-import type { GenerativeUISpec } from "@assistant-ui/react";
+import type { GenerativeUISpec } from "@hitchsoftware/assistant-ui-react";
 
 export const RENDER_GUI_TOOL_NAME = "render_gui" as const;
 

@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { useComposerSend } from "@assistant-ui/core/react";
+import { useComposerSend } from "@hitchsoftware/assistant-ui-core/react";
 import { Pressable, type PressableProps } from "../internal/Pressable";
 
 export type ComposerSendProps = Omit<PressableProps, "onPress"> & {

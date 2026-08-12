@@ -3,7 +3,7 @@
 import "./foo-scope";
 
 import { type ReactNode, useMemo, useState } from "react";
-import { resource } from "@assistant-ui/tap";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
 import {
   useAui,
   useAuiState,
@@ -14,7 +14,7 @@ import {
   useAssistantEmit,
   RenderChildrenWithAccessor,
   type ClientOutput,
-} from "@assistant-ui/store";
+} from "@hitchsoftware/assistant-ui-store";
 
 type FooData = { id: string; bar: string };
 

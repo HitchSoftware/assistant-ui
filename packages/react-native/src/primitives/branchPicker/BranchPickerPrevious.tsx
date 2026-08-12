@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Pressable, type PressableProps } from "react-native";
-import { useBranchPickerPrevious } from "@assistant-ui/core/react";
+import { useBranchPickerPrevious } from "@hitchsoftware/assistant-ui-core/react";
 
 export type BranchPickerPreviousProps = Omit<PressableProps, "onPress"> & {
   children: ReactNode;

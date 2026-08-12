@@ -8,14 +8,14 @@ import type {
   ThreadAssistantMessage,
   ThreadUserMessage,
   ToolCallMessagePart,
-} from "@assistant-ui/core";
-import type { useExternalMessageConverter } from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core";
+import type { useExternalMessageConverter } from "@hitchsoftware/assistant-ui-core/react";
 import {
   httpUrlPattern,
   parseDataUrl,
   stableStringifyToolArgs,
   trackToolArgsKeyOrder,
-} from "@assistant-ui/core/internal";
+} from "@hitchsoftware/assistant-ui-core/internal";
 import type {
   LangChainMessage,
   LangChainToolCall,
@@ -25,7 +25,7 @@ import type {
 import {
   parsePartialJsonObject,
   type ReadonlyJSONObject,
-} from "assistant-stream/utils";
+} from "@hitchsoftware/assistant-stream/utils";
 
 type LangGraphMessageConverterMetadata =
   useExternalMessageConverter.Metadata & {

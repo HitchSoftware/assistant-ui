@@ -1,5 +1,5 @@
 import { useMemo, useRef } from "react";
-import { resource } from "@assistant-ui/tap";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
 import type {
   McpAppResource,
   McpAppsHost,

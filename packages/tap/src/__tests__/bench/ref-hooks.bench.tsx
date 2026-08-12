@@ -1,7 +1,7 @@
 /**
  * Ref hook benchmark: many ref cells in one host.
  *
- *   pnpm build --filter=@assistant-ui/tap
+ *   pnpm build --filter=@hitchsoftware/assistant-ui-tap
  *   pnpm --dir packages/tap exec vitest bench --run --project prod src/__tests__/bench/ref-hooks.bench.tsx
  */
 /* oxlint-disable react/rules-of-hooks -- fixed-count hook loops, benchmark only */
@@ -9,7 +9,7 @@ import { bench, describe } from "vitest";
 import { createElement, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { flushSync } from "react-dom";
-import { createTapRoot, flushTapSync } from "@assistant-ui/tap";
+import { createTapRoot, flushTapSync } from "@hitchsoftware/assistant-ui-tap";
 
 (globalThis as any).IS_REACT_ACT_ENVIRONMENT = false;
 

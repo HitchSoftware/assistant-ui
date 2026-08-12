@@ -39,7 +39,7 @@ import {
   useAssistantApi,
   useAssistantState,
   useAssistantEvent,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const api = useAssistantApi();
@@ -60,7 +60,7 @@ function MyComponent() {
 **After:**
 
 ```tsx
-import { useAui, useAuiState, useAuiEvent } from "@assistant-ui/react";
+import { useAui, useAuiState, useAuiEvent } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const aui = useAui();
@@ -102,7 +102,7 @@ import {
   useAssistantApi,
   useAssistantState,
   useAssistantEvent,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 const api = useAssistantApi(); // deprecated but functional
 ```
@@ -155,7 +155,7 @@ import {
   useComposerRuntime,
   useMessage,
   useMessageRuntime,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   // Reading state
@@ -188,7 +188,7 @@ function MyComponent() {
 **After:**
 
 ```tsx
-import { useAuiState, useAui } from "@assistant-ui/react";
+import { useAuiState, useAui } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   // Reading state - all through single hook
@@ -242,7 +242,7 @@ Events that remain unchanged:
 **Before:**
 
 ```tsx
-import { useAuiEvent } from "@assistant-ui/react";
+import { useAuiEvent } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   useAuiEvent("thread.run-start", () => {
@@ -264,7 +264,7 @@ function MyComponent() {
 **After:**
 
 ```tsx
-import { useAuiEvent } from "@assistant-ui/react";
+import { useAuiEvent } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   useAuiEvent("thread.runStart", () => {

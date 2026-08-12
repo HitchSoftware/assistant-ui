@@ -13,8 +13,8 @@ const { addAttachment, threadCapabilities } = vi.hoisted(() => ({
 
 (globalThis as Record<string, unknown>).IS_REACT_ACT_ENVIRONMENT = true;
 
-vi.mock("@assistant-ui/store", async (importOriginal) => {
-  const actual = await importOriginal<typeof import("@assistant-ui/store")>();
+vi.mock("@hitchsoftware/assistant-ui-store", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@hitchsoftware/assistant-ui-store")>();
   return {
     ...actual,
     useAui: () => ({

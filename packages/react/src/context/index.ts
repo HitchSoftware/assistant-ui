@@ -13,7 +13,7 @@ export {
 export { TextMessagePartProvider } from "./providers/TextMessagePartProvider";
 export { MessageProvider } from "./providers/MessageProvider";
 export { ChainOfThoughtByIndicesProvider } from "./providers/ChainOfThoughtByIndicesProvider";
-export { ReadonlyThreadProvider } from "@assistant-ui/core/react";
+export { ReadonlyThreadProvider } from "@hitchsoftware/assistant-ui-core/react";
 
 export type { ThreadViewportState } from "./stores/ThreadViewport";
 

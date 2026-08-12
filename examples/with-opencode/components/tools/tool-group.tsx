@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { useAuiState } from "@assistant-ui/react";
+import { useAuiState } from "@hitchsoftware/assistant-ui-react";
 import { memo, type FC, type PropsWithChildren } from "react";
 
 type GroupedPartsGroup = {

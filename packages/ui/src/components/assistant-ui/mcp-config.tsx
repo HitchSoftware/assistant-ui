@@ -1,13 +1,13 @@
 "use client";
 
 import { type FC, type ReactNode, useState, isValidElement } from "react";
-import { useAuiState } from "@assistant-ui/store";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 import {
   McpAddFormPrimitive,
   McpManagerPrimitive,
   McpServerPrimitive,
   type MCPConnectionState,
-} from "@assistant-ui/react-mcp";
+} from "@hitchsoftware/assistant-ui-react-mcp";
 import {
   Loader2Icon,
   PlugIcon,

@@ -16,10 +16,10 @@
     "format:fix": "oxfmt"
   },
   "dependencies": {
-    "@assistant-ui/eve": "workspace:*",
-    "@assistant-ui/react": "workspace:*",
-    "@assistant-ui/react-markdown": "workspace:*",
-    "@assistant-ui/ui": "workspace:*",
+    "@hitchsoftware/assistant-ui-eve": "workspace:*",
+    "@hitchsoftware/assistant-ui-react": "workspace:*",
+    "@hitchsoftware/assistant-ui-react-markdown": "workspace:*",
+    "@hitchsoftware/assistant-ui-ui": "workspace:*",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "eve": "^0.27.6",
@@ -30,8 +30,8 @@
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
-    "@assistant-ui/next": "workspace:*",
-    "@assistant-ui/x-buildutils": "workspace:*",
+    "@hitchsoftware/assistant-ui-next": "workspace:*",
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^26.1.2",
     "@types/react": "^19.2.18",

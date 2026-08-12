@@ -3,7 +3,7 @@ import {
   generativeUiElementsThemeCssText,
   generativeUiElementsThemeVars,
   generativeUiThemeVars,
-} from "@assistant-ui/ui/lib/generative-ui-vocabulary-css";
+} from "@hitchsoftware/assistant-ui-ui/lib/generative-ui-vocabulary-css";
 
 function themeVarsBlock(selector: string, vars: Record<string, string>) {
   const body = Object.entries(vars)

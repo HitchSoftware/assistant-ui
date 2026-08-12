@@ -32,8 +32,8 @@ const threadState = {
 
 (globalThis as Record<string, unknown>).IS_REACT_ACT_ENVIRONMENT = true;
 
-vi.mock("@assistant-ui/store", async (importOriginal) => {
-  const actual = await importOriginal<typeof import("@assistant-ui/store")>();
+vi.mock("@hitchsoftware/assistant-ui-store", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@hitchsoftware/assistant-ui-store")>();
   const aui = {
     composer: {
       setText: (text: string) => setText(text),
@@ -58,8 +58,8 @@ vi.mock("@assistant-ui/store", async (importOriginal) => {
   };
 });
 
-vi.mock("@assistant-ui/react", async (importOriginal) => {
-  const actual = await importOriginal<typeof import("@assistant-ui/react")>();
+vi.mock("@hitchsoftware/assistant-ui-react", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@hitchsoftware/assistant-ui-react")>();
   return {
     ...actual,
     INTERNAL: {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import * as HeatGraph from "heat-graph";
+import * as HeatGraph from "@hitchsoftware/heat-graph";
 import { SyntaxHighlighter } from "@/components/assistant-ui/shiki-highlighter";
 import { cn } from "@/lib/utils";
 

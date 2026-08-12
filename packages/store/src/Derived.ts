@@ -1,4 +1,4 @@
-import { resource, type ResourceElement } from "@assistant-ui/tap";
+import { resource, type ResourceElement } from "@hitchsoftware/assistant-ui-tap";
 import type {
   AssistantClient,
   ClientNames,

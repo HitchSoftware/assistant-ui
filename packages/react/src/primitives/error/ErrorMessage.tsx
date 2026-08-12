@@ -6,7 +6,7 @@ import {
   forwardRef,
   type ComponentPropsWithoutRef,
 } from "react";
-import { useMessageError } from "@assistant-ui/core/react";
+import { useMessageError } from "@hitchsoftware/assistant-ui-core/react";
 
 export namespace ErrorPrimitiveMessage {
   export type Element = ComponentRef<typeof Primitive.span>;

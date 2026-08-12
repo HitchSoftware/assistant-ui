@@ -1,7 +1,7 @@
 "use client";
 
 import { type ComponentProps, useMemo } from "react";
-import type { SyntaxHighlighterProps } from "@assistant-ui/react-markdown";
+import type { SyntaxHighlighterProps } from "@hitchsoftware/assistant-ui-react-markdown";
 import { cva, type VariantProps } from "class-variance-authority";
 import { diffLines } from "diff";
 import parseDiff from "parse-diff";

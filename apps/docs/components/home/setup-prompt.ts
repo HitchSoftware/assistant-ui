@@ -25,7 +25,7 @@ Templates: default (unsure), minimal, cloud, cloud-clerk, langgraph, mcp.
 For custom backends without a template, swap -t for -e:
 AG-UI → \`-e with-ag-ui\`, Google ADK → \`-e with-google-adk\`,
 Assistant Transport → \`-e with-assistant-transport\`.
-A2A: use \`-t minimal\`, then install @assistant-ui/react-a2a manually.
+A2A: use \`-t minimal\`, then install @hitchsoftware/assistant-ui-react-a2a manually.
 <app-name> and -t/-e are required.
 
 If (b) existing project:
@@ -39,7 +39,7 @@ scaffolds app/assistant.tsx + app/api/chat/route.ts).
   \`"@assistant-ui": "https://r.assistant-ui.com/styles/{style}/{name}.json"\`
   (base- styles get Base UI components; others get Radix; plain
   \`https://r.assistant-ui.com/{name}.json\` is the Radix-only fallback),
-  then \`npx shadcn@latest add @assistant-ui/thread\`, install the provider
+  then \`npx shadcn@latest add @hitchsoftware/assistant-ui-thread\`, install the provider
   SDK, and wire your own server for the chat endpoint (Vite/Expo do not
   bundle one). See /docs/installation.md Manual Setup.
 - Next.js App Router → confirm package manager, Tailwind (v3 or v4), and

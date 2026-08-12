@@ -7,7 +7,7 @@ const h = vi.hoisted(() => ({
   switchTo: vi.fn<() => void>(),
 }));
 
-vi.mock("@assistant-ui/core/react", () => ({
+vi.mock("@hitchsoftware/assistant-ui-core/react", () => ({
   useThreadListItemTrigger: () => ({ switchTo: h.switchTo }),
 }));
 

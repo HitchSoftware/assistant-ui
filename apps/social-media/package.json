@@ -1,5 +1,5 @@
 {
-  "name": "@assistant-ui/social-media",
+  "name": "@hitchsoftware/assistant-ui-social-media",
   "private": true,
   "type": "module",
   "scripts": {

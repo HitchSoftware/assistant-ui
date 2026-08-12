@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
-import { AuiProvider, useAui } from "@assistant-ui/store";
+import { AuiProvider, useAui } from "@hitchsoftware/assistant-ui-store";
 import * as SpanPrimitive from "../span";
 import { SpanResource, type SpanData } from "../../resources/SpanResource";
 import { getSpanTimelineBarVars } from "./SpanTimeline";

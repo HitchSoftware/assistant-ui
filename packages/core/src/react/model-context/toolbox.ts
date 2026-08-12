@@ -3,7 +3,7 @@ import type {
   ToolCallReader,
   ToolDeclaration,
   ToolModelOutputFunction,
-} from "assistant-stream";
+} from "@hitchsoftware/assistant-stream";
 import type { ReactNode } from "react";
 import type {
   ToolCallMessagePartComponent,

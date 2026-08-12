@@ -7,12 +7,12 @@ import {
   type Tool,
   type McpServerConfig,
   type ToolModelOutputFunction,
-} from "assistant-stream";
+} from "@hitchsoftware/assistant-stream";
 import type {
   McpToolkitToolConfig,
   Toolkit,
   ToolkitDefinition,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";
 import { frontendTools, type FrontendTools } from "./frontendTools";
 import { toAISDKContent, toAISDKDefaultOutput } from "./toolOutputConversion";
 import {

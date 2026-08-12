@@ -7,8 +7,8 @@ import type {
   RealtimeVoiceAdapter,
   RemoteThreadListAdapter,
   SpeechSynthesisAdapter,
-} from "@assistant-ui/core";
-import type { AssistantCloud } from "assistant-cloud";
+} from "@hitchsoftware/assistant-ui-core";
+import type { AssistantCloud } from "@hitchsoftware/assistant-cloud";
 import type {
   UseStreamOptions,
   AssembledToolCall,

@@ -8,7 +8,7 @@ import {
   useMemo,
   useRef,
 } from "react";
-import { AssistantCloud } from "assistant-cloud";
+import { AssistantCloud } from "@hitchsoftware/assistant-cloud";
 import type { RemoteThreadListAdapter } from "../../../runtimes/remote-thread-list/types";
 import { InMemoryThreadListAdapter } from "../../../runtimes/remote-thread-list/adapter/in-memory";
 import { useAssistantCloudThreadHistoryAdapter } from "./AssistantCloudThreadHistoryAdapter";

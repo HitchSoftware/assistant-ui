@@ -1,4 +1,4 @@
-import type { Tool } from "assistant-stream";
+import type { Tool } from "@hitchsoftware/assistant-stream";
 import type { InteractableDefinition, InteractableStateSchema } from "./scopes";
 
 export function shallowMerge(prev: unknown, partial: unknown): unknown {

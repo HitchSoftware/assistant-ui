@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Waterfall Example",
-  description: "Span waterfall visualization with @assistant-ui/react-o11y",
+  description: "Span waterfall visualization with @hitchsoftware/assistant-ui-react-o11y",
 };
 
 export default function RootLayout({

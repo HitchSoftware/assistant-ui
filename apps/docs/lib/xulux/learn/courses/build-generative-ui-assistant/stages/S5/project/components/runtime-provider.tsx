@@ -4,11 +4,11 @@ import {
   AssistantRuntimeProvider,
   unstable_Interactables,
   useAui,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   AssistantChatTransport,
   useChatRuntime,
-} from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react-ai-sdk";
 
 export function RuntimeProvider({
   api = "/api/chat",

@@ -20,7 +20,7 @@ import {
   resource,
   useResource,
   useTapRoot,
-} from "@assistant-ui/tap";
+} from "@hitchsoftware/assistant-ui-tap";
 
 (globalThis as any).IS_REACT_ACT_ENVIRONMENT = false;
 

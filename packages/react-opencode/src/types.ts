@@ -9,7 +9,7 @@ import type {
   SpeechSynthesisAdapter,
   ThreadMessageLike,
   ThreadUserMessagePart,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import type {
   Message,
   OpencodeClient,
@@ -347,4 +347,4 @@ export type {
   AppendMessage,
   ThreadMessageLike,
   ThreadUserMessagePart,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";

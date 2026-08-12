@@ -18,7 +18,7 @@ Lightweight cloud persistence for AI SDK apps without assistant-ui components.
 ### Zero-config (anonymous users)
 
 ```tsx
-import { useCloudChat } from "@assistant-ui/cloud-ai-sdk";
+import { useCloudChat } from "@hitchsoftware/assistant-ui-cloud-ai-sdk";
 
 function Chat() {
   // Auto-initializes anonymous cloud from NEXT_PUBLIC_ASSISTANT_BASE_URL
@@ -30,8 +30,8 @@ function Chat() {
 ### With custom cloud instance (authenticated users)
 
 ```tsx
-import { AssistantCloud } from "assistant-cloud";
-import { useCloudChat } from "@assistant-ui/cloud-ai-sdk";
+import { AssistantCloud } from "@hitchsoftware/assistant-cloud";
+import { useCloudChat } from "@hitchsoftware/assistant-ui-cloud-ai-sdk";
 
 function Chat() {
   const cloud = useMemo(() => new AssistantCloud({

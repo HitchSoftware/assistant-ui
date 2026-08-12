@@ -51,7 +51,7 @@ describe("no unsafe process.env access", () => {
     expect(
       violations,
       `These files access process.env (non-NODE_ENV) without a typeof process !== "undefined" guard.\n` +
-        `@assistant-ui/core lacks @types/node, so bare process.env access crashes in Vite and other bundlers.\n` +
+        `@hitchsoftware/assistant-ui-core lacks @types/node, so bare process.env access crashes in Vite and other bundlers.\n` +
         `Add: typeof process !== "undefined" ? process.env?.["VAR_NAME"] : undefined\n\n` +
         `Files:\n${violations.map((f) => `  - ${f}`).join("\n")}`,
     ).toEqual([]);

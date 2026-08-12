@@ -1,5 +1,5 @@
 {
-  "extends": "@assistant-ui/x-buildutils/ts/next",
+  "extends": "@hitchsoftware/assistant-ui-x-buildutils/ts/next",
   "compilerOptions": {
     "paths": {
       "@/components/ui/*": [
@@ -21,19 +21,19 @@
         "./components/elements/*"
       ],
       "@/*": ["./*"],
-      "@assistant-ui/ui/*": ["../../packages/ui/src/*"],
+      "@hitchsoftware/assistant-ui-ui/*": ["../../packages/ui/src/*"],
       "fumadocs-mdx:collections/*": ["./.source/*"],
-      "@assistant-ui/react-generative-ui/*": [
+      "@hitchsoftware/assistant-ui-react-generative-ui/*": [
         "../../packages/react-generative-ui/src/*"
       ],
-      "@assistant-ui/store/client": ["../../packages/store/src/client"],
+      "@hitchsoftware/assistant-ui-store/client": ["../../packages/store/src/client"],
       "@assistant-ui/*": ["../../packages/*/src"],
-      "@assistant-ui/core/*": ["../../packages/core/src/*"],
-      "@assistant-ui/react/*": ["../../packages/react/src/*"],
-      "@assistant-ui/tap/*": ["../../packages/tap/src/*"],
-      "assistant-stream": ["../../packages/assistant-stream/src"],
+      "@hitchsoftware/assistant-ui-core/*": ["../../packages/core/src/*"],
+      "@hitchsoftware/assistant-ui-react/*": ["../../packages/react/src/*"],
+      "@hitchsoftware/assistant-ui-tap/*": ["../../packages/tap/src/*"],
+      "@hitchsoftware/assistant-stream": ["../../packages/assistant-stream/src"],
       "assistant-stream/*": ["../../packages/assistant-stream/src/*"],
-      "assistant-cloud": ["../../packages/cloud/src"],
+      "@hitchsoftware/assistant-cloud": ["../../packages/cloud/src"],
       "assistant-cloud/*": ["../../packages/cloud/src/*"]
     }
   },

@@ -5,7 +5,7 @@ description: Native iOS and Android AI chat app with Expo — drawer navigation,
 
 ## Overview
 
-A full-featured React Native chat application built with Expo and `@assistant-ui/react-native`. It demonstrates drawer-based thread management, streaming OpenAI responses, and a polished native UI with dark mode support.
+A full-featured React Native chat application built with Expo and `@hitchsoftware/assistant-ui-react-native`. It demonstrates drawer-based thread management, streaming OpenAI responses, and a polished native UI with dark mode support.
 
 ## Features
 
@@ -37,14 +37,14 @@ pnpm --filter with-expo start
 
 ### Runtime Setup
 
-The runtime uses `useChatRuntime` from `@assistant-ui/react-ai-sdk` with an `AssistantChatTransport` that connects to a chat API endpoint:
+The runtime uses `useChatRuntime` from `@hitchsoftware/assistant-ui-react-ai-sdk` with an `AssistantChatTransport` that connects to a chat API endpoint:
 
 ```tsx title="hooks/use-app-runtime.ts"
 import { useMemo } from "react";
 import {
   useChatRuntime,
   AssistantChatTransport,
-} from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react-ai-sdk";
 
 const CHAT_API = process.env.EXPO_PUBLIC_CHAT_ENDPOINT_URL ?? "/api/chat";
 
@@ -80,7 +80,7 @@ import {
   AuiConfig,
   useAui,
   Tools,
-} from "@assistant-ui/react-native";
+} from "@hitchsoftware/assistant-ui-react-native";
 import { useAppRuntime } from "@/hooks/use-app-runtime";
 import { ThreadListDrawer } from "@/components/thread-list/ThreadListDrawer";
 import { expoToolkit } from "@/components/assistant-ui/tools";

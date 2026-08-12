@@ -5,7 +5,7 @@ import {
   type ActionButtonProps,
   createActionButton,
 } from "../../utils/createActionButton";
-import { useActionBarEdit as useActionBarEditBehavior } from "@assistant-ui/core/react";
+import { useActionBarEdit as useActionBarEditBehavior } from "@hitchsoftware/assistant-ui-core/react";
 
 /**
  * Hook that provides edit functionality for action bar buttons.

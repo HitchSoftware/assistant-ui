@@ -1,14 +1,14 @@
 "use client";
 
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { ExportedMessageRepository } from "@assistant-ui/core";
+import { ExportedMessageRepository } from "@hitchsoftware/assistant-ui-core";
 import type {
   AppendMessage,
   ChatModelRunResult,
   ThreadAssistantMessage,
   ThreadHistoryAdapter,
   ThreadMessage,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import { HttpAgent } from "@ag-ui/client";
 import { AgUiThreadRuntimeCore } from "../src/runtime/AgUiThreadRuntimeCore";
 import { makeLogger, type Logger } from "../src/runtime/logger";

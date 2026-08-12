@@ -2,7 +2,7 @@ import React, { useCallback, useInsertionEffect, useRef } from "react";
 
 const ReactRuntime = React as any;
 
-// Keep this local so @assistant-ui/tap stays runtime-dependency-free.
+// Keep this local so @hitchsoftware/assistant-ui-tap stays runtime-dependency-free.
 function useReactEffectEventShim<T extends (...args: any[]) => any>(
   callback: T,
 ): T {

@@ -1,3 +1,3 @@
 "use client";
 
-export { ChainOfThoughtByIndicesProvider } from "@assistant-ui/core/react";
+export { ChainOfThoughtByIndicesProvider } from "@hitchsoftware/assistant-ui-core/react";

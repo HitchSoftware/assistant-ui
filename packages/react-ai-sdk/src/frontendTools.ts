@@ -1,5 +1,5 @@
 import { jsonSchema, type ToolSet } from "ai";
-import type { ToolJSONSchema } from "assistant-stream";
+import type { ToolJSONSchema } from "@hitchsoftware/assistant-stream";
 import { unwrapModelContentEnvelope } from "./modelContentEnvelope";
 import { toAISDKContent, toAISDKDefaultOutput } from "./toolOutputConversion";
 

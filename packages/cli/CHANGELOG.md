@@ -13,7 +13,7 @@
 - [#5723](https://github.com/assistant-ui/assistant-ui/pull/5723) [`94dc3e5`](https://github.com/assistant-ui/assistant-ui/commit/94dc3e509fa2b4fae1a14c88ec34b910c8d95af8) - chore: update dependencies ([@okisdev](https://github.com/okisdev))
 
 - Updated dependencies [[`94dc3e5`](https://github.com/assistant-ui/assistant-ui/commit/94dc3e509fa2b4fae1a14c88ec34b910c8d95af8)]:
-  - @assistant-ui/agent-launcher@0.1.10
+  - @hitchsoftware/assistant-ui-agent-launcher@0.1.10
 
 ## 0.0.108
 
@@ -42,7 +42,7 @@
 - [#5079](https://github.com/assistant-ui/assistant-ui/pull/5079) [`390e417`](https://github.com/assistant-ui/assistant-ui/commit/390e4177ca47f7ece839613ad0f076add9313328) - chore: update dependencies ([@Yonom](https://github.com/Yonom))
 
 - Updated dependencies []:
-  - @assistant-ui/agent-launcher@0.1.9
+  - @hitchsoftware/assistant-ui-agent-launcher@0.1.9
 
 ## 0.0.106
 
@@ -79,7 +79,7 @@
 - [#4815](https://github.com/assistant-ui/assistant-ui/pull/4815) [`5325f09`](https://github.com/assistant-ui/assistant-ui/commit/5325f0985768b750b050cf07f592fdfed34eccac) - chore: update dependencies ([@okisdev](https://github.com/okisdev))
 
 - Updated dependencies [[`0686f4e`](https://github.com/assistant-ui/assistant-ui/commit/0686f4e6b8ee5f6e17c968997ef11622ef8f9c98), [`5325f09`](https://github.com/assistant-ui/assistant-ui/commit/5325f0985768b750b050cf07f592fdfed34eccac)]:
-  - @assistant-ui/agent-launcher@0.1.9
+  - @hitchsoftware/assistant-ui-agent-launcher@0.1.9
 
 ## 0.0.105
 
@@ -88,7 +88,7 @@
 - [#4609](https://github.com/assistant-ui/assistant-ui/pull/4609) [`a50faac`](https://github.com/assistant-ui/assistant-ui/commit/a50faac5cb62f185a5e6a72cde8fbc550abf8427) - fix(cli): skip shadcn registry install when --skip-install is passed ([@okisdev](https://github.com/okisdev))
 
 - Updated dependencies []:
-  - @assistant-ui/agent-launcher@0.1.8
+  - @hitchsoftware/assistant-ui-agent-launcher@0.1.8
 
 ## 0.0.104
 
@@ -101,7 +101,7 @@
 - [#4494](https://github.com/assistant-ui/assistant-ui/pull/4494) [`5e8a4e2`](https://github.com/assistant-ui/assistant-ui/commit/5e8a4e2a4c4bb4ba2aa963eb2f63da521a29bf78) - cli: rename the langgraph starter template flag to `-t langchain` so it matches the react-langchain adapter it actually scaffolds. `-t langgraph` no longer resolves; use `-t langchain` instead. ([@okisdev](https://github.com/okisdev))
 
 - Updated dependencies [[`cefcf27`](https://github.com/assistant-ui/assistant-ui/commit/cefcf27b4b53ceafef18e469644d51797c11c8ff)]:
-  - @assistant-ui/agent-launcher@0.1.8
+  - @hitchsoftware/assistant-ui-agent-launcher@0.1.8
 
 ## 0.0.103
 
@@ -122,7 +122,7 @@
 - [#4390](https://github.com/assistant-ui/assistant-ui/pull/4390) [`bb38d08`](https://github.com/assistant-ui/assistant-ui/commit/bb38d085b04b59f68c8cf16b23c2211454384668) - chore: update dependencies ([@Yonom](https://github.com/Yonom))
 
 - Updated dependencies [[`bb38d08`](https://github.com/assistant-ui/assistant-ui/commit/bb38d085b04b59f68c8cf16b23c2211454384668)]:
-  - @assistant-ui/agent-launcher@0.1.7
+  - @hitchsoftware/assistant-ui-agent-launcher@0.1.7
 
 ## 0.0.100
 
@@ -137,7 +137,7 @@
 - [#4306](https://github.com/assistant-ui/assistant-ui/pull/4306) [`15878d8`](https://github.com/assistant-ui/assistant-ui/commit/15878d8114edbbb82c2a467cf811478e5f4e08bc) - chore: update dependencies ([@Yonom](https://github.com/Yonom))
 
 - Updated dependencies [[`15878d8`](https://github.com/assistant-ui/assistant-ui/commit/15878d8114edbbb82c2a467cf811478e5f4e08bc)]:
-  - @assistant-ui/agent-launcher@0.1.6
+  - @hitchsoftware/assistant-ui-agent-launcher@0.1.6
 
 ## 0.0.98
 
@@ -145,10 +145,10 @@
 
 - [#4228](https://github.com/assistant-ui/assistant-ui/pull/4228) [`1d21b23`](https://github.com/assistant-ui/assistant-ui/commit/1d21b23eb14ba02a9572f6be14f5c91282c0dd5e) - perf(cli): merge the two `shadcn add` calls in `create` into one ([@okisdev](https://github.com/okisdev))
 
-  `create` for templates without local components ran `shadcn@latest add` twice (once for the shadcn UI components, once for the `@assistant-ui/*` components), paying for a separate dlx cold start, a separate registry index fetch, and a separate package-manager `add` subprocess each time. `@assistant-ui` is publicly listed in shadcn's registry index, so a single `shadcn add <shadcn components> @assistant-ui/...` resolves the whole mixed tree in one topologically sorted pass; the `tw-shimmer` CSS injection and the `components.json` registries write still happen. This roughly halves the component install time, including on the `--skip-install` path.
+  `create` for templates without local components ran `shadcn@latest add` twice (once for the shadcn UI components, once for the `@assistant-ui/*` components), paying for a separate dlx cold start, a separate registry index fetch, and a separate package-manager `add` subprocess each time. `@assistant-ui` is publicly listed in shadcn's registry index, so a single `shadcn add <shadcn components> @hitchsoftware/assistant-ui-...` resolves the whole mixed tree in one topologically sorted pass; the `tw-shimmer` CSS injection and the `components.json` registries write still happen. This roughly halves the component install time, including on the `--skip-install` path.
 
 - Updated dependencies []:
-  - @assistant-ui/agent-launcher@0.1.5
+  - @hitchsoftware/assistant-ui-agent-launcher@0.1.5
 
 ## 0.0.97
 
@@ -163,14 +163,14 @@
 - [#4175](https://github.com/assistant-ui/assistant-ui/pull/4175) [`2dec3ae`](https://github.com/assistant-ui/assistant-ui/commit/2dec3aeba0431178f4ca26e470b304f5a89390ba) - chore: update dependencies ([@Yonom](https://github.com/Yonom))
 
 - Updated dependencies []:
-  - @assistant-ui/agent-launcher@0.1.5
+  - @hitchsoftware/assistant-ui-agent-launcher@0.1.5
 
 ## 0.0.95
 
 ### Patch Changes
 
-- [#4121](https://github.com/assistant-ui/assistant-ui/pull/4121) [`7395092`](https://github.com/assistant-ui/assistant-ui/commit/73950929dbebadb275e3bdee23331f65f2635a33) - feat: detect and diagnose duplicate `@assistant-ui/core` installs ([@Yonom](https://github.com/Yonom))
-  - In dev mode (`NODE_ENV !== "production"`), `@assistant-ui/core` now emits a single `console.warn` when it detects a second copy of itself loaded into the same JavaScript runtime. Mismatched transitive versions are a common source of subtle bugs (lost tool registrations, broken context lookups, failed `instanceof` checks — see issue [#4101](https://github.com/assistant-ui/assistant-ui/issues/4101)). The warning points users at `npx assistant-ui doctor`.
+- [#4121](https://github.com/assistant-ui/assistant-ui/pull/4121) [`7395092`](https://github.com/assistant-ui/assistant-ui/commit/73950929dbebadb275e3bdee23331f65f2635a33) - feat: detect and diagnose duplicate `@hitchsoftware/assistant-ui-core` installs ([@Yonom](https://github.com/Yonom))
+  - In dev mode (`NODE_ENV !== "production"`), `@hitchsoftware/assistant-ui-core` now emits a single `console.warn` when it detects a second copy of itself loaded into the same JavaScript runtime. Mismatched transitive versions are a common source of subtle bugs (lost tool registrations, broken context lookups, failed `instanceof` checks — see issue [#4101](https://github.com/assistant-ui/assistant-ui/issues/4101)). The warning points users at `npx assistant-ui doctor`.
   - New `assistant-ui doctor` CLI command. It walks `node_modules` recursively (including nested copies), surfaces every duplicate version of any `@assistant-ui/*`, `assistant-stream` or `assistant-cloud` package, queries the npm registry for the latest versions and reports outdated installs. Use `--no-network` to skip the registry check.
 
 ## 0.0.94
@@ -186,7 +186,7 @@
 - [#4085](https://github.com/assistant-ui/assistant-ui/pull/4085) [`01244a5`](https://github.com/assistant-ui/assistant-ui/commit/01244a56026ee92bd4e49cb985136f9eb6d45154) - chore: update dependencies ([@Yonom](https://github.com/Yonom))
 
 - Updated dependencies [[`01244a5`](https://github.com/assistant-ui/assistant-ui/commit/01244a56026ee92bd4e49cb985136f9eb6d45154)]:
-  - @assistant-ui/agent-launcher@0.1.5
+  - @hitchsoftware/assistant-ui-agent-launcher@0.1.5
 
 ## 0.0.92
 
@@ -201,7 +201,7 @@
 - [#4054](https://github.com/assistant-ui/assistant-ui/pull/4054) [`c1add4a`](https://github.com/assistant-ui/assistant-ui/commit/c1add4a72608a33ff47b55f1890f37dbb8d4e488) - feat: resolve template UI components from the shared package source ([@AVGVSTVS96](https://github.com/AVGVSTVS96))
 
 - Updated dependencies []:
-  - @assistant-ui/agent-launcher@0.1.4
+  - @hitchsoftware/assistant-ui-agent-launcher@0.1.4
 
 ## 0.0.91
 
@@ -210,7 +210,7 @@
 - [#3962](https://github.com/assistant-ui/assistant-ui/pull/3962) [`b090acb`](https://github.com/assistant-ui/assistant-ui/commit/b090acb98f6bf3579aab4efedddaff83a0b54c94) - chore: update dependencies ([@Yonom](https://github.com/Yonom))
 
 - Updated dependencies []:
-  - @assistant-ui/agent-launcher@0.1.4
+  - @hitchsoftware/assistant-ui-agent-launcher@0.1.4
 
 ## 0.0.90
 
@@ -221,7 +221,7 @@
 - [#3831](https://github.com/assistant-ui/assistant-ui/pull/3831) [`d53ff4f`](https://github.com/assistant-ui/assistant-ui/commit/d53ff4f3f8b7d7220c1cb274c4fda335598fb063) - chore: remove decorative separator comments across packages ([@okisdev](https://github.com/okisdev))
 
 - Updated dependencies []:
-  - @assistant-ui/agent-launcher@0.1.4
+  - @hitchsoftware/assistant-ui-agent-launcher@0.1.4
 
 ## 0.0.89
 
@@ -230,7 +230,7 @@
 - 8d334f9: fix(cli): detect package manager from npm_config_user_agent before falling back to detect-package-manager
 - c988db8: chore: update dependencies
 - Updated dependencies [c988db8]
-  - @assistant-ui/agent-launcher@0.1.4
+  - @hitchsoftware/assistant-ui-agent-launcher@0.1.4
 
 ## 0.0.88
 
@@ -238,7 +238,7 @@
 
 - 376bb00: chore: update dependencies
 - Updated dependencies [376bb00]
-  - @assistant-ui/agent-launcher@0.1.3
+  - @hitchsoftware/assistant-ui-agent-launcher@0.1.3
 
 ## 0.0.87
 
@@ -256,7 +256,7 @@
   - Add `with-interactables` example to CLI
 
 - Updated dependencies [209ae81]
-  - @assistant-ui/agent-launcher@0.1.2
+  - @hitchsoftware/assistant-ui-agent-launcher@0.1.2
 
 ## 0.0.86
 
@@ -279,7 +279,7 @@
 - dbb2929: Improve CLI project creation error handling and transform sequencing in
   `assistant-ui`.
 - Updated dependencies [349f3c7]
-  - @assistant-ui/agent-launcher@0.1.1
+  - @hitchsoftware/assistant-ui-agent-launcher@0.1.1
 
 ## 0.0.83
 
@@ -294,10 +294,10 @@
 
 ### Patch Changes
 
-- 5034b1e: Add `@assistant-ui/agent-launcher` package and `assistant-ui agent` CLI command to launch Claude Code with assistant-ui skills
+- 5034b1e: Add `@hitchsoftware/assistant-ui-agent-launcher` package and `assistant-ui agent` CLI command to launch Claude Code with assistant-ui skills
 - fb84e6c: Unified scaffold pipeline: both templates and examples now download from the monorepo via giget at the latest release tag. Replaced create-next-app with @clack/prompts for interactive project creation. Added grouped project picker showing templates and examples. Added --preset support with short names (e.g. --preset chatgpt). Uses the detected package manager's dlx command instead of npx for faster execution.
 - Updated dependencies [5034b1e]
-  - @assistant-ui/agent-launcher@0.1.0
+  - @hitchsoftware/assistant-ui-agent-launcher@0.1.0
 
 ## 0.0.81
 
@@ -628,7 +628,7 @@
 
 ### Patch Changes
 
-- 6703842: feat: codemod to migrate to @assistant-ui/react-ui
+- 6703842: feat: codemod to migrate to @hitchsoftware/assistant-ui-react-ui
 
 ## 0.0.31
 

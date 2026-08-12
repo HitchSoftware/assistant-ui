@@ -4,8 +4,8 @@ import { forwardRef } from "react";
 import type { ActionButtonProps } from "../../utils/createActionButton";
 import { composeEventHandlers } from "@radix-ui/primitive";
 import { Primitive } from "../../utils/Primitive";
-import { useAuiState } from "@assistant-ui/store";
-import { useActionBarFeedbackNegative as useActionBarFeedbackNegativeBehavior } from "@assistant-ui/core/react";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
+import { useActionBarFeedbackNegative as useActionBarFeedbackNegativeBehavior } from "@hitchsoftware/assistant-ui-core/react";
 
 const useActionBarFeedbackNegative = () => {
   const { submit } = useActionBarFeedbackNegativeBehavior();

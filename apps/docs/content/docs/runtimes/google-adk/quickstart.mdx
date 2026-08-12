@@ -15,7 +15,7 @@ For React Native and Ink, host this route in a separate backend project and
 point the client runtime at its absolute URL.
 
 ```ts title="app/api/chat/route.ts"
-import { createAdkApiRoute } from "@assistant-ui/react-google-adk/server";
+import { createAdkApiRoute } from "@hitchsoftware/assistant-ui-react-google-adk/server";
 import { InMemoryRunner, LlmAgent } from "@google/adk";
 
 const agent = new LlmAgent({
@@ -49,11 +49,11 @@ Use `createAdkStream` to connect to your API route. No manual SSE parsing needed
 ```tsx title="components/MyAssistant.tsx"
 "use client";
 
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
 import {
   useAdkRuntime,
   createAdkStream,
-} from "@assistant-ui/react-google-adk";
+} from "@hitchsoftware/assistant-ui-react-google-adk";
 import { Thread } from "@/components/assistant-ui/thread";
 
 export function MyAssistant() {
@@ -72,11 +72,11 @@ export function MyAssistant() {
 <Tab value="React Native">
 
 ```tsx title="components/MyAssistant.tsx"
-import { AssistantRuntimeProvider } from "@assistant-ui/react-native";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react-native";
 import {
   useAdkRuntime,
   createAdkStream,
-} from "@assistant-ui/react-google-adk";
+} from "@hitchsoftware/assistant-ui-react-google-adk";
 import { Thread } from "@/components/assistant-ui/thread";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL ?? "http://localhost:3000";
@@ -97,11 +97,11 @@ export function MyAssistant() {
 <Tab value="React Ink">
 
 ```tsx title="components/MyAssistant.tsx"
-import { AssistantRuntimeProvider } from "@assistant-ui/react-ink";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react-ink";
 import {
   useAdkRuntime,
   createAdkStream,
-} from "@assistant-ui/react-google-adk";
+} from "@hitchsoftware/assistant-ui-react-google-adk";
 import { Thread } from "./thread.js";
 
 export function MyAssistant() {

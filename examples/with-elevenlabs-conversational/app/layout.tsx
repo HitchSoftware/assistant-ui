@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "ElevenLabs Conversational AI Example",
   description:
-    "Example using @assistant-ui/react with ElevenLabs Conversational AI for realtime voice",
+    "Example using @hitchsoftware/assistant-ui-react with ElevenLabs Conversational AI for realtime voice",
 };
 
 export default function RootLayout({

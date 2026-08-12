@@ -15,7 +15,7 @@ import {
   ContentPartStatus,
   ThreadUserContentPart,
   ThreadAssistantContentPart
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 function processContent(part: TextContentPart): void {
   console.log(part.text);
@@ -35,7 +35,7 @@ import {
   MessagePartStatus,
   ThreadUserMessagePart,
   ThreadAssistantMessagePart
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 function processContent(part: TextMessagePart): void {
   console.log(part.text);
@@ -51,7 +51,7 @@ const MyTool: ToolCallMessagePartComponent = ({ toolName }) => {
 **Before:**
 
 ```jsx
-import { MessagePrimitive } from "@assistant-ui/react";
+import { MessagePrimitive } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   return <MessagePrimitive.Content components={{ Text: MyText }} />;
@@ -61,7 +61,7 @@ function MyComponent() {
 **After:**
 
 ```jsx
-import { MessagePrimitive } from "@assistant-ui/react";
+import { MessagePrimitive } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   return <MessagePrimitive.Parts components={{ Text: MyText }} />;
@@ -77,7 +77,7 @@ import {
   useContentPart,
   useContentPartText,
   useContentPartRuntime,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const part = useContentPart();
@@ -94,7 +94,7 @@ import {
   useMessagePart,
   useMessagePartText,
   useMessagePartRuntime,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const part = useMessagePart();
@@ -109,7 +109,7 @@ function MyComponent() {
 **Before:**
 
 ```jsx
-import { ContentPartPrimitive } from "@assistant-ui/react";
+import { ContentPartPrimitive } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   return (
@@ -124,7 +124,7 @@ function MyComponent() {
 **After:**
 
 ```jsx
-import { MessagePartPrimitive } from "@assistant-ui/react";
+import { MessagePartPrimitive } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   return (
@@ -141,7 +141,7 @@ function MyComponent() {
 **Before:**
 
 ```jsx
-import { TextContentPartProvider } from "@assistant-ui/react";
+import { TextContentPartProvider } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   return (
@@ -155,7 +155,7 @@ function MyComponent() {
 **After:**
 
 ```jsx
-import { TextMessagePartProvider } from "@assistant-ui/react";
+import { TextMessagePartProvider } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   return (
@@ -199,13 +199,13 @@ function MyComponent() {
 ### As part of the full upgrade
 
 ```bash
-npx @assistant-ui/cli upgrade
+npx @hitchsoftware/assistant-ui-cli upgrade
 ```
 
 ### Run this specific migration only
 
 ```bash
-npx @assistant-ui/cli codemod v0-11/content-part-to-message-part <path>
+npx @hitchsoftware/assistant-ui-cli codemod v0-11/content-part-to-message-part <path>
 ```
 
 Where `<path>` is the path to your source code directory (e.g., `src/` or `.`).
@@ -220,13 +220,13 @@ Where `<path>` is the path to your source code directory (e.g., `src/` or `.`).
 
 ```bash
 # Preview changes without applying them
-npx @assistant-ui/cli codemod v0-11/content-part-to-message-part src/ --dry
+npx @hitchsoftware/assistant-ui-cli codemod v0-11/content-part-to-message-part src/ --dry
 
 # Apply the transformation to your src directory
-npx @assistant-ui/cli codemod v0-11/content-part-to-message-part src/
+npx @hitchsoftware/assistant-ui-cli codemod v0-11/content-part-to-message-part src/
 
 # Apply to entire project
-npx @assistant-ui/cli codemod v0-11/content-part-to-message-part .
+npx @hitchsoftware/assistant-ui-cli codemod v0-11/content-part-to-message-part .
 ```
 
 ## What files are affected?

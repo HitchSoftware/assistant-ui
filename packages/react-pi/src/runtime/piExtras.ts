@@ -1,4 +1,4 @@
-import { createRuntimeExtras } from "@assistant-ui/core/react";
+import { createRuntimeExtras } from "@hitchsoftware/assistant-ui-core/react";
 import type { PiRuntimeExtrasInternal } from "./runtimeTypes";
 
 export const piExtras =

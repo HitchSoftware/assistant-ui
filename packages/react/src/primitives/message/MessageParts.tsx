@@ -6,7 +6,7 @@ import {
   MessagePartComponent as MessagePartComponentBase,
   MessagePrimitivePartByIndex as MessagePrimitivePartByIndexBase,
   messagePartsDefaultComponents,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";
 import { MessagePartPrimitiveText } from "../messagePart/MessagePartText";
 import { MessagePartPrimitiveImage } from "../messagePart/MessagePartImage";
 import { MessagePartPrimitiveInProgress } from "../messagePart/MessagePartInProgress";

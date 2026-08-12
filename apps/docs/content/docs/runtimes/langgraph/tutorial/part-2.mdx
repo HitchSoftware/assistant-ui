@@ -69,7 +69,7 @@ Then, we define a tool UI renderer:
 ```tsx title="@/components/tools/price-snapshot/PriceSnapshotTool.tsx"
 "use client";
 
-import type { ToolCallMessagePartComponent } from "@assistant-ui/react";
+import type { ToolCallMessagePartComponent } from "@hitchsoftware/assistant-ui-react";
 
 export const PriceSnapshotToolUI: ToolCallMessagePartComponent<
   PriceSnapshotToolArgs,
@@ -94,7 +94,7 @@ This simply displays the tool name and arguments passed to it, but not the resul
 
 import { Thread } from "@/components/assistant-ui/thread";
 import { PriceSnapshotToolUI } from "@/components/tools/price-snapshot/PriceSnapshotTool";
-import { AuiConfig, AuiProvider, defineToolkit, Tools, useAui } from "@assistant-ui/react";
+import { AuiConfig, AuiProvider, defineToolkit, Tools, useAui } from "@hitchsoftware/assistant-ui-react";
 
 const toolkit = defineToolkit({
   price_snapshot: {
@@ -210,7 +210,7 @@ We will import the new `<PriceSnapshot />` component and use it in the `render` 
 "use client";
 
 import { PriceSnapshot } from "./price-snapshot";
-import type { ToolCallMessagePartComponent } from "@assistant-ui/react";
+import type { ToolCallMessagePartComponent } from "@hitchsoftware/assistant-ui-react";
 
 type PriceSnapshotToolArgs = {
   ticker: string;
@@ -278,7 +278,7 @@ npx shadcn@latest add button
 Then create a new file under `/components/tools/ToolFallback.tsx` to define the fallback UI.
 
 ```tsx title="@/components/tools/ToolFallback.tsx"
-import { ToolCallMessagePartComponent } from "@assistant-ui/react";
+import { ToolCallMessagePartComponent } from "@hitchsoftware/assistant-ui-react";
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -344,4 +344,4 @@ export default function Home() {
 }
 ```
 
-The `Thread` component from `@assistant-ui/ui` already includes a built-in `ToolFallback` and `MarkdownText`, so no additional configuration is needed.
+The `Thread` component from `@hitchsoftware/assistant-ui-ui` already includes a built-in `ToolFallback` and `MarkdownText`, so no additional configuration is needed.

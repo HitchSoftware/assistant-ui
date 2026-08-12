@@ -1,6 +1,6 @@
 # with-mcp
 
-Minimal harness for `@assistant-ui/react-mcp`. Runs a local MCP server with
+Minimal harness for `@hitchsoftware/assistant-ui-react-mcp`. Runs a local MCP server with
 OAuth (PKCE + DCR) under `server/`, and a Next.js client under `app/` that
 uses the package's primitives.
 

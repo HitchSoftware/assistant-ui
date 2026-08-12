@@ -6,7 +6,7 @@ import {
   forwardRef,
   type ComponentPropsWithoutRef,
 } from "react";
-import { useAuiState } from "@assistant-ui/store";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 
 export namespace SuggestionPrimitiveDescription {
   export type Element = ElementRef<typeof Primitive.span>;

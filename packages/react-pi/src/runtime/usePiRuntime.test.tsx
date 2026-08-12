@@ -3,7 +3,7 @@
 import { act, createElement } from "react";
 import { createRoot, type Root } from "react-dom/client";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import type { AppendMessage, ExternalStoreAdapter } from "@assistant-ui/react";
+import type { AppendMessage, ExternalStoreAdapter } from "@hitchsoftware/assistant-ui-react";
 import type { PiClient } from "../types";
 
 const mocks = vi.hoisted(() => ({
@@ -16,8 +16,8 @@ const mocks = vi.hoisted(() => ({
   },
 }));
 
-vi.mock("@assistant-ui/react", async (importOriginal) => ({
-  ...(await importOriginal<typeof import("@assistant-ui/react")>()),
+vi.mock("@hitchsoftware/assistant-ui-react", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@hitchsoftware/assistant-ui-react")>()),
   useAui: () => ({
     threadListItem: { initialize: vi.fn().mockResolvedValue(undefined) },
   }),
@@ -67,7 +67,7 @@ vi.mock("./ThreadController", async (importOriginal) => {
   return { ...original, PiThreadController };
 });
 
-import { ExportedMessageRepository } from "@assistant-ui/react";
+import { ExportedMessageRepository } from "@hitchsoftware/assistant-ui-react";
 import { createPiThreadState } from "./threadState";
 import { usePiRuntime } from "./usePiRuntime";
 

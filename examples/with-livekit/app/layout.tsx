@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "LiveKit Voice Example",
   description:
-    "Example using @assistant-ui/react with LiveKit for realtime voice",
+    "Example using @hitchsoftware/assistant-ui-react with LiveKit for realtime voice",
 };
 
 export default function RootLayout({

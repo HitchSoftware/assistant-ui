@@ -2,7 +2,7 @@ import { computed, onScopeDispose, shallowRef, type ComputedRef } from "vue";
 import {
   getProxiedAssistantState,
   type AssistantState,
-} from "@assistant-ui/store/client";
+} from "@hitchsoftware/assistant-ui-store/client";
 import { useAuiContext } from "./context";
 
 /**

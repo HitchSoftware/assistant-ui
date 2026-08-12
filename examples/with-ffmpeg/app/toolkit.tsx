@@ -2,7 +2,7 @@
 
 import type { MutableRefObject } from "react";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import type { FFmpeg } from "@ffmpeg/ffmpeg";
 import {
   CircleCheckIcon,

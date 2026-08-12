@@ -1,4 +1,4 @@
-import { SSEEventDecoder } from "assistant-stream/utils";
+import { SSEEventDecoder } from "@hitchsoftware/assistant-stream/utils";
 import { contentToParts } from "./contentToParts";
 import { trimTrailingSlashes } from "./trimTrailingSlashes";
 import type {

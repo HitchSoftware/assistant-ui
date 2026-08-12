@@ -1,6 +1,6 @@
 "use client";
 
-import * as HeatGraphPrimitive from "heat-graph";
+import * as HeatGraphPrimitive from "@hitchsoftware/heat-graph";
 
 const COLORS = ["#ebedf0", "#c6d7f9", "#8fb0f3", "#5888e8", "#2563eb"];
 

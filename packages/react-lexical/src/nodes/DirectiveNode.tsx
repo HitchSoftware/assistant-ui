@@ -16,8 +16,8 @@ import { $applyNodeReplacement, DecoratorNode } from "lexical";
 import type {
   Unstable_TriggerItem,
   Unstable_DirectiveFormatter,
-} from "@assistant-ui/core";
-import { unstable_defaultDirectiveFormatter } from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
+import { unstable_defaultDirectiveFormatter } from "@hitchsoftware/assistant-ui-core";
 
 export type DirectiveChipProps = {
   directiveId: string;

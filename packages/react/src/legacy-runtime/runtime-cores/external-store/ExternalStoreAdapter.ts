@@ -3,4 +3,4 @@ export type {
   ExternalStoreMessageConverter,
   ExternalStoreThreadListAdapter,
   ExternalStoreThreadData,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";

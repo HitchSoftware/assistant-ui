@@ -22,7 +22,7 @@ Construct a `ResumableStreamContext` once per process and reuse it across reques
 import {
   createInMemoryResumableStreamStore,
   createResumableStreamContext,
-} from "assistant-stream/resumable";
+} from "@hitchsoftware/assistant-stream/resumable";
 
 const store = createInMemoryResumableStreamStore();
 export const resumableContext = createResumableStreamContext({ store });
@@ -32,7 +32,7 @@ In your chat route, wrap the response body in `ctx.run(streamId, makeStream)`. T
 
 ```ts title="/app/api/chat/route.ts"
 import { streamText } from "ai";
-import { RESUMABLE_STREAM_ID_HEADER } from "assistant-stream/resumable";
+import { RESUMABLE_STREAM_ID_HEADER } from "@hitchsoftware/assistant-stream/resumable";
 import { resumableContext } from "@/lib/resumable-context";
 
 export async function POST(req: Request) {
@@ -56,7 +56,7 @@ export async function POST(req: Request) {
 A separate GET endpoint replays the persisted bytes for reconnecting clients. `ctx.resume(streamId)` returns `null` when no stream exists; use `ctx.requireResume(streamId)` if you prefer to surface a `ResumableStreamError` with code `"missing"` instead.
 
 ```ts title="/app/api/chat/resume/[streamId]/route.ts"
-import { RESUMABLE_STREAM_ID_HEADER } from "assistant-stream/resumable";
+import { RESUMABLE_STREAM_ID_HEADER } from "@hitchsoftware/assistant-stream/resumable";
 import { resumableContext } from "@/lib/resumable-context";
 
 export async function GET(
@@ -84,17 +84,17 @@ The context exposes two more verbs: `ctx.status(streamId)` returns `"streaming" 
 
 ## Client side: native integration
 
-`@assistant-ui/react-ai-sdk` ships a `resumable` option on `AssistantChatTransport`. It captures the stream id from the response header, redirects `chat.resumeStream()` reconnects to your resume route, and clears the stored id when the response finishes naturally. Pair it with `useChatRuntime`, which fires `chat.resumeStream()` whenever its resumable storage reports a pending id, including ids discovered after mount.
+`@hitchsoftware/assistant-ui-react-ai-sdk` ships a `resumable` option on `AssistantChatTransport`. It captures the stream id from the response header, redirects `chat.resumeStream()` reconnects to your resume route, and clears the stored id when the response finishes naturally. Pair it with `useChatRuntime`, which fires `chat.resumeStream()` whenever its resumable storage reports a pending id, including ids discovered after mount.
 
 ```tsx title="/app/page.tsx"
 "use client";
 
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
 import {
   AssistantChatTransport,
   createResumableSessionStorage,
   useChatRuntime,
-} from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { useMemo } from "react";
 import { Thread } from "@/components/assistant-ui/thread";
 
@@ -148,12 +148,12 @@ import {
   useAui,
   useCloudThreadListAdapter,
   useRemoteThreadListRuntime,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   AssistantChatTransport,
   createResumableSessionStorage,
   useChatRuntime,
-} from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { useMemo } from "react";
 import { Thread } from "@/components/assistant-ui/thread";
 import { ThreadList } from "@/components/assistant-ui/thread-list";
@@ -214,18 +214,16 @@ For production, use one of the optional Redis adapters via the `assistant-stream
 import {
   createResumableStreamContext,
   type ResumableStreamStore,
-} from "assistant-stream/resumable";
+} from "@hitchsoftware/assistant-stream/resumable";
 
 async function createStore(): Promise<ResumableStreamStore> {
   if (!process.env.REDIS_URL) {
-    const { createInMemoryResumableStreamStore } = await import(
-      "assistant-stream/resumable"
+    const { createInMemoryResumableStreamStore } = await import("@hitchsoftware/assistant-stream/resumable"
     );
     return createInMemoryResumableStreamStore();
   }
   const { createClient } = await import("redis");
-  const { createRedisResumableStreamStore } = await import(
-    "assistant-stream/resumable/redis"
+  const { createRedisResumableStreamStore } = await import("@hitchsoftware/assistant-stream/resumable/redis"
   );
   const client = createClient({ url: process.env.REDIS_URL });
   await client.connect();
@@ -258,7 +256,7 @@ If you produce streams via `createAssistantStream` rather than the AI SDK, the p
 import {
   createResumableAssistantStreamResponse,
   createResumeAssistantStreamResponse,
-} from "assistant-stream/resumable";
+} from "@hitchsoftware/assistant-stream/resumable";
 import { resumableContext } from "@/lib/resumable-context";
 
 // POST handler

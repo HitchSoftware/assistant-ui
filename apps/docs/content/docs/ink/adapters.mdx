@@ -10,7 +10,7 @@ Adapters customize runtime behavior. They can be passed as options to `useLocalR
 A `RemoteThreadListAdapter` that persists threads and messages to a local directory. See [Custom Backend → Option 2](/docs/ink/custom-backend#option-2-local-file-persistence) for usage.
 
 ```ts
-import { createFileStorageAdapter } from "@assistant-ui/react-ink";
+import { createFileStorageAdapter } from "@hitchsoftware/assistant-ui-react-ink";
 
 const adapter = createFileStorageAdapter({
   dir: "/path/to/threads",
@@ -27,7 +27,7 @@ import {
   SimpleImageAttachmentAdapter,
   SimpleTextAttachmentAdapter,
   useLocalRuntime,
-} from "@assistant-ui/react-ink";
+} from "@hitchsoftware/assistant-ui-react-ink";
 
 const runtime = useLocalRuntime(chatModelAdapter, {
   adapters: {
@@ -55,7 +55,7 @@ type TitleGenerationAdapter = {
 import {
   createFileStorageAdapter,
   createSimpleTitleAdapter,
-} from "@assistant-ui/react-ink";
+} from "@hitchsoftware/assistant-ui-react-ink";
 
 const adapter = createFileStorageAdapter({
   dir: "/path/to/threads",
@@ -68,8 +68,8 @@ const adapter = createFileStorageAdapter({
 Title generation is configured via the `generateTitle` method on `RemoteThreadListAdapter`. See the [Custom Backend](/docs/ink/custom-backend) page for a full example.
 
 ```tsx
-import type { RemoteThreadListAdapter } from "@assistant-ui/react-ink";
-import { createAssistantStream } from "assistant-stream";
+import type { RemoteThreadListAdapter } from "@hitchsoftware/assistant-ui-react-ink";
+import { createAssistantStream } from "@hitchsoftware/assistant-stream";
 
 const myAdapter: RemoteThreadListAdapter = {
   // ... other methods ...

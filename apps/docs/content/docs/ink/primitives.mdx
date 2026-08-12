@@ -7,12 +7,12 @@ Primitives are thin wrappers around Ink components (`Box`, `Text`) that integrat
 
 Primitives use namespace imports, the same pattern as the web package (e.g. `ThreadPrimitive.Root`, `ComposerPrimitive.Input`).
 
-Many primitives share their core logic with `@assistant-ui/react` via `@assistant-ui/core/react` — only the UI layer (Ink vs DOM) differs.
+Many primitives share their core logic with `@hitchsoftware/assistant-ui-react` via `@hitchsoftware/assistant-ui-core/react` — only the UI layer (Ink vs DOM) differs.
 
 ## Thread
 
 ```tsx
-import { ThreadPrimitive } from "@assistant-ui/react-ink";
+import { ThreadPrimitive } from "@hitchsoftware/assistant-ui-react-ink";
 ```
 
 ### Root
@@ -48,7 +48,7 @@ Renders the message list with automatic runtime integration. Each message is wra
 Conditional rendering based on assistant state. Replaces the deprecated `ThreadPrimitive.Empty`, `ThreadPrimitive.If`, `MessagePrimitive.If`, and `ComposerPrimitive.If`.
 
 ```tsx
-import { AuiIf } from "@assistant-ui/react-ink";
+import { AuiIf } from "@hitchsoftware/assistant-ui-react-ink";
 
 <AuiIf condition={(s) => s.thread.isEmpty}>
   <Text dimColor>Send a message to get started</Text>
@@ -162,7 +162,7 @@ Renders a suggestion button. Uses Ink `Box` + `Text`.
 ## Loading
 
 ```tsx
-import { LoadingPrimitive } from "@assistant-ui/react-ink";
+import { LoadingPrimitive } from "@hitchsoftware/assistant-ui-react-ink";
 ```
 
 Composable loading UI for active runs. `LoadingPrimitive.Root` only renders
@@ -225,7 +225,7 @@ testing.
 ## Composer
 
 ```tsx
-import { ComposerPrimitive } from "@assistant-ui/react-ink";
+import { ComposerPrimitive } from "@hitchsoftware/assistant-ui-react-ink";
 ```
 
 ### Root
@@ -338,7 +338,7 @@ Triggers attachment addition.
 
 ### Queue
 
-Renders all queued composer items. Each item is wrapped in a `QueueItemByIndexProvider`, so `QueueItemPrimitive.*` can read item state and call queue actions inside the render prop. Backed by the shared `ComposerPrimitiveQueue` from `@assistant-ui/core/react`.
+Renders all queued composer items. Each item is wrapped in a `QueueItemByIndexProvider`, so `QueueItemPrimitive.*` can read item state and call queue actions inside the render prop. Backed by the shared `ComposerPrimitiveQueue` from `@hitchsoftware/assistant-ui-core/react`.
 
 ```tsx
 <ComposerPrimitive.Queue>
@@ -440,7 +440,7 @@ Low-level provider that sets up the attachment context for a specific attachment
   Deprecated. Use `AuiIf` instead.
 </Callout>
 
-Conditional rendering based on composer state. Shared from `@assistant-ui/core/react`.
+Conditional rendering based on composer state. Shared from `@hitchsoftware/assistant-ui-core/react`.
 
 ```tsx
 <ComposerPrimitive.If editing>
@@ -460,7 +460,7 @@ Conditional rendering based on composer state. Shared from `@assistant-ui/core/r
 ## Message
 
 ```tsx
-import { MessagePartPrimitive, MessagePrimitive } from "@assistant-ui/react-ink";
+import { MessagePartPrimitive, MessagePrimitive } from "@hitchsoftware/assistant-ui-react-ink";
 ```
 
 ### Root
@@ -642,7 +642,7 @@ Renders user message attachments using the provided component configuration.
 ## Attachment
 
 ```tsx
-import { AttachmentPrimitive } from "@assistant-ui/react-ink";
+import { AttachmentPrimitive } from "@hitchsoftware/assistant-ui-react-ink";
 ```
 
 Primitives for rendering individual attachments. Each primitive reads from the current attachment context (provided by `ComposerPrimitive.Attachments`, `ComposerPrimitive.AttachmentByIndex`, `MessagePrimitive.Attachments`, or `MessagePrimitive.AttachmentByIndex`).
@@ -706,7 +706,7 @@ Container `Box` for an attachment. Forwards all `Box` props.
 ## QueueItem
 
 ```tsx
-import { QueueItemPrimitive } from "@assistant-ui/react-ink";
+import { QueueItemPrimitive } from "@hitchsoftware/assistant-ui-react-ink";
 ```
 
 Primitives for rendering individual queued composer items. Use inside a `ComposerPrimitive.Queue` render prop, where the queue item context is set up by `QueueItemByIndexProvider`.
@@ -761,7 +761,7 @@ Remaining props are forwarded to the underlying `Pressable` (Ink `Box` props).
 ## ActionBar
 
 ```tsx
-import { ActionBarPrimitive } from "@assistant-ui/react-ink";
+import { ActionBarPrimitive } from "@hitchsoftware/assistant-ui-react-ink";
 ```
 
 ### Copy
@@ -823,7 +823,7 @@ Pressable buttons for submitting message feedback.
 ## BranchPicker
 
 ```tsx
-import { BranchPickerPrimitive } from "@assistant-ui/react-ink";
+import { BranchPickerPrimitive } from "@hitchsoftware/assistant-ui-react-ink";
 ```
 
 ### Previous / Next
@@ -851,7 +851,7 @@ Pressable buttons to navigate between message branches.
 ## ThreadList
 
 ```tsx
-import { ThreadListPrimitive } from "@assistant-ui/react-ink";
+import { ThreadListPrimitive } from "@hitchsoftware/assistant-ui-react-ink";
 ```
 
 ### Root
@@ -887,7 +887,7 @@ Pressable that creates a new thread.
 ## ThreadListItem
 
 ```tsx
-import { ThreadListItemPrimitive } from "@assistant-ui/react-ink";
+import { ThreadListItemPrimitive } from "@hitchsoftware/assistant-ui-react-ink";
 ```
 
 ### Root
@@ -896,7 +896,7 @@ Container `Box` for a thread list item.
 
 ### Title
 
-`Text` component displaying the thread list item title. Shared from `@assistant-ui/core/react`.
+`Text` component displaying the thread list item title. Shared from `@hitchsoftware/assistant-ui-core/react`.
 
 ### Trigger
 
@@ -924,7 +924,7 @@ Pressable buttons that archive or unarchive the thread.
 ## Suggestion
 
 ```tsx
-import { SuggestionPrimitive } from "@assistant-ui/react-ink";
+import { SuggestionPrimitive } from "@hitchsoftware/assistant-ui-react-ink";
 ```
 
 ### Title
@@ -953,7 +953,7 @@ Pressable that triggers the suggestion action.
 ## ChainOfThought
 
 ```tsx
-import { ChainOfThoughtPrimitive } from "@assistant-ui/react-ink";
+import { ChainOfThoughtPrimitive } from "@hitchsoftware/assistant-ui-react-ink";
 ```
 
 ### Root
@@ -966,7 +966,7 @@ Pressable that toggles the collapsed state of the chain of thought.
 
 ### Parts
 
-Renders the individual parts of a chain of thought using a provided components map. Shared from `@assistant-ui/core/react`.
+Renders the individual parts of a chain of thought using a provided components map. Shared from `@hitchsoftware/assistant-ui-core/react`.
 
 ```tsx
 <ChainOfThoughtPrimitive.Root>
@@ -982,7 +982,7 @@ Renders the individual parts of a chain of thought using a provided components m
 ## ToolCall
 
 ```tsx
-import { ToolCallPrimitive } from "@assistant-ui/react-ink";
+import { ToolCallPrimitive } from "@hitchsoftware/assistant-ui-react-ink";
 ```
 
 ### Fallback
@@ -1012,7 +1012,7 @@ A built-in component for rendering tool calls with expandable/collapsible output
 ## Diff
 
 ```tsx
-import { DiffPrimitive, DiffView } from "@assistant-ui/react-ink";
+import { DiffPrimitive, DiffView } from "@hitchsoftware/assistant-ui-react-ink";
 ```
 
 Components for rendering code diffs in the terminal.
@@ -1155,7 +1155,7 @@ For custom layouts, use the primitives directly:
 ## StatusBar
 
 ```tsx
-import { StatusBarPrimitive } from "@assistant-ui/react-ink";
+import { StatusBarPrimitive } from "@hitchsoftware/assistant-ui-react-ink";
 ```
 
 Primitives for rendering a compact terminal status bar showing run state, model, message count, token usage, and latency. All sub-components read directly from the active thread state.
@@ -1227,7 +1227,7 @@ Container `Box` for the status bar. Forwards all `Box` props; pass `gap` to spac
 ## TextInput
 
 ```tsx
-import { TextInput } from "@assistant-ui/react-ink";
+import { TextInput } from "@hitchsoftware/assistant-ui-react-ink";
 ```
 
 Store-free, controlled single/multi-line text field. Ink ships no native text input, so this is the terminal equivalent of the DOM `<textarea>` or React Native's `<TextInput>` — the editing engine (buffer, grapheme-aware cursor, and the full emacs/arrow keymap) without any runtime or composer coupling. `ComposerPrimitive.Input` is a thin adapter that wraps `TextInput` and binds it to the composer store; reach for `TextInput` directly when you need an editable field outside the thread composer (for example, editing a value before confirming an action).

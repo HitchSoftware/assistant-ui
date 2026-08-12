@@ -1,9 +1,9 @@
-import { withAui } from "@assistant-ui/next";
+import { withAui } from "@hitchsoftware/assistant-ui-next";
 import type { NextConfig } from "next";
 import { withEve } from "eve/next";
 
 const nextConfig: NextConfig = {
-  transpilePackages: ["@assistant-ui/eve", "@assistant-ui/react"],
+  transpilePackages: ["@hitchsoftware/assistant-ui-eve", "@hitchsoftware/assistant-ui-react"],
 };
 
 export default withEve(withAui(nextConfig));

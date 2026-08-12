@@ -1,4 +1,4 @@
-import type { ToolResponse } from "assistant-stream";
+import type { ToolResponse } from "@hitchsoftware/assistant-stream";
 import type {
   ThreadUserMessagePart,
   ThreadAssistantMessagePart,

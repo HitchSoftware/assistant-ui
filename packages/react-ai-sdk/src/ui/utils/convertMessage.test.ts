@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   getPartialJsonObjectFieldState,
   type ReadonlyJSONObject,
-} from "assistant-stream/utils";
+} from "@hitchsoftware/assistant-stream/utils";
 import {
   AISDKMessageConverter,
   type AISDKMessageConverterMetadata,

@@ -3,7 +3,7 @@
 import type { FC, ReactNode } from "react";
 import { cleanup, render } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
-import { resource, withKey } from "@assistant-ui/tap";
+import { resource, withKey } from "@hitchsoftware/assistant-ui-tap";
 import { AuiProvider } from "../AuiProvider";
 import { useAui } from "../useAui";
 import { useAuiState } from "../useAuiState";

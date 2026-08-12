@@ -21,7 +21,7 @@ import {
   SquareTerminal,
   Loader2,
 } from "lucide-react";
-import { ThreadListPrimitive } from "@assistant-ui/react";
+import { ThreadListPrimitive } from "@hitchsoftware/assistant-ui-react";
 import { BuilderControls } from "@/components/builder/builder-controls";
 import { BuilderPreview } from "@/components/builder/builder-preview";
 import { BuilderCodeOutput } from "@/components/builder/builder-code-output";

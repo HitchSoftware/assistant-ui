@@ -3,7 +3,7 @@ title: Data Stream Protocol
 description: Standard message-streaming protocol on top of LocalRuntime.
 ---
 
-`@assistant-ui/react-data-stream` consumes the data stream protocol, a standardized format for streaming AI responses. It is layered on `LocalRuntime` (see [architecture](/docs/runtimes/concepts/architecture)), so all `LocalRuntime` features apply.
+`@hitchsoftware/assistant-ui-react-data-stream` consumes the data stream protocol, a standardized format for streaming AI responses. It is layered on `LocalRuntime` (see [architecture](/docs/runtimes/concepts/architecture)), so all `LocalRuntime` features apply.
 
 The protocol supports streaming text, tool calls, conversation context, error handling, cancellation, and attachments.
 
@@ -36,17 +36,17 @@ expose the response marker.
 <PlatformTabs>
 <Tab value="React">
 
-<InstallCommand npm={["@assistant-ui/react", "@assistant-ui/react-data-stream"]} />
+<InstallCommand npm={["@hitchsoftware/assistant-ui-react", "@hitchsoftware/assistant-ui-react-data-stream"]} />
 
 </Tab>
 <Tab value="React Native">
 
-<InstallCommand expo={["@assistant-ui/react-native", "@assistant-ui/react-data-stream"]} />
+<InstallCommand expo={["@hitchsoftware/assistant-ui-react-native", "@hitchsoftware/assistant-ui-react-data-stream"]} />
 
 </Tab>
 <Tab value="React Ink">
 
-<InstallCommand npm={["@assistant-ui/react-ink", "@assistant-ui/react-data-stream", "ink", "react"]} />
+<InstallCommand npm={["@hitchsoftware/assistant-ui-react-ink", "@hitchsoftware/assistant-ui-react-data-stream", "ink", "react"]} />
 
 </Tab>
 </PlatformTabs>
@@ -64,8 +64,8 @@ expose the response marker.
 ```tsx title="app/page.tsx"
 "use client";
 
-import { useDataStreamRuntime } from "@assistant-ui/react-data-stream";
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
+import { useDataStreamRuntime } from "@hitchsoftware/assistant-ui-react-data-stream";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
 import { Thread } from "@/components/assistant-ui/thread";
 
 export default function ChatPage() {
@@ -82,8 +82,8 @@ export default function ChatPage() {
 <Tab value="React Native">
 
 ```tsx title="app/index.tsx"
-import { useDataStreamRuntime } from "@assistant-ui/react-data-stream";
-import { AssistantRuntimeProvider } from "@assistant-ui/react-native";
+import { useDataStreamRuntime } from "@hitchsoftware/assistant-ui-react-data-stream";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react-native";
 import { View } from "react-native";
 import { Thread } from "@/components/assistant-ui/thread";
 
@@ -105,8 +105,8 @@ export default function ChatPage() {
 <Tab value="React Ink">
 
 ```tsx title="app.tsx"
-import { useDataStreamRuntime } from "@assistant-ui/react-data-stream";
-import { AssistantRuntimeProvider } from "@assistant-ui/react-ink";
+import { useDataStreamRuntime } from "@hitchsoftware/assistant-ui-react-data-stream";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react-ink";
 import { Box } from "ink";
 import { Thread } from "./components/thread.js";
 
@@ -137,7 +137,7 @@ For React Native and Ink, host this endpoint in a separate backend project and
 point the client runtime at its absolute URL.
 
 ```ts title="app/api/chat/route.ts"
-import { createAssistantStreamResponse } from "assistant-stream";
+import { createAssistantStreamResponse } from "@hitchsoftware/assistant-stream";
 
 export async function POST(request: Request) {
   const { messages, tools, system, threadId } = await request.json();
@@ -207,8 +207,8 @@ Human-in-the-loop tools (`unstable_humanToolNames`, `human()` interrupts) are no
 Serialize client-side tools with `toToolsJSONSchema`:
 
 ```tsx
-import { tool } from "@assistant-ui/react";
-import { toToolsJSONSchema } from "assistant-stream";
+import { tool } from "@hitchsoftware/assistant-ui-react";
+import { toToolsJSONSchema } from "@hitchsoftware/assistant-stream";
 
 const myTools = {
   get_weather: tool({
@@ -241,7 +241,7 @@ Tool results stream back automatically.
 ### Generic (recommended)
 
 ```tsx
-import { toGenericMessages, toToolsJSONSchema } from "assistant-stream";
+import { toGenericMessages, toToolsJSONSchema } from "@hitchsoftware/assistant-stream";
 
 const genericMessages = toGenericMessages(messages);
 const toolSchemas = toToolsJSONSchema(tools);
@@ -252,7 +252,7 @@ const toolSchemas = toToolsJSONSchema(tools);
 ### AI SDK specific
 
 ```tsx
-import { toLanguageModelMessages } from "@assistant-ui/react-data-stream";
+import { toLanguageModelMessages } from "@hitchsoftware/assistant-ui-react-data-stream";
 
 const languageModelMessages = toLanguageModelMessages(messages, {
   unstable_includeId: true,
@@ -264,7 +264,7 @@ const languageModelMessages = toLanguageModelMessages(messages, {
 ## Assistant Cloud integration
 
 ```tsx
-import { useCloudRuntime } from "@assistant-ui/react-data-stream";
+import { useCloudRuntime } from "@hitchsoftware/assistant-ui-react-data-stream";
 
 const runtime = useCloudRuntime({
   cloud: assistantCloud,
@@ -316,7 +316,7 @@ The runtime handles common error scenarios automatically:
 
 ## API reference
 
-For the full hook reference, see [`@assistant-ui/react-data-stream` API](/docs/api-reference/integrations/react-data-stream).
+For the full hook reference, see [`@hitchsoftware/assistant-ui-react-data-stream` API](/docs/api-reference/integrations/react-data-stream).
 
 ## Related
 

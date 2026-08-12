@@ -1,2 +1,2 @@
-export type { MessagePartState, MessagePartRuntime } from "@assistant-ui/core";
-export { MessagePartRuntimeImpl } from "@assistant-ui/core/internal";
+export type { MessagePartState, MessagePartRuntime } from "@hitchsoftware/assistant-ui-core";
+export { MessagePartRuntimeImpl } from "@hitchsoftware/assistant-ui-core/internal";

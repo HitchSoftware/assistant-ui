@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^4.0.34",
-    "@assistant-ui/cloud-ai-sdk": "workspace:*",
+    "@hitchsoftware/assistant-ui-cloud-ai-sdk": "workspace:*",
     "ai": "^7.0.56",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -21,8 +21,8 @@
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
-    "@assistant-ui/next": "workspace:*",
-    "@assistant-ui/x-buildutils": "workspace:*",
+    "@hitchsoftware/assistant-ui-next": "workspace:*",
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^26.1.2",
     "@types/react": "^19.2.18",

@@ -1,1 +1,1 @@
-export { shouldContinue } from "@assistant-ui/core/internal";
+export { shouldContinue } from "@hitchsoftware/assistant-ui-core/internal";

@@ -28,7 +28,7 @@ import {
   useId,
 } from "react";
 import { create } from "zustand";
-import { AssistantMessageStream } from "assistant-stream";
+import { AssistantMessageStream } from "@hitchsoftware/assistant-stream";
 import type { ModelContextProvider } from "../../model-context/types";
 import { RuntimeAdapterProvider } from "./RuntimeAdapterProvider";
 

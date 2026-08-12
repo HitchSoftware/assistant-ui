@@ -2,12 +2,12 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { ChevronRightIcon } from "lucide-react";
-import { useAui, AuiProvider, useAuiState, AuiIf } from "@assistant-ui/store";
+import { useAui, AuiProvider, useAuiState, AuiIf } from "@hitchsoftware/assistant-ui-store";
 import {
   SpanPrimitive,
   SpanResource,
   type SpanData,
-} from "@assistant-ui/react-o11y";
+} from "@hitchsoftware/assistant-ui-react-o11y";
 import { ClientOnly } from "./client-only";
 
 function SpanLatency() {

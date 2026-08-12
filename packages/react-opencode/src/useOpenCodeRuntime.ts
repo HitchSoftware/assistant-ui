@@ -6,12 +6,12 @@ import {
   useAuiState,
   useExternalStoreRuntime,
   useRemoteThreadListRuntime,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import type {
   AppendMessage,
   AssistantRuntime,
   ThreadMessage,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { createOpencodeClient } from "@opencode-ai/sdk/v2/client";
 import { useEffect, useEffectEvent, useMemo } from "react";
 import type {

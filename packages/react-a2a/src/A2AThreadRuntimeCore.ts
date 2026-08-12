@@ -1,6 +1,6 @@
 "use client";
 
-import { generateId, fromThreadMessageLike } from "@assistant-ui/core";
+import { generateId, fromThreadMessageLike } from "@hitchsoftware/assistant-ui-core";
 import type {
   AppendMessage,
   AssistantRuntime,
@@ -9,8 +9,8 @@ import type {
   ThreadAssistantMessage,
   ThreadHistoryAdapter,
   ThreadMessage,
-} from "@assistant-ui/core";
-import { MessageRepository } from "@assistant-ui/core/internal";
+} from "@hitchsoftware/assistant-ui-core";
+import { MessageRepository } from "@hitchsoftware/assistant-ui-core/internal";
 import type { A2AClient } from "./A2AClient";
 import type {
   A2AArtifact,

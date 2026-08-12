@@ -2,14 +2,14 @@ import type { Unsubscribe } from "../../types/unsubscribe";
 import type { ThreadRuntimeEventType } from "../../runtime/interfaces/thread-runtime-core";
 import type { ThreadRuntime } from "../../runtime/api/thread-runtime";
 import { useMemo, useEffect, type RefObject } from "react";
-import { useResource, resource, withKey } from "@assistant-ui/tap";
+import { useResource, resource, withKey } from "@hitchsoftware/assistant-ui-tap";
 import { liveRef } from "./liveRef";
-import type { ClientOutput } from "@assistant-ui/store";
+import type { ClientOutput } from "@hitchsoftware/assistant-ui-store";
 import {
   useAssistantEmit,
   useClientLookup,
   useClientResource,
-} from "@assistant-ui/store/client";
+} from "@hitchsoftware/assistant-ui-store/client";
 import { ComposerClient } from "./composer-runtime-client";
 import { MessageClient } from "./message-runtime-client";
 import { ThreadSuggestions } from "../clients/suggestions";

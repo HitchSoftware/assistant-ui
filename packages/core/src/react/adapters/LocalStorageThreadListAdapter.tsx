@@ -1,4 +1,4 @@
-import { type AssistantStream, createAssistantStream } from "assistant-stream";
+import { type AssistantStream, createAssistantStream } from "@hitchsoftware/assistant-stream";
 import {
   type FC,
   type PropsWithChildren,
@@ -7,7 +7,7 @@ import {
   useRef,
   useState,
 } from "react";
-import { useAui } from "@assistant-ui/store";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 import type {
   RemoteThreadInitializeResponse,
   RemoteThreadListAdapter,

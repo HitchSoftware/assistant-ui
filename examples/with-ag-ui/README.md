@@ -42,7 +42,7 @@ pnpm dev
 
 ## Features
 
-- AG-UI protocol integration via `@assistant-ui/react-ag-ui`
+- AG-UI protocol integration via `@hitchsoftware/assistant-ui-react-ag-ui`
 - Multi-thread support with "New Thread" button
 - Custom browser alert tool demonstration
 - Client-side tool execution

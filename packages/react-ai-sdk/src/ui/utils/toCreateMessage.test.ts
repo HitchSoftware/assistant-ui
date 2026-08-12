@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { AppendMessage } from "@assistant-ui/core";
+import type { AppendMessage } from "@hitchsoftware/assistant-ui-core";
 import { toCreateMessage } from "./toCreateMessage";
 
 const baseMessage = {

@@ -7,11 +7,11 @@ import {
   AssistantRuntimeProvider,
   StatusBarPrimitive,
   useAui,
-} from "@assistant-ui/react-ink";
+} from "@hitchsoftware/assistant-ui-react-ink";
 import {
   useChatRuntime,
   AssistantChatTransport,
-} from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { lastAssistantMessageIsCompleteWithToolCalls } from "ai";
 import { Thread } from "./thread";
 

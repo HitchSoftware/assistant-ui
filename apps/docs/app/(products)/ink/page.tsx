@@ -30,7 +30,7 @@ const FEATURES = [
   {
     title: "Markdown in the Terminal",
     description:
-      "Rich markdown rendering with syntax highlighting, tables, and links — all rendered as ANSI output via @assistant-ui/react-ink-markdown.",
+      "Rich markdown rendering with syntax highlighting, tables, and links — all rendered as ANSI output via @hitchsoftware/assistant-ui-react-ink-markdown.",
     icon: Zap,
     iconColor: "text-yellow-400",
   },

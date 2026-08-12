@@ -4,7 +4,7 @@ import {
   ThreadListPrimitive,
   ThreadListItemByIndexProvider,
   useAui,
-} from "@assistant-ui/react-native";
+} from "@hitchsoftware/assistant-ui-react-native";
 import type { DrawerContentComponentProps } from "expo-router/build/react-navigation/drawer/types";
 import { ThreadListItem } from "./ThreadListItem";
 import { Icon } from "@/components/ui/icon";

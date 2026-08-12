@@ -1,6 +1,6 @@
 "use client";
 
-import { useMessagePartText, useSmooth } from "@assistant-ui/react";
+import { useMessagePartText, useSmooth } from "@hitchsoftware/assistant-ui-react";
 import { harden } from "rehype-harden";
 import rehypeRaw from "rehype-raw";
 import rehypeSanitize, {

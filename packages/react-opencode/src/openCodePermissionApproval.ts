@@ -1,7 +1,7 @@
 import type {
   RespondToToolApprovalOptions,
   ToolCallMessagePart,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import type {
   OpenCodePermissionRequest,
   OpenCodePermissionResponse,

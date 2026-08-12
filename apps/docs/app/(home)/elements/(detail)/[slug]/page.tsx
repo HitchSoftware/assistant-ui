@@ -22,7 +22,7 @@ import {
 } from "@/components/elements/registry";
 import { getGenerativeElement } from "@/lib/generative-elements";
 
-const GENERATIVE_USAGE = `import { renderGenerativeUI } from "@assistant-ui/react-generative-ui";
+const GENERATIVE_USAGE = `import { renderGenerativeUI } from "@hitchsoftware/assistant-ui-react-generative-ui";
 
 <div data-aui-theme="elements">
   {renderGenerativeUI(spec, library, { status: "done" })}
@@ -147,7 +147,7 @@ export default async function ElementPage({
 
       <section className="mt-12">
         {element.generative ? (
-          <InstallCommand npmPackage="@assistant-ui/react-generative-ui" />
+          <InstallCommand npmPackage="@hitchsoftware/assistant-ui-react-generative-ui" />
         ) : (
           <InstallCommand registryName={registryName} />
         )}

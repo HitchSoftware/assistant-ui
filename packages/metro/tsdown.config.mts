@@ -11,7 +11,7 @@ export default defineConfig({
   dts: { sourcemap: true },
   sourcemap: true,
   deps: {
-    alwaysBundle: ["@assistant-ui/x-generative-compiler"],
+    alwaysBundle: ["@hitchsoftware/assistant-ui-x-generative-compiler"],
     neverBundle: [/^@babel\//],
   },
 });

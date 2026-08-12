@@ -8,7 +8,7 @@ import {
   useAui,
   useAuiState,
   type AssistantClient,
-} from "@assistant-ui/store";
+} from "@hitchsoftware/assistant-ui-store";
 import type { ThreadSuggestion } from "../../runtime/interfaces/thread-runtime-core";
 import { Suggestions } from "../../store/clients/suggestions";
 import { AssistantRuntimeProvider } from "../AssistantRuntimeProvider";

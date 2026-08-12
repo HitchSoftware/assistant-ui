@@ -1,7 +1,7 @@
 "use client";
 
 import { Thread } from "@/components/assistant-ui/thread";
-import { useAuiState } from "@assistant-ui/react";
+import { useAuiState } from "@hitchsoftware/assistant-ui-react";
 
 export default function Home() {
   const isEmpty = useAuiState((s) => s.threads.main.isEmpty);

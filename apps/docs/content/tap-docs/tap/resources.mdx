@@ -15,7 +15,7 @@ Resource is rendered.
 Start with an ordinary Hook, then pass it to `resource()`:
 
 ```ts
-import { resource } from "@assistant-ui/tap";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
 import { useState } from "react";
 
 const useCounter = (props: { initialValue?: number }) => {
@@ -47,7 +47,7 @@ Because a configured Resource is a value, an application can choose, pass, and
 nest it before any state is created:
 
 ```tsx
-import { useResource, type ResourceElement } from "@assistant-ui/tap";
+import { useResource, type ResourceElement } from "@hitchsoftware/assistant-ui-tap";
 
 type CounterState = ReturnType<typeof useCounter>;
 
@@ -73,7 +73,7 @@ Use `useResource` to render a single Resource, or
 of Resources.
 
 ```tsx
-import { useResource } from "@assistant-ui/tap";
+import { useResource } from "@hitchsoftware/assistant-ui-tap";
 
 function CounterButton() {
   const { count, increment } = useResource(Counter({ initialValue: 10 }));

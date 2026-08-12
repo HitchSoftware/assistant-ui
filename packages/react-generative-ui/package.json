@@ -1,5 +1,5 @@
 {
-  "name": "@assistant-ui/react-generative-ui",
+  "name": "@hitchsoftware/assistant-ui-react-generative-ui",
   "version": "0.0.14",
   "description": "Generative UI components for assistant-ui",
   "keywords": [
@@ -55,10 +55,10 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "assistant-stream": "^0.3.37"
+    "@hitchsoftware/assistant-stream": "^0.3.37"
   },
   "peerDependencies": {
-    "@assistant-ui/react": "^0.15.0",
+    "@hitchsoftware/assistant-ui-react": "^0.15.0",
     "@types/react": "*",
     "react": "^18 || ^19",
     "zod": "^4.0.0"
@@ -69,8 +69,8 @@
     }
   },
   "devDependencies": {
-    "@assistant-ui/react": "workspace:*",
-    "@assistant-ui/x-buildutils": "workspace:*",
+    "@hitchsoftware/assistant-ui-react": "workspace:*",
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
     "@types/json-schema": "^7.0.15",
     "@types/react": "^19.2.18",
     "react": "^19.2.8",
@@ -79,8 +79,8 @@
     "zod": "^4.4.3"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://www.assistant-ui.com/",
   "repository": {

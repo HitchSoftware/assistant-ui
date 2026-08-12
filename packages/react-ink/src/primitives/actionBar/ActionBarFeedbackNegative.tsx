@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { useActionBarFeedbackNegative } from "@assistant-ui/core/react";
+import { useActionBarFeedbackNegative } from "@hitchsoftware/assistant-ui-core/react";
 import { Pressable, type PressableProps } from "../internal/Pressable";
 
 export type ActionBarFeedbackNegativeProps = Omit<

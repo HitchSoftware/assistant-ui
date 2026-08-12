@@ -7,7 +7,7 @@ import {
   ErrorPrimitive,
   MessagePrimitive,
   type ToolCallMessagePartProps,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   BookOpenIcon,
   CheckIcon,

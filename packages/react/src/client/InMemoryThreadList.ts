@@ -1,16 +1,16 @@
 import { useState, useMemo } from "react";
-import { resource, withKey, type ResourceElement } from "@assistant-ui/tap";
+import { resource, withKey, type ResourceElement } from "@hitchsoftware/assistant-ui-tap";
 import {
   type ClientOutput,
   useClientLookup,
   Derived,
   attachTransformScopes,
   useClientResource,
-} from "@assistant-ui/store";
-import { generateId } from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-store";
+import { generateId } from "@hitchsoftware/assistant-ui-core";
 
-import { ModelContext } from "@assistant-ui/core/store";
-import { Tools, DataRenderers } from "@assistant-ui/core/react";
+import { ModelContext } from "@hitchsoftware/assistant-ui-core/store";
+import { Tools, DataRenderers } from "@hitchsoftware/assistant-ui-core/react";
 
 const RESOLVED_PROMISE = Promise.resolve();
 

@@ -18,7 +18,7 @@ The Message primitive handles individual message rendering: content parts, attac
 import {
   MessagePrimitive,
   MessagePartPrimitive,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 function UserMessage() {
   return (
@@ -77,7 +77,7 @@ function AssistantText() {
 A minimal message with parts rendering:
 
 ```tsx
-import { MessagePrimitive } from "@assistant-ui/react";
+import { MessagePrimitive } from "@hitchsoftware/assistant-ui-react";
 
 <MessagePrimitive.Root>
   <MessagePrimitive.Parts />
@@ -285,7 +285,7 @@ Renders each content part with type-based component resolution.
 Groups adjacent message parts into a nested tree. Use `groupBy` to map each part to a group-key path, then switch on `part.type` in the render function. Group cases render `children`; leaf cases render their own UI. Prefer the `groupPartByType` helper for the common `part.type → path` case.
 
 ```tsx
-import { MessagePrimitive, groupPartByType } from "@assistant-ui/react";
+import { MessagePrimitive, groupPartByType } from "@hitchsoftware/assistant-ui-react";
 
 <MessagePrimitive.GroupedParts
   groupBy={groupPartByType({
@@ -512,7 +512,7 @@ function MarkdownText() {
 For more control over error rendering, `ErrorPrimitive` provides a dedicated component that auto-reads the error string from the message status:
 
 ```tsx
-import { ErrorPrimitive, MessagePrimitive } from "@assistant-ui/react";
+import { ErrorPrimitive, MessagePrimitive } from "@hitchsoftware/assistant-ui-react";
 
 <MessagePrimitive.Root>
   <MessagePrimitive.Parts />
@@ -529,7 +529,7 @@ import { ErrorPrimitive, MessagePrimitive } from "@assistant-ui/react";
 To render content only once the assistant message has finished streaming (a follow-up card, a feedback prompt, a generated component that should not flicker through partial states), gate it with [`AuiIf`](/docs/api-reference/primitives/assistant-if) on `s.message.status`:
 
 ```tsx
-import { MessagePrimitive, AuiIf } from "@assistant-ui/react";
+import { MessagePrimitive, AuiIf } from "@hitchsoftware/assistant-ui-react";
 
 <MessagePrimitive.Root>
   <MessagePrimitive.Parts />

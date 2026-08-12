@@ -40,7 +40,7 @@ A `"use generative"` file is a single module that holds a tool's schema, its exe
 The directive does nothing without a compiler. Wrap your Next.js config with `withAui`:
 
 ```ts title="next.config.ts"
-import { withAui } from "@assistant-ui/next";
+import { withAui } from "@hitchsoftware/assistant-ui-next";
 
 export default withAui({
   /* ...your Next config... */
@@ -50,7 +50,7 @@ export default withAui({
 For Vite / TanStack Start, add the `aui()` plugin instead:
 
 ```ts title="vite.config.ts"
-import { aui } from "@assistant-ui/vite";
+import { aui } from "@hitchsoftware/assistant-ui-vite";
 
 export default defineConfig({
   plugins: [aui()],
@@ -61,7 +61,7 @@ For Expo, wrap your Metro config with `withAui`:
 
 ```js title="metro.config.js"
 const { getDefaultConfig } = require("expo/metro-config");
-const { withAui } = require("@assistant-ui/metro");
+const { withAui } = require("@hitchsoftware/assistant-ui-metro");
 
 module.exports = withAui(getDefaultConfig(__dirname));
 ```
@@ -78,7 +78,7 @@ The file's first line is `"use generative"`, and its default export is `defineTo
 ```tsx title="app/toolkit.tsx"
 "use generative";
 
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import { z } from "zod";
 
 export default defineToolkit({
@@ -120,8 +120,8 @@ Import the toolkit in your runtime provider and pass it to `config` via `Tools`:
 ```tsx title="app/MyRuntimeProvider.tsx"
 "use client";
 
-import { AssistantRuntimeProvider, AuiConfig, Tools } from "@assistant-ui/react";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+import { AssistantRuntimeProvider, AuiConfig, Tools } from "@hitchsoftware/assistant-ui-react";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import toolkit from "./toolkit";
 
 export function MyRuntimeProvider({ children }: { children: React.ReactNode }) {
@@ -148,7 +148,7 @@ export function MyRuntimeProvider({ children }: { children: React.ReactNode }) {
 The same import resolves to the **server build** inside a route handler. Wrap it in an `AISDKToolkit` so the model is configured with every tool's schema:
 
 ```ts title="app/api/chat/route.ts"
-import { AISDKToolkit } from "@assistant-ui/react-ai-sdk";
+import { AISDKToolkit } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { streamText, convertToModelMessages } from "ai";
 import { openai } from "@ai-sdk/openai";
 import toolkit from "../../toolkit";
@@ -257,7 +257,7 @@ select_date: {
 },
 ```
 
-`humanTool` is imported from `@assistant-ui/react`. See [Tool UI → Human-in-the-loop](/docs/tools/tool-ui#user-input-collection) for the full pattern.
+`humanTool` is imported from `@hitchsoftware/assistant-ui-react`. See [Tool UI → Human-in-the-loop](/docs/tools/tool-ui#user-input-collection) for the full pattern.
 
 ### Provider tools
 
@@ -277,7 +277,7 @@ web_search: {
 Use `externalTool()` when a non-MCP tool is already defined and executed by
 another system (for example a separate backend route or LangGraph node), but you
 want assistant-ui to render its tool calls. Import `externalTool` from
-`@assistant-ui/react`:
+`@hitchsoftware/assistant-ui-react`:
 
 ```tsx
 web_search: {
@@ -301,7 +301,7 @@ Sometimes a tool's executor can't live in the build-split `"use generative"` fil
 ```tsx title="app/toolkit.tsx"
 "use generative";
 
-import { defineToolkit, stubTool } from "@assistant-ui/react";
+import { defineToolkit, stubTool } from "@hitchsoftware/assistant-ui-react";
 import { manageTasksParameters } from "./state";
 
 export default defineToolkit({
@@ -315,7 +315,7 @@ export default defineToolkit({
 ```
 
 ```tsx title="app/TaskBoard.tsx"
-import { useAuiToolOverrides } from "@assistant-ui/react";
+import { useAuiToolOverrides } from "@hitchsoftware/assistant-ui-react";
 
 function TaskBoardToolOverrides({ setTasks }) {
   useAuiToolOverrides({
@@ -358,7 +358,7 @@ compiler, declare a `"use client"` toolkit object with an explicit
 ```tsx title="app/tool-ui.tsx"
 "use client";
 
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 
 export const toolkit = defineToolkit({
   web_search: {
@@ -398,7 +398,7 @@ Each file you split into is its own `"use generative"` module that default-expor
 ```tsx title="app/tools/weather.tsx"
 "use generative";
 
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 
 export default defineToolkit({
   get_weather: {
@@ -412,7 +412,7 @@ Merge them by spreading their default imports into a parent toolkit:
 ```tsx title="app/toolkit.tsx"
 "use generative";
 
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import weatherTools from "./tools/weather";
 import databaseTools from "./tools/database";
 
@@ -443,7 +443,7 @@ instead.
 ```tsx title="app/mcp-toolkit.tsx"
 "use generative";
 
-import { defineMcpToolkit } from "@assistant-ui/react";
+import { defineMcpToolkit } from "@hitchsoftware/assistant-ui-react";
 
 export default defineMcpToolkit({
   docs: { type: "http", url: "https://mcp.example.com/mcp" },
@@ -455,7 +455,7 @@ To expose MCP tools alongside your own, spread it into a `defineToolkit`:
 ```tsx
 "use generative";
 
-import { defineToolkit, defineMcpToolkit } from "@assistant-ui/react";
+import { defineToolkit, defineMcpToolkit } from "@hitchsoftware/assistant-ui-react";
 
 export default defineToolkit({
   ...defineMcpToolkit({
@@ -538,7 +538,7 @@ Set `disabled: true` to keep a tool known to the client but hidden from the mode
 To toggle a tool off at runtime without editing the toolkit, register the same flag through `useAuiToolOverrides`:
 
 ```tsx
-import { useAuiToolOverrides } from "@assistant-ui/react";
+import { useAuiToolOverrides } from "@hitchsoftware/assistant-ui-react";
 
 function GuestModeTools() {
   useAuiToolOverrides({

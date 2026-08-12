@@ -1,5 +1,5 @@
 import type { FC, PropsWithChildren } from "react";
-import { useAuiState } from "@assistant-ui/store";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 
 type ComposerIfFilters = {
   /** Whether the composer is in editing mode */

@@ -1,8 +1,8 @@
 import "../o11y-scope";
 
 import { useMemo, useState } from "react";
-import { resource, withKey } from "@assistant-ui/tap";
-import { useClientLookup, type ClientOutput } from "@assistant-ui/store";
+import { resource, withKey } from "@hitchsoftware/assistant-ui-tap";
+import { useClientLookup, type ClientOutput } from "@hitchsoftware/assistant-ui-store";
 import type { SpanItemState, SpanState } from "../o11y-scope";
 
 export type SpanData = {

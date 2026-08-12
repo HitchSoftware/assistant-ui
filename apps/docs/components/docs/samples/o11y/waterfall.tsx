@@ -1,7 +1,7 @@
 "use client";
 
-import { useAui, AuiProvider } from "@assistant-ui/store";
-import { SpanResource } from "@assistant-ui/react-o11y";
+import { useAui, AuiProvider } from "@hitchsoftware/assistant-ui-store";
+import { SpanResource } from "@hitchsoftware/assistant-ui-react-o11y";
 import { mockSpans } from "./mock-spans";
 import { WaterfallTimeline } from "./waterfall-timeline";
 import { ClientOnly } from "./client-only";

@@ -31,7 +31,7 @@ throw a descriptive error whenever they are called.
 
 {/* api-example:useAui:start */}
 ```tsx
-import { useAui } from "@assistant-ui/react";
+import { useAui } from "@hitchsoftware/assistant-ui-react";
 
 const aui = useAui();
 
@@ -56,7 +56,7 @@ need to memoize it.
 
 {/* api-example:useAuiEvent:start */}
 ```tsx
-import { useAuiEvent } from "@assistant-ui/react";
+import { useAuiEvent } from "@hitchsoftware/assistant-ui-react";
 
 useAuiEvent("thread.modelContextUpdate", ({ threadId }) => {
   console.log("Model context updated", threadId);
@@ -85,7 +85,7 @@ which resolves to `undefined` instead of throwing.
 
 {/* api-example:useAuiState:start */}
 ```tsx
-import { useAuiState } from "@assistant-ui/react";
+import { useAuiState } from "@hitchsoftware/assistant-ui-react";
 
 const messages = useAuiState((s) => s.thread.messages);
 const isRunning = useAuiState((s) => s.thread.isRunning);

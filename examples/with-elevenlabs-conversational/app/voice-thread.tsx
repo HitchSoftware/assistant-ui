@@ -16,7 +16,7 @@ import {
   useAuiState,
   useVoiceState,
   useVoiceVolume,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { ArrowDownIcon } from "lucide-react";
 import type { FC } from "react";
 

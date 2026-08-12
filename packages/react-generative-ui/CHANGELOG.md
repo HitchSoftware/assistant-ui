@@ -1,4 +1,4 @@
-# @assistant-ui/react-generative-ui
+# @hitchsoftware/assistant-ui-react-generative-ui
 
 ## 0.0.14
 
@@ -58,7 +58,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`9a7e776`](https://github.com/assistant-ui/assistant-ui/commit/9a7e77603d59b5e091ee922e2e087f0101679321), [`f78e579`](https://github.com/assistant-ui/assistant-ui/commit/f78e5794d8d9d2f1c815485cb39a56f1072ed795), [`2f5d0d4`](https://github.com/assistant-ui/assistant-ui/commit/2f5d0d441caf6a152bf4eef13566a2f9a161541c)]:
-  - @assistant-ui/react@0.15.0
+  - @hitchsoftware/assistant-ui-react@0.15.0
   - assistant-stream@0.3.29
 
 ## 0.0.9
@@ -124,7 +124,7 @@
 
 - [#4605](https://github.com/assistant-ui/assistant-ui/pull/4605) [`d592c85`](https://github.com/assistant-ui/assistant-ui/commit/d592c854d5fb2771d457167f9fa3542958678474) - add the react-free `./ir` subpath carrying the flat `$type` generative-ui IR: `UINode`, `UIElement`, `LegacyComponentNode`, `Action`, `UISpec`, the canonical `NormalizedUINode`/`NormalizedUIElement`, and `normalizeUINode`/`normalizeSpec`. `normalizeUINode` accepts the flat `$type` shape and the legacy `component` shape, strips the reserved `$`-prefixed keys (`$type`, `$key`, `$action`) and `children` from the component prop bag, and threads a streaming `partialPath` so a node whose `$type` is still mid-arrival is held back. the package's existing generative-ui types are rebased onto `./ir`: `GenerativeUIElement` is now an alias of `NormalizedUIElement` (with `children` lifted to a reserved top-level key instead of living in `props`), `GenerativeUINode`/`GenerativeUIProps`/`GenerativeUIAction` alias the `./ir` types, and `renderGenerativeUI` consumes `NormalizedUINode` directly. the wire format is unchanged (`$type` already shipped); the `GenerativeUI*` export names are kept so the surface stays append-only. the ui token enums (`TextSize`/`Color`/`Align`/...) are deferred to the PR that introduces the closed vocabulary that consumes them, so this PR's surface is only what the renderer uses. core is not touched. ([@okisdev](https://github.com/okisdev))
 
-- [#4607](https://github.com/assistant-ui/assistant-ui/pull/4607) [`8a2b9cb`](https://github.com/assistant-ui/assistant-ui/commit/8a2b9cb7dead677aa802335132bc588a03998896) - add the closed generative-ui vocabulary as a published default `GenerativeUILibrary` (`defaultGenerativeUILibrary`) plus the ui token enums (`TextSize`, `ImageSize`, `Weight`, `Color`, `Align`, `Justify`, `ButtonStyle`, `AlertTone`) that PR [#4605](https://github.com/assistant-ui/assistant-ui/issues/4605) deferred. the vocabulary covers the portable core (`Header`, `Text`, `Caption`, `Fact`, `Image`, `Divider`, `Button`, `Select`, `Input`, `DatePicker`, `Alert`, `Carousel`), layout (`Card`, `Col`, `Row`, `Spacer`, `Badge`), and data (`Table`, `Markdown`, `Chart`) — 20 components total. each component is a zod `properties` schema plus an unstyled structural `render` that emits semantic HTML with a `data-aui="<component>"` attribute and `data-aui-<prop>` hooks for the host to style (no tailwind, no `@assistant-ui/ui` dependency). `Text`/`Caption`/`Markdown` opt into `streamProperties` so they render partial content while streaming. interactive components (`Button`/`Select`/`Input`/`DatePicker`) carry `$action`, now re-injected into `render` props and stashed on a `data-aui-action` attribute; dispatch is a follow-up. users opt in via `new JSONGenerativeUI({ library: defaultGenerativeUILibrary })` and override entries with their own `defineGenerativeComponents`. ([@okisdev](https://github.com/okisdev))
+- [#4607](https://github.com/assistant-ui/assistant-ui/pull/4607) [`8a2b9cb`](https://github.com/assistant-ui/assistant-ui/commit/8a2b9cb7dead677aa802335132bc588a03998896) - add the closed generative-ui vocabulary as a published default `GenerativeUILibrary` (`defaultGenerativeUILibrary`) plus the ui token enums (`TextSize`, `ImageSize`, `Weight`, `Color`, `Align`, `Justify`, `ButtonStyle`, `AlertTone`) that PR [#4605](https://github.com/assistant-ui/assistant-ui/issues/4605) deferred. the vocabulary covers the portable core (`Header`, `Text`, `Caption`, `Fact`, `Image`, `Divider`, `Button`, `Select`, `Input`, `DatePicker`, `Alert`, `Carousel`), layout (`Card`, `Col`, `Row`, `Spacer`, `Badge`), and data (`Table`, `Markdown`, `Chart`) — 20 components total. each component is a zod `properties` schema plus an unstyled structural `render` that emits semantic HTML with a `data-aui="<component>"` attribute and `data-aui-<prop>` hooks for the host to style (no tailwind, no `@hitchsoftware/assistant-ui-ui` dependency). `Text`/`Caption`/`Markdown` opt into `streamProperties` so they render partial content while streaming. interactive components (`Button`/`Select`/`Input`/`DatePicker`) carry `$action`, now re-injected into `render` props and stashed on a `data-aui-action` attribute; dispatch is a follow-up. users opt in via `new JSONGenerativeUI({ library: defaultGenerativeUILibrary })` and override entries with their own `defineGenerativeComponents`. ([@okisdev](https://github.com/okisdev))
 
 - [#4600](https://github.com/assistant-ui/assistant-ui/pull/4600) [`c08260c`](https://github.com/assistant-ui/assistant-ui/commit/c08260c66e58b557f4c36126292aadad1434c18b) - fix: align assistant-stream dependency range with lockfile ([@Yonom](https://github.com/Yonom))
 
@@ -171,11 +171,11 @@
 
 - [#4226](https://github.com/assistant-ui/assistant-ui/pull/4226) [`58f80e0`](https://github.com/assistant-ui/assistant-ui/commit/58f80e09b51a9d025403f8692c3f41adc6d403e0) - fix: avoid uploading backend-default schemas for use-generative frontend and human tools ([@Yonom](https://github.com/Yonom))
 
-- [#4199](https://github.com/assistant-ui/assistant-ui/pull/4199) [`d9b3119`](https://github.com/assistant-ui/assistant-ui/commit/d9b311977759818fcdcea6037c938e7070276f47) - feat: add new @assistant-ui/react-generative-ui package ([@Yonom](https://github.com/Yonom))
+- [#4199](https://github.com/assistant-ui/assistant-ui/pull/4199) [`d9b3119`](https://github.com/assistant-ui/assistant-ui/commit/d9b311977759818fcdcea6037c938e7070276f47) - feat: add new @hitchsoftware/assistant-ui-react-generative-ui package ([@Yonom](https://github.com/Yonom))
 
 - Updated dependencies [[`cba2b42`](https://github.com/assistant-ui/assistant-ui/commit/cba2b42c26083e730ae07194186ab4473f9f4cf3), [`58f80e0`](https://github.com/assistant-ui/assistant-ui/commit/58f80e09b51a9d025403f8692c3f41adc6d403e0), [`5fe118d`](https://github.com/assistant-ui/assistant-ui/commit/5fe118d6e61fd661859ee0d6b5ef10a370992a84), [`dcd5897`](https://github.com/assistant-ui/assistant-ui/commit/dcd5897f6dd6ca6bfe6978c3c03371e070965eab), [`606c9d4`](https://github.com/assistant-ui/assistant-ui/commit/606c9d41f515925ed531876d451e53a564cc4253), [`0558db2`](https://github.com/assistant-ui/assistant-ui/commit/0558db28952fcd1c05a2ea3f15020cf50ca52489), [`69540af`](https://github.com/assistant-ui/assistant-ui/commit/69540af906f4301af0fd453b0ab425fd62703a46), [`d9b3119`](https://github.com/assistant-ui/assistant-ui/commit/d9b311977759818fcdcea6037c938e7070276f47), [`ae54c55`](https://github.com/assistant-ui/assistant-ui/commit/ae54c55c8c8b0f9e9ef455ced1498f37d998c6cb), [`7640b31`](https://github.com/assistant-ui/assistant-ui/commit/7640b319f704414bd5eb197f34e11ae0b2324a1d)]:
   - assistant-stream@0.3.20
-  - @assistant-ui/react@0.14.14
+  - @hitchsoftware/assistant-ui-react@0.14.14
 
 ## 0.0.1
 

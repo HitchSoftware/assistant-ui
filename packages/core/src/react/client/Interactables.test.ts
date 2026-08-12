@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { createTapRoot, useResource } from "@assistant-ui/tap";
+import { createTapRoot, useResource } from "@hitchsoftware/assistant-ui-tap";
 import type {
   Unstable_InteractablePersistedState,
   Unstable_InteractablePersistenceAdapter,
@@ -15,9 +15,9 @@ const replaceClient = (client: unknown) => {
   for (const listener of clientListeners) listener();
 };
 
-vi.mock("@assistant-ui/store/client", async (importOriginal) => {
+vi.mock("@hitchsoftware/assistant-ui-store/client", async (importOriginal) => {
   const actual =
-    await importOriginal<typeof import("@assistant-ui/store/client")>();
+    await importOriginal<typeof import("@hitchsoftware/assistant-ui-store/client")>();
   const { useEffect } = await import("react");
   // Mirrors the real hook's guarantees: the effect only runs while the scope
   // is available, and a client replacement migrates the registration.

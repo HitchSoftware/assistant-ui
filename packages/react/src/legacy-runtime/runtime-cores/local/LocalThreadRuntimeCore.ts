@@ -1,1 +1,1 @@
-export { LocalThreadRuntimeCore } from "@assistant-ui/core/internal";
+export { LocalThreadRuntimeCore } from "@hitchsoftware/assistant-ui-core/internal";

@@ -1,12 +1,12 @@
-# @assistant-ui/eve
+# @hitchsoftware/assistant-ui-eve
 
 Eve runtime adapter for assistant-ui.
 
 ```tsx
 "use client";
 
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
-import { useEveAgentRuntime } from "@assistant-ui/eve";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
+import { useEveAgentRuntime } from "@hitchsoftware/assistant-ui-eve";
 
 export function RuntimeProvider({ children }: { children: React.ReactNode }) {
   const runtime = useEveAgentRuntime();

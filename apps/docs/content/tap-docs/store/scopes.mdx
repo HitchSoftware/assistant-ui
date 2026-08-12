@@ -20,9 +20,9 @@ Each level of the tree adds a scope. Components at any level can access the scop
 You declare what scopes exist by augmenting `ScopeRegistry`:
 
 ```ts title="lib/store/scopes.ts"
-import "@assistant-ui/store";
+import "@hitchsoftware/assistant-ui-store";
 
-declare module "@assistant-ui/store" {
+declare module "@hitchsoftware/assistant-ui-store" {
   interface ScopeRegistry {
     threadList: {
       methods: {

@@ -12,7 +12,7 @@ const h = vi.hoisted(() => ({
   },
 }));
 
-vi.mock("@assistant-ui/store", () => ({
+vi.mock("@hitchsoftware/assistant-ui-store", () => ({
   useAuiState: <T,>(selector: (s: { message: typeof h.message }) => T) =>
     selector({ message: h.message }),
 }));

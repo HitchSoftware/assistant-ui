@@ -1,6 +1,6 @@
 import type { UIMessage, UseChatHelpers } from "@ai-sdk/react";
 import type { ChatInit } from "ai";
-import type { AssistantCloud } from "assistant-cloud";
+import type { AssistantCloud } from "@hitchsoftware/assistant-cloud";
 
 export type ThreadStatus = "regular" | "archived";
 

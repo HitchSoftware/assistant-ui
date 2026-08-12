@@ -1,5 +1,5 @@
 {
-  "name": "@assistant-ui/react-langchain",
+  "name": "@hitchsoftware/assistant-ui-react-langchain",
   "version": "0.0.25",
   "description": "LangChain useStream adapter for assistant-ui",
   "keywords": [
@@ -34,10 +34,10 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@assistant-ui/core": "^0.3.10",
-    "@assistant-ui/store": "^0.3.8",
-    "assistant-cloud": "*",
-    "assistant-stream": "^0.3.36"
+    "@hitchsoftware/assistant-ui-core": "^0.3.10",
+    "@hitchsoftware/assistant-ui-store": "^0.3.8",
+    "@hitchsoftware/assistant-cloud": "*",
+    "@hitchsoftware/assistant-stream": "^0.3.36"
   },
   "peerDependencies": {
     "@langchain/react": "^1.0.2",
@@ -50,7 +50,7 @@
     }
   },
   "devDependencies": {
-    "@assistant-ui/x-buildutils": "workspace:*",
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
     "@langchain/core": "^1.2.5",
     "@langchain/langgraph-sdk": "^1.9.28",
     "@langchain/react": "^1.0.29",
@@ -61,8 +61,8 @@
     "vitest": "^4.1.10"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://www.assistant-ui.com/",
   "repository": {

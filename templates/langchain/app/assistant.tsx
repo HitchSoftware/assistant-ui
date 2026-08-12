@@ -1,7 +1,7 @@
 "use client";
 
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
-import { useStreamRuntime } from "@assistant-ui/react-langchain";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
+import { useStreamRuntime } from "@hitchsoftware/assistant-ui-react-langchain";
 
 import { Thread } from "@/components/assistant-ui/thread";
 

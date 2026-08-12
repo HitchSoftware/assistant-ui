@@ -1,5 +1,5 @@
 import { describe, it, expect, expectTypeOf } from "vitest";
-import type { AsyncIterableStream } from "assistant-stream/utils";
+import type { AsyncIterableStream } from "@hitchsoftware/assistant-stream/utils";
 import { defineMcpToolkit } from "./define-mcp-toolkit";
 import { defineToolkit } from "./define-toolkit";
 import { hitl, hitlTool, humanTool } from "./human-tool";

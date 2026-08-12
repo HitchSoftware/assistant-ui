@@ -2,9 +2,9 @@ export type {
   ThreadListItemEventType,
   ThreadListItemRuntime,
   ThreadListItemStatus,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 
-export type { ThreadListItemState } from "@assistant-ui/core";
+export type { ThreadListItemState } from "@hitchsoftware/assistant-ui-core";
 
-export type { ThreadListItemStateBinding } from "@assistant-ui/core/internal";
-export { ThreadListItemRuntimeImpl } from "@assistant-ui/core/internal";
+export type { ThreadListItemStateBinding } from "@hitchsoftware/assistant-ui-core/internal";
+export { ThreadListItemRuntimeImpl } from "@hitchsoftware/assistant-ui-core/internal";

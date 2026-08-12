@@ -3,8 +3,8 @@ import {
   type AttachmentAdapter,
   type CompleteAttachment,
   type PendingAttachment,
-} from "@assistant-ui/react";
-import { getFileDataURL } from "@assistant-ui/core/internal";
+} from "@hitchsoftware/assistant-ui-react";
+import { getFileDataURL } from "@hitchsoftware/assistant-ui-core/internal";
 
 // Mirrors ACCEPTED_FILE_TYPES in OpenCode's app (packages/app/src/constants/file-picker.ts),
 // including the extension entries that make source files pickable despite their

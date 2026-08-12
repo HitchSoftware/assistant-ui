@@ -4,13 +4,13 @@ import type {
   AssistantRuntime,
   AttachmentAdapter,
   RemoteThreadListAdapter,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import {
   AssistantRuntimeProvider,
   useAssistantTool,
-} from "@assistant-ui/core/react";
-import { getThreadMessageText } from "@assistant-ui/core/internal";
-import { useAui, useAuiState } from "@assistant-ui/store";
+} from "@hitchsoftware/assistant-ui-core/react";
+import { getThreadMessageText } from "@hitchsoftware/assistant-ui-core/internal";
+import { useAui, useAuiState } from "@hitchsoftware/assistant-ui-store";
 import { useLangGraphRuntime } from "./useLangGraphRuntime";
 import { useLangGraphSend } from "./hooks";
 import { mockStreamCallbackFactory } from "./testUtils";

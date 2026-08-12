@@ -104,7 +104,7 @@ const walkImportGraph = () => {
   return graph;
 };
 
-describe("@assistant-ui/tap/standalone-shim import graph", () => {
+describe("@hitchsoftware/assistant-ui-tap/standalone-shim import graph", () => {
   it("keeps runtime react imports and the react-shim out of the source graph", () => {
     const graph = walkImportGraph();
     const reactShimModules = [...graph.keys()]

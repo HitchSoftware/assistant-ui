@@ -1,6 +1,6 @@
 "use generative";
 
-import { defineToolkit, unstable_interactableTool } from "@assistant-ui/react";
+import { defineToolkit, unstable_interactableTool } from "@hitchsoftware/assistant-ui-react";
 import { z } from "zod";
 import { Notepad } from "../components/tools/notepad";
 import { WeatherCard } from "@/lib/xulux/learn/courses/build-generative-ui-assistant/stages/S4/project/components/tools/weather-card";

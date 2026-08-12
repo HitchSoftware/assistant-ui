@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { cleanup, render, renderHook } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
-import { resource } from "@assistant-ui/tap";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
 import { useAui } from "../useAui";
 import { useAuiState } from "../useAuiState";
 import { AuiProvider } from "../AuiProvider";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { McpOAuthCallback } from "@assistant-ui/react-mcp";
+import { McpOAuthCallback } from "@hitchsoftware/assistant-ui-react-mcp";
 import { Providers } from "../../providers";
 
 export default function CallbackPage() {

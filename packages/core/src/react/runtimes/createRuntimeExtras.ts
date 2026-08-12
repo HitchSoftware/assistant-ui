@@ -1,7 +1,7 @@
 "use client";
 
-import { useAuiState } from "@assistant-ui/store";
-import type { AssistantClient } from "@assistant-ui/store";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
+import type { AssistantClient } from "@hitchsoftware/assistant-ui-store";
 import {
   createRuntimeExtrasBrand,
   type RuntimeExtrasBrand,

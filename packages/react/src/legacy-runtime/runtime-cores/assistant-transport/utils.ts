@@ -1,1 +1,1 @@
-export { createRequestHeaders } from "@assistant-ui/core";
+export { createRequestHeaders } from "@hitchsoftware/assistant-ui-core";

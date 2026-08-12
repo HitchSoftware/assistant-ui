@@ -5,10 +5,10 @@ import type {
   MessagePartState,
   ReasoningMessagePart,
   TextMessagePart,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 
 const part = {};
-vi.mock("@assistant-ui/store", () => ({
+vi.mock("@hitchsoftware/assistant-ui-store", () => ({
   useAui: () => ({ part }),
   useAuiState: (selector: () => unknown) => selector(),
 }));

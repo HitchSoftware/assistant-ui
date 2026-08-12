@@ -1,6 +1,6 @@
 "use generative";
 
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import { z } from "zod";
 
 type ExecuteJsResult =

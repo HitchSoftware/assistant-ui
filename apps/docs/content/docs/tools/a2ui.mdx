@@ -48,13 +48,13 @@ A backend paints or updates a surface by emitting an activity snapshot on the AG
 
 ## Quick start
 
-Register the `present` frontend tool from `@assistant-ui/react-generative-ui`; incoming surfaces then render with the default vocabulary:
+Register the `present` frontend tool from `@hitchsoftware/assistant-ui-react-generative-ui`; incoming surfaces then render with the default vocabulary:
 
 ```tsx
 import {
   JSONGenerativeUI,
   defaultGenerativeUILibrary,
-} from "@assistant-ui/react-generative-ui";
+} from "@hitchsoftware/assistant-ui-react-generative-ui";
 
 const generative = new JSONGenerativeUI({
   library: defaultGenerativeUILibrary,
@@ -73,12 +73,12 @@ Pass the toolkit to your assistant as on the [Generative UI](/docs/tools/generat
 
 ```tsx
 import { useMemo } from "react";
-import { useAgUiSendA2uiAction } from "@assistant-ui/react-ag-ui";
+import { useAgUiSendA2uiAction } from "@hitchsoftware/assistant-ui-react-ag-ui";
 import {
   JSONGenerativeUI,
   createActionRegistry,
   defaultGenerativeUILibrary,
-} from "@assistant-ui/react-generative-ui";
+} from "@hitchsoftware/assistant-ui-react-generative-ui";
 
 function useA2uiToolkit() {
   const sendA2uiAction = useAgUiSendA2uiAction();

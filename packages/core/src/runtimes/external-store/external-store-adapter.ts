@@ -15,7 +15,7 @@ import type {
   ThreadSuggestion,
 } from "../../runtime/interfaces/thread-runtime-core";
 import type { ExportedMessageRepository } from "../../runtime/utils/message-repository";
-import type { ReadonlyJSONValue } from "assistant-stream/utils";
+import type { ReadonlyJSONValue } from "@hitchsoftware/assistant-stream/utils";
 import type { ToolExecutionStatus } from "../tool-invocations/ToolInvocationTracker";
 import type { ExternalThreadQueueAdapter } from "../../runtime/queue/external-thread-queue-adapter";
 

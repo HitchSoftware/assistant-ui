@@ -1,13 +1,13 @@
 import type { ReactElement } from "react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { cleanup, render } from "ink-testing-library";
-import type { ComposerState, MessageState } from "@assistant-ui/core/store";
+import type { ComposerState, MessageState } from "@hitchsoftware/assistant-ui-core/store";
 import type { UseAuiStateSelector } from "./helpers";
 
 const mockUseAuiState = vi.fn();
 
-vi.mock("@assistant-ui/store", async (importOriginal) => {
-  const actual = await importOriginal<typeof import("@assistant-ui/store")>();
+vi.mock("@hitchsoftware/assistant-ui-store", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@hitchsoftware/assistant-ui-store")>();
   return {
     ...actual,
     useAuiState: (selector: UseAuiStateSelector) => mockUseAuiState(selector),

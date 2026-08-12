@@ -8,10 +8,10 @@ import {
   useAui,
   Tools,
   type Toolkit,
-} from "@assistant-ui/react";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
-import { DevToolsModal } from "@assistant-ui/react-devtools";
-import { ModelContextClient as ModelContext } from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
+import { DevToolsModal } from "@hitchsoftware/assistant-ui-react-devtools";
+import { ModelContextClient as ModelContext } from "@hitchsoftware/assistant-ui-react";
 import { lastAssistantMessageIsCompleteWithToolCalls } from "ai";
 import { TerminalIcon } from "lucide-react";
 import { z } from "zod";

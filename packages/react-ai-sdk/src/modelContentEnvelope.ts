@@ -1,4 +1,4 @@
-import type { ToolModelContentPart } from "assistant-stream";
+import type { ToolModelContentPart } from "@hitchsoftware/assistant-stream";
 
 const ENVELOPE_KEY = "__aui_modelContent";
 

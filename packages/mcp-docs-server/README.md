@@ -1,4 +1,4 @@
-# `@assistant-ui/mcp-docs-server`
+# `@hitchsoftware/assistant-ui-mcp-docs-server`
 
 Model Context Protocol (MCP) server that gives AI assistants direct access to assistant-ui's documentation and example projects. Exposes `assistantUIDocs` (retrieve documentation by path), `assistantUIExamples` (access complete example projects), and `assistantUISearch` (keyword search across the bundled docs), and serves the same docs and examples as readable MCP **resources** (`aui-docs:///{path}`, `aui-example:///{name}`).
 
@@ -10,9 +10,9 @@ Model Context Protocol (MCP) server that gives AI assistants direct access to as
 ### Claude Code
 
 ```bash
-claude mcp add assistant-ui -- npx -y @assistant-ui/mcp-docs-server
+claude mcp add assistant-ui -- npx -y @hitchsoftware/assistant-ui-mcp-docs-server
 # or globally for all projects
-claude mcp add --scope user assistant-ui -- npx -y @assistant-ui/mcp-docs-server
+claude mcp add --scope user assistant-ui -- npx -y @hitchsoftware/assistant-ui-mcp-docs-server
 ```
 
 ### Claude Desktop
@@ -22,9 +22,9 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS)
 ```json
 {
   "mcpServers": {
-    "assistant-ui": {
+    "@hitchsoftware/assistant-ui": {
       "command": "npx",
-      "args": ["-y", "@assistant-ui/mcp-docs-server"]
+      "args": ["-y", "@hitchsoftware/assistant-ui-mcp-docs-server"]
     }
   }
 }
@@ -41,9 +41,9 @@ Add to `.vscode/mcp.json`:
 ```json
 {
   "servers": {
-    "assistant-ui": {
+    "@hitchsoftware/assistant-ui": {
       "command": "npx",
-      "args": ["-y", "@assistant-ui/mcp-docs-server"],
+      "args": ["-y", "@hitchsoftware/assistant-ui-mcp-docs-server"],
       "type": "stdio"
     }
   }
@@ -57,10 +57,10 @@ Add to `settings.json`:
 ```json
 {
   "context_servers": {
-    "assistant-ui": {
+    "@hitchsoftware/assistant-ui": {
       "command": {
         "path": "npx",
-        "args": ["-y", "@assistant-ui/mcp-docs-server"]
+        "args": ["-y", "@hitchsoftware/assistant-ui-mcp-docs-server"]
       }
     }
   }

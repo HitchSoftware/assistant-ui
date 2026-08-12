@@ -1,6 +1,6 @@
 ---
 title: API Reference
-description: Public API exported from @assistant-ui/tap.
+description: Public API exported from @hitchsoftware/assistant-ui-tap.
 ---
 
 ## resource
@@ -17,7 +17,7 @@ The Hook should use a **`use`-prefixed** name so the rules of Hooks lint its
 body.
 
 ```ts
-import { resource } from "@assistant-ui/tap";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
 import { useState } from "react";
 
 const useCounter = (props: { initialValue: number }) => {
@@ -51,7 +51,7 @@ Keyed elements preserve their identity in
 [`useResources`](#useresources). Keys in the same list must be unique.
 
 ```ts
-import { withKey } from "@assistant-ui/tap";
+import { withKey } from "@hitchsoftware/assistant-ui-tap";
 
 const element = withKey("my-key", Counter({ initialValue: 0 }));
 ```

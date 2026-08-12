@@ -1,11 +1,11 @@
-# `@assistant-ui/react-o11y`
+# `@hitchsoftware/assistant-ui-react-o11y`
 
-Headless React primitives for rendering span and trace UIs (waterfalls, timelines, run inspectors) on top of `@assistant-ui/store`. Ships a tap-based `SpanResource` that owns the data and a set of unstyled `SpanPrimitive.*` components for laying it out.
+Headless React primitives for rendering span and trace UIs (waterfalls, timelines, run inspectors) on top of `@hitchsoftware/assistant-ui-store`. Ships a tap-based `SpanResource` that owns the data and a set of unstyled `SpanPrimitive.*` components for laying it out.
 
 ## Installation
 
 ```bash
-npm install @assistant-ui/react-o11y
+npm install @hitchsoftware/assistant-ui-react-o11y
 ```
 
 ## Usage
@@ -13,8 +13,8 @@ npm install @assistant-ui/react-o11y
 ```tsx
 "use client";
 
-import { AuiProvider, AuiConfig } from "@assistant-ui/store";
-import { SpanPrimitive, SpanResource } from "@assistant-ui/react-o11y";
+import { AuiProvider, AuiConfig } from "@hitchsoftware/assistant-ui-store";
+import { SpanPrimitive, SpanResource } from "@hitchsoftware/assistant-ui-react-o11y";
 
 const spans = [
   { id: "a", parentSpanId: null, name: "request", type: "http", status: "completed", startedAt: 0, endedAt: 120, latencyMs: 120 },

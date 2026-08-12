@@ -5,7 +5,7 @@ description: Add cloud persistence to your existing AI SDK app with a single hoo
 
 ## Overview
 
-The `@assistant-ui/cloud-ai-sdk` package provides a single hook that adds full message and thread persistence to any [AI SDK](https://sdk.vercel.ai/) application:
+The `@hitchsoftware/assistant-ui-cloud-ai-sdk` package provides a single hook that adds full message and thread persistence to any [AI SDK](https://sdk.vercel.ai/) application:
 
 - **`useCloudChat`** — wraps `useChat` with automatic cloud persistence and built-in thread management
 
@@ -70,17 +70,17 @@ ASSISTANT_BASE_URL=https://proj-[YOUR-ID].assistant-api.com
 <PlatformTabs>
 <Tab value="React">
 
-<InstallCommand npm={["@assistant-ui/cloud-ai-sdk", "@ai-sdk/react", "ai"]} />
+<InstallCommand npm={["@hitchsoftware/assistant-ui-cloud-ai-sdk", "@ai-sdk/react", "ai"]} />
 
 </Tab>
 <Tab value="React Native">
 
-<InstallCommand expo={["@assistant-ui/cloud-ai-sdk", "@ai-sdk/react", "ai", "assistant-cloud"]} />
+<InstallCommand expo={["@hitchsoftware/assistant-ui-cloud-ai-sdk", "@ai-sdk/react", "ai", "assistant-cloud"]} />
 
 </Tab>
 <Tab value="React Ink">
 
-<InstallCommand npm={["@assistant-ui/cloud-ai-sdk", "@ai-sdk/react", "ai", "assistant-cloud", "ink", "react"]} />
+<InstallCommand npm={["@hitchsoftware/assistant-ui-cloud-ai-sdk", "@ai-sdk/react", "ai", "assistant-cloud", "ink", "react"]} />
 
 </Tab>
 </PlatformTabs>
@@ -98,7 +98,7 @@ ASSISTANT_BASE_URL=https://proj-[YOUR-ID].assistant-api.com
 "use client";
 
 import { useState } from "react";
-import { useCloudChat } from "@assistant-ui/cloud-ai-sdk";
+import { useCloudChat } from "@hitchsoftware/assistant-ui-cloud-ai-sdk";
 
 export default function Chat() {
   // Zero-config: auto-initializes anonymous cloud from env var with built-in threads.
@@ -149,8 +149,8 @@ export default function Chat() {
 ```tsx title="app/index.tsx"
 import { useMemo, useState } from "react";
 import { Pressable, Text, TextInput, View } from "react-native";
-import { AssistantCloud } from "assistant-cloud";
-import { useCloudChat } from "@assistant-ui/cloud-ai-sdk";
+import { AssistantCloud } from "@hitchsoftware/assistant-cloud";
+import { useCloudChat } from "@hitchsoftware/assistant-ui-cloud-ai-sdk";
 
 async function getAssistantToken() {
   // Return a user token from your auth provider.
@@ -211,8 +211,8 @@ export default function Chat() {
 ```tsx title="app.tsx"
 import { useMemo, useState } from "react";
 import { Box, Text, useInput } from "ink";
-import { AssistantCloud } from "assistant-cloud";
-import { useCloudChat } from "@assistant-ui/cloud-ai-sdk";
+import { AssistantCloud } from "@hitchsoftware/assistant-cloud";
+import { useCloudChat } from "@hitchsoftware/assistant-ui-cloud-ai-sdk";
 
 async function getAssistantToken() {
   // Return a user token from your auth provider.
@@ -450,7 +450,7 @@ import { openai } from "@ai-sdk/openai";
 import {
   createSamplingCollector,
   wrapSamplingHandler,
-} from "assistant-cloud";
+} from "@hitchsoftware/assistant-cloud";
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
@@ -526,8 +526,8 @@ The React example above uses anonymous mode for quick demos. For production apps
 ```tsx
 import { useMemo } from "react";
 import { useAuth } from "@clerk/nextjs";
-import { AssistantCloud } from "assistant-cloud";
-import { useCloudChat } from "@assistant-ui/cloud-ai-sdk";
+import { AssistantCloud } from "@hitchsoftware/assistant-cloud";
+import { useCloudChat } from "@hitchsoftware/assistant-ui-cloud-ai-sdk";
 
 function Chat() {
   const { getToken } = useAuth();
@@ -547,8 +547,8 @@ function Chat() {
 
 ```tsx
 import { useMemo } from "react";
-import { AssistantCloud } from "assistant-cloud";
-import { useCloudChat } from "@assistant-ui/cloud-ai-sdk";
+import { AssistantCloud } from "@hitchsoftware/assistant-cloud";
+import { useCloudChat } from "@hitchsoftware/assistant-ui-cloud-ai-sdk";
 
 async function getAssistantToken() {
   // Return a user token from your native auth provider.
@@ -571,8 +571,8 @@ function Chat() {
 
 ```tsx
 import { useMemo } from "react";
-import { AssistantCloud } from "assistant-cloud";
-import { useCloudChat } from "@assistant-ui/cloud-ai-sdk";
+import { AssistantCloud } from "@hitchsoftware/assistant-cloud";
+import { useCloudChat } from "@hitchsoftware/assistant-ui-cloud-ai-sdk";
 
 async function getAssistantToken() {
   // Return a user token from your CLI auth flow.

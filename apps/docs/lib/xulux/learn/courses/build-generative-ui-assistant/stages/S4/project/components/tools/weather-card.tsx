@@ -1,6 +1,6 @@
 "use client";
 
-import type { ToolCallMessagePartComponent } from "@assistant-ui/react";
+import type { ToolCallMessagePartComponent } from "@hitchsoftware/assistant-ui-react";
 import { CloudSun, Loader2, TriangleAlert, Wind } from "lucide-react";
 
 type WeatherArgs = {

@@ -1,4 +1,4 @@
-# `@assistant-ui/agent-launcher`
+# `@hitchsoftware/assistant-ui-agent-launcher`
 
 Spawn the [Claude Code](https://www.anthropic.com/claude-code) CLI with a chosen plugin directory, skill, and prompt.
 
@@ -7,7 +7,7 @@ Used internally by the `assistant-ui` CLI's `agent` command. Call it directly wh
 ## Installation
 
 ```bash
-npm install @assistant-ui/agent-launcher
+npm install @hitchsoftware/assistant-ui-agent-launcher
 ```
 
 The `claude` CLI must be available on `PATH`. If it is missing, `launch` prints an install hint and exits with code 1.
@@ -15,7 +15,7 @@ The `claude` CLI must be available on `PATH`. If it is missing, `launch` prints 
 ## Usage
 
 ```typescript
-import { launch } from "@assistant-ui/agent-launcher";
+import { launch } from "@hitchsoftware/assistant-ui-agent-launcher";
 
 launch({
   pluginDir: "/absolute/path/to/plugins", // forwarded as --plugin-dir

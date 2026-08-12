@@ -1,14 +1,14 @@
 "use client";
 
-import type { AppendMessage } from "@assistant-ui/core";
+import type { AppendMessage } from "@hitchsoftware/assistant-ui-core";
 import {
   type ReadonlyJSONObject,
   type ReadonlyJSONValue,
   asAsyncIterableStream,
-} from "assistant-stream/utils";
+} from "@hitchsoftware/assistant-stream/utils";
 import { useExternalStoreRuntime } from "../external-store/useExternalStoreRuntime";
 import type { AssistantRuntime } from "../../runtime/AssistantRuntime";
-import type { AddToolResultOptions } from "@assistant-ui/core";
+import type { AddToolResultOptions } from "@hitchsoftware/assistant-ui-core";
 import { useMemo, useRef, useState } from "react";
 import {
   AssistantMessageAccumulator,
@@ -16,7 +16,7 @@ import {
   AssistantTransportDecoder,
   unstable_createInitialMessage as createInitialMessage,
   toToolsJSONSchema,
-} from "assistant-stream";
+} from "@hitchsoftware/assistant-stream";
 import type {
   AssistantTransportOptions,
   AddMessageCommand,
@@ -33,11 +33,11 @@ import {
 } from "./replayBoundaryStream";
 import { useRunManager } from "./runManager";
 import { useConvertedState } from "./useConvertedState";
-import type { ToolExecutionStatus } from "@assistant-ui/core";
-import { createRequestHeaders } from "@assistant-ui/core";
+import type { ToolExecutionStatus } from "@hitchsoftware/assistant-ui-core";
+import { createRequestHeaders } from "@hitchsoftware/assistant-ui-core";
 import { useRemoteThreadListRuntime } from "../remote-thread-list/useRemoteThreadListRuntime";
-import { InMemoryThreadListAdapter } from "@assistant-ui/core";
-import { useAui, useAuiState } from "@assistant-ui/store";
+import { InMemoryThreadListAdapter } from "@hitchsoftware/assistant-ui-core";
+import { useAui, useAuiState } from "@hitchsoftware/assistant-ui-store";
 import type { UserExternalState } from "../../../augmentations";
 
 const convertAppendMessageToCommand = (

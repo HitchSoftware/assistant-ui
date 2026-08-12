@@ -4,7 +4,7 @@ import {
   generateId,
   fromThreadMessageLike,
   isMcpAppUri,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import type {
   AddToolResultOptions,
   AppendMessage,
@@ -18,8 +18,8 @@ import type {
   ThreadHistoryAdapter,
   ThreadMessage,
   ToolCallMessagePart,
-} from "@assistant-ui/core";
-import { MessageRepository } from "@assistant-ui/core/internal";
+} from "@hitchsoftware/assistant-ui-core";
+import { MessageRepository } from "@hitchsoftware/assistant-ui-core/internal";
 import type {
   AbstractAgent,
   AgentSubscriber,
@@ -30,7 +30,7 @@ import jsonpatch, { type Operation } from "fast-json-patch";
 import type { Logger } from "./logger";
 import { readMcpAppResourceUri } from "./mcp-tool-result";
 import type { AgUiEvent, AgUiInterrupt, AgUiResumeEntry } from "./types";
-import type { ReadonlyJSONValue } from "assistant-stream/utils";
+import type { ReadonlyJSONValue } from "@hitchsoftware/assistant-stream/utils";
 import {
   AG_UI_METADATA_NAMESPACE,
   type AgUiCustomMetadata,

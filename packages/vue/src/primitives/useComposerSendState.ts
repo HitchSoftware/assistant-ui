@@ -1,5 +1,5 @@
 import type { ComputedRef } from "vue";
-import type {} from "@assistant-ui/core/store";
+import type {} from "@hitchsoftware/assistant-ui-core/store";
 import { useAui } from "../useAui";
 import { useAuiState } from "../useAuiState";
 

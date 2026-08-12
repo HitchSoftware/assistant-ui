@@ -2,7 +2,7 @@
 
 import { act, renderHook, waitFor } from "@testing-library/react";
 import { beforeEach, describe, expect, it, onTestFinished, vi } from "vitest";
-import { bindExternalStoreMessage } from "@assistant-ui/core";
+import { bindExternalStoreMessage } from "@hitchsoftware/assistant-ui-core";
 import type {
   AssistantRuntime,
   MessageFormatAdapter,
@@ -10,13 +10,13 @@ import type {
   ThreadAssistantMessage,
   ThreadHistoryAdapter,
   ThreadMessage,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 
 const mocks = vi.hoisted(() => ({
   remoteId: undefined as string | undefined,
 }));
 
-vi.mock("@assistant-ui/store", () => ({
+vi.mock("@hitchsoftware/assistant-ui-store", () => ({
   useAui: () => ({
     threadListItem: {
       get source() {
@@ -27,7 +27,7 @@ vi.mock("@assistant-ui/store", () => ({
   }),
 }));
 
-import { MessageRepository } from "@assistant-ui/core/internal";
+import { MessageRepository } from "@hitchsoftware/assistant-ui-core/internal";
 import {
   toExportedMessageRepository,
   useExternalHistory,

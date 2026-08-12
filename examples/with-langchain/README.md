@@ -1,8 +1,8 @@
 # LangChain `useStream` Example
 
-Demonstrates `@assistant-ui/react-langchain`, which wraps `useStream` from `@langchain/react` and exposes it as an assistant-ui runtime.
+Demonstrates `@hitchsoftware/assistant-ui-react-langchain`, which wraps `useStream` from `@langchain/react` and exposes it as an assistant-ui runtime.
 
-> assistant-ui also ships `@assistant-ui/react-langgraph`, which integrates with `@langchain/langgraph-sdk` directly and currently has a broader feature set. Pick the adapter that matches your upstream choice. See [the comparison](https://www.assistant-ui.com/docs/runtimes/langchain/comparison).
+> assistant-ui also ships `@hitchsoftware/assistant-ui-react-langgraph`, which integrates with `@langchain/langgraph-sdk` directly and currently has a broader feature set. Pick the adapter that matches your upstream choice. See [the comparison](https://www.assistant-ui.com/docs/runtimes/langchain/comparison).
 
 ## Quick Start
 

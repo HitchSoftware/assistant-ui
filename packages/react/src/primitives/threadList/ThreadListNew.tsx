@@ -7,8 +7,8 @@ import type {
 import { forwardRef } from "react";
 import { Primitive } from "../../utils/Primitive";
 import { composeEventHandlers } from "@radix-ui/primitive";
-import { useAuiState } from "@assistant-ui/store";
-import { useThreadListNew as useThreadListNewBehavior } from "@assistant-ui/core/react";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
+import { useThreadListNew as useThreadListNewBehavior } from "@hitchsoftware/assistant-ui-core/react";
 
 export namespace ThreadListPrimitiveNew {
   export type Element = ActionButtonElement;

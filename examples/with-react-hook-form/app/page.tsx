@@ -8,14 +8,14 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
-import { useAssistantForm } from "@assistant-ui/react-hook-form";
+import { useAssistantForm } from "@hitchsoftware/assistant-ui-react-hook-form";
 import {
   useAssistantInstructions,
   useAui,
   AuiProvider,
   AuiConfig,
   Suggestions,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 const SetFormFieldTool = () => {
   return (

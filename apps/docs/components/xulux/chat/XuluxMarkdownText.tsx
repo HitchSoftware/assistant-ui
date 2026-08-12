@@ -1,14 +1,14 @@
 "use client";
 
-import "@assistant-ui/react-markdown/styles/dot.css";
+import "@hitchsoftware/assistant-ui-react-markdown/styles/dot.css";
 import "react-shiki/css";
 
 import {
   StreamdownTextPrimitive,
   type StreamdownTextComponents,
   type SyntaxHighlighterProps,
-} from "@assistant-ui/react-streamdown";
-import { type CodeHeaderProps } from "@assistant-ui/react-markdown";
+} from "@hitchsoftware/assistant-ui-react-streamdown";
+import { type CodeHeaderProps } from "@hitchsoftware/assistant-ui-react-markdown";
 import { OpenInSyntaxHighlighter } from "@/components/xulux/chat/OpenInCard";
 import { XuluxAskQuestion } from "@/components/xulux/chat/XuluxAskQuestion";
 import {
@@ -21,7 +21,7 @@ import { CheckIcon, CopyIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import ShikiHighlighter from "react-shiki";
 import Link from "next/link";
-import { useCopyToClipboard } from "@assistant-ui/ui/hooks/use-copy-to-clipboard";
+import { useCopyToClipboard } from "@hitchsoftware/assistant-ui-ui/hooks/use-copy-to-clipboard";
 import { parseXuluxFileReference } from "@/lib/xulux/learn/file-reference";
 import { LearnInlineFileReference } from "../learn/LearnFileView";
 

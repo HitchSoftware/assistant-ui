@@ -5,8 +5,8 @@ import {
   type ActionButtonProps,
   createActionButton,
 } from "../../utils/createActionButton";
-import { useAuiState } from "@assistant-ui/store";
-import { useSuggestionTrigger as useSuggestionTriggerBehavior } from "@assistant-ui/core/react";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
+import { useSuggestionTrigger as useSuggestionTriggerBehavior } from "@hitchsoftware/assistant-ui-core/react";
 
 const useSuggestionTrigger = ({
   send,

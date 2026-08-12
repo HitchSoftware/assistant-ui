@@ -32,7 +32,7 @@ import {
   defineToolkit,
   Tools,
   MessagePartPrimitive,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 const toolkit = defineToolkit({
   invoke_researcher: {
@@ -83,13 +83,13 @@ tools: {
 </Tab>
 <Tab value="LangGraph">
 
-With `@assistant-ui/react-langgraph`, use `unstable_createLangGraphStream` and set `unstable_allowCancellation: true` to wire up the stop button. When your graph runs a subgraph, the subgraph's messages appear on `ToolCallMessagePart.messages` automatically once you handle the `onSubgraphValues` / `onSubgraphUpdates` events.
+With `@hitchsoftware/assistant-ui-react-langgraph`, use `unstable_createLangGraphStream` and set `unstable_allowCancellation: true` to wire up the stop button. When your graph runs a subgraph, the subgraph's messages appear on `ToolCallMessagePart.messages` automatically once you handle the `onSubgraphValues` / `onSubgraphUpdates` events.
 
 ```ts title="runtime.ts"
 import {
   useLangGraphRuntime,
   unstable_createLangGraphStream,
-} from "@assistant-ui/react-langgraph";
+} from "@hitchsoftware/assistant-ui-react-langgraph";
 
 const runtime = useLangGraphRuntime({
   unstable_allowCancellation: true,
@@ -205,7 +205,7 @@ import {
   ReadonlyThreadProvider,
   ThreadPrimitive,
   type ThreadMessage,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 function SubConversation({
   messages,

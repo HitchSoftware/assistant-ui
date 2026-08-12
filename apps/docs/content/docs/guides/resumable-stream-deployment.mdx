@@ -13,7 +13,7 @@ The default resume endpoint serves any caller that knows the `streamId`. Treat t
 Store the binding next to the rest of your session state, or in Redis under a separate key. The example below uses a parallel `<keyPrefix>:owner:<streamId>` entry that mirrors the TTL of the underlying stream.
 
 ```ts title="/lib/resumable-context.ts"
-import { createResumableStreamContext } from "assistant-stream/resumable";
+import { createResumableStreamContext } from "@hitchsoftware/assistant-stream/resumable";
 import { redis } from "@/lib/redis";
 import { store } from "@/lib/resumable-store";
 
@@ -67,7 +67,7 @@ On Vercel, pass `after` from `next/server`:
 
 ```ts title="/lib/resumable-context.ts"
 import { after } from "next/server";
-import { createResumableStreamContext } from "assistant-stream/resumable";
+import { createResumableStreamContext } from "@hitchsoftware/assistant-stream/resumable";
 import { store } from "@/lib/resumable-store";
 
 export const resumableContext = createResumableStreamContext({
@@ -79,7 +79,7 @@ export const resumableContext = createResumableStreamContext({
 On Cloudflare Workers, take the `ExecutionContext` from your handler and forward `ctx.waitUntil`:
 
 ```ts title="/src/worker.ts"
-import { createResumableStreamContext } from "assistant-stream/resumable";
+import { createResumableStreamContext } from "@hitchsoftware/assistant-stream/resumable";
 import { store } from "./resumable-store";
 
 export default {
@@ -109,7 +109,7 @@ Configure on the store for the global default and on the context for a per-deplo
 import {
   createInMemoryResumableStreamStore,
   createResumableStreamContext,
-} from "assistant-stream/resumable";
+} from "@hitchsoftware/assistant-stream/resumable";
 
 const store = createInMemoryResumableStreamStore({
   defaultTtlMs: 30 * 60 * 1000,
@@ -129,7 +129,7 @@ When multiple apps or tenants share a Redis instance, set `keyPrefix` per enviro
 
 ```ts title="/lib/resumable-store.ts"
 import { createClient } from "redis";
-import { createRedisResumableStreamStore } from "assistant-stream/resumable/redis";
+import { createRedisResumableStreamStore } from "@hitchsoftware/assistant-stream/resumable/redis";
 
 const client = createClient({ url: process.env.REDIS_URL });
 await client.connect();
@@ -146,7 +146,7 @@ Per-tenant prefixes also make incident response cheaper. A `SCAN MATCH aui:app:t
 `ResumableStreamContextOptions` exposes lifecycle hooks for structured logging, metrics, and tracing. Hook exceptions and rejected promises are reported through `console.error` without affecting stream output or stored lifecycle status.
 
 ```ts title="/lib/resumable-context.ts"
-import { createResumableStreamContext } from "assistant-stream/resumable";
+import { createResumableStreamContext } from "@hitchsoftware/assistant-stream/resumable";
 import { logger, metrics } from "@/lib/observability";
 import { store } from "@/lib/resumable-store";
 
@@ -177,7 +177,7 @@ Keep synchronous hook work cheap. `onAcquire` runs on the `run()` request path f
 The in-memory store enforces three caps that the Redis adapters intentionally leave to the underlying database. Set them whenever your process can be reached by untrusted callers.
 
 ```ts
-import { createInMemoryResumableStreamStore } from "assistant-stream/resumable";
+import { createInMemoryResumableStreamStore } from "@hitchsoftware/assistant-stream/resumable";
 
 const store = createInMemoryResumableStreamStore({
   maxChunkBytes: 64 * 1024,

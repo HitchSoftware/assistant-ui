@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import { Play, Trash2, Shield, Code, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { SafeContentFrame, type RenderedFrame } from "safe-content-frame";
+import { SafeContentFrame, type RenderedFrame } from "@hitchsoftware/safe-content-frame";
 import { cn } from "@/lib/utils";
 
 const DEFAULT_HTML = `<h1>Hello from Safe Content Frame!</h1>

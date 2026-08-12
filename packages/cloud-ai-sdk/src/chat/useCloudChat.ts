@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo } from "react";
 import { useChat } from "@ai-sdk/react";
-import { AssistantCloud } from "assistant-cloud";
+import { AssistantCloud } from "@hitchsoftware/assistant-cloud";
 import type {
   UseCloudChatOptions,
   UseCloudChatResult,

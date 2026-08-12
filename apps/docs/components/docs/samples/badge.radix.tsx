@@ -74,7 +74,7 @@ export function BadgeAsLinkSample() {
       </Badge>
       <Badge asChild variant="outline">
         <a
-          href="https://www.npmjs.com/package/@assistant-ui/react"
+          href="https://www.npmjs.com/package/@hitchsoftware/assistant-ui-react"
           target="_blank"
           rel="noopener noreferrer"
         >

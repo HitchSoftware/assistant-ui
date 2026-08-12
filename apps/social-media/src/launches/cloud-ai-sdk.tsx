@@ -92,7 +92,7 @@ function CodeComparison() {
           <span style={{ marginLeft: "6px" }}>{"}"}</span>
           <span style={{ marginLeft: "8px", color: "#c084fc" }}>from</span>
           <span style={{ marginLeft: "8px", color: "#86efac" }}>
-            {'"@assistant-ui/cloud-ai-sdk"'}
+            {'"@hitchsoftware/assistant-ui-cloud-ai-sdk"'}
           </span>
         </div>
       </div>
@@ -178,7 +178,7 @@ export default function CloudAiSdkLaunch() {
             marginTop: "8px",
           }}
         >
-          {">"} npm i @assistant-ui/cloud-ai-sdk @ai-sdk/react ai
+          {">"} npm i @hitchsoftware/assistant-ui-cloud-ai-sdk @ai-sdk/react ai
         </div>
       </div>
 

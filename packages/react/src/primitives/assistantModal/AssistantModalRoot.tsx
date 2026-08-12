@@ -3,7 +3,7 @@
 import { type FC, useEffect, useState } from "react";
 import { Popover as PopoverPrimitive } from "radix-ui";
 import { type ScopedProps, usePopoverScope } from "./scope";
-import { useAui } from "@assistant-ui/store";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 
 export namespace AssistantModalPrimitiveRoot {
   export type Props = PopoverPrimitive.PopoverProps & {

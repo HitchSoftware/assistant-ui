@@ -5,7 +5,7 @@ import {
   MessagePartComponent as MessagePartComponentBase,
   MessagePrimitivePartByIndex as MessagePrimitivePartByIndexBase,
   messagePartsDefaultComponents,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";
 
 const rnDefaultComponents = {
   ...messagePartsDefaultComponents,

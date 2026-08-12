@@ -5,7 +5,7 @@ import {
   ThreadPrimitive,
   useAui,
   useAuiState,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   type ComponentType,
   type ReactNode,
@@ -16,13 +16,13 @@ import {
 import { AssistantMessage, UserMessage } from "./messages";
 import { AssistantComposer, useSharedDocsModelSelection } from "./composer";
 import { useAssistantPanel } from "@/components/docs/assistant/context";
-import { ContextDisplay } from "@assistant-ui/ui/components/assistant-ui/context-display";
+import { ContextDisplay } from "@hitchsoftware/assistant-ui-ui/components/assistant-ui/context-display";
 import { analytics } from "@/lib/analytics";
 import { useCurrentPage } from "@/components/docs/contexts/current-page";
 import {
   getThreadMessageTokenUsage,
   type ThreadTokenUsage,
-} from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { getContextWindow } from "@/constants/model";
 import { Button } from "@/components/ui/button";
 import {

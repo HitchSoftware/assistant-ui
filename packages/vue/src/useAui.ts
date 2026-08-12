@@ -1,4 +1,4 @@
-import type { AssistantClient } from "@assistant-ui/store/client";
+import type { AssistantClient } from "@hitchsoftware/assistant-ui-store/client";
 import { useAuiContext } from "./context";
 
 /**

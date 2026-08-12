@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Pressable, type PressableProps } from "react-native";
-import { useComposerAddAttachment } from "@assistant-ui/core/react";
+import { useComposerAddAttachment } from "@hitchsoftware/assistant-ui-core/react";
 
 export type ComposerAddAttachmentProps = Omit<PressableProps, "onPress"> & {
   children: ReactNode;
@@ -10,7 +10,7 @@ export type ComposerAddAttachmentProps = Omit<PressableProps, "onPress"> & {
  * A button that triggers the attachment adding flow.
  *
  * Note: The actual file picker implementation is platform-specific.
- * This component calls `useComposerAddAttachment()` from `@assistant-ui/core/react`.
+ * This component calls `useComposerAddAttachment()` from `@hitchsoftware/assistant-ui-core/react`.
  * You must handle the file selection in your own component using the returned `addAttachment` callback.
  */
 export const ComposerAddAttachment = ({

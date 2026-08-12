@@ -6,7 +6,7 @@ description: Install tap and build your first Resource.
 ## Install
 
 ```sh
-npm install @assistant-ui/tap
+npm install @hitchsoftware/assistant-ui-tap
 ```
 
 ## Define a Resource
@@ -15,7 +15,7 @@ Write a `use`-prefixed Hook with the React Hooks you already know, then wrap it
 with `resource()`:
 
 ```ts
-import { resource } from "@assistant-ui/tap";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
 import { useState } from "react";
 
 const useCounter = () => {
@@ -37,7 +37,7 @@ The Resource returns state and methods instead of JSX.
 `useResource` evaluates a Resource and returns its current value:
 
 ```tsx
-import { useResource } from "@assistant-ui/tap";
+import { useResource } from "@hitchsoftware/assistant-ui-tap";
 
 function CounterButton() {
   const counter = useResource(Counter());

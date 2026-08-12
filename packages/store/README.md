@@ -1,26 +1,26 @@
-# `@assistant-ui/store`
+# `@hitchsoftware/assistant-ui-store`
 
-[![npm version](https://img.shields.io/npm/v/@assistant-ui/store)](https://www.npmjs.com/package/@assistant-ui/store)
+[![npm version](https://img.shields.io/npm/v/@hitchsoftware/assistant-ui-store)](https://www.npmjs.com/package/@hitchsoftware/assistant-ui-store)
 [![GitHub stars](https://img.shields.io/github/stars/assistant-ui/assistant-ui)](https://github.com/assistant-ui/assistant-ui)
 
-Tap-based state container with React Context integration. Bridges `@assistant-ui/tap` resources into React via `useAui`, `useAuiState`, `AuiConfig`, and `<AuiProvider>`.
+Tap-based state container with React Context integration. Bridges `@hitchsoftware/assistant-ui-tap` resources into React via `useAui`, `useAuiState`, `AuiConfig`, and `<AuiProvider>`.
 
-`store` powers the runtime layer of assistant-ui. Most users do not install it directly; reach for `@assistant-ui/react` instead.
+`store` powers the runtime layer of assistant-ui. Most users do not install it directly; reach for `@hitchsoftware/assistant-ui-react` instead.
 
 ## Framework-neutral entry
 
-`@assistant-ui/store/client` exposes `createAssistantClient`, which builds the same client inside a standalone tap root with no React renderer. Non-React bindings consume the store through this entry; react-less consumers additionally alias `react` to `@assistant-ui/tap/standalone-shim` in their bundler. The `react` peer dependency is optional for exactly this configuration.
+`@hitchsoftware/assistant-ui-store/client` exposes `createAssistantClient`, which builds the same client inside a standalone tap root with no React renderer. Non-React bindings consume the store through this entry; react-less consumers additionally alias `react` to `@hitchsoftware/assistant-ui-tap/standalone-shim` in their bundler. The `react` peer dependency is optional for exactly this configuration.
 
 ## Installation
 
 ```bash
-npm install @assistant-ui/store @assistant-ui/tap
+npm install @hitchsoftware/assistant-ui-store @hitchsoftware/assistant-ui-tap
 ```
 
 ## Usage
 
 ```typescript
-import { resource } from "@assistant-ui/tap";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
 import { useState } from "react";
 import {
   useAui,
@@ -28,9 +28,9 @@ import {
   AuiProvider,
   AuiConfig,
   type ClientOutput,
-} from "@assistant-ui/store";
+} from "@hitchsoftware/assistant-ui-store";
 
-declare module "@assistant-ui/store" {
+declare module "@hitchsoftware/assistant-ui-store" {
   interface ScopeRegistry {
     counter: {
       methods: {

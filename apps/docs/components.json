@@ -14,7 +14,7 @@
   "aliases": {
     "components": "@/components",
     "utils": "@/lib/utils",
-    "ui": "@assistant-ui/ui/components/ui",
+    "ui": "@hitchsoftware/assistant-ui-ui/components/ui",
     "lib": "@/lib",
     "hooks": "@/hooks"
   },

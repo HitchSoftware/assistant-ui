@@ -78,7 +78,7 @@ Passing `message` (Python) or `{ message }` (TypeScript) is what links the UI co
 <Tab value="React">
 
 ```tsx title="@/components/ChartUI.tsx"
-import { makeAssistantDataUI } from "@assistant-ui/react";
+import { makeAssistantDataUI } from "@hitchsoftware/assistant-ui-react";
 
 type ChartProps = {
   series: number[];
@@ -100,7 +100,7 @@ export const ChartUI = makeAssistantDataUI<ChartProps>({
 <Tab value="React Native">
 
 ```tsx title="components/ChartUI.tsx"
-import { makeAssistantDataUI } from "@assistant-ui/react-native";
+import { makeAssistantDataUI } from "@hitchsoftware/assistant-ui-react-native";
 import { Text, View } from "react-native";
 
 type ChartProps = {
@@ -123,7 +123,7 @@ export const ChartUI = makeAssistantDataUI<ChartProps>({
 <Tab value="React Ink">
 
 ```tsx title="components/chart-ui.tsx"
-import { makeAssistantDataUI } from "@assistant-ui/react-ink";
+import { makeAssistantDataUI } from "@hitchsoftware/assistant-ui-react-ink";
 import { Box, Text } from "ink";
 
 type ChartProps = {
@@ -275,7 +275,7 @@ Without this, each reload starts with an empty UI list even though the messages 
 ## Escape hatch: `useLangGraphUIMessages`
 
 ```tsx
-import { useLangGraphUIMessages } from "@assistant-ui/react-langgraph";
+import { useLangGraphUIMessages } from "@hitchsoftware/assistant-ui-react-langgraph";
 
 function Sidebar() {
   const uiMessages = useLangGraphUIMessages();

@@ -1,13 +1,13 @@
 "use client";
 
-import type { useExternalMessageConverter } from "@assistant-ui/core/react";
+import type { useExternalMessageConverter } from "@hitchsoftware/assistant-ui-core/react";
 import type {
   AppendMessage,
   DataMessagePart,
   MessageTiming,
-} from "@assistant-ui/core";
-import { httpUrlPattern, parseDataUrl } from "@assistant-ui/core/internal";
-import type { ReadonlyJSONObject } from "assistant-stream/utils";
+} from "@hitchsoftware/assistant-ui-core";
+import { httpUrlPattern, parseDataUrl } from "@hitchsoftware/assistant-ui-core/internal";
+import type { ReadonlyJSONObject } from "@hitchsoftware/assistant-stream/utils";
 import type {
   LangChainBaseMessage,
   LangChainContentBlock,

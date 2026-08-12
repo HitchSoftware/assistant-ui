@@ -12,7 +12,7 @@ import {
 import { composeEventHandlers } from "@radix-ui/primitive";
 import { Slot } from "radix-ui";
 import type React from "react";
-import { useAui } from "@assistant-ui/store";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 
 export namespace ComposerPrimitiveAttachmentDropzone {
   export type Element = HTMLDivElement;

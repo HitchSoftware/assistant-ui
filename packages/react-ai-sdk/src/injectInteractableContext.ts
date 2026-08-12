@@ -3,7 +3,7 @@ import {
   unstable_formatInteractableSnapshot,
   unstable_getInteractableSnapshots,
   type Unstable_InteractableSnapshotEntry,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 
 /**
  * Injects interactable state snapshots into messages as model-visible text.
@@ -23,7 +23,7 @@ import {
  * @example
  * ```ts
  * import { convertToModelMessages, streamText } from "ai";
- * import { unstable_injectInteractableContext } from "@assistant-ui/react-ai-sdk";
+ * import { unstable_injectInteractableContext } from "@hitchsoftware/assistant-ui-react-ai-sdk";
  *
  * export async function POST(req: Request) {
  *   const { messages } = await req.json();

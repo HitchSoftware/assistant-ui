@@ -22,7 +22,7 @@ import { c as _c } from "../../react-shim/compiler-runtime";
 
 const SENTINEL = Symbol.for("react.memo_cache_sentinel");
 
-describe("@assistant-ui/tap/react-shim", () => {
+describe("@hitchsoftware/assistant-ui-tap/react-shim", () => {
   afterEach(() => {
     vi.restoreAllMocks();
     cleanupAllResources();

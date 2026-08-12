@@ -45,7 +45,7 @@ With assistant-ui, we can enhance this component with intelligence using four po
 First, let's make our buttons "readable" and interactive:
 
 ```tsx
-import { makeAssistantVisible } from "@assistant-ui/react";
+import { makeAssistantVisible } from "@hitchsoftware/assistant-ui-react";
 
 // Make the refund button intelligent
 const SmartButton = makeAssistantVisible(
@@ -83,7 +83,7 @@ Now the assistant can:
 Next, let's give the assistant specific instructions about its role:
 
 ```tsx
-import { useAssistantInstructions } from "@assistant-ui/react";
+import { useAssistantInstructions } from "@hitchsoftware/assistant-ui-react";
 
 function SmartTransactionHistory() {
   useAssistantInstructions(`
@@ -105,7 +105,7 @@ Let's add transaction-specific tools for the assistant:
 ```tsx title="app/transaction-toolkit.tsx"
 "use generative";
 
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import { z } from "zod";
 
 export default defineToolkit({
@@ -131,7 +131,7 @@ export default defineToolkit({
 ```
 
 ```tsx title="app/SmartTransactionHistory.tsx"
-import { AuiConfig, AuiProvider, Tools, useAui } from "@assistant-ui/react";
+import { AuiConfig, AuiProvider, Tools, useAui } from "@hitchsoftware/assistant-ui-react";
 import toolkit from "./transaction-toolkit";
 
 function SmartTransactionHistory() {
@@ -151,7 +151,7 @@ function SmartTransactionHistory() {
 Finally, let's add dynamic context based on the user's transaction patterns:
 
 ```tsx
-import { useAui } from "@assistant-ui/react";
+import { useAui } from "@hitchsoftware/assistant-ui-react";
 import { useEffect } from "react";
 
 function SmartTransactionHistory({ userProfile }) {

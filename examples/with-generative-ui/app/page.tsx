@@ -6,11 +6,11 @@ import {
   AuiConfig,
   Suggestions,
   Tools,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   AssistantChatTransport,
   useChatRuntime,
-} from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { lastAssistantMessageIsCompleteWithToolCalls } from "ai";
 import { ExampleNav } from "@/components/example-nav";
 import toolkit from "./present-toolkit";

@@ -12,9 +12,9 @@ import {
   Suggestions,
   unstable_Interactables,
   type FeedbackAdapter,
-} from "@assistant-ui/react";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
-import { DevToolsModal } from "@assistant-ui/react-devtools";
+} from "@hitchsoftware/assistant-ui-react";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
+import { DevToolsModal } from "@hitchsoftware/assistant-ui-react-devtools";
 import { lastAssistantMessageIsCompleteWithToolCalls } from "ai";
 import docsToolkit from "@/lib/docs-toolkit";
 

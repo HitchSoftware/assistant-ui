@@ -79,7 +79,7 @@ The Context API follows a predictable state management pattern:
 Read state reactively with automatic re-renders when values change. This hook works like Zustand's selector pattern - you provide a function that extracts the specific data you need, and your component only re-renders when that data changes.
 
 ```tsx
-import { useAuiState } from "@assistant-ui/react";
+import { useAuiState } from "@hitchsoftware/assistant-ui-react";
 
 // Basic usage - extract a single property
 const role = useAuiState((s) => s.message.role); // "user" | "assistant"
@@ -125,7 +125,7 @@ const content = useAuiState((s) => s.message.content);
 Access the API instance for imperative operations and actions. Unlike `useAuiState`, this hook does not subscribe to state updates: the client's identity only changes on structural changes (a scope resolving to a different instance), making it well suited for event handlers and imperative operations.
 
 ```tsx
-import { useAui } from "@assistant-ui/react";
+import { useAui } from "@hitchsoftware/assistant-ui-react";
 
 function CustomMessageActions() {
   const aui = useAui();
@@ -251,7 +251,7 @@ aui.tools.getState();
 Subscribe to events with automatic cleanup on unmount. This hook is perfect for reacting to user interactions, system events, or integrating with external analytics.
 
 ```tsx
-import { useAuiEvent } from "@assistant-ui/react";
+import { useAuiEvent } from "@hitchsoftware/assistant-ui-react";
 
 // Listen to current scope events (most common)
 useAuiEvent("composer.send", (event) => {

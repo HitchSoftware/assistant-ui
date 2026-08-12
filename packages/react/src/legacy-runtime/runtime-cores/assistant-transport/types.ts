@@ -1,14 +1,14 @@
-import type { ToolModelContentPart } from "assistant-stream";
-import type { ThreadMessage } from "@assistant-ui/core";
-import type { ReadonlyJSONValue } from "assistant-stream/utils";
+import type { ToolModelContentPart } from "@hitchsoftware/assistant-stream";
+import type { ThreadMessage } from "@hitchsoftware/assistant-ui-core";
+import type { ReadonlyJSONValue } from "@hitchsoftware/assistant-stream/utils";
 import type {
   AttachmentAdapter,
   ThreadHistoryAdapter,
   LanguageModelV1CallSettings,
   LanguageModelConfig,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import type { UserCommands } from "../../../augmentations";
-import type { ToolExecutionStatus } from "@assistant-ui/core";
+import type { ToolExecutionStatus } from "@hitchsoftware/assistant-ui-core";
 
 // Message part types
 export type TextPart = {

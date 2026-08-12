@@ -21,8 +21,8 @@ The iframe acts as a provider of model context using `AssistantFrameProvider`:
 
 ```tsx
 // iframe.tsx
-import { AssistantFrameProvider } from "@assistant-ui/react";
-import { ModelContextRegistry } from "@assistant-ui/react";
+import { AssistantFrameProvider } from "@hitchsoftware/assistant-ui-react";
+import { ModelContextRegistry } from "@hitchsoftware/assistant-ui-react";
 import { z } from "zod";
 
 // Create a registry to manage your model context
@@ -61,7 +61,7 @@ The parent window consumes the iframe's context using `AssistantFrameHost`:
 
 ```tsx
 // parent.tsx
-import { useAssistantFrameHost } from "@assistant-ui/react";
+import { useAssistantFrameHost } from "@hitchsoftware/assistant-ui-react";
 import { useRef } from "react";
 
 function ParentComponent() {

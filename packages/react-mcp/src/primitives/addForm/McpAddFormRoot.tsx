@@ -8,7 +8,7 @@ import {
   useState,
 } from "react";
 import { Primitive } from "@radix-ui/react-primitive";
-import { useAui } from "@assistant-ui/store";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 import { AddFormContext, type AddFormState } from "./context";
 import type { MCPAuthConfig } from "../../mcp-scope";
 

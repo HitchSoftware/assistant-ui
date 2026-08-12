@@ -16,19 +16,10 @@ verifyDepsBeforeRun: install
 
 minimumReleaseAge: 1440
 minimumReleaseAgeExclude:
-  - '@assistant-ui/*'
+  - '@hitchsoftware/*'
   - '@next/*'
   - '@typescript/typescript-*'
-  - assistant-cloud
-  - assistant-stream
-  - assistant-ui
-  - create-assistant-ui
-  - eve
-  - heat-graph
   - next
-  - safe-content-frame
-  - tw-glass
-  - tw-shimmer
   - typescript
 
 allowBuilds:

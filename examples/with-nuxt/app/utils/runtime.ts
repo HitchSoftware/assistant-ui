@@ -1,14 +1,14 @@
-import type { ChatModelAdapter } from "@assistant-ui/core";
+import type { ChatModelAdapter } from "@hitchsoftware/assistant-ui-core";
 import {
   AssistantRuntimeImpl,
   getThreadMessageText,
   LocalRuntimeCore,
-} from "@assistant-ui/core/internal";
+} from "@hitchsoftware/assistant-ui-core/internal";
 import {
   AssistantMessageAccumulator,
   UIMessageStreamDecoder,
-} from "assistant-stream";
-import { asAsyncIterableStream } from "assistant-stream/utils";
+} from "@hitchsoftware/assistant-stream";
+import { asAsyncIterableStream } from "@hitchsoftware/assistant-stream/utils";
 
 const chatModel: ChatModelAdapter = {
   async *run({ messages, abortSignal, context }) {

@@ -44,7 +44,7 @@ const runtime = useChatRuntime({
 ```tsx title="app/page.tsx"
 import { Thread } from "@/components/assistant-ui/thread";
 import { VoiceControl } from "@/components/assistant-ui/voice";
-import { AuiIf } from "@assistant-ui/react";
+import { AuiIf } from "@hitchsoftware/assistant-ui-react";
 
 export default function Chat() {
   return (
@@ -68,7 +68,7 @@ export default function Chat() {
 The `VoiceControl` component is built with the following hooks and conditionals:
 
 ```tsx
-import { AuiIf, useVoiceState, useVoiceControls } from "@assistant-ui/react";
+import { AuiIf, useVoiceState, useVoiceControls } from "@hitchsoftware/assistant-ui-react";
 
 <div className="aui-voice-control">
   <VoiceIndicator />

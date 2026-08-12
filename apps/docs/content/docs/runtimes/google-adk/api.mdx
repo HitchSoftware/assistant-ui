@@ -12,7 +12,7 @@ Creates an `AdkStreamCallback` that connects to an ADK endpoint via SSE. Support
 **proxy mode** — POST to your own API route:
 
 ```ts
-import { createAdkStream } from "@assistant-ui/react-google-adk";
+import { createAdkStream } from "@hitchsoftware/assistant-ui-react-google-adk";
 
 const stream = createAdkStream({ api: "/api/chat" });
 ```
@@ -43,7 +43,7 @@ import {
   useAdkRuntime,
   createAdkStream,
   createAdkSessionAdapter,
-} from "@assistant-ui/react-google-adk";
+} from "@hitchsoftware/assistant-ui-react-google-adk";
 
 const ADK_URL = "http://localhost:8000";
 
@@ -87,7 +87,7 @@ import {
   adkEventStream,
   parseAdkRequest,
   toAdkContent,
-} from "@assistant-ui/react-google-adk/server";
+} from "@hitchsoftware/assistant-ui-react-google-adk/server";
 ```
 
 ### createAdkApiRoute
@@ -224,7 +224,7 @@ const runtime = useAdkRuntime({
 Pass `AdkRunConfig` to control agent behavior, and `stateDelta` to mutate session state along with messages:
 
 ```ts
-import { useAdkSend } from "@assistant-ui/react-google-adk";
+import { useAdkSend } from "@hitchsoftware/assistant-ui-react-google-adk";
 
 const send = useAdkSend();
 

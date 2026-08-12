@@ -1,4 +1,4 @@
-# @assistant-ui/metro
+# @hitchsoftware/assistant-ui-metro
 
 Metro / Expo integration for [assistant-ui](https://www.assistant-ui.com): the
 `"use generative"` directive compiler for React Native. It lets you author tools
@@ -11,7 +11,7 @@ Works with **Expo** and **bare React Native** (both bundle with Metro).
 ## Install
 
 ```sh
-npm install --save-dev @assistant-ui/metro
+npm install --save-dev @hitchsoftware/assistant-ui-metro
 ```
 
 ## Setup
@@ -21,7 +21,7 @@ Wrap your Metro config with `withAui`:
 ```js
 // metro.config.js
 const { getDefaultConfig } = require("expo/metro-config");
-const { withAui } = require("@assistant-ui/metro");
+const { withAui } = require("@hitchsoftware/assistant-ui-metro");
 
 const config = getDefaultConfig(__dirname);
 
@@ -33,7 +33,7 @@ Bare React Native (without Expo):
 ```js
 // metro.config.js
 const { getDefaultConfig } = require("@react-native/metro-config");
-const { withAui } = require("@assistant-ui/metro");
+const { withAui } = require("@hitchsoftware/assistant-ui-metro");
 
 module.exports = withAui(getDefaultConfig(__dirname));
 ```
@@ -41,13 +41,13 @@ module.exports = withAui(getDefaultConfig(__dirname));
 ## Usage
 
 Author a `"use generative"` toolkit exactly like on the web, importing
-`defineToolkit` from `@assistant-ui/react-native`:
+`defineToolkit` from `@hitchsoftware/assistant-ui-react-native`:
 
 ```tsx
 // toolkit.tsx
 "use generative";
 
-import { defineToolkit } from "@assistant-ui/react-native";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react-native";
 import { z } from "zod";
 import { WeatherCard } from "./WeatherCard";
 
@@ -73,7 +73,7 @@ import {
   AuiConfig,
   Tools,
   useLocalRuntime,
-} from "@assistant-ui/react-native";
+} from "@hitchsoftware/assistant-ui-react-native";
 import toolkit from "./toolkit";
 import { modelAdapter } from "./modelAdapter";
 
@@ -98,8 +98,8 @@ existing transformer (Expo's or React Native's).
 The build target follows Metro's environment: the device app gets the **client**
 build (schema + `render` + frontend `execute`), while an Expo Router `+api`
 route (bundled for a server environment) gets the **server** build (schema +
-backend `execute`). This mirrors [`@assistant-ui/next`](https://www.assistant-ui.com/docs/tools/defining-tools)
-and `@assistant-ui/vite`.
+backend `execute`). This mirrors [`@hitchsoftware/assistant-ui-next`](https://www.assistant-ui.com/docs/tools/defining-tools)
+and `@hitchsoftware/assistant-ui-vite`.
 
 See the [Tools docs](https://www.assistant-ui.com/docs/tools/defining-tools) for
 the full authoring API.

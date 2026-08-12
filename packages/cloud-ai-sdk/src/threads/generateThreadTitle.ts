@@ -1,4 +1,4 @@
-import type { AssistantCloud } from "assistant-cloud";
+import type { AssistantCloud } from "@hitchsoftware/assistant-cloud";
 import { MESSAGE_FORMAT } from "../chat/MessagePersistence";
 
 export async function generateThreadTitle(

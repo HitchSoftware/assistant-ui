@@ -5,13 +5,13 @@ const { mockUseAuiState, mockUseAui } = vi.hoisted(() => ({
   mockUseAui: vi.fn(),
 }));
 
-vi.mock("@assistant-ui/store", async (importOriginal) => ({
-  ...(await importOriginal<typeof import("@assistant-ui/store")>()),
+vi.mock("@hitchsoftware/assistant-ui-store", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@hitchsoftware/assistant-ui-store")>()),
   useAuiState: ((selector: (s: unknown) => unknown) =>
     mockUseAuiState(
       selector,
-    )) as typeof import("@assistant-ui/store").useAuiState,
-  useAui: (() => mockUseAui()) as typeof import("@assistant-ui/store").useAui,
+    )) as typeof import("@hitchsoftware/assistant-ui-store").useAuiState,
+  useAui: (() => mockUseAui()) as typeof import("@hitchsoftware/assistant-ui-store").useAui,
 }));
 
 import { agUiExtras } from "../src/agUiExtras";

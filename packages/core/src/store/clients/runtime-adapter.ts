@@ -1,5 +1,5 @@
-import type { AssistantClient, ScopesConfig } from "@assistant-ui/store";
-import { Derived } from "@assistant-ui/store/client";
+import type { AssistantClient, ScopesConfig } from "@hitchsoftware/assistant-ui-store";
+import { Derived } from "@hitchsoftware/assistant-ui-store/client";
 import { ModelContext } from "./model-context-client";
 
 export const baseRuntimeAdapterTransformScopes = (

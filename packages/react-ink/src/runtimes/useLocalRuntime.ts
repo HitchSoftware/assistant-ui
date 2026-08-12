@@ -1,4 +1,4 @@
 export {
   useLocalRuntime,
   type LocalRuntimeOptions,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";

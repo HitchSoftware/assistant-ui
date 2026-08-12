@@ -240,8 +240,8 @@ import {
   useAui,
   type RemoteThreadListAdapter,
   type ThreadHistoryAdapter,
-} from "@assistant-ui/react";
-import { createAssistantStream } from "assistant-stream";
+} from "@hitchsoftware/assistant-ui-react";
+import { createAssistantStream } from "@hitchsoftware/assistant-stream";
 import { useMemo } from "react";
 
 export const threadListAdapter: RemoteThreadListAdapter = {
@@ -355,8 +355,8 @@ import {
   useAui,
   type RemoteThreadListAdapter,
   type ThreadHistoryAdapter,
-} from "@assistant-ui/react-native";
-import { createAssistantStream } from "assistant-stream";
+} from "@hitchsoftware/assistant-ui-react-native";
+import { createAssistantStream } from "@hitchsoftware/assistant-stream";
 import { useMemo } from "react";
 
 export const threadListAdapter: RemoteThreadListAdapter = {
@@ -474,8 +474,8 @@ import {
   useAui,
   type RemoteThreadListAdapter,
   type ThreadHistoryAdapter,
-} from "@assistant-ui/react-ink";
-import { createAssistantStream } from "assistant-stream";
+} from "@hitchsoftware/assistant-ui-react-ink";
+import { createAssistantStream } from "@hitchsoftware/assistant-stream";
 import { useMemo } from "react";
 
 export const threadListAdapter: RemoteThreadListAdapter = {
@@ -631,8 +631,8 @@ Wrap the app in a `useRemoteThreadListRuntime` that delegates per-thread runtime
 import {
   AssistantRuntimeProvider,
   useRemoteThreadListRuntime,
-} from "@assistant-ui/react";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { threadListAdapter } from "./thread-adapter";
 
 export function MyProvider({ children }: { children: React.ReactNode }) {
@@ -655,11 +655,11 @@ export function MyProvider({ children }: { children: React.ReactNode }) {
 import {
   AssistantRuntimeProvider,
   useRemoteThreadListRuntime,
-} from "@assistant-ui/react-native";
+} from "@hitchsoftware/assistant-ui-react-native";
 import {
   AssistantChatTransport,
   useChatRuntime,
-} from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { threadListAdapter } from "./thread-adapter";
 
 export function MyProvider({ children }: { children: React.ReactNode }) {
@@ -685,11 +685,11 @@ export function MyProvider({ children }: { children: React.ReactNode }) {
 import {
   AssistantRuntimeProvider,
   useRemoteThreadListRuntime,
-} from "@assistant-ui/react-ink";
+} from "@hitchsoftware/assistant-ui-react-ink";
 import {
   AssistantChatTransport,
   useChatRuntime,
-} from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { threadListAdapter } from "./thread-adapter";
 
 export function MyProvider({ children }: { children: React.ReactNode }) {

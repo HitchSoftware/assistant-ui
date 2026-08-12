@@ -1,7 +1,7 @@
-export type { AttachmentState, AttachmentRuntime } from "@assistant-ui/core";
+export type { AttachmentState, AttachmentRuntime } from "@hitchsoftware/assistant-ui-core";
 export {
   AttachmentRuntimeImpl,
   ThreadComposerAttachmentRuntimeImpl,
   EditComposerAttachmentRuntimeImpl,
   MessageAttachmentRuntimeImpl,
-} from "@assistant-ui/core/internal";
+} from "@hitchsoftware/assistant-ui-core/internal";

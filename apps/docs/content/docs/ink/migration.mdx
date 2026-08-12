@@ -1,27 +1,27 @@
 ---
 title: Migration from Web
-description: Migrate an existing @assistant-ui/react app to the terminal with React Ink.
+description: Migrate an existing @hitchsoftware/assistant-ui-react app to the terminal with React Ink.
 ---
 
-If you already have an assistant-ui web app, most of your code transfers directly. The runtime core is shared between `@assistant-ui/react` and `@assistant-ui/react-ink` via `@assistant-ui/core` — only the UI layer changes.
+If you already have an assistant-ui web app, most of your code transfers directly. The runtime core is shared between `@hitchsoftware/assistant-ui-react` and `@hitchsoftware/assistant-ui-react-ink` via `@hitchsoftware/assistant-ui-core` — only the UI layer changes.
 
 ## What stays the same
 
 - **Runtime setup** — `useLocalRuntime`, `ChatModelAdapter`, and all runtime options work identically.
-- **AI SDK integration** — `@assistant-ui/react-ai-sdk` works with React Ink. Your runtime setup transfers directly.
+- **AI SDK integration** — `@hitchsoftware/assistant-ui-react-ai-sdk` works with React Ink. Your runtime setup transfers directly.
 - **Tool definitions** — `Tools({ toolkit })` and toolkit renderers use the same API.
 - **State hooks** — `useAuiState`, `useAui`, and selector patterns are the same.
 - **Backend code** — Your API routes, streaming endpoints, and server-side logic need zero changes.
 
 ## What changes
 
-| Web (`@assistant-ui/react`) | Terminal (`@assistant-ui/react-ink`) |
+| Web (`@hitchsoftware/assistant-ui-react`) | Terminal (`@hitchsoftware/assistant-ui-react-ink`) |
 |---|---|
-| `AssistantRuntimeProvider` | `AssistantRuntimeProvider` (same name, from `@assistant-ui/react-ink`) |
+| `AssistantRuntimeProvider` | `AssistantRuntimeProvider` (same name, from `@hitchsoftware/assistant-ui-react-ink`) |
 | DOM primitives (`div`, `button`, `input`) | Ink primitives (`Box`, `Text`, `TextInput`) |
 | CSS / Tailwind styling | Ink's flexbox + ANSI colors |
-| `@assistant-ui/ui` (shadcn components) | Build your own terminal UI with primitives |
-| `@assistant-ui/react-markdown` | `@assistant-ui/react-ink-markdown` (ANSI-rendered markdown) |
+| `@hitchsoftware/assistant-ui-ui` (shadcn components) | Build your own terminal UI with primitives |
+| `@hitchsoftware/assistant-ui-react-markdown` | `@hitchsoftware/assistant-ui-react-ink-markdown` (ANSI-rendered markdown) |
 
 ## Step-by-step
 
@@ -30,7 +30,7 @@ If you already have an assistant-ui web app, most of your code transfers directl
 
 ### Install the React Ink package
 
-<InstallCommand npm={["@assistant-ui/react-ink", "ink", "react"]} />
+<InstallCommand npm={["@hitchsoftware/assistant-ui-react-ink", "ink", "react"]} />
 
   </Step>
   <Step>
@@ -41,7 +41,7 @@ Your `useLocalRuntime` setup works as-is — no changes needed:
 
 ```tsx title="hooks/use-app-runtime.ts"
 // This file is identical to your web version
-import { useLocalRuntime, type ChatModelAdapter } from "@assistant-ui/react-ink";
+import { useLocalRuntime, type ChatModelAdapter } from "@hitchsoftware/assistant-ui-react-ink";
 
 export function useAppRuntime(adapter: ChatModelAdapter) {
   return useLocalRuntime(adapter);
@@ -59,10 +59,10 @@ export function useAppRuntime(adapter: ChatModelAdapter) {
 
 ```tsx
 // Before (web)
-// import { AssistantRuntimeProvider } from "@assistant-ui/react";
+// import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
 
 // After (Terminal) — same name, different package
-import { AssistantRuntimeProvider } from "@assistant-ui/react-ink";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react-ink";
 
 export function App() {
   const runtime = useAppRuntime(adapter);
@@ -90,7 +90,7 @@ import {
   ThreadPrimitive,
   ComposerPrimitive,
   MessagePrimitive,
-} from "@assistant-ui/react-ink";
+} from "@hitchsoftware/assistant-ui-react-ink";
 import { Box } from "ink";
 
 function MyMessage() {

@@ -82,10 +82,10 @@ function generateComponentCode(config: BuilderConfig): string {
     `  ErrorPrimitive,`,
     `  MessagePrimitive,`,
     `  ThreadPrimitive,`,
-    `} from "@assistant-ui/react";`,
+    `} from "@hitchsoftware/assistant-ui-react";`,
     components.markdown &&
       components.typingIndicator === "dot" &&
-      `import "@assistant-ui/react-markdown/styles/dot.css";`,
+      `import "@hitchsoftware/assistant-ui-react-markdown/styles/dot.css";`,
   ]
     .filter(Boolean)
     .join("\n");

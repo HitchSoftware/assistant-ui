@@ -10,7 +10,7 @@ import {
   useLocalRuntime,
   type ChatModelAdapter,
   type ThreadMessageLike,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
 const responses = [

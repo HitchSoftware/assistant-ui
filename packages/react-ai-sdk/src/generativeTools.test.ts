@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { defineMcpToolkit } from "@assistant-ui/core/react";
+import { defineMcpToolkit } from "@hitchsoftware/assistant-ui-core/react";
 import { AISDKToolkit } from "./generativeTools";
 import { wrapModelContentEnvelope } from "./modelContentEnvelope";
 

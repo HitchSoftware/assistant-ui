@@ -1,6 +1,6 @@
 "use client";
 
-import { useLangChainState } from "@assistant-ui/react-langchain";
+import { useLangChainState } from "@hitchsoftware/assistant-ui-react-langchain";
 
 type Todo = {
   id?: string;

@@ -1,8 +1,8 @@
 import { type ReactNode, useMemo } from "react";
 import { Box, Text } from "ink";
 import Spinner from "ink-spinner";
-import type { ToolCallMessagePartStatus } from "@assistant-ui/core";
-import type { ToolCallMessagePartProps } from "@assistant-ui/core/react";
+import type { ToolCallMessagePartStatus } from "@hitchsoftware/assistant-ui-core";
+import type { ToolCallMessagePartProps } from "@hitchsoftware/assistant-ui-core/react";
 
 export type ToolCallStatus =
   | "running"

@@ -1,5 +1,5 @@
 import { type FC, type ReactNode, memo, useMemo } from "react";
-import { RenderChildrenWithAccessor, useAuiState } from "@assistant-ui/store";
+import { RenderChildrenWithAccessor, useAuiState } from "@hitchsoftware/assistant-ui-store";
 import type { QueueItemState } from "../../../store/scopes/queue-item";
 import { QueueItemByIndexProvider } from "../../providers/QueueItemByIndexProvider";
 

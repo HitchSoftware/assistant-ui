@@ -37,7 +37,7 @@ import {
   ThreadPrimitive,
   type ToolCallMessagePartComponent,
   useAuiState,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   ArrowDownIcon,
   ArrowUpIcon,

@@ -7,7 +7,7 @@ const h = vi.hoisted(() => ({
   remove: vi.fn<() => void>(),
 }));
 
-vi.mock("@assistant-ui/store", () => {
+vi.mock("@hitchsoftware/assistant-ui-store", () => {
   const attachment = Object.assign(() => attachment, { remove: h.remove });
   const aui = { attachment };
   return {

@@ -27,7 +27,7 @@ For new grouped reasoning/tool-call UI, use `MessagePrimitive.GroupedParts`. `Ch
   </Tab>
   <Tab>
 ```tsx
-import { MessagePrimitive, groupPartByType } from "@assistant-ui/react";
+import { MessagePrimitive, groupPartByType } from "@hitchsoftware/assistant-ui-react";
 
 function AssistantMessage() {
   return (
@@ -69,7 +69,7 @@ function AssistantMessage() {
 Group reasoning and tool-call parts directly in your assistant message:
 
 ```tsx
-import { MessagePrimitive, groupPartByType } from "@assistant-ui/react";
+import { MessagePrimitive, groupPartByType } from "@hitchsoftware/assistant-ui-react";
 
 <MessagePrimitive.Root>
   <MessagePrimitive.GroupedParts
@@ -125,7 +125,7 @@ Runtime setup: primitives require runtime context. Wrap your UI in `AssistantRun
 The accordion starts collapsed by default. `AccordionTrigger` toggles between collapsed and expanded. Use `AuiIf` to conditionally render parts based on the collapsed state:
 
 ```tsx
-import { AuiIf, ChainOfThoughtPrimitive } from "@assistant-ui/react";
+import { AuiIf, ChainOfThoughtPrimitive } from "@hitchsoftware/assistant-ui-react";
 
 <ChainOfThoughtPrimitive.Root>
   <ChainOfThoughtPrimitive.AccordionTrigger>
@@ -144,7 +144,7 @@ import { AuiIf, ChainOfThoughtPrimitive } from "@assistant-ui/react";
 Use `AuiIf` to show directional icons that reflect the current state:
 
 ```tsx
-import { AuiIf, ChainOfThoughtPrimitive } from "@assistant-ui/react";
+import { AuiIf, ChainOfThoughtPrimitive } from "@hitchsoftware/assistant-ui-react";
 import { ChevronDownIcon, ChevronRightIcon } from "lucide-react";
 
 <ChainOfThoughtPrimitive.AccordionTrigger className="flex w-full cursor-pointer items-center gap-2 px-4 py-2 text-sm">

@@ -1,4 +1,4 @@
-# @assistant-ui/vite
+# @hitchsoftware/assistant-ui-vite
 
 Vite plugin for assistant-ui's **`"use generative"`** directive — a single file that
 colocates a tool's schema, its server-only `execute`, and its client-only
@@ -9,7 +9,7 @@ colocates a tool's schema, its server-only `execute`, and its client-only
 ```ts
 // vite.config.ts
 import { defineConfig } from "vite";
-import { aui } from "@assistant-ui/vite";
+import { aui } from "@hitchsoftware/assistant-ui-vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 
@@ -42,11 +42,11 @@ the client build never contains the `execute` body.
 
 ## Authoring
 
-Import the markers from `@assistant-ui/react`:
+Import the markers from `@hitchsoftware/assistant-ui-react`:
 
 ```tsx
 "use generative";
-import { defineToolkit, humanTool } from "@assistant-ui/react";
+import { defineToolkit, humanTool } from "@hitchsoftware/assistant-ui-react";
 import { z } from "zod";
 
 export default defineToolkit({

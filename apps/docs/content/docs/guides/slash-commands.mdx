@@ -28,7 +28,7 @@ import {
   ComposerPrimitive,
   unstable_useSlashCommandAdapter,
   type Unstable_SlashCommand,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 const SLASH_COMMANDS: readonly Unstable_SlashCommand[] = [
   {
@@ -129,7 +129,7 @@ For side effects on top of `execute` (logging, analytics, intercept), wrap the h
 For **categorized navigation** (drill-down into groups), return categories from `categories()` and items from `categoryItems()`. The popover shows categories first, then items within the selected category:
 
 ```ts
-import type { Unstable_TriggerAdapter } from "@assistant-ui/core";
+import type { Unstable_TriggerAdapter } from "@hitchsoftware/assistant-ui-core";
 
 const adapter: Unstable_TriggerAdapter = {
   categories() {

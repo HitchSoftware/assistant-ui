@@ -3,12 +3,12 @@ title: Quickstart
 description: Install Store and connect your first Tap resource to React.
 ---
 
-Store (`@assistant-ui/store`) connects Tap resources to React with scoped, type-safe state management.
+Store (`@hitchsoftware/assistant-ui-store`) connects Tap resources to React with scoped, type-safe state management.
 
 ## Installation
 
 ```sh
-npm install @assistant-ui/store @assistant-ui/tap
+npm install @hitchsoftware/assistant-ui-store @hitchsoftware/assistant-ui-tap
 ```
 
 ## Define your scope types
@@ -16,9 +16,9 @@ npm install @assistant-ui/store @assistant-ui/tap
 Register your scopes by augmenting the `ScopeRegistry` interface. This gives you type safety across all Store hooks.
 
 ```ts title="lib/store/counter-scope.ts"
-import "@assistant-ui/store";
+import "@hitchsoftware/assistant-ui-store";
 
-declare module "@assistant-ui/store" {
+declare module "@hitchsoftware/assistant-ui-store" {
   interface ScopeRegistry {
     counter: {
       methods: {
@@ -35,9 +35,9 @@ declare module "@assistant-ui/store" {
 Define a Tap resource that returns `ClientOutput<"counter">`. This connects the resource's methods to the scope type you just registered.
 
 ```ts title="lib/store/counter-store.ts"
-import { resource } from "@assistant-ui/tap";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
 import { useState, useMemo } from "react";
-import type { ClientOutput } from "@assistant-ui/store";
+import type { ClientOutput } from "@hitchsoftware/assistant-ui-store";
 
 const useCounterResource = ({
   initialCount = 0,
@@ -64,7 +64,7 @@ Use `AuiProvider` to create a store and provide it to the tree, and `useAuiState
 ```tsx title="app/CounterApp.tsx"
 "use client";
 
-import { AuiConfig, AuiProvider } from "@assistant-ui/store";
+import { AuiConfig, AuiProvider } from "@hitchsoftware/assistant-ui-store";
 import { CounterResource } from "@/lib/store/counter-store";
 import { CounterDisplay } from "./CounterDisplay";
 
@@ -81,7 +81,7 @@ export const CounterApp = () => {
 ```tsx title="app/CounterDisplay.tsx"
 "use client";
 
-import { useAui, useAuiState } from "@assistant-ui/store";
+import { useAui, useAuiState } from "@hitchsoftware/assistant-ui-store";
 
 export const CounterDisplay = () => {
   const count = useAuiState((s) => s.counter.count);

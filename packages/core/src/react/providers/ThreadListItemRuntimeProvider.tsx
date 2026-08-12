@@ -1,5 +1,5 @@
 import type { FC, PropsWithChildren } from "react";
-import { useAui, AuiConfig, AuiProvider } from "@assistant-ui/store";
+import { useAui, AuiConfig, AuiProvider } from "@hitchsoftware/assistant-ui-store";
 import type { ThreadListItemRuntime } from "../..";
 import { ThreadListItemClient } from "../../store/internal";
 

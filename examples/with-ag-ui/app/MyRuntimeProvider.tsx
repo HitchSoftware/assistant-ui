@@ -4,9 +4,9 @@ import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
   AssistantRuntimeProvider,
   type ThreadMessage,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { HttpAgent } from "@ag-ui/client";
-import { useAgUiRuntime } from "@assistant-ui/react-ag-ui";
+import { useAgUiRuntime } from "@hitchsoftware/assistant-ui-react-ag-ui";
 
 type StoredThread = {
   id: string;

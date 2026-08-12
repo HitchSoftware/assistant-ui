@@ -1,3 +1,3 @@
-/// <reference types="@assistant-ui/core/react" />
+/// <reference types="@hitchsoftware/assistant-ui-core/react" />
 
 export * from "./client";

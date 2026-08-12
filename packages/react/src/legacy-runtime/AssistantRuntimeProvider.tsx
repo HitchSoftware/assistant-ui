@@ -5,9 +5,9 @@ import {
   type AssistantClient,
   type AuiConfig,
   useAui,
-} from "@assistant-ui/store";
+} from "@hitchsoftware/assistant-ui-store";
 import type { AssistantRuntime } from "./runtime/AssistantRuntime";
-import { AssistantProviderBase } from "@assistant-ui/core/react";
+import { AssistantProviderBase } from "@hitchsoftware/assistant-ui-core/react";
 import { ThreadPrimitiveViewportProvider } from "../context/providers/ThreadViewportProvider";
 import { DevToolsProviderApi } from "../devtools/DevToolsHooks";
 

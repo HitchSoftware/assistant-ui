@@ -1,10 +1,10 @@
 import { useEffectEvent, useRef } from "react";
-import { resource } from "@assistant-ui/tap";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
 import type {
   Unstable_DirectiveFormatter,
   Unstable_TriggerItem,
-} from "@assistant-ui/core";
-import type { AssistantClient } from "@assistant-ui/store";
+} from "@hitchsoftware/assistant-ui-core";
+import type { AssistantClient } from "@hitchsoftware/assistant-ui-store";
 import type { DetectedTrigger } from "./triggerDetectionResource";
 
 /** External override for selection (used by Lexical's DirectivePlugin). */

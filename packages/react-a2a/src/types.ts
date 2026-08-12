@@ -11,7 +11,7 @@ import type {
   SpeechSynthesisAdapter,
   ThreadHistoryAdapter,
   ThreadMessage,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import type { A2AClient, A2AClientOptions } from "./A2AClient";
 
 export const A2A_PROTOCOL_VERSION = "1.0";

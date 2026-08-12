@@ -25,4 +25,4 @@ export {
 export {
   MessagePartPrimitiveInProgress as InProgress,
   PartPrimitiveMessages as Messages,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";

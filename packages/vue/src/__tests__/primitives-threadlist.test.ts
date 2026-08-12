@@ -1,12 +1,12 @@
 import { describe, expect, it, vi } from "vitest";
 import { createApp, defineComponent, h, nextTick, type Component } from "vue";
-import { AuiConfig } from "@assistant-ui/store/client";
-import { RuntimeAdapter } from "@assistant-ui/core/store";
-import type { ExternalStoreAdapter } from "@assistant-ui/core";
+import { AuiConfig } from "@hitchsoftware/assistant-ui-store/client";
+import { RuntimeAdapter } from "@hitchsoftware/assistant-ui-core/store";
+import type { ExternalStoreAdapter } from "@hitchsoftware/assistant-ui-core";
 import {
   AssistantRuntimeImpl,
   ExternalStoreRuntimeCore,
-} from "@assistant-ui/core/internal";
+} from "@hitchsoftware/assistant-ui-core/internal";
 import { AuiProvider } from "../AuiProvider";
 import { ThreadPrimitiveMessages } from "../primitives/ThreadPrimitiveMessages";
 import { ThreadPrimitiveViewport } from "../primitives/ThreadPrimitiveViewport";

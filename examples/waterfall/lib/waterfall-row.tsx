@@ -1,7 +1,7 @@
 "use client";
 
-import { SpanPrimitive } from "@assistant-ui/react-o11y";
-import { AuiIf } from "@assistant-ui/store";
+import { SpanPrimitive } from "@hitchsoftware/assistant-ui-react-o11y";
+import { AuiIf } from "@hitchsoftware/assistant-ui-store";
 import { WaterfallBar } from "./waterfall-bar";
 import { useWaterfallLayout } from "./waterfall-timeline";
 

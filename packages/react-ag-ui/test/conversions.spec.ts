@@ -3,7 +3,7 @@
 import { describe, it, expect } from "vitest";
 import { z } from "zod";
 import { UserMessageSchema } from "@ag-ui/client";
-import { ExportedMessageRepository } from "@assistant-ui/core";
+import { ExportedMessageRepository } from "@hitchsoftware/assistant-ui-core";
 import { fromAgUiMessages as publicFromAgUiMessages } from "../src";
 import {
   fromAgUiMessages,

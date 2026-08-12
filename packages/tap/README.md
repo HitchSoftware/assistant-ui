@@ -1,24 +1,24 @@
-# `@assistant-ui/tap`
+# `@hitchsoftware/assistant-ui-tap`
 
-[![npm version](https://img.shields.io/npm/v/@assistant-ui/tap)](https://www.npmjs.com/package/@assistant-ui/tap)
-[![npm downloads](https://img.shields.io/npm/dm/@assistant-ui/tap)](https://www.npmjs.com/package/@assistant-ui/tap)
-[![bundle size](https://img.shields.io/bundlephobia/minzip/@assistant-ui/tap)](https://bundlephobia.com/package/@assistant-ui/tap)
+[![npm version](https://img.shields.io/npm/v/@hitchsoftware/assistant-ui-tap)](https://www.npmjs.com/package/@hitchsoftware/assistant-ui-tap)
+[![npm downloads](https://img.shields.io/npm/dm/@hitchsoftware/assistant-ui-tap)](https://www.npmjs.com/package/@hitchsoftware/assistant-ui-tap)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/@hitchsoftware/assistant-ui-tap)](https://bundlephobia.com/package/@hitchsoftware/assistant-ui-tap)
 [![GitHub stars](https://img.shields.io/github/stars/assistant-ui/assistant-ui)](https://github.com/assistant-ui/assistant-ui)
 
 React's hooks, headless. Write a **resource** the same way you write a component, with the same hooks (`useState`, `useEffect`, `useMemo`, ...) imported from `"react"` and the same rules, except a resource returns a plain value instead of JSX. It runs inside a React component, inside another resource, or standalone with no React tree at all.
 
-`tap` powers the runtime layer of assistant-ui. Most users do not install it directly; reach for `@assistant-ui/react` instead.
+`tap` powers the runtime layer of assistant-ui. Most users do not install it directly; reach for `@hitchsoftware/assistant-ui-react` instead.
 
 ## Installation
 
 ```bash
-npm install @assistant-ui/tap
+npm install @hitchsoftware/assistant-ui-tap
 ```
 
 ## Usage
 
 ```typescript
-import { resource, createTapRoot, useResource } from "@assistant-ui/tap";
+import { resource, createTapRoot, useResource } from "@hitchsoftware/assistant-ui-tap";
 import { useState, useEffect } from "react";
 
 const useCounter = ({ incrementBy = 1 }: { incrementBy?: number }) => {
@@ -50,7 +50,7 @@ counter.getValue().increment();
 In React, host a resource with `useResource`:
 
 ```tsx
-import { useResource } from "@assistant-ui/tap";
+import { useResource } from "@hitchsoftware/assistant-ui-tap";
 
 function CounterButton() {
   const { count, increment } = useResource(Counter({ incrementBy: 1 }));

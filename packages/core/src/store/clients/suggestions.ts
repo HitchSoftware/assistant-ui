@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
-import { resource, withKey } from "@assistant-ui/tap";
-import type { ClientOutput } from "@assistant-ui/store";
-import { useClientLookup } from "@assistant-ui/store/client";
+import { resource, withKey } from "@hitchsoftware/assistant-ui-tap";
+import type { ClientOutput } from "@hitchsoftware/assistant-ui-store";
+import { useClientLookup } from "@hitchsoftware/assistant-ui-store/client";
 import type { SuggestionsState } from "../scopes/suggestions";
 import type { SuggestionState } from "../scopes/suggestion";
 import type { ThreadSuggestion } from "../../runtime/interfaces/thread-runtime-core";

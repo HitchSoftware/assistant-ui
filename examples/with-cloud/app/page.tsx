@@ -7,7 +7,7 @@ import {
   AuiProvider,
   AuiConfig,
   Suggestions,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 function ThreadWithSuggestions() {
   const aui = useAui();

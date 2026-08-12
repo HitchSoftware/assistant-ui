@@ -5,7 +5,7 @@ import {
   type ActionButtonProps,
   createActionButton,
 } from "../../utils/createActionButton";
-import { useThreadListItemUnarchive as useThreadListItemUnarchiveBehavior } from "@assistant-ui/core/react";
+import { useThreadListItemUnarchive as useThreadListItemUnarchiveBehavior } from "@hitchsoftware/assistant-ui-core/react";
 
 const useThreadListItemUnarchive = () => {
   const { unarchive } = useThreadListItemUnarchiveBehavior();

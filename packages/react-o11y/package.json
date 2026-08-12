@@ -1,5 +1,5 @@
 {
-  "name": "@assistant-ui/react-o11y",
+  "name": "@hitchsoftware/assistant-ui-react-o11y",
   "version": "0.0.39",
   "description": "Observability primitives for @assistant-ui",
   "keywords": [
@@ -32,8 +32,8 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@assistant-ui/store": "workspace:*",
-    "@assistant-ui/tap": "workspace:*",
+    "@hitchsoftware/assistant-ui-store": "workspace:*",
+    "@hitchsoftware/assistant-ui-tap": "workspace:*",
     "@radix-ui/react-primitive": "^2.1.10"
   },
   "peerDependencies": {
@@ -46,7 +46,7 @@
     }
   },
   "devDependencies": {
-    "@assistant-ui/x-buildutils": "workspace:*",
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "react": "^19.2.8",
@@ -54,8 +54,8 @@
     "vitest": "^4.1.10"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://www.assistant-ui.com/",
   "repository": {

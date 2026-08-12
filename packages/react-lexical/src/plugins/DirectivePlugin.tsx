@@ -22,11 +22,11 @@ import {
 import type {
   Unstable_DirectiveFormatter,
   Unstable_TriggerItem,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import {
   unstable_useTriggerPopoverRootContextOptional,
   type Unstable_RegisteredTrigger,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 export type DirectivePluginProps = {
   onDirectiveSelect?: ((item: Unstable_TriggerItem) => void) | undefined;

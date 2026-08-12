@@ -3,7 +3,7 @@
 import { StrictMode } from "react";
 import { cleanup, render } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
-import { useTapHost } from "@assistant-ui/tap";
+import { useTapHost } from "@hitchsoftware/assistant-ui-tap";
 import {
   useNotificationManager,
   type NotificationManager,

@@ -19,8 +19,8 @@ Create an `HttpAgent` pointing at your AG-UI endpoint and pass it to `useAgUiRun
 "use client";
 
 import { useMemo } from "react";
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
-import { useAgUiRuntime } from "@assistant-ui/react-ag-ui";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
+import { useAgUiRuntime } from "@hitchsoftware/assistant-ui-react-ag-ui";
 import { HttpAgent } from "@ag-ui/client";
 
 export function MyRuntimeProvider({
@@ -51,8 +51,8 @@ export function MyRuntimeProvider({
 
 ```tsx title="runtime/MyRuntimeProvider.tsx"
 import { useMemo } from "react";
-import { AssistantRuntimeProvider } from "@assistant-ui/react-native";
-import { useAgUiRuntime } from "@assistant-ui/react-ag-ui";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react-native";
+import { useAgUiRuntime } from "@hitchsoftware/assistant-ui-react-ag-ui";
 import { HttpAgent } from "@ag-ui/client";
 
 export function MyRuntimeProvider({
@@ -83,8 +83,8 @@ export function MyRuntimeProvider({
 
 ```tsx title="runtime/MyRuntimeProvider.tsx"
 import { useMemo } from "react";
-import { AssistantRuntimeProvider } from "@assistant-ui/react-ink";
-import { useAgUiRuntime } from "@assistant-ui/react-ag-ui";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react-ink";
+import { useAgUiRuntime } from "@hitchsoftware/assistant-ui-react-ag-ui";
 import { HttpAgent } from "@ag-ui/client";
 
 export function MyRuntimeProvider({

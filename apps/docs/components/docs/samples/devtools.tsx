@@ -27,14 +27,14 @@ import {
   type ThreadAssistantMessagePart,
   type ThreadMessageLike,
   type ToolCallMessagePartProps,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   DevToolsPanel,
   ShadowRoot,
   inProcessClient,
   type DevToolsClient,
   type DevToolsSnapshot,
-} from "@assistant-ui/react-devtools";
+} from "@hitchsoftware/assistant-ui-react-devtools";
 import { SampleFrame } from "./sample-frame";
 
 const RESPONSES = [

@@ -1,4 +1,4 @@
-# @assistant-ui/cloud-ai-sdk
+# @hitchsoftware/assistant-ui-cloud-ai-sdk
 
 ## 0.1.33
 

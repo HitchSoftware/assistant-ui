@@ -1,13 +1,13 @@
-# `@assistant-ui/cloud-ai-sdk`
+# `@hitchsoftware/assistant-ui-cloud-ai-sdk`
 
-Standalone [Vercel AI SDK](https://sdk.vercel.ai) hooks backed by [Assistant Cloud](https://cloud.assistant-ui.com) persistence. Use this when you want managed thread history, auto-titling, and thread CRUD for an AI SDK chat app without pulling in `@assistant-ui/react`.
+Standalone [Vercel AI SDK](https://sdk.vercel.ai) hooks backed by [Assistant Cloud](https://cloud.assistant-ui.com) persistence. Use this when you want managed thread history, auto-titling, and thread CRUD for an AI SDK chat app without pulling in `@hitchsoftware/assistant-ui-react`.
 
-If you are already using `@assistant-ui/react`, install `@assistant-ui/react-ai-sdk` and pass an `AssistantCloud` instance instead.
+If you are already using `@hitchsoftware/assistant-ui-react`, install `@hitchsoftware/assistant-ui-react-ai-sdk` and pass an `AssistantCloud` instance instead.
 
 ## Installation
 
 ```bash
-npm install @assistant-ui/cloud-ai-sdk assistant-cloud ai @ai-sdk/react
+npm install @hitchsoftware/assistant-ui-cloud-ai-sdk assistant-cloud ai @ai-sdk/react
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install @assistant-ui/cloud-ai-sdk assistant-cloud ai @ai-sdk/react
 ```tsx
 "use client";
 
-import { useCloudChat } from "@assistant-ui/cloud-ai-sdk";
+import { useCloudChat } from "@hitchsoftware/assistant-ui-cloud-ai-sdk";
 
 export function Chat() {
   const { messages, sendMessage } = useCloudChat();

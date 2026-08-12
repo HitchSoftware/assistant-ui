@@ -23,8 +23,8 @@
  * Browser-safe; imports no `@earendil-works/*` packages.
  */
 
-import { ExportedMessageRepository } from "@assistant-ui/react";
-import type { ThreadMessageLike } from "@assistant-ui/react";
+import { ExportedMessageRepository } from "@hitchsoftware/assistant-ui-react";
+import type { ThreadMessageLike } from "@hitchsoftware/assistant-ui-react";
 import type { PiThreadState } from "./threadState";
 import type {
   PiAgentMessage,

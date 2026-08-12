@@ -7,7 +7,7 @@ const h = vi.hoisted(() => ({
   state: { message: { branchCount: 0 } },
 }));
 
-vi.mock("@assistant-ui/store", () => ({
+vi.mock("@hitchsoftware/assistant-ui-store", () => ({
   useAuiState: <T,>(selector: (s: { message: { branchCount: number } }) => T) =>
     selector(h.state),
 }));

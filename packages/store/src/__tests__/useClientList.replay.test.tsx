@@ -3,7 +3,7 @@
 import { StrictMode, Suspense, useState } from "react";
 import { act, cleanup, render } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
-import { resource } from "@assistant-ui/tap";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
 import { useClientList } from "../useClientList";
 
 type ItemData = { id: string; label: string };

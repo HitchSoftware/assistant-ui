@@ -1,5 +1,5 @@
 {
-  "name": "create-assistant-ui",
+  "name": "@hitchsoftware/create-assistant-ui",
   "version": "0.0.73",
   "description": "Create assistant-ui apps with one command",
   "keywords": [
@@ -28,16 +28,16 @@
     "build": "aui-build"
   },
   "dependencies": {
-    "assistant-ui": "workspace:*",
+    "@hitchsoftware/assistant-ui": "workspace:*",
     "cross-spawn": "^7.0.6"
   },
   "devDependencies": {
-    "@assistant-ui/x-buildutils": "workspace:*",
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
     "@types/cross-spawn": "^6.0.6"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://www.assistant-ui.com/",
   "repository": {

@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { resource } from "@assistant-ui/tap";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
 import { detectTrigger } from "./detectTrigger";
 
 /** Detected trigger position within the composer text. */

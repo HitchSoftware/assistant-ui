@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import type { AssistantClient } from "@assistant-ui/store";
+import type { AssistantClient } from "@hitchsoftware/assistant-ui-store";
 import {
   createRuntimeExtras,
   unstable_createRuntimeExtrasFromBrand,

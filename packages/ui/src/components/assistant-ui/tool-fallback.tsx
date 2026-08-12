@@ -16,7 +16,7 @@ import {
   type ToolCallMessagePartProps,
   type ToolCallMessagePartStatus,
   type ToolCallMessagePartComponent,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   Collapsible,
   CollapsibleContent,

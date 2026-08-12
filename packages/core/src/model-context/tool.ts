@@ -1,4 +1,4 @@
-import type { Tool } from "assistant-stream";
+import type { Tool } from "@hitchsoftware/assistant-stream";
 
 type StandardSchemaInput<TSchema> = TSchema extends {
   readonly "~standard": {

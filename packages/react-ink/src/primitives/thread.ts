@@ -6,8 +6,8 @@ export {
   ThreadMessages as Messages,
   type ThreadMessagesProps as MessagesProps,
 } from "./thread/ThreadMessages";
-export { ThreadPrimitiveMessageByIndex as MessageByIndex } from "@assistant-ui/core/react";
-export { ThreadPrimitiveUnstable_MessageById as Unstable_MessageById } from "@assistant-ui/core/react";
+export { ThreadPrimitiveMessageByIndex as MessageByIndex } from "@hitchsoftware/assistant-ui-core/react";
+export { ThreadPrimitiveUnstable_MessageById as Unstable_MessageById } from "@hitchsoftware/assistant-ui-core/react";
 export {
   ThreadEmpty as Empty,
   type ThreadEmptyProps as EmptyProps,
@@ -23,4 +23,4 @@ export {
 export {
   ThreadPrimitiveSuggestions as Suggestions,
   ThreadPrimitiveSuggestionByIndex as SuggestionByIndex,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";

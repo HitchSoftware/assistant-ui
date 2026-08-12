@@ -2,7 +2,7 @@
 
 import { memo, type FC, type PropsWithChildren } from "react";
 import { BrainIcon } from "lucide-react";
-import { useAuiState } from "@assistant-ui/react";
+import { useAuiState } from "@hitchsoftware/assistant-ui-react";
 import { cn } from "@/lib/utils";
 
 type GroupedPartsGroup = {

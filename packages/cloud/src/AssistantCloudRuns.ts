@@ -1,6 +1,6 @@
 import type { AssistantCloudAPI } from "./AssistantCloudAPI";
 import type { SamplingCallData } from "./instrumentMcpSampling";
-import { AssistantStream, PlainTextDecoder } from "assistant-stream";
+import { AssistantStream, PlainTextDecoder } from "@hitchsoftware/assistant-stream";
 
 type AssistantCloudRunsStreamBody = {
   thread_id: string;

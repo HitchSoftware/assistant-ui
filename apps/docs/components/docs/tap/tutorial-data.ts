@@ -23,7 +23,7 @@ ${useCounterFull}`,
     filename: "counter.jsx",
     language: "jsx",
     code: `import { useState } from "react";
-import { resource } from "@assistant-ui/tap";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
 
 ${useCounterFull}
 
@@ -36,7 +36,7 @@ const Counter = resource(useCounter);`,
     filename: "counter.jsx",
     language: "jsx",
     code: `import { useState } from "react";
-import { resource, useResource } from "@assistant-ui/tap";
+import { resource, useResource } from "@hitchsoftware/assistant-ui-tap";
 
 ${useCounterCollapsed}
 
@@ -55,7 +55,7 @@ function CounterButton() {
     filename: "counter.jsx",
     language: "jsx",
     code: `import { useState } from "react";
-import { resource, useResource } from "@assistant-ui/tap";
+import { resource, useResource } from "@hitchsoftware/assistant-ui-tap";
 import { PersistentCounter } from "./persistent-counter";
 
 ${useCounterCollapsed}
@@ -75,7 +75,7 @@ function CounterButton({ id }) {
     filename: "counter.jsx",
     language: "jsx",
     code: `import { useState } from "react";
-import { resource, useResource } from "@assistant-ui/tap";
+import { resource, useResource } from "@hitchsoftware/assistant-ui-tap";
 import { PersistentCounter } from "./persistent-counter";
 
 ${useCounterCollapsed}
@@ -98,7 +98,7 @@ function App() {
     language: "jsx",
     cut: true,
     code: `// !mark(1:2)
-import { useResources, withKey } from "@assistant-ui/tap";
+import { useResources, withKey } from "@hitchsoftware/assistant-ui-tap";
 import { Counter } from "./counter";
 
 function CounterList({ ids }) {
@@ -124,7 +124,7 @@ function CounterList({ ids }) {
     filename: "counter-root.js",
     language: "js",
     cut: true,
-    code: `import { createTapRoot, flushTapSync } from "@assistant-ui/tap";
+    code: `import { createTapRoot, flushTapSync } from "@hitchsoftware/assistant-ui-tap";
 import { useCounter } from "./counter";
 
 const root = createTapRoot(function CounterRoot() {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { AuiConfig, createAssistantClient } from "@assistant-ui/store/client";
+import { AuiConfig, createAssistantClient } from "@hitchsoftware/assistant-ui-store/client";
 import { RuntimeAdapter, Suggestions } from "../index";
 import { ExternalStoreRuntimeCore } from "../../runtimes/internal";
 import { AssistantRuntimeImpl } from "../../runtime/internal";

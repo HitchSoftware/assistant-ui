@@ -3,4 +3,4 @@
 export {
   SuggestionByIndexProvider,
   type SuggestionByIndexProviderProps,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";

@@ -1,6 +1,6 @@
 "use client";
 
-import type { Unstable_InteractableToolRenderProps } from "@assistant-ui/react";
+import type { Unstable_InteractableToolRenderProps } from "@hitchsoftware/assistant-ui-react";
 import { Check, Copy, RotateCcw, SquarePen } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 

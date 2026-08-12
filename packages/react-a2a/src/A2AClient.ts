@@ -1,5 +1,5 @@
-import { SSEEventDecoder, type SSEEvent } from "assistant-stream/utils";
-import { isRecord } from "@assistant-ui/core/internal";
+import { SSEEventDecoder, type SSEEvent } from "@hitchsoftware/assistant-stream/utils";
+import { isRecord } from "@hitchsoftware/assistant-ui-core/internal";
 import type {
   A2AAgentCard,
   A2AErrorInfo,

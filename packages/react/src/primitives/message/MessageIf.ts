@@ -1,7 +1,7 @@
 "use client";
 
 import type { FC, PropsWithChildren } from "react";
-import { useAuiState } from "@assistant-ui/store";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 import type { RequireAtLeastOne } from "../../utils/RequireAtLeastOne";
 
 type MessageIfFilters = {

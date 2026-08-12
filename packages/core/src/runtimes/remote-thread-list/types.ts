@@ -1,6 +1,6 @@
 import type { ThreadMessage } from "../../types/message";
 import type { AssistantRuntime } from "../../runtime/api/assistant-runtime";
-import type { AssistantStream } from "assistant-stream";
+import type { AssistantStream } from "@hitchsoftware/assistant-stream";
 
 /* oxlint-disable typescript/no-explicit-any -- structural stand-in for ComponentType without depending on react types */
 type RemoteThreadListProviderProps = { children?: any };

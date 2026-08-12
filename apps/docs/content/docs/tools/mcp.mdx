@@ -87,7 +87,7 @@ tool-listing, and close errors for debugging.
 ```tsx title="app/toolkit.tsx"
 "use generative";
 
-import { defineMcpToolkit, defineToolkit } from "@assistant-ui/react";
+import { defineMcpToolkit, defineToolkit } from "@hitchsoftware/assistant-ui-react";
 
 export default defineToolkit({
   ...defineMcpToolkit({
@@ -164,7 +164,7 @@ the server-side MCP readiness flow (`createMCPClient()` plus `tools()`) before
 a bad URL or hanging local process can stall the route.
 
 ```ts title="app/api/chat/route.ts"
-import { AISDKToolkit } from "@assistant-ui/react-ai-sdk";
+import { AISDKToolkit } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { openai } from "@ai-sdk/openai";
 import { streamText, convertToModelMessages } from "ai";
 import type { UIMessage } from "ai";
@@ -275,7 +275,7 @@ toolkit, add an `externalTool()` renderer whose key matches the MCP tool name:
 ```tsx title="app/toolkit.tsx"
 "use generative";
 
-import { defineMcpToolkit, defineToolkit, externalTool } from "@assistant-ui/react";
+import { defineMcpToolkit, defineToolkit, externalTool } from "@hitchsoftware/assistant-ui-react";
 
 type Args = { repo: string; number: number };
 type Result = { title: string; state: string; url: string };
@@ -304,7 +304,7 @@ export default defineToolkit({
 <Tab value="React Native">
 
 ```tsx title="components/GitHubIssueToolUI.tsx"
-import { defineToolkit } from "@assistant-ui/react-native";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react-native";
 import { Linking, Pressable, Text, View } from "react-native";
 
 type Args = { repo: string; number: number };
@@ -335,7 +335,7 @@ export const toolkit = defineToolkit({
 <Tab value="React Ink">
 
 ```tsx title="components/GitHubIssueToolUI.tsx"
-import { defineToolkit } from "@assistant-ui/react-ink";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react-ink";
 import { Box, Text } from "ink";
 
 type Args = { repo: string; number: number };
@@ -369,8 +369,8 @@ Register the toolkit once with `Tools({ toolkit })`. Renderer keys such as
 ```tsx title="app/components/RuntimeProvider.tsx"
 "use client";
 
-import { AssistantRuntimeProvider, AuiConfig, Tools } from "@assistant-ui/react";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+import { AssistantRuntimeProvider, AuiConfig, Tools } from "@hitchsoftware/assistant-ui-react";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import type { ReactNode } from "react";
 
 import { toolkit } from "./GitHubIssueToolUI";

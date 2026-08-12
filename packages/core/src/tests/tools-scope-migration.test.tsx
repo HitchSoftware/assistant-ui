@@ -2,8 +2,8 @@
 
 import { act, cleanup, render } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { withKey } from "@assistant-ui/tap";
-import { useAui } from "@assistant-ui/store";
+import { withKey } from "@hitchsoftware/assistant-ui-tap";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 import { Tools } from "../react/client/Tools";
 import { ModelContext } from "../store/clients/model-context-client";
 import type { Toolkit } from "../react/model-context/toolbox";

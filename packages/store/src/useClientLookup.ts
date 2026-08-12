@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { useResources, withKey, type ResourceElement } from "@assistant-ui/tap";
+import { useResources, withKey, type ResourceElement } from "@hitchsoftware/assistant-ui-tap";
 import type { ClientMethods, InferClientState } from "./types/client";
 import { ClientResource } from "./useClientResource";
 

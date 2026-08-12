@@ -1,21 +1,21 @@
 type Snapshot = Record<string, string>;
 
 const WORKSPACE_PACKAGE_JSON: Record<string, string> = {
-  "@assistant-ui/react": "packages/react/package.json",
-  "@assistant-ui/react-ai-sdk": "packages/react-ai-sdk/package.json",
-  "@assistant-ui/react-ink": "packages/react-ink/package.json",
-  "@assistant-ui/react-ink-markdown":
+  "@hitchsoftware/assistant-ui-react": "packages/react/package.json",
+  "@hitchsoftware/assistant-ui-react-ai-sdk": "packages/react-ai-sdk/package.json",
+  "@hitchsoftware/assistant-ui-react-ink": "packages/react-ink/package.json",
+  "@hitchsoftware/assistant-ui-react-ink-markdown":
     "packages/react-ink-markdown/package.json",
-  "@assistant-ui/react-lexical": "packages/react-lexical/package.json",
-  "@assistant-ui/react-markdown": "packages/react-markdown/package.json",
+  "@hitchsoftware/assistant-ui-react-lexical": "packages/react-lexical/package.json",
+  "@hitchsoftware/assistant-ui-react-markdown": "packages/react-markdown/package.json",
 };
 
 export const DEMO_DEPENDENCIES = [
   "@ai-sdk/openai",
-  "@assistant-ui/react",
-  "@assistant-ui/react-ai-sdk",
-  "@assistant-ui/react-lexical",
-  "@assistant-ui/react-markdown",
+  "@hitchsoftware/assistant-ui-react",
+  "@hitchsoftware/assistant-ui-react-ai-sdk",
+  "@hitchsoftware/assistant-ui-react-lexical",
+  "@hitchsoftware/assistant-ui-react-markdown",
   "@base-ui/react",
   "ai",
   "class-variance-authority",

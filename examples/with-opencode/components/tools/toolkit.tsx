@@ -1,6 +1,6 @@
 "use generative";
 
-import { defineToolkit, externalTool } from "@assistant-ui/react";
+import { defineToolkit, externalTool } from "@hitchsoftware/assistant-ui-react";
 import {
   ApplyPatchTool,
   AskQuestionTool,

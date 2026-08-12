@@ -111,21 +111,21 @@ describe("resolveLatestReleaseRef", () => {
       "fetch",
       vi.fn().mockResolvedValueOnce({
         ok: true,
-        json: async () => ({ tag_name: "@assistant-ui/react@0.12.15" }),
+        json: async () => ({ tag_name: "@hitchsoftware/assistant-ui-react@0.12.15" }),
       }),
     );
-    expect(await resolveLatestReleaseRef()).toBe("@assistant-ui/react@0.12.15");
+    expect(await resolveLatestReleaseRef()).toBe("@hitchsoftware/assistant-ui-react@0.12.15");
   });
 
   it("authenticates the latest release request when a GitHub token is configured", async () => {
     process.env.GITHUB_TOKEN = "ghs_test-token";
     const fetchMock = vi.fn().mockResolvedValueOnce({
       ok: true,
-      json: async () => ({ tag_name: "@assistant-ui/react@0.12.15" }),
+      json: async () => ({ tag_name: "@hitchsoftware/assistant-ui-react@0.12.15" }),
     });
     vi.stubGlobal("fetch", fetchMock);
 
-    expect(await resolveLatestReleaseRef()).toBe("@assistant-ui/react@0.12.15");
+    expect(await resolveLatestReleaseRef()).toBe("@hitchsoftware/assistant-ui-react@0.12.15");
     expect(fetchMock).toHaveBeenCalledWith(
       "https://api.github.com/repos/assistant-ui/assistant-ui/releases/latest",
       { headers: { Authorization: "Bearer ghs_test-token" } },
@@ -237,12 +237,12 @@ describe("transformProject — hasLocalComponents: true", () => {
     writeJSON("package.json", {
       name: "old-name",
       dependencies: {
-        "@assistant-ui/react": "workspace:*",
-        "@assistant-ui/ui": "workspace:*",
+        "@hitchsoftware/assistant-ui-react": "workspace:*",
+        "@hitchsoftware/assistant-ui-ui": "workspace:*",
         next: "^15.0.0",
       },
       devDependencies: {
-        "@assistant-ui/x-buildutils": "workspace:*",
+        "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
         typescript: "^5.0.0",
       },
     });
@@ -253,10 +253,10 @@ describe("transformProject — hasLocalComponents: true", () => {
     });
 
     const pkg = readJSON("package.json");
-    expect(pkg.dependencies["@assistant-ui/react"]).toBe("latest");
+    expect(pkg.dependencies["@hitchsoftware/assistant-ui-react"]).toBe("latest");
     expect(pkg.dependencies.next).toBe("^15.0.0");
-    expect(pkg.dependencies["@assistant-ui/ui"]).toBeUndefined();
-    expect(pkg.devDependencies["@assistant-ui/x-buildutils"]).toBeUndefined();
+    expect(pkg.dependencies["@hitchsoftware/assistant-ui-ui"]).toBeUndefined();
+    expect(pkg.devDependencies["@hitchsoftware/assistant-ui-x-buildutils"]).toBeUndefined();
     expect(pkg.devDependencies.typescript).toBe("^5.0.0");
     expect(pkg.name).toBe(path.basename(testDir));
   });
@@ -264,7 +264,7 @@ describe("transformProject — hasLocalComponents: true", () => {
   it("sanitizes tsconfig and css files", async () => {
     writeJSON("package.json", { name: "test", dependencies: {} });
     writeJSON("tsconfig.json", {
-      extends: "@assistant-ui/x-buildutils/ts/base",
+      extends: "@hitchsoftware/assistant-ui-x-buildutils/ts/base",
       compilerOptions: {
         paths: {
           "@/*": ["./*"],
@@ -378,7 +378,7 @@ describe("transformProject — hasLocalComponents: false", () => {
             ],
             "@/hooks/*": ["./hooks/*"],
             "@/lib/utils": ["./lib/utils"],
-            "@assistant-ui/ui/*": ["../../packages/ui/src/*"],
+            "@hitchsoftware/assistant-ui-ui/*": ["../../packages/ui/src/*"],
             "@/*": ["./*"],
           },
         },
@@ -394,7 +394,7 @@ describe("transformProject — hasLocalComponents: false", () => {
       expect(paths["@/components/ui/radix/*"]).toBeUndefined();
       expect(paths["@/hooks/*"]).toBeUndefined();
       expect(paths["@/lib/utils"]).toBeUndefined();
-      expect(paths["@assistant-ui/ui/*"]).toBeUndefined();
+      expect(paths["@hitchsoftware/assistant-ui-ui/*"]).toBeUndefined();
       expect(paths["@/*"]).toEqual(["./*"]);
     });
 
@@ -404,9 +404,9 @@ describe("transformProject — hasLocalComponents: false", () => {
           paths: {
             "@/*": ["./*"],
             "@assistant-ui/*": ["../../packages/*/src"],
-            "@assistant-ui/core/*": ["../../packages/core/src/*"],
+            "@hitchsoftware/assistant-ui-core/*": ["../../packages/core/src/*"],
             "@shared/*": ["../shared/*"],
-            "assistant-stream": ["../../packages/assistant-stream/src"],
+            "@hitchsoftware/assistant-stream": ["../../packages/assistant-stream/src"],
             "assistant-stream/*": ["../../packages/assistant-stream/src/*"],
           },
         },
@@ -416,7 +416,7 @@ describe("transformProject — hasLocalComponents: false", () => {
 
       const paths = readJSON("tsconfig.json").compilerOptions.paths;
       expect(paths["@assistant-ui/*"]).toBeUndefined();
-      expect(paths["@assistant-ui/core/*"]).toBeUndefined();
+      expect(paths["@hitchsoftware/assistant-ui-core/*"]).toBeUndefined();
       expect(paths["@shared/*"]).toBeUndefined();
       expect(paths["assistant-stream"]).toBeUndefined();
       expect(paths["assistant-stream/*"]).toBeUndefined();
@@ -425,7 +425,7 @@ describe("transformProject — hasLocalComponents: false", () => {
 
     it("inlines x-buildutils/ts/next config with Next.js settings", async () => {
       writeJSON("tsconfig.json", {
-        extends: "@assistant-ui/x-buildutils/ts/next",
+        extends: "@hitchsoftware/assistant-ui-x-buildutils/ts/next",
         compilerOptions: {
           baseUrl: ".",
         },
@@ -451,7 +451,7 @@ describe("transformProject — hasLocalComponents: false", () => {
             "@/components/ui/*": ["./components/ui/*"],
             "@/hooks/*": ["./hooks/*"],
             "@/lib/utils": ["./lib/utils"],
-            "@assistant-ui/ui/*": ["../../packages/ui/src/*"],
+            "@hitchsoftware/assistant-ui-ui/*": ["../../packages/ui/src/*"],
           },
         },
       });
@@ -464,7 +464,7 @@ describe("transformProject — hasLocalComponents: false", () => {
 
     it("inlines x-buildutils/ts/base config without Next.js settings", async () => {
       writeJSON("tsconfig.json", {
-        extends: "@assistant-ui/x-buildutils/ts/base",
+        extends: "@hitchsoftware/assistant-ui-x-buildutils/ts/base",
         compilerOptions: {
           baseUrl: ".",
         },
@@ -535,9 +535,9 @@ describe("transformProject — hasLocalComponents: false", () => {
 
       const args = addCalls[0]![1] as string[];
       expect(args).toContain("button");
-      expect(args).toContain("@assistant-ui/thread");
+      expect(args).toContain("@hitchsoftware/assistant-ui-thread");
       expect(args).not.toContain("button.tsx");
-      expect(args).not.toContain("@assistant-ui/thread.tsx");
+      expect(args).not.toContain("@hitchsoftware/assistant-ui-thread.tsx");
     });
 
     it("skips shadcn when skipInstall is true even without local components", async () => {

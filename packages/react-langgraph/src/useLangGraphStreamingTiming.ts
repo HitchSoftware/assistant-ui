@@ -1,11 +1,11 @@
 "use client";
 
 import type { LangChainMessage } from "./types";
-import type { MessageTiming } from "@assistant-ui/core";
+import type { MessageTiming } from "@hitchsoftware/assistant-ui-core";
 import {
   useStreamingTiming,
   type StreamingTimingAccessors,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";
 
 const reasoningTextLength = (part: {
   readonly summary?: ReadonlyArray<{ readonly text?: string }>;
@@ -72,7 +72,7 @@ const langGraphStreamingTimingAccessors: StreamingTimingAccessors<LangChainMessa
 
 /**
  * Tracks per-message streaming timing for LangGraph messages. Delegates to
- * the shared `useStreamingTiming` primitive in `@assistant-ui/core/react`,
+ * the shared `useStreamingTiming` primitive in `@hitchsoftware/assistant-ui-core/react`,
  * adapted to the LangGraph message shape via the accessors above.
  */
 export const useLangGraphStreamingTiming = (

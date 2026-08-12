@@ -53,17 +53,17 @@ There is not an Ink LangGraph template yet. Use the manual setup below in a Node
 <PlatformTabs>
 <Tab value="React">
 
-<InstallCommand npm={["@assistant-ui/react", "@assistant-ui/react-langgraph", "@langchain/langgraph-sdk"]} />
+<InstallCommand npm={["@hitchsoftware/assistant-ui-react", "@hitchsoftware/assistant-ui-react-langgraph", "@langchain/langgraph-sdk"]} />
 
 </Tab>
 <Tab value="React Native">
 
-<InstallCommand expo={["@assistant-ui/react-native", "@assistant-ui/react-langgraph", "@langchain/langgraph-sdk"]} />
+<InstallCommand expo={["@hitchsoftware/assistant-ui-react-native", "@hitchsoftware/assistant-ui-react-langgraph", "@langchain/langgraph-sdk"]} />
 
 </Tab>
 <Tab value="React Ink">
 
-<InstallCommand npm={["@assistant-ui/react-ink", "@assistant-ui/react-langgraph", "@langchain/langgraph-sdk", "ink", "react"]} />
+<InstallCommand npm={["@hitchsoftware/assistant-ui-react-ink", "@hitchsoftware/assistant-ui-react-langgraph", "@langchain/langgraph-sdk", "ink", "react"]} />
 
 </Tab>
 </PlatformTabs>
@@ -130,12 +130,12 @@ export const createClient = () => {
 
 import { useMemo } from "react";
 import { Thread } from "@/components/assistant-ui/thread";
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
 import {
   unstable_createLangGraphStream,
   useLangGraphRuntime,
   type LangChainMessage,
-} from "@assistant-ui/react-langgraph";
+} from "@hitchsoftware/assistant-ui-react-langgraph";
 
 import { createClient } from "@/lib/chatApi";
 
@@ -183,12 +183,12 @@ export function MyAssistant() {
 
 ```tsx title="components/MyAssistant.tsx"
 import { useMemo } from "react";
-import { AssistantRuntimeProvider } from "@assistant-ui/react-native";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react-native";
 import {
   unstable_createLangGraphStream,
   useLangGraphRuntime,
   type LangChainMessage,
-} from "@assistant-ui/react-langgraph";
+} from "@hitchsoftware/assistant-ui-react-langgraph";
 import { Thread } from "@/components/assistant-ui/thread";
 
 import { createClient } from "@/lib/chatApi";
@@ -237,12 +237,12 @@ export function MyAssistant() {
 
 ```tsx title="components/MyAssistant.tsx"
 import { useMemo } from "react";
-import { AssistantRuntimeProvider } from "@assistant-ui/react-ink";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react-ink";
 import {
   unstable_createLangGraphStream,
   useLangGraphRuntime,
   type LangChainMessage,
-} from "@assistant-ui/react-langgraph";
+} from "@hitchsoftware/assistant-ui-react-langgraph";
 import { Thread } from "./thread.js";
 
 import { createClient } from "../lib/chatApi.js";

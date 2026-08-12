@@ -1,6 +1,6 @@
 // Framework-neutral entry: no module evaluates a React component API, so this
 // graph loads with react installed, or with react aliased to
-// @assistant-ui/tap/standalone-shim, or (types aside) not at all.
+// @hitchsoftware/assistant-ui-tap/standalone-shim, or (types aside) not at all.
 
 export {
   createAssistantClient,

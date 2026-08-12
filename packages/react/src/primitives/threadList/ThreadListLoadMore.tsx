@@ -5,7 +5,7 @@ import {
   type ActionButtonProps,
   createActionButton,
 } from "../../utils/createActionButton";
-import { useThreadListLoadMore as useThreadListLoadMoreBehavior } from "@assistant-ui/core/react";
+import { useThreadListLoadMore as useThreadListLoadMoreBehavior } from "@hitchsoftware/assistant-ui-core/react";
 
 const useThreadListLoadMore = () => {
   const { loadMore, disabled } = useThreadListLoadMoreBehavior();

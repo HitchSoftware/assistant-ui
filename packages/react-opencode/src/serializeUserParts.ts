@@ -2,7 +2,7 @@ import {
   resolveFileMediaType,
   resolveImageMediaType,
   toMediaWireUrl,
-} from "@assistant-ui/core/internal";
+} from "@hitchsoftware/assistant-ui-core/internal";
 import type { Part, ThreadUserMessagePart } from "./types";
 
 /**

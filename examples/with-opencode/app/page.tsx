@@ -5,7 +5,7 @@ import {
   AuiConfig,
   Tools,
   useAui,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   SidebarInset,
   SidebarProvider,
@@ -16,7 +16,7 @@ import { ThreadListSidebar } from "@/components/assistant-ui/threadlist-sidebar.
 import {
   useOpenCodeRuntime,
   useOpenCodeSession,
-} from "@assistant-ui/react-opencode";
+} from "@hitchsoftware/assistant-ui-react-opencode";
 import {
   Thread,
   type ThreadComponents,

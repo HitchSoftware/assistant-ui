@@ -1,10 +1,10 @@
 "use client";
 
-import type { MessageTiming } from "@assistant-ui/core";
+import type { MessageTiming } from "@hitchsoftware/assistant-ui-core";
 import {
   useStreamingTiming,
   type StreamingTimingAccessors,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";
 import type { LangChainBaseMessage, LangChainContentBlock } from "./types";
 import { getMessageType } from "./convertMessages";
 
@@ -74,7 +74,7 @@ export const langChainStreamingTimingAccessors: StreamingTimingAccessors<LangCha
 
 /**
  * Tracks per-message streaming timing for LangChain messages. Delegates to
- * the shared `useStreamingTiming` primitive in `@assistant-ui/core/react`,
+ * the shared `useStreamingTiming` primitive in `@hitchsoftware/assistant-ui-core/react`,
  * adapted to the `LangChainBaseMessage` shape (`_getType() -> "ai"`, content
  * blocks including text/thinking/reasoning, `tool_calls`).
  */

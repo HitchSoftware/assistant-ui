@@ -32,7 +32,7 @@ This example demonstrates how to create an AI assistant sidebar that helps users
 
 ## Integration
 
-The example uses `useAssistantForm` from `@assistant-ui/react-hook-form` to connect the AI with form state. This hook replaces the standard `useForm` and automatically registers `set_form_field` and `submit_form` tools with the assistant.
+The example uses `useAssistantForm` from `@hitchsoftware/assistant-ui-react-hook-form` to connect the AI with form state. This hook replaces the standard `useForm` and automatically registers `set_form_field` and `submit_form` tools with the assistant.
 
 ### Runtime Provider
 
@@ -40,8 +40,8 @@ The example uses `useAssistantForm` from `@assistant-ui/react-hook-form` to conn
 // app/MyRuntimeProvider.tsx
 "use client";
 
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 
 export function MyRuntimeProvider({
   children,
@@ -61,7 +61,7 @@ export function MyRuntimeProvider({
 ```ts
 // app/api/chat/route.ts
 import { openai } from "@ai-sdk/openai";
-import { frontendTools } from "@assistant-ui/react-ai-sdk";
+import { frontendTools } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { convertToModelMessages, streamText } from "ai";
 
 export const maxDuration = 30;
@@ -96,14 +96,14 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
-import { useAssistantForm } from "@assistant-ui/react-hook-form";
+import { useAssistantForm } from "@hitchsoftware/assistant-ui-react-hook-form";
 import {
   useAssistantInstructions,
   useAui,
   AuiConfig,
   AuiProvider,
   Suggestions,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 const SetFormFieldTool = () => {
   return (

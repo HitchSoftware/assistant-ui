@@ -3,7 +3,7 @@
 import { act, render, waitFor } from "@testing-library/react";
 import type { FC } from "react";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { useAui } from "@assistant-ui/store";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 import { AssistantRuntimeProvider } from "../../../context";
 import {
   useAssistantTransportRuntime,

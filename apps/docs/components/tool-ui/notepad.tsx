@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { TooltipIconButton } from "@/components/assistant-ui/tooltip-icon-button";
-import { type Unstable_InteractableToolRenderProps as InteractableToolRenderProps } from "@assistant-ui/react";
+import { type Unstable_InteractableToolRenderProps as InteractableToolRenderProps } from "@hitchsoftware/assistant-ui-react";
 import {
   CheckIcon,
   CopyIcon,

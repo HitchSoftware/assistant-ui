@@ -1,6 +1,6 @@
 import { useMemo, use, createContext } from "react";
 
-import { useContextProvider } from "@assistant-ui/tap";
+import { useContextProvider } from "@hitchsoftware/assistant-ui-tap";
 import type { ClientMethods } from "../types/client";
 
 /**

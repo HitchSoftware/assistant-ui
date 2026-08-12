@@ -1,8 +1,8 @@
-import type { ThreadMessageLike, AppendMessage } from "@assistant-ui/react";
+import type { ThreadMessageLike, AppendMessage } from "@hitchsoftware/assistant-ui-react";
 import {
   AssistantRuntimeProvider,
   useExternalStoreRuntime,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { createParser, type EventSourceMessage } from "eventsource-parser";
 import { useState, useCallback } from "react";
 

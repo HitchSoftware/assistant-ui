@@ -1,1 +1,1 @@
-export { BaseComposerRuntimeCore } from "@assistant-ui/core/internal";
+export { BaseComposerRuntimeCore } from "@hitchsoftware/assistant-ui-core/internal";

@@ -24,10 +24,10 @@ Realtime voice is the only mode that owns both directions at once. Dictation fil
 
 ## RealtimeVoiceAdapter
 
-Implement `RealtimeVoiceAdapter` to connect any voice provider. The contract lives in `@assistant-ui/core` and is re-exported from `@assistant-ui/react`:
+Implement `RealtimeVoiceAdapter` to connect any voice provider. The contract lives in `@hitchsoftware/assistant-ui-core` and is re-exported from `@hitchsoftware/assistant-ui-react`:
 
 ```tsx
-import type { RealtimeVoiceAdapter } from "@assistant-ui/react";
+import type { RealtimeVoiceAdapter } from "@hitchsoftware/assistant-ui-react";
 
 type RealtimeVoiceAdapter = {
   connect: (options: {
@@ -93,7 +93,7 @@ import {
   type RealtimeVoiceAdapter,
   type VoiceSessionControls,
   type VoiceSessionHelpers,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 export class MyVoiceAdapter implements RealtimeVoiceAdapter {
   connect(options: {
@@ -149,14 +149,14 @@ When a voice adapter is provided, `capabilities.voice` is set to `true` automati
 
 ## React hooks
 
-These hooks are exported from `@assistant-ui/react` and read the active voice session on the current thread.
+These hooks are exported from `@hitchsoftware/assistant-ui-react` and read the active voice session on the current thread.
 
 ### useVoiceState
 
 Returns the current `VoiceSessionState`, or `undefined` when no session is active:
 
 ```tsx
-import { useVoiceState } from "@assistant-ui/react";
+import { useVoiceState } from "@hitchsoftware/assistant-ui-react";
 
 const voiceState = useVoiceState();
 // voiceState?.status.type: "starting" | "running" | "ended"
@@ -179,7 +179,7 @@ type VoiceSessionState = {
 Subscribes to real-time audio level independently of session state:
 
 ```tsx
-import { useVoiceVolume } from "@assistant-ui/react";
+import { useVoiceVolume } from "@hitchsoftware/assistant-ui-react";
 
 const volume = useVoiceVolume(); // number from 0 to 1
 ```
@@ -189,7 +189,7 @@ const volume = useVoiceVolume(); // number from 0 to 1
 Returns methods that drive the session:
 
 ```tsx
-import { useVoiceControls } from "@assistant-ui/react";
+import { useVoiceControls } from "@hitchsoftware/assistant-ui-react";
 
 const { connect, disconnect, mute, unmute } = useVoiceControls();
 ```
@@ -199,7 +199,7 @@ const { connect, disconnect, mute, unmute } = useVoiceControls();
 Build your own controls from the hooks when you need a custom layout:
 
 ```tsx
-import { useVoiceState, useVoiceControls } from "@assistant-ui/react";
+import { useVoiceState, useVoiceControls } from "@hitchsoftware/assistant-ui-react";
 import { PhoneIcon, PhoneOffIcon, MicIcon, MicOffIcon } from "lucide-react";
 
 function VoiceControls() {
@@ -247,7 +247,7 @@ This adds `/components/assistant-ui/voice.tsx` to your project. Adjust styling a
 ```tsx title="app/page.tsx"
 import { Thread } from "@/components/assistant-ui/thread";
 import { VoiceControl } from "@/components/assistant-ui/voice";
-import { AuiIf } from "@assistant-ui/react";
+import { AuiIf } from "@hitchsoftware/assistant-ui-react";
 
 export default function Chat() {
   return (

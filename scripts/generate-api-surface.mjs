@@ -763,8 +763,8 @@ async function buildCliSurface() {
 
   const createSurface = formatCommand(create);
   return {
-    "assistant-ui": formatCommand(program),
-    "create-assistant-ui": {
+    "@hitchsoftware/assistant-ui": formatCommand(program),
+    "@hitchsoftware/create-assistant-ui": {
       name: "create-assistant-ui",
       description: "create assistant-ui apps with one command",
       forwardsTo: "assistant-ui create",

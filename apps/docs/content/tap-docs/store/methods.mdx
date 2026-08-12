@@ -10,9 +10,9 @@ Methods are the imperative API of a scope. They're the functions your resource r
 First, register the method signatures in `ScopeRegistry`:
 
 ```ts title="lib/store/counter-scope.ts"
-import "@assistant-ui/store";
+import "@hitchsoftware/assistant-ui-store";
 
-declare module "@assistant-ui/store" {
+declare module "@hitchsoftware/assistant-ui-store" {
   interface ScopeRegistry {
     counter: {
       methods: {
@@ -28,9 +28,9 @@ declare module "@assistant-ui/store" {
 Then create a resource that implements them. The return type `ClientOutput<"counter">` ties the resource to the scope: TypeScript will error if the returned methods don't match the registry:
 
 ```ts title="lib/store/counter-resource.ts"
-import { resource } from "@assistant-ui/tap";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
 import { useState } from "react";
-import type { ClientOutput } from "@assistant-ui/store";
+import type { ClientOutput } from "@hitchsoftware/assistant-ui-store";
 
 const useCounterResource = (): ClientOutput<"counter"> => {
   const [count, setCount] = useState(0);

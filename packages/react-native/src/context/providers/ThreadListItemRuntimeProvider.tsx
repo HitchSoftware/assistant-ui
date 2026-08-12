@@ -1,1 +1,1 @@
-export { ThreadListItemRuntimeProvider } from "@assistant-ui/core/react";
+export { ThreadListItemRuntimeProvider } from "@hitchsoftware/assistant-ui-core/react";

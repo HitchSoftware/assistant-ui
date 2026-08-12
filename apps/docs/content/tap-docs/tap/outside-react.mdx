@@ -5,12 +5,12 @@ description: Run resources standalone, with no React tree.
 
 Resources don't need React. `createTapRoot` hosts a resource tree
 imperatively, which is how libraries and tests drive resources, and how
-`@assistant-ui/store` bridges them into React.
+`@hitchsoftware/assistant-ui-store` bridges them into React.
 
 ## createTapRoot
 
 ```ts
-import { createTapRoot, useResource } from "@assistant-ui/tap";
+import { createTapRoot, useResource } from "@hitchsoftware/assistant-ui-tap";
 
 const root = createTapRoot(function CounterRoot() {
   return useResource(Counter({ initialValue: 0 }));
@@ -65,7 +65,7 @@ maximum-update-depth error.
 new state is readable immediately after.
 
 ```ts
-import { flushTapSync } from "@assistant-ui/tap";
+import { flushTapSync } from "@hitchsoftware/assistant-ui-tap";
 
 flushTapSync(() => root.getValue().increment());
 console.log(root.getValue().count); // already updated
@@ -90,7 +90,7 @@ React's scheduler:
 No special configuration is needed.
 
 <Callout type="warn">
-`@assistant-ui/store` bridges resources into React with `useSyncExternalStore`, so
+`@hitchsoftware/assistant-ui-store` bridges resources into React with `useSyncExternalStore`, so
 those reads trigger synchronous re-renders and opt out of concurrent scheduling.
 This may change in a future release.
 </Callout>

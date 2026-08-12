@@ -1,4 +1,4 @@
-import { frontendTools } from "@assistant-ui/react-ai-sdk";
+import { frontendTools } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { openai } from "@ai-sdk/openai";
 import {
   convertToModelMessages,

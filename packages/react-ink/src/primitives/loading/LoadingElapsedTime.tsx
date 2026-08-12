@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState, type ComponentProps } from "react";
 
 import { Text } from "ink";
-import { useThreadIsRunning } from "@assistant-ui/core/react";
-import { useAuiState } from "@assistant-ui/store";
+import { useThreadIsRunning } from "@hitchsoftware/assistant-ui-core/react";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 
 const defaultFormat = (seconds: number) => {
   if (seconds < 60) return `(${seconds}s)`;

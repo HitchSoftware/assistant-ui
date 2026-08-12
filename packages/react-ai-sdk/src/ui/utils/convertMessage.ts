@@ -8,7 +8,7 @@ import {
 import {
   createMessageConverter as unstable_createMessageConverter,
   type useExternalMessageConverter,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";
 import {
   isMcpAppUri,
   type ReasoningMessagePart,
@@ -22,12 +22,12 @@ import {
   type ThreadMessageLike,
   type McpAppMetadata,
   type MessagePartStreamStatus,
-} from "@assistant-ui/core";
-import { stableStringifyToolArgs } from "@assistant-ui/core/internal";
+} from "@hitchsoftware/assistant-ui-core";
+import { stableStringifyToolArgs } from "@hitchsoftware/assistant-ui-core/internal";
 import {
   parsePartialJsonObject,
   type ReadonlyJSONObject,
-} from "assistant-stream/utils";
+} from "@hitchsoftware/assistant-stream/utils";
 import { unwrapModelContentEnvelope } from "../../modelContentEnvelope";
 
 type MessageMetadata = ThreadMessageLike["metadata"];

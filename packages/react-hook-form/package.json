@@ -1,5 +1,5 @@
 {
-  "name": "@assistant-ui/react-hook-form",
+  "name": "@hitchsoftware/assistant-ui-react-hook-form",
   "version": "0.12.27",
   "description": "React Hook Form integration for assistant-ui",
   "keywords": [
@@ -34,8 +34,8 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@assistant-ui/core": "^0.3.10",
-    "@assistant-ui/store": "^0.3.8",
+    "@hitchsoftware/assistant-ui-core": "^0.3.10",
+    "@hitchsoftware/assistant-ui-store": "^0.3.8",
     "zod": "^4.4.3"
   },
   "peerDependencies": {
@@ -49,7 +49,7 @@
     }
   },
   "devDependencies": {
-    "@assistant-ui/x-buildutils": "workspace:*",
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
     "@testing-library/react": "^16.3.2",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
@@ -59,8 +59,8 @@
     "vitest": "^4.1.10"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://www.assistant-ui.com/",
   "repository": {

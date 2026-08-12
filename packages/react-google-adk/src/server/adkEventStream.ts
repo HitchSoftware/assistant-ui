@@ -121,7 +121,7 @@ const notifyError = (
  *
  * @example
  * ```ts
- * import { adkEventStream } from '@assistant-ui/react-google-adk/server';
+ * import { adkEventStream } from '@hitchsoftware/assistant-ui-react-google-adk/server';
  * const events = runner.runAsync({ userId, sessionId, newMessage });
  * return adkEventStream(events);
  * ```

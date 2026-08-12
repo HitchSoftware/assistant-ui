@@ -20,7 +20,7 @@ import {
   type RemoveUIMessage,
   type UIMessage,
 } from "./types";
-import { useAui } from "@assistant-ui/store";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 import { normalizeLangGraphTupleMessage } from "./normalizeLangGraphTupleMessage";
 
 const DEFAULT_UI_STATE_KEY = "ui";

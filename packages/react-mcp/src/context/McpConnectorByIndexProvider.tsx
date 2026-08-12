@@ -1,5 +1,5 @@
 import type { FC, PropsWithChildren } from "react";
-import { useAui, AuiConfig, AuiProvider, Derived } from "@assistant-ui/store";
+import { useAui, AuiConfig, AuiProvider, Derived } from "@hitchsoftware/assistant-ui-store";
 
 export const McpConnectorByIndexProvider: FC<
   PropsWithChildren<{ index: number }>

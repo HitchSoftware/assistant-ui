@@ -5,7 +5,7 @@ import { View, Text, StyleSheet } from "react-native";
 import {
   defineToolkit,
   type ToolCallMessagePartProps,
-} from "@assistant-ui/react-native";
+} from "@hitchsoftware/assistant-ui-react-native";
 import { z } from "zod";
 import { useTheme } from "@/hooks/use-theme";
 import { Radius } from "@/constants/theme";

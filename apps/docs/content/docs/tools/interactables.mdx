@@ -45,8 +45,8 @@ import {
   unstable_Interactables,
   AssistantRuntimeProvider,
   Tools,
-} from "@assistant-ui/react";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 
 function MyRuntimeProvider({ children }: { children: React.ReactNode }) {
   const runtime = useChatRuntime();
@@ -87,7 +87,7 @@ Pick the path that matches who creates it.
 A component you mount yourself. Define it with `unstable_useInteractable` where you render it (a sidebar, a panel, wherever).
 
 ```tsx
-import { unstable_useInteractable } from "@assistant-ui/react";
+import { unstable_useInteractable } from "@hitchsoftware/assistant-ui-react";
 import { z } from "zod";
 
 const taskBoardSchema = z.object({
@@ -142,7 +142,7 @@ An interactable tool UI the model can call in-thread. Define it with `unstable_i
 ```tsx
 "use generative";
 
-import { defineToolkit, unstable_interactableTool } from "@assistant-ui/react";
+import { defineToolkit, unstable_interactableTool } from "@hitchsoftware/assistant-ui-react";
 import { z } from "zod";
 
 const notepadSchema = z.object({
@@ -196,7 +196,7 @@ Each user message carries its state snapshots in its metadata, but the AI SDK's 
 ```ts title="app/api/chat/route.ts"
 import { openai } from "@ai-sdk/openai";
 import { convertToModelMessages, streamText } from "ai";
-import { unstable_injectInteractableContext as injectInteractableContext } from "@assistant-ui/react-ai-sdk";
+import { unstable_injectInteractableContext as injectInteractableContext } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
@@ -218,13 +218,13 @@ export async function POST(req: Request) {
 </Tab>
 <Tab>
 
-Each user message carries its state snapshots at `metadata.custom.interactables`. For other backends (LangGraph, Mastra, a custom runtime), build the equivalent injection with the two helpers exported from `@assistant-ui/react`:
+Each user message carries its state snapshots at `metadata.custom.interactables`. For other backends (LangGraph, Mastra, a custom runtime), build the equivalent injection with the two helpers exported from `@hitchsoftware/assistant-ui-react`:
 
 ```ts
 import {
   unstable_getInteractableSnapshots, // (message) => snapshot entries | undefined
   unstable_formatInteractableSnapshot, // (entry) => the model-facing formatting of the snapshot injection
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 for (const message of messages) {
   if (message.role !== "user") continue;
@@ -273,7 +273,7 @@ A formatter receives one snapshot `entry` and returns the line the model sees:
 Write a custom formatter:
 
 ```ts
-import { type Unstable_InteractableSnapshotEntry } from "@assistant-ui/react";
+import { type Unstable_InteractableSnapshotEntry } from "@hitchsoftware/assistant-ui-react";
 
 const formatSnapshot = (entry: Unstable_InteractableSnapshotEntry) =>
   entry.partial
@@ -379,7 +379,7 @@ How you wire one depends on what its executor touches.
 ```tsx title="app/email-toolkit.tsx"
 "use generative";
 
-import { defineToolkit, stubTool } from "@assistant-ui/react";
+import { defineToolkit, stubTool } from "@hitchsoftware/assistant-ui-react";
 import { z } from "zod";
 
 export default defineToolkit({
@@ -397,7 +397,7 @@ export default defineToolkit({
 import {
   unstable_useInteractable,
   useAuiToolOverrides,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 function EmailComposer() {
   const [draft, { setState }] = unstable_useInteractable("email", {
@@ -600,7 +600,7 @@ import {
   AuiProvider,
   useAui,
   unstable_Interactables,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 // Module-level (or memoized) so the adapter identity is stable across renders.
 const persistenceAdapter = {
@@ -702,7 +702,7 @@ As `update_taskBoard` streams an edit to one task, that row re-renders as its fi
 One case worth handling: at the very start of a fresh create the model may not have produced any items yet. Use the thread's `isRunning` to tell "still streaming, nothing yet" apart from "the model returned an empty result", and show a skeleton only for that gap:
 
 ```tsx
-import { useAuiState } from "@assistant-ui/react";
+import { useAuiState } from "@hitchsoftware/assistant-ui-react";
 
 const isRunning = useAuiState((s) => s.thread.isRunning);
 const isLoading = isRunning && state.tasks.length === 0;
@@ -725,7 +725,7 @@ A thread-scoped interactable gets a fresh instance every time the model calls it
 For app-scoped interactables you decide how many instances exist by mounting `unstable_useInteractable` in more than one place, one instance per mount. Give each mount a distinct `id`:
 
 ```tsx
-import { unstable_useInteractable } from "@assistant-ui/react";
+import { unstable_useInteractable } from "@hitchsoftware/assistant-ui-react";
 import { z } from "zod";
 
 const noteSchema = z.object({
@@ -1048,7 +1048,7 @@ const versions = unstable_useInteractableVersions<TState>(id, name);
 // → [{ state, origin: "create" | "update" | "user-edit", toolCallId?, restore }, ...]
 ```
 
-Every version of an interactable recorded in the current thread, oldest first. Each entry carries the full `state` and a `restore()` that sets the live instance back to it. Works for both scopes; see [Versions](#versions) for usage. The non-React equivalent for backends is `unstable_getInteractableVersions(messages, id, name)`, exported from `@assistant-ui/react`.
+Every version of an interactable recorded in the current thread, oldest first. Each entry carries the full `state` and a `restore()` that sets the live instance back to it. Works for both scopes; see [Versions](#versions) for usage. The non-React equivalent for backends is `unstable_getInteractableVersions(messages, id, name)`, exported from `@hitchsoftware/assistant-ui-react`.
 
 ### `unstable_Interactables`
 

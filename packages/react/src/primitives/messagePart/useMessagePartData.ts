@@ -1,7 +1,7 @@
 "use client";
 
-import type { DataMessagePart } from "@assistant-ui/core";
-import { useAuiState } from "@assistant-ui/store";
+import type { DataMessagePart } from "@hitchsoftware/assistant-ui-core";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 
 /**
  * @deprecated Use {@link useAuiState} to select and narrow `s.part`.

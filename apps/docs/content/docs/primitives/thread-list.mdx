@@ -19,7 +19,7 @@ import {
   ThreadListPrimitive,
   ThreadListItemPrimitive,
   ThreadListItemMorePrimitive,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { ArchiveIcon, MoreHorizontalIcon, PlusIcon, TrashIcon } from "lucide-react";
 
 function MyThreadList() {
@@ -74,7 +74,7 @@ Minimal example:
 import {
   ThreadListPrimitive,
   ThreadListItemPrimitive,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 <ThreadListPrimitive.Root>
   <ThreadListPrimitive.New>New Thread</ThreadListPrimitive.New>
@@ -256,7 +256,7 @@ Button that appends the next page of threads. Renders a `<button>` element unles
 For scroll-driven loading, wrap `aui.threads.loadMore()` in your own `IntersectionObserver` at the application layer; assistant-ui ships the explicit button to keep the primitive surface predictable.
 
 ```tsx
-import { useAui, useAuiState } from "@assistant-ui/react";
+import { useAui, useAuiState } from "@hitchsoftware/assistant-ui-react";
 import { useEffect, useRef } from "react";
 
 function LoadMoreSentinel() {

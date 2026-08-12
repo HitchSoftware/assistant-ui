@@ -5,7 +5,7 @@ import {
   type ActionButtonProps,
   createActionButton,
 } from "../../utils/createActionButton";
-import { useThreadListItemArchive as useThreadListItemArchiveBehavior } from "@assistant-ui/core/react";
+import { useThreadListItemArchive as useThreadListItemArchiveBehavior } from "@hitchsoftware/assistant-ui-core/react";
 
 const useThreadListItemArchive = () => {
   const { archive } = useThreadListItemArchiveBehavior();

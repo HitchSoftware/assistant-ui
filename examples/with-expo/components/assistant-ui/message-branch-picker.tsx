@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from "react-native";
 import { Icon } from "@/components/ui/icon";
-import { BranchPickerPrimitive, useAuiState } from "@assistant-ui/react-native";
+import { BranchPickerPrimitive, useAuiState } from "@hitchsoftware/assistant-ui-react-native";
 import { useTheme } from "@/hooks/use-theme";
 
 export function MessageBranchPicker({

@@ -31,7 +31,7 @@ This adds a `/components/assistant-ui/message-timing.tsx` file to your project.
 Place `MessageTiming` inside `ActionBarPrimitive.Root` in your `thread.tsx`. It will inherit the action bar's auto-hide behaviour and only renders after the stream completes.
 
 ```tsx title="/components/assistant-ui/thread.tsx" {2,12}
-import { ActionBarPrimitive } from "@assistant-ui/react";
+import { ActionBarPrimitive } from "@hitchsoftware/assistant-ui-react";
 import { MessageTiming } from "@/components/assistant-ui/message-timing";
 
 const AssistantActionBar: FC = () => {

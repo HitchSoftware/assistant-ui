@@ -1,4 +1,4 @@
-# @assistant-ui/store Specification
+# @hitchsoftware/assistant-ui-store Specification
 
 React integration for tap. Type-safe client-based state via module augmentation.
 
@@ -6,7 +6,7 @@ React integration for tap. Type-safe client-based state via module augmentation.
 
 ### ScopeRegistry
 ```typescript
-declare module "@assistant-ui/store" {
+declare module "@hitchsoftware/assistant-ui-store" {
   interface ScopeRegistry {
     name: {
       methods: MethodsType; // must include getState(): StateType

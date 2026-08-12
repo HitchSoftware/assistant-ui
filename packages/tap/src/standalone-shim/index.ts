@@ -18,7 +18,7 @@ const inTap = () => peekResourceFiber() !== null;
 
 const throwOutsideTap = (name: string): never => {
   throw new Error(
-    `${name} from @assistant-ui/tap/standalone-shim was called outside a tap resource render. The standalone shim has no React fallback; host this code inside createTapRoot.`,
+    `${name} from @hitchsoftware/assistant-ui-tap/standalone-shim was called outside a tap resource render. The standalone shim has no React fallback; host this code inside createTapRoot.`,
   );
 };
 

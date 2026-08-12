@@ -1,5 +1,5 @@
 import { UI_MESSAGE_STREAM_HEADERS } from "ai";
-import { RESUMABLE_STREAM_ID_HEADER } from "assistant-stream/resumable";
+import { RESUMABLE_STREAM_ID_HEADER } from "@hitchsoftware/assistant-stream/resumable";
 import { getResumableStreamContext } from "@/lib/resumable-context";
 
 export const maxDuration = 60;

@@ -1,5 +1,5 @@
 {
-  "name": "@assistant-ui/api-surface",
+  "name": "@hitchsoftware/assistant-ui-api-surface",
   "private": true,
   "type": "module",
   "scripts": {

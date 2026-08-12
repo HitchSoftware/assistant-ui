@@ -28,7 +28,7 @@ A module opts in with a leading directive and a single default export wrapped in
 ```tsx
 "use generative";
 import { z } from "zod";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import { db } from "@/db"; // server-only dependency
 import { Chart } from "@/ui/chart"; // client-only dependency
 
@@ -92,7 +92,7 @@ The `"use generative"` directive is stripped from both outputs.
 
 ## Bundler integration
 
-Wrap the Next config with `withAui` from `@assistant-ui/next`
+Wrap the Next config with `withAui` from `@hitchsoftware/assistant-ui-next`
 (no filename convention — modules are matched by the `"use generative"` directive,
 and the loader passes non-generative files through untouched). It applies `./loader`,
 a webpack/Turbopack loader.
@@ -124,7 +124,7 @@ Both sides import the module **bare**; the facade resolves each to the right bui
 - **server:** import `./x.generative` in a route handler — it resolves to the
   server build (schema + `execute`). With the AI SDK,
   `await new AISDKToolkit({ toolkit }).tools({ frontend })` from
-  `@assistant-ui/react-ai-sdk` converts it into a `ToolSet` whose `execute` runs
+  `@hitchsoftware/assistant-ui-react-ai-sdk` converts it into a `ToolSet` whose `execute` runs
   in the route, merging in the frontend-uploaded tools.
 - **client:** import `./x.generative` in a client component — it resolves to the
   client build (schema + `render`) — and register its tool UI.

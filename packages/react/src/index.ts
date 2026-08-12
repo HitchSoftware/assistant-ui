@@ -1,6 +1,6 @@
-/// <reference types="@assistant-ui/core/react" />
+/// <reference types="@hitchsoftware/assistant-ui-core/react" />
 
-// Re-export from @assistant-ui/store
+// Re-export from @hitchsoftware/assistant-ui-store
 export {
   useAui,
   AuiProvider,
@@ -15,9 +15,9 @@ export {
   type AssistantEventName,
   type AssistantEventPayload,
   type AssistantEventCallback,
-} from "@assistant-ui/store";
+} from "@hitchsoftware/assistant-ui-store";
 
-// Re-export public runtime types from @assistant-ui/core
+// Re-export public runtime types from @hitchsoftware/assistant-ui-core
 export type {
   AssistantRuntime,
   ThreadRuntime,
@@ -41,56 +41,56 @@ export type {
   ThreadListState,
   ThreadListItemRuntime,
   ThreadListItemState,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 
 export { useCloudThreadListRuntime } from "./legacy-runtime/cloud/useCloudThreadListRuntime";
-export { AssistantCloud } from "assistant-cloud";
+export { AssistantCloud } from "@hitchsoftware/assistant-cloud";
 
 // --- adapters/attachment ---
-export type { AttachmentAdapter } from "@assistant-ui/core";
+export type { AttachmentAdapter } from "@hitchsoftware/assistant-ui-core";
 export {
   SimpleImageAttachmentAdapter,
   SimpleTextAttachmentAdapter,
   CompositeAttachmentAdapter,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 export { CloudFileAttachmentAdapter } from "./legacy-runtime/runtime-cores/adapters/attachment/CloudFileAttachmentAdapter";
 
 // --- adapters/voice ---
-export type { RealtimeVoiceAdapter } from "@assistant-ui/core";
-export { createVoiceSession } from "@assistant-ui/core";
+export type { RealtimeVoiceAdapter } from "@hitchsoftware/assistant-ui-core";
+export { createVoiceSession } from "@hitchsoftware/assistant-ui-core";
 export type {
   VoiceSessionControls,
   VoiceSessionHelpers,
   VoiceSessionState,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 export {
   useVoiceState,
   useVoiceVolume,
   useVoiceControls,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";
 
 // --- adapters/feedback ---
-export type { FeedbackAdapter } from "@assistant-ui/core";
+export type { FeedbackAdapter } from "@hitchsoftware/assistant-ui-core";
 
 // --- adapters/speech ---
 export type {
   SpeechSynthesisAdapter,
   DictationAdapter,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 export {
   WebSpeechSynthesisAdapter,
   WebSpeechDictationAdapter,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 
 // --- adapters/suggestion ---
-export type { SuggestionAdapter } from "@assistant-ui/core";
+export type { SuggestionAdapter } from "@hitchsoftware/assistant-ui-core";
 
 // --- adapters/RuntimeAdapterProvider ---
 export {
   RuntimeAdapterProvider,
   useRuntimeAdapters,
   type RuntimeAdapters,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";
 
 // --- adapters/thread-history ---
 export type {
@@ -100,7 +100,7 @@ export type {
   MessageFormatItem,
   MessageFormatRepository,
   MessageStorageEntry,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 
 // --- assistant-transport ---
 export {
@@ -121,16 +121,16 @@ export type {
   SubmitFeedbackOptions,
   ThreadSuggestion,
   DictationState,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 
 // --- external-store ---
-export type { ThreadMessageLike } from "@assistant-ui/core";
-export { fromThreadMessageLike, generateId } from "@assistant-ui/core";
+export type { ThreadMessageLike } from "@hitchsoftware/assistant-ui-core";
+export { fromThreadMessageLike, generateId } from "@hitchsoftware/assistant-ui-core";
 export {
   getExternalStoreMessages,
   bindExternalStoreMessage,
   pickExternalStoreSharedOptions,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 export type {
   ExternalStoreAdapter,
   ExternalStoreMessageConverter,
@@ -138,17 +138,17 @@ export type {
   ExternalStoreThreadListAdapter,
   ExternalStoreThreadData,
   ExternalStoreBranchChange,
-} from "@assistant-ui/core";
-export { MessageNotSentError, isMessageNotSentError } from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
+export { MessageNotSentError, isMessageNotSentError } from "@hitchsoftware/assistant-ui-core";
 export {
   createMessageQueue,
   type MessageQueueDriver,
   type MessageQueueController,
   type ExternalThreadQueueAdapter,
   type ExternalThreadBranchAdapter,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 export { useExternalStoreRuntime } from "./legacy-runtime/runtime-cores/external-store/useExternalStoreRuntime";
-export { useExternalStoreSharedOptions } from "@assistant-ui/core/react";
+export { useExternalStoreSharedOptions } from "@hitchsoftware/assistant-ui-core/react";
 export {
   useExternalMessageConverter,
   convertExternalMessages as unstable_convertExternalMessages,
@@ -162,7 +162,7 @@ export type {
   ChatModelRunResult,
   ChatModelRunUpdate,
   LocalRuntimeOptionsBase,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 export { useLocalRuntime } from "./legacy-runtime/runtime-cores/local/useLocalRuntime";
 export type { LocalRuntimeOptions } from "./legacy-runtime/runtime-cores/local/LocalRuntimeOptions";
 
@@ -172,12 +172,12 @@ export { useCloudThreadListAdapter } from "./legacy-runtime/runtime-cores/remote
 export type {
   RemoteThreadListAdapter,
   RemoteThreadListProviderComponent,
-} from "@assistant-ui/core";
-export { InMemoryThreadListAdapter } from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
+export { InMemoryThreadListAdapter } from "@hitchsoftware/assistant-ui-core";
 
-// Re-export from @assistant-ui/core (runtime-cores root)
-export type { ExportedMessageRepositoryItem } from "@assistant-ui/core";
-export { ExportedMessageRepository } from "@assistant-ui/core";
+// Re-export from @hitchsoftware/assistant-ui-core (runtime-cores root)
+export type { ExportedMessageRepositoryItem } from "@hitchsoftware/assistant-ui-core";
+export { ExportedMessageRepository } from "@hitchsoftware/assistant-ui-core";
 
 export * from "./context";
 
@@ -245,16 +245,16 @@ export {
   type Unstable_InteractablesConfig,
   useToolArgsStatus,
   type ToolArgsStatus,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";
 
 export type {
   ModelContext,
   ModelContextProvider,
   LanguageModelConfig,
   LanguageModelV1CallSettings,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 
-export { mergeModelContexts } from "@assistant-ui/core";
+export { mergeModelContexts } from "@hitchsoftware/assistant-ui-core";
 
 export {
   unstable_getInteractableSnapshots,
@@ -262,39 +262,39 @@ export {
   unstable_getInteractableVersions,
   type Unstable_InteractableSnapshotEntry,
   type Unstable_InteractableVersion,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 
-export type { Tool } from "assistant-stream";
+export type { Tool } from "@hitchsoftware/assistant-stream";
 
-export { tool } from "@assistant-ui/core";
+export { tool } from "@hitchsoftware/assistant-ui-core";
 
-export { Suggestions, type SuggestionConfig } from "@assistant-ui/core/store";
+export { Suggestions, type SuggestionConfig } from "@hitchsoftware/assistant-ui-core/store";
 export type {
   QueueItemState,
   QueueItemMethods,
-} from "@assistant-ui/core/store";
-export type { ComposerSendOptions } from "@assistant-ui/core/store";
+} from "@hitchsoftware/assistant-ui-core/store";
+export type { ComposerSendOptions } from "@hitchsoftware/assistant-ui-core/store";
 
 export { makeAssistantVisible } from "./model-context/makeAssistantVisible";
 
 // --- model-context/registry ---
-export { ModelContextRegistry } from "@assistant-ui/core";
+export { ModelContextRegistry } from "@hitchsoftware/assistant-ui-core";
 export type {
   ModelContextRegistryToolHandle,
   ModelContextRegistryInstructionHandle,
   ModelContextRegistryProviderHandle,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 
 // --- model-context/frame ---
-export { AssistantFrameHost } from "@assistant-ui/core";
-export { AssistantFrameProvider } from "@assistant-ui/core";
+export { AssistantFrameHost } from "@hitchsoftware/assistant-ui-core";
+export { AssistantFrameProvider } from "@hitchsoftware/assistant-ui-core";
 export type {
   SerializedTool,
   SerializedModelContext,
   FrameMessageType,
   FrameMessage,
-} from "@assistant-ui/core";
-export { FRAME_MESSAGE_CHANNEL } from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
+export { FRAME_MESSAGE_CHANNEL } from "@hitchsoftware/assistant-ui-core";
 export { useAssistantFrameHost } from "./model-context/frame/useAssistantFrameHost";
 
 export * as ActionBarPrimitive from "./primitives/actionBar";
@@ -315,8 +315,8 @@ export * as ThreadListItemPrimitive from "./primitives/threadListItem";
 export * as ThreadListItemMorePrimitive from "./primitives/threadListItemMore";
 export * as SelectionToolbarPrimitive from "./primitives/selectionToolbar";
 
-export { groupPartByType, type GroupByContext } from "@assistant-ui/core/react";
-export { unstable_useThreadMessageIds } from "@assistant-ui/core/react";
+export { groupPartByType, type GroupByContext } from "@hitchsoftware/assistant-ui-core/react";
+export { unstable_useThreadMessageIds } from "@hitchsoftware/assistant-ui-core/react";
 export { useMessagePartText } from "./primitives/messagePart/useMessagePartText";
 export { useMessagePartReasoning } from "./primitives/messagePart/useMessagePartReasoning";
 export { useMessagePartSource } from "./primitives/messagePart/useMessagePartSource";
@@ -335,7 +335,7 @@ export {
 } from "./unstable/useMessageStallDetection";
 export { useSmooth, type SmoothOptions } from "./utils/smooth/useSmooth";
 
-// Re-export core types from @assistant-ui/core
+// Re-export core types from @hitchsoftware/assistant-ui-core
 export type {
   Attachment,
   PendingAttachment,
@@ -375,7 +375,7 @@ export type {
   Unsubscribe,
   QuoteInfo,
   CreateAttachment,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 
 // React component types (from core/react)
 export type {
@@ -407,31 +407,31 @@ export type {
   GenerativeUIRenderProps,
   EnrichedPartState,
   PartState,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";
 
 // Generative UI runtime error + headless renderer (re-exported from core)
 export {
   GenerativeUIRender,
   GenerativeUIRenderError,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";
 
 // Thread list item types
-export type { ThreadListItemStatus } from "@assistant-ui/core";
+export type { ThreadListItemStatus } from "@hitchsoftware/assistant-ui-core";
 
 export { DevToolsHooks, DevToolsProviderApi } from "./devtools/DevToolsHooks";
 
-export { ModelContext as ModelContextClient } from "@assistant-ui/core/store";
-export { ChainOfThoughtClient } from "@assistant-ui/core/store";
+export { ModelContext as ModelContextClient } from "@hitchsoftware/assistant-ui-core/store";
+export { ChainOfThoughtClient } from "@hitchsoftware/assistant-ui-core/store";
 export {
   ExternalThread,
   type ExternalThreadProps,
   type ExternalThreadMessage,
-} from "@assistant-ui/core/store";
+} from "@hitchsoftware/assistant-ui-core/store";
 export {
   InMemoryThreadList,
   type InMemoryThreadListProps,
 } from "./client/InMemoryThreadList";
-export { SingleThreadList } from "@assistant-ui/core/store";
+export { SingleThreadList } from "@hitchsoftware/assistant-ui-core/store";
 
 export * as INTERNAL from "./internal";
 
@@ -477,8 +477,8 @@ export type {
   Unstable_DirectiveFormatter,
   Unstable_DirectiveSegment,
   Unstable_TriggerItem,
-} from "@assistant-ui/core";
-export { unstable_defaultDirectiveFormatter } from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
+export { unstable_defaultDirectiveFormatter } from "@hitchsoftware/assistant-ui-core";
 
 // Unstable - composer input history (terminal-style ArrowUp/ArrowDown recall)
 export {
@@ -518,4 +518,4 @@ export type {
   McpAppToolCallParams,
   ToolCallMessagePartMcpMetadata,
 } from "./mcp-apps";
-export type { McpAppResourceOutput } from "@assistant-ui/core/react";
+export type { McpAppResourceOutput } from "@hitchsoftware/assistant-ui-core/react";

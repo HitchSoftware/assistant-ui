@@ -18,7 +18,7 @@ npm install safe-content-frame
 ## Usage
 
 ```ts
-import { SafeContentFrame } from "safe-content-frame";
+import { SafeContentFrame } from "@hitchsoftware/safe-content-frame";
 
 const frame = new SafeContentFrame("my-app");
 

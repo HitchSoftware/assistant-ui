@@ -8,15 +8,15 @@ import {
   type MutableRefObject,
   type ReactNode,
 } from "react";
-import type { McpAppMetadata } from "@assistant-ui/core";
+import type { McpAppMetadata } from "@hitchsoftware/assistant-ui-core";
 import type {
   ToolCallMessagePartComponent,
   ToolCallMessagePartProps,
-} from "@assistant-ui/core/react";
-import { useAui } from "@assistant-ui/store";
+} from "@hitchsoftware/assistant-ui-core/react";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 import { create, type StoreApi, type UseBoundStore } from "zustand";
 
-import { useResource, resource, type ResourceElement } from "@assistant-ui/tap";
+import { useResource, resource, type ResourceElement } from "@hitchsoftware/assistant-ui-tap";
 import { McpAppFrame } from "./app-frame";
 import type {
   McpAppBridgeHandlers,
@@ -27,7 +27,7 @@ import type {
   McpAppsHost,
 } from "./types";
 import { getMcpAppFromToolPart } from "./utils";
-import { isRecord } from "@assistant-ui/core/internal";
+import { isRecord } from "@hitchsoftware/assistant-ui-core/internal";
 
 export type McpAppRendererOptions = {
   /**

@@ -16,7 +16,7 @@ import {
   usePiThreadState,
   type PiHostUiRequest,
   type PiThinkingLevel,
-} from "@assistant-ui/react-pi";
+} from "@hitchsoftware/assistant-ui-react-pi";
 import { usePiHandshake } from "../pi-handshake";
 import { modelKey } from "@/lib/model-key";
 import { ThinkingLevelSlider } from "./thinking-level-slider";
@@ -49,7 +49,7 @@ import {
   ThreadPrimitive,
   useAui,
   useAuiState,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   ArrowDownIcon,
   ArrowUpIcon,

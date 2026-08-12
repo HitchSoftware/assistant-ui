@@ -2,7 +2,7 @@ import { act, createRef } from "react";
 import { createRoot, type Root } from "react-dom/client";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { FlatList } from "react-native";
-import type { ThreadMessage } from "@assistant-ui/core";
+import type { ThreadMessage } from "@hitchsoftware/assistant-ui-core";
 import { ThreadMessages, ThreadMessagesFlatList } from "./ThreadMessages";
 
 type Msg = { id: string; role: string };
@@ -75,7 +75,7 @@ vi.mock("react-native", async (importOriginal) => {
   };
 });
 
-vi.mock("@assistant-ui/store", async () => {
+vi.mock("@hitchsoftware/assistant-ui-store", async () => {
   const React = await import("react");
 
   return {
@@ -104,7 +104,7 @@ vi.mock("@assistant-ui/store", async () => {
   };
 });
 
-vi.mock("@assistant-ui/core/react", () => ({
+vi.mock("@hitchsoftware/assistant-ui-core/react", () => ({
   MessageByIndexProvider: ({ children }: { children: unknown }) => children,
 }));
 

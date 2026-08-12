@@ -4,7 +4,7 @@ import { ToolErrorCard, ToolStatusCard, ToolTraceCard } from "@/lib/tool-trace";
 import type {
   ToolCallMessagePart,
   ToolCallMessagePartProps,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   BookOpenIcon,
   ExternalLinkIcon,
@@ -23,7 +23,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { type CSSProperties, type ReactNode, useEffect, useState } from "react";
-import { useAui, useAuiState } from "@assistant-ui/react";
+import { useAui, useAuiState } from "@hitchsoftware/assistant-ui-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { parseLearnCourseStepResult } from "@/lib/xulux/learn/tool-result";

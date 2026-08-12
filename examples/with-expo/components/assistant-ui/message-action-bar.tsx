@@ -1,7 +1,7 @@
 import { View, StyleSheet } from "react-native";
 import * as Clipboard from "expo-clipboard";
 import { Icon } from "@/components/ui/icon";
-import { ActionBarPrimitive } from "@assistant-ui/react-native";
+import { ActionBarPrimitive } from "@hitchsoftware/assistant-ui-react-native";
 import { useTheme } from "@/hooks/use-theme";
 import { haptics } from "@/lib/haptics";
 import { Radius } from "@/constants/theme";

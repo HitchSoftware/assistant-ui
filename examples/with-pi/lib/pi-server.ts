@@ -27,7 +27,7 @@ import {
   type PiModelInfo,
   type PiRuntimeReadiness,
   type PiThinkingLevel,
-} from "@assistant-ui/react-pi/node";
+} from "@hitchsoftware/assistant-ui-react-pi/node";
 import { modelKey } from "./model-key";
 
 const env = (key: string): string | undefined => {

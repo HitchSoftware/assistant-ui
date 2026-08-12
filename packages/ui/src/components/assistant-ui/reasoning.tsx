@@ -17,7 +17,7 @@ import {
   useAuiState,
   type ReasoningMessagePartComponent,
   type ReasoningGroupComponent,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { MarkdownText } from "@/components/assistant-ui/markdown-text";
 import {
   Collapsible,

@@ -7,7 +7,7 @@ import {
   MessagePartPrimitive,
   ThreadPrimitive,
   type ThreadMessageLike,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   BrainIcon,
   CheckCircle2Icon,

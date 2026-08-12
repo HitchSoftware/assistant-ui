@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Google ADK Example",
-  description: "Example using @assistant-ui/react with Google ADK",
+  description: "Example using @hitchsoftware/assistant-ui-react with Google ADK",
 };
 
 export default function RootLayout({

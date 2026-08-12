@@ -1,1 +1,1 @@
-export { OptimisticState } from "@assistant-ui/core/internal";
+export { OptimisticState } from "@hitchsoftware/assistant-ui-core/internal";

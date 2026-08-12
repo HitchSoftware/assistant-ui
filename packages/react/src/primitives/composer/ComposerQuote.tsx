@@ -7,7 +7,7 @@ import {
   forwardRef,
   useCallback,
 } from "react";
-import { useAui, useAuiState } from "@assistant-ui/store";
+import { useAui, useAuiState } from "@hitchsoftware/assistant-ui-store";
 import { composeEventHandlers } from "@radix-ui/primitive";
 
 // ---- Root ----

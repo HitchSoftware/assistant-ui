@@ -1,5 +1,5 @@
 {
-  "name": "@assistant-ui/react-streamdown",
+  "name": "@hitchsoftware/assistant-ui-react-streamdown",
   "version": "0.3.10",
   "description": "Streamdown-based markdown rendering for assistant-ui",
   "keywords": [
@@ -41,7 +41,7 @@
     "streamdown": "^2.5.0"
   },
   "peerDependencies": {
-    "@assistant-ui/react": "^0.15.0",
+    "@hitchsoftware/assistant-ui-react": "^0.15.0",
     "@streamdown/code": "^1.0.0",
     "@streamdown/cjk": "^1.0.0",
     "@streamdown/math": "^1.0.0",
@@ -67,8 +67,8 @@
     }
   },
   "devDependencies": {
-    "@assistant-ui/react": "workspace:*",
-    "@assistant-ui/x-buildutils": "workspace:*",
+    "@hitchsoftware/assistant-ui-react": "workspace:*",
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
     "@streamdown/code": "^1.1.1",
     "@testing-library/react": "^16.3.2",
     "@types/hast": "^3.0.5",
@@ -79,8 +79,8 @@
     "vitest": "^4.1.10"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://www.assistant-ui.com/",
   "repository": {

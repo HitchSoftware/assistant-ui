@@ -1,5 +1,5 @@
-import type { AttachmentAdapter } from "@assistant-ui/core";
-import { getFileDataURL } from "@assistant-ui/core/internal";
+import type { AttachmentAdapter } from "@hitchsoftware/assistant-ui-core";
+import { getFileDataURL } from "@hitchsoftware/assistant-ui-core/internal";
 import { generateId } from "ai";
 
 export const vercelAttachmentAdapter: AttachmentAdapter = {

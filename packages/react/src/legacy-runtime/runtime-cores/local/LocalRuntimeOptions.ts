@@ -1,3 +1,3 @@
-export type { LocalRuntimeOptionsBase } from "@assistant-ui/core";
-export type { LocalRuntimeOptions } from "@assistant-ui/core/react";
-export { splitLocalRuntimeOptions } from "@assistant-ui/core/react";
+export type { LocalRuntimeOptionsBase } from "@hitchsoftware/assistant-ui-core";
+export type { LocalRuntimeOptions } from "@hitchsoftware/assistant-ui-core/react";
+export { splitLocalRuntimeOptions } from "@hitchsoftware/assistant-ui-core/react";

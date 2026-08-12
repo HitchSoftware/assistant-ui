@@ -4,4 +4,4 @@ export type {
   RemoteThreadListResponse,
   RemoteThreadListAdapter,
   RemoteThreadListOptions,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";

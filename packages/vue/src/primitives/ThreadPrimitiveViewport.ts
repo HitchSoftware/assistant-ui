@@ -8,7 +8,7 @@ import {
   watch,
   type SlotsType,
 } from "vue";
-import type {} from "@assistant-ui/core/store";
+import type {} from "@hitchsoftware/assistant-ui-core/store";
 import { useAuiEvent } from "../useAuiEvent";
 import { useAuiState } from "../useAuiState";
 import {

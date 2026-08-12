@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type {
   Unstable_TriggerAdapter,
   Unstable_TriggerItem,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 
 export type Unstable_UseLiveCompletionAdapterOptions = {
   /**

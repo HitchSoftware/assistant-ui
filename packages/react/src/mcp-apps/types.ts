@@ -1,7 +1,7 @@
 import type {
   McpAppMetadata,
   ToolCallMessagePartMcpMetadata,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import type { SandboxHostConfig } from "../sandbox-host/SandboxHost";
 
 export type { McpAppMetadata, ToolCallMessagePartMcpMetadata };

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef } from "react";
-import { useAui, useAuiState } from "@assistant-ui/store";
+import { useAui, useAuiState } from "@hitchsoftware/assistant-ui-store";
 
 export type UseActionBarCopyOptions = {
   copiedDuration?: number | undefined;

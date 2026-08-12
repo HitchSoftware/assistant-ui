@@ -1,6 +1,6 @@
 "use generative";
 
-import { defineToolkit, unstable_interactableTool } from "@assistant-ui/react";
+import { defineToolkit, unstable_interactableTool } from "@hitchsoftware/assistant-ui-react";
 import { ArtifactTrigger } from "./artifact-surface";
 import { artifactDescription, artifactSchema } from "./artifact-state";
 

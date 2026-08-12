@@ -7,7 +7,7 @@ import { useResource } from "../hooks/useResource";
 import * as shim from "./index";
 import { c } from "./compiler-runtime";
 
-describe("@assistant-ui/tap/standalone-shim behavior", () => {
+describe("@hitchsoftware/assistant-ui-tap/standalone-shim behavior", () => {
   it("hosts stateful resource hooks under createTapRoot", () => {
     let cleanupCount = 0;
     const Counter = resource(function CounterResource() {

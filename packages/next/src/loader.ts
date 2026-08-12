@@ -3,10 +3,10 @@ import {
   compileGenerative,
   isGenerativeModule,
   type Target,
-} from "@assistant-ui/x-generative-compiler";
+} from "@hitchsoftware/assistant-ui-x-generative-compiler";
 
 /** This package's name, used in the facade's re-export specifier. */
-const PKG = "@assistant-ui/next";
+const PKG = "@hitchsoftware/assistant-ui-next";
 
 /** Basenames of the react-server-conditioned indirection modules (see with-aui.ts). */
 const SERVER_INDIRECTION = "bundler-redirect.server";

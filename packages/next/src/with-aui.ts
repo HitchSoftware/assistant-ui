@@ -1,11 +1,11 @@
 import { createRequire } from "node:module";
 import { statSync } from "node:fs";
 
-const LOADER = "@assistant-ui/next/loader";
+const LOADER = "@hitchsoftware/assistant-ui-next/loader";
 
 /**
  * A token that changes whenever the `"use generative"` compiler this loader runs
- * (`@assistant-ui/x-generative-compiler`) changes. Turbopack and webpack fold a
+ * (`@hitchsoftware/assistant-ui-x-generative-compiler`) changes. Turbopack and webpack fold a
  * loader's `options` into its cache key, so passing this invalidates cached
  * transforms when the compiler's behavior changes — node_modules content isn't
  * otherwise watched. The package version covers published upgrades (and is
@@ -17,7 +17,7 @@ const LOADER = "@assistant-ui/next/loader";
 function compilerCacheToken(): string {
   try {
     const require = createRequire(import.meta.url);
-    const entry = require.resolve("@assistant-ui/x-generative-compiler");
+    const entry = require.resolve("@hitchsoftware/assistant-ui-x-generative-compiler");
     return `${entry}:${statSync(entry).mtimeMs}`;
   } catch {
     return "unknown";
@@ -56,7 +56,7 @@ type NextConfigLike = {
  * @example
  * ```ts
  * // next.config.ts
- * import { withAui } from "@assistant-ui/next";
+ * import { withAui } from "@hitchsoftware/assistant-ui-next";
  * export default withAui({ ...yourConfig });
  * ```
  */

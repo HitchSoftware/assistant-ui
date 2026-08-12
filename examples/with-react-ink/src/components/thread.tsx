@@ -6,8 +6,8 @@ import {
   ErrorPrimitive,
   LoadingPrimitive,
   LiveChecklist,
-} from "@assistant-ui/react-ink";
-import { MarkdownText } from "@assistant-ui/react-ink-markdown";
+} from "@hitchsoftware/assistant-ui-react-ink";
+import { MarkdownText } from "@hitchsoftware/assistant-ui-react-ink-markdown";
 
 const UserMessage = () => (
   <MessagePrimitive.Root>

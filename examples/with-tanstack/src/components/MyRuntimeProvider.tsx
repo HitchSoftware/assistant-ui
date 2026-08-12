@@ -4,7 +4,7 @@ import {
   type ThreadMessageLike,
   type AppendMessage,
   AssistantRuntimeProvider,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { chatStream } from "@/server/chat";
 
 type MyMessage = {

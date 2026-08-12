@@ -1,5 +1,5 @@
-import type { Tool } from "assistant-stream";
-import { toJSONSchema } from "assistant-stream";
+import type { Tool } from "@hitchsoftware/assistant-stream";
+import { toJSONSchema } from "@hitchsoftware/assistant-stream";
 import type { Unstable_InteractableDefinition } from "../types/scopes/interactables";
 import {
   interactableToolName,

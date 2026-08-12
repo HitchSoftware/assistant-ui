@@ -1,4 +1,4 @@
-import type { ReadonlyJSONObject } from "assistant-stream/utils";
+import type { ReadonlyJSONObject } from "@hitchsoftware/assistant-stream/utils";
 
 /** A selectable item displayed inside a trigger popover (e.g. mention, slash command). */
 export type Unstable_TriggerItem = {

@@ -1,4 +1,4 @@
-import type { ThreadMessage } from "@assistant-ui/core";
+import type { ThreadMessage } from "@hitchsoftware/assistant-ui-core";
 import { describe, expect, it } from "vitest";
 import { toLanguageModelMessages } from "./toLanguageModelMessages";
 

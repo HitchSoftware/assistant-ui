@@ -5,7 +5,7 @@ import {
   memo,
   useMemo,
 } from "react";
-import { RenderChildrenWithAccessor, useAuiState } from "@assistant-ui/store";
+import { RenderChildrenWithAccessor, useAuiState } from "@hitchsoftware/assistant-ui-store";
 import type { ThreadListItemState } from "../../../store/scopes/thread-list-item";
 import { ThreadListItemByIndexProvider } from "../../providers/ThreadListItemByIndexProvider";
 

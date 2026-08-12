@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Pressable, type PressableProps } from "react-native";
-import { useAuiState } from "@assistant-ui/store";
-import { useSuggestionTrigger } from "@assistant-ui/core/react";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
+import { useSuggestionTrigger } from "@hitchsoftware/assistant-ui-core/react";
 
 export type SuggestionTriggerProps = Omit<PressableProps, "onPress"> & {
   children: ReactNode;

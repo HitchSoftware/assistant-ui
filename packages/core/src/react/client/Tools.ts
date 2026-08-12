@@ -4,15 +4,15 @@ import {
   resource,
   withKey,
   type ResourceElement,
-} from "@assistant-ui/tap";
-import type { ClientOutput } from "@assistant-ui/store";
+} from "@hitchsoftware/assistant-ui-tap";
+import type { ClientOutput } from "@hitchsoftware/assistant-ui-store";
 import {
   attachTransformScopes,
   useAssistantClientRef,
   useAssistantScopeEffect,
-} from "@assistant-ui/store/client";
+} from "@hitchsoftware/assistant-ui-store/client";
 import type { McpAppResourceOutput, ToolsState } from "../types/scopes/tools";
-import type { Tool } from "assistant-stream";
+import type { Tool } from "@hitchsoftware/assistant-stream";
 import {
   isStandaloneToolDisplay,
   makeToolCallTextComponent,

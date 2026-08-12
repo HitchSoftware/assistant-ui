@@ -18,17 +18,17 @@ import {
   type AppendMessage,
   type CompleteAttachment,
   generateId,
-} from "@assistant-ui/core";
-import type { ToolExecutionStatus } from "@assistant-ui/core";
-import type { QueueItemState } from "@assistant-ui/core/store";
+} from "@hitchsoftware/assistant-ui-core";
+import type { ToolExecutionStatus } from "@hitchsoftware/assistant-ui-core";
+import type { QueueItemState } from "@hitchsoftware/assistant-ui-core/store";
 import {
   type DataMessagePartComponent,
   useCloudThreadListAdapter,
   useRemoteThreadListRuntime,
   useExternalMessageConverter,
   useExternalStoreRuntime,
-} from "@assistant-ui/core/react";
-import { useAui } from "@assistant-ui/store";
+} from "@hitchsoftware/assistant-ui-core/react";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 import {
   convertLangChainMessages,
   getMessageContent,

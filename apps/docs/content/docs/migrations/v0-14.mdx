@@ -98,15 +98,15 @@ const [original] = getExternalStoreMessages<MyMessage>(threadMessage);
 
 ## Assistant Transport Helpers
 
-`toAISDKTools` and `getEnabledTools` (re-exported from `@assistant-ui/react`) have been removed. Both wrapped functionality that's now exposed directly by `assistant-stream`:
+`toAISDKTools` and `getEnabledTools` (re-exported from `@hitchsoftware/assistant-ui-react`) have been removed. Both wrapped functionality that's now exposed directly by `assistant-stream`:
 
 ```ts
 // Before
-import { toAISDKTools } from "@assistant-ui/react";
+import { toAISDKTools } from "@hitchsoftware/assistant-ui-react";
 const schemas = toAISDKTools(tools);
 
 // After
-import { toToolsJSONSchema } from "assistant-stream";
+import { toToolsJSONSchema } from "@hitchsoftware/assistant-stream";
 const schemas = toToolsJSONSchema(tools);
 ```
 

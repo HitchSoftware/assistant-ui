@@ -13,7 +13,7 @@ import {
   Fragment,
 } from "react";
 import { type UseBoundStore, type StoreApi, create } from "zustand";
-import { useAui } from "@assistant-ui/store";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 import { ThreadListItemRuntimeProvider } from "../providers/ThreadListItemRuntimeProvider";
 import type { ThreadRuntimeCore } from "../../runtime/interfaces/thread-runtime-core";
 import type { ThreadListRuntimeCore } from "../../runtime/interfaces/thread-list-runtime-core";

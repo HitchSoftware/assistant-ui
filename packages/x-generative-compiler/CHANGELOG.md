@@ -1,4 +1,4 @@
-# @assistant-ui/x-generative-compiler
+# @hitchsoftware/assistant-ui-x-generative-compiler
 
 ## 0.0.12
 
@@ -78,7 +78,7 @@
 
 - [#4265](https://github.com/assistant-ui/assistant-ui/pull/4265) [`40813e6`](https://github.com/assistant-ui/assistant-ui/commit/40813e6402a5c97ccbc743924dffc65a89c99ec6) - fix: bake the compiler version into the build so the core compatibility check works when the compiler is bundled ([@Yonom](https://github.com/Yonom))
 
-  The core/compiler compatibility check found the compiler's version by walking up from `import.meta.url` to its own `package.json`. That works when the compiler is installed as a standalone package (Next.js and Vite import it externally), but `@assistant-ui/metro` bundles the compiler into `transformer.cjs`, so at runtime there is no separate `@assistant-ui/x-generative-compiler` on disk to walk up to. The check then threw `could not determine @assistant-ui/x-generative-compiler's package version` during Expo/Metro bundling. The version is now imported from `package.json`, so the literal is inlined at build time and survives being bundled. `@assistant-ui/metro` is bumped (it carries the compiler as a bundled devDependency, so it would not pick up the fix automatically) so its bundled transformer ships the fix.
+  The core/compiler compatibility check found the compiler's version by walking up from `import.meta.url` to its own `package.json`. That works when the compiler is installed as a standalone package (Next.js and Vite import it externally), but `@hitchsoftware/assistant-ui-metro` bundles the compiler into `transformer.cjs`, so at runtime there is no separate `@hitchsoftware/assistant-ui-x-generative-compiler` on disk to walk up to. The check then threw `could not determine @hitchsoftware/assistant-ui-x-generative-compiler's package version` during Expo/Metro bundling. The version is now imported from `package.json`, so the literal is inlined at build time and survives being bundled. `@hitchsoftware/assistant-ui-metro` is bumped (it carries the compiler as a bundled devDependency, so it would not pick up the fix automatically) so its bundled transformer ships the fix.
 
 - [#4267](https://github.com/assistant-ui/assistant-ui/pull/4267) [`7d2b2b7`](https://github.com/assistant-ui/assistant-ui/commit/7d2b2b7f61311df0d975e19378671ffd683c9e1c) - feat: merge toolkits across "use generative" files and allow a bare defineMcpToolkit default export ([@Yonom](https://github.com/Yonom))
 
@@ -86,7 +86,7 @@
 
   `defineMcpToolkit({ ... })` is also now accepted directly as a file's default export, so an MCP-only toolkit no longer needs to be wrapped in an otherwise-empty `defineToolkit`.
 
-  `@assistant-ui/metro` is bumped because it bundles the compiler and would not otherwise pick up the new behavior.
+  `@hitchsoftware/assistant-ui-metro` is bumped because it bundles the compiler and would not otherwise pick up the new behavior.
 
 - [#4306](https://github.com/assistant-ui/assistant-ui/pull/4306) [`15878d8`](https://github.com/assistant-ui/assistant-ui/commit/15878d8114edbbb82c2a467cf811478e5f4e08bc) - chore: update dependencies ([@Yonom](https://github.com/Yonom))
 
@@ -116,4 +116,4 @@
 
 ### Patch Changes
 
-- [#4176](https://github.com/assistant-ui/assistant-ui/pull/4176) [`27ae936`](https://github.com/assistant-ui/assistant-ui/commit/27ae936dec6dc5d05d21fd892af0a8e1db61928e) - feat: extract the framework-agnostic `"use generative"` compiler into the internal `@assistant-ui/x-generative-compiler` package. `@assistant-ui/next` now consumes the shared compiler instead of bundling its own copy, so other build integrations can reuse it. ([@Yonom](https://github.com/Yonom))
+- [#4176](https://github.com/assistant-ui/assistant-ui/pull/4176) [`27ae936`](https://github.com/assistant-ui/assistant-ui/commit/27ae936dec6dc5d05d21fd892af0a8e1db61928e) - feat: extract the framework-agnostic `"use generative"` compiler into the internal `@hitchsoftware/assistant-ui-x-generative-compiler` package. `@hitchsoftware/assistant-ui-next` now consumes the shared compiler instead of bundling its own copy, so other build integrations can reuse it. ([@Yonom](https://github.com/Yonom))

@@ -6,8 +6,8 @@ import {
   AssistantRuntimeProvider,
   AuiConfig,
   Suggestions,
-} from "@assistant-ui/react";
-import { useEveAgentRuntime } from "@assistant-ui/eve";
+} from "@hitchsoftware/assistant-ui-react";
+import { useEveAgentRuntime } from "@hitchsoftware/assistant-ui-eve";
 
 export default function Home() {
   const runtime = useEveAgentRuntime();

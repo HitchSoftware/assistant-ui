@@ -1,6 +1,6 @@
 ---
 title: React Native AI Chat
-description: Build AI chat for iOS and Android with @assistant-ui/react-native — streaming, tools, attachments, and platform-native components from the same primitives as the web SDK.
+description: Build AI chat for iOS and Android with @hitchsoftware/assistant-ui-react-native — streaming, tools, attachments, and platform-native components from the same primitives as the web SDK.
 ---
 
 ## Quick Start
@@ -49,14 +49,14 @@ If you prefer to add assistant-ui to an existing Expo project, follow these step
 
 ### Install dependencies
 
-<InstallCommand expo={["@assistant-ui/react-native", "@assistant-ui/react-ai-sdk"]} />
+<InstallCommand expo={["@hitchsoftware/assistant-ui-react-native", "@hitchsoftware/assistant-ui-react-ai-sdk"]} />
 
   </Step>
   <Step>
 
 ### Setup Backend Endpoint
 
-Create a backend API route using the Vercel AI SDK. This is the same endpoint you'd use with `@assistant-ui/react` on the web:
+Create a backend API route using the Vercel AI SDK. This is the same endpoint you'd use with `@hitchsoftware/assistant-ui-react` on the web:
 
 <Tabs groupId="provider" items={["OpenAI", "Anthropic", "Google"]}>
 
@@ -111,7 +111,7 @@ export async function POST(req: Request) {
 </Tabs>
 
 <Callout type="info">
-  This is the same backend you'd use with `@assistant-ui/react` on the web. If you already have an API route, you can reuse it as-is.
+  This is the same backend you'd use with `@hitchsoftware/assistant-ui-react` on the web. If you already have an API route, you can reuse it as-is.
 </Callout>
 
   </Step>
@@ -120,7 +120,7 @@ export async function POST(req: Request) {
 ### Set up the runtime
 
 ```tsx title="hooks/use-app-runtime.ts"
-import { useChatRuntime, AssistantChatTransport } from "@assistant-ui/react-ai-sdk";
+import { useChatRuntime, AssistantChatTransport } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL ?? "http://localhost:3000";
 
@@ -145,8 +145,8 @@ import {
   AssistantRuntimeProvider,
   useAuiState,
   useAui,
-} from "@assistant-ui/react-native";
-import type { ThreadMessage } from "@assistant-ui/react-native";
+} from "@hitchsoftware/assistant-ui-react-native";
+import type { ThreadMessage } from "@hitchsoftware/assistant-ui-react-native";
 import {
   View,
   Text,

@@ -1,1 +1,1 @@
-export { ComposerPrimitiveIf as ComposerIf } from "@assistant-ui/core/react";
+export { ComposerPrimitiveIf as ComposerIf } from "@hitchsoftware/assistant-ui-core/react";

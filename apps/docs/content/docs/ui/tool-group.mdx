@@ -32,7 +32,7 @@ This adds `/components/assistant-ui/tool-group.tsx` and `/components/assistant-u
 Use `MessagePrimitive.GroupedParts` with `groupPartByType` to map tool-call parts to `"group-tool"`. The group case wraps `children`; the tool-call leaf renders the resolved tool UI or your fallback.
 
 ```tsx title="/components/assistant-ui/thread.tsx"
-import { MessagePrimitive, groupPartByType } from "@assistant-ui/react";
+import { MessagePrimitive, groupPartByType } from "@hitchsoftware/assistant-ui-react";
 import { ToolFallback } from "@/components/assistant-ui/tool-fallback";
 import {
   ToolGroupContent,

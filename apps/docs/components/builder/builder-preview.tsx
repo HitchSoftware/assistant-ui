@@ -1,6 +1,6 @@
 "use client";
 
-import "@assistant-ui/react-markdown/styles/dot.css";
+import "@hitchsoftware/assistant-ui-react-markdown/styles/dot.css";
 
 import {
   ArrowDownIcon,
@@ -29,7 +29,7 @@ import {
   MessagePrimitive,
   ThreadPrimitive,
   useMessagePartText,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 import {
   type FC,
@@ -61,7 +61,7 @@ import {
   unstable_memoizeMarkdownComponents as memoizeMarkdownComponents,
   useIsMarkdownCodeBlock,
   type SyntaxHighlighterProps,
-} from "@assistant-ui/react-markdown";
+} from "@hitchsoftware/assistant-ui-react-markdown";
 import remarkGfm from "remark-gfm";
 import ShikiHighlighter from "react-shiki";
 

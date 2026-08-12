@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { withKey, type Resource } from "@assistant-ui/tap";
+import { withKey, type Resource } from "@hitchsoftware/assistant-ui-tap";
 
 import { useClientLookup } from "./useClientLookup";
 import type { ClientMethods, InferClientState } from "./types/client";

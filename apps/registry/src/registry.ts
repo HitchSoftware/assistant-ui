@@ -1,7 +1,7 @@
 import {
   generativeUiThemeVars,
   generativeUiVocabularyCss,
-} from "@assistant-ui/ui/lib/generative-ui-vocabulary-css.ts";
+} from "@hitchsoftware/assistant-ui-ui/lib/generative-ui-vocabulary-css.ts";
 import type { RegistryItem } from "./schema";
 
 const collapsibleStateCss = {
@@ -909,7 +909,7 @@ export const registry: RegistryItem[] = [
       "https://r.assistant-ui.com/ai-sdk-backend.json",
       "https://r.assistant-ui.com/thread.json",
     ],
-    dependencies: ["@assistant-ui/react-ai-sdk"],
+    dependencies: ["@hitchsoftware/assistant-ui-react-ai-sdk"],
     meta: {
       importSpecifier: "Assistant",
       moduleSpecifier: "@/app/assistant",
@@ -929,7 +929,7 @@ export const registry: RegistryItem[] = [
         target: "app/api/chat/route.ts",
       },
     ],
-    dependencies: ["ai", "@ai-sdk/openai", "@assistant-ui/react-ai-sdk"],
+    dependencies: ["ai", "@ai-sdk/openai", "@hitchsoftware/assistant-ui-react-ai-sdk"],
   },
   {
     name: "ai-sdk-backend-resumable",
@@ -962,7 +962,7 @@ export const registry: RegistryItem[] = [
     dependencies: [
       "ai",
       "@ai-sdk/openai",
-      "@assistant-ui/react-ai-sdk",
+      "@hitchsoftware/assistant-ui-react-ai-sdk",
       "assistant-stream",
       "next",
     ],
@@ -981,7 +981,7 @@ export const registry: RegistryItem[] = [
         target: "app/page.tsx",
       },
     ],
-    dependencies: ["@assistant-ui/eve"],
+    dependencies: ["@hitchsoftware/assistant-ui-eve"],
     bundledRegistryDependencies: ["https://r.assistant-ui.com/thread.json"],
     docs: "Eve installs registry files without touching CSS, so add the reasoning and collapsible styles to app/globals.css, and replace the default auth policy in agent/channels/eve.ts before deploying: https://www.assistant-ui.com/docs/runtimes/eve/quickstart",
     meta: {
@@ -1003,7 +1003,7 @@ export const registry: RegistryItem[] = [
         sourcePath: "../../packages/ui/src/components/assistant-ui/thread.tsx",
       },
     ],
-    dependencies: ["@assistant-ui/react", "lucide-react"],
+    dependencies: ["@hitchsoftware/assistant-ui-react", "lucide-react"],
     registryDependencies: [
       "button",
       "https://r.assistant-ui.com/attachment.json",
@@ -1028,7 +1028,7 @@ export const registry: RegistryItem[] = [
         sourcePath: "../../packages/ui/src/components/assistant-ui/voice.tsx",
       },
     ],
-    dependencies: ["@assistant-ui/react", "lucide-react"],
+    dependencies: ["@hitchsoftware/assistant-ui-react", "lucide-react"],
     registryDependencies: [
       "button",
       "https://r.assistant-ui.com/tooltip-icon-button.json",
@@ -1052,7 +1052,7 @@ export const registry: RegistryItem[] = [
       "https://r.assistant-ui.com/tooltip-icon-button.json",
     ],
     dependencies: [
-      "@assistant-ui/react-markdown",
+      "@hitchsoftware/assistant-ui-react-markdown",
       "lucide-react",
       "remark-gfm",
     ],
@@ -1076,7 +1076,7 @@ export const registry: RegistryItem[] = [
       "https://r.assistant-ui.com/markdown-text.json",
     ],
     dependencies: [
-      "@assistant-ui/react",
+      "@hitchsoftware/assistant-ui-react",
       "lucide-react",
       "class-variance-authority",
       "tw-shimmer",
@@ -1100,7 +1100,7 @@ export const registry: RegistryItem[] = [
           "../../packages/ui/src/components/assistant-ui/message-timing.tsx",
       },
     ],
-    dependencies: ["@assistant-ui/react"],
+    dependencies: ["@hitchsoftware/assistant-ui-react"],
     registryDependencies: ["tooltip"],
   },
   {
@@ -1117,7 +1117,7 @@ export const registry: RegistryItem[] = [
           "../../packages/ui/src/components/assistant-ui/context-display.tsx",
       },
     ],
-    dependencies: ["@assistant-ui/react", "@assistant-ui/react-ai-sdk"],
+    dependencies: ["@hitchsoftware/assistant-ui-react", "@hitchsoftware/assistant-ui-react-ai-sdk"],
     registryDependencies: ["tooltip"],
   },
   {
@@ -1140,7 +1140,7 @@ export const registry: RegistryItem[] = [
       "skeleton",
       "https://r.assistant-ui.com/tooltip-icon-button.json",
     ],
-    dependencies: ["@assistant-ui/react", "lucide-react"],
+    dependencies: ["@hitchsoftware/assistant-ui-react", "lucide-react"],
   },
   {
     name: "mcp-config",
@@ -1165,8 +1165,8 @@ export const registry: RegistryItem[] = [
       "separator",
     ],
     dependencies: [
-      "@assistant-ui/react-mcp",
-      "@assistant-ui/store",
+      "@hitchsoftware/assistant-ui-react-mcp",
+      "@hitchsoftware/assistant-ui-store",
       "lucide-react",
     ],
   },
@@ -1190,7 +1190,7 @@ export const registry: RegistryItem[] = [
       "avatar",
       "https://r.assistant-ui.com/tooltip-icon-button.json",
     ],
-    dependencies: ["@assistant-ui/react", "lucide-react", "zustand"],
+    dependencies: ["@hitchsoftware/assistant-ui-react", "lucide-react", "zustand"],
   },
   {
     name: "follow-up-suggestions",
@@ -1207,7 +1207,7 @@ export const registry: RegistryItem[] = [
       },
     ],
     registryDependencies: [],
-    dependencies: ["@assistant-ui/react"],
+    dependencies: ["@hitchsoftware/assistant-ui-react"],
   },
   {
     name: "tooltip-icon-button",
@@ -1240,8 +1240,8 @@ export const registry: RegistryItem[] = [
       },
     ],
     dependencies: [
-      "@assistant-ui/react-syntax-highlighter",
-      "@assistant-ui/react-markdown",
+      "@hitchsoftware/assistant-ui-react-syntax-highlighter",
+      "@hitchsoftware/assistant-ui-react-markdown",
       "react-syntax-highlighter",
       "@types/react-syntax-highlighter",
     ],
@@ -1259,7 +1259,7 @@ export const registry: RegistryItem[] = [
           "../../packages/ui/src/components/assistant-ui/assistant-modal.tsx",
       },
     ],
-    dependencies: ["@assistant-ui/react", "lucide-react"],
+    dependencies: ["@hitchsoftware/assistant-ui-react", "lucide-react"],
     registryDependencies: [
       "https://r.assistant-ui.com/thread.json",
       "https://r.assistant-ui.com/tooltip-icon-button.json",
@@ -1280,7 +1280,7 @@ export const registry: RegistryItem[] = [
           "../../packages/ui/src/components/assistant-ui/assistant-sidebar.tsx",
       },
     ],
-    dependencies: ["@assistant-ui/react"],
+    dependencies: ["@hitchsoftware/assistant-ui-react"],
     registryDependencies: [
       "resizable",
       "https://r.assistant-ui.com/thread.json",
@@ -1299,7 +1299,7 @@ export const registry: RegistryItem[] = [
           "../../packages/ui/src/components/assistant-ui/tool-fallback.tsx",
       },
     ],
-    dependencies: ["@assistant-ui/react", "lucide-react", "tw-shimmer"],
+    dependencies: ["@hitchsoftware/assistant-ui-react", "lucide-react", "tw-shimmer"],
     registryDependencies: ["button", "collapsible"],
     css: {
       '@import "tw-shimmer"': {},
@@ -1320,7 +1320,7 @@ export const registry: RegistryItem[] = [
       },
     ],
     dependencies: [
-      "@assistant-ui/react",
+      "@hitchsoftware/assistant-ui-react",
       "lucide-react",
       "class-variance-authority",
       "tw-shimmer",
@@ -1346,8 +1346,8 @@ export const registry: RegistryItem[] = [
     ],
     dependencies: [
       "react-shiki",
-      "@assistant-ui/react",
-      "@assistant-ui/react-markdown",
+      "@hitchsoftware/assistant-ui-react",
+      "@hitchsoftware/assistant-ui-react-markdown",
     ],
   },
   {
@@ -1367,8 +1367,8 @@ export const registry: RegistryItem[] = [
     dependencies: [
       "beautiful-mermaid",
       "lucide-react",
-      "@assistant-ui/react",
-      "@assistant-ui/react-markdown",
+      "@hitchsoftware/assistant-ui-react",
+      "@hitchsoftware/assistant-ui-react-markdown",
     ],
   },
   {
@@ -1387,7 +1387,7 @@ export const registry: RegistryItem[] = [
     dependencies: [
       "diff",
       "parse-diff",
-      "@assistant-ui/react-markdown",
+      "@hitchsoftware/assistant-ui-react-markdown",
       "class-variance-authority",
     ],
   },
@@ -1428,7 +1428,7 @@ export const registry: RegistryItem[] = [
         sourcePath: "../../packages/ui/src/components/assistant-ui/quote.tsx",
       },
     ],
-    dependencies: ["@assistant-ui/react", "lucide-react"],
+    dependencies: ["@hitchsoftware/assistant-ui-react", "lucide-react"],
     registryDependencies: [],
   },
   {
@@ -1444,7 +1444,7 @@ export const registry: RegistryItem[] = [
         sourcePath: "../../packages/ui/src/components/assistant-ui/sources.tsx",
       },
     ],
-    dependencies: ["@assistant-ui/react", "lucide-react"],
+    dependencies: ["@hitchsoftware/assistant-ui-react", "lucide-react"],
     registryDependencies: ["https://r.assistant-ui.com/badge.json"],
   },
   {
@@ -1461,7 +1461,7 @@ export const registry: RegistryItem[] = [
       },
     ],
     dependencies: [
-      "@assistant-ui/react",
+      "@hitchsoftware/assistant-ui-react",
       "lucide-react",
       "class-variance-authority",
     ],
@@ -1481,7 +1481,7 @@ export const registry: RegistryItem[] = [
       },
     ],
     dependencies: [
-      "@assistant-ui/react",
+      "@hitchsoftware/assistant-ui-react",
       "lucide-react",
       "class-variance-authority",
     ],
@@ -1501,7 +1501,7 @@ export const registry: RegistryItem[] = [
       },
     ],
     dependencies: [
-      "@assistant-ui/react",
+      "@hitchsoftware/assistant-ui-react",
       "lucide-react",
       "class-variance-authority",
     ],
@@ -1674,7 +1674,7 @@ export const registry: RegistryItem[] = [
           "../../packages/ui/src/components/assistant-ui/composer-trigger-popover.tsx",
       },
     ],
-    dependencies: ["@assistant-ui/react", "lucide-react"],
+    dependencies: ["@hitchsoftware/assistant-ui-react", "lucide-react"],
     registryDependencies: [],
   },
   {
@@ -1690,7 +1690,7 @@ export const registry: RegistryItem[] = [
           "../../packages/ui/src/components/assistant-ui/directive-text.tsx",
       },
     ],
-    dependencies: ["@assistant-ui/react", "lucide-react"],
+    dependencies: ["@hitchsoftware/assistant-ui-react", "lucide-react"],
     registryDependencies: ["https://r.assistant-ui.com/badge.json"],
   },
   {
@@ -1715,7 +1715,7 @@ export const registry: RegistryItem[] = [
       },
     ],
     dependencies: [
-      "@assistant-ui/react-generative-ui",
+      "@hitchsoftware/assistant-ui-react-generative-ui",
       "react-markdown",
       "remark-gfm",
     ],

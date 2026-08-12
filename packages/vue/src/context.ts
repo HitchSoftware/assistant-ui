@@ -3,7 +3,7 @@ import {
   DefaultAssistantClient,
   type AssistantClient,
   type AssistantClientSource,
-} from "@assistant-ui/store/client";
+} from "@hitchsoftware/assistant-ui-store/client";
 
 export type AuiContext = {
   source: AssistantClientSource;

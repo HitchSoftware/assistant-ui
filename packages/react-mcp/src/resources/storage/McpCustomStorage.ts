@@ -1,4 +1,4 @@
-import { resource } from "@assistant-ui/tap";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
 import type { MCPStorage } from "./types";
 
 const useMcpCustomStorage = (impl: MCPStorage): MCPStorage => {

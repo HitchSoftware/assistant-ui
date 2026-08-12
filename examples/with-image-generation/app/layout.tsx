@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Image Generation Example",
-  description: "Example using @assistant-ui/react image generation primitives",
+  description: "Example using @hitchsoftware/assistant-ui-react image generation primitives",
 };
 
 export default function RootLayout({

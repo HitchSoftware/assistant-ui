@@ -1,4 +1,4 @@
-// @assistant-ui/core - Framework-agnostic core runtime (public API)
+// @hitchsoftware/assistant-ui-core - Framework-agnostic core runtime (public API)
 
 /// <reference path="./store/scope-registration.ts" />
 

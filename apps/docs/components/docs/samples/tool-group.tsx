@@ -9,7 +9,7 @@ import {
   SearchIcon,
   MapPinIcon,
 } from "lucide-react";
-import type { ToolCallMessagePartStatus } from "@assistant-ui/react";
+import type { ToolCallMessagePartStatus } from "@hitchsoftware/assistant-ui-react";
 import {
   ToolGroupRoot,
   ToolGroupTrigger,

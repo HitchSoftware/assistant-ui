@@ -5,14 +5,14 @@ description: Composable React Native components for building chat UIs.
 
 Primitives are thin wrappers around React Native components (`View`, `TextInput`, `FlatList`, `Pressable`) that integrate with the assistant-ui runtime. They accept all standard React Native props and add runtime-aware behavior.
 
-Primitives are accessed via namespace imports (e.g. `ThreadPrimitive.Root`, `ComposerPrimitive.Input`), matching the pattern used in `@assistant-ui/react`.
+Primitives are accessed via namespace imports (e.g. `ThreadPrimitive.Root`, `ComposerPrimitive.Input`), matching the pattern used in `@hitchsoftware/assistant-ui-react`.
 
-Many primitives share their core logic with `@assistant-ui/react` via `@assistant-ui/core/react` — only the UI layer (View/Pressable/Text vs DOM elements) differs.
+Many primitives share their core logic with `@hitchsoftware/assistant-ui-react` via `@hitchsoftware/assistant-ui-core/react` — only the UI layer (View/Pressable/Text vs DOM elements) differs.
 
 ## Thread
 
 ```tsx
-import { ThreadPrimitive } from "@assistant-ui/react-native";
+import { ThreadPrimitive } from "@hitchsoftware/assistant-ui-react-native";
 ```
 
 ### ThreadPrimitive.Root
@@ -81,7 +81,7 @@ The built-in auto-scroll behavior assumes the default, non-inverted `FlatList` d
 
 ### ThreadPrimitive.MessageByIndex
 
-Renders a single message at a specific index in the thread. Provides message context so that `useAuiState((s) => s.message)` works inside the rendered component. This component is shared from `@assistant-ui/core/react`.
+Renders a single message at a specific index in the thread. Provides message context so that `useAuiState((s) => s.message)` works inside the rendered component. This component is shared from `@hitchsoftware/assistant-ui-core/react`.
 
 ```tsx
 <ThreadPrimitive.MessageByIndex
@@ -146,7 +146,7 @@ Conditional rendering based on thread state. Deprecated in favor of `AuiIf`.
 
 ### ThreadPrimitive.Suggestions
 
-Renders all suggestions using the provided component configuration. This component is shared from `@assistant-ui/core/react`.
+Renders all suggestions using the provided component configuration. This component is shared from `@hitchsoftware/assistant-ui-core/react`.
 
 ```tsx
 <ThreadPrimitive.Suggestions>
@@ -160,7 +160,7 @@ Renders all suggestions using the provided component configuration. This compone
 
 ### ThreadPrimitive.SuggestionByIndex
 
-Renders a single suggestion at the specified index, providing suggestion context. This component is shared from `@assistant-ui/core/react`.
+Renders a single suggestion at the specified index, providing suggestion context. This component is shared from `@hitchsoftware/assistant-ui-core/react`.
 
 ```tsx
 <ThreadPrimitive.SuggestionByIndex
@@ -179,7 +179,7 @@ Renders a single suggestion at the specified index, providing suggestion context
 Conditional rendering based on assistant state. Replaces the deprecated `ThreadPrimitive.Empty`, `ThreadPrimitive.If`, `MessagePrimitive.If`, and `ComposerPrimitive.If`.
 
 ```tsx
-import { AuiIf } from "@assistant-ui/react-native";
+import { AuiIf } from "@hitchsoftware/assistant-ui-react-native";
 
 <AuiIf condition={(s) => s.thread.isEmpty}>
   <Text>Send a message to get started</Text>
@@ -197,7 +197,7 @@ import { AuiIf } from "@assistant-ui/react-native";
 ## Composer
 
 ```tsx
-import { ComposerPrimitive } from "@assistant-ui/react-native";
+import { ComposerPrimitive } from "@hitchsoftware/assistant-ui-react-native";
 ```
 
 ### ComposerPrimitive.Root
@@ -347,7 +347,7 @@ Use `AuiIf` for conditional rendering based on composer state:
 ## Message
 
 ```tsx
-import { MessagePrimitive } from "@assistant-ui/react-native";
+import { MessagePrimitive } from "@hitchsoftware/assistant-ui-react-native";
 ```
 
 ### MessagePrimitive.Root
@@ -394,7 +394,7 @@ Renders message content parts using render-prop functions instead of the compone
 
 ```tsx
 import Markdown from "react-native-markdown-display";
-import { MessagePrimitive } from "@assistant-ui/react-native";
+import { MessagePrimitive } from "@hitchsoftware/assistant-ui-react-native";
 
 const AssistantMessage = () => {
   return (
@@ -446,7 +446,7 @@ Renders message content parts via a `components` prop. Tool call and data parts 
 
 ### MessagePrimitive.PartByIndex
 
-Renders a single message part at the specified index, providing part context. Useful for building custom part layouts outside of `MessagePrimitive.Parts`. This component is shared from `@assistant-ui/core/react`.
+Renders a single message part at the specified index, providing part context. Useful for building custom part layouts outside of `MessagePrimitive.Parts`. This component is shared from `@hitchsoftware/assistant-ui-core/react`.
 
 ```tsx
 <MessagePrimitive.PartByIndex
@@ -516,7 +516,7 @@ Renders a single message attachment at the specified index. Useful for building 
 ## Attachment
 
 ```tsx
-import { AttachmentPrimitive } from "@assistant-ui/react-native";
+import { AttachmentPrimitive } from "@hitchsoftware/assistant-ui-react-native";
 ```
 
 Primitives for rendering individual attachments (inside `ComposerPrimitive.Attachments` or `MessagePrimitive.Attachments`).
@@ -560,7 +560,7 @@ Container `View` for an attachment.
 ## ActionBar
 
 ```tsx
-import { ActionBarPrimitive } from "@assistant-ui/react-native";
+import { ActionBarPrimitive } from "@hitchsoftware/assistant-ui-react-native";
 ```
 
 ### ActionBarPrimitive.Copy
@@ -625,7 +625,7 @@ const copyToClipboard = async (text: string) => {
 ## BranchPicker
 
 ```tsx
-import { BranchPickerPrimitive } from "@assistant-ui/react-native";
+import { BranchPickerPrimitive } from "@hitchsoftware/assistant-ui-react-native";
 ```
 
 ### BranchPickerPrimitive.Previous / BranchPickerPrimitive.Next
@@ -653,7 +653,7 @@ import { BranchPickerPrimitive } from "@assistant-ui/react-native";
 ## ThreadList
 
 ```tsx
-import { ThreadListPrimitive } from "@assistant-ui/react-native";
+import { ThreadListPrimitive } from "@hitchsoftware/assistant-ui-react-native";
 ```
 
 ### ThreadListPrimitive.Root
@@ -696,7 +696,7 @@ Container `View` for the thread list.
 ## ThreadListItem
 
 ```tsx
-import { ThreadListItemPrimitive } from "@assistant-ui/react-native";
+import { ThreadListItemPrimitive } from "@hitchsoftware/assistant-ui-react-native";
 ```
 
 Primitives for rendering individual thread list items.
@@ -713,7 +713,7 @@ Container `View` for a thread list item.
 
 ### ThreadListItemPrimitive.Title
 
-Renders the thread title text. Falls back to the provided fallback when title is empty. This component is shared from `@assistant-ui/core/react`.
+Renders the thread title text. Falls back to the provided fallback when title is empty. This component is shared from `@hitchsoftware/assistant-ui-core/react`.
 
 ```tsx
 <ThreadListItemPrimitive.Title fallback="New Chat" />
@@ -760,10 +760,10 @@ Renders the thread title text. Falls back to the provided fallback when title is
 ## Suggestion
 
 ```tsx
-import { SuggestionPrimitive } from "@assistant-ui/react-native";
+import { SuggestionPrimitive } from "@hitchsoftware/assistant-ui-react-native";
 ```
 
-Primitives for rendering suggestions. Use inside a `SuggestionByIndexProvider` (from `@assistant-ui/core/react`).
+Primitives for rendering suggestions. Use inside a `SuggestionByIndexProvider` (from `@hitchsoftware/assistant-ui-core/react`).
 
 ### SuggestionPrimitive.Title
 
@@ -799,7 +799,7 @@ Primitives for rendering suggestions. Use inside a `SuggestionByIndexProvider` (
 ## ChainOfThought
 
 ```tsx
-import { ChainOfThoughtPrimitive } from "@assistant-ui/react-native";
+import { ChainOfThoughtPrimitive } from "@hitchsoftware/assistant-ui-react-native";
 ```
 
 Primitives for rendering chain of thought content (grouped reasoning and tool-call parts).
@@ -826,7 +826,7 @@ Container `View` for chain of thought content.
 
 ### ChainOfThoughtPrimitive.Parts
 
-Renders the parts within a chain of thought. Shared from `@assistant-ui/core/react`.
+Renders the parts within a chain of thought. Shared from `@hitchsoftware/assistant-ui-core/react`.
 
 ```tsx
 <ChainOfThoughtPrimitive.Parts>

@@ -17,13 +17,13 @@ import {
   type NativeScrollEvent,
   type NativeSyntheticEvent,
 } from "react-native";
-import type { MessageState, ThreadMessage } from "@assistant-ui/core";
+import type { MessageState, ThreadMessage } from "@hitchsoftware/assistant-ui-core";
 import {
   RenderChildrenWithAccessor,
   useAuiEvent,
   useAuiState,
-} from "@assistant-ui/store";
-import { MessageByIndexProvider } from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-store";
+import { MessageByIndexProvider } from "@hitchsoftware/assistant-ui-core/react";
 
 type MessageComponents =
   | {

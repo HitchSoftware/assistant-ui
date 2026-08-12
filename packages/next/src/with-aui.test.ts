@@ -18,7 +18,7 @@ describe("withAui", () => {
     for (const glob of ["*.ts", "*.tsx"]) {
       const rule = ourRule(rules[glob]);
       expect(rule.loaders).toHaveLength(1);
-      expect(rule.loaders[0]!.loader).toBe("@assistant-ui/next/loader");
+      expect(rule.loaders[0]!.loader).toBe("@hitchsoftware/assistant-ui-next/loader");
       expect(rule.condition.content.test('"use generative";')).toBe(true);
       expect(rule.condition.content.test("export const a = 1;")).toBe(false);
     }

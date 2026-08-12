@@ -26,8 +26,8 @@ Three options. Choose based on what you want to own.
 `AssistantCloud` is the managed multi-thread service. Pass an instance to `useLocalRuntime` (or any adapter built on it) and threads, persistence, sync, and titles are handled for you.
 
 ```tsx
-import { useLocalRuntime } from "@assistant-ui/react";
-import { AssistantCloud } from "assistant-cloud";
+import { useLocalRuntime } from "@hitchsoftware/assistant-ui-react";
+import { AssistantCloud } from "@hitchsoftware/assistant-cloud";
 
 const cloud = new AssistantCloud({
   baseUrl: process.env.NEXT_PUBLIC_ASSISTANT_BASE_URL,
@@ -61,8 +61,8 @@ import {
   useLocalRuntime,
   useRemoteThreadListRuntime,
   type RemoteThreadListAdapter,
-} from "@assistant-ui/react";
-import { createAssistantStream } from "assistant-stream";
+} from "@hitchsoftware/assistant-ui-react";
+import { createAssistantStream } from "@hitchsoftware/assistant-stream";
 import { modelAdapter } from "./model-adapter";
 
 const adapter: RemoteThreadListAdapter = {
@@ -139,7 +139,7 @@ import {
   RuntimeAdapterProvider,
   useAui,
   type ThreadHistoryAdapter,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { useMemo } from "react";
 
 const adapterWithHistory: RemoteThreadListAdapter = {
@@ -275,7 +275,7 @@ For a button-driven UI, drop `<ThreadListPrimitive.LoadMore>` at the bottom of y
 import {
   ThreadListPrimitive,
   ThreadListItemPrimitive,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 export function ThreadList() {
   return (
@@ -386,7 +386,7 @@ type MyThreadMetadata = RemoteThreadMetadata & {
 ```
 
 ```tsx
-import { useAuiState } from "@assistant-ui/react";
+import { useAuiState } from "@hitchsoftware/assistant-ui-react";
 
 function ThreadListItemMeta() {
   const custom = useAuiState(

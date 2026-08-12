@@ -1,10 +1,10 @@
 import { useEffect, useEffectEvent, useMemo, useState } from "react";
-import { resource } from "@assistant-ui/tap";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
 import type {
   Unstable_TriggerAdapter,
   Unstable_TriggerCategory,
   Unstable_TriggerItem,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 
 function matchesQuery(item: Unstable_TriggerItem, lower: string): boolean {
   return (

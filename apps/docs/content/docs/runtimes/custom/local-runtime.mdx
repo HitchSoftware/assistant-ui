@@ -61,17 +61,17 @@ npm init -y
 <PlatformTabs>
 <Tab value="React">
 
-<InstallCommand npm={["@assistant-ui/react"]} />
+<InstallCommand npm={["@hitchsoftware/assistant-ui-react"]} />
 
 </Tab>
 <Tab value="React Native">
 
-<InstallCommand expo={["@assistant-ui/react-native"]} />
+<InstallCommand expo={["@hitchsoftware/assistant-ui-react-native"]} />
 
 </Tab>
 <Tab value="React Ink">
 
-<InstallCommand npm={["@assistant-ui/react-ink", "ink", "react"]} />
+<InstallCommand npm={["@hitchsoftware/assistant-ui-react-ink", "ink", "react"]} />
 
 </Tab>
 </PlatformTabs>
@@ -119,7 +119,7 @@ import {
   AssistantRuntimeProvider,
   useLocalRuntime,
   type ChatModelAdapter,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 const MyModelAdapter: ChatModelAdapter = {
   async run({ messages, abortSignal }) {
@@ -157,7 +157,7 @@ import {
   AssistantRuntimeProvider,
   useLocalRuntime,
   type ChatModelAdapter,
-} from "@assistant-ui/react-native";
+} from "@hitchsoftware/assistant-ui-react-native";
 
 const MyModelAdapter: ChatModelAdapter = {
   async run({ messages, abortSignal }) {
@@ -195,7 +195,7 @@ import {
   AssistantRuntimeProvider,
   useLocalRuntime,
   type ChatModelAdapter,
-} from "@assistant-ui/react-ink";
+} from "@hitchsoftware/assistant-ui-react-ink";
 
 const MyModelAdapter: ChatModelAdapter = {
   async run({ messages, abortSignal }) {
@@ -345,7 +345,7 @@ import {
   ChatModelAdapter,
   ThreadMessage,
   type ModelContext,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { OpenAI } from "openai";
 
 const openai = new OpenAI();
@@ -448,7 +448,7 @@ If you build the `content` array fresh from the current chunk each iteration, to
 ```tsx title="app/toolkit.tsx"
 "use generative";
 
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import { z } from "zod";
 
 export default defineToolkit({
@@ -468,7 +468,7 @@ export default defineToolkit({
 ```
 
 ```tsx title="app/MyRuntimeProvider.tsx"
-import { AuiConfig, Tools } from "@assistant-ui/react";
+import { AuiConfig, Tools } from "@hitchsoftware/assistant-ui-react";
 import toolkit from "./toolkit";
 
 function MyRuntimeProvider({ children }: { children: React.ReactNode }) {
@@ -607,8 +607,8 @@ Once every pending approval on the message is decided and every listed human too
 Unlike `startRun` (which uses the `ChatModelAdapter`), `resumeRun` requires a `stream` parameter; you provide the async generator that produces the response.
 
 ```tsx
-import { useAui } from "@assistant-ui/react";
-import type { ChatModelRunResult } from "@assistant-ui/core";
+import { useAui } from "@hitchsoftware/assistant-ui-react";
+import type { ChatModelRunResult } from "@hitchsoftware/assistant-ui-core";
 
 const aui = useAui();
 

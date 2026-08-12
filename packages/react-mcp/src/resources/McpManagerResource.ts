@@ -1,14 +1,14 @@
 import { useState, useEffect, useMemo, useEffectEvent, useRef } from "react";
-import { useResource, resource, withKey } from "@assistant-ui/tap";
+import { useResource, resource, withKey } from "@hitchsoftware/assistant-ui-tap";
 import {
   useClientLookup,
   useAssistantClientRef,
   attachTransformScopes,
   type ClientOutput,
-} from "@assistant-ui/store";
-import { useAssistantScopeEffect } from "@assistant-ui/store/client";
-import { ModelContext } from "@assistant-ui/core/store";
-import type { Tool } from "assistant-stream";
+} from "@hitchsoftware/assistant-ui-store";
+import { useAssistantScopeEffect } from "@hitchsoftware/assistant-ui-store/client";
+import { ModelContext } from "@hitchsoftware/assistant-ui-core/store";
+import type { Tool } from "@hitchsoftware/assistant-stream";
 import { McpServerResource } from "./McpServerResource";
 import { McpLocalStorage } from "./storage/McpLocalStorage";
 import type { MCPStorage, MCPStorageElement } from "./storage/types";

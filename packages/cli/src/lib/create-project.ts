@@ -267,9 +267,9 @@ function transformPackageJson(projectDir: string): void {
   const pkgPath = path.join(projectDir, "package.json");
   const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf-8"));
 
-  // Remove @assistant-ui/ui dependency
-  if (pkg.dependencies?.["@assistant-ui/ui"]) {
-    delete pkg.dependencies["@assistant-ui/ui"];
+  // Remove @hitchsoftware/assistant-ui-ui dependency
+  if (pkg.dependencies?.["@hitchsoftware/assistant-ui-ui"]) {
+    delete pkg.dependencies["@hitchsoftware/assistant-ui-ui"];
   }
 
   // Transform workspace dependencies to latest
@@ -285,8 +285,8 @@ function transformPackageJson(projectDir: string): void {
   }
 
   // Remove devDependencies that are workspace-only
-  if (pkg.devDependencies?.["@assistant-ui/x-buildutils"]) {
-    delete pkg.devDependencies["@assistant-ui/x-buildutils"];
+  if (pkg.devDependencies?.["@hitchsoftware/assistant-ui-x-buildutils"]) {
+    delete pkg.devDependencies["@hitchsoftware/assistant-ui-x-buildutils"];
   }
 
   // Update package name to be unique
@@ -327,7 +327,7 @@ function transformTsConfig(projectDir: string): void {
       "@/components/ui/radix/*",
       "@/hooks/*",
       "@/lib/utils",
-      "@assistant-ui/ui/*",
+      "@hitchsoftware/assistant-ui-ui/*",
     ]);
     for (const [key, targets] of Object.entries(
       tsconfig.compilerOptions.paths as Record<string, unknown>,
@@ -349,8 +349,8 @@ function transformTsConfig(projectDir: string): void {
     }
   }
 
-  // If extends uses @assistant-ui/x-buildutils, replace with inline config
-  if (tsconfig.extends?.includes("@assistant-ui/x-buildutils")) {
+  // If extends uses @hitchsoftware/assistant-ui-x-buildutils, replace with inline config
+  if (tsconfig.extends?.includes("@hitchsoftware/assistant-ui-x-buildutils")) {
     const isNext = tsconfig.extends.includes("ts/next");
     delete tsconfig.extends;
 

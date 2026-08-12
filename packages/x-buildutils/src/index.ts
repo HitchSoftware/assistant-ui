@@ -25,14 +25,14 @@ if (isDev && pkg.scripts?.start) onSuccess = pkg.scripts.start;
 // routes to tap inside a resource render), so "react/jsx-runtime" and
 // "react-dom" are untouched.
 //
-// Applied to packages that actually depend on `@assistant-ui/tap` (so the
-// remapped `@assistant-ui/tap/react-shim` specifier resolves for consumers) and
-// to `@assistant-ui/tap` itself so its React-facing hooks can share the same
+// Applied to packages that actually depend on `@hitchsoftware/assistant-ui-tap` (so the
+// remapped `@hitchsoftware/assistant-ui-tap/react-shim` specifier resolves for consumers) and
+// to `@hitchsoftware/assistant-ui-tap` itself so its React-facing hooks can share the same
 // React 18 compatibility shim.
 const dependsOnTap = ["dependencies", "peerDependencies"].some(
-  (field) => pkg[field]?.["@assistant-ui/tap"],
+  (field) => pkg[field]?.["@hitchsoftware/assistant-ui-tap"],
 );
-const isTapPackage = pkg.name === "@assistant-ui/tap";
+const isTapPackage = pkg.name === "@hitchsoftware/assistant-ui-tap";
 const remapReactToShim = dependsOnTap || isTapPackage;
 const packageImportExternals = Object.keys(pkg.imports ?? {});
 
@@ -48,9 +48,9 @@ await build({
           ...options,
           paths: {
             ...(options.paths as Record<string, string>),
-            react: "@assistant-ui/tap/react-shim",
+            react: "@hitchsoftware/assistant-ui-tap/react-shim",
             "react/compiler-runtime":
-              "@assistant-ui/tap/react-shim/compiler-runtime",
+              "@hitchsoftware/assistant-ui-tap/react-shim/compiler-runtime",
           },
         }),
       }
@@ -104,15 +104,15 @@ if (remapReactToShim && !isDev && existsSync("dist")) {
     const src = readFileSync(file, "utf8");
     const out = src
       .replaceAll(
-        '"@assistant-ui/tap/react-shim/compiler-runtime"',
+        '"@hitchsoftware/assistant-ui-tap/react-shim/compiler-runtime"',
         '"react/compiler-runtime"',
       )
       .replaceAll(
-        "'@assistant-ui/tap/react-shim/compiler-runtime'",
+        "'@hitchsoftware/assistant-ui-tap/react-shim/compiler-runtime'",
         "'react/compiler-runtime'",
       )
-      .replaceAll('"@assistant-ui/tap/react-shim"', '"react"')
-      .replaceAll("'@assistant-ui/tap/react-shim'", "'react'");
+      .replaceAll('"@hitchsoftware/assistant-ui-tap/react-shim"', '"react"')
+      .replaceAll("'@hitchsoftware/assistant-ui-tap/react-shim'", "'react'");
     if (out !== src) writeFileSync(file, out);
   }
 }

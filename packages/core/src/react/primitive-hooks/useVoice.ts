@@ -1,5 +1,5 @@
 import { useCallback, useSyncExternalStore } from "react";
-import { useAui, useAuiState } from "@assistant-ui/store";
+import { useAui, useAuiState } from "@hitchsoftware/assistant-ui-store";
 import type { VoiceSessionState } from "../../runtime/interfaces/thread-runtime-core";
 
 export const useVoiceState = (): VoiceSessionState | undefined => {

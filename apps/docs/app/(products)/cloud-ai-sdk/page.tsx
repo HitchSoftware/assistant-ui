@@ -17,7 +17,7 @@ import { DynamicCodeBlock } from "fumadocs-ui/components/dynamic-codeblock";
 const ANALYTICS_PAGE = "cloud-ai-sdk" as const;
 
 const INSTALL_COMMAND =
-  "npm install @assistant-ui/cloud-ai-sdk @ai-sdk/react ai";
+  "npm install @hitchsoftware/assistant-ui-cloud-ai-sdk @ai-sdk/react ai";
 
 const FEATURES = [
   {
@@ -121,7 +121,7 @@ const { messages, sendMessage } = useChat()`}
         />
         <DynamicCodeBlock
           lang="tsx"
-          code={`import { useCloudChat } from "@assistant-ui/cloud-ai-sdk"
+          code={`import { useCloudChat } from "@hitchsoftware/assistant-ui-cloud-ai-sdk"
 
 const { messages, sendMessage, threads } = useCloudChat()`}
           options={{

@@ -1,8 +1,8 @@
 import type {
   ReadonlyJSONObject,
   ReadonlyJSONValue,
-} from "assistant-stream/utils";
-import type { ToolCallTiming, ToolModelContentPart } from "assistant-stream";
+} from "@hitchsoftware/assistant-stream/utils";
+import type { ToolCallTiming, ToolModelContentPart } from "@hitchsoftware/assistant-stream";
 import type { CompleteAttachment } from "./attachment";
 
 export type { ToolCallTiming, ToolModelContentPart };

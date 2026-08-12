@@ -1,4 +1,4 @@
-# @assistant-ui/react-devtools
+# @hitchsoftware/assistant-ui-react-devtools
 
 ## 1.2.13
 
@@ -19,7 +19,7 @@
 - [#5285](https://github.com/assistant-ui/assistant-ui/pull/5285) [`d72c2b6`](https://github.com/assistant-ui/assistant-ui/commit/d72c2b6b5fd0e0158b07ecf00bfe4c8ac5b3e861) - refactor: migrate to aui property accessors ([@Yonom](https://github.com/Yonom))
 
 - Updated dependencies [[`9a7e776`](https://github.com/assistant-ui/assistant-ui/commit/9a7e77603d59b5e091ee922e2e087f0101679321), [`2f5d0d4`](https://github.com/assistant-ui/assistant-ui/commit/2f5d0d441caf6a152bf4eef13566a2f9a161541c)]:
-  - @assistant-ui/react@0.15.0
+  - @hitchsoftware/assistant-ui-react@0.15.0
 
 ## 1.2.10
 
@@ -65,7 +65,7 @@
 
 - [#4390](https://github.com/assistant-ui/assistant-ui/pull/4390) [`bb38d08`](https://github.com/assistant-ui/assistant-ui/commit/bb38d085b04b59f68c8cf16b23c2211454384668) - chore: update dependencies ([@Yonom](https://github.com/Yonom))
 
-- [#4392](https://github.com/assistant-ui/assistant-ui/pull/4392) [`4cc7eaa`](https://github.com/assistant-ui/assistant-ui/commit/4cc7eaac61d68ae970b998465bb7e5c722cc9dda) - chore: update peer and dependency ranges for @assistant-ui/tap 0.9 ([@Yonom](https://github.com/Yonom))
+- [#4392](https://github.com/assistant-ui/assistant-ui/pull/4392) [`4cc7eaa`](https://github.com/assistant-ui/assistant-ui/commit/4cc7eaac61d68ae970b998465bb7e5c722cc9dda) - chore: update peer and dependency ranges for @hitchsoftware/assistant-ui-tap 0.9 ([@Yonom](https://github.com/Yonom))
 
 ## 1.2.5
 
@@ -73,7 +73,7 @@
 
 - [#4385](https://github.com/assistant-ui/assistant-ui/pull/4385) [`ae59baf`](https://github.com/assistant-ui/assistant-ui/commit/ae59baf3bb9b1779f403d378aca19bb3d83781ff) - feat: precompile packages with React Compiler ([@Yonom](https://github.com/Yonom))
   - aui-build runs React Compiler over packages that depend on tap and remaps `react/compiler-runtime` to the tap shim subpath, so compiled hooks and components work both in React components and inside tap resource renders
-  - `@assistant-ui/tap/react-shim` exports `useMemoCache` (tap inside a resource render, `React.__COMPILER_RUNTIME.c` otherwise, with a React 18 polyfill); new `@assistant-ui/tap/react-shim/compiler-runtime` subpath mirrors `react/compiler-runtime`'s `c` export
+  - `@hitchsoftware/assistant-ui-tap/react-shim` exports `useMemoCache` (tap inside a resource render, `React.__COMPILER_RUNTIME.c` otherwise, with a React 18 polyfill); new `@hitchsoftware/assistant-ui-tap/react-shim/compiler-runtime` subpath mirrors `react/compiler-runtime`'s `c` export
   - tap implements `useSyncExternalStore` and a no-op `useDebugValue`; `useSubscribable` now builds on `useSyncExternalStore` so its store reads stay visible to the compiler
   - `AssistantProviderBase` opts out via `"use no memo"` because the runtime receives options through an effect inside a re-rendered child element
 
@@ -81,7 +81,7 @@
 
 ### Patch Changes
 
-- [#4325](https://github.com/assistant-ui/assistant-ui/pull/4325) [`5a4f20e`](https://github.com/assistant-ui/assistant-ui/commit/5a4f20e75dcd93aeb70a4a5582a0a5a1f870b4f2) - chore: update @assistant-ui/tap dependency ranges to ^0.7.0 ([@Yonom](https://github.com/Yonom))
+- [#4325](https://github.com/assistant-ui/assistant-ui/pull/4325) [`5a4f20e`](https://github.com/assistant-ui/assistant-ui/commit/5a4f20e75dcd93aeb70a4a5582a0a5a1f870b4f2) - chore: update @hitchsoftware/assistant-ui-tap dependency ranges to ^0.7.0 ([@Yonom](https://github.com/Yonom))
 
 ## 1.2.3
 
@@ -93,7 +93,7 @@
 
 - [#4306](https://github.com/assistant-ui/assistant-ui/pull/4306) [`15878d8`](https://github.com/assistant-ui/assistant-ui/commit/15878d8114edbbb82c2a467cf811478e5f4e08bc) - chore: update dependencies ([@Yonom](https://github.com/Yonom))
 
-- chore: allow `@assistant-ui/tap` 0.6 in the peer dependency range
+- chore: allow `@hitchsoftware/assistant-ui-tap` 0.6 in the peer dependency range
 
 ## 1.2.2
 
@@ -102,8 +102,8 @@
 - [#4151](https://github.com/assistant-ui/assistant-ui/pull/4151) [`299d448`](https://github.com/assistant-ui/assistant-ui/commit/299d4488c8a5bbec0679680866f5975055fe71b3) - chore: drop stale `biome-ignore` pragmas now that the repo lints with oxlint ([@okisdev](https://github.com/okisdev))
 
 - Updated dependencies [[`1315789`](https://github.com/assistant-ui/assistant-ui/commit/13157895e4d69ad4266d6ab278edfc2e3ea1de92), [`299d448`](https://github.com/assistant-ui/assistant-ui/commit/299d4488c8a5bbec0679680866f5975055fe71b3), [`4429aa3`](https://github.com/assistant-ui/assistant-ui/commit/4429aa32f6bd4fd50a7a8ddbad1e19f6ccad192b), [`0b99959`](https://github.com/assistant-ui/assistant-ui/commit/0b999594ff30ded9f804896093eab0478ac5ce46), [`e76611f`](https://github.com/assistant-ui/assistant-ui/commit/e76611fcb80a39d7b6071d82bcfaf1bb7345110b), [`eef724e`](https://github.com/assistant-ui/assistant-ui/commit/eef724efe4a9075337577c626d7ea7aead45cfbe), [`2dec3ae`](https://github.com/assistant-ui/assistant-ui/commit/2dec3aeba0431178f4ca26e470b304f5a89390ba), [`2d9595e`](https://github.com/assistant-ui/assistant-ui/commit/2d9595e04977ca16fb7edb1295309831945f4914), [`fcb6baf`](https://github.com/assistant-ui/assistant-ui/commit/fcb6baf161a9ee7dda65191e0b42de12b368724d)]:
-  - @assistant-ui/react@0.14.12
-  - @assistant-ui/tap@0.5.14
+  - @hitchsoftware/assistant-ui-react@0.14.12
+  - @hitchsoftware/assistant-ui-tap@0.5.14
 
 ## 1.2.1
 
@@ -112,15 +112,15 @@
 - [#4085](https://github.com/assistant-ui/assistant-ui/pull/4085) [`01244a5`](https://github.com/assistant-ui/assistant-ui/commit/01244a56026ee92bd4e49cb985136f9eb6d45154) - chore: update dependencies ([@Yonom](https://github.com/Yonom))
 
 - Updated dependencies [[`b02b701`](https://github.com/assistant-ui/assistant-ui/commit/b02b7012cff158b4e73b82503b9ea90638b7398d), [`0a0c306`](https://github.com/assistant-ui/assistant-ui/commit/0a0c306286598ea885b046a1dfb85016f720051c), [`01244a5`](https://github.com/assistant-ui/assistant-ui/commit/01244a56026ee92bd4e49cb985136f9eb6d45154), [`f2ec01c`](https://github.com/assistant-ui/assistant-ui/commit/f2ec01ce0f01317a8444b779d88f9b6a26d691c5), [`1e21076`](https://github.com/assistant-ui/assistant-ui/commit/1e2107648bc281f1673f4ad053fd019b28a602d0)]:
-  - @assistant-ui/react@0.14.8
-  - @assistant-ui/tap@0.5.12
+  - @hitchsoftware/assistant-ui-react@0.14.8
+  - @hitchsoftware/assistant-ui-tap@0.5.12
 
 ## 1.2.0
 
 ### Patch Changes
 
 - Updated dependencies [[`040d469`](https://github.com/assistant-ui/assistant-ui/commit/040d469acfcf782de6fc188c646dfd8732d27088)]:
-  - @assistant-ui/react@0.14.0
+  - @hitchsoftware/assistant-ui-react@0.14.0
 
 ## 1.1.0
 
@@ -129,8 +129,8 @@
 - [#3962](https://github.com/assistant-ui/assistant-ui/pull/3962) [`b090acb`](https://github.com/assistant-ui/assistant-ui/commit/b090acb98f6bf3579aab4efedddaff83a0b54c94) - chore: update dependencies ([@Yonom](https://github.com/Yonom))
 
 - Updated dependencies [[`801b9a6`](https://github.com/assistant-ui/assistant-ui/commit/801b9a68d9c7c70ab15ca53842d0df6adacb7b86), [`7098bab`](https://github.com/assistant-ui/assistant-ui/commit/7098bab4c67fbd507c3fad746ef130daa01b3fd6), [`aa6e071`](https://github.com/assistant-ui/assistant-ui/commit/aa6e071fdd6ea832c5aff3f6cf817b2e3eb6ceb0), [`b090acb`](https://github.com/assistant-ui/assistant-ui/commit/b090acb98f6bf3579aab4efedddaff83a0b54c94), [`df7eb3e`](https://github.com/assistant-ui/assistant-ui/commit/df7eb3eee6beeac72d3220707cf4660adf932586), [`f4a693e`](https://github.com/assistant-ui/assistant-ui/commit/f4a693ec1898f6ed0b81be47512fe51fd93a2de8), [`d864d07`](https://github.com/assistant-ui/assistant-ui/commit/d864d0709d9db5f8e042e62cf1f40669f087ba68)]:
-  - @assistant-ui/react@0.13.0
-  - @assistant-ui/tap@0.5.11
+  - @hitchsoftware/assistant-ui-react@0.13.0
+  - @hitchsoftware/assistant-ui-tap@0.5.11
 
 ## 1.0.6
 
@@ -138,8 +138,8 @@
 
 - c988db8: chore: update dependencies
 - Updated dependencies [c988db8]
-  - @assistant-ui/react@0.12.25
-  - @assistant-ui/tap@0.5.8
+  - @hitchsoftware/assistant-ui-react@0.12.25
+  - @hitchsoftware/assistant-ui-tap@0.5.8
 
 ## 1.0.5
 
@@ -150,8 +150,8 @@
 - Updated dependencies [e82726c]
 - Updated dependencies [376bb00]
 - Updated dependencies [87e7761]
-  - @assistant-ui/react@0.12.24
-  - @assistant-ui/tap@0.5.7
+  - @hitchsoftware/assistant-ui-react@0.12.24
+  - @hitchsoftware/assistant-ui-tap@0.5.7
 
 ## 1.0.4
 
@@ -167,8 +167,8 @@
 - Updated dependencies [209ae81]
 - Updated dependencies [50b3100]
 - Updated dependencies [af70d7f]
-  - @assistant-ui/react@0.12.22
-  - @assistant-ui/tap@0.5.6
+  - @hitchsoftware/assistant-ui-react@0.12.22
+  - @hitchsoftware/assistant-ui-tap@0.5.6
 
 ## 1.0.3
 
@@ -180,8 +180,8 @@
 - Updated dependencies [349f3c7]
 - Updated dependencies [02614aa]
 - Updated dependencies [642bcda]
-  - @assistant-ui/react@0.12.18
-  - @assistant-ui/tap@0.5.3
+  - @hitchsoftware/assistant-ui-react@0.12.18
+  - @hitchsoftware/assistant-ui-tap@0.5.3
 
 ## 1.0.2
 
@@ -193,8 +193,8 @@
 - Updated dependencies [bc40eaf]
 - Updated dependencies [be23d74]
 - Updated dependencies [1eb059c]
-  - @assistant-ui/react@0.12.15
-  - @assistant-ui/tap@0.5.2
+  - @hitchsoftware/assistant-ui-react@0.12.15
+  - @hitchsoftware/assistant-ui-tap@0.5.2
 
 ## 1.0.1
 
@@ -211,8 +211,8 @@
 - Updated dependencies [7c360ce]
 - Updated dependencies [a638f05]
 - Updated dependencies [8a78cd2]
-  - @assistant-ui/react@0.12.12
-  - @assistant-ui/tap@0.5.1
+  - @hitchsoftware/assistant-ui-react@0.12.12
+  - @hitchsoftware/assistant-ui-tap@0.5.1
 
 ## 1.0.0
 
@@ -246,8 +246,8 @@
 - Updated dependencies [93910bd]
 - Updated dependencies [58a8472]
 - Updated dependencies [b65428e]
-  - @assistant-ui/tap@0.5.0
-  - @assistant-ui/react@0.12.11
+  - @hitchsoftware/assistant-ui-tap@0.5.0
+  - @hitchsoftware/assistant-ui-react@0.12.11
 
 ## 0.2.3
 
@@ -256,8 +256,8 @@
 - a088518: chore: update dependencies
 - Updated dependencies [a088518]
 - Updated dependencies [d8122cc]
-  - @assistant-ui/react@0.12.9
-  - @assistant-ui/tap@0.4.5
+  - @hitchsoftware/assistant-ui-react@0.12.9
+  - @hitchsoftware/assistant-ui-tap@0.4.5
 
 ## 0.2.2
 
@@ -267,8 +267,8 @@
 - Updated dependencies [d45b893]
 - Updated dependencies [fe71bfc]
 - Updated dependencies [fe71bfc]
-  - @assistant-ui/react@0.12.5
-  - @assistant-ui/tap@0.4.3
+  - @hitchsoftware/assistant-ui-react@0.12.5
+  - @hitchsoftware/assistant-ui-tap@0.4.3
 
 ## 0.2.1
 
@@ -280,8 +280,8 @@
 - Updated dependencies [a8be364]
 - Updated dependencies [605d825]
 - Updated dependencies [fe15232]
-  - @assistant-ui/react@0.12.2
-  - @assistant-ui/tap@0.4.1
+  - @hitchsoftware/assistant-ui-react@0.12.2
+  - @hitchsoftware/assistant-ui-tap@0.4.1
 
 ## 0.1.14
 
@@ -289,8 +289,8 @@
 
 - Updated dependencies [fe06c7c]
 - Updated dependencies
-  - @assistant-ui/react@0.11.59
-  - @assistant-ui/tap@0.4.0
+  - @hitchsoftware/assistant-ui-react@0.11.59
+  - @hitchsoftware/assistant-ui-tap@0.4.0
 
 ## 0.1.13
 
@@ -298,8 +298,8 @@
 
 - 3719567: chore: update deps
 - Updated dependencies [3719567]
-  - @assistant-ui/react@0.11.58
-  - @assistant-ui/tap@0.3.6
+  - @hitchsoftware/assistant-ui-react@0.11.58
+  - @hitchsoftware/assistant-ui-tap@0.3.6
 
 ## 0.1.12
 
@@ -309,8 +309,8 @@
 - cce009d: chore: use tsc for building packages
 - Updated dependencies [57bd207]
 - Updated dependencies [cce009d]
-  - @assistant-ui/react@0.11.53
-  - @assistant-ui/tap@0.3.5
+  - @hitchsoftware/assistant-ui-react@0.11.53
+  - @hitchsoftware/assistant-ui-tap@0.3.5
 
 ## 0.1.11
 
@@ -326,8 +326,8 @@
 - Updated dependencies [bae3aa2]
 - Updated dependencies [e8ea57b]
 - Updated dependencies [bae3aa2]
-  - @assistant-ui/tap@0.3.3
-  - @assistant-ui/react@0.11.50
+  - @hitchsoftware/assistant-ui-tap@0.3.3
+  - @hitchsoftware/assistant-ui-react@0.11.50
 
 ## 0.1.10
 
@@ -338,8 +338,8 @@
 - Updated dependencies [d169e4f]
 - Updated dependencies [da9f8a6]
 - Updated dependencies [01c31fe]
-  - @assistant-ui/react@0.11.48
-  - @assistant-ui/tap@0.3.2
+  - @hitchsoftware/assistant-ui-react@0.11.48
+  - @hitchsoftware/assistant-ui-tap@0.3.2
 
 ## 0.1.9
 
@@ -347,8 +347,8 @@
 
 - ec662cd: chore: update dependencies
 - Updated dependencies [ec662cd]
-  - @assistant-ui/react@0.11.45
-  - @assistant-ui/tap@0.3.1
+  - @hitchsoftware/assistant-ui-react@0.11.45
+  - @hitchsoftware/assistant-ui-tap@0.3.1
 
 ## 0.1.8
 
@@ -356,8 +356,8 @@
 
 - 2c33091: chore: update deps
 - Updated dependencies [2c33091]
-  - @assistant-ui/react@0.11.40
-  - @assistant-ui/tap@0.2.2
+  - @hitchsoftware/assistant-ui-react@0.11.40
+  - @hitchsoftware/assistant-ui-tap@0.2.2
 
 ## 0.1.7
 
@@ -369,8 +369,8 @@
 - Updated dependencies [7a88ead]
 - Updated dependencies [81b581f]
 - Updated dependencies [2fc7e99]
-  - @assistant-ui/react@0.11.36
-  - @assistant-ui/tap@0.1.5
+  - @hitchsoftware/assistant-ui-react@0.11.36
+  - @hitchsoftware/assistant-ui-tap@0.1.5
 
 ## 0.1.6
 
@@ -379,8 +379,8 @@
 - 953db24: chore: update deps
 - Updated dependencies [953db24]
 - Updated dependencies
-  - @assistant-ui/react@0.11.34
-  - @assistant-ui/tap@0.1.4
+  - @hitchsoftware/assistant-ui-react@0.11.34
+  - @hitchsoftware/assistant-ui-tap@0.1.4
 
 ## 0.1.5
 
@@ -388,8 +388,8 @@
 
 - chore: update deps
 - Updated dependencies
-  - @assistant-ui/react@0.11.31
-  - @assistant-ui/tap@0.1.3
+  - @hitchsoftware/assistant-ui-react@0.11.31
+  - @hitchsoftware/assistant-ui-tap@0.1.3
 
 ## 0.1.4
 
@@ -397,8 +397,8 @@
 
 - e6a46e4: chore: update deps
 - Updated dependencies [e6a46e4]
-  - @assistant-ui/react@0.11.27
-  - @assistant-ui/tap@0.1.2
+  - @hitchsoftware/assistant-ui-react@0.11.27
+  - @hitchsoftware/assistant-ui-tap@0.1.2
 
 ## 0.1.3
 
@@ -412,7 +412,7 @@
 
 - 16b1106: fix dark mode not working
 - Updated dependencies [94fcc39]
-  - @assistant-ui/react@0.11.20
+  - @hitchsoftware/assistant-ui-react@0.11.20
 
 ## 0.1.1
 
@@ -421,4 +421,4 @@
 - 2c6198a: fix: thread empty should return false while thread is loading
   fix: devtools hydration warning
 - Updated dependencies [2c6198a]
-  - @assistant-ui/react@0.11.19
+  - @hitchsoftware/assistant-ui-react@0.11.19

@@ -8,7 +8,7 @@ import {
   AuiConfig,
   Suggestions,
   Tools,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { FFmpeg } from "@ffmpeg/ffmpeg";
 import { toBlobURL } from "@ffmpeg/util";
 import { type FC, type ReactNode, useEffect, useRef, useState } from "react";

@@ -9,7 +9,7 @@ import {
   resource,
   withKey,
   type ResourceElement,
-} from "@assistant-ui/tap";
+} from "@hitchsoftware/assistant-ui-tap";
 import {
   useMemo,
   useEffect,

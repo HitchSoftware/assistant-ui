@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useAuiState } from "@assistant-ui/store";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 
 const useThreadMessageIds = (): readonly string[] => {
   const messages = useAuiState((s) => s.thread.messages);

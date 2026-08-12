@@ -19,7 +19,7 @@ Try it below — the chat on top is a live assistant-ui app, and the panel under
 
 ### Install the DevTools package
 
-<InstallCommand npm={["@assistant-ui/react-devtools"]} />
+<InstallCommand npm={["@hitchsoftware/assistant-ui-react-devtools"]} />
 
   </Step>
   <Step>
@@ -27,8 +27,8 @@ Try it below — the chat on top is a live assistant-ui app, and the panel under
 ### Mount the DevTools modal
 
 ```tsx
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
-import { DevToolsModal } from "@assistant-ui/react-devtools";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
+import { DevToolsModal } from "@hitchsoftware/assistant-ui-react-devtools";
 
 export function AssistantApp() {
   const runtime = /* your runtime setup */;
@@ -60,7 +60,7 @@ Try it here — click the launcher in the lower-right corner of the frame, then 
 The panel is extensible. Pass extra inspector tabs to `DevToolsModal` with `plugins`; each plugin renders from the inspected instance's projected data (`state`, `logs`, `modelContext`, `scopes`).
 
 ```tsx
-import { createDevToolsPlugin, DevToolsModal } from "@assistant-ui/react-devtools";
+import { createDevToolsPlugin, DevToolsModal } from "@hitchsoftware/assistant-ui-react-devtools";
 
 const stateTab = createDevToolsPlugin({
   id: "my-state",

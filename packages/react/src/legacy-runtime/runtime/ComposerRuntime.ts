@@ -5,16 +5,16 @@ export type {
   ComposerRuntime,
   ThreadComposerRuntime,
   EditComposerRuntime,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 
 export type {
   ComposerRuntimeCoreBinding,
   ThreadComposerRuntimeCoreBinding,
   EditComposerRuntimeCoreBinding,
-} from "@assistant-ui/core/internal";
+} from "@hitchsoftware/assistant-ui-core/internal";
 
 export {
   ComposerRuntimeImpl,
   ThreadComposerRuntimeImpl,
   EditComposerRuntimeImpl,
-} from "@assistant-ui/core/internal";
+} from "@hitchsoftware/assistant-ui-core/internal";

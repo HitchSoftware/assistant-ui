@@ -1,7 +1,7 @@
 import type {
   ChatModelAdapter,
   ThreadAssistantMessagePart,
-} from "@assistant-ui/react-ink";
+} from "@hitchsoftware/assistant-ui-react-ink";
 
 export const MODEL_NAME = "demo-agent";
 

@@ -1,7 +1,7 @@
 import {
   getExternalStoreMessages,
   type ThreadMessage,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import type { LangChainMessage, LangChainToolCall, UIMessage } from "./types";
 
 export const getPendingToolCalls = (messages: LangChainMessage[]) => {

@@ -25,7 +25,7 @@ import {
   SuggestionPrimitive,
   ThreadPrimitive,
   useAuiState,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { ArrowDownIcon, ArrowUpIcon, SquareIcon } from "lucide-react";
 
 export const MyThread: FC = () => {

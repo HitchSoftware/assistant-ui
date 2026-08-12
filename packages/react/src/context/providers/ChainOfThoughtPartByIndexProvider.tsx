@@ -1,3 +1,3 @@
 "use client";
 
-export { ChainOfThoughtPartByIndexProvider } from "@assistant-ui/core/react";
+export { ChainOfThoughtPartByIndexProvider } from "@hitchsoftware/assistant-ui-core/react";

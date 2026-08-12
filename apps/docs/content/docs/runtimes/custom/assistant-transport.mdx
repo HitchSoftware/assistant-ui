@@ -342,7 +342,7 @@ The state converter transforms your agent state into assistant-ui's message form
 <Tab value="Example">
 
 ```ts
-import { unstable_createMessageConverter as createMessageConverter } from "@assistant-ui/react";
+import { unstable_createMessageConverter as createMessageConverter } from "@hitchsoftware/assistant-ui-react";
 
 type YourMessage = {
   id: string;
@@ -366,8 +366,8 @@ const converter = (state: YourAgentState) => ({
 <Tab value="LangChain">
 
 ```ts
-import { unstable_createMessageConverter as createMessageConverter } from "@assistant-ui/react";
-import { convertLangChainMessages } from "@assistant-ui/react-langgraph";
+import { unstable_createMessageConverter as createMessageConverter } from "@hitchsoftware/assistant-ui-react";
+import { convertLangChainMessages } from "@hitchsoftware/assistant-ui-react-langgraph";
 
 const messageConverter = createMessageConverter(convertLangChainMessages);
 
@@ -538,7 +538,7 @@ Before resuming, the runtime posts `{ threadId }` to `resumeStateApi`. The endpo
 The runtime replaces its local base with this snapshot and includes `runId` in the resume request; the request carries no `state`, since the server replays from the snapshot it retained. A sync server should reject the resume when that ID no longer identifies the same run, preventing replay operations from being applied to a drifted or replaced base state. When no run is active, the endpoint responds `204 No Content` and the runtime skips the resume without raising an error. On a resume, `runId` takes precedence over fields supplied through `body` and survives `prepareSendCommandsRequest`; any `state` either of them supplies is stripped.
 
 ```tsx
-import { useAui } from "@assistant-ui/react";
+import { useAui } from "@hitchsoftware/assistant-ui-react";
 import { useEffect, useRef } from "react";
 
 function useResumeOnMount(threadId: string) {
@@ -569,7 +569,7 @@ For `AssistantTransport`, do not pass a `stream` parameter; the runtime uses the
 `useAssistantTransportState` reads the current agent state from any component:
 
 ```ts
-import { useAssistantTransportState } from "@assistant-ui/react";
+import { useAssistantTransportState } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const state = useAssistantTransportState();
@@ -587,9 +587,9 @@ function MessageCount() {
 Augment the module to type your agent state:
 
 ```ts title="assistant.config.ts"
-import "@assistant-ui/react";
+import "@hitchsoftware/assistant-ui-react";
 
-declare module "@assistant-ui/react" {
+declare module "@hitchsoftware/assistant-ui-react" {
   namespace Assistant {
     interface ExternalState {
       myState: {
@@ -608,7 +608,7 @@ Place this file anywhere in your project; TypeScript picks it up via module reso
 If you used `createMessageConverter`, retrieve the original message from any assistant-ui state:
 
 ```ts
-import { useAuiState } from "@assistant-ui/react";
+import { useAuiState } from "@hitchsoftware/assistant-ui-react";
 
 function MyMessageComponent() {
   const message = useAuiState((s) => s.message);
@@ -628,7 +628,7 @@ import {
   AssistantRuntimeProvider,
   AssistantTransportConnectionMetadata,
   useAssistantTransportRuntime,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 type State = { messages: Message[] };
 
@@ -676,9 +676,9 @@ Full example: [`examples/with-assistant-transport`](https://github.com/assistant
 ### Define
 
 ```ts title="assistant.config.ts"
-import "@assistant-ui/react";
+import "@hitchsoftware/assistant-ui-react";
 
-declare module "@assistant-ui/react" {
+declare module "@hitchsoftware/assistant-ui-react" {
   namespace Assistant {
     interface Commands {
       myCustomCommand: {
@@ -693,7 +693,7 @@ declare module "@assistant-ui/react" {
 ### Issue
 
 ```ts
-import { useAssistantTransportSendCommand } from "@assistant-ui/react";
+import { useAssistantTransportSendCommand } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const sendCommand = useAssistantTransportSendCommand();

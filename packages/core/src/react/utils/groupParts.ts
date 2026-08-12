@@ -33,7 +33,7 @@ export type GroupByContext = {
  * reconstructs the function each render.
  */
 export const GROUPBY_MEMO_KEY: unique symbol = Symbol.for(
-  "@assistant-ui/groupBy.memoKey",
+  "@hitchsoftware/assistant-ui-groupBy.memoKey",
 );
 
 /**

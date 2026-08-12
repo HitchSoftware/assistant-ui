@@ -14,8 +14,8 @@
   <a href="https://cal.com/simon-farshid/assistant-ui">Contact Sales</a>
 </p>
 
-[![npm version](https://img.shields.io/npm/v/@assistant-ui/react)](https://www.npmjs.com/package/@assistant-ui/react)
-[![npm downloads](https://img.shields.io/npm/dm/@assistant-ui/react)](https://www.npmjs.com/package/@assistant-ui/react)
+[![npm version](https://img.shields.io/npm/v/@hitchsoftware/assistant-ui-react)](https://www.npmjs.com/package/@hitchsoftware/assistant-ui-react)
+[![npm downloads](https://img.shields.io/npm/dm/@hitchsoftware/assistant-ui-react)](https://www.npmjs.com/package/@hitchsoftware/assistant-ui-react)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/assistant-ui/assistant-ui)
 [![Weave Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fapp.workweave.ai%2Fapi%2Frepository%2Fbadge%2Forg_GhSIrtWo37b5B3Mv0At3wQ1Q%2F722184017&cacheSeconds=3600)](https://app.workweave.ai/reports/repository/org_GhSIrtWo37b5B3Mv0At3wQ1Q/722184017)
 ![GitHub License](https://img.shields.io/github/license/assistant-ui/assistant-ui)
@@ -38,7 +38,7 @@ npx assistant-ui@latest init     # add to existing project
 Or install the packages directly:
 
 ```bash
-npm install @assistant-ui/react @assistant-ui/react-ai-sdk
+npm install @hitchsoftware/assistant-ui-react @hitchsoftware/assistant-ui-react-ai-sdk
 ```
 
 ## Usage
@@ -46,8 +46,8 @@ npm install @assistant-ui/react @assistant-ui/react-ai-sdk
 ```tsx
 "use client";
 
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { Thread } from "@/components/assistant-ui/thread";
 
 export function Chat() {
@@ -75,11 +75,11 @@ export function Chat() {
 
 | Integration                            | Package                                                          |
 | -------------------------------------- | ---------------------------------------------------------------- |
-| Vercel AI SDK                          | `@assistant-ui/react-ai-sdk`                                     |
-| LangGraph / LangChain                  | `@assistant-ui/react-langgraph`, `@assistant-ui/react-langchain` |
-| AG-UI / A2A protocols                  | `@assistant-ui/react-ag-ui`, `@assistant-ui/react-a2a`           |
-| Google ADK / OpenCode                  | `@assistant-ui/react-google-adk`, `@assistant-ui/react-opencode` |
-| Custom data-stream backend             | `@assistant-ui/react-data-stream`                                |
+| Vercel AI SDK                          | `@hitchsoftware/assistant-ui-react-ai-sdk`                                     |
+| LangGraph / LangChain                  | `@hitchsoftware/assistant-ui-react-langgraph`, `@hitchsoftware/assistant-ui-react-langchain` |
+| AG-UI / A2A protocols                  | `@hitchsoftware/assistant-ui-react-ag-ui`, `@hitchsoftware/assistant-ui-react-a2a`           |
+| Google ADK / OpenCode                  | `@hitchsoftware/assistant-ui-react-google-adk`, `@hitchsoftware/assistant-ui-react-opencode` |
+| Custom data-stream backend             | `@hitchsoftware/assistant-ui-react-data-stream`                                |
 | Managed thread history, telemetry, and file storage | `assistant-cloud`                                       |
 
 Broad model support out of the box (OpenAI, Anthropic, Google Gemini, Mistral, Perplexity, AWS Bedrock, Azure, Fireworks, Ollama) plus community providers via the AI SDK, and easy extension to any custom HTTP backend.
@@ -126,8 +126,8 @@ Sample customization to make a Perplexity lookalike:
 
 ## For other platforms
 
-- React Native: [`@assistant-ui/react-native`](https://www.npmjs.com/package/@assistant-ui/react-native)
-- Terminal (Ink): [`@assistant-ui/react-ink`](https://www.npmjs.com/package/@assistant-ui/react-ink)
+- React Native: [`@hitchsoftware/assistant-ui-react-native`](https://www.npmjs.com/package/@hitchsoftware/assistant-ui-react-native)
+- Terminal (Ink): [`@hitchsoftware/assistant-ui-react-ink`](https://www.npmjs.com/package/@hitchsoftware/assistant-ui-react-ink)
 
 ## License
 

@@ -1,7 +1,7 @@
 "use client";
 
-import { useAuiState } from "@assistant-ui/react";
-import type { ToolCallMessagePart } from "@assistant-ui/react";
+import { useAuiState } from "@hitchsoftware/assistant-ui-react";
+import type { ToolCallMessagePart } from "@hitchsoftware/assistant-ui-react";
 import { Tabs as TabsPrimitive } from "@base-ui/react/tabs";
 
 export const ArtifactsView = () => {

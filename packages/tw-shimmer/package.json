@@ -1,5 +1,5 @@
 {
-  "name": "tw-shimmer",
+  "name": "@hitchsoftware/tw-shimmer",
   "version": "0.4.12",
   "description": "Tailwind CSS v4 plugin for shimmer effects",
   "keywords": [
@@ -32,8 +32,8 @@
     "tailwindcss": ">=4.0.0-0"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://www.assistant-ui.com/tw-shimmer",
   "repository": {

@@ -1,6 +1,6 @@
 # AI SDK v7 Example
 
-This example demonstrates how to use `@assistant-ui/react-ai-sdk` with the Vercel AI SDK v7.
+This example demonstrates how to use `@hitchsoftware/assistant-ui-react-ai-sdk` with the Vercel AI SDK v7.
 
 ## Quick Start
 
@@ -31,7 +31,7 @@ Open [http://localhost:3000](http://localhost:3000) to see the result.
 ## Key Features
 
 - Uses the new AI SDK v7 with `@ai-sdk/openai`
-- Integrates with `@assistant-ui/react` using the new `useChatRuntime` hook
+- Integrates with `@hitchsoftware/assistant-ui-react` using the new `useChatRuntime` hook
 - No RSC support (client-side only)
 - Simplified integration with the `useChatRuntime` hook that wraps AI SDK v7's `useChat`
 - Uses `AssistantChatTransport` to pass system messages and frontend tools to the backend
@@ -45,7 +45,7 @@ By default, `useChatRuntime` uses `AssistantChatTransport` which automatically f
 When customizing the API URL, you must explicitly use `AssistantChatTransport` to keep system/tools forwarding:
 
 ```typescript
-import { AssistantChatTransport } from "@assistant-ui/react-ai-sdk";
+import { AssistantChatTransport } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 
 const runtime = useChatRuntime({
   transport: new AssistantChatTransport({

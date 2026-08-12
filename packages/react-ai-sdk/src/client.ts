@@ -1,4 +1,4 @@
-/// <reference types="@assistant-ui/core/react" />
+/// <reference types="@hitchsoftware/assistant-ui-core/react" />
 
 export { useAISDKRuntime } from "./ui/use-chat/useAISDKRuntime";
 export { useChatRuntime } from "./ui/use-chat/useChatRuntime";

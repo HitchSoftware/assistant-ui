@@ -1,12 +1,12 @@
 import { useState, useMemo, useEffect, useCallback, useRef } from "react";
-import { resource, withKey } from "@assistant-ui/tap";
-import type { ClientElement, ClientOutput } from "@assistant-ui/store";
+import { resource, withKey } from "@hitchsoftware/assistant-ui-tap";
+import type { ClientElement, ClientOutput } from "@hitchsoftware/assistant-ui-store";
 import {
   useClientLookup,
   attachTransformScopes,
   useClientResource,
   Derived,
-} from "@assistant-ui/store/client";
+} from "@hitchsoftware/assistant-ui-store/client";
 
 import type {
   AppendMessage,
@@ -37,8 +37,8 @@ import type { ExternalThreadBranchAdapter } from "../../runtime/branch/external-
 import type { AttachmentAdapter } from "../../adapters/attachment";
 import type { FeedbackAdapter } from "../../adapters/feedback";
 import type { SpeechSynthesisAdapter } from "../../adapters/speech";
-import { ToolResponse } from "assistant-stream";
-import type { ReadonlyJSONValue } from "assistant-stream/utils";
+import { ToolResponse } from "@hitchsoftware/assistant-stream";
+import type { ReadonlyJSONValue } from "@hitchsoftware/assistant-stream/utils";
 import type { QueueItemState } from "../scopes/queue-item";
 import type { ComposerSendOptions } from "../scopes/composer";
 import { fileMatchesAccept } from "../../adapters/attachment";

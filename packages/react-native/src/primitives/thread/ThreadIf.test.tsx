@@ -8,7 +8,7 @@ const h = vi.hoisted(() => ({
   thread: { messages: [] as unknown[], isRunning: false },
 }));
 
-vi.mock("@assistant-ui/store", () => ({
+vi.mock("@hitchsoftware/assistant-ui-store", () => ({
   useAuiState: <T,>(selector: (s: { thread: typeof h.thread }) => T) =>
     selector({ thread: h.thread }),
 }));

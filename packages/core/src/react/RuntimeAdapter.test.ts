@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
-import { flushTapSync } from "@assistant-ui/tap";
-import { AuiConfig, createAssistantClient } from "@assistant-ui/store/client";
+import { flushTapSync } from "@hitchsoftware/assistant-ui-tap";
+import { AuiConfig, createAssistantClient } from "@hitchsoftware/assistant-ui-store/client";
 import { RuntimeAdapter } from "../store";
 import { ExternalStoreRuntimeCore } from "../runtimes/internal";
 import { AssistantRuntimeImpl } from "../runtime/internal";

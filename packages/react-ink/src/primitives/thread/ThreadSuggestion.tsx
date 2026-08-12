@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { useSuggestionTrigger } from "@assistant-ui/core/react";
+import { useSuggestionTrigger } from "@hitchsoftware/assistant-ui-core/react";
 import { Pressable, type PressableProps } from "../internal/Pressable";
 
 export type ThreadSuggestionProps = Omit<PressableProps, "onPress"> & {

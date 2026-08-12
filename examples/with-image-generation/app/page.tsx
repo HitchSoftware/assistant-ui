@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import type { ImageMessagePart, MessagePartStatus } from "@assistant-ui/react";
+import type { ImageMessagePart, MessagePartStatus } from "@hitchsoftware/assistant-ui-react";
 import { Image } from "@/components/assistant-ui/image";
 
 type ImageView = ImageMessagePart & { status: MessagePartStatus };
@@ -57,7 +57,7 @@ export default function Home() {
         <h1 className="text-xl font-semibold">Image Generation</h1>
         <p className="text-muted-foreground text-sm">
           Calls a server route that runs <code>ai.generateImage</code> and
-          renders the result with the <code>@assistant-ui/ui</code> Image
+          renders the result with the <code>@hitchsoftware/assistant-ui-ui</code> Image
           component.
         </p>
       </header>

@@ -7,10 +7,10 @@ import type {
   RealtimeVoiceAdapter,
   RemoteThreadListAdapter,
   SpeechSynthesisAdapter,
-} from "@assistant-ui/core";
-import type { DataMessagePartComponent } from "@assistant-ui/core/react";
-import type { AssistantCloud } from "assistant-cloud";
-import type { ReadonlyJSONObject } from "assistant-stream/utils";
+} from "@hitchsoftware/assistant-ui-core";
+import type { DataMessagePartComponent } from "@hitchsoftware/assistant-ui-core/react";
+import type { AssistantCloud } from "@hitchsoftware/assistant-cloud";
+import type { ReadonlyJSONObject } from "@hitchsoftware/assistant-stream/utils";
 import type {
   LangGraphInterruptState,
   LangGraphSendMessageConfig,

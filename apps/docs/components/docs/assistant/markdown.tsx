@@ -1,6 +1,6 @@
 "use client";
 
-import "@assistant-ui/react-markdown/styles/dot.css";
+import "@hitchsoftware/assistant-ui-react-markdown/styles/dot.css";
 import "react-shiki/css";
 
 import {
@@ -9,14 +9,14 @@ import {
   type SyntaxHighlighterProps,
   unstable_memoizeMarkdownComponents as memoizeMarkdownComponents,
   useIsMarkdownCodeBlock,
-} from "@assistant-ui/react-markdown";
+} from "@hitchsoftware/assistant-ui-react-markdown";
 import remarkGfm from "remark-gfm";
 import { type CSSProperties, type FC, memo } from "react";
 import { CheckIcon, CopyIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import ShikiHighlighter from "react-shiki";
 import Link from "next/link";
-import { useCopyToClipboard } from "@assistant-ui/ui/hooks/use-copy-to-clipboard";
+import { useCopyToClipboard } from "@hitchsoftware/assistant-ui-ui/hooks/use-copy-to-clipboard";
 
 const MarkdownTextImpl = () => {
   return (

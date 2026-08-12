@@ -1,1 +1,1 @@
-export { DefaultEditComposerRuntimeCore } from "@assistant-ui/core/internal";
+export { DefaultEditComposerRuntimeCore } from "@hitchsoftware/assistant-ui-core/internal";

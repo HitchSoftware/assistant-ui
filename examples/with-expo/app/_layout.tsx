@@ -17,7 +17,7 @@ import {
   AuiConfig,
   useAui,
   Tools,
-} from "@assistant-ui/react-native";
+} from "@hitchsoftware/assistant-ui-react-native";
 import { useAppRuntime } from "@/hooks/use-app-runtime";
 import { useTheme } from "@/hooks/use-theme";
 import { Icon } from "@/components/ui/icon";

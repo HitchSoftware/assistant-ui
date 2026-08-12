@@ -9,7 +9,7 @@ import {
 } from "./compile";
 
 const minimalSource = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   weather: {
     execute: async () => 1,
@@ -54,17 +54,17 @@ function createCompatibilityFixture(range: string | null): string {
   const filename = nodePath.join(srcRoot, "toolkit.tsx");
   writeFileSync(filename, minimalSource);
 
-  const reactRoot = createPackage(appRoot, "@assistant-ui/react", {
+  const reactRoot = createPackage(appRoot, "@hitchsoftware/assistant-ui-react", {
     dependencies: {
-      "@assistant-ui/core": "0.0.0",
+      "@hitchsoftware/assistant-ui-core": "0.0.0",
     },
   });
-  createPackage(reactRoot, "@assistant-ui/core", {
+  createPackage(reactRoot, "@hitchsoftware/assistant-ui-core", {
     version: "0.2.10",
     ...(range
       ? {
           optionalDevDependencies: {
-            "@assistant-ui/x-generative-compiler": range,
+            "@hitchsoftware/assistant-ui-x-generative-compiler": range,
           },
         }
       : {}),
@@ -121,7 +121,7 @@ function createAliasMergeFixture(childSource: string): string {
 }
 
 const generativeChild = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   get_weather: {
     execute: async () => 1,
@@ -135,7 +135,7 @@ import { z } from "zod";
 import { db } from "@/db";
 import { track } from "@/analytics";
 import { Chart } from "@/ui/chart";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 
 export default defineToolkit({
   weather: {
@@ -277,7 +277,7 @@ describe("compileGenerative — client target", () => {
 
   it("marks generated human tools with backend parameter defaults", () => {
     const src = `"use generative";
-import { defineToolkit, humanTool } from "@assistant-ui/react";
+import { defineToolkit, humanTool } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   ask: {
     parameters: { type: "object", properties: {} },
@@ -304,11 +304,11 @@ describe("compileGenerative — generative UI library", () => {
   const generative = `"use generative";
 import { z } from "zod";
 import { Chart } from "@/ui/chart";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import {
   JSONGenerativeUI,
   defineGenerativeComponents,
-} from "@assistant-ui/react-generative-ui";
+} from "@hitchsoftware/assistant-ui-react-generative-ui";
 
 const generative = new JSONGenerativeUI({
   library: defineGenerativeComponents({
@@ -354,14 +354,14 @@ export default defineToolkit({
     expect(code).toContain("new JSONGenerativeUI");
     expect(code).toContain("generative.present()");
     // the JSONGenerativeUI import survives on both builds
-    expect(code).toContain("@assistant-ui/react-generative-ui");
+    expect(code).toContain("@hitchsoftware/assistant-ui-react-generative-ui");
     expect(code).not.toContain("defineGenerativeComponents");
   });
 
   it("allows an exported module-scope JSONGenerativeUI instance", () => {
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
-import { JSONGenerativeUI } from "@assistant-ui/react-generative-ui";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
+import { JSONGenerativeUI } from "@hitchsoftware/assistant-ui-react-generative-ui";
 export const ui = new JSONGenerativeUI({ library: {} });
 export default defineToolkit({ present: ui.present() });`;
 
@@ -375,8 +375,8 @@ export default defineToolkit({ present: ui.present() });`;
 
   it("rejects an unknown method on a JSONGenerativeUI instance", () => {
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
-import { JSONGenerativeUI } from "@assistant-ui/react-generative-ui";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
+import { JSONGenerativeUI } from "@hitchsoftware/assistant-ui-react-generative-ui";
 const ui = new JSONGenerativeUI({ library: {} });
 export default defineToolkit({ present: ui.notARealMethod() });`;
     expect(() => compileGenerative(src, { target: "server" })).toThrow(
@@ -386,8 +386,8 @@ export default defineToolkit({ present: ui.notARealMethod() });`;
 
   it("allows an aliased JSONGenerativeUI import", () => {
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
-import { JSONGenerativeUI as GenUI } from "@assistant-ui/react-generative-ui";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
+import { JSONGenerativeUI as GenUI } from "@hitchsoftware/assistant-ui-react-generative-ui";
 const ui = new GenUI({ library: {} });
 export default defineToolkit({ present: ui.present() });`;
 
@@ -401,7 +401,7 @@ export default defineToolkit({ present: ui.present() });`;
 
   it("does not trust a local class named JSONGenerativeUI", () => {
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 class JSONGenerativeUI {
   present() {
     return makeTool();
@@ -417,7 +417,7 @@ export default defineToolkit({ present: ui.present() });`;
 
   it("rejects a method call on an unknown (non-JSONGenerativeUI) object", () => {
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import { other } from "@/other";
 export default defineToolkit({ present: other.present() });`;
     expect(() => compileGenerative(src, { target: "server" })).toThrow(
@@ -427,8 +427,8 @@ export default defineToolkit({ present: other.present() });`;
 
   it("does not treat nested JSONGenerativeUI instances as module-scope instances", () => {
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
-import { JSONGenerativeUI } from "@assistant-ui/react-generative-ui";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
+import { JSONGenerativeUI } from "@hitchsoftware/assistant-ui-react-generative-ui";
 function create() {
   const ui = new JSONGenerativeUI({ library: {} });
   return ui;
@@ -443,8 +443,8 @@ export default defineToolkit({ present: ui.present() });`;
     const src = `"use generative";
 import { z } from "zod";
 import { db } from "@/db";
-import { defineToolkit } from "@assistant-ui/react";
-import { JSONGenerativeUI, defineGenerativeComponents } from "@assistant-ui/react-generative-ui";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
+import { JSONGenerativeUI, defineGenerativeComponents } from "@hitchsoftware/assistant-ui-react-generative-ui";
 const ui = new JSONGenerativeUI({ library: defineGenerativeComponents({ Box: { description: "b", properties: z.object({}), render: () => null } }) });
 export default defineToolkit({
   present: ui.present(),
@@ -470,7 +470,7 @@ export default defineToolkit({
     const src = `"use generative";
 import { z } from "zod";
 import { Notepad } from "@/ui/notepad";
-import { defineToolkit, unstable_interactableTool } from "@assistant-ui/react";
+import { defineToolkit, unstable_interactableTool } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   notepad: unstable_interactableTool({
     description: "A notepad.",
@@ -493,7 +493,7 @@ export default defineToolkit({
 
   it("rejects unstable_interactableTool not imported from an assistant-ui package", () => {
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import { unstable_interactableTool } from "@/my-tools";
 export default defineToolkit({ notepad: unstable_interactableTool({ render: () => null }) });`;
     expect(() => compileGenerative(src, { target: "server" })).toThrow(
@@ -503,7 +503,7 @@ export default defineToolkit({ notepad: unstable_interactableTool({ render: () =
 
   it("routes provider tool config", () => {
     const src = `"use generative";
-import { defineToolkit, providerTool } from "@assistant-ui/react";
+import { defineToolkit, providerTool } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   web_search: {
     execute: providerTool({
@@ -532,7 +532,7 @@ export default defineToolkit({
     const src = `"use generative";
 import { z } from "zod";
 import { db } from "@/db";
-import { defineMcpToolkit, defineToolkit } from "@assistant-ui/react";
+import { defineMcpToolkit, defineToolkit } from "@hitchsoftware/assistant-ui-react";
 const mcp = defineMcpToolkit({
   docs: { type: "http", url: "http://localhost:3001/mcp" },
 });
@@ -558,7 +558,7 @@ export default defineToolkit({
 
   it("allows spreading a compiler-visible local toolkit", () => {
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import { db } from "@/db";
 const base = defineToolkit({
   get_weather: {
@@ -589,7 +589,7 @@ export default defineToolkit({
 
   it("allows spreading an exported compiler-visible local toolkit", () => {
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import { db } from "@/db";
 export const base = defineToolkit({
   get_weather: {
@@ -620,7 +620,7 @@ export default defineToolkit({
 
   it("allows spreading an exported MCP toolkit fragment", () => {
     const src = `"use generative";
-import { defineMcpToolkit, defineToolkit } from "@assistant-ui/react";
+import { defineMcpToolkit, defineToolkit } from "@hitchsoftware/assistant-ui-react";
 export const mcp = defineMcpToolkit({
   docs: { type: "http", url: "http://localhost:3001/mcp" },
 });
@@ -635,7 +635,7 @@ export default defineToolkit({
 
   it("allows directly spreading an MCP toolkit fragment", () => {
     const src = `"use generative";
-import { defineMcpToolkit, defineToolkit } from "@assistant-ui/react";
+import { defineMcpToolkit, defineToolkit } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   ...defineMcpToolkit({
     docs: { type: "http", url: "http://localhost:3001/mcp" },
@@ -649,7 +649,7 @@ export default defineToolkit({
 
   it("rejects opaque toolkit spreads", () => {
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import { backendTools } from "@/backend-tools";
 export default defineToolkit({
   ...backendTools,
@@ -662,7 +662,7 @@ export default defineToolkit({
 
   it("does not treat exported opaque toolkit declarations as compiler-visible spreads", () => {
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 export const base = makeToolkit();
 export default defineToolkit({
   ...base,
@@ -675,7 +675,7 @@ export default defineToolkit({
 
   it("does not treat nested toolkit declarations as compiler-visible spreads", () => {
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 function createToolkit() {
   const base = defineToolkit({
     get_weather: {
@@ -697,7 +697,7 @@ export default defineToolkit({
   it("allows spreading the default import of a generative module", () => {
     const filename = createMergeFixture(generativeChild);
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import weatherTools from "./tools/weather";
 export default defineToolkit({
   ...weatherTools,
@@ -715,28 +715,28 @@ export default defineToolkit({
   it("allows unique tool names across more than two imported generative spreads", () => {
     const filename = createMultiMergeFixture({
       "tools/weather.tsx": `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   get_weather: { execute: async () => 1, render: () => null },
 });`,
       "tools/database.tsx": `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   query_db: { execute: async () => 1, render: () => null },
 });`,
       "tools/calendar.tsx": `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   create_event: { execute: async () => 1, render: () => null },
 });`,
       "tools/email.tsx": `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   send_email: { execute: async () => 1, render: () => null },
 });`,
     });
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import weatherTools from "./tools/weather";
 import databaseTools from "./tools/database";
 import calendarTools from "./tools/calendar";
@@ -758,29 +758,29 @@ export default defineToolkit({
   it("warns about duplicate tool names across more than two imported generative spreads", () => {
     const filename = createMultiMergeFixture({
       "tools/weather.tsx": `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   get_weather: { execute: async () => 1, render: () => null },
   search: { execute: async () => 1, render: () => null },
 });`,
       "tools/database.tsx": `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   query_db: { execute: async () => 1, render: () => null },
 });`,
       "tools/calendar.tsx": `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   search: { execute: async () => 1, render: () => null },
 });`,
       "tools/email.tsx": `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   send_email: { execute: async () => 1, render: () => null },
 });`,
     });
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import weatherTools from "./tools/weather";
 import databaseTools from "./tools/database";
 import calendarTools from "./tools/calendar";
@@ -820,18 +820,18 @@ export default defineToolkit({
   it("does not reuse imported toolkit names across compile calls", () => {
     const filename = createMultiMergeFixture({
       "tools/weather.tsx": `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   get_weather: { execute: async () => 1, render: () => null },
 });`,
       "tools/calendar.tsx": `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   search: { execute: async () => 1, render: () => null },
 });`,
     });
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import weatherTools from "./tools/weather";
 import calendarTools from "./tools/calendar";
 export default defineToolkit({
@@ -843,7 +843,7 @@ export default defineToolkit({
     writeFileSync(
       nodePath.join(nodePath.dirname(filename), "tools", "weather.tsx"),
       `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   search: { execute: async () => 1, render: () => null },
 });`,
@@ -866,7 +866,7 @@ export default defineToolkit({
 
   it("warns about duplicate tool names between local toolkit spreads", () => {
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 const weatherTools = defineToolkit({
   get_weather: { execute: async () => 1, render: () => null },
   search: { execute: async () => 1, render: () => null },
@@ -908,7 +908,7 @@ export default defineToolkit({
 
   it("warns once across server and client compiles", () => {
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 const weatherTools = defineToolkit({
   search: { execute: async () => 1, render: () => null },
 });
@@ -939,7 +939,7 @@ export default defineToolkit({
 
   it("warns about duplicate names through nested local toolkit spreads", () => {
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 const baseTools = defineToolkit({
   search: { execute: async () => 1, render: () => null },
 });
@@ -972,7 +972,7 @@ export default defineToolkit({
 
   it("does not warn again when spreading a fragment with an internal duplicate", () => {
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 const baseTools = defineToolkit({
   search: { execute: async () => 1, render: () => null },
   search: { execute: async () => 2, render: () => null },
@@ -999,7 +999,7 @@ export default defineToolkit({
 
   it("names both sources when an inline tool overrides a spread", () => {
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 const weatherTools = defineToolkit({
   search: { execute: async () => 1, render: () => null },
 });
@@ -1028,22 +1028,22 @@ export default defineToolkit({
   it("warns about known collisions even when an opaque toolkit spread sits between them", () => {
     const filename = createMultiMergeFixture({
       "tools/weather.tsx": `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   search: { execute: async () => 1, render: () => null },
 });`,
       "tools/mystery.tsx": `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 const tools = { lookup: { execute: async () => 1, render: () => null } };
 export default defineToolkit(tools);`,
       "tools/calendar.tsx": `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   search: { execute: async () => 1, render: () => null },
 });`,
     });
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import weatherTools from "./tools/weather";
 import mysteryTools from "./tools/mystery";
 import calendarTools from "./tools/calendar";
@@ -1072,22 +1072,22 @@ export default defineToolkit({
   it("keeps the pairwise message when an opaque toolkit spread follows the colliders", () => {
     const filename = createMultiMergeFixture({
       "tools/weather.tsx": `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   search: { execute: async () => 1, render: () => null },
 });`,
       "tools/calendar.tsx": `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   search: { execute: async () => 1, render: () => null },
 });`,
       "tools/mystery.tsx": `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 const tools = { lookup: { execute: async () => 1, render: () => null } };
 export default defineToolkit(tools);`,
     });
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import weatherTools from "./tools/weather";
 import calendarTools from "./tools/calendar";
 import mysteryTools from "./tools/mystery";
@@ -1115,7 +1115,7 @@ export default defineToolkit({
 
   it("names the final winner and every overridden source when three toolkits collide", () => {
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 const weatherTools = defineToolkit({
   search: { execute: async () => 1, render: () => null },
 });
@@ -1149,7 +1149,7 @@ export default defineToolkit({
 
   it("labels a direct defineMcpToolkit spread as the winning source", () => {
     const src = `"use generative";
-import { defineMcpToolkit, defineToolkit } from "@assistant-ui/react";
+import { defineMcpToolkit, defineToolkit } from "@hitchsoftware/assistant-ui-react";
 const weatherTools = defineToolkit({
   search: { execute: async () => 1, render: () => null },
 });
@@ -1181,7 +1181,7 @@ export default defineToolkit({
       `export default { get_weather: { execute: async () => 1 } };\n`,
     );
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import weatherTools from "./tools/weather";
 export default defineToolkit({
   ...weatherTools,
@@ -1195,7 +1195,7 @@ export default defineToolkit({
   it("rejects spreading a named import even from a generative module", () => {
     const filename = createMergeFixture(generativeChild);
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import { weatherTools } from "./tools/weather";
 export default defineToolkit({
   ...weatherTools,
@@ -1209,7 +1209,7 @@ export default defineToolkit({
   it("rejects spreading the default of a namespace import with a specific callout", () => {
     const filename = createMergeFixture(generativeChild);
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import * as kit from "./tools/weather";
 export default defineToolkit({
   ...kit.default,
@@ -1229,7 +1229,7 @@ export default defineToolkit({
   it("rejects spreading a whole namespace import with a specific callout", () => {
     const filename = createMergeFixture(generativeChild);
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import * as kit from "./tools/weather";
 export default defineToolkit({
   ...kit,
@@ -1248,7 +1248,7 @@ export default defineToolkit({
   it("rejects spreading a named member of a namespace import with a specific callout", () => {
     const filename = createMergeFixture(generativeChild);
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import * as kit from "./tools/weather";
 export default defineToolkit({
   ...kit.get_weather,
@@ -1269,7 +1269,7 @@ export default defineToolkit({
       `export default { get_weather: { execute: async () => 1 } };\n`,
     );
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import * as kit from "./tools/weather";
 export default defineToolkit({
   ...kit.default,
@@ -1288,7 +1288,7 @@ export default defineToolkit({
   it("resolves a tsconfig path alias when spreading a generative module", () => {
     const filename = createAliasMergeFixture(generativeChild);
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import weatherTools from "@/tools/weather";
 export default defineToolkit({
   ...weatherTools,
@@ -1329,7 +1329,7 @@ export default defineToolkit({
     );
     const filename = nodePath.join(appRoot, "src", "toolkit.tsx");
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import weatherTools from "@/tools/weather";
 export default defineToolkit({
   ...weatherTools,
@@ -1344,7 +1344,7 @@ export default defineToolkit({
   it("resolves a .js specifier to its .tsx source when spreading", () => {
     const filename = createMergeFixture(generativeChild);
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import weatherTools from "./tools/weather.js";
 export default defineToolkit({
   ...weatherTools,
@@ -1356,7 +1356,7 @@ export default defineToolkit({
 
   it("allows defineMcpToolkit as the default export", () => {
     const src = `"use generative";
-import { defineMcpToolkit } from "@assistant-ui/react";
+import { defineMcpToolkit } from "@hitchsoftware/assistant-ui-react";
 export default defineMcpToolkit({
   docs: { type: "http", url: "https://mcp.example.com/mcp" },
 });`;
@@ -1372,7 +1372,7 @@ export default defineMcpToolkit({
 
   it("still allows a flat toolkit tool named tools", () => {
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import { db } from "@/db";
 export default defineToolkit({
   tools: {
@@ -1395,7 +1395,7 @@ export default defineToolkit({
 import { z } from "zod";
 import { db } from "@/db";
 import { formatResult } from "@/ui/format";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   search: {
     parameters: z.object({ query: z.string() }),
@@ -1425,7 +1425,7 @@ export default defineToolkit({
     const src = `"use generative";
 import { z } from "zod";
 import { track } from "@/analytics";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   toast: {
     parameters: z.object({ msg: z.string() }),
@@ -1454,7 +1454,7 @@ export default defineToolkit({
   it("infers `frontend` from execute: stubTool() and strips the executor", () => {
     const src = `"use generative";
 import { z } from "zod";
-import { defineToolkit, stubTool } from "@assistant-ui/react";
+import { defineToolkit, stubTool } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   add_task: {
     description: "Add a task.",
@@ -1487,7 +1487,7 @@ export default defineToolkit({
     const src = `"use generative";
 import { z } from "zod";
 import { SearchResults } from "@/ui/search-results";
-import { defineToolkit, externalTool } from "@assistant-ui/react";
+import { defineToolkit, externalTool } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   web_search: {
     description: "Search the web.",
@@ -1523,7 +1523,7 @@ export default defineToolkit({
   it("requires a renderer for external tools", () => {
     expect(() =>
       compileGenerative(
-        `"use generative";\nimport { defineToolkit, externalTool } from "@assistant-ui/react";\nexport default defineToolkit({ search: { execute: externalTool() } });`,
+        `"use generative";\nimport { defineToolkit, externalTool } from "@hitchsoftware/assistant-ui-react";\nexport default defineToolkit({ search: { execute: externalTool() } });`,
         { target: "client" },
       ),
     ).toThrow(/external tool "search" must declare a `render` or `renderText`/);
@@ -1532,7 +1532,7 @@ export default defineToolkit({
   it("falls back to an unnamed external tool diagnostic for computed keys", () => {
     expect(() =>
       compileGenerative(
-        `"use generative";\nimport { defineToolkit, externalTool } from "@assistant-ui/react";\nconst search = "search";\nexport default defineToolkit({ [search]: { execute: externalTool() } });`,
+        `"use generative";\nimport { defineToolkit, externalTool } from "@hitchsoftware/assistant-ui-react";\nconst search = "search";\nexport default defineToolkit({ [search]: { execute: externalTool() } });`,
         { target: "client" },
       ),
     ).toThrow(/an external tool must declare a `render` or `renderText`/);
@@ -1546,7 +1546,7 @@ import { cn } from "@/lib/utils";
 import { db } from "@/db";
 
 const Badge = ({ label }) => <span className={cn("badge")}>{label}</span>;
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 
 export default defineToolkit({
   weather: {
@@ -1576,7 +1576,7 @@ export default defineToolkit({
 
   it("prunes an unused destructured server binding from the client", () => {
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import { db } from "@/db";
 const { getWeather } = db;
 export default defineToolkit({
@@ -1607,7 +1607,7 @@ describe("compileGenerative — diagnostics", () => {
     const wrapped = `"use generative";
 import { z } from "zod";
 import { db } from "@/db";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   weather: {
     parameters: z.object({ city: z.string() }),
@@ -1618,13 +1618,13 @@ export default defineToolkit({
     const serverCode = compileGenerative(wrapped, { target: "server" }).code;
     // wrapper + its import gone; bare object with execute remains.
     expect(serverCode).not.toContain("defineToolkit");
-    expect(serverCode).not.toContain("@assistant-ui/react");
+    expect(serverCode).not.toContain("@hitchsoftware/assistant-ui-react");
     expect(serverCode).toContain("db.get");
     expect(serverCode).not.toContain("<span");
 
     const clientCode = compileGenerative(wrapped, { target: "client" }).code;
     expect(clientCode).not.toContain("defineToolkit");
-    expect(clientCode).not.toContain("@assistant-ui/react");
+    expect(clientCode).not.toContain("@hitchsoftware/assistant-ui-react");
     expect(clientCode).toContain("<span");
     expect(clientCode).not.toContain("@/db");
   });
@@ -1647,7 +1647,7 @@ export default defineToolkit({
     // The default export is what the runtime registers, so it must itself be
     // wrapped — an unrelated defineToolkit() must not let a bare object through.
     const src = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 const unused = defineToolkit({ x: { execute: async () => 1, render: () => null } });
 export default { weather: { execute: async () => 1, render: () => null } };`;
     expect(() => compileGenerative(src, { target: "client" })).toThrow(
@@ -1658,7 +1658,7 @@ export default { weather: { execute: async () => 1, render: () => null } };`;
   it("rejects a tool that isn't an inline object literal", () => {
     expect(() =>
       compileGenerative(
-        `"use generative";\nimport { defineToolkit } from "@assistant-ui/react";\nexport default defineToolkit({ weather: makeTool() });`,
+        `"use generative";\nimport { defineToolkit } from "@hitchsoftware/assistant-ui-react";\nexport default defineToolkit({ weather: makeTool() });`,
         { target: "server" },
       ),
     ).toThrow(/tool "weather" cannot be `makeTool\(\)`/);
@@ -1667,7 +1667,7 @@ export default { weather: { execute: async () => 1, render: () => null } };`;
   it("requires a render for human tools", () => {
     expect(() =>
       compileGenerative(
-        `"use generative";\nimport { defineToolkit, humanTool } from "@assistant-ui/react";\nexport default defineToolkit({ ask: { execute: humanTool() } });`,
+        `"use generative";\nimport { defineToolkit, humanTool } from "@hitchsoftware/assistant-ui-react";\nexport default defineToolkit({ ask: { execute: humanTool() } });`,
         { target: "client" },
       ),
     ).toThrow(/human tool "ask" must declare a `render`/);
@@ -1676,7 +1676,7 @@ export default { weather: { execute: async () => 1, render: () => null } };`;
   it("falls back to an unnamed human tool diagnostic for computed keys", () => {
     expect(() =>
       compileGenerative(
-        `"use generative";\nimport { defineToolkit, humanTool } from "@assistant-ui/react";\nconst ask = "ask";\nexport default defineToolkit({ [ask]: { execute: humanTool() } });`,
+        `"use generative";\nimport { defineToolkit, humanTool } from "@hitchsoftware/assistant-ui-react";\nconst ask = "ask";\nexport default defineToolkit({ [ask]: { execute: humanTool() } });`,
         { target: "client" },
       ),
     ).toThrow(/a human tool must declare a `render`/);
@@ -1685,7 +1685,7 @@ export default { weather: { execute: async () => 1, render: () => null } };`;
   it("requires a render or renderText for frontend tools", () => {
     expect(() =>
       compileGenerative(
-        `"use generative";\nimport { defineToolkit } from "@assistant-ui/react";\nexport default defineToolkit({ toast: { execute: async () => { "use client"; return 1; } } });`,
+        `"use generative";\nimport { defineToolkit } from "@hitchsoftware/assistant-ui-react";\nexport default defineToolkit({ toast: { execute: async () => { "use client"; return 1; } } });`,
         { target: "client" },
       ),
     ).toThrow(/frontend tool "toast" must declare a `render` or `renderText`/);
@@ -1694,7 +1694,7 @@ export default { weather: { execute: async () => 1, render: () => null } };`;
   it("falls back to an unnamed frontend tool diagnostic for computed keys", () => {
     expect(() =>
       compileGenerative(
-        `"use generative";\nimport { defineToolkit } from "@assistant-ui/react";\nconst toast = "toast";\nexport default defineToolkit({ [toast]: { execute: async () => { "use client"; return 1; } } });`,
+        `"use generative";\nimport { defineToolkit } from "@hitchsoftware/assistant-ui-react";\nconst toast = "toast";\nexport default defineToolkit({ [toast]: { execute: async () => { "use client"; return 1; } } });`,
         { target: "client" },
       ),
     ).toThrow(/a frontend tool must declare a `render` or `renderText`/);
@@ -1703,7 +1703,7 @@ export default { weather: { execute: async () => 1, render: () => null } };`;
   it("requires every tool to declare an execute", () => {
     expect(() =>
       compileGenerative(
-        `"use generative";\nimport { defineToolkit } from "@assistant-ui/react";\nexport default defineToolkit({ ask: { render: () => null } });`,
+        `"use generative";\nimport { defineToolkit } from "@hitchsoftware/assistant-ui-react";\nexport default defineToolkit({ ask: { render: () => null } });`,
         { target: "client" },
       ),
     ).toThrow(/tool "ask" must declare an `execute`/);
@@ -1712,14 +1712,14 @@ export default { weather: { execute: async () => 1, render: () => null } };`;
   it("falls back to an unnamed execute diagnostic for computed keys", () => {
     expect(() =>
       compileGenerative(
-        `"use generative";\nimport { defineToolkit } from "@assistant-ui/react";\nconst ask = "ask";\nexport default defineToolkit({ [ask]: { render: () => null } });`,
+        `"use generative";\nimport { defineToolkit } from "@hitchsoftware/assistant-ui-react";\nconst ask = "ask";\nexport default defineToolkit({ [ask]: { render: () => null } });`,
         { target: "client" },
       ),
     ).toThrow(/every tool must declare an `execute`/);
   });
 
   it("infers `human` from execute: humanTool() and drops it on both builds", () => {
-    const src = `"use generative";\nimport { defineToolkit, humanTool } from "@assistant-ui/react";\nexport default defineToolkit({ ask: { execute: humanTool(), render: () => null } });`;
+    const src = `"use generative";\nimport { defineToolkit, humanTool } from "@hitchsoftware/assistant-ui-react";\nexport default defineToolkit({ ask: { execute: humanTool(), render: () => null } });`;
     const server = compileGenerative(src, { target: "server" }).code;
     expect(server).toContain('type: "human"');
     expect(server).not.toContain("humanTool"); // sentinel + its import pruned
@@ -1731,7 +1731,7 @@ export default { weather: { execute: async () => 1, render: () => null } };`;
 
   it("keeps deprecated human-tool sentinels working", () => {
     for (const sentinel of ["hitl", "hitlTool"]) {
-      const src = `"use generative";\nimport { defineToolkit, ${sentinel} } from "@assistant-ui/react";\nexport default defineToolkit({ ask: { execute: ${sentinel}(), render: () => null } });`;
+      const src = `"use generative";\nimport { defineToolkit, ${sentinel} } from "@hitchsoftware/assistant-ui-react";\nexport default defineToolkit({ ask: { execute: ${sentinel}(), render: () => null } });`;
       for (const target of ["client", "server"] as const) {
         const code = compileGenerative(src, { target }).code;
         expect(code).toContain('type: "human"');
@@ -1742,7 +1742,7 @@ export default { weather: { execute: async () => 1, render: () => null } };`;
 
   it("rejects spread properties in providerTool config", () => {
     const src = `"use generative";
-import { defineToolkit, providerTool } from "@assistant-ui/react";
+import { defineToolkit, providerTool } from "@hitchsoftware/assistant-ui-react";
 const config = { providerId: "openai.web_search_preview", args: {} };
 export default defineToolkit({
   web_search: {
@@ -1759,7 +1759,7 @@ export default defineToolkit({
 
   it("rejects object methods in providerTool config", () => {
     const src = `"use generative";
-import { defineToolkit, providerTool } from "@assistant-ui/react";
+import { defineToolkit, providerTool } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   web_search: {
     execute: providerTool({
@@ -1779,7 +1779,7 @@ export default defineToolkit({
 
   it("rejects function-valued properties in providerTool config", () => {
     const src = `"use generative";
-import { defineToolkit, providerTool } from "@assistant-ui/react";
+import { defineToolkit, providerTool } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   web_search: {
     execute: providerTool({
@@ -1797,7 +1797,7 @@ export default defineToolkit({
 
   it("rejects providerTool config properties that duplicate tool properties", () => {
     const src = `"use generative";
-import { defineToolkit, providerTool } from "@assistant-ui/react";
+import { defineToolkit, providerTool } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   web_search: {
     providerId: "openai.web_search_preview",
@@ -1815,7 +1815,7 @@ export default defineToolkit({
 
   it("rejects duplicate providerTool config properties with the duplicated key", () => {
     const src = `"use generative";
-import { defineToolkit, providerTool } from "@assistant-ui/react";
+import { defineToolkit, providerTool } from "@hitchsoftware/assistant-ui-react";
 export default defineToolkit({
   web_search: {
     execute: providerTool({
@@ -1832,7 +1832,7 @@ export default defineToolkit({
   });
 
   it("infers `frontend` from a `use client` execute and keeps it client-side", () => {
-    const src = `"use generative";\nimport { defineToolkit } from "@assistant-ui/react";\nimport { track } from "@/a";\nexport default defineToolkit({ t: { execute: async () => { "use client"; return track(); }, render: () => null } });`;
+    const src = `"use generative";\nimport { defineToolkit } from "@hitchsoftware/assistant-ui-react";\nimport { track } from "@/a";\nexport default defineToolkit({ t: { execute: async () => { "use client"; return track(); }, render: () => null } });`;
     const server = compileGenerative(src, { target: "server" }).code;
     expect(server).toContain('type: "frontend"');
     expect(server).not.toContain("track"); // frontend execute dropped on server

@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import { Thread } from "../components/assistant-ui/thread";
 import { ThreadList } from "@/components/assistant-ui/thread-list";
-import { usePiThreadState } from "@assistant-ui/react-pi";
-import type { PiRuntimeReadiness } from "@assistant-ui/react-pi";
+import { usePiThreadState } from "@hitchsoftware/assistant-ui-react-pi";
+import type { PiRuntimeReadiness } from "@hitchsoftware/assistant-ui-react-pi";
 // Type-only import — erased at build time, so no server code reaches the client.
 import type { PiHandshake } from "@/lib/pi-server";
 import { PiHandshakeProvider } from "../components/pi-handshake";

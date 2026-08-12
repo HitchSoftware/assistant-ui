@@ -1,3 +1,3 @@
 "use client";
 
-export { useRemoteThreadListRuntime } from "@assistant-ui/core/react";
+export { useRemoteThreadListRuntime } from "@hitchsoftware/assistant-ui-core/react";

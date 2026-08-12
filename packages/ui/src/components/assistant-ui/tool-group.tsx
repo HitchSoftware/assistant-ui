@@ -10,7 +10,7 @@ import {
 } from "react";
 import { ChevronDownIcon, LoaderIcon } from "lucide-react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { useScrollLock } from "@assistant-ui/react";
+import { useScrollLock } from "@hitchsoftware/assistant-ui-react";
 import {
   Collapsible,
   CollapsibleContent,

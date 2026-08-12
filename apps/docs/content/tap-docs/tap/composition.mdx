@@ -21,7 +21,7 @@ import {
   resource,
   useResource,
   type ResourceElement,
-} from "@assistant-ui/tap";
+} from "@hitchsoftware/assistant-ui-tap";
 
 type CounterState = ReturnType<typeof useCounter>;
 
@@ -77,7 +77,7 @@ conditional.
 Use `useResources` when a Resource owns a dynamic collection:
 
 ```ts
-import { resource, withKey, useResources } from "@assistant-ui/tap";
+import { resource, withKey, useResources } from "@hitchsoftware/assistant-ui-tap";
 
 const useCounterList = (ids: readonly string[]) => {
   const counters = useResources(

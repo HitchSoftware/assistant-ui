@@ -3,7 +3,7 @@ import type {
   MessageFormatAdapter,
   MessageFormatItem,
   MessageStorageEntry,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 
 // Storage format for AI SDK messages - just the UIMessage
 export type AISDKStorageFormat = Omit<UIMessage, "id">;

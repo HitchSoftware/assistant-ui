@@ -1,7 +1,7 @@
-# @assistant-ui/x-generative-compiler
+# @hitchsoftware/assistant-ui-x-generative-compiler
 
 > **Internal package.** Not meant for direct use. Use a build integration such as
-> [`@assistant-ui/next`](../next) or [`@assistant-ui/vite`](../vite).
+> [`@hitchsoftware/assistant-ui-next`](../next) or [`@hitchsoftware/assistant-ui-vite`](../vite).
 
 The framework-agnostic `"use generative"` compiler. It takes a module that
 colocates a tool's schema, its server-only `execute`, and its client-only
@@ -15,8 +15,8 @@ colocates a tool's schema, its server-only `execute`, and its client-only
   `externalTool()`.
 
 The marker functions a `"use generative"` file imports — `defineToolkit` and
-`humanTool` — live in `@assistant-ui/core/react` (re-exported from
-`@assistant-ui/react`). This package only recognizes them by name and strips them
+`humanTool` — live in `@hitchsoftware/assistant-ui-core/react` (re-exported from
+`@hitchsoftware/assistant-ui-react`). This package only recognizes them by name and strips them
 at build time.
 
 ## API
@@ -28,7 +28,7 @@ import {
   GenerativeCompileError,
   DIRECTIVE,
   type Target,
-} from "@assistant-ui/x-generative-compiler";
+} from "@hitchsoftware/assistant-ui-x-generative-compiler";
 
 if (isGenerativeModule(code)) {
   const { code: out, map } = compileGenerative(code, {

@@ -1,7 +1,7 @@
 "use client";
 
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
-import { useAdkRuntime, createAdkStream } from "@assistant-ui/react-google-adk";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
+import { useAdkRuntime, createAdkStream } from "@hitchsoftware/assistant-ui-react-google-adk";
 
 export function MyRuntimeProvider({ children }: { children: React.ReactNode }) {
   const runtime = useAdkRuntime({

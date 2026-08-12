@@ -1,6 +1,6 @@
 import { describe, expect, expectTypeOf, it } from "vitest";
-import type { Tool } from "assistant-stream";
-import type { AsyncIterableStream } from "assistant-stream/utils";
+import type { Tool } from "@hitchsoftware/assistant-stream";
+import type { AsyncIterableStream } from "@hitchsoftware/assistant-stream/utils";
 import { tool } from "./tool";
 
 type TestStandardSchema<TInput> = {

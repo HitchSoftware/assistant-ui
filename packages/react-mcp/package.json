@@ -1,5 +1,5 @@
 {
-  "name": "@assistant-ui/react-mcp",
+  "name": "@hitchsoftware/assistant-ui-react-mcp",
   "version": "0.1.12",
   "description": "MCP server configuration and connection primitives for @assistant-ui",
   "keywords": [
@@ -32,13 +32,13 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@assistant-ui/core": "workspace:*",
-    "@assistant-ui/store": "workspace:*",
-    "@assistant-ui/tap": "workspace:*",
+    "@hitchsoftware/assistant-ui-core": "workspace:*",
+    "@hitchsoftware/assistant-ui-store": "workspace:*",
+    "@hitchsoftware/assistant-ui-tap": "workspace:*",
     "@modelcontextprotocol/client": "^2.0.0",
     "@modelcontextprotocol/core": "^2.0.0",
     "@radix-ui/react-primitive": "^2.1.10",
-    "assistant-stream": "workspace:*"
+    "@hitchsoftware/assistant-stream": "workspace:*"
   },
   "peerDependencies": {
     "@types/react": "*",
@@ -50,7 +50,7 @@
     }
   },
   "devDependencies": {
-    "@assistant-ui/x-buildutils": "workspace:*",
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/react": "^16.3.2",
     "@types/react": "^19.2.18",
@@ -59,8 +59,8 @@
     "vitest": "^4.1.10"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://www.assistant-ui.com/",
   "repository": {

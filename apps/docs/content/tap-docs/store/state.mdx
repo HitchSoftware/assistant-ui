@@ -10,9 +10,9 @@ Scopes can define a special method called `getState()`. It's just a regular meth
 First, register `getState` and its return type in `ScopeRegistry`:
 
 ```ts title="lib/store/counter-scope.ts"
-import "@assistant-ui/store";
+import "@hitchsoftware/assistant-ui-store";
 
-declare module "@assistant-ui/store" {
+declare module "@hitchsoftware/assistant-ui-store" {
   interface ScopeRegistry {
     counter: {
       methods: {
@@ -30,9 +30,9 @@ The return type of `getState` defines the shape of `s.counter` in `useAuiState((
 Then implement `getState()` in the resource. It should return a memoized object built from the resource's internal state:
 
 ```ts title="lib/store/counter-resource.ts"
-import { resource } from "@assistant-ui/tap";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
 import { useState, useMemo } from "react";
-import type { ClientOutput } from "@assistant-ui/store";
+import type { ClientOutput } from "@hitchsoftware/assistant-ui-store";
 
 const useCounterResource = (): ClientOutput<"counter"> => {
   const [count, setCount] = useState(0);

@@ -44,7 +44,7 @@ pnpm dev
 
 Every pull request that changes packages must include a changeset, otherwise your changes won't be published to npm.
 
-Note, this does not apply to packages like `@assistant-ui/docs` or `@assistant-ui/shadcn-registry` which are not published to npm, they are deployed on Vercel.
+Note, this does not apply to packages like `@hitchsoftware/assistant-ui-docs` or `@hitchsoftware/assistant-ui-shadcn-registry` which are not published to npm, they are deployed on Vercel.
 
 Create a changeset by running:
 

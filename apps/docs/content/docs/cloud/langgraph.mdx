@@ -83,17 +83,17 @@ Install the required packages:
 <PlatformTabs>
 <Tab value="React">
 
-<InstallCommand npm={["@assistant-ui/react", "@assistant-ui/react-langgraph"]} />
+<InstallCommand npm={["@hitchsoftware/assistant-ui-react", "@hitchsoftware/assistant-ui-react-langgraph"]} />
 
 </Tab>
 <Tab value="React Native">
 
-<InstallCommand expo={["@assistant-ui/react-native", "@assistant-ui/react-langgraph", "assistant-cloud"]} />
+<InstallCommand expo={["@hitchsoftware/assistant-ui-react-native", "@hitchsoftware/assistant-ui-react-langgraph", "assistant-cloud"]} />
 
 </Tab>
 <Tab value="React Ink">
 
-<InstallCommand npm={["@assistant-ui/react-ink", "@assistant-ui/react-langgraph", "assistant-cloud", "ink", "react"]} />
+<InstallCommand npm={["@hitchsoftware/assistant-ui-react-ink", "@hitchsoftware/assistant-ui-react-langgraph", "assistant-cloud", "ink", "react"]} />
 
 </Tab>
 </PlatformTabs>
@@ -119,10 +119,10 @@ Create a runtime provider that integrates LangGraph with assistant-cloud. Choose
 import {
   AssistantCloud,
   AssistantRuntimeProvider,
-} from "@assistant-ui/react";
-import { useLangGraphRuntime } from "@assistant-ui/react-langgraph";
+} from "@hitchsoftware/assistant-ui-react";
+import { useLangGraphRuntime } from "@hitchsoftware/assistant-ui-react-langgraph";
 import { createThread, deleteThread, getThreadState, sendMessage } from "@/lib/chatApi";
-import { LangChainMessage } from "@assistant-ui/react-langgraph";
+import { LangChainMessage } from "@hitchsoftware/assistant-ui-react-langgraph";
 import { useMemo } from "react";
 
 export function MyRuntimeProvider({
@@ -184,10 +184,10 @@ export function MyRuntimeProvider({
 import {
   AssistantCloud,
   AssistantRuntimeProvider,
-} from "@assistant-ui/react";
-import { useLangGraphRuntime } from "@assistant-ui/react-langgraph";
+} from "@hitchsoftware/assistant-ui-react";
+import { useLangGraphRuntime } from "@hitchsoftware/assistant-ui-react-langgraph";
 import { createThread, deleteThread, getThreadState, sendMessage } from "@/lib/chatApi";
-import { LangChainMessage } from "@assistant-ui/react-langgraph";
+import { LangChainMessage } from "@hitchsoftware/assistant-ui-react-langgraph";
 import { useAuth } from "@clerk/nextjs";
 import { useMemo } from "react";
 
@@ -256,12 +256,12 @@ export function MyRuntimeProvider({
 
 ```tsx title="components/runtime-provider.tsx"
 import { useMemo, type ReactNode } from "react";
-import { AssistantRuntimeProvider } from "@assistant-ui/react-native";
-import { AssistantCloud } from "assistant-cloud";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react-native";
+import { AssistantCloud } from "@hitchsoftware/assistant-cloud";
 import {
   type LangChainMessage,
   useLangGraphRuntime,
-} from "@assistant-ui/react-langgraph";
+} from "@hitchsoftware/assistant-ui-react-langgraph";
 import { createThread, deleteThread, getThreadState, sendMessage } from "@/lib/chatApi";
 
 async function getAssistantToken() {
@@ -319,12 +319,12 @@ export function MyRuntimeProvider({ children }: { children: ReactNode }) {
 
 ```tsx title="runtime-provider.tsx"
 import { useMemo, type ReactNode } from "react";
-import { AssistantRuntimeProvider } from "@assistant-ui/react-ink";
-import { AssistantCloud } from "assistant-cloud";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react-ink";
+import { AssistantCloud } from "@hitchsoftware/assistant-cloud";
 import {
   type LangChainMessage,
   useLangGraphRuntime,
-} from "@assistant-ui/react-langgraph";
+} from "@hitchsoftware/assistant-ui-react-langgraph";
 import { createThread, deleteThread, getThreadState, sendMessage } from "./chat-api.js";
 
 async function getAssistantToken() {
@@ -410,7 +410,7 @@ npx assistant-ui@latest add thread-list
   <Tab>
 
 ```sh
-npx shadcn@latest add @assistant-ui/thread-list
+npx shadcn@latest add @hitchsoftware/assistant-ui-thread-list
 ```
 
 The `@assistant-ui` namespace resolves through the registry entry configured in [Manual Setup](/docs/installation#manual-setup).
@@ -451,7 +451,7 @@ import { Text, View } from "react-native";
 import {
   ThreadListItemPrimitive,
   ThreadListPrimitive,
-} from "@assistant-ui/react-native";
+} from "@hitchsoftware/assistant-ui-react-native";
 import { Thread } from "@/components/assistant-ui/thread";
 
 function ThreadList() {
@@ -495,7 +495,7 @@ import { Box, Text } from "ink";
 import {
   ThreadListItemPrimitive,
   ThreadListPrimitive,
-} from "@assistant-ui/react-ink";
+} from "@hitchsoftware/assistant-ui-react-ink";
 import { Thread } from "./components/thread.js";
 
 function ThreadList() {

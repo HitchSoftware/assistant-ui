@@ -1,1 +1,1 @@
-export { InMemoryThreadListAdapter } from "@assistant-ui/core";
+export { InMemoryThreadListAdapter } from "@hitchsoftware/assistant-ui-core";

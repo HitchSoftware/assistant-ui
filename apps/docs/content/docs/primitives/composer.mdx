@@ -15,7 +15,7 @@ The Composer primitive is the interface for composing new messages or editing ex
   </Tab>
   <Tab>
 ```tsx
-import { ComposerPrimitive } from "@assistant-ui/react";
+import { ComposerPrimitive } from "@hitchsoftware/assistant-ui-react";
 import { ArrowUpIcon } from "lucide-react";
 
 export function MinimalComposer() {
@@ -43,7 +43,7 @@ export function MinimalComposer() {
 Minimal example:
 
 ```tsx
-import { ComposerPrimitive } from "@assistant-ui/react";
+import { ComposerPrimitive } from "@hitchsoftware/assistant-ui-react";
 
 <ComposerPrimitive.Root>
   <ComposerPrimitive.Input placeholder="Ask anything..." />
@@ -87,7 +87,7 @@ A Composer placed inside a **Thread** composes new messages. A Composer placed i
 Every primitive part accepts `asChild` to merge its behavior onto your own element. This is how you use primitives with your own design system:
 
 ```tsx
-import { ComposerPrimitive } from "@assistant-ui/react";
+import { ComposerPrimitive } from "@hitchsoftware/assistant-ui-react";
 
 <ComposerPrimitive.Input asChild>
   <textarea
@@ -619,7 +619,7 @@ Desktop behavior is unchanged. A tablet paired with a hardware keyboard still ge
 Primitives aren't bound to any layout. Here's how the floating composer on this docs site is built, using the same `ComposerPrimitive.Root` and `ComposerPrimitive.Input` positioned with CSS:
 
 ```tsx
-import { ComposerPrimitive } from "@assistant-ui/react";
+import { ComposerPrimitive } from "@hitchsoftware/assistant-ui-react";
 
 function FloatingComposer() {
   return (

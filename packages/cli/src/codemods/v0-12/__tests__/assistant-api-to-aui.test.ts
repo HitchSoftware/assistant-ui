@@ -23,7 +23,7 @@ function applyTransform(source: string): string | null {
 describe("assistant-api-to-aui", () => {
   it("should rename useAssistantApi to useAui", () => {
     const input = `
-import { useAssistantApi } from "@assistant-ui/react";
+import { useAssistantApi } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const api = useAssistantApi();
@@ -32,7 +32,7 @@ function MyComponent() {
 `;
 
     const expected = `
-import { useAui } from "@assistant-ui/react";
+import { useAui } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const aui = useAui();
@@ -46,7 +46,7 @@ function MyComponent() {
 
   it("should rename useAssistantState to useAuiState", () => {
     const input = `
-import { useAssistantState } from "@assistant-ui/react";
+import { useAssistantState } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const isRunning = useAssistantState((s) => s.thread.isRunning);
@@ -55,7 +55,7 @@ function MyComponent() {
 `;
 
     const expected = `
-import { useAuiState } from "@assistant-ui/react";
+import { useAuiState } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const isRunning = useAuiState((s) => s.thread.isRunning);
@@ -69,7 +69,7 @@ function MyComponent() {
 
   it("should rename useAssistantEvent to useAuiEvent", () => {
     const input = `
-import { useAssistantEvent } from "@assistant-ui/react";
+import { useAssistantEvent } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   useAssistantEvent("thread.started", () => console.log("started"));
@@ -78,7 +78,7 @@ function MyComponent() {
 `;
 
     const expected = `
-import { useAuiEvent } from "@assistant-ui/react";
+import { useAuiEvent } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   useAuiEvent("thread.started", () => console.log("started"));
@@ -92,7 +92,7 @@ function MyComponent() {
 
   it("should rename api variable and all its references", () => {
     const input = `
-import { useAssistantApi } from "@assistant-ui/react";
+import { useAssistantApi } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const api = useAssistantApi();
@@ -106,7 +106,7 @@ function MyComponent() {
 `;
 
     const expected = `
-import { useAui } from "@assistant-ui/react";
+import { useAui } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const aui = useAui();
@@ -125,7 +125,7 @@ function MyComponent() {
 
   it("should handle multiple hooks in the same file", () => {
     const input = `
-import { useAssistantApi, useAssistantState } from "@assistant-ui/react";
+import { useAssistantApi, useAssistantState } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const api = useAssistantApi();
@@ -142,7 +142,7 @@ function MyComponent() {
 `;
 
     const expected = `
-import { useAui, useAuiState } from "@assistant-ui/react";
+import { useAui, useAuiState } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const aui = useAui();
@@ -176,7 +176,7 @@ function MyComponent() {
 
   it("should not rename api if it's a property name", () => {
     const input = `
-import { useAssistantApi } from "@assistant-ui/react";
+import { useAssistantApi } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const api = useAssistantApi();
@@ -186,7 +186,7 @@ function MyComponent() {
 `;
 
     const expected = `
-import { useAui } from "@assistant-ui/react";
+import { useAui } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const aui = useAui();
@@ -201,7 +201,7 @@ function MyComponent() {
 
   it("should preserve custom variable names that aren't 'api'", () => {
     const input = `
-import { useAssistantApi } from "@assistant-ui/react";
+import { useAssistantApi } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const client = useAssistantApi();
@@ -211,7 +211,7 @@ function MyComponent() {
 `;
 
     const expected = `
-import { useAui } from "@assistant-ui/react";
+import { useAui } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const client = useAui();
@@ -226,7 +226,7 @@ function MyComponent() {
 
   it("should handle arrow functions", () => {
     const input = `
-import { useAssistantApi } from "@assistant-ui/react";
+import { useAssistantApi } from "@hitchsoftware/assistant-ui-react";
 
 const MyComponent = () => {
   const api = useAssistantApi();
@@ -236,7 +236,7 @@ const MyComponent = () => {
 `;
 
     const expected = `
-import { useAui } from "@assistant-ui/react";
+import { useAui } from "@hitchsoftware/assistant-ui-react";
 
 const MyComponent = () => {
   const aui = useAui();
@@ -251,7 +251,7 @@ const MyComponent = () => {
 
   it("should handle nested function calls", () => {
     const input = `
-import { useAssistantApi } from "@assistant-ui/react";
+import { useAssistantApi } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const api = useAssistantApi();
@@ -266,7 +266,7 @@ function MyComponent() {
 `;
 
     const expected = `
-import { useAui } from "@assistant-ui/react";
+import { useAui } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const aui = useAui();
@@ -286,7 +286,7 @@ function MyComponent() {
 
   it("should NOT rename api from other libraries", () => {
     const input = `
-import { useAssistantApi } from "@assistant-ui/react";
+import { useAssistantApi } from "@hitchsoftware/assistant-ui-react";
 import { useApiClient } from "some-other-library";
 
 function MyComponent() {
@@ -298,7 +298,7 @@ function MyComponent() {
 `;
 
     const expected = `
-import { useAui } from "@assistant-ui/react";
+import { useAui } from "@hitchsoftware/assistant-ui-react";
 import { useApiClient } from "some-other-library";
 
 function MyComponent() {
@@ -315,7 +315,7 @@ function MyComponent() {
 
   it("should NOT rename api from regular functions", () => {
     const input = `
-import { useAssistantApi } from "@assistant-ui/react";
+import { useAssistantApi } from "@hitchsoftware/assistant-ui-react";
 
 function fetchApi() {
   return { get: () => {} };
@@ -330,7 +330,7 @@ function MyComponent() {
 `;
 
     const expected = `
-import { useAui } from "@assistant-ui/react";
+import { useAui } from "@hitchsoftware/assistant-ui-react";
 
 function fetchApi() {
   return { get: () => {} };
@@ -350,7 +350,7 @@ function MyComponent() {
 
   it("should handle multiple components with different api sources", () => {
     const input = `
-import { useAssistantApi } from "@assistant-ui/react";
+import { useAssistantApi } from "@hitchsoftware/assistant-ui-react";
 
 function Component1() {
   const api = useAssistantApi();
@@ -364,7 +364,7 @@ function Component2() {
 `;
 
     const expected = `
-import { useAui } from "@assistant-ui/react";
+import { useAui } from "@hitchsoftware/assistant-ui-react";
 
 function Component1() {
   const aui = useAui();
@@ -383,7 +383,7 @@ function Component2() {
 
   it("should NOT rename api in object destructuring", () => {
     const input = `
-import { useAssistantApi } from "@assistant-ui/react";
+import { useAssistantApi } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent({ api: propApi }) {
   const aui = useAssistantApi();
@@ -393,7 +393,7 @@ function MyComponent({ api: propApi }) {
 `;
 
     const expected = `
-import { useAui } from "@assistant-ui/react";
+import { useAui } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent({ api: propApi }) {
   const aui = useAui();
@@ -408,7 +408,7 @@ function MyComponent({ api: propApi }) {
 
   it("should handle scope correctly with nested functions", () => {
     const input = `
-import { useAssistantApi } from "@assistant-ui/react";
+import { useAssistantApi } from "@hitchsoftware/assistant-ui-react";
 
 function OuterComponent() {
   const api = useAssistantApi();
@@ -423,7 +423,7 @@ function OuterComponent() {
 `;
 
     const expected = `
-import { useAui } from "@assistant-ui/react";
+import { useAui } from "@hitchsoftware/assistant-ui-react";
 
 function OuterComponent() {
   const aui = useAui();
@@ -443,7 +443,7 @@ function OuterComponent() {
 
   it("should NOT rename api that shadows useAui api", () => {
     const input = `
-import { useAssistantApi } from "@assistant-ui/react";
+import { useAssistantApi } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const api = useAssistantApi();
@@ -458,7 +458,7 @@ function MyComponent() {
 `;
 
     const expected = `
-import { useAui } from "@assistant-ui/react";
+import { useAui } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const aui = useAui();
@@ -478,7 +478,7 @@ function MyComponent() {
 
   it("should rename AssistantIf to AuiIf in imports and JSX", () => {
     const input = `
-import { AssistantIf } from "@assistant-ui/react";
+import { AssistantIf } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   return (
@@ -490,7 +490,7 @@ function MyComponent() {
 `;
 
     const expected = `
-import { AuiIf } from "@assistant-ui/react";
+import { AuiIf } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   return (
@@ -507,7 +507,7 @@ function MyComponent() {
 
   it("should rename AssistantProvider to AuiProvider in imports and JSX", () => {
     const input = `
-import { AssistantProvider } from "@assistant-ui/react";
+import { AssistantProvider } from "@hitchsoftware/assistant-ui-react";
 
 function App() {
   return (
@@ -519,7 +519,7 @@ function App() {
 `;
 
     const expected = `
-import { AuiProvider } from "@assistant-ui/react";
+import { AuiProvider } from "@hitchsoftware/assistant-ui-react";
 
 function App() {
   return (
@@ -536,7 +536,7 @@ function App() {
 
   it("should rename both components and hooks in the same file", () => {
     const input = `
-import { useAssistantApi, AssistantIf, AssistantProvider } from "@assistant-ui/react";
+import { useAssistantApi, AssistantIf, AssistantProvider } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const api = useAssistantApi();
@@ -552,7 +552,7 @@ function MyComponent() {
 `;
 
     const expected = `
-import { useAui, AuiIf, AuiProvider } from "@assistant-ui/react";
+import { useAui, AuiIf, AuiProvider } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const aui = useAui();
@@ -573,7 +573,7 @@ function MyComponent() {
 
   it("should handle self-closing JSX components", () => {
     const input = `
-import { AssistantIf } from "@assistant-ui/react";
+import { AssistantIf } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   return <AssistantIf condition={(s) => s.thread.isRunning} />;
@@ -581,7 +581,7 @@ function MyComponent() {
 `;
 
     const expected = `
-import { AuiIf } from "@assistant-ui/react";
+import { AuiIf } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   return <AuiIf condition={(s) => s.thread.isRunning} />;

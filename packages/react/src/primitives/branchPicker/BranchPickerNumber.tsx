@@ -1,7 +1,7 @@
 "use client";
 
 import type { FC } from "react";
-import { useAuiState } from "@assistant-ui/store";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 
 const useBranchPickerNumber = () => {
   const branchNumber = useAuiState((s) => s.message.branchNumber);

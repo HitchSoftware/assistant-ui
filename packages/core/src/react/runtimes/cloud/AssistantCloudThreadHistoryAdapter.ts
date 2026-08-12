@@ -11,9 +11,9 @@ import {
   type AssistantCloud,
   CloudMessagePersistence,
   createFormattedPersistence,
-} from "assistant-cloud";
+} from "@hitchsoftware/assistant-cloud";
 import { auiV0Decode, auiV0Encode } from "./auiV0";
-import { type AssistantClient, getClientId, useAui } from "@assistant-ui/store";
+import { type AssistantClient, getClientId, useAui } from "@hitchsoftware/assistant-ui-store";
 
 const globalPersistence = new WeakMap<
   getClientId.ClientId,

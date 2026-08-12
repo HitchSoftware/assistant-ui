@@ -1,5 +1,5 @@
-import { createTapRoot, useResource } from "@assistant-ui/tap";
-import type { ClientOutput } from "@assistant-ui/store";
+import { createTapRoot, useResource } from "@hitchsoftware/assistant-ui-tap";
+import type { ClientOutput } from "@hitchsoftware/assistant-ui-store";
 import { useEffect } from "react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { MCPAuthConfig } from "../mcp-scope";

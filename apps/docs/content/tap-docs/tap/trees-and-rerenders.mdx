@@ -34,7 +34,7 @@ do not create a scheduling boundary.
 new resource root with its own tap scheduler:
 
 ```ts
-import { useResource, useTapRoot } from "@assistant-ui/tap";
+import { useResource, useTapRoot } from "@hitchsoftware/assistant-ui-tap";
 
 const useCounterRoot = () =>
   useTapRoot(function CounterRoot() {
@@ -105,7 +105,7 @@ A tap scheduler batches multiple state changes before rendering its root.
 `flushTapSync` lets you flush pending tap scheduler updates synchronously.
 
 ```ts
-import { flushTapSync } from "@assistant-ui/tap";
+import { flushTapSync } from "@hitchsoftware/assistant-ui-tap";
 
 flushTapSync(() => {
   handle.getValue().increment();

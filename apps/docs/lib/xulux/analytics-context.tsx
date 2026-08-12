@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useMemo, type ReactNode } from "react";
-import { useAuiState } from "@assistant-ui/react";
+import { useAuiState } from "@hitchsoftware/assistant-ui-react";
 import { analytics } from "@/lib/analytics";
 
 type XuluxAnalyticsProperty = string | number | boolean | undefined;

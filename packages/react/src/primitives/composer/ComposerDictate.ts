@@ -5,7 +5,7 @@ import type {
   ActionButtonProps,
 } from "../../utils/createActionButton";
 import { createActionButton } from "../../utils/createActionButton";
-import { useComposerDictate as useComposerDictateBehavior } from "@assistant-ui/core/react";
+import { useComposerDictate as useComposerDictateBehavior } from "@hitchsoftware/assistant-ui-core/react";
 
 const useComposerDictate = () => {
   const { disabled, startDictation } = useComposerDictateBehavior();

@@ -3,7 +3,7 @@ import {
   createResumableStreamContext,
   type ResumableStreamContext,
   type ResumableStreamStore,
-} from "assistant-stream/resumable";
+} from "@hitchsoftware/assistant-stream/resumable";
 
 const GLOBAL_KEY = Symbol.for("assistant-ui.example.resumable-context");
 
@@ -37,7 +37,7 @@ async function createStore(): Promise<ResumableStreamStore> {
 
   const { createClient } = await import("redis");
   const { createRedisResumableStreamStore } =
-    await import("assistant-stream/resumable/redis");
+    await import("@hitchsoftware/assistant-stream/resumable/redis");
 
   const client = createClient({ url });
   client.on("error", (err) => {

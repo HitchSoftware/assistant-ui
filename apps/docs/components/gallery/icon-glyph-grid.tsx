@@ -3,7 +3,7 @@
 import {
   ICON_NAMES,
   renderGenerativeUI,
-} from "@assistant-ui/react-generative-ui";
+} from "@hitchsoftware/assistant-ui-react-generative-ui";
 import { styledGenerativeUILibrary } from "@/components/assistant-ui/generative-ui";
 
 export function IconGlyphGrid() {

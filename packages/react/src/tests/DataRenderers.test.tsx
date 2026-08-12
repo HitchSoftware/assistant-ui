@@ -11,7 +11,7 @@ import {
   type ReactNode,
 } from "react";
 import { describe, expect, it } from "vitest";
-import { useAui } from "@assistant-ui/store";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 import { AssistantRuntimeProvider } from "../context";
 import * as MessagePrimitive from "../primitives/message";
 import * as ThreadPrimitive from "../primitives/thread";

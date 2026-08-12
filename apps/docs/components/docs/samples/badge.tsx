@@ -79,7 +79,7 @@ export function BadgeAsLinkSample() {
         variant="outline"
         render={
           <a
-            href="https://www.npmjs.com/package/@assistant-ui/react"
+            href="https://www.npmjs.com/package/@hitchsoftware/assistant-ui-react"
             target="_blank"
             rel="noopener noreferrer"
           />

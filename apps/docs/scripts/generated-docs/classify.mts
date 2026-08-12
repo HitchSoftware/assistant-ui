@@ -415,7 +415,7 @@ function generativeUIPackageRule(
     placement.role,
     "feature:react-generative-ui",
     "strong",
-    "@assistant-ui/react-generative-ui package export",
+    "@hitchsoftware/assistant-ui-react-generative-ui package export",
   );
 }
 

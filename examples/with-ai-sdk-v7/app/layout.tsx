@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "AI SDK v7 Example",
-  description: "Example using @assistant-ui/react with AI SDK v7",
+  description: "Example using @hitchsoftware/assistant-ui-react with AI SDK v7",
 };
 
 export default function RootLayout({

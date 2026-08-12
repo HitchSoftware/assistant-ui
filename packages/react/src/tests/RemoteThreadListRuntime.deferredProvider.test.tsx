@@ -3,10 +3,10 @@
 import { act, render } from "@testing-library/react";
 import { type FC, type PropsWithChildren, useState } from "react";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { useRemoteThreadListRuntime } from "@assistant-ui/core/react";
+import { useRemoteThreadListRuntime } from "@hitchsoftware/assistant-ui-core/react";
 import { makeAdapter } from "./remote-thread-list-test-helpers";
-import type { AssistantRuntime } from "@assistant-ui/core";
-import { useAui } from "@assistant-ui/store";
+import type { AssistantRuntime } from "@hitchsoftware/assistant-ui-core";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 import { AssistantRuntimeProvider } from "../context";
 import { useLocalRuntime } from "../legacy-runtime/runtime-cores/local/useLocalRuntime";
 import type { ChatModelAdapter, RemoteThreadListAdapter } from "../index";

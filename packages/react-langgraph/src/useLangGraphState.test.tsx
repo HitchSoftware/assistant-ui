@@ -1,6 +1,6 @@
 import { act, renderHook, waitFor } from "@testing-library/react";
-import type { AssistantRuntime } from "@assistant-ui/core";
-import { AssistantRuntimeProvider } from "@assistant-ui/core/react";
+import type { AssistantRuntime } from "@hitchsoftware/assistant-ui-core";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-core/react";
 import type { ReactNode } from "react";
 import { describe, expect, it, vi } from "vitest";
 import {

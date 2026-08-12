@@ -1,9 +1,9 @@
 import { useEffect, useEffectEvent, useState } from "react";
-import { resource } from "@assistant-ui/tap";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
 import type {
   Unstable_TriggerCategory,
   Unstable_TriggerItem,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 
 /** Relies on `Unstable_TriggerCategory` never carrying a `type` field. */
 function isTriggerItem(

@@ -8,8 +8,8 @@ description: Read and optimistically update agent-owned state with useAgUiState 
 ## Basic usage
 
 ```tsx
-import { useAgUiState, useAgUiSetState } from "@assistant-ui/react-ag-ui";
-import { useAuiState } from "@assistant-ui/react";
+import { useAgUiState, useAgUiSetState } from "@hitchsoftware/assistant-ui-react-ag-ui";
+import { useAuiState } from "@hitchsoftware/assistant-ui-react";
 
 type ResearchState = {
   topic: string;
@@ -33,8 +33,8 @@ Render agent state beside the chat and push an optimistic update from a control 
 ```tsx
 "use client";
 
-import { useAgUiState, useAgUiSetState } from "@assistant-ui/react-ag-ui";
-import { useAuiState } from "@assistant-ui/react";
+import { useAgUiState, useAgUiSetState } from "@hitchsoftware/assistant-ui-react-ag-ui";
+import { useAuiState } from "@hitchsoftware/assistant-ui-react";
 import { Thread } from "@/components/assistant-ui/thread";
 
 type ResearchState = {

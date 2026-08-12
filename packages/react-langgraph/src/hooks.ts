@@ -1,6 +1,6 @@
 "use client";
 
-import { useAui } from "@assistant-ui/store";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 import { langGraphExtras } from "./runtimeExtras";
 import type {
   LangChainMessage,

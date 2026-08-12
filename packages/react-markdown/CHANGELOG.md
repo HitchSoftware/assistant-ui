@@ -1,4 +1,4 @@
-# @assistant-ui/react-markdown
+# @hitchsoftware/assistant-ui-react-markdown
 
 ## 0.14.10
 
@@ -17,7 +17,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`9a7e776`](https://github.com/assistant-ui/assistant-ui/commit/9a7e77603d59b5e091ee922e2e087f0101679321), [`2f5d0d4`](https://github.com/assistant-ui/assistant-ui/commit/2f5d0d441caf6a152bf4eef13566a2f9a161541c)]:
-  - @assistant-ui/react@0.15.0
+  - @hitchsoftware/assistant-ui-react@0.15.0
 
 ## 0.14.7
 
@@ -61,7 +61,7 @@
 
 - [#4350](https://github.com/assistant-ui/assistant-ui/pull/4350) [`42fd04f`](https://github.com/assistant-ui/assistant-ui/commit/42fd04f0b1012a1bee153a50639f1286ca9a4fbe) - feat: public, tunable `useSmooth` ([@okisdev](https://github.com/okisdev))
 
-  `useSmooth` and a new `SmoothOptions` type are now exported from `@assistant-ui/react` (previously internal-only with a hard-coded reveal rate). the `smooth` prop on `MessagePartPrimitive.Text` and `MarkdownTextPrimitive` widens to `boolean | SmoothOptions`, with `drainMs` (backlog drain target, default 250), `maxCharIntervalMs` (slowest reveal interval, default 5), and `maxCharsPerFrame` (per-frame cap, default unlimited). the hook also now preserves the part type for reasoning parts instead of always returning `type: "text"`. react-markdown's `@assistant-ui/react` peer floor moves to the release that ships `SmoothOptions`.
+  `useSmooth` and a new `SmoothOptions` type are now exported from `@hitchsoftware/assistant-ui-react` (previously internal-only with a hard-coded reveal rate). the `smooth` prop on `MessagePartPrimitive.Text` and `MarkdownTextPrimitive` widens to `boolean | SmoothOptions`, with `drainMs` (backlog drain target, default 250), `maxCharIntervalMs` (slowest reveal interval, default 5), and `maxCharsPerFrame` (per-frame cap, default unlimited). the hook also now preserves the part type for reasoning parts instead of always returning `type: "text"`. react-markdown's `@hitchsoftware/assistant-ui-react` peer floor moves to the release that ships `SmoothOptions`.
 
 ## 0.14.2
 
@@ -76,21 +76,21 @@
 - [#4085](https://github.com/assistant-ui/assistant-ui/pull/4085) [`01244a5`](https://github.com/assistant-ui/assistant-ui/commit/01244a56026ee92bd4e49cb985136f9eb6d45154) - chore: update dependencies ([@Yonom](https://github.com/Yonom))
 
 - Updated dependencies [[`b02b701`](https://github.com/assistant-ui/assistant-ui/commit/b02b7012cff158b4e73b82503b9ea90638b7398d), [`0a0c306`](https://github.com/assistant-ui/assistant-ui/commit/0a0c306286598ea885b046a1dfb85016f720051c), [`01244a5`](https://github.com/assistant-ui/assistant-ui/commit/01244a56026ee92bd4e49cb985136f9eb6d45154), [`f2ec01c`](https://github.com/assistant-ui/assistant-ui/commit/f2ec01ce0f01317a8444b779d88f9b6a26d691c5)]:
-  - @assistant-ui/react@0.14.8
+  - @hitchsoftware/assistant-ui-react@0.14.8
 
 ## 0.14.0
 
 ### Patch Changes
 
 - Updated dependencies [[`040d469`](https://github.com/assistant-ui/assistant-ui/commit/040d469acfcf782de6fc188c646dfd8732d27088)]:
-  - @assistant-ui/react@0.14.0
+  - @hitchsoftware/assistant-ui-react@0.14.0
 
 ## 0.13.0
 
 ### Patch Changes
 
 - Updated dependencies [[`801b9a6`](https://github.com/assistant-ui/assistant-ui/commit/801b9a68d9c7c70ab15ca53842d0df6adacb7b86), [`7098bab`](https://github.com/assistant-ui/assistant-ui/commit/7098bab4c67fbd507c3fad746ef130daa01b3fd6), [`aa6e071`](https://github.com/assistant-ui/assistant-ui/commit/aa6e071fdd6ea832c5aff3f6cf817b2e3eb6ceb0), [`b090acb`](https://github.com/assistant-ui/assistant-ui/commit/b090acb98f6bf3579aab4efedddaff83a0b54c94), [`df7eb3e`](https://github.com/assistant-ui/assistant-ui/commit/df7eb3eee6beeac72d3220707cf4660adf932586), [`f4a693e`](https://github.com/assistant-ui/assistant-ui/commit/f4a693ec1898f6ed0b81be47512fe51fd93a2de8), [`d864d07`](https://github.com/assistant-ui/assistant-ui/commit/d864d0709d9db5f8e042e62cf1f40669f087ba68)]:
-  - @assistant-ui/react@0.13.0
+  - @hitchsoftware/assistant-ui-react@0.13.0
 
 ## 0.12.11
 
@@ -99,7 +99,7 @@
 - [#3876](https://github.com/assistant-ui/assistant-ui/pull/3876) [`ce865bc`](https://github.com/assistant-ui/assistant-ui/commit/ce865bc46af996d53f89e18068139d4d38546ca6) - chore: update dependencies ([@Yonom](https://github.com/Yonom))
 
 - Updated dependencies [[`ce865bc`](https://github.com/assistant-ui/assistant-ui/commit/ce865bc46af996d53f89e18068139d4d38546ca6), [`c56f98f`](https://github.com/assistant-ui/assistant-ui/commit/c56f98f5759e710281fc57b343b41af102914f1a), [`9aa5410`](https://github.com/assistant-ui/assistant-ui/commit/9aa54107fc76509830309bb5e2c74984408b97fe), [`a1f84ae`](https://github.com/assistant-ui/assistant-ui/commit/a1f84ae7b7782be19a25369905171de997f327ac), [`b4fde97`](https://github.com/assistant-ui/assistant-ui/commit/b4fde97355b51ed7a35401eeed0e5f5943a51150), [`d53ff4f`](https://github.com/assistant-ui/assistant-ui/commit/d53ff4f3f8b7d7220c1cb274c4fda335598fb063), [`17958c9`](https://github.com/assistant-ui/assistant-ui/commit/17958c9234ccc42394260125df54d897c06a47fd), [`477fa8a`](https://github.com/assistant-ui/assistant-ui/commit/477fa8a4c94d8922f5639dac8888fc55926f36cd)]:
-  - @assistant-ui/react@0.12.26
+  - @hitchsoftware/assistant-ui-react@0.12.26
 
 ## 0.12.10
 
@@ -113,7 +113,7 @@
 
 - c988db8: chore: update dependencies
 - Updated dependencies [c988db8]
-  - @assistant-ui/react@0.12.25
+  - @hitchsoftware/assistant-ui-react@0.12.25
 
 ## 0.12.8
 
@@ -130,7 +130,7 @@
 - Updated dependencies [209ae81]
 - Updated dependencies [50b3100]
 - Updated dependencies [af70d7f]
-  - @assistant-ui/react@0.12.22
+  - @hitchsoftware/assistant-ui-react@0.12.22
 
 ## 0.12.7
 
@@ -139,7 +139,7 @@
 - 52403c3: chore: update dependencies
 - Updated dependencies [3227e71]
 - Updated dependencies [52403c3]
-  - @assistant-ui/react@0.12.21
+  - @hitchsoftware/assistant-ui-react@0.12.21
 
 ## 0.12.6
 
@@ -151,7 +151,7 @@
 - Updated dependencies [349f3c7]
 - Updated dependencies [02614aa]
 - Updated dependencies [642bcda]
-  - @assistant-ui/react@0.12.18
+  - @hitchsoftware/assistant-ui-react@0.12.18
 
 ## 0.12.5
 
@@ -168,7 +168,7 @@
 - Updated dependencies [7c360ce]
 - Updated dependencies [a638f05]
 - Updated dependencies [8a78cd2]
-  - @assistant-ui/react@0.12.12
+  - @hitchsoftware/assistant-ui-react@0.12.12
 
 ## 0.12.4
 
@@ -196,7 +196,7 @@
 - Updated dependencies [b48912c]
 - Updated dependencies [93910bd]
 - Updated dependencies [58a8472]
-  - @assistant-ui/react@0.12.11
+  - @hitchsoftware/assistant-ui-react@0.12.11
 
 ## 0.12.3
 
@@ -205,7 +205,7 @@
 - a088518: chore: update dependencies
 - Updated dependencies [a088518]
 - Updated dependencies [d8122cc]
-  - @assistant-ui/react@0.12.9
+  - @hitchsoftware/assistant-ui-react@0.12.9
 
 ## 0.12.2
 
@@ -214,7 +214,7 @@
 - d45b893: chore: update dependencies
 - Updated dependencies [d45b893]
 - Updated dependencies [fe71bfc]
-  - @assistant-ui/react@0.12.5
+  - @hitchsoftware/assistant-ui-react@0.12.5
 
 ## 0.12.1
 
@@ -225,7 +225,7 @@
 - Updated dependencies [8cbf686]
 - Updated dependencies [a8be364]
 - Updated dependencies [605d825]
-  - @assistant-ui/react@0.12.2
+  - @hitchsoftware/assistant-ui-react@0.12.2
 
 ## 0.11.10
 
@@ -233,7 +233,7 @@
 
 - 3719567: chore: update deps
 - Updated dependencies [3719567]
-  - @assistant-ui/react@0.11.58
+  - @hitchsoftware/assistant-ui-react@0.11.58
 
 ## 0.11.9
 
@@ -243,7 +243,7 @@
 - cce009d: chore: use tsc for building packages
 - Updated dependencies [57bd207]
 - Updated dependencies [cce009d]
-  - @assistant-ui/react@0.11.53
+  - @hitchsoftware/assistant-ui-react@0.11.53
 
 ## 0.11.8
 
@@ -252,7 +252,7 @@
 - e8ea57b: chore: update deps
 - Updated dependencies [bae3aa2]
 - Updated dependencies [e8ea57b]
-  - @assistant-ui/react@0.11.50
+  - @hitchsoftware/assistant-ui-react@0.11.50
 
 ## 0.11.7
 
@@ -263,7 +263,7 @@
 - Updated dependencies [d169e4f]
 - Updated dependencies [da9f8a6]
 - Updated dependencies [01c31fe]
-  - @assistant-ui/react@0.11.48
+  - @hitchsoftware/assistant-ui-react@0.11.48
 
 ## 0.11.6
 
@@ -271,7 +271,7 @@
 
 - ec662cd: chore: update dependencies
 - Updated dependencies [ec662cd]
-  - @assistant-ui/react@0.11.45
+  - @hitchsoftware/assistant-ui-react@0.11.45
 
 ## 0.11.5
 
@@ -279,7 +279,7 @@
 
 - 2c33091: chore: update deps
 - Updated dependencies [2c33091]
-  - @assistant-ui/react@0.11.40
+  - @hitchsoftware/assistant-ui-react@0.11.40
 
 ## 0.11.4
 
@@ -290,7 +290,7 @@
 - Updated dependencies [7a88ead]
 - Updated dependencies [81b581f]
 - Updated dependencies [2fc7e99]
-  - @assistant-ui/react@0.11.36
+  - @hitchsoftware/assistant-ui-react@0.11.36
 
 ## 0.11.3
 
@@ -299,7 +299,7 @@
 - 953db24: chore: update deps
 - Updated dependencies [953db24]
 - Updated dependencies
-  - @assistant-ui/react@0.11.34
+  - @hitchsoftware/assistant-ui-react@0.11.34
 
 ## 0.11.2
 
@@ -307,7 +307,7 @@
 
 - chore: update deps
 - Updated dependencies
-  - @assistant-ui/react@0.11.31
+  - @hitchsoftware/assistant-ui-react@0.11.31
 
 ## 0.11.1
 
@@ -315,7 +315,7 @@
 
 - e6a46e4: chore: update deps
 - Updated dependencies [e6a46e4]
-  - @assistant-ui/react@0.11.27
+  - @hitchsoftware/assistant-ui-react@0.11.27
 
 ## 0.11.0
 
@@ -323,7 +323,7 @@
 
 - Updated dependencies [39ac2f3]
 - Updated dependencies [5437dbe]
-  - @assistant-ui/react@0.11.0
+  - @hitchsoftware/assistant-ui-react@0.11.0
 
 ## 0.10.9
 
@@ -331,7 +331,7 @@
 
 - 12e0a77: chore: update deps
 - Updated dependencies [12e0a77]
-  - @assistant-ui/react@0.10.42
+  - @hitchsoftware/assistant-ui-react@0.10.42
 
 ## 0.10.8
 
@@ -341,7 +341,7 @@
 - Updated dependencies [ed78407]
 - Updated dependencies [77ce337]
 - Updated dependencies [f59959e]
-  - @assistant-ui/react@0.10.36
+  - @hitchsoftware/assistant-ui-react@0.10.36
 
 ## 0.10.7
 
@@ -350,7 +350,7 @@
 - 0f063e0: chore: update dependencies
 - Updated dependencies [0f063e0]
 - Updated dependencies [5d8b074]
-  - @assistant-ui/react@0.10.34
+  - @hitchsoftware/assistant-ui-react@0.10.34
 
 ## 0.10.6
 
@@ -363,7 +363,7 @@
 - Updated dependencies [308afff]
 - Updated dependencies [cc9f567]
 - Updated dependencies [c380f37]
-  - @assistant-ui/react@0.10.25
+  - @hitchsoftware/assistant-ui-react@0.10.25
 
 ## 0.10.5
 
@@ -373,7 +373,7 @@
 - Updated dependencies [b65e354]
 - Updated dependencies [8eda24b]
 - Updated dependencies [644abb8]
-  - @assistant-ui/react@0.10.24
+  - @hitchsoftware/assistant-ui-react@0.10.24
 
 ## 0.10.4
 
@@ -381,7 +381,7 @@
 
 - chore: update deps
 - Updated dependencies
-  - @assistant-ui/react@0.10.12
+  - @hitchsoftware/assistant-ui-react@0.10.12
 
 ## 0.10.3
 
@@ -390,7 +390,7 @@
 - 98a680e: chore: update deps
 - Updated dependencies [98a680e]
 - Updated dependencies [98a680e]
-  - @assistant-ui/react@0.10.4
+  - @hitchsoftware/assistant-ui-react@0.10.4
 
 ## 0.10.2
 
@@ -398,7 +398,7 @@
 
 - fix: ESM without bundler compat
 - Updated dependencies
-  - @assistant-ui/react@0.10.2
+  - @hitchsoftware/assistant-ui-react@0.10.2
 
 ## 0.10.1
 
@@ -406,7 +406,7 @@
 
 - fix: correctly include Typescript declarations
 - Updated dependencies
-  - @assistant-ui/react@0.10.1
+  - @hitchsoftware/assistant-ui-react@0.10.1
 
 ## 0.10.0
 
@@ -414,7 +414,7 @@
 
 - 557c3f7: build: drop CJS builds
 - Updated dependencies [557c3f7]
-  - @assistant-ui/react@0.9.7
+  - @hitchsoftware/assistant-ui-react@0.9.7
 
 ## 0.9.3
 
@@ -422,7 +422,7 @@
 
 - chore: update deps
 - Updated dependencies
-  - @assistant-ui/react@0.9.6
+  - @hitchsoftware/assistant-ui-react@0.9.6
 
 ## 0.9.2
 
@@ -431,7 +431,7 @@
 - b9c731a: chore: update dependencies
 - Updated dependencies [62c2af7]
 - Updated dependencies [b9c731a]
-  - @assistant-ui/react@0.9.3
+  - @hitchsoftware/assistant-ui-react@0.9.3
 
 ## 0.9.1
 
@@ -439,7 +439,7 @@
 
 - chore: update deps
 - Updated dependencies
-  - @assistant-ui/react@0.9.1
+  - @hitchsoftware/assistant-ui-react@0.9.1
 
 ## 0.9.0
 
@@ -447,7 +447,7 @@
 
 - afae5c9: refactor!: drop deprecated by_language option
 - Updated dependencies [afae5c9]
-  - @assistant-ui/react@0.8.21
+  - @hitchsoftware/assistant-ui-react@0.8.21
 
 ## 0.8.1
 
@@ -456,7 +456,7 @@
 - 39aecd7: chore: update dependencies
 - Updated dependencies [a22bc7a]
 - Updated dependencies [39aecd7]
-  - @assistant-ui/react@0.8.18
+  - @hitchsoftware/assistant-ui-react@0.8.18
 
 ## 0.7.21
 
@@ -464,7 +464,7 @@
 
 - 7df4eef: fix: code block memoization
 - Updated dependencies [a36fd9e]
-  - @assistant-ui/react@0.7.88
+  - @hitchsoftware/assistant-ui-react@0.7.88
 
 ## 0.7.20
 
@@ -472,7 +472,7 @@
 
 - 87fa024: fix: remove tailwind from peerdeps
 - Updated dependencies [87fa024]
-  - @assistant-ui/react@0.7.75
+  - @hitchsoftware/assistant-ui-react@0.7.75
 
 ## 0.7.19
 
@@ -480,7 +480,7 @@
 
 - df35010: feat: use aui-md and data-status for dot animation
 - Updated dependencies [61f278b]
-  - @assistant-ui/react@0.7.74
+  - @hitchsoftware/assistant-ui-react@0.7.74
 
 ## 0.7.18
 
@@ -488,7 +488,7 @@
 
 - 72e66db: chore: update dependencies
 - Updated dependencies [72e66db]
-  - @assistant-ui/react@0.7.71
+  - @hitchsoftware/assistant-ui-react@0.7.71
 
 ## 0.7.17
 
@@ -500,10 +500,10 @@
 
 ### Patch Changes
 
-- 6703842: feat: codemod to migrate to @assistant-ui/react-ui
+- 6703842: feat: codemod to migrate to @hitchsoftware/assistant-ui-react-ui
 - Updated dependencies [6703842]
 - Updated dependencies [79f7120]
-  - @assistant-ui/react@0.7.64
+  - @hitchsoftware/assistant-ui-react@0.7.64
 
 ## 0.7.15
 
@@ -511,7 +511,7 @@
 
 - 7e5f127: fix: useSmooth unnecessary re-renders
 - Updated dependencies [7e5f127]
-  - @assistant-ui/react@0.7.62
+  - @hitchsoftware/assistant-ui-react@0.7.62
 
 ## 0.7.14
 
@@ -532,7 +532,7 @@
 - 7345713: feat: add /styles/dot.css
 - Updated dependencies [bd78a70]
 - Updated dependencies [9ea8100]
-  - @assistant-ui/react@0.7.61
+  - @hitchsoftware/assistant-ui-react@0.7.61
 
 ## 0.7.11
 
@@ -541,7 +541,7 @@
 - 22272e6: chore: update dependencies
 - Updated dependencies [0979334]
 - Updated dependencies [22272e6]
-  - @assistant-ui/react@0.7.39
+  - @hitchsoftware/assistant-ui-react@0.7.39
 
 ## 0.7.10
 
@@ -551,7 +551,7 @@
 - Updated dependencies [345f3d5]
 - Updated dependencies [345f3d5]
 - Updated dependencies [2846559]
-  - @assistant-ui/react@0.7.35
+  - @hitchsoftware/assistant-ui-react@0.7.35
 
 ## 0.7.9
 
@@ -560,7 +560,7 @@
 - 4c2bf58: chore: update dependencies
 - Updated dependencies [9a3dc93]
 - Updated dependencies [4c2bf58]
-  - @assistant-ui/react@0.7.34
+  - @hitchsoftware/assistant-ui-react@0.7.34
 
 ## 0.7.8
 
@@ -568,7 +568,7 @@
 
 - 982a6a2: chore: update dependencies
 - Updated dependencies [982a6a2]
-  - @assistant-ui/react@0.7.30
+  - @hitchsoftware/assistant-ui-react@0.7.30
 
 ## 0.7.7
 
@@ -576,7 +576,7 @@
 
 - ec3b8cc: chore: update dependencies
 - Updated dependencies [ec3b8cc]
-  - @assistant-ui/react@0.7.19
+  - @hitchsoftware/assistant-ui-react@0.7.19
 
 ## 0.7.6
 
@@ -586,7 +586,7 @@
 - 3214b18: fix: MarkdownText smooth prop not working
 - Updated dependencies [1b16dce]
 - Updated dependencies [b0f309a]
-  - @assistant-ui/react@0.7.18
+  - @hitchsoftware/assistant-ui-react@0.7.18
 
 ## 0.7.5
 
@@ -596,7 +596,7 @@
 - 4c54273: refactor: rename components.by_language to componentsByLanguage for react 19 types compat
 - Updated dependencies [4c54273]
 - Updated dependencies [4c54273]
-  - @assistant-ui/react@0.7.12
+  - @hitchsoftware/assistant-ui-react@0.7.12
 
 ## 0.7.4
 
@@ -605,7 +605,7 @@
 - 2276e57: fix: cjs builds
 - Updated dependencies [2276e57]
 - Updated dependencies [e8752ac]
-  - @assistant-ui/react@0.7.9
+  - @hitchsoftware/assistant-ui-react@0.7.9
 
 ## 0.7.3
 
@@ -614,7 +614,7 @@
 - 2112ce8: chore: update dependencies
 - Updated dependencies [589d37b]
 - Updated dependencies [2112ce8]
-  - @assistant-ui/react@0.7.8
+  - @hitchsoftware/assistant-ui-react@0.7.8
 
 ## 0.7.2
 
@@ -623,7 +623,7 @@
 - 933b8c0: chore: update deps
 - Updated dependencies [933b8c0]
 - Updated dependencies [09a2a38]
-  - @assistant-ui/react@0.7.6
+  - @hitchsoftware/assistant-ui-react@0.7.6
 
 ## 0.7.1
 
@@ -631,7 +631,7 @@
 
 - c59d8b5: chore: update dependencies
 - Updated dependencies [c59d8b5]
-  - @assistant-ui/react@0.7.5
+  - @hitchsoftware/assistant-ui-react@0.7.5
 
 ## 0.7.0
 
@@ -639,7 +639,7 @@
 
 - Updated dependencies [c6e886b]
 - Updated dependencies [2912fda]
-  - @assistant-ui/react@0.7.0
+  - @hitchsoftware/assistant-ui-react@0.7.0
 
 ## 0.2.27
 
@@ -652,19 +652,19 @@
 - Updated dependencies [472c548]
 - Updated dependencies [14da684]
 - Updated dependencies [1ada091]
-  - @assistant-ui/react@0.5.99
+  - @hitchsoftware/assistant-ui-react@0.5.99
 
 ## 0.2.26
 
 ### Patch Changes
 
-- ff5b86c: build: refactor build script into @assistant-ui/tsbuildutils
+- ff5b86c: build: refactor build script into @hitchsoftware/assistant-ui-tsbuildutils
 - ff5b86c: fix: better ESM compatibility
 - ff5b86c: chore: update deps
 - Updated dependencies [ff5b86c]
 - Updated dependencies [ff5b86c]
 - Updated dependencies [ff5b86c]
-  - @assistant-ui/react@0.5.98
+  - @hitchsoftware/assistant-ui-react@0.5.98
 
 ## 0.2.25
 
@@ -672,7 +672,7 @@
 
 - fix: include generated css files in bundle
 - Updated dependencies
-  - @assistant-ui/react@0.5.95
+  - @hitchsoftware/assistant-ui-react@0.5.95
 
 ## 0.2.24
 
@@ -686,7 +686,7 @@
 
 - d2375cd: build: disable bundling in UI package releases
 - Updated dependencies [d2375cd]
-  - @assistant-ui/react@0.5.93
+  - @hitchsoftware/assistant-ui-react@0.5.93
 
 ## 0.2.22
 
@@ -700,7 +700,7 @@
 
 - 56f80fa: fix: tailwind plugin turbopack interop
 - Updated dependencies [56f80fa]
-  - @assistant-ui/react@0.5.91
+  - @hitchsoftware/assistant-ui-react@0.5.91
 
 ## 0.2.20
 
@@ -713,7 +713,7 @@
 - Updated dependencies [2090544]
 - Updated dependencies [fb32e61]
 - Updated dependencies [fb32e61]
-  - @assistant-ui/react@0.5.90
+  - @hitchsoftware/assistant-ui-react@0.5.90
 
 ## 0.2.19
 
@@ -725,7 +725,7 @@
 - Updated dependencies [0ff22a7]
 - Updated dependencies [378ee99]
 - Updated dependencies [378ee99]
-  - @assistant-ui/react@0.5.73
+  - @hitchsoftware/assistant-ui-react@0.5.73
 
 ## 0.2.18
 
@@ -736,7 +736,7 @@
 - Updated dependencies [9fd85da]
 - Updated dependencies [d8bd40b]
 - Updated dependencies [42156cf]
-  - @assistant-ui/react@0.5.68
+  - @hitchsoftware/assistant-ui-react@0.5.68
 
 ## 0.2.17
 
@@ -744,7 +744,7 @@
 
 - 27208fb: fix: only include "use client" banner in ESM builds
 - Updated dependencies [27208fb]
-  - @assistant-ui/react@0.5.65
+  - @hitchsoftware/assistant-ui-react@0.5.65
 
 ## 0.2.16
 
@@ -752,7 +752,7 @@
 
 - ed24305: fix: add newline after "use client" for .js builds
 - Updated dependencies [ed24305]
-  - @assistant-ui/react@0.5.64
+  - @hitchsoftware/assistant-ui-react@0.5.64
 
 ## 0.2.15
 
@@ -762,7 +762,7 @@
 - e1ae3d0: chore: update dependencies
 - Updated dependencies [c438773]
 - Updated dependencies [e1ae3d0]
-  - @assistant-ui/react@0.5.63
+  - @hitchsoftware/assistant-ui-react@0.5.63
 
 ## 0.2.14
 
@@ -772,7 +772,7 @@
 - Updated dependencies [926dce5]
 - Updated dependencies [155d6e7]
 - Updated dependencies [f80226f]
-  - @assistant-ui/react@0.5.60
+  - @hitchsoftware/assistant-ui-react@0.5.60
 
 ## 0.2.13
 
@@ -781,7 +781,7 @@
 - c348553: chore: update dependencies
 - Updated dependencies [0f99aa6]
 - Updated dependencies [c348553]
-  - @assistant-ui/react@0.5.54
+  - @hitchsoftware/assistant-ui-react@0.5.54
 
 ## 0.2.12
 
@@ -789,7 +789,7 @@
 
 - 04f6fc8: chore: update deps
 - Updated dependencies [04f6fc8]
-  - @assistant-ui/react@0.5.50
+  - @hitchsoftware/assistant-ui-react@0.5.50
 
 ## 0.2.11
 
@@ -797,7 +797,7 @@
 
 - 554a423: chore: update deps
 - Updated dependencies [554a423]
-  - @assistant-ui/react@0.5.38
+  - @hitchsoftware/assistant-ui-react@0.5.38
 
 ## 0.2.10
 
@@ -806,7 +806,7 @@
 - 556001f: chore: update deps
 - Updated dependencies [556001f]
 - Updated dependencies [556001f]
-  - @assistant-ui/react@0.5.29
+  - @hitchsoftware/assistant-ui-react@0.5.29
 
 ## 0.2.9
 
@@ -815,7 +815,7 @@
 - 9a55735: chore: update deps
 - Updated dependencies [915b5b7]
 - Updated dependencies [9a55735]
-  - @assistant-ui/react@0.5.28
+  - @hitchsoftware/assistant-ui-react@0.5.28
 
 ## 0.2.8
 
@@ -824,7 +824,7 @@
 - dbf1042: chore: update deps
 - Updated dependencies [dbf1042]
 - Updated dependencies [dbf1042]
-  - @assistant-ui/react@0.5.27
+  - @hitchsoftware/assistant-ui-react@0.5.27
 
 ## 0.2.7
 
@@ -832,17 +832,17 @@
 
 - 134d39e: fix: undo moving internal utilities to /react/internal
 - Updated dependencies [134d39e]
-  - @assistant-ui/react@0.5.22
+  - @hitchsoftware/assistant-ui-react@0.5.22
 
 ## 0.2.6
 
 ### Patch Changes
 
 - de04d92: feat: loading status & smooth streaming interop
-- 3cc67f2: refactor: move internal utilities to @assistant-ui/react/internal
+- 3cc67f2: refactor: move internal utilities to @hitchsoftware/assistant-ui-react/internal
 - Updated dependencies [de04d92]
 - Updated dependencies [3cc67f2]
-  - @assistant-ui/react@0.5.20
+  - @hitchsoftware/assistant-ui-react@0.5.20
 
 ## 0.2.5
 
@@ -863,7 +863,7 @@
 
 - a216fbf: chore: update deps
 - Updated dependencies [a216fbf]
-  - @assistant-ui/react@0.5.9
+  - @hitchsoftware/assistant-ui-react@0.5.9
 
 ## 0.2.2
 
@@ -873,7 +873,7 @@
 - Updated dependencies [2d7a8bd]
 - Updated dependencies [2d7a8bd]
 - Updated dependencies [2d7a8bd]
-  - @assistant-ui/react@0.5.2
+  - @hitchsoftware/assistant-ui-react@0.5.2
 
 ## 0.2.1
 
@@ -884,7 +884,7 @@
 - Updated dependencies [ee38c0c]
 - Updated dependencies [ee38c0c]
 - Updated dependencies [2baa898]
-  - @assistant-ui/react@0.5.1
+  - @hitchsoftware/assistant-ui-react@0.5.1
 
 ## 0.1.2
 
@@ -893,7 +893,7 @@
 - 0bc5d9f: feat(markdown): usage without tailwindcss
 - Updated dependencies [bc77b4f]
 - Updated dependencies [e220617]
-  - @assistant-ui/react@0.4.6
+  - @hitchsoftware/assistant-ui-react@0.4.6
 
 ## 0.1.1
 
@@ -901,7 +901,7 @@
 
 - 998081b: fix: reduce specificity of built-in CSS styles
 - Updated dependencies [998081b]
-  - @assistant-ui/react@0.4.4
+  - @hitchsoftware/assistant-ui-react@0.4.4
 
 ## 0.1.0
 
@@ -913,7 +913,7 @@
 - Updated dependencies [e0e51cf]
 - Updated dependencies [e0e51cf]
 - Updated dependencies [679cd54]
-  - @assistant-ui/react@0.4.0
+  - @hitchsoftware/assistant-ui-react@0.4.0
 
 ## 0.0.5
 
@@ -921,7 +921,7 @@
 
 - ef25706: feat: Code Header and Syntax Highlighter support
 - Updated dependencies [ef25706]
-  - @assistant-ui/react@0.3.5
+  - @hitchsoftware/assistant-ui-react@0.3.5
 
 ## 0.0.4
 
@@ -929,7 +929,7 @@
 
 - 1a8919b: feat: smooth text streaming
 - Updated dependencies [1a8919b]
-  - @assistant-ui/react@0.3.2
+  - @hitchsoftware/assistant-ui-react@0.3.2
 
 ## 0.0.3
 
@@ -944,7 +944,7 @@
 - Updated dependencies [3dd7384]
 - Updated dependencies [23f474e]
 - Updated dependencies [5b68f4a]
-  - @assistant-ui/react@0.3.0
+  - @hitchsoftware/assistant-ui-react@0.3.0
 
 ## 0.0.1
 
@@ -952,4 +952,4 @@
 
 - Updated dependencies [de20b1c]
 - Updated dependencies [2ab2cab]
-  - @assistant-ui/react@0.2.0
+  - @hitchsoftware/assistant-ui-react@0.2.0

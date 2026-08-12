@@ -14,7 +14,7 @@ import {
   MessagePrimitive,
   useAuiState,
   useAui,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { useShallow } from "zustand/shallow";
 import {
   Tooltip,

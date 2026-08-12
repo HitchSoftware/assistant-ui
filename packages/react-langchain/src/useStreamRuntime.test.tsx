@@ -2,12 +2,12 @@
 
 import { act, render, renderHook, waitFor } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
-import { AssistantRuntimeProvider } from "@assistant-ui/core/react";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-core/react";
 import type {
   AssistantRuntime,
   RemoteThreadListAdapter,
-} from "@assistant-ui/core";
-import { useAui } from "@assistant-ui/store";
+} from "@hitchsoftware/assistant-ui-core";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 import type { LangChainBaseMessage } from "./types";
 import type { ReactNode } from "react";
 

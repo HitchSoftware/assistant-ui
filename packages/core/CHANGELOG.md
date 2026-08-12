@@ -1,4 +1,4 @@
-# @assistant-ui/core
+# @hitchsoftware/assistant-ui-core
 
 ## 0.3.13
 
@@ -36,7 +36,7 @@
 
 ### Patch Changes
 
-- [#5745](https://github.com/assistant-ui/assistant-ui/pull/5745) [`1df4327`](https://github.com/assistant-ui/assistant-ui/commit/1df4327dc915103bb1b64e01ee8d888c08de9f59) - refactor: move ExternalThread, SingleThreadList, and the Assistant augmentation namespace into @assistant-ui/core ([@Yonom](https://github.com/Yonom))
+- [#5745](https://github.com/assistant-ui/assistant-ui/pull/5745) [`1df4327`](https://github.com/assistant-ui/assistant-ui/commit/1df4327dc915103bb1b64e01ee8d888c08de9f59) - refactor: move ExternalThread, SingleThreadList, and the Assistant augmentation namespace into @hitchsoftware/assistant-ui-core ([@Yonom](https://github.com/Yonom))
 
 ## 0.3.11
 
@@ -145,7 +145,7 @@
 
   `getPromptParts` put `FileMessagePart.data` straight into the OpenCode file part's `url`. OpenCode forwards that into an AI SDK file part (`sst/opencode`, `session/message-v2.ts`), whose `url` reaches an unguarded `new URL()`, so a payload that is raw base64 rather than a data URL or an http source failed there. A non-parsable payload is now wrapped in a `data:<mime>;base64,` envelope; data URLs and http sources are forwarded untouched, and a `sourceType: "id"` reference is left alone so it fails loudly instead of shipping a corrupt payload.
 
-  The predicate behind that decision moves to `isParsableUrl` in `@assistant-ui/core/internal`, next to the `httpUrlPattern` and `parseDataUrl` it belongs with, and react-ai-sdk now imports it instead of keeping its own copy. No behavior change there.
+  The predicate behind that decision moves to `isParsableUrl` in `@hitchsoftware/assistant-ui-core/internal`, next to the `httpUrlPattern` and `parseDataUrl` it belongs with, and react-ai-sdk now imports it instead of keeping its own copy. No behavior change there.
 
 - [#5522](https://github.com/assistant-ui/assistant-ui/pull/5522) [`f913c21`](https://github.com/assistant-ui/assistant-ui/commit/f913c2142708d8cd1f4ac63bd801e5b6defcb74e) - feat: add the in-place refetch contract behind `threads.reloadMainThread()`. A runtime opts in with `unstable_refetchThread` on `ThreadRuntimeCore`, which an external store supplies through the new `ExternalStoreAdapter.onRefetchThread` (unrelated to `onReload`, which re-generates an assistant message) and which surfaces as `RuntimeCapabilities.refetchThread`, reporting which mechanism a call would take rather than whether it does anything. Runtimes that opt in keep their runtime identity, so composer drafts survive and messages stay rendered while the refetch runs; the rest fall back to remounting the runtime hook. Core does not stop a run in progress before calling the capability: doing that means `cancelRun`, whose contract is that the user abandoned a send, so it returns the trailing user message to the composer. An implementation owns whatever coordination a concurrent run needs. ([@taoche](https://github.com/taoche))
 
@@ -157,7 +157,7 @@
 
 - [#5479](https://github.com/assistant-ui/assistant-ui/pull/5479) [`011e275`](https://github.com/assistant-ui/assistant-ui/commit/011e275c4df5cd85942b5fd545a74d9c7cf549a6) - fix: read an image's media type from its leading bytes in both adapters ([@okisdev](https://github.com/okisdev))
 
-  `detectImageMediaType` and `dataUrlMediaType` join `parseDataUrl` and `isParsableUrl` in `@assistant-ui/core/internal`. An `ImageMessagePart` carries no media type, so an adapter that must declare one on the wire now reads it from the payload rather than assuming a format. It never throws, whatever a caller put on the part.
+  `detectImageMediaType` and `dataUrlMediaType` join `parseDataUrl` and `isParsableUrl` in `@hitchsoftware/assistant-ui-core/internal`. An `ImageMessagePart` carries no media type, so an adapter that must declare one on the wire now reads it from the payload rather than assuming a format. It never throws, whatever a caller put on the part.
 
   react-ai-sdk and react-opencode run the same ladder rung for rung: the attachment's `contentType`, then a data URL's declared type when that is itself an image type (read whether or not the payload is base64, so an SVG data URL keeps its type), then the leading bytes, then `image/png`. Previously react-opencode had no byte rung at all, and react-ai-sdk's was skipped for any `data:` payload, so a JPEG inside a generic `application/octet-stream` envelope resolved to png on both.
 
@@ -165,7 +165,7 @@
 
 - [#5485](https://github.com/assistant-ui/assistant-ui/pull/5485) [`da32fe0`](https://github.com/assistant-ui/assistant-ui/commit/da32fe0b2f51c8a340935c5f4d2e31e747d39460) - refactor: share the media type ladder and wire url between adapters ([@okisdev](https://github.com/okisdev))
 
-  `resolveImageMediaType`, `resolveFileMediaType` and `toMediaWireUrl` join the data URL helpers in `@assistant-ui/core/internal`. react-ai-sdk and react-opencode had arrived at identical ladders and an identical wire url builder by construction rather than by sharing code, and they had already drifted apart twice while getting there. Both now call the shared functions and keep only their own part-shape plumbing.
+  `resolveImageMediaType`, `resolveFileMediaType` and `toMediaWireUrl` join the data URL helpers in `@hitchsoftware/assistant-ui-core/internal`. react-ai-sdk and react-opencode had arrived at identical ladders and an identical wire url builder by construction rather than by sharing code, and they had already drifted apart twice while getting there. Both now call the shared functions and keep only their own part-shape plumbing.
 
   No behavior change: both adapters' existing suites pass untouched.
 
@@ -196,7 +196,7 @@
 
 - [#5230](https://github.com/assistant-ui/assistant-ui/pull/5230) [`3ae058c`](https://github.com/assistant-ui/assistant-ui/commit/3ae058c5d275e2444701da70a6513528439ecb3e) - fix: suppress `onThreadIdChange` callbacks for prop-driven thread switches ([@Kinfe123](https://github.com/Kinfe123))
 
-- [#5329](https://github.com/assistant-ui/assistant-ui/pull/5329) [`f30b54c`](https://github.com/assistant-ui/assistant-ui/commit/f30b54c9856d50a18f738c4d485c02bcd039151c) - refactor: move createRuntimeExtras to the @assistant-ui/core/react entry and drop the internal re-export ([@okisdev](https://github.com/okisdev))
+- [#5329](https://github.com/assistant-ui/assistant-ui/pull/5329) [`f30b54c`](https://github.com/assistant-ui/assistant-ui/commit/f30b54c9856d50a18f738c4d485c02bcd039151c) - refactor: move createRuntimeExtras to the @hitchsoftware/assistant-ui-core/react entry and drop the internal re-export ([@okisdev](https://github.com/okisdev))
 
 - [#5318](https://github.com/assistant-ui/assistant-ui/pull/5318) [`ee87dd9`](https://github.com/assistant-ui/assistant-ui/commit/ee87dd9fef1389165bbfe0019be2a6995b2cfb24) - fix: accept case-insensitive `data:` URL schemes and normalize parsed mime types to lowercase ([@ShobhitPatra](https://github.com/ShobhitPatra))
 
@@ -237,7 +237,7 @@
 - [#5270](https://github.com/assistant-ui/assistant-ui/pull/5270) [`dcc41bb`](https://github.com/assistant-ui/assistant-ui/commit/dcc41bb50948f64744a052b22720f0f8dffa510e) - feat: render-bound immutable aui instances — derived scopes resolve to client instances during render and are frozen into the returned client; structural swaps produce a new client through React while value updates never change client identity. Removes the PartByIndexProvider lastPartRef guards and the useClientLookup stale-index clamp. ([@Yonom](https://github.com/Yonom))
 
 - Updated dependencies [[`9a7e776`](https://github.com/assistant-ui/assistant-ui/commit/9a7e77603d59b5e091ee922e2e087f0101679321), [`ae5f831`](https://github.com/assistant-ui/assistant-ui/commit/ae5f83129b20edb38b7f9e7f92b6c60f3c8fe8d9), [`f78e579`](https://github.com/assistant-ui/assistant-ui/commit/f78e5794d8d9d2f1c815485cb39a56f1072ed795), [`dcc41bb`](https://github.com/assistant-ui/assistant-ui/commit/dcc41bb50948f64744a052b22720f0f8dffa510e)]:
-  - @assistant-ui/store@0.3.0
+  - @hitchsoftware/assistant-ui-store@0.3.0
   - assistant-stream@0.3.29
 
 ## 0.2.23
@@ -352,7 +352,7 @@
 
 - [#4715](https://github.com/assistant-ui/assistant-ui/pull/4715) [`5a34e8c`](https://github.com/assistant-ui/assistant-ui/commit/5a34e8c2721b02e7a115d085bc09a447e0d3caa9) - fix: restore composer text and attachments when an attachment upload fails during send ([@ShobhitPatra](https://github.com/ShobhitPatra))
 
-- [#4971](https://github.com/assistant-ui/assistant-ui/pull/4971) [`5dbbac4`](https://github.com/assistant-ui/assistant-ui/commit/5dbbac4f49b6269c1017f11c9bf6da2909fa6c96) - refactor: host the shared JSON type guards in @assistant-ui/core/internal ([@okisdev](https://github.com/okisdev))
+- [#4971](https://github.com/assistant-ui/assistant-ui/pull/4971) [`5dbbac4`](https://github.com/assistant-ui/assistant-ui/commit/5dbbac4f49b6269c1017f11c9bf6da2909fa6c96) - refactor: host the shared JSON type guards in @hitchsoftware/assistant-ui-core/internal ([@okisdev](https://github.com/okisdev))
 
 - [#4704](https://github.com/assistant-ui/assistant-ui/pull/4704) [`d3bd0ed`](https://github.com/assistant-ui/assistant-ui/commit/d3bd0ede457f50043ff59f8987f59b16c675ef01) - fix: re-convert cached messages when the converter callback or metadata changes, and re-parent children of skipped optimistic messages in repository export ([@samdickson22](https://github.com/samdickson22))
 
@@ -385,9 +385,9 @@
   as `callProviderMetadata`). Provider- or app-scoped metadata such as agent
   attribution now survives the conversion to assistant-ui messages.
 
-- [#4650](https://github.com/assistant-ui/assistant-ui/pull/4650) [`e3aba86`](https://github.com/assistant-ui/assistant-ui/commit/e3aba86b7a788261d25921e4a58cebbe7a59fb44) - fix: make the default attachment adapter work without FileReader (Node, react-ink, SSR) by sharing a single getFileDataURL from @assistant-ui/core/internal, whose base64 fallback chunks large inputs and works on runtimes without Buffer ([@ShobhitPatra](https://github.com/ShobhitPatra))
+- [#4650](https://github.com/assistant-ui/assistant-ui/pull/4650) [`e3aba86`](https://github.com/assistant-ui/assistant-ui/commit/e3aba86b7a788261d25921e4a58cebbe7a59fb44) - fix: make the default attachment adapter work without FileReader (Node, react-ink, SSR) by sharing a single getFileDataURL from @hitchsoftware/assistant-ui-core/internal, whose base64 fallback chunks large inputs and works on runtimes without Buffer ([@ShobhitPatra](https://github.com/ShobhitPatra))
 
-- [#4901](https://github.com/assistant-ui/assistant-ui/pull/4901) [`25f9eb2`](https://github.com/assistant-ui/assistant-ui/commit/25f9eb2caacade2e5522f92e3221ee8173da0608) - refactor: host the streaming-stable tool-args stringifier in @assistant-ui/core/internal ([@ShobhitPatra](https://github.com/ShobhitPatra))
+- [#4901](https://github.com/assistant-ui/assistant-ui/pull/4901) [`25f9eb2`](https://github.com/assistant-ui/assistant-ui/commit/25f9eb2caacade2e5522f92e3221ee8173da0608) - refactor: host the streaming-stable tool-args stringifier in @hitchsoftware/assistant-ui-core/internal ([@ShobhitPatra](https://github.com/ShobhitPatra))
 
 - [#4887](https://github.com/assistant-ui/assistant-ui/pull/4887) [`d03e5cf`](https://github.com/assistant-ui/assistant-ui/commit/d03e5cf0e6efada832503fedc565a1fb8f14676a) - chore: update dependencies ([@Yonom](https://github.com/Yonom))
 
@@ -469,7 +469,7 @@
 
 - [#4426](https://github.com/assistant-ui/assistant-ui/pull/4426) [`68dfbaa`](https://github.com/assistant-ui/assistant-ui/commit/68dfbaa348fba7ccec251c63d0c5cc8765e42a64) - chore: mark `generateId` and `fromThreadMessageLike` as experimental ([@okisdev](https://github.com/okisdev))
 
-  these two utilities became public in [#4414](https://github.com/assistant-ui/assistant-ui/issues/4414). they now carry an `@deprecated` JSDoc noting the API is experimental and may change without notice, matching how the other unstable public utilities (e.g. `bindExternalStoreMessage`) are flagged. the distribution packages (`@assistant-ui/react`, `@assistant-ui/react-native`, `@assistant-ui/react-ink`) re-export them, so the annotation lands in their published types too.
+  these two utilities became public in [#4414](https://github.com/assistant-ui/assistant-ui/issues/4414). they now carry an `@deprecated` JSDoc noting the API is experimental and may change without notice, matching how the other unstable public utilities (e.g. `bindExternalStoreMessage`) are flagged. the distribution packages (`@hitchsoftware/assistant-ui-react`, `@hitchsoftware/assistant-ui-react-native`, `@hitchsoftware/assistant-ui-react-ink`) re-export them, so the annotation lands in their published types too.
 
 - [#4420](https://github.com/assistant-ui/assistant-ui/pull/4420) [`fe24ad6`](https://github.com/assistant-ui/assistant-ui/commit/fe24ad645e292cc77d9bdda6b0c18ccd8be23096) - feat(react-ag-ui): apply external state from `ThreadHistoryAdapter.load()` ([@dkachur1](https://github.com/dkachur1))
 
@@ -481,7 +481,7 @@
 
 - [#4414](https://github.com/assistant-ui/assistant-ui/pull/4414) [`344f737`](https://github.com/assistant-ui/assistant-ui/commit/344f7370511f7238db17e1982f2a43a10829604c) - feat: export `fromThreadMessageLike` and `generateId` from the public API ([@okisdev](https://github.com/okisdev))
 
-  these two utilities were only reachable via `@assistant-ui/core/internal`, so materializing a `ThreadMessageLike` into a `ThreadMessage`, or generating an id for a hand-built message, meant reaching into internals (the first-party ag-ui and a2a runtimes already did). they are now exported from `@assistant-ui/core`, `@assistant-ui/react`, `@assistant-ui/react-native`, and `@assistant-ui/react-ink`. also removes the now-redundant duplicate listing of both from the unstable `INTERNAL` namespace (the one in-repo consumer, the with-ffmpeg example, now uses the public export).
+  these two utilities were only reachable via `@hitchsoftware/assistant-ui-core/internal`, so materializing a `ThreadMessageLike` into a `ThreadMessage`, or generating an id for a hand-built message, meant reaching into internals (the first-party ag-ui and a2a runtimes already did). they are now exported from `@hitchsoftware/assistant-ui-core`, `@hitchsoftware/assistant-ui-react`, `@hitchsoftware/assistant-ui-react-native`, and `@hitchsoftware/assistant-ui-react-ink`. also removes the now-redundant duplicate listing of both from the unstable `INTERNAL` namespace (the one in-repo consumer, the with-ffmpeg example, now uses the public export).
 
 - [#4415](https://github.com/assistant-ui/assistant-ui/pull/4415) [`a2e21ee`](https://github.com/assistant-ui/assistant-ui/commit/a2e21ee797761907db9b7e4559da2a41afd00fc9) - perf: sync the external-store `messageRepository` incrementally instead of clear()+import() ([@okisdev](https://github.com/okisdev))
 
@@ -493,7 +493,7 @@
 
 - [#4393](https://github.com/assistant-ui/assistant-ui/pull/4393) [`434bba5`](https://github.com/assistant-ui/assistant-ui/commit/434bba5f7c59ab7cf6f1c78a8898fd4d3addb12d) - fix: resolve typecheck regressions ([@Yonom](https://github.com/Yonom))
 
-- [#4392](https://github.com/assistant-ui/assistant-ui/pull/4392) [`4cc7eaa`](https://github.com/assistant-ui/assistant-ui/commit/4cc7eaac61d68ae970b998465bb7e5c722cc9dda) - chore: update peer and dependency ranges for @assistant-ui/tap 0.9 ([@Yonom](https://github.com/Yonom))
+- [#4392](https://github.com/assistant-ui/assistant-ui/pull/4392) [`4cc7eaa`](https://github.com/assistant-ui/assistant-ui/commit/4cc7eaac61d68ae970b998465bb7e5c722cc9dda) - chore: update peer and dependency ranges for @hitchsoftware/assistant-ui-tap 0.9 ([@Yonom](https://github.com/Yonom))
 
 - Updated dependencies [[`434bba5`](https://github.com/assistant-ui/assistant-ui/commit/434bba5f7c59ab7cf6f1c78a8898fd4d3addb12d)]:
   - assistant-stream@0.3.23
@@ -506,7 +506,7 @@
 
 - [#4385](https://github.com/assistant-ui/assistant-ui/pull/4385) [`ae59baf`](https://github.com/assistant-ui/assistant-ui/commit/ae59baf3bb9b1779f403d378aca19bb3d83781ff) - feat: precompile packages with React Compiler ([@Yonom](https://github.com/Yonom))
   - aui-build runs React Compiler over packages that depend on tap and remaps `react/compiler-runtime` to the tap shim subpath, so compiled hooks and components work both in React components and inside tap resource renders
-  - `@assistant-ui/tap/react-shim` exports `useMemoCache` (tap inside a resource render, `React.__COMPILER_RUNTIME.c` otherwise, with a React 18 polyfill); new `@assistant-ui/tap/react-shim/compiler-runtime` subpath mirrors `react/compiler-runtime`'s `c` export
+  - `@hitchsoftware/assistant-ui-tap/react-shim` exports `useMemoCache` (tap inside a resource render, `React.__COMPILER_RUNTIME.c` otherwise, with a React 18 polyfill); new `@hitchsoftware/assistant-ui-tap/react-shim/compiler-runtime` subpath mirrors `react/compiler-runtime`'s `c` export
   - tap implements `useSyncExternalStore` and a no-op `useDebugValue`; `useSubscribable` now builds on `useSyncExternalStore` so its store reads stay visible to the compiler
   - `AssistantProviderBase` opts out via `"use no memo"` because the runtime receives options through an effect inside a re-rendered child element
 
@@ -527,7 +527,7 @@
 
 - [#4359](https://github.com/assistant-ui/assistant-ui/pull/4359) [`59d252f`](https://github.com/assistant-ui/assistant-ui/commit/59d252fa09c1511acd7e31c9d8178514c5a5cb77) - feat: branch switching for the ExternalThread client ([@okisdev](https://github.com/okisdev))
 
-  `ExternalThread` accepts an optional `branches` adapter (`ExternalThreadBranchAdapter` in `@assistant-ui/core`, re-exported from `@assistant-ui/react`): `getBranches(messageId)` returns ordered sibling branch ids and `switchToBranch(branchId)` makes a sibling visible by swapping the `messages` array. messages with more than one sibling get real `branchNumber`/`branchCount`, which is what shows the branch picker; `capabilities.switchToBranch` is set for parity with the legacy external store. without the adapter, behavior is unchanged.
+  `ExternalThread` accepts an optional `branches` adapter (`ExternalThreadBranchAdapter` in `@hitchsoftware/assistant-ui-core`, re-exported from `@hitchsoftware/assistant-ui-react`): `getBranches(messageId)` returns ordered sibling branch ids and `switchToBranch(branchId)` makes a sibling visible by swapping the `messages` array. messages with more than one sibling get real `branchNumber`/`branchCount`, which is what shows the branch picker; `capabilities.switchToBranch` is set for parity with the legacy external store. without the adapter, behavior is unchanged.
 
 - [#4347](https://github.com/assistant-ui/assistant-ui/pull/4347) [`feecac3`](https://github.com/assistant-ui/assistant-ui/commit/feecac38c6ba0f8f30ec356376d1d6b19188e08f) - feat: support tool approvals on the local runtime ([@okisdev](https://github.com/okisdev))
 
@@ -535,7 +535,7 @@
 
   resumed runs (from `respondToToolApproval` and `addToolResult` alike) now go through the same run loop as `startRun`: they continue multi-step turns instead of stalling after one roundtrip, emit `runStart`/`runEnd` events, mark the message queue busy so a concurrent send no longer aborts the in-flight roundtrip, and regenerate suggestions on completion. `addToolResult` also notifies subscribers when it records a result without resuming. `resumeToolCall` still throws, now with an error that points at the supported alternatives, and the `unstable_humanToolNames` JSDoc no longer describes the pause as an approval ([#4339](https://github.com/assistant-ui/assistant-ui/issues/4339)).
 
-- [#4325](https://github.com/assistant-ui/assistant-ui/pull/4325) [`5a4f20e`](https://github.com/assistant-ui/assistant-ui/commit/5a4f20e75dcd93aeb70a4a5582a0a5a1f870b4f2) - chore: update @assistant-ui/tap dependency ranges to ^0.7.0 ([@Yonom](https://github.com/Yonom))
+- [#4325](https://github.com/assistant-ui/assistant-ui/pull/4325) [`5a4f20e`](https://github.com/assistant-ui/assistant-ui/commit/5a4f20e75dcd93aeb70a4a5582a0a5a1f870b4f2) - chore: update @hitchsoftware/assistant-ui-tap dependency ranges to ^0.7.0 ([@Yonom](https://github.com/Yonom))
 
 - [#4328](https://github.com/assistant-ui/assistant-ui/pull/4328) [`f10b8ae`](https://github.com/assistant-ui/assistant-ui/commit/f10b8ae6659ed8df8b0c25b5bb2bb8cfa7d7a718) - feat: expose `lastMessageAt` on thread list items, populated from the cloud thread list adapter ([@okisdev](https://github.com/okisdev))
 
@@ -586,7 +586,7 @@
 ### Patch Changes
 
 - Updated dependencies:
-  - @assistant-ui/tap@0.6.1
+  - @hitchsoftware/assistant-ui-tap@0.6.1
 
 ## 0.2.11
 
@@ -604,7 +604,7 @@
 
 - [#4246](https://github.com/assistant-ui/assistant-ui/pull/4246) [`dbdfb15`](https://github.com/assistant-ui/assistant-ui/commit/dbdfb15e8b609d3886c71fedb25a9d8345e5fc3c) - feat: message queuing for external-store, langgraph, and local runtimes ([@okisdev](https://github.com/okisdev))
 
-  the composer can now stay usable while a run is in progress: a message sent during a run is held in `composer.queue` (rendered via `ComposerPrimitive.Queue` / `QueueItemPrimitive.*`) and processed once the run settles. external-store adapters opt in by providing a `queue` adapter (typically built with the new `createMessageQueue` helper); `useLangGraphRuntime` and `useLocalRuntime` opt in via `unstable_enableMessageQueue`. `ExternalThreadQueueAdapter` now lives in `@assistant-ui/core` (still re-exported from `@assistant-ui/react`).
+  the composer can now stay usable while a run is in progress: a message sent during a run is held in `composer.queue` (rendered via `ComposerPrimitive.Queue` / `QueueItemPrimitive.*`) and processed once the run settles. external-store adapters opt in by providing a `queue` adapter (typically built with the new `createMessageQueue` helper); `useLangGraphRuntime` and `useLocalRuntime` opt in via `unstable_enableMessageQueue`. `ExternalThreadQueueAdapter` now lives in `@hitchsoftware/assistant-ui-core` (still re-exported from `@hitchsoftware/assistant-ui-react`).
 
 - [#4249](https://github.com/assistant-ui/assistant-ui/pull/4249) [`ca191dc`](https://github.com/assistant-ui/assistant-ui/commit/ca191dc63f4a63c7d3f98566e9febd7d7f857aec) - feat: add externalTool for render-only generative toolkit entries ([@Yonom](https://github.com/Yonom))
 
@@ -612,7 +612,7 @@
 
 - [#4256](https://github.com/assistant-ui/assistant-ui/pull/4256) [`44ff4bf`](https://github.com/assistant-ui/assistant-ui/commit/44ff4bf5765ec2675454362a00214cd9de5cfb60) - feat: rename hitlTool to humanTool while keeping deprecated compatibility aliases ([@Yonom](https://github.com/Yonom))
 
-- [#4245](https://github.com/assistant-ui/assistant-ui/pull/4245) [`26a365b`](https://github.com/assistant-ui/assistant-ui/commit/26a365bb2b5bf840e21cd0caf1870627fb57c045) - fix: make `SimpleTextAttachmentAdapter` and `SimpleImageAttachmentAdapter` work without `FileReader`. they read files via the browser only `FileReader`, so sending an attachment in a non browser runtime (e.g. `@assistant-ui/react-ink` in a terminal) threw `ReferenceError: FileReader is not defined`. the adapters now feature detect: they keep using `FileReader` when it exists (browser, and React Native whose Blob polyfill provides it) and fall back to `file.text()` / `file.arrayBuffer()` in Node. output is byte identical across all three environments, so `@assistant-ui/react`, `@assistant-ui/react-native`, and `@assistant-ui/react-ink` all keep re-exporting the same core implementation. ([@ShobhitPatra](https://github.com/ShobhitPatra))
+- [#4245](https://github.com/assistant-ui/assistant-ui/pull/4245) [`26a365b`](https://github.com/assistant-ui/assistant-ui/commit/26a365bb2b5bf840e21cd0caf1870627fb57c045) - fix: make `SimpleTextAttachmentAdapter` and `SimpleImageAttachmentAdapter` work without `FileReader`. they read files via the browser only `FileReader`, so sending an attachment in a non browser runtime (e.g. `@hitchsoftware/assistant-ui-react-ink` in a terminal) threw `ReferenceError: FileReader is not defined`. the adapters now feature detect: they keep using `FileReader` when it exists (browser, and React Native whose Blob polyfill provides it) and fall back to `file.text()` / `file.arrayBuffer()` in Node. output is byte identical across all three environments, so `@hitchsoftware/assistant-ui-react`, `@hitchsoftware/assistant-ui-react-native`, and `@hitchsoftware/assistant-ui-react-ink` all keep re-exporting the same core implementation. ([@ShobhitPatra](https://github.com/ShobhitPatra))
 
 - Updated dependencies [[`15878d8`](https://github.com/assistant-ui/assistant-ui/commit/15878d8114edbbb82c2a467cf811478e5f4e08bc)]:
   - assistant-stream@0.3.21
@@ -642,16 +642,16 @@
 - Updated dependencies [[`cba2b42`](https://github.com/assistant-ui/assistant-ui/commit/cba2b42c26083e730ae07194186ab4473f9f4cf3), [`58f80e0`](https://github.com/assistant-ui/assistant-ui/commit/58f80e09b51a9d025403f8692c3f41adc6d403e0), [`78ff336`](https://github.com/assistant-ui/assistant-ui/commit/78ff336028ce125608a4b716a93a2519ad6d9eab), [`5fe118d`](https://github.com/assistant-ui/assistant-ui/commit/5fe118d6e61fd661859ee0d6b5ef10a370992a84), [`dcd5897`](https://github.com/assistant-ui/assistant-ui/commit/dcd5897f6dd6ca6bfe6978c3c03371e070965eab), [`ae54c55`](https://github.com/assistant-ui/assistant-ui/commit/ae54c55c8c8b0f9e9ef455ced1498f37d998c6cb)]:
   - assistant-stream@0.3.20
   - assistant-cloud@0.1.31
-  - @assistant-ui/store@0.2.13
-  - @assistant-ui/tap@0.5.14
+  - @hitchsoftware/assistant-ui-store@0.2.13
+  - @hitchsoftware/assistant-ui-tap@0.5.14
 
 ## 0.2.9
 
 ### Patch Changes
 
-- [#4176](https://github.com/assistant-ui/assistant-ui/pull/4176) [`27ae936`](https://github.com/assistant-ui/assistant-ui/commit/27ae936dec6dc5d05d21fd892af0a8e1db61928e) - feat: add the `ToolkitDeclaration` / `ToolkitDeclarationDefinition` types for authoring a toolkit permissively (a backend tool may declare `description`/`parameters`/`execute`); the canonical `Toolkit` keeps those fields erased. Author with `defineToolkit()` from `@assistant-ui/react`, which the `"use generative"` compiler strips per build. ([@Yonom](https://github.com/Yonom))
+- [#4176](https://github.com/assistant-ui/assistant-ui/pull/4176) [`27ae936`](https://github.com/assistant-ui/assistant-ui/commit/27ae936dec6dc5d05d21fd892af0a8e1db61928e) - feat: add the `ToolkitDeclaration` / `ToolkitDeclarationDefinition` types for authoring a toolkit permissively (a backend tool may declare `description`/`parameters`/`execute`); the canonical `Toolkit` keeps those fields erased. Author with `defineToolkit()` from `@hitchsoftware/assistant-ui-react`, which the `"use generative"` compiler strips per build. ([@Yonom](https://github.com/Yonom))
 
-- [#4176](https://github.com/assistant-ui/assistant-ui/pull/4176) [`27ae936`](https://github.com/assistant-ui/assistant-ui/commit/27ae936dec6dc5d05d21fd892af0a8e1db61928e) - feat: move the `defineToolkit` and `hitl` use-generative markers from `@assistant-ui/next` into `@assistant-ui/core/react`, so they ship once from every distribution (`@assistant-ui/react`, `@assistant-ui/react-native`, `@assistant-ui/react-ink`) and stay portable across build targets. Import them from `@assistant-ui/react` instead of `@assistant-ui/next`; they remain no-op markers stripped at build time by a `"use generative"` compiler. ([@Yonom](https://github.com/Yonom))
+- [#4176](https://github.com/assistant-ui/assistant-ui/pull/4176) [`27ae936`](https://github.com/assistant-ui/assistant-ui/commit/27ae936dec6dc5d05d21fd892af0a8e1db61928e) - feat: move the `defineToolkit` and `hitl` use-generative markers from `@hitchsoftware/assistant-ui-next` into `@hitchsoftware/assistant-ui-core/react`, so they ship once from every distribution (`@hitchsoftware/assistant-ui-react`, `@hitchsoftware/assistant-ui-react-native`, `@hitchsoftware/assistant-ui-react-ink`) and stay portable across build targets. Import them from `@hitchsoftware/assistant-ui-react` instead of `@hitchsoftware/assistant-ui-next`; they remain no-op markers stripped at build time by a `"use generative"` compiler. ([@Yonom](https://github.com/Yonom))
 
 - Updated dependencies [[`27ae936`](https://github.com/assistant-ui/assistant-ui/commit/27ae936dec6dc5d05d21fd892af0a8e1db61928e)]:
   - assistant-stream@0.3.19
@@ -660,16 +660,16 @@
 
 ### Patch Changes
 
-- [#4172](https://github.com/assistant-ui/assistant-ui/pull/4172) [`1315789`](https://github.com/assistant-ui/assistant-ui/commit/13157895e4d69ad4266d6ab278edfc2e3ea1de92) - feat: add the `ToolkitDeclaration` / `ToolkitDeclarationDefinition` types for authoring a toolkit permissively (a backend tool may declare `description`/`parameters`/`execute`); the canonical `Toolkit` keeps those fields erased. Author with `defineToolkit()` from `@assistant-ui/next`, which the `"use generative"` compiler strips per build. ([@Yonom](https://github.com/Yonom))
+- [#4172](https://github.com/assistant-ui/assistant-ui/pull/4172) [`1315789`](https://github.com/assistant-ui/assistant-ui/commit/13157895e4d69ad4266d6ab278edfc2e3ea1de92) - feat: add the `ToolkitDeclaration` / `ToolkitDeclarationDefinition` types for authoring a toolkit permissively (a backend tool may declare `description`/`parameters`/`execute`); the canonical `Toolkit` keeps those fields erased. Author with `defineToolkit()` from `@hitchsoftware/assistant-ui-next`, which the `"use generative"` compiler strips per build. ([@Yonom](https://github.com/Yonom))
 
 - [#4151](https://github.com/assistant-ui/assistant-ui/pull/4151) [`299d448`](https://github.com/assistant-ui/assistant-ui/commit/299d4488c8a5bbec0679680866f5975055fe71b3) - chore: drop stale `biome-ignore` pragmas now that the repo lints with oxlint ([@okisdev](https://github.com/okisdev))
 
 - [#4136](https://github.com/assistant-ui/assistant-ui/pull/4136) [`4429aa3`](https://github.com/assistant-ui/assistant-ui/commit/4429aa32f6bd4fd50a7a8ddbad1e19f6ccad192b) - centralize thread-level shared options forwarding across runtime wrapper hooks. follow-up to [#4135](https://github.com/assistant-ui/assistant-ui/issues/4135). ([@okisdev](https://github.com/okisdev))
 
-  new public exports from `@assistant-ui/core` (re-exported from `@assistant-ui/react`):
+  new public exports from `@hitchsoftware/assistant-ui-core` (re-exported from `@hitchsoftware/assistant-ui-react`):
   - `ExternalStoreSharedOptions`, a typed `Pick` over `ExternalStoreAdapter` covering the four thread-level optional fields every wrapper forwards: `isDisabled`, `isSendDisabled`, `unstable_capabilities`, `suggestions`.
   - `pickExternalStoreSharedOptions(options)`, plucks those four fields from a wider options object. the body uses `satisfies Required<...>` so adding a key to the type without copying it in the function is a compile error rather than a silent missing-field bug.
-  - `useExternalStoreSharedOptions(options)` (from `@assistant-ui/core/react`), a memoized variant for wrappers that wrap their store in `useMemo`. lets the wrapper list a single stable `shared` reference as a dep instead of enumerating the four fields. same `satisfies` guard internally so the destructure stays in sync with the type.
+  - `useExternalStoreSharedOptions(options)` (from `@hitchsoftware/assistant-ui-core/react`), a memoized variant for wrappers that wrap their store in `useMemo`. lets the wrapper list a single stable `shared` reference as a dep instead of enumerating the four fields. same `satisfies` guard internally so the destructure stays in sync with the type.
 
   internal: every runtime wrapper hook (`useChatRuntime`, `useAISDKRuntime`, `useLangGraphRuntime`, `useA2ARuntime`, `useAgUiRuntime`, `useAdkRuntime`, `useStreamRuntime`, `useOpenCodeRuntime`) now uses these helpers instead of inlining the conditional spreads added in [#4135](https://github.com/assistant-ui/assistant-ui/issues/4135). each wrapper sheds 20 to 40 lines of duplicated declarations and conditional spreads; future additions to the shared option set propagate through a single edit in `pickExternalStoreSharedOptions` instead of touching every wrapper. no user-facing behavior change.
 
@@ -712,23 +712,23 @@
 
 - Updated dependencies [[`1315789`](https://github.com/assistant-ui/assistant-ui/commit/13157895e4d69ad4266d6ab278edfc2e3ea1de92), [`299d448`](https://github.com/assistant-ui/assistant-ui/commit/299d4488c8a5bbec0679680866f5975055fe71b3), [`2dec3ae`](https://github.com/assistant-ui/assistant-ui/commit/2dec3aeba0431178f4ca26e470b304f5a89390ba), [`fcb6baf`](https://github.com/assistant-ui/assistant-ui/commit/fcb6baf161a9ee7dda65191e0b42de12b368724d), [`c4d3eea`](https://github.com/assistant-ui/assistant-ui/commit/c4d3eeac6907a2fc15718f3c710d73d24eaeb652), [`331f2f7`](https://github.com/assistant-ui/assistant-ui/commit/331f2f7f432285fd0cdc14e0862b550e5d15769e)]:
   - assistant-stream@0.3.18
-  - @assistant-ui/store@0.2.13
-  - @assistant-ui/tap@0.5.14
+  - @hitchsoftware/assistant-ui-store@0.2.13
+  - @hitchsoftware/assistant-ui-tap@0.5.14
   - assistant-cloud@0.1.30
 
 ## 0.2.7
 
 ### Patch Changes
 
-- [#4121](https://github.com/assistant-ui/assistant-ui/pull/4121) [`7395092`](https://github.com/assistant-ui/assistant-ui/commit/73950929dbebadb275e3bdee23331f65f2635a33) - feat: detect and diagnose duplicate `@assistant-ui/core` installs ([@Yonom](https://github.com/Yonom))
-  - In dev mode (`NODE_ENV !== "production"`), `@assistant-ui/core` now emits a single `console.warn` when it detects a second copy of itself loaded into the same JavaScript runtime. Mismatched transitive versions are a common source of subtle bugs (lost tool registrations, broken context lookups, failed `instanceof` checks — see issue [#4101](https://github.com/assistant-ui/assistant-ui/issues/4101)). The warning points users at `npx assistant-ui doctor`.
+- [#4121](https://github.com/assistant-ui/assistant-ui/pull/4121) [`7395092`](https://github.com/assistant-ui/assistant-ui/commit/73950929dbebadb275e3bdee23331f65f2635a33) - feat: detect and diagnose duplicate `@hitchsoftware/assistant-ui-core` installs ([@Yonom](https://github.com/Yonom))
+  - In dev mode (`NODE_ENV !== "production"`), `@hitchsoftware/assistant-ui-core` now emits a single `console.warn` when it detects a second copy of itself loaded into the same JavaScript runtime. Mismatched transitive versions are a common source of subtle bugs (lost tool registrations, broken context lookups, failed `instanceof` checks — see issue [#4101](https://github.com/assistant-ui/assistant-ui/issues/4101)). The warning points users at `npx assistant-ui doctor`.
   - New `assistant-ui doctor` CLI command. It walks `node_modules` recursively (including nested copies), surfaces every duplicate version of any `@assistant-ui/*`, `assistant-stream` or `assistant-cloud` package, queries the npm registry for the latest versions and reports outdated installs. Use `--no-network` to skip the registry check.
 
 - [#4118](https://github.com/assistant-ui/assistant-ui/pull/4118) [`a6e0653`](https://github.com/assistant-ui/assistant-ui/commit/a6e0653bad29fb93627646a77c3383000c57ee33) - feat(core): build a client-side tool-invocations pipeline directly into `useExternalStoreRuntime`. Tool-call parts in messages now fire `streamCall` / `execute` automatically for any external-store runtime that opts in. Opt in per-adapter via `unstable_enableToolInvocations: true` (off by default — most external-store runtimes either run tools server-side or already wire their own client-side dispatch path; double-firing is the risk). The `_store.isLoading` flag signals when initial history is loaded: snapshots observed while `isLoading === true` are treated as historical (no fire), matching the contract that callers like `importExternalState` already rely on. Six in-tree runtimes (`useAssistantTransportRuntime`, `useAISDKRuntime`, `useLangGraphRuntime`, `useStreamRuntime`, `useAgUiRuntime`, `useAdkRuntime`) are migrated to the embedded tracker; the standalone `useToolInvocations` React hook is removed. Adds `ExternalStoreAdapter.setToolStatuses` so adapters can mirror the tracker's per-tool-call status into local React state for converter metadata. Auto-aborts in-flight tool calls on new turns (`append()` with `startRun`, `startRun()`) so a tool that finishes after the user moves on can no longer feed a stale result into the next turn. ([@Yonom](https://github.com/Yonom))
 
 - Updated dependencies [[`cabfc71`](https://github.com/assistant-ui/assistant-ui/commit/cabfc715e99f23a55dc1276a6028792d7ecad822)]:
-  - @assistant-ui/tap@0.5.13
-  - @assistant-ui/store@0.2.12
+  - @hitchsoftware/assistant-ui-tap@0.5.13
+  - @hitchsoftware/assistant-ui-store@0.2.12
 
 ## 0.2.6
 
@@ -796,8 +796,8 @@
 - Updated dependencies [[`13a12c4`](https://github.com/assistant-ui/assistant-ui/commit/13a12c46c94f7e5e62af02692cf3479fff48bd02), [`01244a5`](https://github.com/assistant-ui/assistant-ui/commit/01244a56026ee92bd4e49cb985136f9eb6d45154), [`1e21076`](https://github.com/assistant-ui/assistant-ui/commit/1e2107648bc281f1673f4ad053fd019b28a602d0)]:
   - assistant-stream@0.3.16
   - assistant-cloud@0.1.29
-  - @assistant-ui/store@0.2.12
-  - @assistant-ui/tap@0.5.12
+  - @hitchsoftware/assistant-ui-store@0.2.12
+  - @hitchsoftware/assistant-ui-tap@0.5.12
 
 ## 0.2.4
 
@@ -825,21 +825,21 @@ parts`. Keying by part index instead causes React to unmount the
 
 - [#4023](https://github.com/assistant-ui/assistant-ui/pull/4023) [`94548fa`](https://github.com/assistant-ui/assistant-ui/commit/94548fa8d587962d8ab0338a9609a9ff21240c33) - docs: add JSDoc for core runtime and assistant tool APIs ([@AVGVSTVS96](https://github.com/AVGVSTVS96))
 
-- [#3513](https://github.com/assistant-ui/assistant-ui/pull/3513) [`8b6fc88`](https://github.com/assistant-ui/assistant-ui/commit/8b6fc8836871e62efc2fd8c131c6783e12c5fc47) - fix: guard `navigator.clipboard` availability and swallow write rejections in `ActionBarPrimitive.Copy`. Previously, copy clicks in SSR, non-HTTPS contexts, or older browsers without the Clipboard API threw a `ReferenceError`, and permission-denied rejections surfaced as unhandled promise rejections. The web copyToClipboard implementation in `@assistant-ui/react` now early-rejects when the API is unavailable, and `useActionBarCopy` in `@assistant-ui/core` silently absorbs the rejection so the rest of the UI is unaffected. ([@JustAnOkapi](https://github.com/JustAnOkapi))
+- [#3513](https://github.com/assistant-ui/assistant-ui/pull/3513) [`8b6fc88`](https://github.com/assistant-ui/assistant-ui/commit/8b6fc8836871e62efc2fd8c131c6783e12c5fc47) - fix: guard `navigator.clipboard` availability and swallow write rejections in `ActionBarPrimitive.Copy`. Previously, copy clicks in SSR, non-HTTPS contexts, or older browsers without the Clipboard API threw a `ReferenceError`, and permission-denied rejections surfaced as unhandled promise rejections. The web copyToClipboard implementation in `@hitchsoftware/assistant-ui-react` now early-rejects when the API is unavailable, and `useActionBarCopy` in `@hitchsoftware/assistant-ui-core` silently absorbs the rejection so the rest of the UI is unaffected. ([@JustAnOkapi](https://github.com/JustAnOkapi))
 
 - [#4057](https://github.com/assistant-ui/assistant-ui/pull/4057) [`179895f`](https://github.com/assistant-ui/assistant-ui/commit/179895fdcb56edee2e8d9efb4b38cd3859eeecdd) - fix(core): fire `streamCall` for already-resolved tool calls observed after the initial snapshot, and promote in-progress tool calls from the initial snapshot once they change. Previously the runtime silently skipped `streamCall` whenever a tool-call part arrived already-resolved (history reload, thread switch, mid-run resume, PTC sub-call surfacing), forcing fragile render-effect fallbacks. `execute` stays suppressed for these cases so side effects don't double-run. ([@Yonom](https://github.com/Yonom))
 
   Also collapses the per-tool-call ref soup inside `useToolInvocations` into a single discriminated `ToolCallEntry` map keyed by logical tool-call id, with execution-lifecycle bookkeeping tracked separately by physical stream id. Removes `ignoredToolIds`, `lastToolStates`, `toolCallIdAliasesRef` identity entries, the parallel `restoredSignaturesRef`/`preResolvedToolCallIdsRef`/`startedExecutionToolCallIdsRef` sets, and the early-return that suppressed `streamCall` for already-resolved tool calls. `reset()` semantics are unchanged; integrators that already call `reset()` on history reload don't need to change.
 
-- [#3958](https://github.com/assistant-ui/assistant-ui/pull/3958) [`7a8bf26`](https://github.com/assistant-ui/assistant-ui/commit/7a8bf26eda76f5f8490f96b3ff9dce1ccd072917) - refactor: hoist `MessagePartPrimitiveInProgress` to `@assistant-ui/core/react` so `@assistant-ui/react`, `@assistant-ui/react-ink`, and other distributions can share the same implementation. `@assistant-ui/react`'s `MessagePartPrimitive.InProgress` is unchanged for callers; it now re-exports from core. ([@ShobhitPatra](https://github.com/ShobhitPatra))
+- [#3958](https://github.com/assistant-ui/assistant-ui/pull/3958) [`7a8bf26`](https://github.com/assistant-ui/assistant-ui/commit/7a8bf26eda76f5f8490f96b3ff9dce1ccd072917) - refactor: hoist `MessagePartPrimitiveInProgress` to `@hitchsoftware/assistant-ui-core/react` so `@hitchsoftware/assistant-ui-react`, `@hitchsoftware/assistant-ui-react-ink`, and other distributions can share the same implementation. `@hitchsoftware/assistant-ui-react`'s `MessagePartPrimitive.InProgress` is unchanged for callers; it now re-exports from core. ([@ShobhitPatra](https://github.com/ShobhitPatra))
 
 - [#3636](https://github.com/assistant-ui/assistant-ui/pull/3636) [`3b2bbce`](https://github.com/assistant-ui/assistant-ui/commit/3b2bbce1589b44a13b8b7a570c19bf35a2266fbd) - feat(core): expose modelName and toolNames in ModelContextState ([@ShobhitPatra](https://github.com/ShobhitPatra))
 
 - Updated dependencies [[`845c7c1`](https://github.com/assistant-ui/assistant-ui/commit/845c7c12fecbb448da7f1135c33163b653a50710), [`db721df`](https://github.com/assistant-ui/assistant-ui/commit/db721df32434296ac14eab27030628107975b71c), [`94548fa`](https://github.com/assistant-ui/assistant-ui/commit/94548fa8d587962d8ab0338a9609a9ff21240c33), [`94548fa`](https://github.com/assistant-ui/assistant-ui/commit/94548fa8d587962d8ab0338a9609a9ff21240c33)]:
   - assistant-cloud@0.1.28
-  - @assistant-ui/store@0.2.11
+  - @hitchsoftware/assistant-ui-store@0.2.11
   - assistant-stream@0.3.15
-  - @assistant-ui/tap@0.5.11
+  - @hitchsoftware/assistant-ui-tap@0.5.11
 
 ## 0.2.2
 
@@ -863,8 +863,8 @@ parts`. Keying by part index instead causes React to unmount the
 
   frontend tools can now project their execution output into multi-modal model content (text + image / pdf / arbitrary file parts), aligning with the AI SDK v6 `toModelOutput` callback. previously, tool results were always serialized as a single JSON value, so a "read pdf" style tool had no way to send the PDF back to a multi-modal model.
   - `assistant-stream` exports a new `ToolModelContentPart` type (`{ type: "text", text } | { type: "file", data, mediaType, filename? }`) and a `ToolModelOutputFunction<TArgs, TResult>` callback type. `Tool.toModelOutput` is wired through `unstable_runPendingTools` and `ToolExecutionStream`, attaching the resulting `modelContent` to the `tool-call` part on the assistant message.
-  - `@assistant-ui/core` re-exports `ToolModelContentPart` and adds an optional `modelContent?: readonly ToolModelContentPart[]` field on `ToolCallMessagePart`. existing tools and renderers are unchanged.
-  - `@assistant-ui/react-ai-sdk`'s `frontendTools(...)` helper now also registers a `toModelOutput` on each forwarded tool. it transparently unwraps an envelope that `useAISDKRuntime` writes when a frontend-executed tool produced `modelContent`, turning it into AI SDK's `{ type: "content", value: [...] }` output. plain (non-envelope) outputs fall back to the existing `{ type: "text" | "json", value }` shape, so behavior for tools without `toModelOutput` is unchanged.
+  - `@hitchsoftware/assistant-ui-core` re-exports `ToolModelContentPart` and adds an optional `modelContent?: readonly ToolModelContentPart[]` field on `ToolCallMessagePart`. existing tools and renderers are unchanged.
+  - `@hitchsoftware/assistant-ui-react-ai-sdk`'s `frontendTools(...)` helper now also registers a `toModelOutput` on each forwarded tool. it transparently unwraps an envelope that `useAISDKRuntime` writes when a frontend-executed tool produced `modelContent`, turning it into AI SDK's `{ type: "content", value: [...] }` output. plain (non-envelope) outputs fall back to the existing `{ type: "text" | "json", value }` shape, so behavior for tools without `toModelOutput` is unchanged.
 
   route handlers that adopt `toModelOutput` also need to pass `tools` to `convertToModelMessages` (this is the [AI SDK's documented pattern](https://ai-sdk.dev/docs/reference/ai-sdk-ui/convert-to-model-messages#multi-modal-tool-responses)):
 
@@ -880,7 +880,7 @@ parts`. Keying by part index instead causes React to unmount the
 
   **reserved key.** when a frontend tool defines `toModelOutput`, its result is persisted in the AI SDK chat as `{ __aui_modelContent: ToolModelContentPart[], value: <your result> }`. tools must not return objects whose top-level key is literally `__aui_modelContent`, or `convertMessage` will misread the result. the prefix is namespaced for this reason.
 
-  **read/write compatibility for persisted threads.** the envelope is recognized by `@assistant-ui/react-ai-sdk` from this version onward. if you persist UI messages and read them from multiple environments, upgrade every reader before any writer starts producing `toModelOutput`; otherwise older readers will treat the envelope object as the `result` and break the affected tool `render` functions.
+  **read/write compatibility for persisted threads.** the envelope is recognized by `@hitchsoftware/assistant-ui-react-ai-sdk` from this version onward. if you persist UI messages and read them from multiple environments, upgrade every reader before any writer starts producing `toModelOutput`; otherwise older readers will treat the envelope object as the `result` and break the affected tool `render` functions.
 
 - [#3972](https://github.com/assistant-ui/assistant-ui/pull/3972) [`c9dd16c`](https://github.com/assistant-ui/assistant-ui/commit/c9dd16c4b1edc52f6a2529a9a07ebb7964aee9a1) - fix: `useExternalStoreRuntime` no longer crashes with "Entry not available in the store" when the adapter sets `threadId` to a value that isn't present in `threads`/`archivedThreads`. The runtime now synthesizes a regular thread item for `mainThreadId`, so thin adapters (e.g. `useAgUiRuntime`) that only expose `threadId` resolve correctly on first render and after switching threads. Closes [#3971](https://github.com/assistant-ui/assistant-ui/issues/3971). ([@okisdev](https://github.com/okisdev))
 
@@ -919,7 +919,7 @@ parts`. Keying by part index instead causes React to unmount the
 
 - [#3953](https://github.com/assistant-ui/assistant-ui/pull/3953) [`7098bab`](https://github.com/assistant-ui/assistant-ui/commit/7098bab4c67fbd507c3fad746ef130daa01b3fd6) - Add cursor-based pagination to the thread list. `RemoteThreadListAdapter.list()` accepts an optional `{ after }` cursor and may return `nextCursor` on the response. The runtime exposes `loadMore()`, `hasMore`, and `isLoadingMore` through both the legacy `ThreadListRuntime` API and the tap-only `aui.threads()` path; `ThreadListRuntimeCore.loadMore?()`, `hasMore?`, and `isLoadingMore?` are optional, so non-paginating cores (local, external-store, single-thread, in-memory) remain conformant. ([@okisdev](https://github.com/okisdev))
 
-  `@assistant-ui/react` ships a matching `ThreadListPrimitive.LoadMore` button built on `createActionButton`, plus a `useThreadListLoadMore` primitive hook. Consumers wanting an `IntersectionObserver` sentinel can read `s.threads.hasMore` / `isLoadingMore` from `useAuiState` and call `aui.threads().loadMore()` directly.
+  `@hitchsoftware/assistant-ui-react` ships a matching `ThreadListPrimitive.LoadMore` button built on `createActionButton`, plus a `useThreadListLoadMore` primitive hook. Consumers wanting an `IntersectionObserver` sentinel can read `s.threads.hasMore` / `isLoadingMore` from `useAuiState` and call `aui.threads().loadMore()` directly.
 
   In-flight `loadMore()` calls dedup via a single promise. The existing `_loadGeneration` counter drops stale append callbacks when a `reload()` interleaves a `loadMore()`. The loadMore reducer captures the active adapter so a mid-flight adapter swap cannot leak a stale page. Empty-string `nextCursor` is normalised to `undefined`. `reload()` pre-clears the cursor so consumers reading `hasMore` directly during a reload do not observe a stale value.
 
@@ -929,8 +929,8 @@ parts`. Keying by part index instead causes React to unmount the
 
 - Updated dependencies [[`b090acb`](https://github.com/assistant-ui/assistant-ui/commit/b090acb98f6bf3579aab4efedddaff83a0b54c94), [`5fdf17e`](https://github.com/assistant-ui/assistant-ui/commit/5fdf17e019c91b000c6f4cf9e3e56c89d764a435)]:
   - assistant-stream@0.3.13
-  - @assistant-ui/store@0.2.10
-  - @assistant-ui/tap@0.5.11
+  - @hitchsoftware/assistant-ui-store@0.2.10
+  - @hitchsoftware/assistant-ui-tap@0.5.11
   - assistant-cloud@0.1.27
 
 ## 0.1.17
@@ -939,7 +939,7 @@ parts`. Keying by part index instead causes React to unmount the
 
 - [#3916](https://github.com/assistant-ui/assistant-ui/pull/3916) [`0bbf5dd`](https://github.com/assistant-ui/assistant-ui/commit/0bbf5dd7357c0993958a2e8e55eb60705eca3207) - chore: drop `./*` wildcard export and surface internal attachment status types ([@Yonom](https://github.com/Yonom))
 
-  The `./*` wildcard in `exports` was exposing the entire dist tree as importable subpaths, which inadvertently leaked internal modules (e.g. `@assistant-ui/core/tests/*`, `@assistant-ui/core/types/*`) as public API. Removing it.
+  The `./*` wildcard in `exports` was exposing the entire dist tree as importable subpaths, which inadvertently leaked internal modules (e.g. `@hitchsoftware/assistant-ui-core/tests/*`, `@hitchsoftware/assistant-ui-core/types/*`) as public API. Removing it.
 
   Two attachment status types that were previously only reachable through the wildcard (`PendingAttachmentStatus`, `CompleteAttachmentStatus`) are now re-exported from the package root so that consumers' inferred types remain portable.
 
@@ -951,7 +951,7 @@ parts`. Keying by part index instead causes React to unmount the
 
 - [#3914](https://github.com/assistant-ui/assistant-ui/pull/3914) [`62ec5bd`](https://github.com/assistant-ui/assistant-ui/commit/62ec5bd3368fb69ea7bcde275858e0ea8fa1d59b) - fix: add typesVersions to support moduleResolution: node ([@shashank-100](https://github.com/shashank-100))
 
-  Users with `moduleResolution: node` in their tsconfig were seeing `Property 'message' does not exist on type 'AssistantState'` because the `exports` map sub-paths (e.g. `@assistant-ui/core/react`) are ignored by legacy node module resolution. Adding `typesVersions` makes TypeScript resolve sub-path types correctly under all moduleResolution modes.
+  Users with `moduleResolution: node` in their tsconfig were seeing `Property 'message' does not exist on type 'AssistantState'` because the `exports` map sub-paths (e.g. `@hitchsoftware/assistant-ui-core/react`) are ignored by legacy node module resolution. Adding `typesVersions` makes TypeScript resolve sub-path types correctly under all moduleResolution modes.
 
 - [#3853](https://github.com/assistant-ui/assistant-ui/pull/3853) [`6a919c1`](https://github.com/assistant-ui/assistant-ui/commit/6a919c1fa21113080f46dd0e08142c939dad3ea4) - feat: add `<MessagePrimitive.GroupedParts>` for hierarchical adjacent grouping of message parts ([@Yonom](https://github.com/Yonom))
 
@@ -988,8 +988,8 @@ parts`. Keying by part index instead causes React to unmount the
   allows adapter authors to carry arbitrary backend session data through `list()` / `fetch()` and surface it on the thread list item state. matches the existing `custom: Record<string, unknown>` convention used on `ThreadMessage`, `RunConfig`, and `ChatModelRunResult`. consumers can intersect a typed shape at their own boundary, e.g. `RemoteThreadMetadata & { custom: { workspaceId: string } }`.
 
 - Updated dependencies [[`005f83f`](https://github.com/assistant-ui/assistant-ui/commit/005f83f3ebfb94b3a9d7c34bc7d2a71bbaf63a9e)]:
-  - @assistant-ui/store@0.2.9
-  - @assistant-ui/tap@0.5.10
+  - @hitchsoftware/assistant-ui-store@0.2.9
+  - @hitchsoftware/assistant-ui-tap@0.5.10
 
 ## 0.1.15
 
@@ -1022,8 +1022,8 @@ parts`. Keying by part index instead causes React to unmount the
 - Updated dependencies [[`ce865bc`](https://github.com/assistant-ui/assistant-ui/commit/ce865bc46af996d53f89e18068139d4d38546ca6), [`055dda5`](https://github.com/assistant-ui/assistant-ui/commit/055dda54b68031d0c9c760bf89a7c1036dd2174d), [`d53ff4f`](https://github.com/assistant-ui/assistant-ui/commit/d53ff4f3f8b7d7220c1cb274c4fda335598fb063)]:
   - assistant-stream@0.3.12
   - assistant-cloud@0.1.27
-  - @assistant-ui/store@0.2.8
-  - @assistant-ui/tap@0.5.9
+  - @hitchsoftware/assistant-ui-store@0.2.8
+  - @hitchsoftware/assistant-ui-tap@0.5.9
 
 ## 0.1.14
 
@@ -1034,8 +1034,8 @@ parts`. Keying by part index instead causes React to unmount the
 - Updated dependencies [c988db8]
   - assistant-stream@0.3.11
   - assistant-cloud@0.1.26
-  - @assistant-ui/store@0.2.7
-  - @assistant-ui/tap@0.5.8
+  - @hitchsoftware/assistant-ui-store@0.2.7
+  - @hitchsoftware/assistant-ui-tap@0.5.8
 
 ## 0.1.13
 
@@ -1063,8 +1063,8 @@ parts`. Keying by part index instead causes React to unmount the
 
 - Updated dependencies [376bb00]
   - assistant-cloud@0.1.25
-  - @assistant-ui/tap@0.5.7
-  - @assistant-ui/store@0.2.6
+  - @hitchsoftware/assistant-ui-tap@0.5.7
+  - @hitchsoftware/assistant-ui-store@0.2.6
 
 ## 0.1.12
 
@@ -1117,8 +1117,8 @@ parts`. Keying by part index instead causes React to unmount the
 - Updated dependencies [2dd0c9f]
   - assistant-stream@0.3.9
   - assistant-cloud@0.1.24
-  - @assistant-ui/store@0.2.6
-  - @assistant-ui/tap@0.5.6
+  - @hitchsoftware/assistant-ui-store@0.2.6
+  - @hitchsoftware/assistant-ui-tap@0.5.6
 
 ## 0.1.9
 
@@ -1140,8 +1140,8 @@ parts`. Keying by part index instead causes React to unmount the
 - Updated dependencies [52403c3]
   - assistant-stream@0.3.8
   - assistant-cloud@0.1.23
-  - @assistant-ui/store@0.2.5
-  - @assistant-ui/tap@0.5.5
+  - @hitchsoftware/assistant-ui-store@0.2.5
+  - @hitchsoftware/assistant-ui-tap@0.5.5
 
 ## 0.1.8
 
@@ -1167,9 +1167,9 @@ parts`. Keying by part index instead causes React to unmount the
 - Updated dependencies [28a987a]
 - Updated dependencies [736344c]
 - Updated dependencies [c71cb58]
-  - @assistant-ui/store@0.2.4
+  - @hitchsoftware/assistant-ui-store@0.2.4
   - assistant-stream@0.3.7
-  - @assistant-ui/tap@0.5.4
+  - @hitchsoftware/assistant-ui-tap@0.5.4
 
 ## 0.1.7
 
@@ -1195,8 +1195,8 @@ parts`. Keying by part index instead causes React to unmount the
 - Updated dependencies [02614aa]
   - assistant-stream@0.3.6
   - assistant-cloud@0.1.22
-  - @assistant-ui/store@0.2.3
-  - @assistant-ui/tap@0.5.3
+  - @hitchsoftware/assistant-ui-store@0.2.3
+  - @hitchsoftware/assistant-ui-tap@0.5.3
 
 ## 0.1.5
 
@@ -1217,7 +1217,7 @@ parts`. Keying by part index instead causes React to unmount the
 ### Patch Changes
 
 - 5ae74fe: fix: prevent double-submit when ComposerPrimitive.Send child has type="submit"
-- 8ed9d6f: Refactor React Native component API: move shared runtime logic (remote thread list, external store, cloud adapters, message converter, tool invocations) into @assistant-ui/core for reuse across React and React Native
+- 8ed9d6f: Refactor React Native component API: move shared runtime logic (remote thread list, external store, cloud adapters, message converter, tool invocations) into @hitchsoftware/assistant-ui-core for reuse across React and React Native
 - 01bee2b: Remove zod dependency by using assistant-stream's toJSONSchema utility for schema serialization in AssistantFrameProvider
 
 ## 0.1.2
@@ -1230,24 +1230,24 @@ parts`. Keying by part index instead causes React to unmount the
 
 ### Patch Changes
 
-- a638f05: refactor(core): depend on @assistant-ui/store, register chat scopes via module augmentation
+- a638f05: refactor(core): depend on @hitchsoftware/assistant-ui-store, register chat scopes via module augmentation
 - 28f39fe: Support custom content types via `data-*` prefix in ThreadMessageLike (auto-converted to DataMessagePart), widen `BaseAttachment.type` to accept custom strings, make `contentType` optional
 - 36ef3a2: chore: update dependencies
 - 6692226: feat: support external source attachments in composer
 
   `addAttachment()` now accepts either a `File` or a `CreateAttachment` descriptor, allowing users to add attachments from external sources (URLs, API data, CMS references) without creating dummy `File` objects or requiring an `AttachmentAdapter`.
 
-- c31c0fa: Extract shared React code (model-context, client, types, providers, RuntimeAdapter) into `@assistant-ui/core/react` sub-path so both `@assistant-ui/react` and `@assistant-ui/react-native` re-export from one source.
-- fc98475: feat(core): move `@assistant-ui/tap` to peerDependencies to fix npm deduplication
+- c31c0fa: Extract shared React code (model-context, client, types, providers, RuntimeAdapter) into `@hitchsoftware/assistant-ui-core/react` sub-path so both `@hitchsoftware/assistant-ui-react` and `@hitchsoftware/assistant-ui-react-native` re-export from one source.
+- fc98475: feat(core): move `@hitchsoftware/assistant-ui-tap` to peerDependencies to fix npm deduplication
 - 374f83a: fix(core): stabilize object references in ExternalStoreThreadRuntimeCore to prevent infinite re-render loop
 - 1672be8: feat: bindExternalStoreMessage
-- 14769af: refactor: move RuntimeAdapter base logic to @assistant-ui/core; re-export missing core APIs from distribution packages
+- 14769af: refactor: move RuntimeAdapter base logic to @hitchsoftware/assistant-ui-core; re-export missing core APIs from distribution packages
 - Updated dependencies [36ef3a2]
 - Updated dependencies [fc98475]
 - Updated dependencies [a638f05]
   - assistant-stream@0.3.4
-  - @assistant-ui/store@0.2.1
-  - @assistant-ui/tap@0.5.1
+  - @hitchsoftware/assistant-ui-store@0.2.1
+  - @hitchsoftware/assistant-ui-tap@0.5.1
 
 ## 0.1.0
 
@@ -1258,16 +1258,16 @@ parts`. Keying by part index instead causes React to unmount the
 ### Patch Changes
 
 - 546c053: feat(core): extract subscribable, utils, and model-context; add public/internal API split
-- a7039e3: feat(core): extract remote-thread-list and assistant-transport utilities to @assistant-ui/core
-- 16c10fd: feat(core): extract runtime and adapters to @assistant-ui/core
+- a7039e3: feat(core): extract remote-thread-list and assistant-transport utilities to @hitchsoftware/assistant-ui-core
+- 16c10fd: feat(core): extract runtime and adapters to @hitchsoftware/assistant-ui-core
 - 40a67b6: feat(core): add message, attachment, and utility type definitions
-- b181803: feat(core): introduce @assistant-ui/core package
+- b181803: feat(core): introduce @hitchsoftware/assistant-ui-core package
 
-  Extract framework-agnostic core from @assistant-ui/react. Replace React ComponentType references with framework-agnostic types and decouple AssistantToolProps/AssistantInstructionsConfig from React hook files.
+  Extract framework-agnostic core from @hitchsoftware/assistant-ui-react. Replace React ComponentType references with framework-agnostic types and decouple AssistantToolProps/AssistantInstructionsConfig from React hook files.
 
 - 4d7f712: feat(core): move runtime-to-client bridge to core/store for framework reuse
-- ecc29ec: feat(core): move scope types and client implementations to @assistant-ui/core/store
-- 6e97999: feat(core): move store tap infrastructure to @assistant-ui/core/store
+- ecc29ec: feat(core): move scope types and client implementations to @hitchsoftware/assistant-ui-core/store
+- 6e97999: feat(core): move store tap infrastructure to @hitchsoftware/assistant-ui-core/store
 - Updated dependencies [b65428e]
 - Updated dependencies [b65428e]
 - Updated dependencies [b65428e]
@@ -1277,5 +1277,5 @@ parts`. Keying by part index instead causes React to unmount the
 - Updated dependencies [b65428e]
 - Updated dependencies [93910bd]
 - Updated dependencies [b65428e]
-  - @assistant-ui/tap@0.5.0
+  - @hitchsoftware/assistant-ui-tap@0.5.0
   - assistant-stream@0.3.3

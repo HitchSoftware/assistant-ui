@@ -3,7 +3,7 @@
 import { memo, useState, type ComponentProps } from "react";
 import { FileTextIcon } from "lucide-react";
 import type { VariantProps } from "class-variance-authority";
-import type { SourceMessagePartComponent } from "@assistant-ui/react";
+import type { SourceMessagePartComponent } from "@hitchsoftware/assistant-ui-react";
 import { cn } from "@/lib/utils";
 import { Badge, badgeVariants } from "./badge";
 

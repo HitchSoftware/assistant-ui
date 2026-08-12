@@ -13,7 +13,7 @@ import { bench, describe } from "vitest";
 import { createElement, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { flushSync } from "react-dom";
-import { resource, useResources, withKey } from "@assistant-ui/tap";
+import { resource, useResources, withKey } from "@hitchsoftware/assistant-ui-tap";
 
 (globalThis as any).IS_REACT_ACT_ENVIRONMENT = false;
 

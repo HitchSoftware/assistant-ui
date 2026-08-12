@@ -13,7 +13,7 @@ import { PartGroupingSample } from "@/components/docs/samples/part-grouping";
 For adjacent grouping, use `MessagePrimitive.GroupedParts`. For the common case — grouping by `part.type` — pass `groupPartByType` to map each part type to a group-key path. Adjacent parts that share a group key are coalesced and rendered through the group case.
 
 ```tsx title="/components/assistant-ui/thread.tsx"
-import { MessagePrimitive, groupPartByType } from "@assistant-ui/react";
+import { MessagePrimitive, groupPartByType } from "@hitchsoftware/assistant-ui-react";
 
 const AssistantMessage: FC = () => {
   return (
@@ -64,7 +64,7 @@ Group adjacent content that shares the same parent relationship:
 ```tsx
 import { useState, type PropsWithChildren } from "react";
 import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
-import { MessagePrimitive } from "@assistant-ui/react";
+import { MessagePrimitive } from "@hitchsoftware/assistant-ui-react";
 
 function ParentGroup({
   id,
@@ -351,7 +351,7 @@ async def my_run(controller):
 ### TypeScript (assistant-stream)
 
 ```typescript
-import { createAssistantStream } from "assistant-stream";
+import { createAssistantStream } from "@hitchsoftware/assistant-stream";
 
 const stream = createAssistantStream(async (controller) => {
   // Add parts with parentId
@@ -401,7 +401,7 @@ const stream = createAssistantStream(async (controller) => {
 `groupPartByType` builds a `groupBy` from a `part.type → group-key path` map. Part types missing from the map are left ungrouped. The returned function carries an internal memo fingerprint so the tree survives unrelated re-renders.
 
 ```typescript
-import { groupPartByType } from "@assistant-ui/react";
+import { groupPartByType } from "@hitchsoftware/assistant-ui-react";
 
 groupPartByType({
   reasoning: ["group-thought", "group-reasoning"],

@@ -11,7 +11,7 @@ const h = vi.hoisted(() => ({
   platform: { os: "web" as "web" | "ios" | "android" },
 }));
 
-vi.mock("@assistant-ui/store", () => {
+vi.mock("@hitchsoftware/assistant-ui-store", () => {
   const composer = Object.assign(() => composer, {
     setText: h.setText,
     send: h.sendSpy,
@@ -25,7 +25,7 @@ vi.mock("@assistant-ui/store", () => {
   };
 });
 
-vi.mock("@assistant-ui/tap", () => ({
+vi.mock("@hitchsoftware/assistant-ui-tap", () => ({
   flushTapSync: h.flushTapSyncSpy,
 }));
 

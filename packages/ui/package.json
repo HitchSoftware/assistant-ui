@@ -1,5 +1,5 @@
 {
-  "name": "@assistant-ui/ui",
+  "name": "@hitchsoftware/assistant-ui-ui",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -10,13 +10,13 @@
     "./lib/*": "./src/lib/*"
   },
   "dependencies": {
-    "@assistant-ui/react": "workspace:*",
-    "@assistant-ui/react-ai-sdk": "workspace:*",
-    "@assistant-ui/react-generative-ui": "workspace:*",
-    "@assistant-ui/react-markdown": "workspace:*",
-    "@assistant-ui/react-mcp": "workspace:*",
-    "@assistant-ui/react-syntax-highlighter": "workspace:*",
-    "@assistant-ui/store": "workspace:*",
+    "@hitchsoftware/assistant-ui-react": "workspace:*",
+    "@hitchsoftware/assistant-ui-react-ai-sdk": "workspace:*",
+    "@hitchsoftware/assistant-ui-react-generative-ui": "workspace:*",
+    "@hitchsoftware/assistant-ui-react-markdown": "workspace:*",
+    "@hitchsoftware/assistant-ui-react-mcp": "workspace:*",
+    "@hitchsoftware/assistant-ui-react-syntax-highlighter": "workspace:*",
+    "@hitchsoftware/assistant-ui-store": "workspace:*",
     "@base-ui/react": "^1.7.0",
     "beautiful-mermaid": "^1.1.3",
     "class-variance-authority": "^0.7.1",
@@ -24,7 +24,7 @@
     "cmdk": "^1.1.1",
     "diff": "^9.0.0",
     "embla-carousel-react": "^8.6.0",
-    "heat-graph": "workspace:*",
+    "@hitchsoftware/heat-graph": "workspace:*",
     "input-otp": "^1.4.2",
     "lucide-react": "^1.29.0",
     "next-themes": "^0.4.6",
@@ -44,7 +44,7 @@
     "zustand": "^5.0.14"
   },
   "devDependencies": {
-    "@assistant-ui/x-buildutils": "workspace:*",
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
     "@testing-library/react": "^16.3.2",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",

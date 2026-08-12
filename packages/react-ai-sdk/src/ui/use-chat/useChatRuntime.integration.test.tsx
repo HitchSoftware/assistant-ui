@@ -1,8 +1,8 @@
 // @vitest-environment jsdom
 
 import { render, screen, waitFor } from "@testing-library/react";
-import { AssistantRuntimeProvider } from "@assistant-ui/core/react";
-import { useAuiState } from "@assistant-ui/store";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-core/react";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 import type { UIMessage } from "ai";
 import { StrictMode, useState } from "react";
 import { describe, expect, it } from "vitest";

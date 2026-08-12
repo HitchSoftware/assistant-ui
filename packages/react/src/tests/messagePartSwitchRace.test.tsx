@@ -4,7 +4,7 @@ import { act, cleanup, render, waitFor } from "@testing-library/react";
 import { flushSync } from "react-dom";
 import { Component, useEffect, useState, type FC, type ReactNode } from "react";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { useAui, useAuiState } from "@assistant-ui/store";
+import { useAui, useAuiState } from "@hitchsoftware/assistant-ui-store";
 import { AssistantRuntimeProvider, PartByIndexProvider } from "../context";
 import { useLocalRuntime } from "../legacy-runtime/runtime-cores/local/useLocalRuntime";
 import type { ChatModelAdapter } from "../legacy-runtime/runtime-cores/local/ChatModelAdapter";

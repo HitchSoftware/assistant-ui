@@ -1,5 +1,5 @@
 import { useEffect, useEffectEvent, use, createContext } from "react";
-import { useContextProvider } from "@assistant-ui/tap";
+import { useContextProvider } from "@hitchsoftware/assistant-ui-tap";
 import type {
   AssistantEventName,
   AssistantEventPayload,

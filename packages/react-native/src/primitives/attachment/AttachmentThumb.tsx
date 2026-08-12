@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import { Text, type TextProps } from "react-native";
-import { useAuiState } from "@assistant-ui/store";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 
 export type AttachmentThumbProps = TextProps;
 

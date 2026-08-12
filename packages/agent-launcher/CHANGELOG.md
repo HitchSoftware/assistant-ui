@@ -1,4 +1,4 @@
-# @assistant-ui/agent-launcher
+# @hitchsoftware/assistant-ui-agent-launcher
 
 ## 0.1.10
 
@@ -66,4 +66,4 @@
 
 ### Minor Changes
 
-- 5034b1e: Add `@assistant-ui/agent-launcher` package and `assistant-ui agent` CLI command to launch Claude Code with assistant-ui skills
+- 5034b1e: Add `@hitchsoftware/assistant-ui-agent-launcher` package and `assistant-ui agent` CLI command to launch Claude Code with assistant-ui skills

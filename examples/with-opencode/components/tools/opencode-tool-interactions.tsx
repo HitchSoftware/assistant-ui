@@ -1,14 +1,14 @@
 "use client";
 
 import { memo, useMemo } from "react";
-import type { ToolCallMessagePartComponent } from "@assistant-ui/react";
+import type { ToolCallMessagePartComponent } from "@hitchsoftware/assistant-ui-react";
 import {
   type OpenCodePermissionRequest,
   type OpenCodePermissionResponse,
   type OpenCodeQuestionRequest,
   type QuestionAnswer,
   useOpenCodeThreadState,
-} from "@assistant-ui/react-opencode";
+} from "@hitchsoftware/assistant-ui-react-opencode";
 import {
   CheckCircle2Icon,
   CircleHelpIcon,

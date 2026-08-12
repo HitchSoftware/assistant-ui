@@ -1,7 +1,7 @@
 "use client";
 
 import type { FC, PropsWithChildren } from "react";
-import { useMessageError } from "@assistant-ui/core/react";
+import { useMessageError } from "@hitchsoftware/assistant-ui-core/react";
 
 export const MessagePrimitiveError: FC<PropsWithChildren> = ({ children }) => {
   const error = useMessageError();

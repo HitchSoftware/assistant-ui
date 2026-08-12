@@ -14,11 +14,11 @@ function applyTransform(source: string): string {
 describe("content-part-to-message-part migration", () => {
   it("should rename ContentPart types in import statements", () => {
     const input = `
-import { TextContentPart, ToolCallContentPart, ContentPartStatus } from "@assistant-ui/react";
+import { TextContentPart, ToolCallContentPart, ContentPartStatus } from "@hitchsoftware/assistant-ui-react";
     `;
 
     const expected = `
-import { TextMessagePart, ToolCallMessagePart, MessagePartStatus } from "@assistant-ui/react";
+import { TextMessagePart, ToolCallMessagePart, MessagePartStatus } from "@hitchsoftware/assistant-ui-react";
     `;
 
     expect(applyTransform(input).trim()).toBe(expected.trim());
@@ -26,7 +26,7 @@ import { TextMessagePart, ToolCallMessagePart, MessagePartStatus } from "@assist
 
   it("should rename useContentPart hooks", () => {
     const input = `
-import { useContentPart, useContentPartText, useContentPartRuntime } from "@assistant-ui/react";
+import { useContentPart, useContentPartText, useContentPartRuntime } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const part = useContentPart();
@@ -37,7 +37,7 @@ function MyComponent() {
     `;
 
     const expected = `
-import { useMessagePart, useMessagePartText, useMessagePartRuntime } from "@assistant-ui/react";
+import { useMessagePart, useMessagePartText, useMessagePartRuntime } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const part = useMessagePart();
@@ -52,7 +52,7 @@ function MyComponent() {
 
   it("should rename MessagePrimitive.Content to MessagePrimitive.Parts", () => {
     const input = `
-import { MessagePrimitive } from "@assistant-ui/react";
+import { MessagePrimitive } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   return <MessagePrimitive.Content components={{ Text: MyText }} />;
@@ -60,7 +60,7 @@ function MyComponent() {
     `;
 
     const expected = `
-import { MessagePrimitive } from "@assistant-ui/react";
+import { MessagePrimitive } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   return <MessagePrimitive.Parts components={{ Text: MyText }} />;
@@ -72,7 +72,7 @@ function MyComponent() {
 
   it("should rename ContentPartPrimitive to MessagePartPrimitive", () => {
     const input = `
-import { ContentPartPrimitive } from "@assistant-ui/react";
+import { ContentPartPrimitive } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   return (
@@ -85,7 +85,7 @@ function MyComponent() {
     `;
 
     const expected = `
-import { MessagePartPrimitive } from "@assistant-ui/react";
+import { MessagePartPrimitive } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   return (
@@ -102,7 +102,7 @@ function MyComponent() {
 
   it("should rename type annotations", () => {
     const input = `
-import { TextContentPart, ToolCallContentPartComponent } from "@assistant-ui/react";
+import { TextContentPart, ToolCallContentPartComponent } from "@hitchsoftware/assistant-ui-react";
 
 function processContent(part: TextContentPart): void {
   console.log(part.text);
@@ -114,7 +114,7 @@ const MyTool: ToolCallContentPartComponent = ({ toolName }) => {
     `;
 
     const expected = `
-import { TextMessagePart, ToolCallMessagePartComponent } from "@assistant-ui/react";
+import { TextMessagePart, ToolCallMessagePartComponent } from "@hitchsoftware/assistant-ui-react";
 
 function processContent(part: TextMessagePart): void {
   console.log(part.text);
@@ -130,7 +130,7 @@ const MyTool: ToolCallMessagePartComponent = ({ toolName }) => {
 
   it("should rename provider components", () => {
     const input = `
-import { TextContentPartProvider } from "@assistant-ui/react";
+import { TextContentPartProvider } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   return (
@@ -142,7 +142,7 @@ function MyComponent() {
     `;
 
     const expected = `
-import { TextMessagePartProvider } from "@assistant-ui/react";
+import { TextMessagePartProvider } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   return (
@@ -158,14 +158,14 @@ function MyComponent() {
 
   it("should handle complex type unions and generics", () => {
     const input = `
-import { ThreadAssistantContentPart, ToolCallContentPart } from "@assistant-ui/react";
+import { ThreadAssistantContentPart, ToolCallContentPart } from "@hitchsoftware/assistant-ui-react";
 
 type MyUnion = ThreadAssistantContentPart | TextContentPart;
 type MyGeneric = Array<ToolCallContentPart<{ query: string }, string>>;
     `;
 
     const expected = `
-import { ThreadAssistantMessagePart, ToolCallMessagePart } from "@assistant-ui/react";
+import { ThreadAssistantMessagePart, ToolCallMessagePart } from "@hitchsoftware/assistant-ui-react";
 
 type MyUnion = ThreadAssistantMessagePart | TextMessagePart;
 type MyGeneric = Array<ToolCallMessagePart<{ query: string }, string>>;
@@ -176,7 +176,7 @@ type MyGeneric = Array<ToolCallMessagePart<{ query: string }, string>>;
 
   it("should preserve non-assistant-ui imports", () => {
     const input = `
-import { TextContentPart } from "@assistant-ui/react";
+import { TextContentPart } from "@hitchsoftware/assistant-ui-react";
 import { SomeOtherType } from "some-other-package";
 import React from "react";
 
@@ -186,7 +186,7 @@ function MyComponent() {
     `;
 
     const expected = `
-import { TextMessagePart } from "@assistant-ui/react";
+import { TextMessagePart } from "@hitchsoftware/assistant-ui-react";
 import { SomeOtherType } from "some-other-package";
 import React from "react";
 
@@ -200,7 +200,7 @@ function MyComponent() {
 
   it("should handle JSX member expressions", () => {
     const input = `
-import { MessagePrimitive } from "@assistant-ui/react";
+import { MessagePrimitive } from "@hitchsoftware/assistant-ui-react";
 
 const config = {
   content: MessagePrimitive.Content,
@@ -213,7 +213,7 @@ function MyComponent() {
     `;
 
     const expected = `
-import { MessagePrimitive } from "@assistant-ui/react";
+import { MessagePrimitive } from "@hitchsoftware/assistant-ui-react";
 
 const config = {
   content: MessagePrimitive.Parts,

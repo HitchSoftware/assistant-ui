@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import { act, cleanup, render } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
-import { flushTapSync, resource } from "@assistant-ui/tap";
+import { flushTapSync, resource } from "@hitchsoftware/assistant-ui-tap";
 import { useAui } from "../useAui";
 import { Derived } from "../Derived";
 import type { AssistantClient } from "../types/client";

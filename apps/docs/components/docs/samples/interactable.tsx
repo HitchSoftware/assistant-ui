@@ -17,9 +17,9 @@ import {
   SimpleImageAttachmentAdapter,
   AssistantCloud,
   type FeedbackAdapter,
-} from "@assistant-ui/react";
-import { MarkdownTextPrimitive } from "@assistant-ui/react-markdown";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react";
+import { MarkdownTextPrimitive } from "@hitchsoftware/assistant-ui-react-markdown";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { lastAssistantMessageIsCompleteWithToolCalls } from "ai";
 import { SampleFrame } from "@/components/docs/samples/sample-frame";
 import remarkGfm from "remark-gfm";

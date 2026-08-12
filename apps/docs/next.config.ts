@@ -1,5 +1,5 @@
 import { createMDX } from "fumadocs-mdx/next";
-import { withAui } from "@assistant-ui/next";
+import { withAui } from "@hitchsoftware/assistant-ui-next";
 import type { NextConfig } from "next";
 import {
   AGENT_DISCOVERY_REWRITES,
@@ -64,7 +64,7 @@ const config: NextConfig = {
     // run out of memory while Turbopack compiles those routes in parallel.
     cpus: 2,
   },
-  transpilePackages: ["@assistant-ui/ui", "shiki"],
+  transpilePackages: ["@hitchsoftware/assistant-ui-ui", "shiki"],
   serverExternalPackages: ["just-bash"],
   skipTrailingSlashRedirect: true,
   outputFileTracingIncludes: {

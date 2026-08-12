@@ -1,5 +1,5 @@
 {
-  "name": "@assistant-ui/react-data-stream",
+  "name": "@hitchsoftware/assistant-ui-react-data-stream",
   "version": "0.12.26",
   "description": "Data stream adapter for assistant-ui",
   "keywords": [
@@ -34,9 +34,9 @@
   },
   "dependencies": {
     "@ai-sdk/provider": "^4.0.6",
-    "@assistant-ui/core": "^0.3.10",
-    "assistant-cloud": "*",
-    "assistant-stream": "^0.3.36"
+    "@hitchsoftware/assistant-ui-core": "^0.3.10",
+    "@hitchsoftware/assistant-cloud": "*",
+    "@hitchsoftware/assistant-stream": "^0.3.36"
   },
   "peerDependencies": {
     "@types/react": "*",
@@ -48,15 +48,15 @@
     }
   },
   "devDependencies": {
-    "@assistant-ui/x-buildutils": "workspace:*",
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
     "@types/json-schema": "^7.0.15",
     "@types/react": "^19.2.18",
     "react": "^19.2.8",
     "vitest": "^4.1.10"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://www.assistant-ui.com/",
   "repository": {

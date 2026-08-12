@@ -10,7 +10,7 @@ const fixture = {
 };
 const setText = vi.fn();
 
-vi.mock("@assistant-ui/store", () => ({
+vi.mock("@hitchsoftware/assistant-ui-store", () => ({
   useAui: () => ({
     composer: {
       getState: () => ({ type: fixture.composerType }),
@@ -23,7 +23,7 @@ vi.mock("@assistant-ui/store", () => ({
     },
   }),
 }));
-vi.mock("@assistant-ui/tap", () => ({
+vi.mock("@hitchsoftware/assistant-ui-tap", () => ({
   flushTapSync: (fn: () => void) => fn(),
 }));
 vi.mock("../primitives/composer/trigger/TriggerPopoverRootContext", () => ({

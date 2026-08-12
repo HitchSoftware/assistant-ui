@@ -1,4 +1,4 @@
-import type { ReadonlyJSONObject } from "assistant-stream/utils";
+import type { ReadonlyJSONObject } from "@hitchsoftware/assistant-stream/utils";
 import type { AssistantCloudAPI } from "./AssistantCloudAPI";
 import {
   readCloudArray,

@@ -19,18 +19,18 @@ import {
   useAuiState,
   Tools,
   Suggestions,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   useChatRuntime,
   AssistantChatTransport,
-} from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { lastAssistantMessageIsCompleteWithToolCalls } from "ai";
 import { SendHorizontal, SquareIcon } from "lucide-react";
 import {
   createPlaygroundChatToolkit,
   type PartialBuilderConfig,
 } from "@/lib/playground-chat-toolkit";
-import { useAui, AuiProvider } from "@assistant-ui/store";
+import { useAui, AuiProvider } from "@hitchsoftware/assistant-ui-store";
 import type { BuilderConfig } from "./types";
 import { applyDiff } from "@/lib/playground-url-state";
 

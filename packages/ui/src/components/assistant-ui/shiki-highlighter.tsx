@@ -2,8 +2,8 @@
 
 import type { FC } from "react";
 import { useShikiHighlighter, type ShikiHighlighterProps } from "react-shiki";
-import { useAuiState } from "@assistant-ui/react";
-import type { SyntaxHighlighterProps as AUIProps } from "@assistant-ui/react-markdown";
+import { useAuiState } from "@hitchsoftware/assistant-ui-react";
+import type { SyntaxHighlighterProps as AUIProps } from "@hitchsoftware/assistant-ui-react-markdown";
 import { cn } from "@/lib/utils";
 
 /**

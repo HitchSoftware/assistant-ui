@@ -1,5 +1,5 @@
 {
-  "name": "@assistant-ui/x-buildutils",
+  "name": "@hitchsoftware/assistant-ui-x-buildutils",
   "private": false,
   "version": "0.0.22",
   "description": "Internal build utilities for assistant-ui packages",
@@ -47,7 +47,7 @@
   },
   "scripts": {},
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   }
 }

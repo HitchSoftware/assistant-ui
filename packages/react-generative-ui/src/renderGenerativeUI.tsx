@@ -1,4 +1,4 @@
-import { getPartialJsonObjectMeta } from "assistant-stream/utils";
+import { getPartialJsonObjectMeta } from "@hitchsoftware/assistant-stream/utils";
 import { Fragment, type ReactNode } from "react";
 import {
   normalizeUINode,
@@ -127,7 +127,7 @@ function reportUnknownComponent(type: string, available: string[]): void {
   if (process.env["NODE_ENV"] !== "production") {
     // eslint-disable-next-line no-console
     console.error(
-      `[@assistant-ui/react-generative-ui] Unknown component "${type}". ` +
+      `[@hitchsoftware/assistant-ui-react-generative-ui] Unknown component "${type}". ` +
         `Available components: ${available.join(", ") || "(none)"}.`,
     );
   }

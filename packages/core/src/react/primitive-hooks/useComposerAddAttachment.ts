@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useAui, useAuiState } from "@assistant-ui/store";
+import { useAui, useAuiState } from "@hitchsoftware/assistant-ui-store";
 import type { CreateAttachment } from "../../types/attachment";
 
 export const useComposerAddAttachment = () => {

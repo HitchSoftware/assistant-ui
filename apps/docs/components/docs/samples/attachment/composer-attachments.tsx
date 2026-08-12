@@ -1,6 +1,6 @@
 "use client";
 
-import { ComposerPrimitive } from "@assistant-ui/react";
+import { ComposerPrimitive } from "@hitchsoftware/assistant-ui-react";
 // Separate statement: the Code tab keeps an import whenever any one of its
 // names is used, so grouping these with ComposerPrimitive would show adapter
 // wiring the extracted snippet never calls.
@@ -8,7 +8,7 @@ import {
   CompositeAttachmentAdapter,
   SimpleImageAttachmentAdapter,
   SimpleTextAttachmentAdapter,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   ComposerAddAttachment,
   ComposerAttachments,

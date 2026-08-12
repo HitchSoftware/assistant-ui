@@ -1,5 +1,5 @@
 import type { UIMessage } from "@ai-sdk/react";
-import type { AssistantCloud, AssistantCloudRunReport } from "assistant-cloud";
+import type { AssistantCloud, AssistantCloudRunReport } from "@hitchsoftware/assistant-cloud";
 import {
   type FinishReason,
   lastAssistantMessageIsCompleteWithToolCalls,

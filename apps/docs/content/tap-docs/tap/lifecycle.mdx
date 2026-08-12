@@ -11,7 +11,7 @@ Like React, tap splits work into two phases:
 2. **Commit**: effects whose dependencies changed run. If an effect is re-running, its previous cleanup executes first. The resource is considered mounted after this phase.
 
 ```ts
-import { resource } from "@assistant-ui/tap";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
 import { useState, useEffect } from "react";
 
 const useApp = () => {
@@ -37,7 +37,7 @@ In React, effects run children-first, then parents (inside-out). This is because
 In tap, **effects run in the exact order they are called during the render pass**. Since `useResource` is just another hook, you can place `useEffect` calls before or after it:
 
 ```ts
-import { resource, useResource } from "@assistant-ui/tap";
+import { resource, useResource } from "@hitchsoftware/assistant-ui-tap";
 import { useEffect } from "react";
 
 const useParent = () => {
@@ -85,7 +85,7 @@ A resource is **unmounted** when its owner removes it, all effect cleanups run a
 Tap has full interoperability with React's concurrent mode. Resources rendered via `useResource` work correctly with `startTransition`, `useDeferredValue`, `<Suspense>`, and other concurrent features, state updates are applied consistently without tearing.
 
 <Callout type="warn">
-The `@assistant-ui/store` layer currently relies on `useSyncExternalStore` to bridge tap resources into React. This means store subscriptions always trigger synchronous re-renders, opting out of concurrent scheduling for those reads. This may change in a future release.
+The `@hitchsoftware/assistant-ui-store` layer currently relies on `useSyncExternalStore` to bridge tap resources into React. This means store subscriptions always trigger synchronous re-renders, opting out of concurrent scheduling for those reads. This may change in a future release.
 </Callout>
 
 ## Offscreen / Activity

@@ -9,7 +9,7 @@ Use this skill to help users build AI chat interfaces with assistant-ui.
 
 ## Step 1: Check Project Setup
 
-Check if the project has `components.json` (shadcn config) and `@assistant-ui/react` installed.
+Check if the project has `components.json` (shadcn config) and `@hitchsoftware/assistant-ui-react` installed.
 
 If assistant-ui is not yet set up, run:
 
@@ -55,8 +55,8 @@ To use the shadcn CLI directly instead, add the assistant-ui registry to `compon
 Then add components with the namespaced form:
 
 ```bash
-npx shadcn@latest add @assistant-ui/thread
-npx shadcn@latest add @assistant-ui/markdown-text
+npx shadcn@latest add @hitchsoftware/assistant-ui-thread
+npx shadcn@latest add @hitchsoftware/assistant-ui-markdown-text
 ```
 
 ## Step 3: Runtime Setup
@@ -67,7 +67,7 @@ assistant-ui requires a runtime. The most common setup uses AI SDK:
 
 Install the integration package:
 ```bash
-npm install @assistant-ui/react-ai-sdk
+npm install @hitchsoftware/assistant-ui-react-ai-sdk
 ```
 
 Create a chat API route (Next.js App Router):
@@ -97,8 +97,8 @@ Create the assistant component:
 ```tsx
 "use client";
 
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { Thread } from "@/components/assistant-ui/thread";
 
 export const Assistant = () => {
@@ -149,7 +149,7 @@ Create a toolkit with a renderer for the tool. The tool executes on the backend,
 // app/toolkit.tsx
 "use generative";
 
-import { defineToolkit, externalTool } from "@assistant-ui/react";
+import { defineToolkit, externalTool } from "@hitchsoftware/assistant-ui-react";
 
 export default defineToolkit({
   get_weather: {
@@ -169,7 +169,7 @@ export default defineToolkit({
 Register the toolkit in your assistant component:
 
 ```tsx
-import { AssistantRuntimeProvider, Tools, useAui } from "@assistant-ui/react";
+import { AssistantRuntimeProvider, Tools, useAui } from "@hitchsoftware/assistant-ui-react";
 import toolkit from "@/app/toolkit";
 
 const aui = useAui({
@@ -187,12 +187,12 @@ Do not use `makeAssistantToolUI`, `useAssistantToolUI`, `makeAssistantTool`, or 
 
 | Package | Purpose |
 |---------|---------|
-| `@assistant-ui/react` | Core React components and primitives |
-| `@assistant-ui/react-ai-sdk` | Vercel AI SDK integration |
-| `@assistant-ui/react-markdown` | Markdown rendering |
-| `@assistant-ui/react-syntax-highlighter` | Code highlighting |
-| `@assistant-ui/ui` | Pre-built shadcn/ui component set |
-| `@assistant-ui/styles` | Pre-built CSS for non-Tailwind users |
+| `@hitchsoftware/assistant-ui-react` | Core React components and primitives |
+| `@hitchsoftware/assistant-ui-react-ai-sdk` | Vercel AI SDK integration |
+| `@hitchsoftware/assistant-ui-react-markdown` | Markdown rendering |
+| `@hitchsoftware/assistant-ui-react-syntax-highlighter` | Code highlighting |
+| `@hitchsoftware/assistant-ui-ui` | Pre-built shadcn/ui component set |
+| `@hitchsoftware/assistant-ui-styles` | Pre-built CSS for non-Tailwind users |
 
 ## Environment Variables
 

@@ -13,34 +13,34 @@ export { findWorkspaceRoot };
 
 const ASSISTANT_UI_PACKAGES = [
   // Distribution
-  "@assistant-ui/react",
-  "@assistant-ui/react-native",
-  "@assistant-ui/react-ink",
+  "@hitchsoftware/assistant-ui-react",
+  "@hitchsoftware/assistant-ui-react-native",
+  "@hitchsoftware/assistant-ui-react-ink",
   // Core (should not be installed directly)
-  "@assistant-ui/core",
-  "@assistant-ui/store",
-  "@assistant-ui/tap",
+  "@hitchsoftware/assistant-ui-core",
+  "@hitchsoftware/assistant-ui-store",
+  "@hitchsoftware/assistant-ui-tap",
   // Streaming & Cloud
   "assistant-stream",
   "assistant-cloud",
-  "@assistant-ui/cloud-ai-sdk",
+  "@hitchsoftware/assistant-ui-cloud-ai-sdk",
   // Adapters
-  "@assistant-ui/eve",
-  "@assistant-ui/react-ai-sdk",
-  "@assistant-ui/react-langgraph",
-  "@assistant-ui/react-ag-ui",
-  "@assistant-ui/react-a2a",
-  "@assistant-ui/react-data-stream",
-  "@assistant-ui/react-google-adk",
+  "@hitchsoftware/assistant-ui-eve",
+  "@hitchsoftware/assistant-ui-react-ai-sdk",
+  "@hitchsoftware/assistant-ui-react-langgraph",
+  "@hitchsoftware/assistant-ui-react-ag-ui",
+  "@hitchsoftware/assistant-ui-react-a2a",
+  "@hitchsoftware/assistant-ui-react-data-stream",
+  "@hitchsoftware/assistant-ui-react-google-adk",
   // UI / Rendering
-  "@assistant-ui/react-markdown",
-  "@assistant-ui/react-streamdown",
-  "@assistant-ui/react-lexical",
-  "@assistant-ui/react-syntax-highlighter",
-  "@assistant-ui/react-hook-form",
+  "@hitchsoftware/assistant-ui-react-markdown",
+  "@hitchsoftware/assistant-ui-react-streamdown",
+  "@hitchsoftware/assistant-ui-react-lexical",
+  "@hitchsoftware/assistant-ui-react-syntax-highlighter",
+  "@hitchsoftware/assistant-ui-react-hook-form",
   // Observability & DevTools
-  "@assistant-ui/react-o11y",
-  "@assistant-ui/react-devtools",
+  "@hitchsoftware/assistant-ui-react-o11y",
+  "@hitchsoftware/assistant-ui-react-devtools",
 ];
 
 const ECOSYSTEM_PACKAGES = [
@@ -59,9 +59,9 @@ const ECOSYSTEM_PACKAGES = [
 // Packages that users should NOT install directly — they are internal
 // dependencies pulled in automatically by distribution packages.
 const SHOULD_NOT_DIRECT_INSTALL = new Set([
-  "@assistant-ui/core",
-  "@assistant-ui/store",
-  "@assistant-ui/tap",
+  "@hitchsoftware/assistant-ui-core",
+  "@hitchsoftware/assistant-ui-store",
+  "@hitchsoftware/assistant-ui-tap",
 ]);
 
 function resolvePackageJson(pkg: string, cwd: string): string | null {

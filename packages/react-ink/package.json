@@ -1,5 +1,5 @@
 {
-  "name": "@assistant-ui/react-ink",
+  "name": "@hitchsoftware/assistant-ui-react-ink",
   "version": "0.0.37",
   "description": "React Ink (terminal UI) bindings for assistant-ui",
   "keywords": [
@@ -38,10 +38,10 @@
     "benchmark": "tsx benchmarks/run.ts"
   },
   "dependencies": {
-    "@assistant-ui/core": "^0.3.10",
-    "@assistant-ui/store": "^0.3.8",
-    "@assistant-ui/tap": "^0.9.11",
-    "assistant-stream": "^0.3.36",
+    "@hitchsoftware/assistant-ui-core": "^0.3.10",
+    "@hitchsoftware/assistant-ui-store": "^0.3.8",
+    "@hitchsoftware/assistant-ui-tap": "^0.9.11",
+    "@hitchsoftware/assistant-stream": "^0.3.36",
     "diff": "^9.0.0",
     "ink-spinner": "^5.0.0",
     "parse-diff": "^0.12.0",
@@ -58,7 +58,7 @@
     }
   },
   "devDependencies": {
-    "@assistant-ui/x-buildutils": "workspace:*",
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
     "@types/node": "^26.1.2",
     "@types/react": "^19.2.18",
     "ink": "^7.1.1",
@@ -68,8 +68,8 @@
     "vitest": "^4.1.10"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://www.assistant-ui.com/",
   "repository": {

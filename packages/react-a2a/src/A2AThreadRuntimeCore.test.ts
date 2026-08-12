@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { A2AThreadRuntimeCore } from "./A2AThreadRuntimeCore";
 import type { A2AClient } from "./A2AClient";
 import type { A2AMessage, A2AStreamEvent, A2ATask } from "./types";
-import type { AppendMessage, ThreadMessage } from "@assistant-ui/core";
+import type { AppendMessage, ThreadMessage } from "@hitchsoftware/assistant-ui-core";
 
 // --- Mock client factory ---
 

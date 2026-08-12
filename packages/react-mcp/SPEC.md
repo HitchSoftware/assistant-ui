@@ -1,6 +1,6 @@
-# @assistant-ui/react-mcp Specification
+# @hitchsoftware/assistant-ui-react-mcp Specification
 
-External API spec for the MCP integration package. Mirrors `@assistant-ui/react-o11y`: scope-augmented store types, tap-backed resources, Radix-style unstyled primitives.
+External API spec for the MCP integration package. Mirrors `@hitchsoftware/assistant-ui-react-o11y`: scope-augmented store types, tap-backed resources, Radix-style unstyled primitives.
 
 ## Scope (v1)
 
@@ -156,7 +156,7 @@ type MCPManagerState = {
 ### 1.4 Scope registration
 
 ```ts
-declare module "@assistant-ui/store" {
+declare module "@hitchsoftware/assistant-ui-store" {
   interface ScopeRegistry {
     mcp: { methods: MCPManagerMethods };
     mcpServer: {
@@ -281,7 +281,7 @@ Flow:
 Same conventions as `SpanPrimitive`: `forwardRef`, Radix `Primitive.<tag>`, namespaced `Element`/`Props`, `data-*` rendering.
 
 ```tsx
-import { McpManagerPrimitive, McpServerPrimitive, McpAddFormPrimitive, McpElicitationPrimitive } from "@assistant-ui/react-mcp";
+import { McpManagerPrimitive, McpServerPrimitive, McpAddFormPrimitive, McpElicitationPrimitive } from "@hitchsoftware/assistant-ui-react-mcp";
 
 <McpManagerPrimitive.Root>
   <McpManagerPrimitive.Connectors>
@@ -414,8 +414,8 @@ Errors surface as rejected promises on the manager/server methods. Tool failures
 // app/providers.tsx
 "use client";
 import type { ReactNode } from "react";
-import { AuiProvider, AuiConfig, useAui } from "@assistant-ui/store";
-import { McpManagerResource, defineConnector } from "@assistant-ui/react-mcp";
+import { AuiProvider, AuiConfig, useAui } from "@hitchsoftware/assistant-ui-store";
+import { McpManagerResource, defineConnector } from "@hitchsoftware/assistant-ui-react-mcp";
 
 const connectors = [
   defineConnector({
@@ -443,9 +443,9 @@ In a chat app, pass the same config to `AssistantRuntimeProvider` instead — it
 // app/providers.tsx — with a chat runtime
 "use client";
 import type { ReactNode } from "react";
-import { AssistantRuntimeProvider, AuiConfig } from "@assistant-ui/react";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
-import { McpManagerResource, defineConnector } from "@assistant-ui/react-mcp";
+import { AssistantRuntimeProvider, AuiConfig } from "@hitchsoftware/assistant-ui-react";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
+import { McpManagerResource, defineConnector } from "@hitchsoftware/assistant-ui-react-mcp";
 
 const connectors = [
   defineConnector({
@@ -470,7 +470,7 @@ export function Providers({ children }: { children: ReactNode }) {
 ```tsx
 // app/mcp/page.tsx — connector list with built-in primitives
 "use client";
-import { McpManagerPrimitive, McpServerPrimitive } from "@assistant-ui/react-mcp";
+import { McpManagerPrimitive, McpServerPrimitive } from "@hitchsoftware/assistant-ui-react-mcp";
 
 export default function McpPage() {
   return (
@@ -494,7 +494,7 @@ export default function McpPage() {
 ```tsx
 // app/mcp/callback/page.tsx
 "use client";
-import { McpOAuthCallback } from "@assistant-ui/react-mcp";
+import { McpOAuthCallback } from "@hitchsoftware/assistant-ui-react-mcp";
 import { useRouter } from "next/navigation";
 
 export default function Callback() {
@@ -507,7 +507,7 @@ export default function Callback() {
 // app/chat/page.tsx — chat runtime sees MCP tools through modelContext
 // (no useMcpTools / no adapter call — the manager registers them itself)
 "use client";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 
 export function Chat() {
   const runtime = useChatRuntime({ api: "/api/chat" });
@@ -522,6 +522,6 @@ export function Chat() {
 - Tool enable/disable persistence
 - Per-tool consent UI
 - API-key / custom-headers / custom-strategy auth
-- Default styling (apps theme via `data-*`; shadcn wrappers belong in `@assistant-ui/ui`)
+- Default styling (apps theme via `data-*`; shadcn wrappers belong in `@hitchsoftware/assistant-ui-ui`)
 - Storage encryption out of the box (escape hatch is `McpCustomStorage` against an app-controlled backend)
 - Automatic `MCPAppRenderer` wiring — apps mount `Tools({ mcpApp: MCPAppRenderer({ ... }) })` themselves when they want widget rendering

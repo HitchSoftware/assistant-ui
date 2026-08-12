@@ -1,5 +1,5 @@
 import { defineComponent, type PropType, type SlotsType } from "vue";
-import type { AssistantState } from "@assistant-ui/store/client";
+import type { AssistantState } from "@hitchsoftware/assistant-ui-store/client";
 import { useAuiState } from "./useAuiState";
 
 /**

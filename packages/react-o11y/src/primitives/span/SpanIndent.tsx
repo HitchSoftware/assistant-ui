@@ -5,7 +5,7 @@ import {
   useMemo,
 } from "react";
 import { Primitive } from "@radix-ui/react-primitive";
-import { useAuiState } from "@assistant-ui/store";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 
 export namespace SpanPrimitiveIndent {
   export type Element = ComponentRef<typeof Primitive.div>;

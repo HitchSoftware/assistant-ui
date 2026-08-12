@@ -1,7 +1,7 @@
 "use client";
 import type { ThreadMessage } from "../../types/message";
 import type { ThreadState } from "../../runtime/api/thread-runtime";
-import { useAui, useAuiState } from "@assistant-ui/store";
+import { useAui, useAuiState } from "@hitchsoftware/assistant-ui-store";
 import {
   useExternalMessageConverter,
   convertExternalMessages,

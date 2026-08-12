@@ -7,8 +7,8 @@ import {
   useAui,
   AuiProvider,
   Suggestions,
-} from "@assistant-ui/react";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { MyThread } from "./MyThread";
 import { lastAssistantMessageIsCompleteWithApprovalResponses } from "ai";
 import toolkit from "./toolkit";

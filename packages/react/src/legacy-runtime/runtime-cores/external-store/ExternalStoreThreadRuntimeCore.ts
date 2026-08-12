@@ -1,4 +1,4 @@
 export {
   ExternalStoreThreadRuntimeCore,
   hasUpcomingMessage,
-} from "@assistant-ui/core/internal";
+} from "@hitchsoftware/assistant-ui-core/internal";

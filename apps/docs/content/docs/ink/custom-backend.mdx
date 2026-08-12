@@ -10,7 +10,7 @@ By default, `useLocalRuntime` manages threads and messages in memory. You can co
 The simplest approach — keep thread management local, but send messages to your backend for inference.
 
 ```tsx title="adapters/my-chat-adapter.ts"
-import type { ChatModelAdapter } from "@assistant-ui/react-ink";
+import type { ChatModelAdapter } from "@hitchsoftware/assistant-ui-react-ink";
 
 export const myChatAdapter: ChatModelAdapter = {
   async *run({ messages, abortSignal }) {
@@ -40,7 +40,7 @@ export const myChatAdapter: ChatModelAdapter = {
 ```
 
 ```tsx title="app.tsx"
-import { useLocalRuntime, AssistantRuntimeProvider } from "@assistant-ui/react-ink";
+import { useLocalRuntime, AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react-ink";
 import { myChatAdapter } from "./adapters/my-chat-adapter.js";
 
 export function App() {
@@ -71,7 +71,7 @@ import {
   useRemoteThreadListRuntime,
   createFileStorageAdapter,
   AssistantRuntimeProvider,
-} from "@assistant-ui/react-ink";
+} from "@hitchsoftware/assistant-ui-react-ink";
 import { myChatAdapter } from "./adapters/my-chat-adapter.js";
 
 const threadListAdapter = createFileStorageAdapter({
@@ -119,8 +119,8 @@ When you want your backend to own thread state (e.g. for persistence across sess
 ### Implement the adapter
 
 ```tsx title="adapters/my-thread-list-adapter.ts"
-import type { RemoteThreadListAdapter } from "@assistant-ui/react-ink";
-import { createAssistantStream } from "assistant-stream";
+import type { RemoteThreadListAdapter } from "@hitchsoftware/assistant-ui-react-ink";
+import { createAssistantStream } from "@hitchsoftware/assistant-stream";
 
 const API_BASE = "https://my-api.com";
 
@@ -205,7 +205,7 @@ import {
   useLocalRuntime,
   useRemoteThreadListRuntime,
   AssistantRuntimeProvider,
-} from "@assistant-ui/react-ink";
+} from "@hitchsoftware/assistant-ui-react-ink";
 import { myChatAdapter } from "./adapters/my-chat-adapter.js";
 import { myThreadListAdapter } from "./adapters/my-thread-list-adapter.js";
 

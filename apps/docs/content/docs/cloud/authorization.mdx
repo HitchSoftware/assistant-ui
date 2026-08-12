@@ -32,7 +32,7 @@ In the Assistant Cloud dashboard, go to **Auth Integrations** and add your provi
 Then pass an `authToken` function that returns your provider's ID token:
 
 ```ts
-import { AssistantCloud } from "@assistant-ui/react";
+import { AssistantCloud } from "@hitchsoftware/assistant-ui-react";
 
 const cloud = new AssistantCloud({
   baseUrl: process.env.NEXT_PUBLIC_ASSISTANT_BASE_URL!,
@@ -61,7 +61,7 @@ ASSISTANT_API_KEY=your_key_here
 #### Create the Token Endpoint
 
 ```ts title="/app/api/assistant-ui-token/route.ts"
-import { AssistantCloud } from "assistant-cloud";
+import { AssistantCloud } from "@hitchsoftware/assistant-cloud";
 import { auth } from "@clerk/nextjs/server"; // Or your auth provider
 
 export const POST = async (req: Request) => {
@@ -108,7 +108,7 @@ const runtime = useChatRuntime({
 For demos or testing, use anonymous mode to create browser-session-based users:
 
 ```tsx
-import { AssistantCloud } from "@assistant-ui/react";
+import { AssistantCloud } from "@hitchsoftware/assistant-ui-react";
 
 const cloud = new AssistantCloud({
   baseUrl: process.env.NEXT_PUBLIC_ASSISTANT_BASE_URL!,
@@ -129,7 +129,7 @@ const cloud = new AssistantCloud({
 
 #### Configure the JWT Template
 
-In the Clerk dashboard, go to **Configure → JWT Templates**. Create a new blank template named "assistant-ui":
+In the Clerk dashboard, go to **Configure → JWT Templates**. Create a new blank template named "@hitchsoftware/assistant-ui":
 
 ```json
 {
@@ -162,7 +162,7 @@ In the Assistant Cloud dashboard, go to **Auth Rules** and create a new rule:
 
 ```tsx
 import { useAuth } from "@clerk/nextjs";
-import { AssistantCloud } from "@assistant-ui/react";
+import { AssistantCloud } from "@hitchsoftware/assistant-ui-react";
 
 function Chat() {
   const { getToken } = useAuth();
@@ -187,7 +187,7 @@ function Chat() {
 
 ```tsx
 import { useAuth0 } from "@auth0/auth0-react";
-import { AssistantCloud } from "@assistant-ui/react";
+import { AssistantCloud } from "@hitchsoftware/assistant-ui-react";
 
 function Chat() {
   const { getAccessTokenSilently } = useAuth0();
@@ -211,7 +211,7 @@ Configure the Auth0 integration in the Assistant Cloud dashboard with your Auth0
 
 ```tsx
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
-import { AssistantCloud } from "@assistant-ui/react";
+import { AssistantCloud } from "@hitchsoftware/assistant-ui-react";
 
 function Chat() {
   const supabase = useSupabaseClient();
@@ -236,7 +236,7 @@ function Chat() {
 
 ```tsx
 import { getAuth, getIdToken } from "firebase/auth";
-import { AssistantCloud } from "@assistant-ui/react";
+import { AssistantCloud } from "@hitchsoftware/assistant-ui-react";
 
 function Chat() {
   const cloud = useMemo(() => {

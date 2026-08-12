@@ -18,7 +18,7 @@ import {
   ComposerPrimitive,
   MessagePrimitive,
   ThreadPrimitive,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 const Thread = () => {
   return (
@@ -79,7 +79,7 @@ The `isEditing` flag is available on both `ThreadComposerState` and `EditCompose
 `aui.composer.beginEdit()` is the programmatic entry point for entering edit mode on a message. Use it for headless or keyboard-shortcut-driven flows where `ActionBarPrimitive.Edit` is not rendered:
 
 ```tsx
-import { useAui } from "@assistant-ui/react";
+import { useAui } from "@hitchsoftware/assistant-ui-react";
 
 const EditButton = () => {
   const aui = useAui();

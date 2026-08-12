@@ -27,7 +27,7 @@ npm run dev
 
 ## Features
 
-- React Hook Form integration via `@assistant-ui/react-hook-form`
+- React Hook Form integration via `@hitchsoftware/assistant-ui-react-hook-form`
 - AI-powered form filling with `useAssistantForm`
 - Custom tool rendering for form actions
 - Sidebar assistant layout

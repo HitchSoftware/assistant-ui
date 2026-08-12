@@ -2,9 +2,9 @@ import type {
   MessagePartState,
   TextMessagePart,
   ReasoningMessagePart,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import { useMemo } from "react";
-import { useAuiState } from "@assistant-ui/store";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 import { MarkdownText, type MarkdownTextProps } from "./MarkdownText";
 
 type MarkdownTextPrimitiveProps = Omit<MarkdownTextProps, "text"> & {

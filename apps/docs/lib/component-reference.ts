@@ -1,7 +1,7 @@
 import {
   defaultGenerativeUILibrary,
   type UISpec,
-} from "@assistant-ui/react-generative-ui";
+} from "@hitchsoftware/assistant-ui-react-generative-ui";
 
 export type ComponentCategory = {
   label: string;
@@ -618,7 +618,7 @@ export const COMPONENT_EXAMPLES: Record<string, UISpec> = {
 
   if (problems.length > 0) {
     throw new Error(
-      `[@assistant-ui/docs] generative UI component reference drift:\n- ${problems.join("\n- ")}`,
+      `[@hitchsoftware/assistant-ui-docs] generative UI component reference drift:\n- ${problems.join("\n- ")}`,
     );
   }
 }

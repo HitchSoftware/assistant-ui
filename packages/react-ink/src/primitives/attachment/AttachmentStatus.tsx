@@ -1,7 +1,7 @@
 import type { ComponentProps, FC } from "react";
 import { Text } from "ink";
 import Spinner from "ink-spinner";
-import { useAuiState } from "@assistant-ui/store";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 
 export type AttachmentStatusProps = Omit<
   ComponentProps<typeof Text>,

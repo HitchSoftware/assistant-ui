@@ -1,11 +1,11 @@
 import type { UIMessage } from "@ai-sdk/react";
-import type { ReadonlyJSONObject } from "assistant-stream/utils";
+import type { ReadonlyJSONObject } from "@hitchsoftware/assistant-stream/utils";
 import {
   CloudMessagePersistence,
   createFormattedPersistence,
   type MessageFormatAdapter,
-} from "assistant-cloud";
-import type { AssistantCloud } from "assistant-cloud";
+} from "@hitchsoftware/assistant-cloud";
+import type { AssistantCloud } from "@hitchsoftware/assistant-cloud";
 
 export const MESSAGE_FORMAT = "ai-sdk/v6";
 

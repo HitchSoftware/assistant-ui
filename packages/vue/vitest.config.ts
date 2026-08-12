@@ -8,9 +8,9 @@ export default defineConfig({
     alias: [
       {
         find: /^react\/compiler-runtime$/,
-        replacement: "@assistant-ui/tap/standalone-shim/compiler-runtime",
+        replacement: "@hitchsoftware/assistant-ui-tap/standalone-shim/compiler-runtime",
       },
-      { find: /^react$/, replacement: "@assistant-ui/tap/standalone-shim" },
+      { find: /^react$/, replacement: "@hitchsoftware/assistant-ui-tap/standalone-shim" },
     ],
   },
   test: {

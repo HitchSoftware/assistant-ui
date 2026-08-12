@@ -1,5 +1,5 @@
-/// <reference types="@assistant-ui/core/react" />
-import { useAuiState } from "@assistant-ui/store";
+/// <reference types="@hitchsoftware/assistant-ui-core/react" />
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 
 export type ThreadTokenUsage = {
   totalTokens?: number;

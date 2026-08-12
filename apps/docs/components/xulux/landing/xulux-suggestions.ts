@@ -234,7 +234,7 @@ You can customize tool rendering through the component’s \`components\` prop i
         label: "AI SDK runtime",
         prompt: "How do I connect assistant-ui to the Vercel AI SDK?",
         replay: {
-          text: `Use \`useChatRuntime\` from \`@assistant-ui/react-ai-sdk\` on the client and return a UI message stream from your chat route.
+          text: `Use \`useChatRuntime\` from \`@hitchsoftware/assistant-ui-react-ai-sdk\` on the client and return a UI message stream from your chat route.
 
 ## Server route
 
@@ -259,8 +259,8 @@ export async function POST(req: Request) {
 \`\`\`tsx
 "use client";
 
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { Thread } from "@/components/assistant-ui/thread";
 
 export default function Chat() {
@@ -287,7 +287,7 @@ The runtime connects assistant-ui’s thread primitives to the AI SDK transport,
 \`\`\`tsx
 "use generative";
 
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import { z } from "zod";
 
 export default defineToolkit({
@@ -334,8 +334,8 @@ For a tool executed by your backend, register the same tool name with \`type: "b
 "use client";
 
 import { useMemo } from "react";
-import { AssistantCloud, AssistantRuntimeProvider } from "@assistant-ui/react";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+import { AssistantCloud, AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { Thread } from "@/components/assistant-ui/thread";
 import { ThreadList } from "@/components/assistant-ui/thread-list";
 
@@ -377,8 +377,8 @@ Set \`NEXT_PUBLIC_ASSISTANT_BASE_URL\` to your project’s frontend API URL. Ass
 "use client";
 
 import { useMemo } from "react";
-import { AssistantCloud, AssistantRuntimeProvider } from "@assistant-ui/react";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+import { AssistantCloud, AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { Thread } from "@/components/assistant-ui/thread";
 import { ThreadList } from "@/components/assistant-ui/thread-list";
 
@@ -424,7 +424,7 @@ The first message creates a Cloud thread, completed messages are persisted as th
 4. Use your organization or project membership to decide which workspace the user can access.
 
 \`\`\`tsx
-import { AssistantCloud } from "@assistant-ui/react";
+import { AssistantCloud } from "@hitchsoftware/assistant-ui-react";
 
 const cloud = new AssistantCloud({
   baseUrl: process.env.NEXT_PUBLIC_ASSISTANT_BASE_URL!,

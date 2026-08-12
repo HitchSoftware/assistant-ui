@@ -1,6 +1,6 @@
 "use generative";
 
-import { defineToolkit, externalTool, humanTool } from "@assistant-ui/react";
+import { defineToolkit, externalTool, humanTool } from "@hitchsoftware/assistant-ui-react";
 import { ChartToolUI } from "@/components/chart-tool-ui";
 import { DatePickerToolUI } from "@/components/date-picker-tool-ui";
 import { ContactFormToolUI } from "@/components/contact-form-tool-ui";

@@ -11,7 +11,7 @@ import { z } from "zod";
 import {
   AISDKToolkit,
   type AISDKToolkitToolsOptions,
-} from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import {
   renderGuiToolDescription,
   renderGuiToolInputSchema,

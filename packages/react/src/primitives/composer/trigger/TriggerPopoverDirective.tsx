@@ -3,8 +3,8 @@
 import type {
   Unstable_DirectiveFormatter,
   Unstable_TriggerItem,
-} from "@assistant-ui/core";
-import { unstable_defaultDirectiveFormatter } from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
+import { unstable_defaultDirectiveFormatter } from "@hitchsoftware/assistant-ui-core";
 import { useEffect, useRef, type FC } from "react";
 import { useTriggerBehaviorRegistration } from "./TriggerPopover";
 import type { TriggerBehavior } from "./triggerSelectionResource";

@@ -4,7 +4,7 @@ import {
   ActionBarPrimitive,
   MessagePrimitive,
   ThreadPrimitive,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { CheckIcon, CopyIcon, RefreshCwIcon } from "lucide-react";
 import { SampleRuntimeProvider } from "./sample-runtime-provider";
 

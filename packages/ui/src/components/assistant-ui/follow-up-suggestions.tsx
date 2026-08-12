@@ -1,6 +1,6 @@
 "use client";
 
-import { AuiIf, useAuiState, ThreadPrimitive } from "@assistant-ui/react";
+import { AuiIf, useAuiState, ThreadPrimitive } from "@hitchsoftware/assistant-ui-react";
 import { useCallback, useEffect, useRef, useState, type FC } from "react";
 
 const FollowupSuggestionsRow: FC = () => {

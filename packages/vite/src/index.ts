@@ -2,7 +2,7 @@ import type { Plugin, TransformResult } from "vite";
 import {
   compileGenerative,
   isGenerativeModule,
-} from "@assistant-ui/x-generative-compiler";
+} from "@hitchsoftware/assistant-ui-x-generative-compiler";
 
 /** Source modules a `"use generative"` directive can appear in. */
 const SOURCE_RE = /\.[cm]?[jt]sx?($|\?)/;
@@ -48,7 +48,7 @@ function generativePlugin(): Plugin {
  * `@vitejs/plugin-react`'s JSX transform, so array placement doesn't matter:
  *
  * ```ts
- * import { aui } from "@assistant-ui/vite";
+ * import { aui } from "@hitchsoftware/assistant-ui-vite";
  * export default defineConfig({
  *   plugins: [aui(), tanstackStart(), viteReact()],
  * });

@@ -1,6 +1,6 @@
 "use client";
 
-import type { ToolCallMessagePartComponent } from "@assistant-ui/react";
+import type { ToolCallMessagePartComponent } from "@hitchsoftware/assistant-ui-react";
 import { MapPinIcon, Loader2Icon } from "lucide-react";
 
 type LocationArgs = {

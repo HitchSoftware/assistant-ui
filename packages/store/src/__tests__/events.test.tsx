@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { Suspense, startTransition, useLayoutEffect, useState } from "react";
 import { act, cleanup, render, renderHook } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { flushTapSync, resource } from "@assistant-ui/tap";
+import { flushTapSync, resource } from "@hitchsoftware/assistant-ui-tap";
 import { AuiProvider } from "../AuiProvider";
 import { AuiConfig } from "../AuiConfig";
 import { useAui } from "../useAui";

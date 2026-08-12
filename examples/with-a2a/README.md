@@ -50,7 +50,7 @@ Open [http://localhost:3000](http://localhost:3000).
 Browser (Next.js) ──A2A v1.0 SSE──▶ A2A Server
 ```
 
-No proxy backend needed. `@assistant-ui/react-a2a` handles the full A2A protocol directly:
+No proxy backend needed. `@hitchsoftware/assistant-ui-react-a2a` handles the full A2A protocol directly:
 - Agent card discovery (`/.well-known/agent-card.json`)
 - Streaming via `POST /message:stream` (SSE)
 - Task lifecycle management

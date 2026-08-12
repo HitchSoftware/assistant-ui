@@ -193,10 +193,10 @@ describe("info command", () => {
         path.join(app, "package.json"),
         JSON.stringify({
           name: "app",
-          dependencies: { "@assistant-ui/react": "0.14.5" },
+          dependencies: { "@hitchsoftware/assistant-ui-react": "0.14.5" },
         }),
       );
-      writePackage(root, "@assistant-ui/react", { version: "0.14.5" });
+      writePackage(root, "@hitchsoftware/assistant-ui-react", { version: "0.14.5" });
       fs.symlinkSync(
         app,
         linkedApp,
@@ -209,7 +209,7 @@ describe("info command", () => {
 
       const output = consoleLog.mock.calls.flat().join("\n");
       expect(output).toContain("Monorepo:         yes");
-      expect(output).toContain("@assistant-ui/react");
+      expect(output).toContain("@hitchsoftware/assistant-ui-react");
     } finally {
       consoleLog.mockRestore();
       fs.rmSync(fixture, { recursive: true, force: true });
@@ -229,20 +229,20 @@ describe("info command", () => {
         JSON.stringify({
           name: "fixture",
           dependencies: {
-            "@assistant-ui/react-mcp": "0.0.17",
-            "assistant-stream": "0.3.25",
+            "@hitchsoftware/assistant-ui-react-mcp": "0.0.17",
+            "@hitchsoftware/assistant-stream": "0.3.25",
             react: "20.0.0",
           },
           devDependencies: {
-            "@assistant-ui/react-generative-ui": "0.0.7",
+            "@hitchsoftware/assistant-ui-react-generative-ui": "0.0.7",
           },
         }),
       );
-      writePackage(root, "@assistant-ui/react-mcp", {
+      writePackage(root, "@hitchsoftware/assistant-ui-react-mcp", {
         version: "0.0.17",
         peerDependencies: { react: "^18 || ^19" },
       });
-      writePackage(root, "@assistant-ui/react-generative-ui", {
+      writePackage(root, "@hitchsoftware/assistant-ui-react-generative-ui", {
         version: "0.0.7",
       });
       writePackage(root, "assistant-stream", { version: "0.3.25" });
@@ -254,11 +254,11 @@ describe("info command", () => {
 
       const output = consoleLog.mock.calls.flat().join("\n");
       expect(output).toContain(`assistant-ui CLI: ${cliPackageJson.version}`);
-      expect(output).toContain("@assistant-ui/react-mcp");
-      expect(output).toContain("@assistant-ui/react-generative-ui");
+      expect(output).toContain("@hitchsoftware/assistant-ui-react-mcp");
+      expect(output).toContain("@hitchsoftware/assistant-ui-react-generative-ui");
       expect(output).toContain("assistant-stream");
       expect(output).toContain(
-        "@assistant-ui/react-mcp requires react ^18 || ^19, found 20.0.0",
+        "@hitchsoftware/assistant-ui-react-mcp requires react ^18 || ^19, found 20.0.0",
       );
     } finally {
       consoleLog.mockRestore();

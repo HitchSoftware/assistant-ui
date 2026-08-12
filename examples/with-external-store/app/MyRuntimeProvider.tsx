@@ -1,11 +1,11 @@
 "use client";
 
-import type { ThreadMessageLike } from "@assistant-ui/react";
-import type { AppendMessage } from "@assistant-ui/react";
+import type { ThreadMessageLike } from "@hitchsoftware/assistant-ui-react";
+import type { AppendMessage } from "@hitchsoftware/assistant-ui-react";
 import {
   AssistantRuntimeProvider,
   useExternalStoreRuntime,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { useState } from "react";
 
 const convertMessage = (message: ThreadMessageLike) => {

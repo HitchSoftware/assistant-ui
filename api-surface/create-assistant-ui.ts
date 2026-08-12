@@ -1,7 +1,7 @@
 type CliSurfaceSnapshot = Record<string, unknown>;
 
 export const cliSurface: CliSurfaceSnapshot = {
-  "name": "create-assistant-ui",
+  "name": "@hitchsoftware/create-assistant-ui",
   "description": "create assistant-ui apps with one command",
   "forwardsTo": "assistant-ui create",
   "arguments": [

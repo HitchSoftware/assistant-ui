@@ -1,4 +1,4 @@
-# @assistant-ui/mcp-docs-server
+# @hitchsoftware/assistant-ui-mcp-docs-server
 
 ## 0.2.1
 
@@ -266,4 +266,4 @@
 
 ### Patch Changes
 
-- 3568a91: feat(docs): Add `@assistant-ui/mcp-docs-server` for direct MCP access to docs and examples
+- 3568a91: feat(docs): Add `@hitchsoftware/assistant-ui-mcp-docs-server` for direct MCP access to docs and examples

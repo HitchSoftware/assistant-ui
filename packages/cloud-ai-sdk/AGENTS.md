@@ -1,8 +1,8 @@
-# @assistant-ui/cloud-ai-sdk
+# @hitchsoftware/assistant-ui-cloud-ai-sdk
 
 > Part of assistant-ui monorepo. See root [AGENTS.md](../../AGENTS.md) for build commands.
 
-React hooks bridging Vercel AI SDK (`useChat`) with [`assistant-cloud`](../cloud/AGENTS.md) persistence. Works without the full `@assistant-ui/react` runtime.
+React hooks bridging Vercel AI SDK (`useChat`) with [`assistant-cloud`](../cloud/AGENTS.md) persistence. Works without the full `@hitchsoftware/assistant-ui-react` runtime.
 
 ## Structure
 

@@ -1,6 +1,6 @@
 "use generative";
 
-import { defineToolkit, externalTool } from "@assistant-ui/react";
+import { defineToolkit, externalTool } from "@hitchsoftware/assistant-ui-react";
 import { PriceSnapshotToolUI } from "@/components/tools/price-snapshot/PriceSnapshotTool";
 import { PurchaseStockToolUI } from "@/components/tools/purchase-stock/PurchaseStockTool";
 

@@ -1,5 +1,5 @@
-import { toJSONSchema } from "assistant-stream";
-import type { GenerativeUIComponent } from "@assistant-ui/react-generative-ui";
+import { toJSONSchema } from "@hitchsoftware/assistant-stream";
+import type { GenerativeUIComponent } from "@hitchsoftware/assistant-ui-react-generative-ui";
 
 export type PropRow = {
   name: string;

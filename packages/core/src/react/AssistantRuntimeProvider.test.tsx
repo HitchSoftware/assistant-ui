@@ -4,13 +4,13 @@ import type { ReactNode } from "react";
 import { useEffect } from "react";
 import { cleanup, render } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
-import { resource } from "@assistant-ui/tap";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
 import {
   AuiConfig,
   AuiProvider,
   useAui,
   type AssistantClient,
-} from "@assistant-ui/store";
+} from "@hitchsoftware/assistant-ui-store";
 import type { ChatModelAdapter } from "../runtime/utils/chat-model-adapter";
 import { AssistantRuntimeProvider } from "./AssistantRuntimeProvider";
 import { useLocalRuntime } from "./runtimes/useLocalRuntime";

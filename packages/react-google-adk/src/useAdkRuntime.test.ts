@@ -5,7 +5,7 @@ import {
   getPendingToolCalls,
 } from "./useAdkRuntime";
 import { convertAdkMessage } from "./convertAdkMessages";
-import type { AppendMessage } from "@assistant-ui/core";
+import type { AppendMessage } from "@hitchsoftware/assistant-ui-core";
 import type { AdkMessage } from "./types";
 
 const makeAppendMessage = (content: AppendMessage["content"]): AppendMessage =>

@@ -1,5 +1,5 @@
 import type { NextRequest } from "next/server";
-import type { PiHostUiResponse } from "@assistant-ui/react-pi";
+import type { PiHostUiResponse } from "@hitchsoftware/assistant-ui-react-pi";
 import { piClient } from "@/lib/pi-server";
 import { noContent, withFail } from "@/lib/http";
 

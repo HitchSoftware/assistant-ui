@@ -5,7 +5,7 @@ import {
   type RenderedFrame,
   SafeContentFrame,
   type SandboxOption,
-} from "safe-content-frame";
+} from "@hitchsoftware/safe-content-frame";
 
 const DEFAULT_PRODUCT = "assistant-ui-sandbox";
 const DEFAULT_MAX_HEIGHT = 800;

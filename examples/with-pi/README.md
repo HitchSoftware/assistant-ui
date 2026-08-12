@@ -1,6 +1,6 @@
 # assistant-ui × Pi
 
-A minimal local harness for the [`@assistant-ui/react-pi`](../../packages/react-pi)
+A minimal local harness for the [`@hitchsoftware/assistant-ui-react-pi`](../../packages/react-pi)
 adapter, driving the [Pi coding agent](https://www.npmjs.com/package/@earendil-works/pi-coding-agent)
 in-process.
 
@@ -33,7 +33,7 @@ Resolution mirrors Pi's own `createAgentSession`: if you set
 configured default (`settings.json`'s `defaultProvider`/`defaultModel`). So if
 you're authenticated with `pi` and have a default model picked, **no env is
 required**. The resolved model is handed to every new session and seeds the
-in-app **model selector** (via `@assistant-ui/ui`'s `ModelSelector`) and the
+in-app **model selector** (via `@hitchsoftware/assistant-ui-ui`'s `ModelSelector`) and the
 readiness banner's credential check. The selector is wired to Pi's per-thread
 `setModel`, and the composer exposes Pi's thinking-level control. Set
 `PI_CODING_AGENT_DIR` to point at a non-default agent config dir (defaults to

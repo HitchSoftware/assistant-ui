@@ -2,7 +2,7 @@
 
 import { act, render } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
-import { AuiProvider, useAui, useAuiEvent } from "@assistant-ui/store";
+import { AuiProvider, useAui, useAuiEvent } from "@hitchsoftware/assistant-ui-store";
 import { RuntimeAdapter } from "../react/RuntimeAdapter";
 import { AssistantRuntimeImpl } from "../runtime/api/assistant-runtime";
 import { ExternalStoreRuntimeCore } from "../runtimes/external-store/external-store-runtime-core";

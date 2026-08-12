@@ -7,7 +7,7 @@ import {
   type PropsWithChildren,
   useMemo,
 } from "react";
-import { useAuiState, useAui } from "@assistant-ui/store";
+import { useAuiState, useAui } from "@hitchsoftware/assistant-ui-store";
 import { PartByIndexProvider } from "../../context/providers/PartByIndexProvider";
 import { TextMessagePartProvider } from "../../context/providers/TextMessagePartProvider";
 import { MessagePartPrimitiveText } from "../messagePart/MessagePartText";
@@ -24,9 +24,9 @@ import type {
   ToolCallMessagePartProps,
   FileMessagePartComponent,
   ReasoningMessagePartComponent,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";
 import { MessagePartPrimitiveInProgress } from "../messagePart/MessagePartInProgress";
-import type { MessagePartStatus } from "@assistant-ui/core";
+import type { MessagePartStatus } from "@hitchsoftware/assistant-ui-core";
 
 type MessagePartGroup = {
   groupKey: string | undefined;
@@ -111,7 +111,7 @@ export namespace MessagePrimitiveUnstable_PartsGrouped {
      * @example
      * ```tsx
      * // Group by tool name
-     * import { groupMessagePartsByToolName } from "@assistant-ui/react";
+     * import { groupMessagePartsByToolName } from "@hitchsoftware/assistant-ui-react";
      *
      * <MessagePrimitive.Unstable_PartsGrouped
      *   groupingFunction={groupMessagePartsByToolName}

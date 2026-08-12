@@ -14,7 +14,7 @@ OpenCode pauses tool execution to ask the user for permission (e.g. running shel
 `useOpenCodePermissions` remains available for custom tool renderers and permission requests that are not linked to a tool call. It returns the pending permission requests and a reply function:
 
 ```tsx
-import { useOpenCodePermissions } from "@assistant-ui/react-opencode";
+import { useOpenCodePermissions } from "@hitchsoftware/assistant-ui-react-opencode";
 
 function PermissionPrompt() {
   const { pending, reply } = useOpenCodePermissions();
@@ -55,7 +55,7 @@ OpenCode can ask interactive questions during a run. `useOpenCodeQuestions` retu
 import {
   useOpenCodeQuestions,
   useOpenCodeRuntimeExtras,
-} from "@assistant-ui/react-opencode";
+} from "@hitchsoftware/assistant-ui-react-opencode";
 
 function QuestionPrompt() {
   const questions = useOpenCodeQuestions();
@@ -86,7 +86,7 @@ To reply, use `replyToQuestion(id, answers)` or `rejectQuestion(id)` from [`useO
 `useOpenCodeSession` returns the current OpenCode `Session` object (server-side session metadata):
 
 ```tsx
-import { useOpenCodeSession } from "@assistant-ui/react-opencode";
+import { useOpenCodeSession } from "@hitchsoftware/assistant-ui-react-opencode";
 
 function SessionInfo() {
   const session = useOpenCodeSession();
@@ -100,7 +100,7 @@ function SessionInfo() {
 `useOpenCodeThreadState` returns the full projected thread state (messages, run state, interactions, sync metadata). Use it for advanced custom views; most apps don't need it.
 
 ```tsx
-import { useOpenCodeThreadState } from "@assistant-ui/react-opencode";
+import { useOpenCodeThreadState } from "@hitchsoftware/assistant-ui-react-opencode";
 
 function RunStatus() {
   const state = useOpenCodeThreadState();
@@ -127,7 +127,7 @@ const isStreaming = useOpenCodeThreadState((s) => s.runState.type === "streaming
 `useOpenCodeRuntimeExtras` exposes session-level imperative actions:
 
 ```tsx
-import { useOpenCodeRuntimeExtras } from "@assistant-ui/react-opencode";
+import { useOpenCodeRuntimeExtras } from "@hitchsoftware/assistant-ui-react-opencode";
 
 function SessionActions() {
   const {

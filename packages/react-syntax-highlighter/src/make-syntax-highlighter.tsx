@@ -2,7 +2,7 @@
 
 import type { ComponentType, FC } from "react";
 import type { SyntaxHighlighterProps as SHP } from "react-syntax-highlighter";
-import type { SyntaxHighlighterProps } from "@assistant-ui/react-markdown";
+import type { SyntaxHighlighterProps } from "@hitchsoftware/assistant-ui-react-markdown";
 
 export const makeMakeSyntaxHighlighter =
   (SyntaxHighlighter: ComponentType<SHP>) =>

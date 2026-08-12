@@ -1,3 +1,3 @@
 "use client";
 
-export { ComposerPrimitiveQueue } from "@assistant-ui/core/react";
+export { ComposerPrimitiveQueue } from "@hitchsoftware/assistant-ui-core/react";

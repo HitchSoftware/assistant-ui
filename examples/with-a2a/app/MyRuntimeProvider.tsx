@@ -1,8 +1,8 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
-import { useA2ARuntime } from "@assistant-ui/react-a2a";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
+import { useA2ARuntime } from "@hitchsoftware/assistant-ui-react-a2a";
 
 export function MyRuntimeProvider({
   children,

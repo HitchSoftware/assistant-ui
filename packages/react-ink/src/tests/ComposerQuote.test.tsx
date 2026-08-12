@@ -16,8 +16,8 @@ type InputHandler = (
 
 let inputHandlers: InputHandler[] = [];
 
-vi.mock("@assistant-ui/store", async (importOriginal) => {
-  const actual = await importOriginal<typeof import("@assistant-ui/store")>();
+vi.mock("@hitchsoftware/assistant-ui-store", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@hitchsoftware/assistant-ui-store")>();
   return {
     ...actual,
     useAui: () => mockUseAui(),

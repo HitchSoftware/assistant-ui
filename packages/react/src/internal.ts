@@ -1,10 +1,10 @@
-// Re-export from @assistant-ui/core
+// Re-export from @hitchsoftware/assistant-ui-core
 export type {
   ThreadRuntimeCore,
   ThreadListRuntimeCore,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 
-// Re-export from @assistant-ui/core/internal
+// Re-export from @hitchsoftware/assistant-ui-core/internal
 export {
   DefaultThreadComposerRuntimeCore,
   CompositeContextProvider,
@@ -13,15 +13,15 @@ export {
   AssistantRuntimeImpl,
   ThreadRuntimeImpl,
   getAutoStatus,
-} from "@assistant-ui/core/internal";
+} from "@hitchsoftware/assistant-ui-core/internal";
 export type {
   ThreadRuntimeCoreBinding,
   ThreadListItemRuntimeBinding,
-} from "@assistant-ui/core/internal";
+} from "@hitchsoftware/assistant-ui-core/internal";
 
 // React-specific (stay in react)
 export { splitLocalRuntimeOptions } from "./legacy-runtime/runtime-cores/local/LocalRuntimeOptions";
-export type { ToolExecutionStatus } from "@assistant-ui/core";
+export type { ToolExecutionStatus } from "@hitchsoftware/assistant-ui-core";
 
 export { useSmooth } from "./utils/smooth/useSmooth";
 export {

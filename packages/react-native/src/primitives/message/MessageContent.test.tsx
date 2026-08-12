@@ -16,7 +16,7 @@ const h = vi.hoisted(() => ({
   },
 }));
 
-vi.mock("@assistant-ui/store", () => {
+vi.mock("@hitchsoftware/assistant-ui-store", () => {
   const message = Object.assign(() => message, {
     part: ({ index }: { index: number }) => ({
       addToolResult: (...args: unknown[]) => h.addToolResult(index, ...args),

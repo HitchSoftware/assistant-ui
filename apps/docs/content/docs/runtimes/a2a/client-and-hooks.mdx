@@ -12,7 +12,7 @@ Deep dive on the runtime's API surface. Start with [overview](/docs/runtimes/a2a
 The built-in `A2AClient` handles all communication with the A2A server: JSON serialization, SSE streaming, ProtoJSON enum normalization, and structured error handling.
 
 ```ts
-import { A2AClient } from "@assistant-ui/react-a2a";
+import { A2AClient } from "@hitchsoftware/assistant-ui-react-a2a";
 
 const client = new A2AClient({
   baseUrl: "https://my-agent.example.com",
@@ -91,7 +91,7 @@ Pass either a pre-built `client` or a `baseUrl` (the runtime creates a client fo
 <Tab value="React">
 
 ```tsx
-import { useA2ATask } from "@assistant-ui/react-a2a";
+import { useA2ATask } from "@hitchsoftware/assistant-ui-react-a2a";
 
 function TaskStatus() {
   const task = useA2ATask();
@@ -108,7 +108,7 @@ function TaskStatus() {
 <Tab value="React Native">
 
 ```tsx
-import { useA2ATask } from "@assistant-ui/react-a2a";
+import { useA2ATask } from "@hitchsoftware/assistant-ui-react-a2a";
 import { Text, View } from "react-native";
 
 function TaskStatus() {
@@ -128,7 +128,7 @@ function TaskStatus() {
 <Tab value="React Ink">
 
 ```tsx
-import { useA2ATask } from "@assistant-ui/react-a2a";
+import { useA2ATask } from "@hitchsoftware/assistant-ui-react-a2a";
 import { Text } from "ink";
 
 function TaskStatus() {
@@ -153,7 +153,7 @@ function TaskStatus() {
 <Tab value="React">
 
 ```tsx
-import { useA2AArtifacts } from "@assistant-ui/react-a2a";
+import { useA2AArtifacts } from "@hitchsoftware/assistant-ui-react-a2a";
 
 function ArtifactList() {
   const artifacts = useA2AArtifacts();
@@ -173,7 +173,7 @@ function ArtifactList() {
 <Tab value="React Native">
 
 ```tsx
-import { useA2AArtifacts } from "@assistant-ui/react-a2a";
+import { useA2AArtifacts } from "@hitchsoftware/assistant-ui-react-a2a";
 import { Text, View } from "react-native";
 
 function ArtifactList() {
@@ -194,7 +194,7 @@ function ArtifactList() {
 <Tab value="React Ink">
 
 ```tsx
-import { useA2AArtifacts } from "@assistant-ui/react-a2a";
+import { useA2AArtifacts } from "@hitchsoftware/assistant-ui-react-a2a";
 import { Box, Text } from "ink";
 
 function ArtifactList() {
@@ -222,7 +222,7 @@ function ArtifactList() {
 <Tab value="React">
 
 ```tsx
-import { useA2AAgentCard } from "@assistant-ui/react-a2a";
+import { useA2AAgentCard } from "@hitchsoftware/assistant-ui-react-a2a";
 
 function AgentInfo() {
   const card = useA2AAgentCard();
@@ -241,7 +241,7 @@ function AgentInfo() {
 <Tab value="React Native">
 
 ```tsx
-import { useA2AAgentCard } from "@assistant-ui/react-a2a";
+import { useA2AAgentCard } from "@hitchsoftware/assistant-ui-react-a2a";
 import { Text, View } from "react-native";
 
 function AgentInfo() {
@@ -261,7 +261,7 @@ function AgentInfo() {
 <Tab value="React Ink">
 
 ```tsx
-import { useA2AAgentCard } from "@assistant-ui/react-a2a";
+import { useA2AAgentCard } from "@hitchsoftware/assistant-ui-react-a2a";
 import { Box, Text } from "ink";
 
 function AgentInfo() {
@@ -331,7 +331,7 @@ The runtime automatically selects the communication mode based on the agent's ca
 The client throws `A2AError` instances with structured error information following the `google.rpc.Status` format:
 
 ```tsx
-import { A2AError } from "@assistant-ui/react-a2a";
+import { A2AError } from "@hitchsoftware/assistant-ui-react-a2a";
 
 const runtime = useA2ARuntime({
   baseUrl: "http://localhost:9999",

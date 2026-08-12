@@ -1,5 +1,5 @@
 import { type FC, type ReactNode, memo } from "react";
-import { useAuiState } from "@assistant-ui/store";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 import type { ThreadMessage } from "../../../types/message";
 import { ReadonlyThreadProvider } from "../../providers/ReadonlyThreadProvider";
 import {

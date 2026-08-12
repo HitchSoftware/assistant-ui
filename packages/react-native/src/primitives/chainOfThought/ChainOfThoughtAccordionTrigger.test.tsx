@@ -9,7 +9,7 @@ const h = vi.hoisted(() => ({
   state: { chainOfThought: { collapsed: true } },
 }));
 
-vi.mock("@assistant-ui/store", () => {
+vi.mock("@hitchsoftware/assistant-ui-store", () => {
   const chainOfThought = Object.assign(() => chainOfThought, {
     setCollapsed: h.setCollapsed,
   });

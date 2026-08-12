@@ -1,21 +1,21 @@
-# `@assistant-ui/react-ink`
+# `@hitchsoftware/assistant-ui-react-ink`
 
-[![npm version](https://img.shields.io/npm/v/@assistant-ui/react-ink)](https://www.npmjs.com/package/@assistant-ui/react-ink)
-[![npm downloads](https://img.shields.io/npm/dm/@assistant-ui/react-ink)](https://www.npmjs.com/package/@assistant-ui/react-ink)
+[![npm version](https://img.shields.io/npm/v/@hitchsoftware/assistant-ui-react-ink)](https://www.npmjs.com/package/@hitchsoftware/assistant-ui-react-ink)
+[![npm downloads](https://img.shields.io/npm/dm/@hitchsoftware/assistant-ui-react-ink)](https://www.npmjs.com/package/@hitchsoftware/assistant-ui-react-ink)
 [![GitHub stars](https://img.shields.io/github/stars/assistant-ui/assistant-ui)](https://github.com/assistant-ui/assistant-ui)
-![License](https://img.shields.io/npm/l/@assistant-ui/react-ink)
+![License](https://img.shields.io/npm/l/@hitchsoftware/assistant-ui-react-ink)
 
-[Ink](https://github.com/vadimdemedes/ink) bindings for assistant-ui. Composable, unstyled terminal primitives that share the same runtime, adapters, and tools as `@assistant-ui/react`, so you can ship a CLI chat UI without rewriting your backend code.
+[Ink](https://github.com/vadimdemedes/ink) bindings for assistant-ui. Composable, unstyled terminal primitives that share the same runtime, adapters, and tools as `@hitchsoftware/assistant-ui-react`, so you can ship a CLI chat UI without rewriting your backend code.
 
 ## Installation
 
 Requires React 19 and ink 6 or newer.
 
 ```bash
-npm install @assistant-ui/react-ink ink react
+npm install @hitchsoftware/assistant-ui-react-ink ink react
 ```
 
-For markdown rendering with syntax highlighting, also install [`@assistant-ui/react-ink-markdown`](https://www.npmjs.com/package/@assistant-ui/react-ink-markdown).
+For markdown rendering with syntax highlighting, also install [`@hitchsoftware/assistant-ui-react-ink-markdown`](https://www.npmjs.com/package/@hitchsoftware/assistant-ui-react-ink-markdown).
 
 ## Usage
 
@@ -28,7 +28,7 @@ import {
   ComposerPrimitive,
   useAuiState,
   type ChatModelAdapter,
-} from "@assistant-ui/react-ink";
+} from "@hitchsoftware/assistant-ui-react-ink";
 
 const adapter: ChatModelAdapter = {
   async *run({ messages }) {
@@ -76,5 +76,5 @@ render(<App />);
 
 ## For other platforms
 
-- Web: [`@assistant-ui/react`](https://www.npmjs.com/package/@assistant-ui/react)
-- React Native: [`@assistant-ui/react-native`](https://www.npmjs.com/package/@assistant-ui/react-native)
+- Web: [`@hitchsoftware/assistant-ui-react`](https://www.npmjs.com/package/@hitchsoftware/assistant-ui-react)
+- React Native: [`@hitchsoftware/assistant-ui-react-native`](https://www.npmjs.com/package/@hitchsoftware/assistant-ui-react-native)

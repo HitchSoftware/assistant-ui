@@ -3,7 +3,7 @@
  *
  * @example
  * ```typescript
- * declare module "@assistant-ui/react" {
+ * declare module "@hitchsoftware/assistant-ui-react" {
  *   namespace Assistant {
  *     interface Commands {
  *       myCustomCommand: {
@@ -21,7 +21,7 @@
  * }
  * ```
  */
-import type { Assistant as CoreAssistant } from "@assistant-ui/core";
+import type { Assistant as CoreAssistant } from "@hitchsoftware/assistant-ui-core";
 
 export namespace Assistant {
   export interface Commands extends CoreAssistant.Commands {}

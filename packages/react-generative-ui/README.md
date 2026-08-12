@@ -1,11 +1,11 @@
-# @assistant-ui/react-generative-ui
+# @hitchsoftware/assistant-ui-react-generative-ui
 
 Generative UI tools for assistant-ui.
 
 ## Installation
 
 ```bash
-npm install @assistant-ui/react-generative-ui
+npm install @hitchsoftware/assistant-ui-react-generative-ui
 ```
 
 ## Usage
@@ -16,8 +16,8 @@ them through the `present` tool. The model emits a `{ $type, ...props }` tree
 renders it against the library.
 
 ```tsx
-import { JSONGenerativeUI } from "@assistant-ui/react-generative-ui";
-import { Thread, Tools } from "@assistant-ui/react";
+import { JSONGenerativeUI } from "@hitchsoftware/assistant-ui-react-generative-ui";
+import { Thread, Tools } from "@hitchsoftware/assistant-ui-react";
 import { z } from "zod";
 
 const generativeUI = new JSONGenerativeUI({
@@ -96,7 +96,7 @@ own fiber, so you can call hooks inside it as usual.
 ## `"use generative"` authoring
 
 The examples above wire the library up by hand on the client. With the
-`"use generative"` compiler (`@assistant-ui/next` or `@assistant-ui/vite`) you
+`"use generative"` compiler (`@hitchsoftware/assistant-ui-next` or `@hitchsoftware/assistant-ui-vite`) you
 can instead colocate a component's `properties` schema with its `render` and
 expose the library as tools, and the build splits each half to the right target:
 the schema goes to the server (so the model sees the tool), the `render` stays on
@@ -107,11 +107,11 @@ the client.
 
 import { z } from "zod";
 import { Weather } from "@/components/weather";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import {
   JSONGenerativeUI,
   defineGenerativeComponents,
-} from "@assistant-ui/react-generative-ui";
+} from "@hitchsoftware/assistant-ui-react-generative-ui";
 
 const generative = new JSONGenerativeUI({
   library: defineGenerativeComponents({

@@ -1,7 +1,7 @@
 "use client";
 
-import { useAuiState } from "@assistant-ui/react";
-import type { SyntaxHighlighterProps } from "@assistant-ui/react-markdown";
+import { useAuiState } from "@hitchsoftware/assistant-ui-react";
+import type { SyntaxHighlighterProps } from "@hitchsoftware/assistant-ui-react-markdown";
 import { renderMermaidSVG } from "beautiful-mermaid";
 import { Maximize2, Minus, Plus, RotateCcw, X } from "lucide-react";
 import {

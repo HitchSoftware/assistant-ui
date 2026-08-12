@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef } from "react";
-import { useAuiState, type ToolCallMessagePart } from "@assistant-ui/react";
+import { useAuiState, type ToolCallMessagePart } from "@hitchsoftware/assistant-ui-react";
 
 type RefreshCanvasResult = {
   url?: unknown;

@@ -2,7 +2,7 @@ import {
   isMcpAppUri,
   type McpAppMetadata,
   type ToolCallMessagePart,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 
 type ToolPartLike = Pick<ToolCallMessagePart, "mcp">;
 

@@ -6,14 +6,14 @@ import type {
   LanguageModelV2ToolCallPart,
   LanguageModelV2ToolResultPart,
 } from "@ai-sdk/provider";
-import type { ThreadMessage } from "@assistant-ui/core";
+import type { ThreadMessage } from "@hitchsoftware/assistant-ui-core";
 import {
   toGenericMessages,
   type GenericMessage,
   type GenericTextPart,
   type GenericToolCallPart,
   type GenericToolResultPart,
-} from "assistant-stream";
+} from "@hitchsoftware/assistant-stream";
 
 function convertUserContent(
   content: GenericMessage & { role: "user" },

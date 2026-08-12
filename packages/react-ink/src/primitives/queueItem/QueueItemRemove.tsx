@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { useAui } from "@assistant-ui/store";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 import { Pressable, type PressableProps } from "../internal/Pressable";
 
 export type QueueItemRemoveProps = Omit<PressableProps, "onPress"> & {

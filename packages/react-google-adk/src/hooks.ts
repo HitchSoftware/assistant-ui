@@ -1,6 +1,6 @@
-import { useAui } from "@assistant-ui/store";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 import { v4 as uuidv4 } from "uuid";
-import type { ReadonlyJSONValue } from "assistant-stream/utils";
+import type { ReadonlyJSONValue } from "@hitchsoftware/assistant-stream/utils";
 import { adkExtras } from "./adkExtras";
 import type {
   AdkMessage,

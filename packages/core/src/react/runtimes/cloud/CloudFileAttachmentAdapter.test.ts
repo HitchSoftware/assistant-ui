@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import type { AssistantCloud } from "assistant-cloud";
+import type { AssistantCloud } from "@hitchsoftware/assistant-cloud";
 import type { PendingAttachment } from "../../../types/attachment";
 import { CloudFileAttachmentAdapter } from "./CloudFileAttachmentAdapter";
 

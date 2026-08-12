@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
-import { resource } from "@assistant-ui/tap";
-import type { ClientOutput } from "@assistant-ui/store";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
+import type { ClientOutput } from "@hitchsoftware/assistant-ui-store";
 import type { DataRenderersState } from "../types/scopes/dataRenderers";
 import type { DataMessagePartComponent } from "../types/MessagePartComponentTypes";
 

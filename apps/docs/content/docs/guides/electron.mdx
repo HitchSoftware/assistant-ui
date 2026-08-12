@@ -4,7 +4,7 @@ description: Run assistant-ui in an Electron renderer with a hosted backend or a
 platforms: ["react"]
 ---
 
-assistant-ui works in Electron through `@assistant-ui/react`. The renderer is a React DOM environment, so there is no separate `@assistant-ui/electron` package to install. The Electron-specific decision is where model requests run and how the renderer reaches them.
+assistant-ui works in Electron through `@hitchsoftware/assistant-ui-react`. The renderer is a React DOM environment, so there is no separate `@hitchsoftware/assistant-ui-electron` package to install. The Electron-specific decision is where model requests run and how the renderer reaches them.
 
 <Callout type="warn">
   Never put a provider API key in renderer code, a `VITE_*` variable, or a preload script. Bundled values are readable by anyone with the app. Keep remote credentials on your backend, or keep local credentials in the main process and provision them with an OS-backed secret store.
@@ -34,11 +34,11 @@ This is the smallest integration. Keep your existing AI SDK chat route and point
 
 ```tsx title="renderer/assistant-runtime.tsx"
 import type { ReactNode } from "react";
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
 import {
   AssistantChatTransport,
   useChatRuntime,
-} from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react-ai-sdk";
 
 const transport = new AssistantChatTransport({
   api: "https://api.example.com/chat",
@@ -251,7 +251,7 @@ import {
   AssistantRuntimeProvider,
   useLocalRuntime,
   type ChatModelAdapter,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import type { ChatMessage } from "./shared";
 
 const ipcChatModel: ChatModelAdapter = {

@@ -1,13 +1,13 @@
 import type {
   AssistantRuntime,
   ThreadListItemRuntime,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import {
   DefaultChatTransport,
   type HttpChatTransportInitOptions,
   type UIMessage,
 } from "ai";
-import { toToolsJSONSchema } from "assistant-stream";
+import { toToolsJSONSchema } from "@hitchsoftware/assistant-stream";
 import {
   RESUMABLE_STREAM_ID_HEADER,
   type AssistantChatResumableOptions,

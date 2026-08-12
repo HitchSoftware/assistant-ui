@@ -1,4 +1,4 @@
-# `@assistant-ui/x-changelog`
+# `@hitchsoftware/assistant-ui-x-changelog`
 
 Internal monorepo-only changesets changelog generator. **Not published to npm.**
 
@@ -14,7 +14,7 @@ Wired into the root `.changeset/config.json`:
 ```jsonc
 {
   "changelog": [
-    "@assistant-ui/x-changelog",
+    "@hitchsoftware/assistant-ui-x-changelog",
     { "repo": "assistant-ui/assistant-ui" }
   ]
 }

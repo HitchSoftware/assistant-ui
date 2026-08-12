@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^4.0.34",
-    "@assistant-ui/react": "workspace:*",
-    "@assistant-ui/react-ai-sdk": "workspace:*",
-    "@assistant-ui/ui": "workspace:*",
+    "@hitchsoftware/assistant-ui-react": "workspace:*",
+    "@hitchsoftware/assistant-ui-react-ai-sdk": "workspace:*",
+    "@hitchsoftware/assistant-ui-ui": "workspace:*",
     "ai": "^7.0.56",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -24,7 +24,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@assistant-ui/x-buildutils": "workspace:*",
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^26.1.2",
     "@types/react": "^19.2.18",

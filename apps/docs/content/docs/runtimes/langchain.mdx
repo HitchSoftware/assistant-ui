@@ -5,7 +5,7 @@ description: Use LangChain's useStream hook with a React chat UI through assista
 
 import { LangGraphIcon } from "@/components/icons/langgraph";
 
-`@assistant-ui/react-langchain` wraps [`useStream`](https://reference.langchain.com/javascript/langchain-react/use-stream) from `@langchain/react` and exposes it as an assistant-ui runtime. It targets the same backend as [`@assistant-ui/react-langgraph`](/docs/runtimes/langgraph/overview) (LangGraph Cloud) but at a higher level, delegating stream plumbing to the upstream hook.
+`@hitchsoftware/assistant-ui-react-langchain` wraps [`useStream`](https://reference.langchain.com/javascript/langchain-react/use-stream) from `@langchain/react` and exposes it as an assistant-ui runtime. It targets the same backend as [`@hitchsoftware/assistant-ui-react-langgraph`](/docs/runtimes/langgraph/overview) (LangGraph Cloud) but at a higher level, delegating stream plumbing to the upstream hook.
 
 ## When to use it
 
@@ -24,7 +24,7 @@ Both adapters are first-class and now at feature parity (the [comparison](#compa
 
 ## Architecture
 
-`@assistant-ui/react-langchain` is layered on `ExternalStoreRuntime` (see [architecture](/docs/runtimes/concepts/architecture)). Graph state is the source of truth; the runtime renders messages from `state.values.messages` and submits user input back to the graph.
+`@hitchsoftware/assistant-ui-react-langchain` is layered on `ExternalStoreRuntime` (see [architecture](/docs/runtimes/concepts/architecture)). Graph state is the source of truth; the runtime renders messages from `state.values.messages` and submits user input back to the graph.
 
 Shared adapters (attachments, speech, feedback) work the same way described in [adapters](/docs/runtimes/concepts/adapters). Cloud thread persistence is built in.
 
@@ -45,17 +45,17 @@ Shared adapters (attachments, speech, feedback) work the same way described in [
 <PlatformTabs>
 <Tab value="React">
 
-<InstallCommand npm={["@assistant-ui/react", "@assistant-ui/react-langchain", "@langchain/react", "@langchain/langgraph-sdk"]} />
+<InstallCommand npm={["@hitchsoftware/assistant-ui-react", "@hitchsoftware/assistant-ui-react-langchain", "@langchain/react", "@langchain/langgraph-sdk"]} />
 
 </Tab>
 <Tab value="React Native">
 
-<InstallCommand expo={["@assistant-ui/react-native", "@assistant-ui/react-langchain", "@langchain/react", "@langchain/langgraph-sdk"]} />
+<InstallCommand expo={["@hitchsoftware/assistant-ui-react-native", "@hitchsoftware/assistant-ui-react-langchain", "@langchain/react", "@langchain/langgraph-sdk"]} />
 
 </Tab>
 <Tab value="React Ink">
 
-<InstallCommand npm={["@assistant-ui/react-ink", "@assistant-ui/react-langchain", "@langchain/react", "@langchain/langgraph-sdk", "ink", "react"]} />
+<InstallCommand npm={["@hitchsoftware/assistant-ui-react-ink", "@hitchsoftware/assistant-ui-react-langchain", "@langchain/react", "@langchain/langgraph-sdk", "ink", "react"]} />
 
 </Tab>
 </PlatformTabs>
@@ -72,8 +72,8 @@ Shared adapters (attachments, speech, feedback) work the same way described in [
 "use client";
 
 import { Thread } from "@/components/assistant-ui/thread";
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
-import { useStreamRuntime } from "@assistant-ui/react-langchain";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
+import { useStreamRuntime } from "@hitchsoftware/assistant-ui-react-langchain";
 
 export function MyAssistant() {
   const runtime = useStreamRuntime({
@@ -94,8 +94,8 @@ export function MyAssistant() {
 
 ```tsx title="components/MyAssistant.tsx"
 import { Thread } from "@/components/assistant-ui/thread";
-import { AssistantRuntimeProvider } from "@assistant-ui/react-native";
-import { useStreamRuntime } from "@assistant-ui/react-langchain";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react-native";
+import { useStreamRuntime } from "@hitchsoftware/assistant-ui-react-langchain";
 
 export function MyAssistant() {
   const runtime = useStreamRuntime({
@@ -116,8 +116,8 @@ export function MyAssistant() {
 
 ```tsx title="components/MyAssistant.tsx"
 import { Thread } from "./thread.js";
-import { AssistantRuntimeProvider } from "@assistant-ui/react-ink";
-import { useStreamRuntime } from "@assistant-ui/react-langchain";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react-ink";
+import { useStreamRuntime } from "@hitchsoftware/assistant-ui-react-langchain";
 
 export function MyAssistant() {
   const runtime = useStreamRuntime({
@@ -272,7 +272,7 @@ LangGraph agents often expose structured state beyond messages (plans, todos, sc
 <Tab value="React">
 
 ```tsx
-import { useLangChainState } from "@assistant-ui/react-langchain";
+import { useLangChainState } from "@hitchsoftware/assistant-ui-react-langchain";
 
 type Todo = { id: string; title: string; done: boolean };
 
@@ -294,7 +294,7 @@ function TodoList() {
 <Tab value="React Native">
 
 ```tsx
-import { useLangChainState } from "@assistant-ui/react-langchain";
+import { useLangChainState } from "@hitchsoftware/assistant-ui-react-langchain";
 import { Text, View } from "react-native";
 
 type Todo = { id: string; title: string; done: boolean };
@@ -317,7 +317,7 @@ function TodoList() {
 <Tab value="React Ink">
 
 ```tsx
-import { useLangChainState } from "@assistant-ui/react-langchain";
+import { useLangChainState } from "@hitchsoftware/assistant-ui-react-langchain";
 import { Box, Text } from "ink";
 
 type Todo = { id: string; title: string; done: boolean };
@@ -365,7 +365,7 @@ LangGraph interrupts pause the graph and wait for client input. `useLangChainInt
 import {
   useLangChainInterruptState,
   useLangChainRespond,
-} from "@assistant-ui/react-langchain";
+} from "@hitchsoftware/assistant-ui-react-langchain";
 
 function InterruptPrompt() {
   const interrupt = useLangChainInterruptState();
@@ -387,7 +387,7 @@ function InterruptPrompt() {
 import {
   useLangChainInterruptState,
   useLangChainRespond,
-} from "@assistant-ui/react-langchain";
+} from "@hitchsoftware/assistant-ui-react-langchain";
 import { Pressable, Text, View } from "react-native";
 
 function InterruptPrompt() {
@@ -412,7 +412,7 @@ function InterruptPrompt() {
 import {
   useLangChainInterruptState,
   useLangChainRespond,
-} from "@assistant-ui/react-langchain";
+} from "@hitchsoftware/assistant-ui-react-langchain";
 import { Box, Text, useInput } from "ink";
 
 function InterruptPrompt() {
@@ -443,7 +443,7 @@ When several interrupts are pending at once (e.g. parallel approvals), use `useL
 import {
   useLangChainInterrupts,
   useLangChainRespondAll,
-} from "@assistant-ui/react-langchain";
+} from "@hitchsoftware/assistant-ui-react-langchain";
 
 const interrupts = useLangChainInterrupts();
 const respondAll = useLangChainRespondAll();
@@ -464,7 +464,7 @@ You can also resume with a raw `Command` via `useLangChainSubmit`:
 import {
   useLangChainInterruptState,
   useLangChainSubmit,
-} from "@assistant-ui/react-langchain";
+} from "@hitchsoftware/assistant-ui-react-langchain";
 import { Command } from "@langchain/langgraph-sdk";
 
 function InterruptPrompt() {
@@ -493,7 +493,7 @@ function InterruptPrompt() {
 import {
   useLangChainInterruptState,
   useLangChainSubmit,
-} from "@assistant-ui/react-langchain";
+} from "@hitchsoftware/assistant-ui-react-langchain";
 import { Command } from "@langchain/langgraph-sdk";
 import { Pressable, Text, View } from "react-native";
 
@@ -523,7 +523,7 @@ function InterruptPrompt() {
 import {
   useLangChainInterruptState,
   useLangChainSubmit,
-} from "@assistant-ui/react-langchain";
+} from "@hitchsoftware/assistant-ui-react-langchain";
 import { Command } from "@langchain/langgraph-sdk";
 import { Box, Text, useInput } from "ink";
 
@@ -557,7 +557,7 @@ function InterruptPrompt() {
 <Tab value="React">
 
 ```tsx
-import { useLangChainToolCalls } from "@assistant-ui/react-langchain";
+import { useLangChainToolCalls } from "@hitchsoftware/assistant-ui-react-langchain";
 
 function PendingToolCalls() {
   const toolCalls = useLangChainToolCalls();
@@ -577,7 +577,7 @@ function PendingToolCalls() {
 <Tab value="React Native">
 
 ```tsx
-import { useLangChainToolCalls } from "@assistant-ui/react-langchain";
+import { useLangChainToolCalls } from "@hitchsoftware/assistant-ui-react-langchain";
 import { Text, View } from "react-native";
 
 function PendingToolCalls() {
@@ -598,7 +598,7 @@ function PendingToolCalls() {
 <Tab value="React Ink">
 
 ```tsx
-import { useLangChainToolCalls } from "@assistant-ui/react-langchain";
+import { useLangChainToolCalls } from "@hitchsoftware/assistant-ui-react-langchain";
 import { Box, Text } from "ink";
 
 function PendingToolCalls() {
@@ -628,7 +628,7 @@ These replace `react-langgraph`'s subgraph `eventHandlers`: v1 surfaces discover
 import {
   useLangChainSubagents,
   useLangChainSubgraphs,
-} from "@assistant-ui/react-langchain";
+} from "@hitchsoftware/assistant-ui-react-langchain";
 
 function Discovered() {
   const subagents = useLangChainSubagents();
@@ -654,7 +654,7 @@ The discovery maps above pair with v1's scoped selector hooks to render a subage
 import {
   useLangChainStream,
   useLangChainSubagents,
-} from "@assistant-ui/react-langchain";
+} from "@hitchsoftware/assistant-ui-react-langchain";
 import { useMessages, useToolCalls } from "@langchain/react";
 
 function SubagentCard({ stream, subagent }) {
@@ -688,7 +688,7 @@ function Subagents() {
 `useMessageMetadata` (from `@langchain/react`) reads per-message metadata (e.g. `parentCheckpointId`) for a given message id. Pair it with `useLangChainStream`, which returns `undefined` outside the runtime provider; guard the stream before calling the selector, since `useMessageMetadata` throws on an undefined stream.
 
 ```tsx
-import { useLangChainStream } from "@assistant-ui/react-langchain";
+import { useLangChainStream } from "@hitchsoftware/assistant-ui-react-langchain";
 import { useMessageMetadata } from "@langchain/react";
 
 function MessageInfoView({
@@ -714,7 +714,7 @@ function MessageInfo({ messageId }: { messageId: string }) {
 The v1 media hooks surface multimodal media streamed by the agent. Feed the `useLangChainStream` handle to them — the same pattern as the views and metadata sections above.
 
 ```tsx
-import { useLangChainStream } from "@assistant-ui/react-langchain";
+import { useLangChainStream } from "@hitchsoftware/assistant-ui-react-langchain";
 import { useImages, useAudio } from "@langchain/react";
 
 function MediaView({
@@ -745,8 +745,8 @@ import {
   AssistantRuntimeProvider,
   makeAssistantDataUI,
   Thread,
-} from "@assistant-ui/react";
-import { useStreamRuntime } from "@assistant-ui/react-langchain";
+} from "@hitchsoftware/assistant-ui-react";
+import { useStreamRuntime } from "@hitchsoftware/assistant-ui-react-langchain";
 
 const ChartUI = makeAssistantDataUI({
   name: "chart",
@@ -777,7 +777,7 @@ The live path requires the graph's `streamMode` to include `"custom"` so the UI 
 `useLangChainError` exposes the last run or hydration error from upstream `useStream().error`. It is untyped (`unknown`), so narrow it at the use site before rendering.
 
 ```tsx
-import { useLangChainError } from "@assistant-ui/react-langchain";
+import { useLangChainError } from "@hitchsoftware/assistant-ui-react-langchain";
 
 function ErrorBanner() {
   const error = useLangChainError();
@@ -791,7 +791,7 @@ function ErrorBanner() {
 `convertLangChainBaseMessage` transforms a LangChain `BaseMessage` into an assistant-ui message. Use it when building a custom `ExternalStoreAdapter` that consumes LangChain messages outside `useStreamRuntime`.
 
 ```ts
-import { convertLangChainBaseMessage } from "@assistant-ui/react-langchain";
+import { convertLangChainBaseMessage } from "@hitchsoftware/assistant-ui-react-langchain";
 ```
 
 ## Cloud persistence

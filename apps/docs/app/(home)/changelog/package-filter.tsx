@@ -26,17 +26,17 @@ function groupPackages(packages: string[]): PackageGroup[] {
 
   for (const pkg of packages) {
     if (
-      pkg === "@assistant-ui/react" ||
-      pkg === "@assistant-ui/core" ||
-      pkg === "@assistant-ui/store" ||
-      pkg === "@assistant-ui/tap" ||
-      pkg === "@assistant-ui/styles" ||
-      pkg === "@assistant-ui/ui" ||
+      pkg === "@hitchsoftware/assistant-ui-react" ||
+      pkg === "@hitchsoftware/assistant-ui-core" ||
+      pkg === "@hitchsoftware/assistant-ui-store" ||
+      pkg === "@hitchsoftware/assistant-ui-tap" ||
+      pkg === "@hitchsoftware/assistant-ui-styles" ||
+      pkg === "@hitchsoftware/assistant-ui-ui" ||
       pkg === "assistant-stream" ||
       pkg === "assistant-ui"
     ) {
       core.push(pkg);
-    } else if (pkg.startsWith("@assistant-ui/react-")) {
+    } else if (pkg.startsWith("@hitchsoftware/assistant-ui-react-")) {
       integrations.push(pkg);
     } else {
       other.push(pkg);

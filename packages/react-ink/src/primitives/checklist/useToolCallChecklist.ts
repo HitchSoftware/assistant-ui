@@ -1,8 +1,8 @@
-import { useAuiState } from "@assistant-ui/store";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 import type {
   MessagePartState,
   ToolCallMessagePartStatus,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import type { ChecklistItemData, ChecklistItemStatus } from "./types";
 
 const resolveChecklistStatus = (

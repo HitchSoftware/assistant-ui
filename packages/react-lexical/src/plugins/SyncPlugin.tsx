@@ -15,16 +15,16 @@ import {
   $isElementNode,
   type LexicalEditor,
 } from "lexical";
-import { useAui } from "@assistant-ui/store";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 import type {
   Unstable_DirectiveFormatter,
   Unstable_DirectiveSegment,
-} from "@assistant-ui/core";
-import { unstable_defaultDirectiveFormatter } from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
+import { unstable_defaultDirectiveFormatter } from "@hitchsoftware/assistant-ui-core";
 import {
   unstable_useTriggerPopoverRootContextOptional,
   type Unstable_RegisteredTrigger,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { $createDirectiveNodeWithFormatter } from "../nodes/DirectiveNode";
 
 type ParsedSegment = {

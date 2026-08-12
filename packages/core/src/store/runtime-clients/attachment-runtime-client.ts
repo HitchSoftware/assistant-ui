@@ -1,5 +1,5 @@
-import { resource } from "@assistant-ui/tap";
-import type { ClientOutput } from "@assistant-ui/store";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
+import type { ClientOutput } from "@hitchsoftware/assistant-ui-store";
 import type { AttachmentRuntime } from "../../runtime/api/attachment-runtime";
 import { useSubscribable } from "./useSubscribable";
 

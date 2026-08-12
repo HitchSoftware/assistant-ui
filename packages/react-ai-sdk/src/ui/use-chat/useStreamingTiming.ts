@@ -2,11 +2,11 @@
 
 import type { UIMessage } from "@ai-sdk/react";
 import { isToolUIPart } from "ai";
-import type { MessageTiming } from "@assistant-ui/core";
+import type { MessageTiming } from "@hitchsoftware/assistant-ui-core";
 import {
   useStreamingTiming as useStreamingTimingPrimitive,
   type StreamingTimingAccessors,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";
 
 const findAssistant = (
   messages: readonly UIMessage[],
@@ -53,7 +53,7 @@ export const aiSdkStreamingTimingAccessors: StreamingTimingAccessors<UIMessage> 
 
 /**
  * Tracks streaming timing for AI SDK messages client-side. Delegates to the
- * shared `useStreamingTiming` primitive in `@assistant-ui/core/react`,
+ * shared `useStreamingTiming` primitive in `@hitchsoftware/assistant-ui-core/react`,
  * adapted to the `UIMessage` shape. Timing is finalized when streaming ends
  * and stored per message id.
  */

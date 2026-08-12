@@ -8,7 +8,7 @@ const h = vi.hoisted(() => ({
   disabled: false,
 }));
 
-vi.mock("@assistant-ui/core/react", () => ({
+vi.mock("@hitchsoftware/assistant-ui-core/react", () => ({
   useComposerCancel: () => ({ cancel: h.cancel, disabled: h.disabled }),
 }));
 

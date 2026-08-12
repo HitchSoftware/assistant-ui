@@ -1,4 +1,4 @@
-# @assistant-ui/store
+# @hitchsoftware/assistant-ui-store
 
 ## 0.3.9
 
@@ -44,7 +44,7 @@
 
 - [#5660](https://github.com/assistant-ui/assistant-ui/pull/5660) [`aa302ee`](https://github.com/assistant-ui/assistant-ui/commit/aa302eeaacd399f58b74b64eb3a1e17d9ea97e03) - feat: add a framework-neutral client entry with createAssistantClient over a standalone tap root ([@okisdev](https://github.com/okisdev))
 
-- [#5660](https://github.com/assistant-ui/assistant-ui/pull/5660) [`aa302ee`](https://github.com/assistant-ui/assistant-ui/commit/aa302eeaacd399f58b74b64eb3a1e17d9ea97e03) - feat: make the react peer optional; react-less consumers alias react to @assistant-ui/tap/standalone-shim instead ([@okisdev](https://github.com/okisdev))
+- [#5660](https://github.com/assistant-ui/assistant-ui/pull/5660) [`aa302ee`](https://github.com/assistant-ui/assistant-ui/commit/aa302eeaacd399f58b74b64eb3a1e17d9ea97e03) - feat: make the react peer optional; react-less consumers alias react to @hitchsoftware/assistant-ui-tap/standalone-shim instead ([@okisdev](https://github.com/okisdev))
 
 ## 0.3.3
 
@@ -132,7 +132,7 @@
 
 ### Patch Changes
 
-- [#4392](https://github.com/assistant-ui/assistant-ui/pull/4392) [`4cc7eaa`](https://github.com/assistant-ui/assistant-ui/commit/4cc7eaac61d68ae970b998465bb7e5c722cc9dda) - chore: update peer and dependency ranges for @assistant-ui/tap 0.9 ([@Yonom](https://github.com/Yonom))
+- [#4392](https://github.com/assistant-ui/assistant-ui/pull/4392) [`4cc7eaa`](https://github.com/assistant-ui/assistant-ui/commit/4cc7eaac61d68ae970b998465bb7e5c722cc9dda) - chore: update peer and dependency ranges for @hitchsoftware/assistant-ui-tap 0.9 ([@Yonom](https://github.com/Yonom))
 
 - [#4392](https://github.com/assistant-ui/assistant-ui/pull/4392) [`4cc7eaa`](https://github.com/assistant-ui/assistant-ui/commit/4cc7eaac61d68ae970b998465bb7e5c722cc9dda) - fix: preserve tap context across nested tap root rerenders and mark tap context as supported ([@Yonom](https://github.com/Yonom))
 
@@ -142,7 +142,7 @@
 
 - [#4385](https://github.com/assistant-ui/assistant-ui/pull/4385) [`ae59baf`](https://github.com/assistant-ui/assistant-ui/commit/ae59baf3bb9b1779f403d378aca19bb3d83781ff) - feat: precompile packages with React Compiler ([@Yonom](https://github.com/Yonom))
   - aui-build runs React Compiler over packages that depend on tap and remaps `react/compiler-runtime` to the tap shim subpath, so compiled hooks and components work both in React components and inside tap resource renders
-  - `@assistant-ui/tap/react-shim` exports `useMemoCache` (tap inside a resource render, `React.__COMPILER_RUNTIME.c` otherwise, with a React 18 polyfill); new `@assistant-ui/tap/react-shim/compiler-runtime` subpath mirrors `react/compiler-runtime`'s `c` export
+  - `@hitchsoftware/assistant-ui-tap/react-shim` exports `useMemoCache` (tap inside a resource render, `React.__COMPILER_RUNTIME.c` otherwise, with a React 18 polyfill); new `@hitchsoftware/assistant-ui-tap/react-shim/compiler-runtime` subpath mirrors `react/compiler-runtime`'s `c` export
   - tap implements `useSyncExternalStore` and a no-op `useDebugValue`; `useSubscribable` now builds on `useSyncExternalStore` so its store reads stay visible to the compiler
   - `AssistantProviderBase` opts out via `"use no memo"` because the runtime receives options through an effect inside a re-rendered child element
 
@@ -152,7 +152,7 @@
 
 - [#4366](https://github.com/assistant-ui/assistant-ui/pull/4366) [`3e58253`](https://github.com/assistant-ui/assistant-ui/commit/3e5825369c7206f4df3532d5fabfbe5cf5e4fd40) - feat: host the assistant client with useTapHost so the tap commit runs in the passive phase (no paint blocking); AuiProvider mounts the host's commit effects ahead of its children's effects ([@Yonom](https://github.com/Yonom))
 
-- [#4325](https://github.com/assistant-ui/assistant-ui/pull/4325) [`5a4f20e`](https://github.com/assistant-ui/assistant-ui/commit/5a4f20e75dcd93aeb70a4a5582a0a5a1f870b4f2) - chore: update @assistant-ui/tap dependency ranges to ^0.7.0 ([@Yonom](https://github.com/Yonom))
+- [#4325](https://github.com/assistant-ui/assistant-ui/pull/4325) [`5a4f20e`](https://github.com/assistant-ui/assistant-ui/commit/5a4f20e75dcd93aeb70a4a5582a0a5a1f870b4f2) - chore: update @hitchsoftware/assistant-ui-tap dependency ranges to ^0.7.0 ([@Yonom](https://github.com/Yonom))
 
 ## 0.2.15
 
@@ -226,7 +226,7 @@
 - [#4151](https://github.com/assistant-ui/assistant-ui/pull/4151) [`299d448`](https://github.com/assistant-ui/assistant-ui/commit/299d4488c8a5bbec0679680866f5975055fe71b3) - chore: drop stale `biome-ignore` pragmas now that the repo lints with oxlint ([@okisdev](https://github.com/okisdev))
 
 - Updated dependencies [[`299d448`](https://github.com/assistant-ui/assistant-ui/commit/299d4488c8a5bbec0679680866f5975055fe71b3)]:
-  - @assistant-ui/tap@0.5.14
+  - @hitchsoftware/assistant-ui-tap@0.5.14
 
 ## 0.2.12
 
@@ -239,11 +239,11 @@
   Tsdown drives both JS and `.d.ts` emission. Reference-directive restoration is preserved (tsdown/oxc drop `/// <reference>` lines, so we re-inject them in a `build:done` hook). `deps.skipNodeModulesBundle: true` keeps the old "never bundle anything from `node_modules`" behavior — devDependencies stay external instead of getting inlined into `dist`.
 
   Side fixes the new strict dts pipeline surfaced:
-  - `@assistant-ui/tap`: dropped the `fnSymbol` brand from the public `ResourceElement` type. It referenced an `@internal` symbol that `stripInternal` removed from emit, leaving the published `.d.ts` with a dangling reference.
-  - `@assistant-ui/store`: un-marked `ClientSchema` as `@internal`. It was already re-exported from the public package index; treating the re-export as authoritative.
+  - `@hitchsoftware/assistant-ui-tap`: dropped the `fnSymbol` brand from the public `ResourceElement` type. It referenced an `@internal` symbol that `stripInternal` removed from emit, leaving the published `.d.ts` with a dangling reference.
+  - `@hitchsoftware/assistant-ui-store`: un-marked `ClientSchema` as `@internal`. It was already re-exported from the public package index; treating the re-export as authoritative.
 
 - Updated dependencies [[`01244a5`](https://github.com/assistant-ui/assistant-ui/commit/01244a56026ee92bd4e49cb985136f9eb6d45154), [`1e21076`](https://github.com/assistant-ui/assistant-ui/commit/1e2107648bc281f1673f4ad053fd019b28a602d0)]:
-  - @assistant-ui/tap@0.5.12
+  - @hitchsoftware/assistant-ui-tap@0.5.12
 
 ## 0.2.11
 
@@ -254,7 +254,7 @@
 - [#4023](https://github.com/assistant-ui/assistant-ui/pull/4023) [`94548fa`](https://github.com/assistant-ui/assistant-ui/commit/94548fa8d587962d8ab0338a9609a9ff21240c33) - docs: add JSDoc for `useAui`, `useAuiState`, `useAuiEvent`, `AuiIf`, and `AuiProvider` ([@AVGVSTVS96](https://github.com/AVGVSTVS96))
 
 - Updated dependencies []:
-  - @assistant-ui/tap@0.5.11
+  - @hitchsoftware/assistant-ui-tap@0.5.11
 
 ## 0.2.10
 
@@ -267,7 +267,7 @@
   The accessor previously reused a single ref as both an "accessed" sentinel and the cached snapshot. A `useSyncExternalStore` post-commit consistency call could repopulate that cache with the current state, causing later real updates (e.g. `message.composer.isEditing` flipping) to be masked. Access is now tracked with a dedicated flag so children that read item state via the render prop re-render correctly when the underlying state changes.
 
 - Updated dependencies [[`b090acb`](https://github.com/assistant-ui/assistant-ui/commit/b090acb98f6bf3579aab4efedddaff83a0b54c94)]:
-  - @assistant-ui/tap@0.5.11
+  - @hitchsoftware/assistant-ui-tap@0.5.11
 
 ## 0.2.9
 
@@ -276,7 +276,7 @@
 - [#3909](https://github.com/assistant-ui/assistant-ui/pull/3909) [`005f83f`](https://github.com/assistant-ui/assistant-ui/commit/005f83f3ebfb94b3a9d7c34bc7d2a71bbaf63a9e) - chore: update dependencies ([@Yonom](https://github.com/Yonom))
 
 - Updated dependencies [[`005f83f`](https://github.com/assistant-ui/assistant-ui/commit/005f83f3ebfb94b3a9d7c34bc7d2a71bbaf63a9e)]:
-  - @assistant-ui/tap@0.5.10
+  - @hitchsoftware/assistant-ui-tap@0.5.10
 
 ## 0.2.8
 
@@ -285,7 +285,7 @@
 - [#3876](https://github.com/assistant-ui/assistant-ui/pull/3876) [`ce865bc`](https://github.com/assistant-ui/assistant-ui/commit/ce865bc46af996d53f89e18068139d4d38546ca6) - chore: update dependencies ([@Yonom](https://github.com/Yonom))
 
 - Updated dependencies [[`ce865bc`](https://github.com/assistant-ui/assistant-ui/commit/ce865bc46af996d53f89e18068139d4d38546ca6), [`055dda5`](https://github.com/assistant-ui/assistant-ui/commit/055dda54b68031d0c9c760bf89a7c1036dd2174d), [`d53ff4f`](https://github.com/assistant-ui/assistant-ui/commit/d53ff4f3f8b7d7220c1cb274c4fda335598fb063)]:
-  - @assistant-ui/tap@0.5.9
+  - @hitchsoftware/assistant-ui-tap@0.5.9
 
 ## 0.2.7
 
@@ -293,7 +293,7 @@
 
 - c988db8: chore: update dependencies
 - Updated dependencies [c988db8]
-  - @assistant-ui/tap@0.5.8
+  - @hitchsoftware/assistant-ui-tap@0.5.8
 
 ## 0.2.6
 
@@ -304,7 +304,7 @@
 - 2dd0c9f: feat: add forwardTransformScopes utility
 - Updated dependencies [bdce66f]
 - Updated dependencies [209ae81]
-  - @assistant-ui/tap@0.5.6
+  - @hitchsoftware/assistant-ui-tap@0.5.6
 
 ## 0.2.5
 
@@ -312,7 +312,7 @@
 
 - 52403c3: chore: update dependencies
 - Updated dependencies [52403c3]
-  - @assistant-ui/tap@0.5.5
+  - @hitchsoftware/assistant-ui-tap@0.5.5
 
 ## 0.2.4
 
@@ -324,7 +324,7 @@
 - c71cb58: chore: update dependencies
 - Updated dependencies [736344c]
 - Updated dependencies [c71cb58]
-  - @assistant-ui/tap@0.5.4
+  - @hitchsoftware/assistant-ui-tap@0.5.4
 
 ## 0.2.3
 
@@ -332,7 +332,7 @@
 
 - 349f3c7: chore: update deps
 - Updated dependencies [349f3c7]
-  - @assistant-ui/tap@0.5.3
+  - @hitchsoftware/assistant-ui-tap@0.5.3
 
 ## 0.2.2
 
@@ -340,17 +340,17 @@
 
 - a845911: chore: update dependencies
 - Updated dependencies [a845911]
-  - @assistant-ui/tap@0.5.2
+  - @hitchsoftware/assistant-ui-tap@0.5.2
 
 ## 0.2.1
 
 ### Patch Changes
 
 - 36ef3a2: chore: update dependencies
-- fc98475: feat(store): move `@assistant-ui/core` and `@assistant-ui/tap` to peerDependencies to fix npm deduplication
+- fc98475: feat(store): move `@hitchsoftware/assistant-ui-core` and `@hitchsoftware/assistant-ui-tap` to peerDependencies to fix npm deduplication
 - a638f05: refactor(store): make store independent of core, add ScopeRegistry module augmentation support
 - Updated dependencies [36ef3a2]
-  - @assistant-ui/tap@0.5.1
+  - @hitchsoftware/assistant-ui-tap@0.5.1
 
 ## 0.2.0
 
@@ -361,7 +361,7 @@
 ### Patch Changes
 
 - b65428e: refactor: replace peerScopes with transformScopes API
-- 6e97999: feat(core): move store tap infrastructure to @assistant-ui/core/store
+- 6e97999: feat(core): move store tap infrastructure to @hitchsoftware/assistant-ui-core/store
 - 93910bd: Rename .tsx files to .ts where no JSX syntax is used
 - b65428e: refactor: rename ClientRegistry to ScopeRegistry
 - Updated dependencies [b65428e]
@@ -380,8 +380,8 @@
 - Updated dependencies [b65428e]
 - Updated dependencies [60bbe53]
 - Updated dependencies [b65428e]
-  - @assistant-ui/tap@0.5.0
-  - @assistant-ui/core@0.1.0
+  - @hitchsoftware/assistant-ui-tap@0.5.0
+  - @hitchsoftware/assistant-ui-core@0.1.0
 
 ## 0.1.6
 
@@ -389,7 +389,7 @@
 
 - a088518: chore: update dependencies
 - Updated dependencies [a088518]
-  - @assistant-ui/tap@0.4.5
+  - @hitchsoftware/assistant-ui-tap@0.4.5
 
 ## 0.1.5
 
@@ -397,7 +397,7 @@
 
 - 9ef966a: fix(store): memoize the aui client instance
 - Updated dependencies [77af8c3]
-  - @assistant-ui/tap@0.4.4
+  - @hitchsoftware/assistant-ui-tap@0.4.4
 
 ## 0.1.4
 
@@ -407,7 +407,7 @@
 - fe71bfc: feat: use enhanced tapSubscribableResource hook
 - Updated dependencies [d45b893]
 - Updated dependencies [fe71bfc]
-  - @assistant-ui/tap@0.4.3
+  - @hitchsoftware/assistant-ui-tap@0.4.3
 
 ## 0.1.3
 
@@ -422,7 +422,7 @@
 - 07d1c65: fix: nesting assistant providers
 - 0371d72: feat: AssistantRuntimeProvider aui prop
 - Updated dependencies [5ab3690]
-  - @assistant-ui/tap@0.4.2
+  - @hitchsoftware/assistant-ui-tap@0.4.2
 
 ## 0.1.1
 
@@ -435,7 +435,7 @@
 - Updated dependencies [a8be364]
 - Updated dependencies [605d825]
 - Updated dependencies [fe15232]
-  - @assistant-ui/tap@0.4.1
+  - @hitchsoftware/assistant-ui-tap@0.4.1
 
 ## 0.1.0
 
@@ -449,7 +449,7 @@
 
 - 3719567: chore: update deps
 - Updated dependencies [3719567]
-  - @assistant-ui/tap@0.3.6
+  - @hitchsoftware/assistant-ui-tap@0.3.6
 
 ## 0.0.5
 
@@ -459,14 +459,14 @@
 - cce009d: chore: use tsc for building packages
 - Updated dependencies [57bd207]
 - Updated dependencies [cce009d]
-  - @assistant-ui/tap@0.3.5
+  - @hitchsoftware/assistant-ui-tap@0.3.5
 
 ## 0.0.4
 
 ### Patch Changes
 
 - Updated dependencies
-  - @assistant-ui/tap@0.3.4
+  - @hitchsoftware/assistant-ui-tap@0.3.4
 
 ## 0.0.3
 
@@ -482,7 +482,7 @@
 - Updated dependencies [bae3aa2]
 - Updated dependencies [e8ea57b]
 - Updated dependencies [bae3aa2]
-  - @assistant-ui/tap@0.3.3
+  - @hitchsoftware/assistant-ui-tap@0.3.3
 
 ## 0.0.2
 
@@ -490,7 +490,7 @@
 
 - 01c31fe: chore: update dependencies
 - Updated dependencies [01c31fe]
-  - @assistant-ui/tap@0.3.2
+  - @hitchsoftware/assistant-ui-tap@0.3.2
 
 ## 0.0.1
 
@@ -498,4 +498,4 @@
 
 - ec662cd: chore: update dependencies
 - Updated dependencies [ec662cd]
-  - @assistant-ui/tap@0.3.1
+  - @hitchsoftware/assistant-ui-tap@0.3.1

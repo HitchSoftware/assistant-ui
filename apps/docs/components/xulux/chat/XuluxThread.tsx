@@ -24,7 +24,7 @@ import {
   ThreadPrimitive,
   useAui,
   useAuiState,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { BookOpen } from "lucide-react";
 import Image from "next/image";
 import { type ReactNode, useEffect, useMemo, useRef, useState } from "react";

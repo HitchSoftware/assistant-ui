@@ -8,7 +8,7 @@ import {
   ThreadListItemPrimitive,
   ThreadListPrimitive,
   useAui,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 function ThreadList() {
   return (

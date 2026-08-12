@@ -1,4 +1,4 @@
-import { createAdkApiRoute } from "@assistant-ui/react-google-adk/server";
+import { createAdkApiRoute } from "@hitchsoftware/assistant-ui-react-google-adk/server";
 import { InMemoryRunner, LlmAgent, FunctionTool } from "@google/adk";
 import { z } from "zod";
 

@@ -1,7 +1,7 @@
 import type {
   AssistantRuntimeProvider as AssistantRuntimeProviderComponent,
   MessagePartState,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import type { ComponentPropsWithRef } from "react";
 
 export type AssistantRuntimeProvider = ComponentPropsWithRef<
@@ -26,7 +26,7 @@ export type {
   AttachmentRuntime,
   AttachmentState,
   ThreadComposerState,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 export type TextMessagePartState = MessagePartState & { readonly type: "text" };
 export type AudioMessagePartState = MessagePartState & {

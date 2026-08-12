@@ -1,7 +1,7 @@
 "use client";
 
-import type { SyntaxHighlighterProps } from "@assistant-ui/react-streamdown";
-import { ThreadPrimitive, useAuiState } from "@assistant-ui/react";
+import type { SyntaxHighlighterProps } from "@hitchsoftware/assistant-ui-react-streamdown";
+import { ThreadPrimitive, useAuiState } from "@hitchsoftware/assistant-ui-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 

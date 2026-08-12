@@ -1,6 +1,6 @@
 import type { UIMessage } from "@ai-sdk/react";
 import { getToolName, isStaticToolUIPart, isToolUIPart } from "ai";
-import type { SamplingCallData } from "assistant-cloud";
+import type { SamplingCallData } from "@hitchsoftware/assistant-cloud";
 
 const MAX_SPAN_CONTENT = 50_000;
 

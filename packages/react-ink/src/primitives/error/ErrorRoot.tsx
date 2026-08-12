@@ -1,6 +1,6 @@
 import type { ComponentProps, ReactNode } from "react";
 import { Box } from "ink";
-import { useMessageError } from "@assistant-ui/core/react";
+import { useMessageError } from "@hitchsoftware/assistant-ui-core/react";
 
 export type ErrorRootProps = ComponentProps<typeof Box> & {
   children: ReactNode;

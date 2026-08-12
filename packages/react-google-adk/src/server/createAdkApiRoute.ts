@@ -41,7 +41,7 @@ export type CreateAdkApiRouteOptions = {
  *
  * @example Next.js App Router
  * ```ts
- * import { createAdkApiRoute } from '@assistant-ui/react-google-adk/server';
+ * import { createAdkApiRoute } from '@hitchsoftware/assistant-ui-react-google-adk/server';
  * import { runner } from './agent';
  *
  * export const POST = createAdkApiRoute({

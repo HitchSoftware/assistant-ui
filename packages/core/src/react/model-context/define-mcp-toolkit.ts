@@ -1,4 +1,4 @@
-import type { McpServerConfig } from "assistant-stream";
+import type { McpServerConfig } from "@hitchsoftware/assistant-stream";
 import type { Toolkit } from "./toolbox";
 
 export type McpToolkitEntry =

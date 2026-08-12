@@ -1,9 +1,9 @@
 ---
 title: User-managed MCP servers
-description: Let end users add and authenticate MCP servers from the browser with @assistant-ui/react-mcp.
+description: Let end users add and authenticate MCP servers from the browser with @hitchsoftware/assistant-ui-react-mcp.
 ---
 
-[`@assistant-ui/react-mcp`](https://npmjs.com/package/@assistant-ui/react-mcp) is the user-facing layer for MCP. Where the [server-side MCP guide](/docs/tools/mcp) wires a single fixed set of MCP servers into your API route, this package lets *end users* see a list of connectors, sign in via OAuth, paste a custom server URL, and have the resulting tool catalog flow into the chat — automatically.
+[`@hitchsoftware/assistant-ui-react-mcp`](https://npmjs.com/package/@hitchsoftware/assistant-ui-react-mcp) is the user-facing layer for MCP. Where the [server-side MCP guide](/docs/tools/mcp) wires a single fixed set of MCP servers into your API route, this package lets *end users* see a list of connectors, sign in via OAuth, paste a custom server URL, and have the resulting tool catalog flow into the chat — automatically.
 
 Two ways a server reaches the user:
 
@@ -31,7 +31,7 @@ The manager is a single resource. Mount it with `AuiProvider` like any other sco
 
 ### Install
 
-<InstallCommand npm={["@assistant-ui/react-mcp"]} />
+<InstallCommand npm={["@hitchsoftware/assistant-ui-react-mcp"]} />
 
 </Step>
 <Step>
@@ -43,8 +43,8 @@ Declare your connectors and provide the `mcp` scope via `AuiProvider`. No impera
 ```tsx title="app/providers.tsx"
 "use client";
 
-import { AuiConfig, AuiProvider, useAui } from "@assistant-ui/react";
-import { McpManagerResource, defineConnector } from "@assistant-ui/react-mcp";
+import { AuiConfig, AuiProvider, useAui } from "@hitchsoftware/assistant-ui-react";
+import { McpManagerResource, defineConnector } from "@hitchsoftware/assistant-ui-react-mcp";
 
 const connectors = [
   defineConnector({
@@ -127,7 +127,7 @@ Pass children to override the trigger:
 import {
   McpManagerPrimitive,
   McpServerPrimitive,
-} from "@assistant-ui/react-mcp";
+} from "@hitchsoftware/assistant-ui-react-mcp";
 
 const ServerCard = () => (
   <McpServerPrimitive.Root>
@@ -196,7 +196,7 @@ Add a route at `/mcp/callback` (or whatever you set `oauthRedirectUri` to):
 ```tsx title="app/mcp/callback/page.tsx"
 "use client";
 
-import { McpOAuthCallback } from "@assistant-ui/react-mcp";
+import { McpOAuthCallback } from "@hitchsoftware/assistant-ui-react-mcp";
 import { useRouter } from "next/navigation";
 import { Providers } from "../../providers";
 
@@ -217,12 +217,12 @@ The callback reads `?state=...&code=...` from the URL, derives the target server
 
 ### That's it — the chat sees your tools
 
-`McpManagerResource` registers connected tools as **frontend tools** with the `modelContext` scope. Any chat runtime mounted in the same store (e.g. `@assistant-ui/react-ai-sdk`'s `useChatRuntime`) sees them and exposes them to the model — no `useMcpTools` hook, no adapter call.
+`McpManagerResource` registers connected tools as **frontend tools** with the `modelContext` scope. Any chat runtime mounted in the same store (e.g. `@hitchsoftware/assistant-ui-react-ai-sdk`'s `useChatRuntime`) sees them and exposes them to the model — no `useMcpTools` hook, no adapter call.
 
 ```tsx
 "use client";
 import { lastAssistantMessageIsCompleteWithToolCalls } from "ai";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 
 export function Chat() {
   const runtime = useChatRuntime({
@@ -254,7 +254,7 @@ Connected servers can request structured user input through form-mode elicitatio
 Answering a request requires composing `McpElicitationPrimitive`, because the server waits for the form response otherwise. Set `elicitation: false` on a connector or custom server to opt it out of advertising the capability. Numeric fields can stay text inputs (parseable strings are coerced); boolean fields must compose a checkbox, because string drafts for booleans are flagged invalid rather than coerced. Clearing a field returns it to the unanswered state, so an empty text input is omitted from the response rather than submitted as `""` or flagged invalid, unless the schema admits `""` for that property through an `enum` member or a `""` default. Render `enum` properties as a select; when `""` is not a member, its blank option is the unanswered state.
 
 ```tsx
-import { McpElicitationPrimitive } from "@assistant-ui/react-mcp";
+import { McpElicitationPrimitive } from "@hitchsoftware/assistant-ui-react-mcp";
 
 <McpElicitationPrimitive.Items>
   {() => (
@@ -300,7 +300,7 @@ All persisted state — custom server records, OAuth tokens, PKCE verifiers, DCR
 - `McpCustomStorage({...})` — bring your own load/save. Use for app-controlled backends (e.g. POST to your API).
 
 ```tsx
-import { McpManagerResource, McpCustomStorage } from "@assistant-ui/react-mcp";
+import { McpManagerResource, McpCustomStorage } from "@hitchsoftware/assistant-ui-react-mcp";
 
 AuiConfig({
   mcp: McpManagerResource({
@@ -348,7 +348,7 @@ The OAuth provider implements the MCP SDK's `OAuthClientProvider`. The SDK handl
 Render-time state — `useAuiState`:
 
 ```ts
-import { useAuiState } from "@assistant-ui/store";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 
 const isHydrated = useAuiState((s) => s.mcp.isHydrated);
 const connectionState = useAuiState((s) => s.mcpServer.connectionState);

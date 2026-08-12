@@ -69,7 +69,7 @@ You do not need cross-stream ordering. You do need a deterministic mapping from 
 A `Map`-backed implementation suitable for a single-process server. It is deliberately small and skips TTL eviction; treat it as a starting point for a custom backend rather than a replacement for `createInMemoryResumableStreamStore`.
 
 ```ts title="/lib/map-resumable-store.ts"
-import type { ResumableStreamStore } from "assistant-stream/resumable";
+import type { ResumableStreamStore } from "@hitchsoftware/assistant-stream/resumable";
 
 type State = {
   entries: { cursor: string; chunk: Uint8Array }[];
@@ -141,7 +141,7 @@ When a stream expires, treat it the same as `finalize(streamId, "error", "Stream
 `createResumableStreamContext` takes any object that satisfies `ResumableStreamStore`. There is no registry and no extra configuration; pass your instance as `store`:
 
 ```ts title="/lib/resumable-context.ts"
-import { createResumableStreamContext } from "assistant-stream/resumable";
+import { createResumableStreamContext } from "@hitchsoftware/assistant-stream/resumable";
 import { createMapResumableStreamStore } from "@/lib/map-resumable-store";
 
 export const resumableContext = createResumableStreamContext({

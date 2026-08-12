@@ -5,7 +5,7 @@ import {
   ComposerPrimitive,
   MessagePrimitive,
   ThreadPrimitive,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { ArrowUp, CircleAlert, CloudSun, MapPin, Square } from "lucide-react";
 import { ToolFallback } from "./tool-fallback";
 

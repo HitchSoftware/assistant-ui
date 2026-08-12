@@ -1,3 +1,3 @@
 "use client";
 
-export { MessagePartPrimitiveInProgress } from "@assistant-ui/core/react";
+export { MessagePartPrimitiveInProgress } from "@hitchsoftware/assistant-ui-core/react";

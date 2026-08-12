@@ -1,3 +1,3 @@
 "use client";
 
-export { ThreadListItemPrimitiveTitle } from "@assistant-ui/core/react";
+export { ThreadListItemPrimitiveTitle } from "@hitchsoftware/assistant-ui-core/react";

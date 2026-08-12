@@ -1,4 +1,4 @@
-# `@assistant-ui/x-buildutils`
+# `@hitchsoftware/assistant-ui-x-buildutils`
 
 This package is an internal dependency of assistant-ui and does not follow semantic versioning. If you are not working inside this monorepo, you should use your own build pipeline instead.
 
@@ -17,7 +17,7 @@ This package is an internal dependency of assistant-ui and does not follow seman
     "build": "aui-build"
   },
   "devDependencies": {
-    "@assistant-ui/x-buildutils": "workspace:*"
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*"
   }
 }
 ```
@@ -25,7 +25,7 @@ This package is an internal dependency of assistant-ui and does not follow seman
 ```jsonc
 // packages/example/tsconfig.json
 {
-  "extends": "@assistant-ui/x-buildutils/ts/base.json",
+  "extends": "@hitchsoftware/assistant-ui-x-buildutils/ts/base.json",
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "./src"

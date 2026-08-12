@@ -15,8 +15,8 @@ Use a toolkit registered with `Tools({ toolkit })` instead. Toolkits keep the mo
 ## Before
 
 ```tsx
-import { AssistantRuntimeProvider, makeAssistantTool } from "@assistant-ui/react";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+import { AssistantRuntimeProvider, makeAssistantTool } from "@hitchsoftware/assistant-ui-react";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { z } from "zod";
 
 const WeatherTool = makeAssistantTool({
@@ -48,7 +48,7 @@ export function App() {
 ```tsx title="app/toolkit.tsx"
 "use generative";
 
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import { z } from "zod";
 
 export default defineToolkit({
@@ -75,8 +75,8 @@ import {
   AssistantRuntimeProvider,
   AuiConfig,
   Tools,
-} from "@assistant-ui/react";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import toolkit from "./toolkit";
 
 export function App() {
@@ -112,7 +112,7 @@ client keeps your renderer as `type: "backend"`:
 // app/toolkit.tsx
 "use generative";
 
-import { defineToolkit, externalTool } from "@assistant-ui/react";
+import { defineToolkit, externalTool } from "@hitchsoftware/assistant-ui-react";
 
 export default defineToolkit({
   web_search: {
@@ -142,7 +142,7 @@ If a tool needs component state or props, keep the toolkit contract in a `"use g
 ```tsx title="task-board-toolkit.tsx"
 "use generative";
 
-import { defineToolkit, stubTool } from "@assistant-ui/react";
+import { defineToolkit, stubTool } from "@hitchsoftware/assistant-ui-react";
 import { z } from "zod";
 
 export type Task = { id: string; title: string };
@@ -167,7 +167,7 @@ import {
   Tools,
   useAui,
   useAuiToolOverrides,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { useState, type Dispatch, type SetStateAction } from "react";
 import type { Task } from "./task-board-toolkit";
 import toolkit from "./task-board-toolkit";
@@ -214,7 +214,7 @@ For tools authored in a `"use generative"` file, export a toolkit with `defineTo
 ```tsx
 "use generative";
 
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import { z } from "zod";
 
 export default defineToolkit({

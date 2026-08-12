@@ -6,14 +6,14 @@ import type {
   PartProviderMetadata,
   ToolCallMessagePartMcpMetadata,
   ToolModelContentPart,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import {
   getAutoStatus,
   httpUrlPattern,
   parseDataUrl,
-} from "@assistant-ui/core/internal";
-import { type Tool, toToolsJSONSchema } from "assistant-stream";
-import type { ReadonlyJSONObject } from "assistant-stream/utils";
+} from "@hitchsoftware/assistant-ui-core/internal";
+import { type Tool, toToolsJSONSchema } from "@hitchsoftware/assistant-stream";
+import type { ReadonlyJSONObject } from "@hitchsoftware/assistant-stream/utils";
 import {
   AG_UI_METADATA_NAMESPACE,
   A2UI_SURFACE_ACTIVITY_TYPE,
@@ -25,7 +25,7 @@ import {
   convertSurfaceToUISpec,
   type A2uiState,
   type A2uiSurfaceState,
-} from "@assistant-ui/react-generative-ui/a2ui";
+} from "@hitchsoftware/assistant-ui-react-generative-ui/a2ui";
 import type { AgUiInterrupt } from "../types";
 import {
   parseMcpToolCallResult,

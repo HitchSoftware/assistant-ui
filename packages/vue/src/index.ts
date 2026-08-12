@@ -52,4 +52,4 @@ export {
   type AssistantEventName,
   type AssistantEventSelector,
   type Unsubscribe,
-} from "@assistant-ui/store/client";
+} from "@hitchsoftware/assistant-ui-store/client";

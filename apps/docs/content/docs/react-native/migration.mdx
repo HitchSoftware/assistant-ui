@@ -1,26 +1,26 @@
 ---
 title: Migration from Web
-description: Migrate an existing @assistant-ui/react app to React Native.
+description: Migrate an existing @hitchsoftware/assistant-ui-react app to React Native.
 ---
 
-If you already have an assistant-ui web app, most of your code transfers directly. The runtime core is shared between `@assistant-ui/react` and `@assistant-ui/react-native` via `@assistant-ui/core` — only the UI layer changes.
+If you already have an assistant-ui web app, most of your code transfers directly. The runtime core is shared between `@hitchsoftware/assistant-ui-react` and `@hitchsoftware/assistant-ui-react-native` via `@hitchsoftware/assistant-ui-core` — only the UI layer changes.
 
 ## What stays the same
 
 - **Runtime setup** — `useChatRuntime`, `useLocalRuntime`, `ChatModelAdapter`, and all runtime options work identically.
-- **AI SDK integration** — `@assistant-ui/react-ai-sdk` works with React Native. Your `useChatRuntime` + `AssistantChatTransport` setup transfers directly.
+- **AI SDK integration** — `@hitchsoftware/assistant-ui-react-ai-sdk` works with React Native. Your `useChatRuntime` + `AssistantChatTransport` setup transfers directly.
 - **Tool definitions** — `Tools({ toolkit })` and toolkit renderers use the same API.
 - **State hooks** — `useAuiState`, `useAui`, and selector patterns are the same.
 - **Backend code** — Your API routes, streaming endpoints, and server-side logic need zero changes.
 
 ## What changes
 
-| Web (`@assistant-ui/react`) | React Native (`@assistant-ui/react-native`) |
+| Web (`@hitchsoftware/assistant-ui-react`) | React Native (`@hitchsoftware/assistant-ui-react-native`) |
 |---|---|
 | `AssistantRuntimeProvider` | `AssistantRuntimeProvider` (same name) |
 | DOM primitives (`div`, `button`, `input`) | Native primitives (`View`, `Pressable`, `TextInput`) |
 | CSS / Tailwind styling | React Native `StyleSheet` or inline styles |
-| `@assistant-ui/ui` (shadcn components) | Build your own native UI with primitives |
+| `@hitchsoftware/assistant-ui-ui` (shadcn components) | Build your own native UI with primitives |
 
 ## Step-by-step
 
@@ -29,7 +29,7 @@ If you already have an assistant-ui web app, most of your code transfers directl
 
 ### Install the React Native package
 
-<InstallCommand expo={["@assistant-ui/react-native"]} />
+<InstallCommand expo={["@hitchsoftware/assistant-ui-react-native"]} />
 
   </Step>
   <Step>
@@ -40,7 +40,7 @@ Your `useChatRuntime` setup works as-is — no changes needed:
 
 ```tsx title="hooks/use-app-runtime.ts"
 // This file is identical to your web version
-import { useChatRuntime, AssistantChatTransport } from "@assistant-ui/react-ai-sdk";
+import { useChatRuntime, AssistantChatTransport } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 
 export function useAppRuntime() {
   return useChatRuntime({
@@ -62,10 +62,10 @@ export function useAppRuntime() {
 
 ```tsx
 // Before (web)
-// import { AssistantRuntimeProvider } from "@assistant-ui/react";
+// import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
 
 // After (React Native) — same component name, different package
-import { AssistantRuntimeProvider } from "@assistant-ui/react-native";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react-native";
 
 export default function App() {
   const runtime = useAppRuntime();
@@ -82,7 +82,7 @@ export default function App() {
 
 ### Rebuild the UI layer
 
-This is the main migration effort. Web components (`Thread`, `ThreadList` from `@assistant-ui/ui`) don't render in React Native. Replace them with native primitives:
+This is the main migration effort. Web components (`Thread`, `ThreadList` from `@hitchsoftware/assistant-ui-ui`) don't render in React Native. Replace them with native primitives:
 
 ```tsx
 // Web — DOM-based
@@ -93,7 +93,7 @@ import {
   ThreadPrimitive,
   ComposerPrimitive,
   MessagePrimitive,
-} from "@assistant-ui/react-native";
+} from "@hitchsoftware/assistant-ui-react-native";
 import { View } from "react-native";
 
 function MyMessage() {

@@ -1,7 +1,7 @@
 import { Chat } from "@ai-sdk/react";
 import type { UIMessage } from "@ai-sdk/react";
 import type { ChatTransport } from "ai";
-import type { AssistantCloud } from "assistant-cloud";
+import type { AssistantCloud } from "@hitchsoftware/assistant-cloud";
 import type { UseCloudChatOptions, UseThreadsResult } from "../types";
 import type { ChatRegistry } from "../chat/ChatRegistry";
 import { MessagePersistence } from "../chat/MessagePersistence";

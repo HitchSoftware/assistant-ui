@@ -16,7 +16,7 @@ const composerSetText = vi.fn();
 const composerSend = vi.fn();
 const flushTapSync = vi.fn((fn: () => void) => fn());
 
-vi.mock("@assistant-ui/store", () => ({
+vi.mock("@hitchsoftware/assistant-ui-store", () => ({
   useAui: () => ({
     composer: {
       getState: () => ({ isEditing: fixture.composer.isEditing }),
@@ -36,10 +36,10 @@ vi.mock("@assistant-ui/store", () => ({
       thread: { isDisabled: fixture.threadDisabled },
     }),
 }));
-vi.mock("@assistant-ui/tap", () => ({
+vi.mock("@hitchsoftware/assistant-ui-tap", () => ({
   flushTapSync: (fn: () => void) => flushTapSync(fn),
 }));
-vi.mock("@assistant-ui/core/react", () => ({
+vi.mock("@hitchsoftware/assistant-ui-core/react", () => ({
   useComposerSend: () => ({
     send: composerSend,
     disabled: fixture.sendDisabled,

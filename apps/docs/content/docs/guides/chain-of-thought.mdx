@@ -27,7 +27,7 @@ Return the same top-level group for reasoning and tool calls, with nested groups
 import {
   MessagePrimitive,
   groupPartByType,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { MarkdownText } from "@/components/assistant-ui/markdown-text";
 import {
   Reasoning,
@@ -131,7 +131,7 @@ Chain-of-thought parts are surfaced by the AI SDK's built-in reasoning stream. L
 For existing `ChainOfThoughtPrimitive` code, use `AuiIf` to conditionally render based on the accordion state:
 
 ```tsx
-import { AuiIf, ChainOfThoughtPrimitive } from "@assistant-ui/react";
+import { AuiIf, ChainOfThoughtPrimitive } from "@hitchsoftware/assistant-ui-react";
 import { ChevronDownIcon, ChevronRightIcon } from "lucide-react";
 
 const ChainOfThoughtAccordionTrigger = () => {

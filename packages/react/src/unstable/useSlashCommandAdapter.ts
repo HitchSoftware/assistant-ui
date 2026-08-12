@@ -4,7 +4,7 @@ import { useMemo, useRef } from "react";
 import type {
   Unstable_TriggerAdapter,
   Unstable_TriggerItem,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import type { Unstable_IconComponent } from "./useMentionAdapter";
 
 export type Unstable_SlashCommand = {

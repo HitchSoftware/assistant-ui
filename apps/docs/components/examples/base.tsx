@@ -49,7 +49,7 @@ import {
   useAui,
   useAuiState,
   type Unstable_SlashCommand,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   ArrowDownIcon,
   ArrowUpIcon,
@@ -81,7 +81,7 @@ import {
 import {
   LexicalComposerInput,
   type DirectiveChipProps,
-} from "@assistant-ui/react-lexical";
+} from "@hitchsoftware/assistant-ui-react-lexical";
 import Image from "next/image";
 import { useState, type FC, type ReactNode } from "react";
 import { ModelSelector } from "@/components/assistant-ui/model-selector";

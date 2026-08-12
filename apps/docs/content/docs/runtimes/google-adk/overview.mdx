@@ -3,7 +3,7 @@ title: Google ADK Runtime
 description: Connect Google's Agent Development Kit (ADK) to a React chat UI with assistant-ui — streaming, tool calls, and multi-agent orchestration supported.
 ---
 
-`@assistant-ui/react-google-adk` integrates with [Google ADK JS](https://github.com/google/adk-js), Google's official agent framework for TypeScript, and works with ADK Python backends as well. It supports streaming text, tool calls, multi-agent orchestration, code execution, session state, tool confirmations, auth flows, and input requests.
+`@hitchsoftware/assistant-ui-react-google-adk` integrates with [Google ADK JS](https://github.com/google/adk-js), Google's official agent framework for TypeScript, and works with ADK Python backends as well. It supports streaming text, tool calls, multi-agent orchestration, code execution, session state, tool confirmations, auth flows, and input requests.
 
 ## When to use it
 
@@ -15,7 +15,7 @@ Pick the Google ADK runtime when:
 
 ## Architecture
 
-`@assistant-ui/react-google-adk` is layered on `ExternalStoreRuntime` (see [architecture](/docs/runtimes/concepts/architecture)). Features that ship as runtime adapters work the same way they do everywhere else; see [adapters](/docs/runtimes/concepts/adapters).
+`@hitchsoftware/assistant-ui-react-google-adk` is layered on `ExternalStoreRuntime` (see [architecture](/docs/runtimes/concepts/architecture)). Features that ship as runtime adapters work the same way they do everywhere else; see [adapters](/docs/runtimes/concepts/adapters).
 
 The package automatically normalizes snake_case event fields from ADK Python backends to camelCase. No configuration is needed; connect to either ADK JS or ADK Python servers. All nested fields (`function_call` → `functionCall`, `requested_tool_confirmations` → `requestedToolConfirmations`) are handled.
 
@@ -29,17 +29,17 @@ The package automatically normalizes snake_case event fields from ADK Python bac
 <PlatformTabs>
 <Tab value="React">
 
-<InstallCommand npm={["@assistant-ui/react", "@assistant-ui/react-google-adk", "@google/adk"]} />
+<InstallCommand npm={["@hitchsoftware/assistant-ui-react", "@hitchsoftware/assistant-ui-react-google-adk", "@google/adk"]} />
 
 </Tab>
 <Tab value="React Native">
 
-<InstallCommand expo={["@assistant-ui/react-native", "@assistant-ui/react-google-adk"]} />
+<InstallCommand expo={["@hitchsoftware/assistant-ui-react-native", "@hitchsoftware/assistant-ui-react-google-adk"]} />
 
 </Tab>
 <Tab value="React Ink">
 
-<InstallCommand npm={["@assistant-ui/react-ink", "@assistant-ui/react-google-adk", "ink", "react"]} />
+<InstallCommand npm={["@hitchsoftware/assistant-ui-react-ink", "@hitchsoftware/assistant-ui-react-google-adk", "ink", "react"]} />
 
 </Tab>
 </PlatformTabs>

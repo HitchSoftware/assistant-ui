@@ -1,11 +1,11 @@
-# `@assistant-ui/react-langgraph`
+# `@hitchsoftware/assistant-ui-react-langgraph`
 
-[LangGraph](https://langchain-ai.github.io/langgraph/) integration for `@assistant-ui/react`. Wraps a LangGraph stream in an assistant-ui runtime with thread persistence, interrupts, and message-tuple events.
+[LangGraph](https://langchain-ai.github.io/langgraph/) integration for `@hitchsoftware/assistant-ui-react`. Wraps a LangGraph stream in an assistant-ui runtime with thread persistence, interrupts, and message-tuple events.
 
 ## Installation
 
 ```bash
-npm install @assistant-ui/react @assistant-ui/react-langgraph @langchain/langgraph-sdk
+npm install @hitchsoftware/assistant-ui-react @hitchsoftware/assistant-ui-react-langgraph @langchain/langgraph-sdk
 ```
 
 ## Usage
@@ -13,8 +13,8 @@ npm install @assistant-ui/react @assistant-ui/react-langgraph @langchain/langgra
 ```tsx
 "use client";
 
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
-import { useLangGraphRuntime } from "@assistant-ui/react-langgraph";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
+import { useLangGraphRuntime } from "@hitchsoftware/assistant-ui-react-langgraph";
 import { createThread, sendMessage, getThreadState } from "@/lib/chatApi";
 
 export function Provider({ children }: { children: React.ReactNode }) {
@@ -43,6 +43,6 @@ export function Provider({ children }: { children: React.ReactNode }) {
 
 ## See also
 
-- `@assistant-ui/react-langchain` targets `@langchain/react`'s `useStream`; pick it if that's the SDK you already use.
+- `@hitchsoftware/assistant-ui-react-langchain` targets `@langchain/react`'s `useStream`; pick it if that's the SDK you already use.
 
 Full API reference at [assistant-ui.com/docs/runtimes/langgraph](https://www.assistant-ui.com/docs/runtimes/langgraph). See [`examples/with-langgraph`](https://github.com/assistant-ui/assistant-ui/tree/main/examples/with-langgraph) for a complete app.

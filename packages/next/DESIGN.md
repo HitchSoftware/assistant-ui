@@ -41,13 +41,13 @@ identity" below):
 
 ```js
 // facade — emitted in place of a bare import of the generative module
-import toolkit from "@assistant-ui/next/bundler-redirect/<token>"
-  with { turbopackLoader: "@assistant-ui/next/loader",
+import toolkit from "@hitchsoftware/assistant-ui-next/bundler-redirect/<token>"
+  with { turbopackLoader: "@hitchsoftware/assistant-ui-next/loader",
          turbopackLoaderOptions: "{\"path\":\"/abs/docs-toolkit.tsx\"}" };
 export default toolkit;
 ```
 
-`@assistant-ui/next/bundler-redirect/<token>` resolves through the package's
+`@hitchsoftware/assistant-ui-next/bundler-redirect/<token>` resolves through the package's
 `"./bundler-redirect/*"` export by condition to one of two indirection modules,
 which the loader (applied via the attribute) replaces with a re-export of the
 concrete build — using a **relative** specifier computed from the indirection's
@@ -65,7 +65,7 @@ export { default } from "../../../app/lib/docs-toolkit.tsx?generative-env=client
 ## Per-module identity
 
 Turbopack keys runtime modules by **resolved path (+ query)**, ignoring loader
-options and import attributes. A shared bare `@assistant-ui/next/bundler-redirect`
+options and import attributes. A shared bare `@hitchsoftware/assistant-ui-next/bundler-redirect`
 would therefore resolve every facade to the one `bundler-redirect.client.js` file
 under a single key — so two generative modules register two indirection bodies
 there and the last write wins, collapsing all imports onto whichever compiled

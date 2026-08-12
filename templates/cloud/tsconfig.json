@@ -34,7 +34,7 @@
       ],
       "@/hooks/*": ["../../packages/ui/src/hooks/*"],
       "@/lib/utils": ["../../packages/ui/src/lib/utils"],
-      "@assistant-ui/ui/*": ["../../packages/ui/src/*"]
+      "@hitchsoftware/assistant-ui-ui/*": ["../../packages/ui/src/*"]
     }
   },
   "include": [

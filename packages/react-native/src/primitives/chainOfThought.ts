@@ -6,4 +6,4 @@ export {
   ChainOfThoughtAccordionTrigger as AccordionTrigger,
   type ChainOfThoughtAccordionTriggerProps as AccordionTriggerProps,
 } from "./chainOfThought/ChainOfThoughtAccordionTrigger";
-export { ChainOfThoughtPrimitiveParts as Parts } from "@assistant-ui/core/react";
+export { ChainOfThoughtPrimitiveParts as Parts } from "@hitchsoftware/assistant-ui-core/react";

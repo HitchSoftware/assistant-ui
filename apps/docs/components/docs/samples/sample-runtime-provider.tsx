@@ -9,7 +9,7 @@ import {
   type CreateAttachment,
   type LocalRuntimeOptions,
   type ThreadMessageLike,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 const noOpAdapter: ChatModelAdapter = {
   async *run() {

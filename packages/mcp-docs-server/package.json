@@ -1,5 +1,5 @@
 {
-  "name": "@assistant-ui/mcp-docs-server",
+  "name": "@hitchsoftware/assistant-ui-mcp-docs-server",
   "version": "0.2.1",
   "description": "MCP server for assistant-ui documentation and examples",
   "keywords": [
@@ -45,15 +45,15 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@assistant-ui/x-buildutils": "workspace:*",
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
     "@modelcontextprotocol/core": "^2.0.0",
     "@types/node": "^26.1.2",
     "tsx": "^4.23.10",
     "vitest": "^4.1.10"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://www.assistant-ui.com/",
   "repository": {

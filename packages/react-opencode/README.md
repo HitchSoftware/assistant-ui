@@ -1,6 +1,6 @@
-# `@assistant-ui/react-opencode`
+# `@hitchsoftware/assistant-ui-react-opencode`
 
-[OpenCode](https://opencode.ai) runtime adapter for `@assistant-ui/react`. Maps OpenCode activity onto the standard assistant-ui message primitives so an OpenCode session can drive a Thread UI.
+[OpenCode](https://opencode.ai) runtime adapter for `@hitchsoftware/assistant-ui-react`. Maps OpenCode activity onto the standard assistant-ui message primitives so an OpenCode session can drive a Thread UI.
 
 > [!NOTE]
 > This integration is experimental. APIs may change between minor versions.
@@ -8,14 +8,14 @@
 ## Installation
 
 ```bash
-npm install @assistant-ui/react @assistant-ui/react-opencode
+npm install @hitchsoftware/assistant-ui-react @hitchsoftware/assistant-ui-react-opencode
 ```
 
 ## Usage
 
 ```tsx
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
-import { useOpenCodeRuntime } from "@assistant-ui/react-opencode";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
+import { useOpenCodeRuntime } from "@hitchsoftware/assistant-ui-react-opencode";
 import { Thread } from "@/components/assistant-ui/thread";
 
 export function App() {
@@ -33,7 +33,7 @@ export function App() {
 
 ## See also
 
-- `@assistant-ui/react-ai-sdk` for general-purpose Vercel AI SDK integration.
-- `@assistant-ui/react-langgraph` for LangGraph agents.
+- `@hitchsoftware/assistant-ui-react-ai-sdk` for general-purpose Vercel AI SDK integration.
+- `@hitchsoftware/assistant-ui-react-langgraph` for LangGraph agents.
 
 Full reference at [assistant-ui.com/docs/runtimes/opencode](https://www.assistant-ui.com/docs/runtimes/opencode).

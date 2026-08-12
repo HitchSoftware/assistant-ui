@@ -1,10 +1,10 @@
-import type { AssistantStream, AssistantStreamChunk } from "assistant-stream";
+import type { AssistantStream, AssistantStreamChunk } from "@hitchsoftware/assistant-stream";
 import type {
   RemoteThreadInitializeResponse,
   RemoteThreadListAdapter,
   RemoteThreadListResponse,
   RemoteThreadMetadata,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import { AdkEventAccumulator } from "./AdkEventAccumulator";
 import type { AdkEvent, AdkMessage, AdkThreadSnapshot } from "./types";
 import { trimTrailingSlashes } from "./trimTrailingSlashes";

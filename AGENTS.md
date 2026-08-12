@@ -1,38 +1,38 @@
 ## Architecture
 
 ```
-@assistant-ui/tap          → Reactive primitives that run React hooks as headless resources (resource, useResource, createTapRoot, useTapRoot)
-@assistant-ui/store        → Bridges tap to React (useAui, useAuiState, AuiProvider)
-@assistant-ui/core         → Framework-agnostic chat runtime (useExternalStoreRuntime, useLocalRuntime, useRemoteThreadListRuntime, ChatModelAdapter, createRuntimeExtras); ./react subpath holds the React-coupled runtime
-@assistant-ui/react        → Web distribution: re-exports core (+ ./react) and adds Radix primitives
-@assistant-ui/react-native → React Native distribution: re-exports core (+ ./react) and adds RN primitives
-@assistant-ui/react-ink    → Ink/terminal distribution
-@assistant-ui/react-*      → Framework adapters that map a provider SDK onto a core runtime (see Adapter orchestration)
-@assistant-ui/ui           → Private shadcn-style component kit; the canonical source copied into user projects via the registry
-@assistant-ui/x-buildutils → Shared build tooling (aui-build); see Build & release
+@hitchsoftware/assistant-ui-tap          → Reactive primitives that run React hooks as headless resources (resource, useResource, createTapRoot, useTapRoot)
+@hitchsoftware/assistant-ui-store        → Bridges tap to React (useAui, useAuiState, AuiProvider)
+@hitchsoftware/assistant-ui-core         → Framework-agnostic chat runtime (useExternalStoreRuntime, useLocalRuntime, useRemoteThreadListRuntime, ChatModelAdapter, createRuntimeExtras); ./react subpath holds the React-coupled runtime
+@hitchsoftware/assistant-ui-react        → Web distribution: re-exports core (+ ./react) and adds Radix primitives
+@hitchsoftware/assistant-ui-react-native → React Native distribution: re-exports core (+ ./react) and adds RN primitives
+@hitchsoftware/assistant-ui-react-ink    → Ink/terminal distribution
+@hitchsoftware/assistant-ui-react-*      → Framework adapters that map a provider SDK onto a core runtime (see Adapter orchestration)
+@hitchsoftware/assistant-ui-ui           → Private shadcn-style component kit; the canonical source copied into user projects via the registry
+@hitchsoftware/assistant-ui-x-buildutils → Shared build tooling (aui-build); see Build & release
 ```
 
 ## Package boundaries & public surface
 
-`@assistant-ui/core` holds the framework-agnostic runtime; its `./react` sub-path holds the React-coupled runtime that `@assistant-ui/react` and `@assistant-ui/react-native` re-export. Customers never install core directly; they use one of the three distribution packages (react, react-native, react-ink). Platform runtimes stay in the distribution packages; framework-agnostic logic goes in core.
+`@hitchsoftware/assistant-ui-core` holds the framework-agnostic runtime; its `./react` sub-path holds the React-coupled runtime that `@hitchsoftware/assistant-ui-react` and `@hitchsoftware/assistant-ui-react-native` re-export. Customers never install core directly; they use one of the three distribution packages (react, react-native, react-ink). Platform runtimes stay in the distribution packages; framework-agnostic logic goes in core.
 
-`@assistant-ui/ui` is a private shadcn-style kit. We use it directly in the monorepo and copy it into user projects through the registry; it is not published as a dependency.
+`@hitchsoftware/assistant-ui-ui` is a private shadcn-style kit. We use it directly in the monorepo and copy it into user projects through the registry; it is not published as a dependency.
 
 The public surface of any published package is **append-only**. Re-point a moved export to its new file, but never remove an export that has shipped. The in-repo audit cannot see npm consumers, so even an unused-looking type is a breaking change if removed. Ship a real behavior change as its own deliberate PR.
 
-An ongoing migration is replacing the legacy runtime (`packages/react/src/legacy-runtime/`) with the tap-only architecture in `core/src/react`. During the migration the `@assistant-ui/react` barrel re-exports both; keep it append-only.
+An ongoing migration is replacing the legacy runtime (`packages/react/src/legacy-runtime/`) with the tap-only architecture in `core/src/react`. During the migration the `@hitchsoftware/assistant-ui-react` barrel re-exports both; keep it append-only.
 
 ## Adapter orchestration
 
 A framework adapter maps a provider onto a core runtime through one `use<Name>Runtime` entry hook, accessor hooks in `hooks.ts`, and pure converters. The rule of thumb: the runtime file orchestrates, pure modules convert, the controller (if any) reduces, hooks read.
 
 - **Core runtime.** Build on `useExternalStoreRuntime` (messages derived from an external source) or `useLocalRuntime` plus a `ChatModelAdapter` (no provider-side thread state, like `react-data-stream`), and wrap it in `useRemoteThreadListRuntime` for multi-thread support. Reuse core's runtime cores; do not create a `*ThreadRuntimeCore` state holder.
-- **State exposure.** Expose runtime state to accessor hooks with `createRuntimeExtras` from `@assistant-ui/core/internal`, not a hand-rolled `Symbol` brand and guard.
+- **State exposure.** Expose runtime state to accessor hooks with `createRuntimeExtras` from `@hitchsoftware/assistant-ui-core/internal`, not a hand-rolled `Symbol` brand and guard.
 - **Standard files.** `use<Name>Runtime.ts` (orchestration only), `<name>Extras.ts` (the `createRuntimeExtras` instance), `hooks.ts` (accessor and action hooks), a pure `convertMessages.ts` (both directions), and `types.ts`; add a `<Name>ThreadController.ts` plus a pure `reduce<Name>ThreadState` reducer when the adapter owns thread state, and a `./server` or `./node` subpath entry when the protocol owns the wire.
 - **Server-only code.** Keep server-only or provider-SDK code in the `./server` or `./node` subpath, out of the default and React Native entries.
 - **Tests.** Colocate them beside each module, covering the converter both ways, the reducer or controller, and each accessor hook.
 
-Keep provider-driven choices flexible: core-primitive choice, thin wrapper vs accumulator vs controller, bespoke transports, HITL richness, and thread-list depth. `@assistant-ui/react-langchain` is the reference for the external-store plus converter plus `createRuntimeExtras` shape.
+Keep provider-driven choices flexible: core-primitive choice, thin wrapper vs accumulator vs controller, bespoke transports, HITL richness, and thread-list depth. `@hitchsoftware/assistant-ui-react-langchain` is the reference for the external-store plus converter plus `createRuntimeExtras` shape.
 
 **Don't introduce.** A `*ThreadRuntimeCore` state holder, a `notifyUpdate` plus version-counter re-render hack (bridging non-React state with `useSyncExternalStore`), `Object.create` method grafting, or monkeypatching the caller's objects.
 
@@ -57,7 +57,7 @@ How a package couples to its upstream decides how it bumps; the posture is chose
 
 ## Build & release
 
-Every publishable package builds with `aui-build` (`@assistant-ui/x-buildutils`). Do not add a per-package build config or use tsup, unbuild, swc, or the tsc CLI. Exports maps are ESM-only and types-first (`"types"` before `"default"`), with `type: module` and `sideEffects: false`.
+Every publishable package builds with `aui-build` (`@hitchsoftware/assistant-ui-x-buildutils`). Do not add a per-package build config or use tsup, unbuild, swc, or the tsc CLI. Exports maps are ESM-only and types-first (`"types"` before `"default"`), with `type: module` and `sideEffects: false`.
 
 `packages/ui/src/components/assistant-ui` is the canonical UI source. Templates and examples alias it through tsconfig (`@/components/*`, `@/hooks/*`, `@/lib/utils`) and carry no byte-equal copies of it — except `minimal`, which ships its own (examples may still hold intentional forks). `pnpm sync-templates` keeps minimal's copies byte-equal with the source; declare intentional divergence in the `OVERRIDES` array in `scripts/sync-templates.sh`.
 
@@ -69,7 +69,7 @@ Every PR that changes a published package needs a changeset. Always use **patch*
 
 ```md
 ---
-"@assistant-ui/react": patch
+"@hitchsoftware/assistant-ui-react": patch
 ---
 
 feat: description of the change

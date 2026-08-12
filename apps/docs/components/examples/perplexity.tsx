@@ -12,7 +12,7 @@ import {
   MessagePrimitive,
   ThreadPrimitive,
   useAuiState,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   ArrowRight,
   AudioLines,

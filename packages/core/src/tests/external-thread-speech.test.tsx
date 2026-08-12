@@ -3,7 +3,7 @@
 import { act, render, waitFor } from "@testing-library/react";
 import type { FC } from "react";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { AuiProvider, useAui } from "@assistant-ui/store";
+import { AuiProvider, useAui } from "@hitchsoftware/assistant-ui-store";
 import type { SpeechSynthesisAdapter } from "../index";
 import type {
   ExternalThreadMessage,

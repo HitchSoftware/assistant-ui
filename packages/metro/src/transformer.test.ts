@@ -7,7 +7,7 @@ const here = dirname(fileURLToPath(import.meta.url));
 const mockUpstream = join(here, "__fixtures__/mock-upstream.cjs");
 
 const GENERATIVE = `"use generative";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import { z } from "zod";
 import { db } from "@/db";
 export default defineToolkit({

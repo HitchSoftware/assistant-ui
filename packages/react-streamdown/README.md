@@ -1,19 +1,19 @@
-# `@assistant-ui/react-streamdown`
+# `@hitchsoftware/assistant-ui-react-streamdown`
 
-[Streamdown](https://github.com/vercel/streamdown)-based markdown rendering for `@assistant-ui/react`. Drop-in replacement for `@assistant-ui/react-markdown` with built-in Shiki, KaTeX, and Mermaid support, optimized for AI streaming output.
+[Streamdown](https://github.com/vercel/streamdown)-based markdown rendering for `@hitchsoftware/assistant-ui-react`. Drop-in replacement for `@hitchsoftware/assistant-ui-react-markdown` with built-in Shiki, KaTeX, and Mermaid support, optimized for AI streaming output.
 
 ## When to use this
 
 | Package                                  | Best for                                                          |
 | ---------------------------------------- | ----------------------------------------------------------------- |
-| `@assistant-ui/react-markdown`           | Lightweight rendering; bring your own syntax highlighter.         |
-| `@assistant-ui/react-streamdown`         | Feature-rich with built-in Shiki, KaTeX, and Mermaid.             |
-| `@assistant-ui/react-syntax-highlighter` | Pair with `react-markdown` when you only need code-block highlighting. |
+| `@hitchsoftware/assistant-ui-react-markdown`           | Lightweight rendering; bring your own syntax highlighter.         |
+| `@hitchsoftware/assistant-ui-react-streamdown`         | Feature-rich with built-in Shiki, KaTeX, and Mermaid.             |
+| `@hitchsoftware/assistant-ui-react-syntax-highlighter` | Pair with `react-markdown` when you only need code-block highlighting. |
 
 ## Installation
 
 ```bash
-npm install @assistant-ui/react @assistant-ui/react-streamdown
+npm install @hitchsoftware/assistant-ui-react @hitchsoftware/assistant-ui-react-streamdown
 ```
 
 For optional features:
@@ -51,7 +51,7 @@ For details on the shadcn/ui design tokens Streamdown expects, see the [Streamdo
 ## Usage
 
 ```tsx
-import { StreamdownTextPrimitive } from "@assistant-ui/react-streamdown";
+import { StreamdownTextPrimitive } from "@hitchsoftware/assistant-ui-react-streamdown";
 import { code } from "@streamdown/code";
 import { math } from "@streamdown/math";
 import { mermaid } from "@streamdown/mermaid";

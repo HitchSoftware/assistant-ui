@@ -1,5 +1,5 @@
 ---
-title: "@assistant-ui/react-ai-sdk"
+title: "@hitchsoftware/assistant-ui-react-ai-sdk"
 description: Vercel AI SDK runtime hooks, chat transports, and message conversion utilities for assistant-ui React applications.
 ---
 
@@ -47,7 +47,7 @@ sees the quoted text that the user is referring to.
 
 ```ts
 import { convertToModelMessages, streamText } from "ai";
-import { injectQuoteContext } from "@assistant-ui/react-ai-sdk";
+import { injectQuoteContext } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
@@ -87,7 +87,7 @@ only the fields that changed since the model's last known state.
 
 ```ts
 import { convertToModelMessages, streamText } from "ai";
-import { unstable_injectInteractableContext } from "@assistant-ui/react-ai-sdk";
+import { unstable_injectInteractableContext } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 
 export async function POST(req: Request) {
   const { messages } = await req.json();

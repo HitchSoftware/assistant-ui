@@ -1,2 +1,2 @@
 "use client";
-export { createMessageConverter } from "@assistant-ui/core/react";
+export { createMessageConverter } from "@hitchsoftware/assistant-ui-core/react";

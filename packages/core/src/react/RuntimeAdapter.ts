@@ -1,4 +1,4 @@
-import { useResource, resource } from "@assistant-ui/tap";
+import { useResource, resource } from "@hitchsoftware/assistant-ui-tap";
 import type { AssistantRuntime } from "..";
 import {
   baseRuntimeAdapterTransformScopes,
@@ -8,7 +8,7 @@ import {
   attachTransformScopes,
   useAssistantClientRef,
   useAssistantScopeEffect,
-} from "@assistant-ui/store/client";
+} from "@hitchsoftware/assistant-ui-store/client";
 import { DataRenderers } from "./client/DataRenderers";
 import { Tools } from "./client/Tools";
 

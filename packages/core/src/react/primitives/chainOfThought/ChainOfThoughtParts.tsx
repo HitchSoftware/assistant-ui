@@ -5,7 +5,7 @@ import {
   type ReactNode,
   useMemo,
 } from "react";
-import { RenderChildrenWithAccessor, useAuiState } from "@assistant-ui/store";
+import { RenderChildrenWithAccessor, useAuiState } from "@hitchsoftware/assistant-ui-store";
 import type { PartState } from "../../../store/scopes/part";
 import { ChainOfThoughtPartByIndexProvider } from "../../providers/ChainOfThoughtPartByIndexProvider";
 import { MessagePartComponent } from "../message/MessageParts";

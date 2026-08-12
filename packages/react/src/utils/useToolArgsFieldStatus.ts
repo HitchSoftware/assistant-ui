@@ -1,5 +1,5 @@
-import { getPartialJsonObjectFieldState } from "assistant-stream/utils";
-import { useAuiState } from "@assistant-ui/store";
+import { getPartialJsonObjectFieldState } from "@hitchsoftware/assistant-stream/utils";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 
 const COMPLETE_STATUS = { type: "complete" };
 

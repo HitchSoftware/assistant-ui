@@ -1,4 +1,4 @@
-import type { AssistantState } from "@assistant-ui/store";
+import type { AssistantState } from "@hitchsoftware/assistant-ui-store";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({
@@ -6,7 +6,7 @@ const mocks = vi.hoisted(() => ({
   kind: "custom" as "connector" | "custom",
 }));
 
-vi.mock("@assistant-ui/store", async (importOriginal) => ({
+vi.mock("@hitchsoftware/assistant-ui-store", async (importOriginal) => ({
   ...(await importOriginal()),
   useAui: () => ({ mcpServer: { remove: mocks.remove } }),
   useAuiState: function useAuiState<T>(selector: (state: AssistantState) => T) {

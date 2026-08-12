@@ -70,7 +70,7 @@ export const ScopesView = ({ scopes }: { scopes?: unknown }) => {
   if (list.length === 0) {
     return (
       <EmptyState>
-        No scopes reported. Update `@assistant-ui/react-devtools` to forward the
+        No scopes reported. Update `@hitchsoftware/assistant-ui-react-devtools` to forward the
         scope graph.
       </EmptyState>
     );

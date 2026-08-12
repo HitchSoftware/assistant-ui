@@ -1,4 +1,4 @@
-import { type ResourceElement } from "@assistant-ui/tap";
+import { type ResourceElement } from "@hitchsoftware/assistant-ui-tap";
 import type {
   AssistantEventName,
   AssistantEventCallback,
@@ -36,7 +36,7 @@ export type ClientSchema<
  *
  * @example
  * ```typescript
- * declare module "@assistant-ui/store" {
+ * declare module "@hitchsoftware/assistant-ui-store" {
  *   interface ScopeRegistry {
  *     // Simple client (meta and events are optional)
  *     foo: {

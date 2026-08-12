@@ -32,7 +32,7 @@ export function Hero() {
           </a>
           <span className="bg-muted-foreground/20 hidden size-1 rounded-full sm:block" />
           <a
-            href="https://www.npmjs.com/package/@assistant-ui/react"
+            href="https://www.npmjs.com/package/@hitchsoftware/assistant-ui-react"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-foreground transition-colors"

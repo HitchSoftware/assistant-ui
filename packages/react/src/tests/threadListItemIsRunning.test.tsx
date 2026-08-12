@@ -3,7 +3,7 @@
 import { act, render, screen, waitFor } from "@testing-library/react";
 import { type FC, useEffect, useReducer } from "react";
 import { describe, expect, it } from "vitest";
-import { useRemoteThreadListRuntime } from "@assistant-ui/core/react";
+import { useRemoteThreadListRuntime } from "@hitchsoftware/assistant-ui-core/react";
 import { makeAdapter } from "./remote-thread-list-test-helpers";
 import { AssistantRuntimeProvider } from "../context";
 import * as ThreadListPrimitive from "../primitives/threadList";

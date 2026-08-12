@@ -1,11 +1,11 @@
 import { useState, useEffect, useCallback, useRef, useMemo } from "react";
-import { resource } from "@assistant-ui/tap";
-import type { ClientOutput } from "@assistant-ui/store";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
+import type { ClientOutput } from "@hitchsoftware/assistant-ui-store";
 import {
   attachTransformScopes,
   useAssistantClientRef,
   useAssistantScopeEffect,
-} from "@assistant-ui/store/client";
+} from "@hitchsoftware/assistant-ui-store/client";
 import type {
   Unstable_InteractablesState,
   Unstable_InteractableRegistration,
@@ -13,7 +13,7 @@ import type {
   Unstable_InteractablePersistenceAdapter,
   Unstable_InteractablesConfig,
 } from "../types/scopes/interactables";
-import { toJSONSchema, toPartialJSONSchema } from "assistant-stream";
+import { toJSONSchema, toPartialJSONSchema } from "@hitchsoftware/assistant-stream";
 import { ModelContext } from "../../store/clients/model-context-client";
 import {
   buildInteractableModelContext,

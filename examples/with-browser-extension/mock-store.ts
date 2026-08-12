@@ -1,5 +1,5 @@
 import { useCallback, useRef, useState } from "react";
-import type { ThreadMessageLike, AppendMessage } from "@assistant-ui/react";
+import type { ThreadMessageLike, AppendMessage } from "@hitchsoftware/assistant-ui-react";
 
 const INITIAL_MESSAGES: ThreadMessageLike[] = [];
 
@@ -11,7 +11,7 @@ This is a **mock response** from the external store runtime. In a real extension
 - OpenAI via AI SDK
 - Any custom API
 
-The UI you're seeing is built with \`@assistant-ui/react\` -- the same components work in Next.js, Vite, React Native, and now browser extensions.`;
+The UI you're seeing is built with \`@hitchsoftware/assistant-ui-react\` -- the same components work in Next.js, Vite, React Native, and now browser extensions.`;
 
 export function useMockStore() {
   const [messages, setMessages] =

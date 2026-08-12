@@ -111,7 +111,7 @@ function injectQuoteForOpenAI(messages) {
 Use `useMessageQuote` to access quote data in custom components:
 
 ```tsx
-import { useMessageQuote } from "@assistant-ui/react";
+import { useMessageQuote } from "@hitchsoftware/assistant-ui-react";
 
 function CustomQuoteDisplay() {
   const quote = useMessageQuote();
@@ -127,10 +127,10 @@ function CustomQuoteDisplay() {
 
 ## Programmatic API
 
-Set or clear quotes via `useAui` from `@assistant-ui/react`. Call `aui.thread.composer().setQuote()` when your component is rendered outside of a specific thread context, or `aui.composer.setQuote()` when it is rendered inside a thread:
+Set or clear quotes via `useAui` from `@hitchsoftware/assistant-ui-react`. Call `aui.thread.composer().setQuote()` when your component is rendered outside of a specific thread context, or `aui.composer.setQuote()` when it is rendered inside a thread:
 
 ```tsx
-import { useAui } from "@assistant-ui/react";
+import { useAui } from "@hitchsoftware/assistant-ui-react";
 
 function MyComponent() {
   const aui = useAui();

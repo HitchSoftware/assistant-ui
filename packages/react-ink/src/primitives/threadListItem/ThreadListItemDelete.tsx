@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { useThreadListItemDelete } from "@assistant-ui/core/react";
+import { useThreadListItemDelete } from "@hitchsoftware/assistant-ui-core/react";
 import { Pressable, type PressableProps } from "../internal/Pressable";
 
 export type ThreadListItemDeleteProps = Omit<PressableProps, "onPress"> & {

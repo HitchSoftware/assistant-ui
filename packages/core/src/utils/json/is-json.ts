@@ -2,7 +2,7 @@ import type {
   ReadonlyJSONArray,
   ReadonlyJSONObject,
   ReadonlyJSONValue,
-} from "assistant-stream/utils";
+} from "@hitchsoftware/assistant-stream/utils";
 
 export function isRecord(value: unknown): value is Record<string, unknown> {
   return value != null && typeof value === "object" && !Array.isArray(value);

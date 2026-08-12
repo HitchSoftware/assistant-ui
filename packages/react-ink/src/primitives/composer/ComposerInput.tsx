@@ -1,7 +1,7 @@
 import { type ComponentProps } from "react";
 
 import { Box } from "ink";
-import { useAui, useAuiState } from "@assistant-ui/store";
+import { useAui, useAuiState } from "@hitchsoftware/assistant-ui-store";
 import { TextInput } from "../textInput/TextInput";
 
 export type ComposerInputProps = ComponentProps<typeof Box> & {

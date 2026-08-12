@@ -4,7 +4,7 @@ import type { FC, ReactNode } from "react";
 import { Component, useState } from "react";
 import { act, cleanup, render } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { flushTapSync, resource, withKey } from "@assistant-ui/tap";
+import { flushTapSync, resource, withKey } from "@hitchsoftware/assistant-ui-tap";
 import { AuiProvider } from "../AuiProvider";
 import { useAui } from "../useAui";
 import { useAuiState } from "../useAuiState";

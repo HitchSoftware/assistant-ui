@@ -3,8 +3,8 @@
  */
 import { act } from "react";
 import { createRoot, type Root } from "react-dom/client";
-import type * as CoreReact from "@assistant-ui/core/react";
-import type * as AssistantStore from "@assistant-ui/store";
+import type * as CoreReact from "@hitchsoftware/assistant-ui-core/react";
+import type * as AssistantStore from "@hitchsoftware/assistant-ui-store";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { ComposerPrimitiveAddAttachment } from "./ComposerAddAttachment";
 
@@ -14,7 +14,7 @@ const { addAttachment } = vi.hoisted(() => ({
 
 (globalThis as Record<string, unknown>).IS_REACT_ACT_ENVIRONMENT = true;
 
-vi.mock("@assistant-ui/core/react", async (importOriginal) => {
+vi.mock("@hitchsoftware/assistant-ui-core/react", async (importOriginal) => {
   const actual = await importOriginal<typeof CoreReact>();
   return {
     ...actual,
@@ -25,7 +25,7 @@ vi.mock("@assistant-ui/core/react", async (importOriginal) => {
   };
 });
 
-vi.mock("@assistant-ui/store", async (importOriginal) => {
+vi.mock("@hitchsoftware/assistant-ui-store", async (importOriginal) => {
   const actual = await importOriginal<typeof AssistantStore>();
   return {
     ...actual,

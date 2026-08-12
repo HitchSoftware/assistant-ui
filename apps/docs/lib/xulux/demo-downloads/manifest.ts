@@ -223,7 +223,7 @@ export const DEMO_DOWNLOAD_MANIFESTS: Record<
     description:
       "A Claude Code or Codex CLI-style terminal assistant built with assistant-ui React Ink primitives, including streaming chat, tool calls, status output, and terminal-native diff rendering.",
     features: [
-      "Terminal chat UI built with @assistant-ui/react-ink",
+      "Terminal chat UI built with @hitchsoftware/assistant-ui-react-ink",
       "Scripted coding-agent flow with reasoning, tool calls, tests, and summary",
       "Terminal-native diff rendering for apply_patch output",
     ],

@@ -3,11 +3,11 @@ import { createPrismTracer, prismAISDK } from "@/lib/prism-server";
 import {
   injectQuoteContext,
   unstable_injectInteractableContext as injectInteractableContext,
-} from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { validateGeneralChatInput } from "@/lib/validate-input";
 import { getModel, withTracing } from "@/lib/ai/provider";
-import { AISDKToolkit } from "@assistant-ui/react-ai-sdk";
+import { AISDKToolkit } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import docsToolkit from "@/lib/docs-toolkit";
 import {
   convertToModelMessages,

@@ -1,3 +1,3 @@
 "use client";
 
-export { useLocalRuntime } from "@assistant-ui/core/react";
+export { useLocalRuntime } from "@hitchsoftware/assistant-ui-core/react";

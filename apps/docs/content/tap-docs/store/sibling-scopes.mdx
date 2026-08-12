@@ -26,9 +26,9 @@ But what if `ToolsResource` needs to call methods on the `modelContext` scope? A
 `useAssistantClientRef()` gives a resource access to the store being built. It returns a ref whose `.current` property points to the `AssistantClient` once all scopes are mounted:
 
 ```ts
-import { resource } from "@assistant-ui/tap";
-import { useAssistantClientRef } from "@assistant-ui/store";
-import type { ClientOutput } from "@assistant-ui/store";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
+import { useAssistantClientRef } from "@hitchsoftware/assistant-ui-store";
+import type { ClientOutput } from "@hitchsoftware/assistant-ui-store";
 import { useEffect } from "react";
 
 const useToolsResource = (): ClientOutput<"tools"> => {
@@ -61,7 +61,7 @@ Use `useAssistantClientRef` in effects, not during the resource body. The ref is
 Attach the transform to the hook function you passed to `resource()` — transforms are keyed by the hook, not the resource wrapper:
 
 ```ts
-import { attachTransformScopes } from "@assistant-ui/store";
+import { attachTransformScopes } from "@hitchsoftware/assistant-ui-store";
 
 attachTransformScopes(useToolsResource, (scopes, parent) => {
   // ensure modelContext exists as a sibling

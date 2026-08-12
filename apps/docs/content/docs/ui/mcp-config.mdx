@@ -4,7 +4,7 @@ description: Drop-in shadcn dialog that lists MCP connectors and custom servers,
 platforms: ["react"]
 ---
 
-`McpConfigDialog` is a shadcn template that wraps the [`@assistant-ui/react-mcp`](/docs/tools/user-managed-mcp) primitives. Render it anywhere inside an `McpManagerResource`-mounted client and your users get a styled MCP server panel — no manual primitive composition.
+`McpConfigDialog` is a shadcn template that wraps the [`@hitchsoftware/assistant-ui-react-mcp`](/docs/tools/user-managed-mcp) primitives. Render it anywhere inside an `McpManagerResource`-mounted client and your users get a styled MCP server panel — no manual primitive composition.
 
 ## Getting Started
 
@@ -13,7 +13,7 @@ platforms: ["react"]
 
 ### Install the package and the component
 
-<InstallCommand npm={["@assistant-ui/react-mcp"]} />
+<InstallCommand npm={["@hitchsoftware/assistant-ui-react-mcp"]} />
 
 <InstallCommand shadcn={["mcp-config"]} />
 
@@ -25,8 +25,8 @@ platforms: ["react"]
 ```tsx title="app/providers.tsx"
 "use client";
 
-import { AuiConfig, AuiProvider, useAui } from "@assistant-ui/react";
-import { McpManagerResource, defineConnector } from "@assistant-ui/react-mcp";
+import { AuiConfig, AuiProvider, useAui } from "@hitchsoftware/assistant-ui-react";
+import { McpManagerResource, defineConnector } from "@hitchsoftware/assistant-ui-react-mcp";
 
 const connectors = [
   defineConnector({
@@ -96,7 +96,7 @@ Required for any OAuth-enabled connector or custom server. See the [OAuth callba
 <Cards>
   <Card
     title="User-managed MCP servers"
-    description="Full @assistant-ui/react-mcp guide — connectors, custom servers, OAuth, storage, custom primitives."
+    description="Full @hitchsoftware/assistant-ui-react-mcp guide — connectors, custom servers, OAuth, storage, custom primitives."
     href="/docs/tools/user-managed-mcp"
   />
   <Card

@@ -5,7 +5,7 @@ import {
   useMemo,
   useState,
 } from "react";
-import { useAui, AuiConfig, AuiProvider, Derived } from "@assistant-ui/store";
+import { useAui, AuiConfig, AuiProvider, Derived } from "@hitchsoftware/assistant-ui-store";
 import type { ThreadMessage } from "../../types/message";
 import { ReadonlyThreadRuntimeCore } from "../../runtimes/readonly/ReadonlyThreadRuntimeCore";
 import {

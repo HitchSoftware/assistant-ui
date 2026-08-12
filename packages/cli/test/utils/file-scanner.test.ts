@@ -22,7 +22,7 @@ describe("file-scanner utilities", () => {
 
   describe("scanForImport", () => {
     it("should return false when no files match", () => {
-      const result = scanForImport("@assistant-ui/react", { cwd: testDir });
+      const result = scanForImport("@hitchsoftware/assistant-ui-react", { cwd: testDir });
       expect(result).toBe(false);
     });
 
@@ -30,10 +30,10 @@ describe("file-scanner utilities", () => {
       const filePath = path.join(testDir, "test.ts");
       fs.writeFileSync(
         filePath,
-        'import { Thread } from "@assistant-ui/react";',
+        'import { Thread } from "@hitchsoftware/assistant-ui-react";',
       );
 
-      const result = scanForImport("@assistant-ui/react", { cwd: testDir });
+      const result = scanForImport("@hitchsoftware/assistant-ui-react", { cwd: testDir });
       expect(result).toBe(true);
     });
 
@@ -41,11 +41,11 @@ describe("file-scanner utilities", () => {
       const filePath = path.join(testDir, "test.tsx");
       fs.writeFileSync(
         filePath,
-        'import { useChat } from "@assistant-ui/react-ai-sdk";',
+        'import { useChat } from "@hitchsoftware/assistant-ui-react-ai-sdk";',
       );
 
       const result = scanForImport(
-        ["@assistant-ui/react", "@assistant-ui/react-ai-sdk"],
+        ["@hitchsoftware/assistant-ui-react", "@hitchsoftware/assistant-ui-react-ai-sdk"],
         { cwd: testDir },
       );
       expect(result).toBe(true);
@@ -56,7 +56,7 @@ describe("file-scanner utilities", () => {
       fs.writeFileSync(filePath, 'import React from "react";');
 
       const result = scanForImport(
-        ["@assistant-ui/react", "@assistant-ui/react-ai-sdk"],
+        ["@hitchsoftware/assistant-ui-react", "@hitchsoftware/assistant-ui-react-ai-sdk"],
         { cwd: testDir },
       );
       expect(result).toBe(false);
@@ -67,10 +67,10 @@ describe("file-scanner utilities", () => {
       fs.mkdirSync(nodeModulesPath);
       fs.writeFileSync(
         path.join(nodeModulesPath, "test.ts"),
-        'import { Thread } from "@assistant-ui/react";',
+        'import { Thread } from "@hitchsoftware/assistant-ui-react";',
       );
 
-      const result = scanForImport("@assistant-ui/react", { cwd: testDir });
+      const result = scanForImport("@hitchsoftware/assistant-ui-react", { cwd: testDir });
       expect(result).toBe(false);
     });
 
@@ -79,10 +79,10 @@ describe("file-scanner utilities", () => {
       fs.mkdirSync(distPath);
       fs.writeFileSync(
         path.join(distPath, "test.js"),
-        'import { Thread } from "@assistant-ui/react";',
+        'import { Thread } from "@hitchsoftware/assistant-ui-react";',
       );
 
-      const result = scanForImport("@assistant-ui/react", { cwd: testDir });
+      const result = scanForImport("@hitchsoftware/assistant-ui-react", { cwd: testDir });
       expect(result).toBe(false);
     });
 
@@ -91,17 +91,17 @@ describe("file-scanner utilities", () => {
       fs.mkdirSync(srcPath, { recursive: true });
       fs.writeFileSync(
         path.join(srcPath, "Chat.tsx"),
-        'import { Thread } from "@assistant-ui/react";',
+        'import { Thread } from "@hitchsoftware/assistant-ui-react";',
       );
 
-      const result = scanForImport("@assistant-ui/react", { cwd: testDir });
+      const result = scanForImport("@hitchsoftware/assistant-ui-react", { cwd: testDir });
       expect(result).toBe(true);
     });
   });
 
   describe("getFilesContaining", () => {
     it("should return empty array when no files match", () => {
-      const result = getFilesContaining("@assistant-ui/react", {
+      const result = getFilesContaining("@hitchsoftware/assistant-ui-react", {
         cwd: testDir,
       });
       expect(result).toEqual([]);
@@ -112,11 +112,11 @@ describe("file-scanner utilities", () => {
       const file2 = path.join(testDir, "test2.ts");
       const file3 = path.join(testDir, "test3.ts");
 
-      fs.writeFileSync(file1, 'import { Thread } from "@assistant-ui/react";');
+      fs.writeFileSync(file1, 'import { Thread } from "@hitchsoftware/assistant-ui-react";');
       fs.writeFileSync(file2, 'import React from "react";');
-      fs.writeFileSync(file3, 'import { useChat } from "@assistant-ui/react";');
+      fs.writeFileSync(file3, 'import { useChat } from "@hitchsoftware/assistant-ui-react";');
 
-      const result = getFilesContaining("@assistant-ui/react", {
+      const result = getFilesContaining("@hitchsoftware/assistant-ui-react", {
         cwd: testDir,
       });
 
@@ -133,10 +133,10 @@ describe("file-scanner utilities", () => {
       const file1 = path.join(srcPath, "Chat.tsx");
       const file2 = path.join(testDir, "App.tsx");
 
-      fs.writeFileSync(file1, 'import { Thread } from "@assistant-ui/react";');
-      fs.writeFileSync(file2, 'import { Thread } from "@assistant-ui/react";');
+      fs.writeFileSync(file1, 'import { Thread } from "@hitchsoftware/assistant-ui-react";');
+      fs.writeFileSync(file2, 'import { Thread } from "@hitchsoftware/assistant-ui-react";');
 
-      const result = getFilesContaining("@assistant-ui/react", {
+      const result = getFilesContaining("@hitchsoftware/assistant-ui-react", {
         cwd: testDir,
       });
 
@@ -147,14 +147,14 @@ describe("file-scanner utilities", () => {
 
     it("should ignore unreadable files gracefully", () => {
       const file1 = path.join(testDir, "test1.ts");
-      fs.writeFileSync(file1, 'import { Thread } from "@assistant-ui/react";');
+      fs.writeFileSync(file1, 'import { Thread } from "@hitchsoftware/assistant-ui-react";');
 
       // Create a directory with the same name as a file pattern would match
       // This tests the error handling
       const unreadableDir = path.join(testDir, "unreadable.ts");
       fs.mkdirSync(unreadableDir);
 
-      const result = getFilesContaining("@assistant-ui/react", {
+      const result = getFilesContaining("@hitchsoftware/assistant-ui-react", {
         cwd: testDir,
       });
 

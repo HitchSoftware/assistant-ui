@@ -7,7 +7,7 @@ const h = vi.hoisted(() => ({
   archive: vi.fn<() => void>(),
 }));
 
-vi.mock("@assistant-ui/core/react", () => ({
+vi.mock("@hitchsoftware/assistant-ui-core/react", () => ({
   useThreadListItemArchive: () => ({ archive: h.archive }),
 }));
 

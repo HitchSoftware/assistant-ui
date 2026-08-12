@@ -1,11 +1,11 @@
 {
-  "extends": "@assistant-ui/x-buildutils/ts/next",
+  "extends": "@hitchsoftware/assistant-ui-x-buildutils/ts/next",
   "compilerOptions": {
     "typeRoots": [
       "./node_modules/@types",
       "../node_modules/@types",
       "../../../node_modules/@types",
-      "../node_modules/@assistant-ui/x-buildutils/types"
+      "../node_modules/@hitchsoftware/assistant-ui-x-buildutils/types"
     ],
     "paths": {
       "@/*": ["./*"],
@@ -20,7 +20,7 @@
         "../../../packages/ui/src/components/ui/radix/*"
       ],
       "@/lib/utils": ["../../../packages/ui/src/lib/utils"],
-      "@assistant-ui/ui/*": ["../../../packages/ui/src/*"]
+      "@hitchsoftware/assistant-ui-ui/*": ["../../../packages/ui/src/*"]
     }
   },
   "include": [

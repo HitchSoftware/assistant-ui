@@ -10,7 +10,7 @@ import {
 } from "react";
 import { composeEventHandlers } from "@radix-ui/primitive";
 import { useTriggerPopoverScopeContext } from "./TriggerPopover";
-import type { Unstable_TriggerItem } from "@assistant-ui/core";
+import type { Unstable_TriggerItem } from "@hitchsoftware/assistant-ui-core";
 
 export namespace ComposerPrimitiveTriggerPopoverItems {
   export type Element = ComponentRef<typeof Primitive.div>;

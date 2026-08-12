@@ -4,7 +4,7 @@ import {
   MessagePrimitive,
   MessagePartPrimitive,
   ThreadPrimitive,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { SampleRuntimeProvider } from "./sample-runtime-provider";
 
 export function MessagePrimitiveSample() {

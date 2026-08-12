@@ -18,7 +18,7 @@ The ActionBar primitive provides message actions: copy, reload, edit, feedback, 
 import {
   ActionBarPrimitive,
   MessagePrimitive,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { CheckIcon, CopyIcon, RefreshCwIcon } from "lucide-react";
 
 function AssistantMessage() {
@@ -53,7 +53,7 @@ function AssistantMessage() {
 A minimal action bar with copy and reload:
 
 ```tsx
-import { ActionBarPrimitive } from "@assistant-ui/react";
+import { ActionBarPrimitive } from "@hitchsoftware/assistant-ui-react";
 
 <ActionBarPrimitive.Root>
   <ActionBarPrimitive.Copy>Copy</ActionBarPrimitive.Copy>
@@ -309,7 +309,7 @@ Speech requires a `SpeechSynthesisAdapter` configured in your runtime. See [Spee
 import {
   ActionBarPrimitive,
   ActionBarMorePrimitive,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { MoreHorizontalIcon } from "lucide-react";
 
 <ActionBarPrimitive.Root>

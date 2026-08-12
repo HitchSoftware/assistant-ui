@@ -16,7 +16,7 @@ import {
   ComposerPrimitive,
   useAui,
   useAuiState,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { cn } from "@/lib/utils";
 import { ArrowUpIcon, SquareIcon } from "lucide-react";
 import {

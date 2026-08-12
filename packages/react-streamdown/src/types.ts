@@ -1,4 +1,4 @@
-import type { SmoothOptions } from "@assistant-ui/react";
+import type { SmoothOptions } from "@hitchsoftware/assistant-ui-react";
 import type { Element } from "hast";
 import type { ComponentPropsWithoutRef, ComponentType, ReactNode } from "react";
 import type { Options as RemarkRehypeOptions } from "remark-rehype";
@@ -95,7 +95,7 @@ export type RemendConfig = {
 
 /**
  * Props for the SyntaxHighlighter component.
- * Compatible with @assistant-ui/react-markdown API.
+ * Compatible with @hitchsoftware/assistant-ui-react-markdown API.
  */
 export type SyntaxHighlighterProps = {
   node?: Element | undefined;
@@ -113,7 +113,7 @@ export type SyntaxHighlighterProps = {
 
 /**
  * Props for the CodeHeader component.
- * Compatible with @assistant-ui/react-markdown API.
+ * Compatible with @hitchsoftware/assistant-ui-react-markdown API.
  */
 export type CodeHeaderProps = {
   node?: Element | undefined;

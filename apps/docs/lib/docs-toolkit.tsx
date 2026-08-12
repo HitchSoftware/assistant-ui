@@ -17,13 +17,13 @@ import {
   unstable_interactableTool,
   useAuiState,
   type ToolCallMessagePartComponent,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   JSONGenerativeUI,
   defaultGenerativeUILibrary,
   defineGenerativeComponents,
   generativeUIToJSX,
-} from "@assistant-ui/react-generative-ui";
+} from "@hitchsoftware/assistant-ui-react-generative-ui";
 import { ToolErrorCard, ToolStatusCard, ToolTraceCard } from "@/lib/tool-trace";
 import { Notepad } from "@/components/tool-ui/notepad";
 import { styledGenerativeUILibrary } from "@/components/assistant-ui/generative-ui";

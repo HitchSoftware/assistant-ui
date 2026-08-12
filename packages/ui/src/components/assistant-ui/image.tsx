@@ -21,7 +21,7 @@ import {
 import type {
   ImageMessagePart,
   ImageMessagePartComponent,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { cn } from "@/lib/utils";
 
 const extensionForMimeType = (mimeType?: string): string => {

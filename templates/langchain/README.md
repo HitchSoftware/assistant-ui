@@ -36,4 +36,4 @@ backend/agent.ts    LangGraph graph exported as `graph`
 langgraph.json      LangGraph CLI config (graph id, node version, env file)
 ```
 
-`app/assistant.tsx` builds the runtime with `useStreamRuntime({ assistantId, apiUrl })` from `@assistant-ui/react-langchain`, which wraps `useStream` from `@langchain/react`.
+`app/assistant.tsx` builds the runtime with `useStreamRuntime({ assistantId, apiUrl })` from `@hitchsoftware/assistant-ui-react-langchain`, which wraps `useStream` from `@langchain/react`.

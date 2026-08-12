@@ -1,5 +1,5 @@
 {
-  "name": "@assistant-ui/agent-launcher",
+  "name": "@hitchsoftware/assistant-ui-agent-launcher",
   "version": "0.1.10",
   "description": "Spawn the Claude Code CLI with a chosen plugin directory, skill, and prompt",
   "keywords": [
@@ -33,13 +33,13 @@
     "cross-spawn": "^7.0.6"
   },
   "devDependencies": {
-    "@assistant-ui/x-buildutils": "workspace:*",
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
     "@types/cross-spawn": "^6.0.6",
     "@types/node": "^26.1.2"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://www.assistant-ui.com/",
   "repository": {

@@ -1,4 +1,4 @@
 export type {
   ThreadListItemCoreState,
   ThreadListRuntimeCore,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";

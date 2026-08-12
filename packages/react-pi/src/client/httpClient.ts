@@ -26,7 +26,7 @@
  *   POST   /threads/:id/host-ui     → 204                   (body: { response })
  *   GET    /threads/:id/events      → SSE of PiClientEvent (?snapshot=false skips initial snapshot)
  */
-import { isRecord } from "@assistant-ui/core/internal";
+import { isRecord } from "@hitchsoftware/assistant-ui-core/internal";
 import { openPiEventStream } from "./eventSource";
 import type {
   PiClient,

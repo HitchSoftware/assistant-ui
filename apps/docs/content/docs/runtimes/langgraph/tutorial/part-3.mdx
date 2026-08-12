@@ -88,7 +88,7 @@ Then we define a tool UI renderer:
 
 import { TransactionConfirmationPending } from "./transaction-confirmation-pending";
 import { TransactionConfirmationFinal } from "./transaction-confirmation-final";
-import type { ToolCallMessagePartComponent } from "@assistant-ui/react";
+import type { ToolCallMessagePartComponent } from "@hitchsoftware/assistant-ui-react";
 
 export const PurchaseStockToolUI: ToolCallMessagePartComponent<
   PurchaseStockArgs,
@@ -212,7 +212,7 @@ export function TransactionConfirmationPending(props: TransactionConfirmation) {
 import { Thread } from "@/components/assistant-ui/thread";
 import { PriceSnapshotToolUI } from "@/components/tools/price-snapshot/PriceSnapshotTool";
 import { PurchaseStockToolUI } from "@/components/tools/purchase-stock/PurchaseStockTool";
-import { AuiConfig, AuiProvider, defineToolkit, Tools, useAui } from "@assistant-ui/react";
+import { AuiConfig, AuiProvider, defineToolkit, Tools, useAui } from "@hitchsoftware/assistant-ui-react";
 
 const toolkit = defineToolkit({
   price_snapshot: {
@@ -319,7 +319,7 @@ We will import the new `<TransactionConfirmationFinal />` component and use it i
 
 import { TransactionConfirmationPending } from "./transaction-confirmation-pending";
 import { TransactionConfirmationFinal } from "./transaction-confirmation-final";
-import type { ToolCallMessagePartComponent } from "@assistant-ui/react";
+import type { ToolCallMessagePartComponent } from "@hitchsoftware/assistant-ui-react";
 
 type PurchaseStockArgs = {
   ticker: string;

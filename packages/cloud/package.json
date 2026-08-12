@@ -1,5 +1,5 @@
 {
-  "name": "assistant-cloud",
+  "name": "@hitchsoftware/assistant-cloud",
   "version": "0.1.40",
   "description": "Cloud integration for assistant-ui",
   "keywords": [
@@ -32,16 +32,16 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "assistant-stream": "^0.3.36"
+    "@hitchsoftware/assistant-stream": "^0.3.36"
   },
   "devDependencies": {
-    "@assistant-ui/x-buildutils": "workspace:*",
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
     "@types/node": "^26.1.2",
     "vitest": "^4.1.10"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://www.assistant-ui.com/",
   "repository": {

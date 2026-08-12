@@ -1,4 +1,4 @@
-import { useAuiState } from "@assistant-ui/store";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 import type { MessageState } from "../../store/scopes/message";
 
 export const useThreadMessages = (): readonly MessageState[] => {

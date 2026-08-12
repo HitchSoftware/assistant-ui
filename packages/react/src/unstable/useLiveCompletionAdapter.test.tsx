@@ -1,7 +1,7 @@
 /** @vitest-environment jsdom */
 import { act, renderHook } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import type { Unstable_TriggerItem } from "@assistant-ui/core";
+import type { Unstable_TriggerItem } from "@hitchsoftware/assistant-ui-core";
 import { unstable_useLiveCompletionAdapter } from "./useLiveCompletionAdapter";
 
 const item = (id: string): Unstable_TriggerItem => ({

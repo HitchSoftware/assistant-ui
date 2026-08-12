@@ -7,12 +7,12 @@ import {
   useAssistantInstructions,
   useAui,
   useAuiEvent,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   useChatRuntime,
   AssistantChatTransport,
   getThreadMessageTokenUsage,
-} from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { lastAssistantMessageIsCompleteWithToolCalls } from "ai";
 import { useEffect, useRef, type ReactNode } from "react";
 import { useCurrentPage } from "@/components/docs/contexts/current-page";

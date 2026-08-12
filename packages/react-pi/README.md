@@ -1,4 +1,4 @@
-# @assistant-ui/react-pi
+# @hitchsoftware/assistant-ui-react-pi
 
 Pi coding-agent runtime adapter for [assistant-ui](https://www.assistant-ui.com/).
 
@@ -12,11 +12,11 @@ a multi-thread thread list.
 
 The package has two entry points:
 
-- `@assistant-ui/react-pi` — **browser-safe**. The runtime hook, the pure event
+- `@hitchsoftware/assistant-ui-react-pi` — **browser-safe**. The runtime hook, the pure event
   reducer, the message projection, and the HTTP `PiClient`. This entry **never**
   imports `@earendil-works/pi-*`; it speaks an RPC-isomorphic, JSON-safe
   contract (`PiClient`) over an arbitrary transport.
-- `@assistant-ui/react-pi/node` — **node-only**. `createPiNodeClient`, which
+- `@hitchsoftware/assistant-ui-react-pi/node` — **node-only**. `createPiNodeClient`, which
   drives Pi's `AgentSession` SDK in-process behind a process-singleton
   `PiThreadSupervisor`. Only this entry pulls in Pi's Node packages.
 
@@ -28,7 +28,7 @@ write any other transport that satisfies `PiClient`.
 ## Install
 
 ```bash
-npm install @assistant-ui/react-pi @assistant-ui/react
+npm install @hitchsoftware/assistant-ui-react-pi @hitchsoftware/assistant-ui-react
 # the node entry drives the Pi SDK on the server:
 npm install @earendil-works/pi-coding-agent
 ```
@@ -57,7 +57,7 @@ a module-level server file, never per request.
 
 ```ts
 // lib/pi-server.ts  (server-only — imported only from route handlers)
-import { createPiNodeClient } from "@assistant-ui/react-pi/node";
+import { createPiNodeClient } from "@hitchsoftware/assistant-ui-react-pi/node";
 
 export const piClient = createPiNodeClient({
   workspacePath: process.env.PI_WORKSPACE_PATH ?? process.cwd(),
@@ -97,8 +97,8 @@ complete Next.js App Router implementation.
 
 ```tsx
 "use client";
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
-import { createPiHttpClient, usePiRuntime } from "@assistant-ui/react-pi";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
+import { createPiHttpClient, usePiRuntime } from "@hitchsoftware/assistant-ui-react-pi";
 import { useMemo } from "react";
 
 export function PiRuntimeProvider({ children }: { children: React.ReactNode }) {
@@ -136,7 +136,7 @@ to seed new sessions. Use Pi's own `ModelRegistry` / `SettingsManager` /
 Per-thread, surfaced through `usePiRuntimeExtras()`:
 
 ```tsx
-import { usePiRuntimeExtras } from "@assistant-ui/react-pi";
+import { usePiRuntimeExtras } from "@hitchsoftware/assistant-ui-react-pi";
 
 const { readiness, contextUsage, setModel, setThinkingLevel } = usePiRuntimeExtras();
 // readiness: "ready" | "missing-model" | "missing-credentials" | "unavailable-model"
@@ -194,7 +194,7 @@ blocking dialogs to the UI, split by causality:
   tools are in flight) → a side channel:
 
 ```tsx
-import { usePiHostUiRequests } from "@assistant-ui/react-pi";
+import { usePiHostUiRequests } from "@hitchsoftware/assistant-ui-react-pi";
 
 const { requests, respond } = usePiHostUiRequests();
 // confirm:                 respond({ requestId, confirmed: boolean })

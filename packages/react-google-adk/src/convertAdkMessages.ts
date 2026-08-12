@@ -1,7 +1,7 @@
 "use client";
 
-import type { ToolCallMessagePart } from "@assistant-ui/core";
-import type { useExternalMessageConverter } from "@assistant-ui/core/react";
+import type { ToolCallMessagePart } from "@hitchsoftware/assistant-ui-core";
+import type { useExternalMessageConverter } from "@hitchsoftware/assistant-ui-core/react";
 import type { AdkMessage, AdkMessageContentPart } from "./types";
 
 type ContentPart =

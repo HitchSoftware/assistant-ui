@@ -13,14 +13,14 @@ import { StreamdownSample } from "@/components/docs/samples/streamdown";
 <StreamdownSample />
 
 <Callout type="info">
-  `@assistant-ui/react-streamdown` is an **alternative** to `@assistant-ui/react-markdown`. Choose based on your needs:
+  `@hitchsoftware/assistant-ui-react-streamdown` is an **alternative** to `@hitchsoftware/assistant-ui-react-markdown`. Choose based on your needs:
   - **react-markdown**: Lightweight, bring-your-own syntax highlighter
   - **react-streamdown**: Feature-rich with built-in Shiki, KaTeX, Mermaid support
 </Callout>
 
 ## Installation
 
-<PackageManagerTabs packages={["@assistant-ui/react-streamdown", "streamdown"]} />
+<PackageManagerTabs packages={["@hitchsoftware/assistant-ui-react-streamdown", "streamdown"]} />
 
 For additional features, install the optional plugins:
 
@@ -59,7 +59,7 @@ The bare `caret` prop does **not** require this import; only the word-level anim
 ## Basic Usage
 
 ```tsx
-import { StreamdownTextPrimitive } from "@assistant-ui/react-streamdown";
+import { StreamdownTextPrimitive } from "@hitchsoftware/assistant-ui-react-streamdown";
 
 // Inside a MessagePrimitive.Parts component
 <MessagePrimitive.Parts>
@@ -73,7 +73,7 @@ const StreamdownText = () => <StreamdownTextPrimitive />;
 ## With Plugins (Recommended)
 
 ```tsx
-import { StreamdownTextPrimitive } from "@assistant-ui/react-streamdown";
+import { StreamdownTextPrimitive } from "@hitchsoftware/assistant-ui-react-streamdown";
 import { code } from "@streamdown/code";
 import { math } from "@streamdown/math";
 import { mermaid } from "@streamdown/mermaid";
@@ -91,10 +91,10 @@ When `@streamdown/code` is provided, the default theme is `["github-light", "git
 
 ## Migration from react-markdown
 
-If you're migrating from `@assistant-ui/react-markdown`, your existing `SyntaxHighlighter` and `CodeHeader` components still work:
+If you're migrating from `@hitchsoftware/assistant-ui-react-markdown`, your existing `SyntaxHighlighter` and `CodeHeader` components still work:
 
 ```tsx
-import { StreamdownTextPrimitive } from "@assistant-ui/react-streamdown";
+import { StreamdownTextPrimitive } from "@hitchsoftware/assistant-ui-react-streamdown";
 
 const StreamdownText = () => (
   <StreamdownTextPrimitive
@@ -285,7 +285,7 @@ Restrict allowed URLs for links and images. This overrides streamdown's default 
 When building custom code components, you can use `useIsStreamdownCodeBlock` to detect whether you're inside a code block or inline code:
 
 ```tsx
-import { useIsStreamdownCodeBlock } from "@assistant-ui/react-streamdown";
+import { useIsStreamdownCodeBlock } from "@hitchsoftware/assistant-ui-react-streamdown";
 
 function MyCodeComponent({ children, ...props }) {
   const isCodeBlock = useIsStreamdownCodeBlock();
@@ -301,7 +301,7 @@ function MyCodeComponent({ children, ...props }) {
 You can also use `useStreamdownPreProps` to access the props passed to the parent `<pre>` element:
 
 ```tsx
-import { useStreamdownPreProps } from "@assistant-ui/react-streamdown";
+import { useStreamdownPreProps } from "@hitchsoftware/assistant-ui-react-streamdown";
 
 function MyCodeComponent({ children }) {
   const preProps = useStreamdownPreProps();
@@ -344,7 +344,7 @@ import {
   memoCompareNodes,
   // Default Shiki theme: ["github-light", "github-dark"]
   DEFAULT_SHIKI_THEME,
-} from "@assistant-ui/react-streamdown";
+} from "@hitchsoftware/assistant-ui-react-streamdown";
 ```
 
 ### Available Types
@@ -382,7 +382,7 @@ import type {
   RemarkRehypeOptions,
   BlockProps,
   SecurityConfig,
-} from "@assistant-ui/react-streamdown";
+} from "@hitchsoftware/assistant-ui-react-streamdown";
 ```
 
 ## Related Components

@@ -1,11 +1,11 @@
 "use client";
 
 import { useMemo } from "react";
-import type { MessageTiming } from "@assistant-ui/react";
+import type { MessageTiming } from "@hitchsoftware/assistant-ui-react";
 import {
   useStreamingTiming,
   type StreamingTimingAccessors,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";
 import type { OpenCodeThreadState } from "./types";
 
 export function getMessageTextLength(
@@ -74,7 +74,7 @@ const openCodeStreamingTimingAccessors: StreamingTimingAccessors<OpenCodeThreadS
 
 /**
  * Tracks per-message streaming timing for OpenCode messages. Delegates to
- * the shared `useStreamingTiming` primitive in `@assistant-ui/core/react`,
+ * the shared `useStreamingTiming` primitive in `@hitchsoftware/assistant-ui-core/react`,
  * adapted to the `OpenCodeThreadState` snapshot shape (`messagesById` +
  * `messageOrder`). Timing is finalized when streaming ends and stored per
  * message id.

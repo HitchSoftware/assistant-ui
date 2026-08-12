@@ -1,11 +1,11 @@
-import type { AppendMessage } from "@assistant-ui/core";
+import type { AppendMessage } from "@hitchsoftware/assistant-ui-core";
 import {
   httpUrlPattern,
   parseDataUrl,
   resolveFileMediaType,
   resolveImageMediaType,
   toMediaWireUrl,
-} from "@assistant-ui/core/internal";
+} from "@hitchsoftware/assistant-ui-core/internal";
 import type {
   CreateUIMessage,
   UIDataTypes,

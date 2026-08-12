@@ -6,7 +6,7 @@ import {
   getEveMessageContent,
   toEveInputResponse,
 } from "./convertEveMessages";
-import type { AppendMessage } from "@assistant-ui/core";
+import type { AppendMessage } from "@hitchsoftware/assistant-ui-core";
 
 describe("convertEveMessages", () => {
   it("converts text and reasoning parts", () => {

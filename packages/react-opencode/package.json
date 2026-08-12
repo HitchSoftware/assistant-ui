@@ -1,5 +1,5 @@
 {
-  "name": "@assistant-ui/react-opencode",
+  "name": "@hitchsoftware/assistant-ui-react-opencode",
   "version": "0.2.18",
   "description": "OpenCode runtime adapter for assistant-ui",
   "keywords": [
@@ -22,8 +22,8 @@
     "url": "https://github.com/assistant-ui/assistant-ui/issues"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   },
   "type": "module",
   "exports": {
@@ -46,12 +46,12 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@assistant-ui/core": "^0.3.13",
-    "@assistant-ui/store": "^0.3.9",
+    "@hitchsoftware/assistant-ui-core": "^0.3.13",
+    "@hitchsoftware/assistant-ui-store": "^0.3.9",
     "@opencode-ai/sdk": "^1.18.15"
   },
   "peerDependencies": {
-    "@assistant-ui/react": "^0.15.0",
+    "@hitchsoftware/assistant-ui-react": "^0.15.0",
     "@types/react": "*",
     "react": "^18 || ^19"
   },
@@ -61,8 +61,8 @@
     }
   },
   "devDependencies": {
-    "@assistant-ui/react": "workspace:*",
-    "@assistant-ui/x-buildutils": "workspace:*",
+    "@hitchsoftware/assistant-ui-react": "workspace:*",
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
     "@types/node": "^26.1.2",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",

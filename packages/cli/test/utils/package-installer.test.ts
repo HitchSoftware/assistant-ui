@@ -31,8 +31,8 @@ describe("package-installer utilities", () => {
       vi.mocked(fileScanner.scanForImport).mockReturnValue(false);
 
       await installPackageIfNeeded({
-        packageName: "@assistant-ui/react",
-        importPatterns: ["@assistant-ui/react"],
+        packageName: "@hitchsoftware/assistant-ui-react",
+        importPatterns: ["@hitchsoftware/assistant-ui-react"],
         promptMessage: "Install?",
         skipMessage: "Already installed",
         notFoundMessage: "Not found",
@@ -47,8 +47,8 @@ describe("package-installer utilities", () => {
       vi.mocked(packageManager.isPackageInstalled).mockReturnValue(true);
 
       await installPackageIfNeeded({
-        packageName: "@assistant-ui/react",
-        importPatterns: ["@assistant-ui/react"],
+        packageName: "@hitchsoftware/assistant-ui-react",
+        importPatterns: ["@hitchsoftware/assistant-ui-react"],
         promptMessage: "Install?",
         skipMessage: "Already installed",
         notFoundMessage: "Not found",
@@ -65,18 +65,18 @@ describe("package-installer utilities", () => {
       vi.mocked(packageManager.installPackage).mockResolvedValue(true);
 
       await installPackageIfNeeded({
-        packageName: "@assistant-ui/react",
-        importPatterns: ["@assistant-ui/react"],
-        promptMessage: "Install @assistant-ui/react? (Y/n) ",
+        packageName: "@hitchsoftware/assistant-ui-react",
+        importPatterns: ["@hitchsoftware/assistant-ui-react"],
+        promptMessage: "Install @hitchsoftware/assistant-ui-react? (Y/n) ",
         skipMessage: "Already installed",
         notFoundMessage: "Not found",
       });
 
       expect(packageManager.askQuestion).toHaveBeenCalledWith(
-        "Install @assistant-ui/react? (Y/n) ",
+        "Install @hitchsoftware/assistant-ui-react? (Y/n) ",
       );
       expect(packageManager.installPackage).toHaveBeenCalledWith(
-        "@assistant-ui/react",
+        "@hitchsoftware/assistant-ui-react",
       );
     });
 
@@ -86,8 +86,8 @@ describe("package-installer utilities", () => {
       vi.mocked(packageManager.askQuestion).mockResolvedValue("n");
 
       await installPackageIfNeeded({
-        packageName: "@assistant-ui/react",
-        importPatterns: ["@assistant-ui/react"],
+        packageName: "@hitchsoftware/assistant-ui-react",
+        importPatterns: ["@hitchsoftware/assistant-ui-react"],
         promptMessage: "Install?",
         skipMessage: "Already installed",
         notFoundMessage: "Not found",
@@ -104,15 +104,15 @@ describe("package-installer utilities", () => {
       vi.mocked(packageManager.installPackage).mockResolvedValue(true);
 
       await installPackageIfNeeded({
-        packageName: "@assistant-ui/react",
-        importPatterns: ["@assistant-ui/react"],
+        packageName: "@hitchsoftware/assistant-ui-react",
+        importPatterns: ["@hitchsoftware/assistant-ui-react"],
         promptMessage: "Install?",
         skipMessage: "Already installed",
         notFoundMessage: "Not found",
       });
 
       expect(packageManager.installPackage).toHaveBeenCalledWith(
-        "@assistant-ui/react",
+        "@hitchsoftware/assistant-ui-react",
       );
     });
   });

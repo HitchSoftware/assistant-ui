@@ -1,4 +1,4 @@
-import type { Tool } from "assistant-stream";
+import type { Tool } from "@hitchsoftware/assistant-stream";
 import type { Unsubscribe } from "../../..";
 import type { ToolCallMessagePartComponent } from "../MessagePartComponentTypes";
 

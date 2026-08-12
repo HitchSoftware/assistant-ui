@@ -1,9 +1,9 @@
 "use client";
 
 import { useCallback } from "react";
-import { useAui } from "@assistant-ui/store";
-import type { CreateAppendMessage } from "@assistant-ui/core";
-import type { ReadonlyJSONValue } from "assistant-stream/utils";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
+import type { CreateAppendMessage } from "@hitchsoftware/assistant-ui-core";
+import type { ReadonlyJSONValue } from "@hitchsoftware/assistant-stream/utils";
 import { agUiExtras } from "./agUiExtras";
 import type { AgUiInterrupt, AgUiResumeEntry } from "./runtime/types";
 

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef } from "react";
-import { resource } from "@assistant-ui/tap";
-import type { ClientOutput } from "@assistant-ui/store";
-import { useAssistantEmit } from "@assistant-ui/store/client";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
+import type { ClientOutput } from "@hitchsoftware/assistant-ui-store";
+import { useAssistantEmit } from "@hitchsoftware/assistant-ui-store/client";
 import type { ThreadListItemRuntime } from "../../runtime/api/thread-list-item-runtime";
 import { useSubscribable } from "./useSubscribable";
 

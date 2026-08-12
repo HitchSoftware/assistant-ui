@@ -26,7 +26,7 @@
         "../../packages/ui/src/components/ui/radix/*"
       ],
       "@/lib/utils": ["../../packages/ui/src/lib/utils"],
-      "@assistant-ui/ui/*": ["../../packages/ui/src/*"]
+      "@hitchsoftware/assistant-ui-ui/*": ["../../packages/ui/src/*"]
     },
     "esModuleInterop": true,
     "verbatimModuleSyntax": true,

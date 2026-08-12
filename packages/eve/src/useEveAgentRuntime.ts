@@ -15,11 +15,11 @@ import {
   type SpeechSynthesisAdapter,
   type ThreadMessage,
   type ToolExecutionStatus,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import {
   useExternalStoreRuntime,
   useRuntimeAdapters,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";
 import {
   useEveAgent,
   type EveMessageData,

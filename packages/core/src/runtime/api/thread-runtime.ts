@@ -43,7 +43,7 @@ import type {
   ChatModelRunOptions,
   ChatModelRunResult,
 } from "../utils/chat-model-adapter";
-import type { ReadonlyJSONValue } from "assistant-stream/utils";
+import type { ReadonlyJSONValue } from "@hitchsoftware/assistant-stream/utils";
 
 export type CreateStartRunConfig = {
   parentId: string | null;

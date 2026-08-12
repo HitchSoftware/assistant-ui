@@ -5,7 +5,7 @@ description: Connect an Eve agent to assistant-ui with useEveAgentRuntime, eve/n
 
 import { VercelIcon } from "@/components/icons/vercel";
 
-`@assistant-ui/eve` integrates assistant-ui with [Eve](https://eve.dev/), Vercel's filesystem-first framework for durable agents. It wraps Eve's `useEveAgent` hook and exposes it as an assistant-ui `ExternalStoreRuntime`, so Eve owns the session stream while assistant-ui renders messages, reasoning, dynamic tool calls, and approval requests.
+`@hitchsoftware/assistant-ui-eve` integrates assistant-ui with [Eve](https://eve.dev/), Vercel's filesystem-first framework for durable agents. It wraps Eve's `useEveAgent` hook and exposes it as an assistant-ui `ExternalStoreRuntime`, so Eve owns the session stream while assistant-ui renders messages, reasoning, dynamic tool calls, and approval requests.
 
 ## When to use it
 
@@ -20,7 +20,7 @@ Pick the Eve runtime when:
 The Next.js app mounts Eve with `withEve()` and assistant-ui's registry transform with `withAui()`:
 
 ```ts title="next.config.ts"
-import { withAui } from "@assistant-ui/next";
+import { withAui } from "@hitchsoftware/assistant-ui-next";
 import type { NextConfig } from "next";
 import { withEve } from "eve/next";
 
@@ -35,8 +35,8 @@ On the client, `useEveAgentRuntime()` calls Eve's React hook and converts Eve me
 "use client";
 
 import { Thread } from "@/components/assistant-ui/thread";
-import { useEveAgentRuntime } from "@assistant-ui/eve";
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
+import { useEveAgentRuntime } from "@hitchsoftware/assistant-ui-eve";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
 
 export default function Home() {
   const runtime = useEveAgentRuntime();
@@ -76,8 +76,8 @@ mounts it next to `<Thread />`. To add it to an existing app, register a data UI
 for the part and type it with the exported `EveAuthorizationData`:
 
 ```tsx title="authorization-ui.tsx"
-import type { EveAuthorizationData } from "@assistant-ui/eve";
-import { makeAssistantDataUI } from "@assistant-ui/react";
+import type { EveAuthorizationData } from "@hitchsoftware/assistant-ui-eve";
+import { makeAssistantDataUI } from "@hitchsoftware/assistant-ui-react";
 
 export const AuthorizationUI = makeAssistantDataUI<EveAuthorizationData>({
   name: "authorization",
@@ -114,7 +114,7 @@ Eve's default gateway model ids route through the [Vercel AI Gateway](https://ve
 <PlatformTabs>
 <Tab value="React">
 
-<InstallCommand npm={["@assistant-ui/react", "@assistant-ui/eve", "eve"]} />
+<InstallCommand npm={["@hitchsoftware/assistant-ui-react", "@hitchsoftware/assistant-ui-eve", "eve"]} />
 
 </Tab>
 <Tab value="React Native">

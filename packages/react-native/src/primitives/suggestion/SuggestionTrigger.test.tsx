@@ -18,12 +18,12 @@ const h = vi.hoisted(() => ({
   suggestion: { prompt: "" as string | undefined },
 }));
 
-vi.mock("@assistant-ui/store", () => ({
+vi.mock("@hitchsoftware/assistant-ui-store", () => ({
   useAuiState: <T,>(selector: (s: { suggestion: typeof h.suggestion }) => T) =>
     selector({ suggestion: h.suggestion }),
 }));
 
-vi.mock("@assistant-ui/core/react", () => ({
+vi.mock("@hitchsoftware/assistant-ui-core/react", () => ({
   useSuggestionTrigger: (arg: Parameters<typeof h.useSuggestionTrigger>[0]) =>
     h.useSuggestionTrigger(arg),
 }));

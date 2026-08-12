@@ -1,3 +1,3 @@
 "use client";
 
-export { PartByIndexProvider } from "@assistant-ui/core/react";
+export { PartByIndexProvider } from "@hitchsoftware/assistant-ui-core/react";

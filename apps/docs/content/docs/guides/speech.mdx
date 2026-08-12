@@ -14,10 +14,10 @@ Speech is the read-aloud mode: one message at a time, text to audio. For a live 
 
 ## SpeechSynthesisAdapter
 
-The adapter has a single method. The type lives in `@assistant-ui/core` and is re-exported from `@assistant-ui/react`:
+The adapter has a single method. The type lives in `@hitchsoftware/assistant-ui-core` and is re-exported from `@hitchsoftware/assistant-ui-react`:
 
 ```tsx
-import type { SpeechSynthesisAdapter } from "@assistant-ui/react";
+import type { SpeechSynthesisAdapter } from "@hitchsoftware/assistant-ui-react";
 
 type SpeechSynthesisAdapter = {
   speak: (text: string) => SpeechSynthesisAdapter.Utterance;
@@ -49,7 +49,7 @@ namespace SpeechSynthesisAdapter {
 The built-in adapter uses the browser's Web Speech API (`SpeechSynthesis` / `SpeechSynthesisUtterance`):
 
 ```tsx
-import { WebSpeechSynthesisAdapter } from "@assistant-ui/react";
+import { WebSpeechSynthesisAdapter } from "@hitchsoftware/assistant-ui-react";
 
 const runtime = useChatRuntime({
   adapters: {
@@ -65,7 +65,7 @@ When a speech adapter is provided, `capabilities.speech` is set to `true` automa
 The default action bar does not include a speech button. Add `ActionBarPrimitive.Speak` and `ActionBarPrimitive.StopSpeaking` to your assistant message action bar:
 
 ```tsx
-import { ActionBarPrimitive, AuiIf } from "@assistant-ui/react";
+import { ActionBarPrimitive, AuiIf } from "@hitchsoftware/assistant-ui-react";
 import { AudioLinesIcon, StopCircleIcon } from "lucide-react";
 
 const AssistantActionBar = () => {
@@ -94,7 +94,7 @@ const AssistantActionBar = () => {
 Implement `SpeechSynthesisAdapter` to call any external TTS provider. Fetch audio from your API, play it with `HTMLAudioElement`, and drive utterance status through `subscribe`:
 
 ```tsx title="lib/custom-tts-adapter.ts"
-import type { SpeechSynthesisAdapter } from "@assistant-ui/react";
+import type { SpeechSynthesisAdapter } from "@hitchsoftware/assistant-ui-react";
 
 export class CustomTTSAdapter implements SpeechSynthesisAdapter {
   constructor(private apiUrl: string) {}

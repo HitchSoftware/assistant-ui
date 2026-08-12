@@ -7,12 +7,12 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
     resolve: {
       // The assistant-ui packages route their internal React usage through
-      // @assistant-ui/tap. Aliasing react to the tap standalone shim lets this
+      // @hitchsoftware/assistant-ui-tap. Aliasing react to the tap standalone shim lets this
       // app run without React installed.
       alias: {
         "react/compiler-runtime":
-          "@assistant-ui/tap/standalone-shim/compiler-runtime",
-        react: "@assistant-ui/tap/standalone-shim",
+          "@hitchsoftware/assistant-ui-tap/standalone-shim/compiler-runtime",
+        react: "@hitchsoftware/assistant-ui-tap/standalone-shim",
       },
     },
   },

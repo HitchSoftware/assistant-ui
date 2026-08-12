@@ -5,7 +5,7 @@ import type { ActionButtonProps } from "../../utils/createActionButton";
 import { useEscapeKeydown } from "@radix-ui/react-use-escape-keydown";
 import { Primitive } from "../../utils/Primitive";
 import { composeEventHandlers } from "@radix-ui/primitive";
-import { useActionBarStopSpeaking as useActionBarStopSpeakingBehavior } from "@assistant-ui/core/react";
+import { useActionBarStopSpeaking as useActionBarStopSpeakingBehavior } from "@hitchsoftware/assistant-ui-core/react";
 
 const useActionBarStopSpeaking = () => {
   const { disabled, stopSpeaking } = useActionBarStopSpeakingBehavior();

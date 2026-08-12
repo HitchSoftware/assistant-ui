@@ -111,7 +111,7 @@ import type {
   AttachmentAdapter,
   PendingAttachment,
   CompleteAttachment,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 type Pending = PendingAttachment & { key: string; url: string };
 
@@ -181,7 +181,7 @@ import type {
   AttachmentAdapter,
   PendingAttachment,
   CompleteAttachment,
-} from "@assistant-ui/react-native";
+} from "@hitchsoftware/assistant-ui-react-native";
 
 type Pending = PendingAttachment & { key: string; url: string };
 
@@ -254,7 +254,7 @@ import type {
   AttachmentAdapter,
   PendingAttachment,
   CompleteAttachment,
-} from "@assistant-ui/react-ink";
+} from "@hitchsoftware/assistant-ui-react-ink";
 import { readFile } from "node:fs/promises";
 import { basename } from "node:path";
 
@@ -339,8 +339,8 @@ The shape of `content` matches the AI SDK part types. Use `image` for images and
 ```tsx title="app/runtime/MyProvider.tsx"
 "use client";
 
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { attachmentAdapter } from "./attachment-adapter";
 
 export function MyProvider({ children }: { children: React.ReactNode }) {
@@ -359,11 +359,11 @@ export function MyProvider({ children }: { children: React.ReactNode }) {
 <Tab value="React Native">
 
 ```tsx title="runtime/MyProvider.tsx"
-import { AssistantRuntimeProvider } from "@assistant-ui/react-native";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react-native";
 import {
   AssistantChatTransport,
   useChatRuntime,
-} from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { attachmentAdapter } from "./attachment-adapter";
 
 export function MyProvider({ children }: { children: React.ReactNode }) {
@@ -383,11 +383,11 @@ export function MyProvider({ children }: { children: React.ReactNode }) {
 <Tab value="React Ink">
 
 ```tsx title="runtime/MyProvider.tsx"
-import { AssistantRuntimeProvider } from "@assistant-ui/react-ink";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react-ink";
 import {
   AssistantChatTransport,
   useChatRuntime,
-} from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { attachmentAdapter } from "./attachment-adapter";
 
 export function MyProvider({ children }: { children: React.ReactNode }) {

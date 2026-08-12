@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment, type FC, type ReactNode, useMemo } from "react";
-import { useAuiState } from "@assistant-ui/store";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 import { useShallow } from "zustand/shallow";
 import type { PartState } from "../../../store/scopes/part";
 import type {
@@ -95,7 +95,7 @@ export namespace MessagePrimitiveGroupedParts {
      *
      * @example
      * ```tsx
-     * import { groupPartByType } from "@assistant-ui/react";
+     * import { groupPartByType } from "@hitchsoftware/assistant-ui-react";
      *
      * <MessagePrimitive.GroupedParts
      *   groupBy={groupPartByType({

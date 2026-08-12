@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useAui, useAuiState } from "@assistant-ui/store";
+import { useAui, useAuiState } from "@hitchsoftware/assistant-ui-store";
 import type { ComposerSendOptions } from "../../store/scopes/composer";
 
 export const useComposerSend = () => {

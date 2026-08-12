@@ -2,7 +2,7 @@
  * Long-thread microbenchmark: streams against a 1000-message thread and
  * compares legacy, memo, and windowed modes by ms/frame.
  *
- * Run: `pnpm --filter @assistant-ui/react-ink benchmark`
+ * Run: `pnpm --filter @hitchsoftware/assistant-ui-react-ink benchmark`
  */
 import { performance } from "node:perf_hooks";
 import type React from "react";
@@ -15,16 +15,16 @@ import {
   Derived,
   RenderChildrenWithAccessor,
   useAuiState,
-} from "@assistant-ui/store";
-import { MessageByIndexProvider } from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-store";
+import { MessageByIndexProvider } from "@hitchsoftware/assistant-ui-core/react";
 import {
   ReadonlyThreadRuntimeCore,
   ThreadRuntimeImpl,
   type ThreadRuntimeCoreBinding,
   type ThreadListItemRuntimeBinding,
-} from "@assistant-ui/core/internal";
-import { ThreadClient } from "@assistant-ui/core/store/internal";
-import type { ThreadMessage } from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core/internal";
+import { ThreadClient } from "@hitchsoftware/assistant-ui-core/store/internal";
+import type { ThreadMessage } from "@hitchsoftware/assistant-ui-core";
 import { ThreadPrimitive } from "../src/index";
 
 const READONLY_THREAD_PATH = Object.freeze({

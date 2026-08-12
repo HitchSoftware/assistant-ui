@@ -8,7 +8,7 @@ const mocks = vi.hoisted(() => ({
   })),
 }));
 
-vi.mock("@assistant-ui/store", async (importOriginal) => ({
+vi.mock("@hitchsoftware/assistant-ui-store", async (importOriginal) => ({
   ...(await importOriginal()),
   useAui: () => ({ threadListItem: { initialize: mocks.initialize } }),
 }));

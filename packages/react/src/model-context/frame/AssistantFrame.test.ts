@@ -6,7 +6,7 @@ import {
   AssistantFrameProvider,
   AssistantFrameHost,
   ModelContextRegistry,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import z from "zod";
 
 describe("AssistantFrame Integration", () => {

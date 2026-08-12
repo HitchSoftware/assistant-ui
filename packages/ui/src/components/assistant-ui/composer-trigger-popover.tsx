@@ -7,7 +7,7 @@ import {
   unstable_useTriggerPopoverScopeContext,
   type Unstable_DirectiveFormatter,
   type Unstable_TriggerItem,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { ChevronLeftIcon, ChevronRightIcon, SparklesIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 

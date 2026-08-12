@@ -12,11 +12,11 @@ import {
   AssistantCloud,
   AssistantRuntimeProvider,
   useRemoteThreadListRuntime,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   AssistantChatTransport,
   useChatRuntime,
-} from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { AssistantPanelProvider } from "@/components/docs/assistant/context";
 import { XuluxAnalyticsProvider } from "@/lib/xulux/analytics-context";
 import type { XuluxTemplate } from "./templates/types";

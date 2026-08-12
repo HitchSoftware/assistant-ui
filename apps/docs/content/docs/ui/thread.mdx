@@ -17,7 +17,7 @@ attachments, and conditional UI states. Fully customizable and composable.
 The `Thread` component is built with the following primitives:
 
 ```tsx
-import { ThreadPrimitive, AuiIf } from "@assistant-ui/react";
+import { ThreadPrimitive, AuiIf } from "@hitchsoftware/assistant-ui-react";
 
 <ThreadPrimitive.Root>
   <ThreadPrimitive.Viewport>
@@ -118,8 +118,8 @@ import {
   SuggestionPrimitive,
   Suggestions,
   ThreadPrimitive,
-} from "@assistant-ui/react";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 
 // Configure suggestions in your runtime provider
 const config = AuiConfig({
@@ -473,7 +473,7 @@ See the [Suggestions guide](/docs/guides/suggestions) for detailed information o
 Conditionally renders children based on assistant state. This is a generic component that can access thread, message, composer, and other state.
 
 ```tsx
-import { AuiIf } from "@assistant-ui/react";
+import { AuiIf } from "@hitchsoftware/assistant-ui-react";
 
 <AuiIf condition={(s) => s.thread.isEmpty}>
   <WelcomeScreen />

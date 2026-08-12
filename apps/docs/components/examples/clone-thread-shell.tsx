@@ -22,7 +22,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
-import { useAuiState } from "@assistant-ui/react";
+import { useAuiState } from "@hitchsoftware/assistant-ui-react";
 import { MenuIcon, PanelLeftIcon } from "lucide-react";
 import { useState, type FC, type MouseEvent, type ReactNode } from "react";
 

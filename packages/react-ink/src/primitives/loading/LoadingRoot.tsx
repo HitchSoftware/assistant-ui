@@ -1,6 +1,6 @@
 import type { ComponentProps, ReactNode } from "react";
 import { Box } from "ink";
-import { useThreadIsRunning } from "@assistant-ui/core/react";
+import { useThreadIsRunning } from "@hitchsoftware/assistant-ui-core/react";
 
 export type LoadingRootProps = ComponentProps<typeof Box> & {
   children: ReactNode;

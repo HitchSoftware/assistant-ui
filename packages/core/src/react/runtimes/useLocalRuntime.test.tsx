@@ -3,7 +3,7 @@
 import { render, waitFor } from "@testing-library/react";
 import { StrictMode } from "react";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import type { AssistantCloud } from "assistant-cloud";
+import type { AssistantCloud } from "@hitchsoftware/assistant-cloud";
 import type { ChatModelAdapter } from "../../runtime/utils/chat-model-adapter";
 import { AssistantRuntimeProvider } from "../AssistantRuntimeProvider";
 import { useLocalRuntime } from "./useLocalRuntime";

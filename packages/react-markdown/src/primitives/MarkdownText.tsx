@@ -4,7 +4,7 @@ import {
   INTERNAL,
   type SmoothOptions,
   useMessagePartText,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   type ComponentRef,
   type ElementType,

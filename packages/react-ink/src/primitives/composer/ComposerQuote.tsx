@@ -1,6 +1,6 @@
 import type { ComponentProps, ReactNode } from "react";
 import { Box } from "ink";
-import { useAuiState } from "@assistant-ui/store";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 
 export type ComposerQuoteProps = ComponentProps<typeof Box> & {
   children: ReactNode;

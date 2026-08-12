@@ -1,5 +1,5 @@
 import { type ReactNode, memo } from "react";
-import type { AssistantClient, AuiConfig } from "@assistant-ui/store";
+import type { AssistantClient, AuiConfig } from "@hitchsoftware/assistant-ui-store";
 import type { AssistantRuntime } from "../runtime/api/assistant-runtime";
 import { AssistantProviderBase } from "./AssistantProvider";
 

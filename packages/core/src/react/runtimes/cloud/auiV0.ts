@@ -6,12 +6,12 @@ import type {
 } from "../../../types/message";
 import type { CompleteAttachment } from "../../../types/attachment";
 import { fromThreadMessageLike } from "../../../runtime/utils/thread-message-like";
-import type { CloudMessage } from "assistant-cloud";
+import type { CloudMessage } from "@hitchsoftware/assistant-cloud";
 import { isJSONValue } from "../../../utils/json/is-json";
 import type {
   ReadonlyJSONObject,
   ReadonlyJSONValue,
-} from "assistant-stream/utils";
+} from "@hitchsoftware/assistant-stream/utils";
 import type { ExportedMessageRepositoryItem } from "../../../runtime/utils/message-repository";
 
 type AuiV0ToolApproval = {

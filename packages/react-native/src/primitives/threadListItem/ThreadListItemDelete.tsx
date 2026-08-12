@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Pressable, type PressableProps } from "react-native";
-import { useThreadListItemDelete } from "@assistant-ui/core/react";
+import { useThreadListItemDelete } from "@hitchsoftware/assistant-ui-core/react";
 
 export type ThreadListItemDeleteProps = Omit<PressableProps, "onPress"> & {
   children: ReactNode;

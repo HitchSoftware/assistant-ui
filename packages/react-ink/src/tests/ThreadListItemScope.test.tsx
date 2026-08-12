@@ -2,7 +2,7 @@ import { afterEach, describe, expect, it } from "vitest";
 import { cleanup } from "ink-testing-library";
 import type { FC } from "react";
 import { Text } from "ink";
-import { useExternalStoreRuntime } from "@assistant-ui/core/react";
+import { useExternalStoreRuntime } from "@hitchsoftware/assistant-ui-core/react";
 import { renderFrame } from "./helpers";
 import {
   AssistantRuntimeProvider,

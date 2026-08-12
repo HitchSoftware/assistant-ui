@@ -44,7 +44,7 @@ This adds `/components/assistant-ui/attachment.tsx` to your project.
 For `useChatRuntime`, attachments work automatically without additional configuration:
 
 ```tsx title="/app/MyRuntimeProvider.tsx"
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 
 const runtime = useChatRuntime();
 ```
@@ -125,7 +125,7 @@ import {
   AttachmentAdapter,
   PendingAttachment,
   CompleteAttachment,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 class VisionImageAdapter implements AttachmentAdapter {
   accept = "image/jpeg,image/png,image/webp,image/gif";
@@ -193,7 +193,7 @@ import {
   AttachmentAdapter,
   PendingAttachment,
   CompleteAttachment,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 class PDFAttachmentAdapter implements AttachmentAdapter {
   accept = "application/pdf";
@@ -265,7 +265,7 @@ class PDFAttachmentAdapter implements AttachmentAdapter {
 When using `LocalRuntime`, you need to handle images in your `ChatModelAdapter` (the adapter that connects to your AI backend):
 
 ```tsx
-import { useLocalRuntime, ChatModelAdapter } from "@assistant-ui/react";
+import { useLocalRuntime, ChatModelAdapter } from "@hitchsoftware/assistant-ui-react";
 
 // This adapter connects LocalRuntime to your AI backend
 const MyModelAdapter: ChatModelAdapter = {
@@ -476,7 +476,7 @@ The event payload carries a `reason` discriminator and a human-readable `message
 
 ```tsx
 import { toast } from "sonner"; // or your toast library of choice
-import { useAuiEvent } from "@assistant-ui/react";
+import { useAuiEvent } from "@hitchsoftware/assistant-ui-react";
 
 function AttachmentErrorToast() {
   useAuiEvent("composer.attachmentAddError", ({ reason, message, error }) => {

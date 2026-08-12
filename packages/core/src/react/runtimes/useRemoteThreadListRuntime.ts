@@ -12,7 +12,7 @@ import type { RemoteThreadListOptions } from "../../runtimes/remote-thread-list/
 import type { AssistantRuntimeCore } from "../../runtime/interfaces/assistant-runtime-core";
 import type { AssistantRuntime } from "../../runtime/api/assistant-runtime";
 import { RemoteThreadListThreadListRuntimeCore } from "./RemoteThreadListThreadListRuntimeCore";
-import { useAui } from "@assistant-ui/store";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 
 class RemoteThreadListRuntimeCore
   extends BaseAssistantRuntimeCore

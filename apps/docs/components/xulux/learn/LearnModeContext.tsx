@@ -9,7 +9,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { useAuiState, type ToolCallMessagePart } from "@assistant-ui/react";
+import { useAuiState, type ToolCallMessagePart } from "@hitchsoftware/assistant-ui-react";
 import { analytics } from "@/lib/analytics";
 import { applyLearnCourseStepResult } from "@/lib/xulux/learn/progress";
 import { parseLearnCourseStepResult } from "@/lib/xulux/learn/tool-result";

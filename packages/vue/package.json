@@ -1,5 +1,5 @@
 {
-  "name": "@assistant-ui/vue",
+  "name": "@hitchsoftware/assistant-ui-vue",
   "version": "0.0.0",
   "private": true,
   "description": "Vue bindings for assistant-ui",
@@ -33,15 +33,15 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@assistant-ui/core": "^0.3.13",
-    "@assistant-ui/store": "^0.3.9",
-    "@assistant-ui/tap": "^0.9.12"
+    "@hitchsoftware/assistant-ui-core": "^0.3.13",
+    "@hitchsoftware/assistant-ui-store": "^0.3.9",
+    "@hitchsoftware/assistant-ui-tap": "^0.9.12"
   },
   "peerDependencies": {
     "vue": "^3.5.0"
   },
   "devDependencies": {
-    "@assistant-ui/x-buildutils": "workspace:*",
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
     "@types/react": "^19.2.18",
     "jsdom": "^30.0.1",
     "vitest": "^4.1.10",

@@ -6,7 +6,7 @@ import {
   ComposerPrimitive,
   useExternalStoreRuntime,
   type ThreadMessageLike,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { ArrowUpIcon } from "lucide-react";
 import { ThreadFollowupSuggestions } from "@/components/assistant-ui/follow-up-suggestions";
 import { SampleFrame } from "@/components/docs/samples/sample-frame";

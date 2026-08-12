@@ -16,8 +16,8 @@ Three steps to a working chat against an A2A server. Assumes you have already in
 ```tsx title="app/MyRuntimeProvider.tsx"
 "use client";
 
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
-import { useA2ARuntime } from "@assistant-ui/react-a2a";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
+import { useA2ARuntime } from "@hitchsoftware/assistant-ui-react-a2a";
 
 export function MyRuntimeProvider({
   children,
@@ -39,8 +39,8 @@ export function MyRuntimeProvider({
 <Tab value="React Native">
 
 ```tsx title="runtime/MyRuntimeProvider.tsx"
-import { AssistantRuntimeProvider } from "@assistant-ui/react-native";
-import { useA2ARuntime } from "@assistant-ui/react-a2a";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react-native";
+import { useA2ARuntime } from "@hitchsoftware/assistant-ui-react-a2a";
 
 export function MyRuntimeProvider({
   children,
@@ -62,8 +62,8 @@ export function MyRuntimeProvider({
 <Tab value="React Ink">
 
 ```tsx title="runtime/MyRuntimeProvider.tsx"
-import { AssistantRuntimeProvider } from "@assistant-ui/react-ink";
-import { useA2ARuntime } from "@assistant-ui/react-a2a";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react-ink";
+import { useA2ARuntime } from "@hitchsoftware/assistant-ui-react-a2a";
 
 export function MyRuntimeProvider({
   children,

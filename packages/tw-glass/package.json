@@ -1,5 +1,5 @@
 {
-  "name": "tw-glass",
+  "name": "@hitchsoftware/tw-glass",
   "version": "0.0.5",
   "description": "Tailwind CSS v4 plugin for glass refraction effects via SVG displacement maps",
   "keywords": [
@@ -33,8 +33,8 @@
     "tailwindcss": ">=4.0.0-0"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://www.assistant-ui.com/tw-glass",
   "repository": {

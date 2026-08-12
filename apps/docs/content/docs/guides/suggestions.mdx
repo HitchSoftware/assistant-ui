@@ -15,8 +15,8 @@ The Suggestions API allows you to configure a list of suggested prompts that are
 Configure suggestions using the `Suggestions()` API in your runtime provider:
 
 ```tsx
-import { AuiConfig, Tools, Suggestions } from "@assistant-ui/react";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+import { AuiConfig, Tools, Suggestions } from "@hitchsoftware/assistant-ui-react";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 
 function MyRuntimeProvider({ children }: { children: React.ReactNode }) {
   const runtime = useChatRuntime();
@@ -93,7 +93,7 @@ import {
   ThreadPrimitive,
   SuggestionPrimitive,
   AuiIf,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 const ThreadWelcome = () => {
   return (
@@ -145,7 +145,7 @@ The static `Suggestions(...)` API covers welcome screens. For follow up prompts 
 Pass a `suggestion` adapter to `useLocalRuntime`. Its `generate` function runs after every assistant turn and may return a promise or an async generator for streaming updates.
 
 ```tsx
-import { useLocalRuntime, type SuggestionAdapter } from "@assistant-ui/react";
+import { useLocalRuntime, type SuggestionAdapter } from "@hitchsoftware/assistant-ui-react";
 
 const suggestionAdapter: SuggestionAdapter = {
   async generate({ messages }) {
@@ -166,7 +166,7 @@ const runtime = useLocalRuntime(myChatModel, {
 For LLM-powered follow ups, use `createSuggestionAdapter`. It builds a deterministic transcript prompt from recent messages and calls your `complete` function. Forward the optional `signal` so in-flight generation can be cancelled when a new run starts.
 
 ```tsx
-import { createSuggestionAdapter, useLocalRuntime } from "@assistant-ui/react";
+import { createSuggestionAdapter, useLocalRuntime } from "@hitchsoftware/assistant-ui-react";
 
 const suggestionAdapter = createSuggestionAdapter({
   async complete({ prompt, signal }) {
@@ -217,8 +217,8 @@ const runtime = useChatRuntime({ suggestions });
 They also accept the same `suggestion` adapter as the local runtime under `adapters`, so one adapter works across both runtimes. When set, the adapter owns `thread.suggestions` after each run settles, and any static `suggestions` option is ignored. Pair it with `createSuggestionAdapter` for built-in prompt construction:
 
 ```tsx
-import { createSuggestionAdapter } from "@assistant-ui/react";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+import { createSuggestionAdapter } from "@hitchsoftware/assistant-ui-react";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 
 const runtime = useChatRuntime({
   adapters: {
@@ -266,7 +266,7 @@ The local runtime clears its suggestions when a new run starts. External store r
 Runtime suggestions land on `thread.suggestions`, and `ThreadPrimitive.Suggestions` picks them up unless a static `Suggestions(...)` configuration overrides the scope. The shadcn registry ships `ThreadFollowupSuggestions` for the common single line pill layout. For a custom layout, read the array yourself:
 
 ```tsx
-import { useAuiState, ThreadPrimitive, AuiIf } from "@assistant-ui/react";
+import { useAuiState, ThreadPrimitive, AuiIf } from "@hitchsoftware/assistant-ui-react";
 
 function FollowUps() {
   const suggestions = useAuiState((s) => s.thread.suggestions);

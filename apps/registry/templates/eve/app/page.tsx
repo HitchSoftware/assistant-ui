@@ -1,8 +1,8 @@
 "use client";
 
 import { Thread } from "@/components/assistant-ui/thread";
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
-import { useEveAgentRuntime } from "@assistant-ui/eve";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
+import { useEveAgentRuntime } from "@hitchsoftware/assistant-ui-eve";
 
 export default function Home() {
   const runtime = useEveAgentRuntime();

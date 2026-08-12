@@ -1,4 +1,4 @@
-import { parsePartialJsonObject } from "assistant-stream/utils";
+import { parsePartialJsonObject } from "@hitchsoftware/assistant-stream/utils";
 import { generateId } from "../../utils/id";
 import { parseDataUrl } from "../../utils/data-url";
 import type {
@@ -29,7 +29,7 @@ import type {
 import type {
   ReadonlyJSONObject,
   ReadonlyJSONValue,
-} from "assistant-stream/utils";
+} from "@hitchsoftware/assistant-stream/utils";
 
 type DataPrefixedPart = {
   readonly type: `data-${string}`;

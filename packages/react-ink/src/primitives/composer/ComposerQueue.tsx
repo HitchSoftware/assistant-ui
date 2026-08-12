@@ -1,1 +1,1 @@
-export { ComposerPrimitiveQueue as ComposerQueue } from "@assistant-ui/core/react";
+export { ComposerPrimitiveQueue as ComposerQueue } from "@hitchsoftware/assistant-ui-core/react";

@@ -1,5 +1,5 @@
-import type { MessageStatus } from "@assistant-ui/core";
-import type { ReadonlyJSONObject } from "assistant-stream/utils";
+import type { MessageStatus } from "@hitchsoftware/assistant-ui-core";
+import type { ReadonlyJSONObject } from "@hitchsoftware/assistant-stream/utils";
 
 // ── ADK Event wire types (lightweight, no @google/adk dependency) ──
 

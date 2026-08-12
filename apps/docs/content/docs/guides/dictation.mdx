@@ -17,7 +17,7 @@ Dictation is the push-to-talk input mode. For a live duplex conversation, see [R
 The zero-config built-in adapter uses the browser's Web Speech API (`SpeechRecognition` / `webkitSpeechRecognition`). It works in Chrome, Edge, and Safari. Check [browser compatibility](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition#browser_compatibility) for details.
 
 ```tsx
-import { WebSpeechDictationAdapter } from "@assistant-ui/react";
+import { WebSpeechDictationAdapter } from "@hitchsoftware/assistant-ui-react";
 
 const runtime = useChatRuntime({
   adapters: {
@@ -33,7 +33,7 @@ const runtime = useChatRuntime({
 You can gate the feature on browser support:
 
 ```tsx
-import { WebSpeechDictationAdapter } from "@assistant-ui/react";
+import { WebSpeechDictationAdapter } from "@hitchsoftware/assistant-ui-react";
 
 if (WebSpeechDictationAdapter.isSupported()) {
   // Dictation is available
@@ -42,10 +42,10 @@ if (WebSpeechDictationAdapter.isSupported()) {
 
 ## DictationAdapter interface
 
-Custom providers implement the same contract. The interface is defined in `@assistant-ui/core` and re-exported from `@assistant-ui/react`:
+Custom providers implement the same contract. The interface is defined in `@hitchsoftware/assistant-ui-core` and re-exported from `@hitchsoftware/assistant-ui-react`:
 
 ```tsx
-import type { DictationAdapter } from "@assistant-ui/react";
+import type { DictationAdapter } from "@hitchsoftware/assistant-ui-react";
 
 type DictationAdapter = {
   listen: () => DictationAdapter.Session;
@@ -92,7 +92,7 @@ Both interim and final results render in the input field, similar to native dict
 Some services return cumulative transcripts that conflict with simultaneous typing. Set `disableInputDuringDictation` to block the text input while a session is active:
 
 ```tsx
-import type { DictationAdapter } from "@assistant-ui/react";
+import type { DictationAdapter } from "@hitchsoftware/assistant-ui-react";
 
 class MyAdapter implements DictationAdapter {
   disableInputDuringDictation = true;
@@ -109,10 +109,10 @@ class MyAdapter implements DictationAdapter {
 
 ## UI: ComposerPrimitive.Dictate
 
-The dictation trigger is `ComposerPrimitive.Dictate`. Pair it with `ComposerPrimitive.StopDictation` to end the session. Both live under `ComposerPrimitive` in `@assistant-ui/react`.
+The dictation trigger is `ComposerPrimitive.Dictate`. Pair it with `ComposerPrimitive.StopDictation` to end the session. Both live under `ComposerPrimitive` in `@hitchsoftware/assistant-ui-react`.
 
 ```tsx
-import { AuiIf, ComposerPrimitive } from "@assistant-ui/react";
+import { AuiIf, ComposerPrimitive } from "@hitchsoftware/assistant-ui-react";
 import { MicIcon, SquareIcon } from "lucide-react";
 
 const ComposerWithDictation = () => (
@@ -170,7 +170,7 @@ export async function POST(req: Request) {
 ### Adapter
 
 ```tsx title="lib/server-dictation-adapter.ts"
-import type { DictationAdapter } from "@assistant-ui/react";
+import type { DictationAdapter } from "@hitchsoftware/assistant-ui-react";
 
 export class ServerDictationAdapter implements DictationAdapter {
   constructor(private endpoint = "/api/transcribe") {}

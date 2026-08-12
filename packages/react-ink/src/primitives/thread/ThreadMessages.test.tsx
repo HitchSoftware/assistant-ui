@@ -35,8 +35,8 @@ vi.mock("ink", async (importOriginal) => {
   };
 });
 
-vi.mock("@assistant-ui/store", async (importOriginal) => {
-  const actual = await importOriginal<typeof import("@assistant-ui/store")>();
+vi.mock("@hitchsoftware/assistant-ui-store", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@hitchsoftware/assistant-ui-store")>();
   return {
     ...actual,
     useAuiState: (selector: (s: unknown) => unknown) => {
@@ -59,9 +59,9 @@ vi.mock("@assistant-ui/store", async (importOriginal) => {
   };
 });
 
-vi.mock("@assistant-ui/core/react", async (importOriginal) => {
+vi.mock("@hitchsoftware/assistant-ui-core/react", async (importOriginal) => {
   const actual =
-    await importOriginal<typeof import("@assistant-ui/core/react")>();
+    await importOriginal<typeof import("@hitchsoftware/assistant-ui-core/react")>();
   return {
     ...actual,
     MessageByIndexProvider: ({

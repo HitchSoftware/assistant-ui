@@ -12,11 +12,11 @@ import {
   ExportedMessageRepository,
   type MessageTiming,
   type ThreadMessage,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   resolveFileMediaType,
   resolveImageMediaType,
-} from "@assistant-ui/core/internal";
+} from "@hitchsoftware/assistant-ui-core/internal";
 import {
   projectOpenCodePermissionApproval,
   projectResolvedOpenCodePermissionApproval,

@@ -1,7 +1,7 @@
 "use client";
 
 import { describe, it, expect, beforeEach, vi } from "vitest";
-import type { ChatModelRunResult } from "@assistant-ui/core";
+import type { ChatModelRunResult } from "@hitchsoftware/assistant-ui-core";
 import { RunAggregator } from "../src/runtime/adapter/run-aggregator";
 import { createAgUiSubscriber } from "../src/runtime/adapter/subscriber";
 import type { AgUiEvent } from "../src/runtime/types";

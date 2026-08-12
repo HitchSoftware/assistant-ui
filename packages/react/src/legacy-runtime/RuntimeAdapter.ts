@@ -1,1 +1,1 @@
-export { RuntimeAdapter } from "@assistant-ui/core/react";
+export { RuntimeAdapter } from "@hitchsoftware/assistant-ui-core/react";

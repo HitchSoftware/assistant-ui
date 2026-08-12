@@ -37,7 +37,7 @@ let pluginRegistry: { getPlugins: () => (typeof plugin)[] } | null = null;
 
 (globalThis as Record<string, unknown>).IS_REACT_ACT_ENVIRONMENT = true;
 
-vi.mock("@assistant-ui/store", () => {
+vi.mock("@hitchsoftware/assistant-ui-store", () => {
   const aui = {
     composer: {
       setText: (text: string) => setText(text),
@@ -62,7 +62,7 @@ vi.mock("@assistant-ui/store", () => {
   };
 });
 
-vi.mock("@assistant-ui/tap", () => ({
+vi.mock("@hitchsoftware/assistant-ui-tap", () => ({
   flushTapSync: (fn: () => void) => fn(),
 }));
 

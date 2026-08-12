@@ -115,10 +115,10 @@ export function generateRegistryJson(config: BuilderConfig) {
     name: "assistant-ui-thread",
     type: "registry:block",
     dependencies: [
-      "@assistant-ui/react",
-      "@assistant-ui/react-ui",
+      "@hitchsoftware/assistant-ui-react",
+      "@hitchsoftware/assistant-ui-react-ui",
       "lucide-react",
-      ...(config.components.markdown ? ["@assistant-ui/react-markdown"] : []),
+      ...(config.components.markdown ? ["@hitchsoftware/assistant-ui-react-markdown"] : []),
     ],
     registryDependencies,
     files: [
@@ -148,9 +148,9 @@ function generateThreadCode(config: BuilderConfig): string {
     `  ErrorPrimitive,`,
     `  MessagePrimitive,`,
     `  ThreadPrimitive,`,
-    `} from "@assistant-ui/react";`,
+    `} from "@hitchsoftware/assistant-ui-react";`,
     components.markdown && components.typingIndicator === "dot"
-      ? `import "@assistant-ui/react-markdown/styles/dot.css";`
+      ? `import "@hitchsoftware/assistant-ui-react-markdown/styles/dot.css";`
       : null,
   ]
     .filter(Boolean)

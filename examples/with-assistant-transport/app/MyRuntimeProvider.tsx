@@ -7,11 +7,11 @@ import {
   type AssistantTransportConnectionMetadata,
   unstable_createMessageConverter as createMessageConverter,
   useAssistantTransportRuntime,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   convertLangChainMessages,
   type LangChainMessage,
-} from "@assistant-ui/react-langgraph";
+} from "@hitchsoftware/assistant-ui-react-langgraph";
 import type { ReactNode } from "react";
 import toolkit from "./toolkit";
 

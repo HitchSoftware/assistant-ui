@@ -1,2 +1,2 @@
-export { ThreadMessageConverter } from "@assistant-ui/core/internal";
-export type { ConverterCallback } from "@assistant-ui/core/internal";
+export { ThreadMessageConverter } from "@hitchsoftware/assistant-ui-core/internal";
+export type { ConverterCallback } from "@hitchsoftware/assistant-ui-core/internal";

@@ -8,7 +8,7 @@ import {
   AuiConfig,
   AuiProvider,
   type AssistantClient,
-} from "@assistant-ui/store";
+} from "@hitchsoftware/assistant-ui-store";
 import type { AssistantRuntime } from "../runtime/api/assistant-runtime";
 import type { AssistantRuntimeCore } from "../runtime/interfaces/assistant-runtime-core";
 import { RuntimeAdapter } from "./RuntimeAdapter";

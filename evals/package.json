@@ -1,5 +1,5 @@
 {
-  "name": "@assistant-ui/x-prompt-evals",
+  "name": "@hitchsoftware/assistant-ui-x-prompt-evals",
   "version": "0.0.0",
   "private": true,
   "type": "module",

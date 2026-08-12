@@ -1,3 +1,3 @@
 "use client";
 
-export { useExternalStoreRuntime } from "@assistant-ui/core/react";
+export { useExternalStoreRuntime } from "@hitchsoftware/assistant-ui-core/react";

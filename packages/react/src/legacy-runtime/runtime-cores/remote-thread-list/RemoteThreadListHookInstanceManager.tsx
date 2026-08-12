@@ -1,3 +1,3 @@
 "use client";
 
-export { RemoteThreadListHookInstanceManager } from "@assistant-ui/core/react";
+export { RemoteThreadListHookInstanceManager } from "@hitchsoftware/assistant-ui-core/react";

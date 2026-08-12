@@ -1,8 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useRef } from "react";
-import { useAuiState } from "@assistant-ui/store";
-import type { SpanItemState } from "@assistant-ui/react-o11y";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
+import type { SpanItemState } from "@hitchsoftware/assistant-ui-react-o11y";
 import { useWaterfallLayout } from "./waterfall-timeline";
 
 const TYPE_COLORS: Record<string, string> = {

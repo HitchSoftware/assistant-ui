@@ -7,7 +7,7 @@ const h = vi.hoisted(() => ({
   state: { attachment: { name: "" } },
 }));
 
-vi.mock("@assistant-ui/store", () => ({
+vi.mock("@hitchsoftware/assistant-ui-store", () => ({
   useAuiState: <T,>(selector: (s: { attachment: { name: string } }) => T) =>
     selector(h.state),
 }));

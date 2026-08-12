@@ -1,9 +1,9 @@
 {
-  "extends": "@assistant-ui/x-buildutils/ts/next",
+  "extends": "@hitchsoftware/assistant-ui-x-buildutils/ts/next",
   "compilerOptions": {
     "paths": {
       "@/*": ["./*"],
-      "@assistant-ui/react-opencode": [
+      "@hitchsoftware/assistant-ui-react-opencode": [
         "../../packages/react-opencode/src/index.ts"
       ],
       "@/components/assistant-ui/*": [
@@ -19,7 +19,7 @@
       ],
       "@/hooks/*": ["../../packages/ui/src/hooks/*"],
       "@/lib/utils": ["../../packages/ui/src/lib/utils"],
-      "@assistant-ui/ui/*": ["../../packages/ui/src/*"]
+      "@hitchsoftware/assistant-ui-ui/*": ["../../packages/ui/src/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

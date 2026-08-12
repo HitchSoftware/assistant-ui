@@ -1,6 +1,6 @@
 "use client";
 
-import type { DataPoint } from "heat-graph";
+import type { DataPoint } from "@hitchsoftware/heat-graph";
 import { ActivityGraph } from "@/components/elements/activity-graph";
 
 const START = new Date(2026, 1, 2);

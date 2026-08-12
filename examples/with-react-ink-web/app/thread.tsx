@@ -7,8 +7,8 @@ import {
   ErrorPrimitive,
   LoadingPrimitive,
   LiveChecklist,
-} from "@assistant-ui/react-ink";
-import { MarkdownText } from "@assistant-ui/react-ink-markdown";
+} from "@hitchsoftware/assistant-ui-react-ink";
+import { MarkdownText } from "@hitchsoftware/assistant-ui-react-ink-markdown";
 
 // markdansi defaults width and color from process.stdout, which does not
 // exist in the browser bundle; pass both explicitly so it never reads it.

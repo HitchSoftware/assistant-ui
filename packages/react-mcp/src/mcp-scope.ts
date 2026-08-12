@@ -1,4 +1,4 @@
-import "@assistant-ui/store";
+import "@hitchsoftware/assistant-ui-store";
 
 export type MCPAuthConfig =
   | { type: "none" }
@@ -134,7 +134,7 @@ export type MCPManagerMethods = {
   removeServer: (id: string) => Promise<void>;
 };
 
-declare module "@assistant-ui/store" {
+declare module "@hitchsoftware/assistant-ui-store" {
   interface ScopeRegistry {
     mcp: {
       methods: MCPManagerMethods;

@@ -1,17 +1,17 @@
 "use client";
 
 import { useChat, type UIMessage } from "@ai-sdk/react";
-import type { AssistantCloud } from "assistant-cloud";
+import type { AssistantCloud } from "@hitchsoftware/assistant-cloud";
 import {
   pickExternalStoreSharedOptions,
   type AssistantRuntime,
   type ExternalStoreSharedOptions,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import {
   useCloudThreadListAdapter,
   useRemoteThreadListRuntime,
-} from "@assistant-ui/core/react";
-import { useAui, useAuiState } from "@assistant-ui/store";
+} from "@hitchsoftware/assistant-ui-core/react";
+import { useAui, useAuiState } from "@hitchsoftware/assistant-ui-store";
 import {
   useAISDKRuntime,
   type AISDKRuntimeAdapter,

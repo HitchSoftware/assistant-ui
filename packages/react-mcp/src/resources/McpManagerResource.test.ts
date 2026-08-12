@@ -1,4 +1,4 @@
-import { createTapRoot, resource, useResource } from "@assistant-ui/tap";
+import { createTapRoot, resource, useResource } from "@hitchsoftware/assistant-ui-tap";
 import { describe, expect, it, vi } from "vitest";
 import { useState } from "react";
 import { defineConnector } from "../connector";
@@ -31,14 +31,14 @@ vi.mock("@modelcontextprotocol/client", async (importOriginal) => ({
   StreamableHTTPClientTransport: mocks.StreamableHTTPClientTransport,
 }));
 
-vi.mock("@assistant-ui/store", async (importOriginal) => ({
+vi.mock("@hitchsoftware/assistant-ui-store", async (importOriginal) => ({
   ...(await importOriginal()),
   useAssistantClientRef: () => ({ current: null }),
 }));
 
-vi.mock("@assistant-ui/store/client", async (importOriginal) => {
+vi.mock("@hitchsoftware/assistant-ui-store/client", async (importOriginal) => {
   const actual =
-    await importOriginal<typeof import("@assistant-ui/store/client")>();
+    await importOriginal<typeof import("@hitchsoftware/assistant-ui-store/client")>();
   const { useEffect } = await import("react");
   const useScopeEffectShim = (
     _scope: string,

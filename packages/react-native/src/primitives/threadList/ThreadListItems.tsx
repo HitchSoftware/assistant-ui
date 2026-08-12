@@ -1,6 +1,6 @@
 import { type ReactElement, useCallback } from "react";
 import { FlatList, type FlatListProps } from "react-native";
-import { useAuiState } from "@assistant-ui/store";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 
 export type ThreadListItemsProps = Omit<
   FlatListProps<string>,

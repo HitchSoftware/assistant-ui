@@ -11,7 +11,7 @@ import type { SuggestionClientSchema } from "./scopes/suggestion";
 import type { ChainOfThoughtClientSchema } from "./scopes/chain-of-thought";
 import type { QueueItemClientSchema } from "./scopes/queue-item";
 
-declare module "@assistant-ui/store" {
+declare module "@hitchsoftware/assistant-ui-store" {
   interface ScopeRegistry {
     threads: ThreadsClientSchema;
     threadListItem: ThreadListItemClientSchema;

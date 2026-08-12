@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 
 import { renderHook } from "@testing-library/react";
-import type { AssistantCloud } from "assistant-cloud";
+import type { AssistantCloud } from "@hitchsoftware/assistant-cloud";
 import { describe, expect, it, vi } from "vitest";
 import { useAssistantCloudThreadHistoryAdapter } from "./AssistantCloudThreadHistoryAdapter";
 
@@ -11,7 +11,7 @@ const mocks = vi.hoisted(() => {
       threadListItem: {
         getState: () => ({ remoteId }),
       },
-    }) as unknown as import("@assistant-ui/store").AssistantClient;
+    }) as unknown as import("@hitchsoftware/assistant-ui-store").AssistantClient;
 
   return {
     makeClient,
@@ -19,8 +19,8 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@assistant-ui/store", async (importOriginal) => ({
-  ...(await importOriginal<typeof import("@assistant-ui/store")>()),
+vi.mock("@hitchsoftware/assistant-ui-store", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@hitchsoftware/assistant-ui-store")>()),
   useAui: () => mocks.aui,
 }));
 

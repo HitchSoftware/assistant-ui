@@ -38,7 +38,7 @@ export const UPSTREAM_TRANSFORMER_ENV = "AUI_METRO_UPSTREAM_TRANSFORMER";
  * ```js
  * // metro.config.js
  * const { getDefaultConfig } = require("expo/metro-config");
- * const { withAui } = require("@assistant-ui/metro");
+ * const { withAui } = require("@hitchsoftware/assistant-ui-metro");
  *
  * module.exports = withAui(getDefaultConfig(__dirname));
  * ```
@@ -47,7 +47,7 @@ export const UPSTREAM_TRANSFORMER_ENV = "AUI_METRO_UPSTREAM_TRANSFORMER";
  * export is `defineToolkit({ ... })`, registered with `Tools({ toolkit })`.
  */
 export function withAui<T extends MetroConfigLike>(config: T): T {
-  const self = require.resolve("@assistant-ui/metro/transformer");
+  const self = require.resolve("@hitchsoftware/assistant-ui-metro/transformer");
   const upstream = config.transformer?.babelTransformerPath;
 
   // Guard against a double-wrap (`withAui(withAui(config))`, or a shared config

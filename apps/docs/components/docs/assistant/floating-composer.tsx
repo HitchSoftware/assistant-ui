@@ -10,7 +10,7 @@ import { ModelSelector } from "@/components/assistant-ui/model-selector";
 import { MODELS } from "@/constants/model";
 import { SparklesIcon, XIcon } from "lucide-react";
 import Image from "next/image";
-import { ComposerPrimitive, useAuiState } from "@assistant-ui/react";
+import { ComposerPrimitive, useAuiState } from "@hitchsoftware/assistant-ui-react";
 import {
   useCallback,
   useEffect,

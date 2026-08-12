@@ -1,8 +1,8 @@
 import type { Unsubscribe } from "../../types/unsubscribe";
 import { useMemo, useEffect } from "react";
-import { useResource, resource, withKey } from "@assistant-ui/tap";
-import type { ClientOutput } from "@assistant-ui/store";
-import { useAssistantEmit, useClientLookup } from "@assistant-ui/store/client";
+import { useResource, resource, withKey } from "@hitchsoftware/assistant-ui-tap";
+import type { ClientOutput } from "@hitchsoftware/assistant-ui-store";
+import { useAssistantEmit, useClientLookup } from "@hitchsoftware/assistant-ui-store/client";
 import type {
   ComposerRuntime,
   EditComposerRuntime,

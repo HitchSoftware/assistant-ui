@@ -1,6 +1,6 @@
-# @assistant-ui/store Example App
+# @hitchsoftware/assistant-ui-store Example App
 
-This is a Next.js application demonstrating the `@assistant-ui/store` package.
+This is a Next.js application demonstrating the `@hitchsoftware/assistant-ui-store` package.
 
 ## Features Demonstrated
 
@@ -44,7 +44,7 @@ Open [http://localhost:3000](http://localhost:3000) to see the example.
 ### Client Registry
 
 ```typescript
-declare module "@assistant-ui/store" {
+declare module "@hitchsoftware/assistant-ui-store" {
   interface ScopeRegistry {
     foo: {
       state: { id: string; bar: string };
@@ -127,5 +127,5 @@ useAuiEvent("*", (data) => {
 
 ## Learn More
 
-- [@assistant-ui/store Documentation](https://github.com/assistant-ui/assistant-ui/tree/main/packages/store)
+- [@hitchsoftware/assistant-ui-store Documentation](https://github.com/assistant-ui/assistant-ui/tree/main/packages/store)
 - [Next.js Documentation](https://nextjs.org/docs)

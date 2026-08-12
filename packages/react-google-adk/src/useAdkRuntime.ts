@@ -12,17 +12,17 @@ import {
   type ThreadMessage,
   type ToolExecutionStatus,
   generateId,
-} from "@assistant-ui/core";
-import { httpUrlPattern, parseDataUrl } from "@assistant-ui/core/internal";
+} from "@hitchsoftware/assistant-ui-core";
+import { httpUrlPattern, parseDataUrl } from "@hitchsoftware/assistant-ui-core/internal";
 import {
   useCloudThreadListAdapter,
   useRemoteThreadListRuntime,
   useExternalMessageConverter,
   useExternalStoreRuntime,
-} from "@assistant-ui/core/react";
-import { useAui } from "@assistant-ui/store";
-import type { AssistantCloud } from "assistant-cloud";
-import type { RemoteThreadListAdapter } from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core/react";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
+import type { AssistantCloud } from "@hitchsoftware/assistant-cloud";
+import type { RemoteThreadListAdapter } from "@hitchsoftware/assistant-ui-core";
 import type {
   AdkMessage,
   AdkThreadSnapshot,

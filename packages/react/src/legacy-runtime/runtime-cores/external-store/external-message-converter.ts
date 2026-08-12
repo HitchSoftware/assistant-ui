@@ -2,4 +2,4 @@
 export {
   useExternalMessageConverter,
   convertExternalMessages,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";

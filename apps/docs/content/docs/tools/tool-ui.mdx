@@ -34,7 +34,7 @@ If you're creating tools on the client side, register them in a toolkit with `To
 ```tsx title="app/toolkit.tsx"
 "use generative";
 
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import { z } from "zod";
 
 export default defineToolkit({
@@ -68,8 +68,8 @@ export default defineToolkit({
 ```
 
 ```tsx title="app/MyRuntimeProvider.tsx"
-import { AssistantRuntimeProvider, AuiConfig, Tools } from "@assistant-ui/react";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+import { AssistantRuntimeProvider, AuiConfig, Tools } from "@hitchsoftware/assistant-ui-react";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import toolkit from "./toolkit";
 
 function MyRuntimeProvider({ children }: { children: React.ReactNode }) {
@@ -117,7 +117,7 @@ This example shows how to implement the UI-only approach with a backend toolkit 
 ### Create a Tool UI Renderer
 
 ```tsx
-import type { ToolCallMessagePartComponent } from "@assistant-ui/react";
+import type { ToolCallMessagePartComponent } from "@hitchsoftware/assistant-ui-react";
 import { z } from "zod";
 
 type WeatherArgs = {
@@ -251,7 +251,7 @@ export async function POST(req: Request) {
 Create standalone tool UI components:
 
 ```tsx
-import type { ToolCallMessagePartComponent } from "@assistant-ui/react";
+import type { ToolCallMessagePartComponent } from "@hitchsoftware/assistant-ui-react";
 
 export const WebSearchToolUI: ToolCallMessagePartComponent<
   { query: string },
@@ -301,7 +301,7 @@ Use a toolkit hook in its own file when the renderer needs component state:
 ```tsx title="analyze-data-toolkit.tsx"
 "use client";
 
-import { defineToolkit, useInlineRender } from "@assistant-ui/react";
+import { defineToolkit, useInlineRender } from "@hitchsoftware/assistant-ui-react";
 import { useMemo } from "react";
 
 export function useAnalyzeDataToolkit(theme: "light" | "dark") {
@@ -329,7 +329,7 @@ export function useAnalyzeDataToolkit(theme: "light" | "dark") {
 ```
 
 ```tsx title="DynamicToolUI.tsx"
-import { AuiConfig, AuiProvider, Tools, useAui } from "@assistant-ui/react";
+import { AuiConfig, AuiProvider, Tools, useAui } from "@hitchsoftware/assistant-ui-react";
 import { useState } from "react";
 import { useAnalyzeDataToolkit } from "./analyze-data-toolkit";
 
@@ -360,7 +360,7 @@ For tools that need access to parent component props:
 ```tsx title="inventory-toolkit.tsx"
 "use client";
 
-import { defineToolkit, useInlineRender } from "@assistant-ui/react";
+import { defineToolkit, useInlineRender } from "@hitchsoftware/assistant-ui-react";
 import { useMemo } from "react";
 
 export function useInventoryToolkit(productId: string, productName: string) {
@@ -390,7 +390,7 @@ export function useInventoryToolkit(productId: string, productName: string) {
 ```
 
 ```tsx title="ProductPage.tsx"
-import { AuiConfig, AuiProvider, Tools, useAui } from "@assistant-ui/react";
+import { AuiConfig, AuiProvider, Tools, useAui } from "@hitchsoftware/assistant-ui-react";
 import { useInventoryToolkit } from "./inventory-toolkit";
 
 function ProductPage({ productId, productName }) {
@@ -455,7 +455,7 @@ Build complex workflows with human-in-the-loop patterns for multi-step user inte
 ```tsx title="app/approval-toolkit.tsx"
 "use generative";
 
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import { z } from "zod";
 
 export default defineToolkit({
@@ -682,7 +682,7 @@ The same `render` shape works inside the [`Tools()`](/docs/tools/defining-tools)
 If the component should sit *outside* the message parts (for example, a card attached under the avatar block rather than inline with text), gate at the message level with [`AuiIf`](/docs/api-reference/primitives/assistant-if) and read `s.message.status`:
 
 ```tsx
-import { MessagePrimitive, AuiIf, useAuiState } from "@assistant-ui/react";
+import { MessagePrimitive, AuiIf, useAuiState } from "@hitchsoftware/assistant-ui-react";
 
 function PostMessageCard() {
   const parts = useAuiState((s) => s.message.parts);
@@ -716,7 +716,7 @@ For the opposite pattern (showing partial data as it streams in), see [Field-Lev
 Use `useToolArgsStatus` to react to per-field streaming state. The hook returns a `propStatus` map where each top-level key in the args object resolves from `"streaming"` to `"complete"` as the partial JSON arrives. Call it inside a tool-call message part context:
 
 ```tsx
-import { useToolArgsStatus } from "@assistant-ui/react";
+import { useToolArgsStatus } from "@hitchsoftware/assistant-ui-react";
 
 const toolkit = defineToolkit({
   submitForm: {
@@ -918,7 +918,7 @@ Use `useInlineRender` to prevent unnecessary re-renders:
 ```tsx title="heavy-computation-toolkit.tsx"
 "use client";
 
-import { defineToolkit, useInlineRender } from "@assistant-ui/react";
+import { defineToolkit, useInlineRender } from "@hitchsoftware/assistant-ui-react";
 import { useMemo } from "react";
 
 export function useHeavyComputationToolkit() {
@@ -940,7 +940,7 @@ export function useHeavyComputationToolkit() {
 ```
 
 ```tsx title="HeavyComputationToolProvider.tsx"
-import { AuiConfig, AuiProvider, Tools, useAui } from "@assistant-ui/react";
+import { AuiConfig, AuiProvider, Tools, useAui } from "@hitchsoftware/assistant-ui-react";
 import type { ReactNode } from "react";
 import { useHeavyComputationToolkit } from "./heavy-computation-toolkit";
 
@@ -978,7 +978,7 @@ If you want a component to appear only after the message is complete and you con
 Use `makeAssistantDataUI` to register a renderer for a named data part:
 
 ```tsx
-import { makeAssistantDataUI } from "@assistant-ui/react";
+import { makeAssistantDataUI } from "@hitchsoftware/assistant-ui-react";
 
 type ChartProps = { series: number[]; title: string };
 

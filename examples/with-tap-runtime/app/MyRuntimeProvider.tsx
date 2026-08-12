@@ -11,7 +11,7 @@ import {
   type ExternalThreadMessage,
   ThreadListPrimitive,
   ThreadListItemPrimitive,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 type SimpleMessage = {
   id: string;
@@ -39,7 +39,7 @@ const SIMPLE_MESSAGES: SimpleMessage[] = [
     id: "2",
     role: "assistant",
     content:
-      "Hi! Tap-native runtime is a new way to build assistant-ui runtimes using @assistant-ui/tap and @assistant-ui/store. It provides:\n\n• Reactive state management with hooks-like API\n• Type-safe client definitions\n• Composable resource architecture\n• Minimal implementation for external state\n\nThis example demonstrates ExternalThread and InMemoryThreadList - the first tap-native runtime clients!",
+      "Hi! Tap-native runtime is a new way to build assistant-ui runtimes using @hitchsoftware/assistant-ui-tap and @hitchsoftware/assistant-ui-store. It provides:\n\n• Reactive state management with hooks-like API\n• Type-safe client definitions\n• Composable resource architecture\n• Minimal implementation for external state\n\nThis example demonstrates ExternalThread and InMemoryThreadList - the first tap-native runtime clients!",
     status: { type: "complete", reason: "stop" },
   },
   {

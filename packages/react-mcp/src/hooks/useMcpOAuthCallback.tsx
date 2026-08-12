@@ -1,5 +1,5 @@
 import { type FC, type ReactNode, useEffect, useRef, useState } from "react";
-import { useAui } from "@assistant-ui/store";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 import { decodeServerIdFromState } from "../auth/createOAuthProvider";
 
 type McpOAuthCallbackName = "onComplete" | "onError";

@@ -1,5 +1,5 @@
 import { type FC, type ReactNode, createContext, useContext } from "react";
-import { useAuiState } from "@assistant-ui/store";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 import type { MCPToolInfo } from "../../mcp-scope";
 
 const ToolContext = createContext<MCPToolInfo | null>(null);

@@ -3,7 +3,7 @@
 import { cleanup, render } from "@testing-library/react";
 import type { FC, ReactNode } from "react";
 import { afterEach, describe, expect, it } from "vitest";
-import { AuiProvider, useAui } from "@assistant-ui/store";
+import { AuiProvider, useAui } from "@hitchsoftware/assistant-ui-store";
 import { ExternalThread } from "../store/clients/external-thread";
 import { SingleThreadList } from "../store/clients/single-thread-list";
 

@@ -10,7 +10,7 @@ import {
   useLayoutEffect,
   useMemo,
 } from "react";
-import { useAuiEvent, useAuiState } from "@assistant-ui/store";
+import { useAuiEvent, useAuiState } from "@hitchsoftware/assistant-ui-store";
 import { useManagedRef } from "../../utils/hooks/useManagedRef";
 import { useThreadViewportAutoScroll } from "./useThreadViewportAutoScroll";
 import { ThreadPrimitiveViewportProvider } from "../../context/providers/ThreadViewportProvider";

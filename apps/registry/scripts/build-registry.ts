@@ -6,7 +6,7 @@ import {
   isDeclarationBlock,
   type CssDeclarationBlock,
   type CssMediaBlock,
-} from "@assistant-ui/ui/lib/generative-ui-vocabulary-css.ts";
+} from "@hitchsoftware/assistant-ui-ui/lib/generative-ui-vocabulary-css.ts";
 import { registry } from "../src/registry";
 import { registrySchema, type RegistryItem } from "../src/schema";
 
@@ -59,8 +59,8 @@ type RegistryOutputItem = Omit<RegistryBuildItem, "files"> & {
 };
 
 /**
- * Transform @assistant-ui/react-ui/* imports to @/* imports for standalone projects
- * This is needed because the monorepo uses @assistant-ui/react-ui/* for internal imports
+ * Transform @hitchsoftware/assistant-ui-react-ui/* imports to @/* imports for standalone projects
+ * This is needed because the monorepo uses @hitchsoftware/assistant-ui-react-ui/* for internal imports
  * but the registry output should use @/* which works with standard shadcn setup
  */
 function transformImports(content: string): string {

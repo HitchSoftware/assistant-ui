@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
-import { useAuiState } from "@assistant-ui/store";
-import type { MessageStatus } from "@assistant-ui/core";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
+import type { MessageStatus } from "@hitchsoftware/assistant-ui-core";
 import {
   ringBell,
   sendOSCNotification,

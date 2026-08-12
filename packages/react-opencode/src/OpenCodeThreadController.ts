@@ -1,4 +1,4 @@
-import type { AppendMessage, ThreadUserMessagePart } from "@assistant-ui/react";
+import type { AppendMessage, ThreadUserMessagePart } from "@hitchsoftware/assistant-ui-react";
 import type {
   OpencodeClient,
   PermissionRequest,
@@ -32,7 +32,7 @@ import {
   resolveFileMediaType,
   resolveImageMediaType,
   toMediaWireUrl,
-} from "@assistant-ui/core/internal";
+} from "@hitchsoftware/assistant-ui-core/internal";
 import { OPEN_CODE_REQUEST_OPTIONS } from "./openCodeRequestOptions";
 import { serializeOpenCodeParts } from "./serializeUserParts";
 import { getOpenCodeTaskSessionId } from "./openCodeTaskSession";

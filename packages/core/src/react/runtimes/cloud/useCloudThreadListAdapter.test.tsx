@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 
 import { renderHook } from "@testing-library/react";
-import type { AssistantCloud } from "assistant-cloud";
+import type { AssistantCloud } from "@hitchsoftware/assistant-cloud";
 import { describe, expect, it, vi } from "vitest";
 import { useCloudThreadListAdapter } from "./useCloudThreadListAdapter";
 

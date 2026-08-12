@@ -1,6 +1,6 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
-import { AuiProvider, useAui } from "@assistant-ui/store";
+import { AuiProvider, useAui } from "@hitchsoftware/assistant-ui-store";
 import * as SpanPrimitive from "../primitives/span";
 import { SpanResource, type SpanData } from "./SpanResource";
 

@@ -1,4 +1,4 @@
-import type { Tool } from "assistant-stream";
+import type { Tool } from "@hitchsoftware/assistant-stream";
 
 type ProviderToolDefinition<TArgs extends Record<string, unknown>> = Extract<
   Tool<TArgs, unknown>,

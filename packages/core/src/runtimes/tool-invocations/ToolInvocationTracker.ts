@@ -7,11 +7,11 @@ import {
   unstable_toolResultStream,
   type Tool,
   type ToolModelContentPart,
-} from "assistant-stream";
+} from "@hitchsoftware/assistant-stream";
 import {
   AssistantMetaTransformStream,
   type ReadonlyJSONValue,
-} from "assistant-stream/utils";
+} from "@hitchsoftware/assistant-stream/utils";
 import { isJSONValueEqual } from "../../utils/json/is-json-equal";
 import type { ThreadMessage } from "../../types/message";
 

@@ -1,6 +1,6 @@
 /** @vitest-environment jsdom */
 import { act, render, renderHook } from "@testing-library/react";
-import type { ModelContext } from "@assistant-ui/core";
+import type { ModelContext } from "@hitchsoftware/assistant-ui-core";
 import type { FormEvent, ReactNode } from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
@@ -18,8 +18,8 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@assistant-ui/store", async (importOriginal) => ({
-  ...(await importOriginal<typeof import("@assistant-ui/store")>()),
+vi.mock("@hitchsoftware/assistant-ui-store", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@hitchsoftware/assistant-ui-store")>()),
   useAui: () => mocks.aui,
 }));
 

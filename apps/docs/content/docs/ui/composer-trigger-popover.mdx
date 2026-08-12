@@ -27,7 +27,7 @@ This adds `/components/assistant-ui/composer-trigger-popover.tsx` — a generic 
 Place `ComposerPrimitive.Unstable_TriggerPopoverRoot` around your composer. Any number of `ComposerTriggerPopover` declarations can live inside — each with its own trigger character, adapter, and behavior prop.
 
 ```tsx title="components/assistant-ui/thread.tsx"
-import { ComposerPrimitive } from "@assistant-ui/react";
+import { ComposerPrimitive } from "@hitchsoftware/assistant-ui-react";
 import { ComposerTriggerPopover } from "@/components/assistant-ui/composer-trigger-popover";
 
 const Composer = () => (
@@ -50,7 +50,7 @@ const Composer = () => (
 Pair the popover with `unstable_useMentionAdapter` — the hook returns a spreadable `{ adapter, directive }` bundle so selecting an item writes a `:tool[Label]{name=id}` directive into the composer text.
 
 ```tsx
-import { unstable_useMentionAdapter } from "@assistant-ui/react";
+import { unstable_useMentionAdapter } from "@hitchsoftware/assistant-ui-react";
 import { WrenchIcon } from "lucide-react";
 
 const mention = unstable_useMentionAdapter();
@@ -76,7 +76,7 @@ Use [`unstable_useSlashCommandAdapter`](/docs/guides/slash-commands) to bundle c
 import {
   unstable_useSlashCommandAdapter,
   type Unstable_SlashCommand,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { FileTextIcon, GlobeIcon, LanguagesIcon, SlashIcon } from "lucide-react";
 
 const SLASH_COMMANDS: readonly Unstable_SlashCommand[] = [

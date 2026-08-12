@@ -55,14 +55,14 @@ vi.mock("@ai-sdk/react", () => ({
   useChat: mocks.useChat,
 }));
 
-vi.mock("@assistant-ui/core/react", async (importOriginal) => ({
-  ...(await importOriginal<typeof import("@assistant-ui/core/react")>()),
+vi.mock("@hitchsoftware/assistant-ui-core/react", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@hitchsoftware/assistant-ui-core/react")>()),
   useCloudThreadListAdapter: mocks.useCloudThreadListAdapter,
   useRemoteThreadListRuntime: mocks.useRemoteThreadListRuntime,
 }));
 
-vi.mock("@assistant-ui/store", async (importOriginal) => ({
-  ...(await importOriginal<typeof import("@assistant-ui/store")>()),
+vi.mock("@hitchsoftware/assistant-ui-store", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@hitchsoftware/assistant-ui-store")>()),
   useAui: mocks.useAui,
   useAuiState: mocks.useAuiState,
 }));

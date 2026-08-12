@@ -1,5 +1,5 @@
 import { openai } from "@ai-sdk/openai";
-import { frontendTools } from "@assistant-ui/react-ai-sdk";
+import { frontendTools } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import {
   streamText,
   convertToModelMessages,
@@ -7,7 +7,7 @@ import {
   type JSONSchema7,
   UI_MESSAGE_STREAM_HEADERS,
 } from "ai";
-import { RESUMABLE_STREAM_ID_HEADER } from "assistant-stream/resumable";
+import { RESUMABLE_STREAM_ID_HEADER } from "@hitchsoftware/assistant-stream/resumable";
 import { resumableContext } from "@/lib/resumable-context";
 
 export async function POST(req: Request) {

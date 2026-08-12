@@ -6,7 +6,7 @@ export default function Home() {
       <div className="mx-auto max-w-4xl">
         <div className="mb-8">
           <h1 className="mb-2 text-4xl font-bold text-gray-900 dark:text-white">
-            @assistant-ui/store Example
+            @hitchsoftware/assistant-ui-store Example
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400">
             Demonstrating tap-based state management with scopes, lists, and

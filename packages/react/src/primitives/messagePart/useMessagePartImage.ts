@@ -4,8 +4,8 @@ import type {
   ImageMessagePart,
   MessagePartState,
   MessagePartStatus,
-} from "@assistant-ui/core";
-import { useAuiState } from "@assistant-ui/store";
+} from "@hitchsoftware/assistant-ui-core";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 
 const COMPLETE_STATUS: MessagePartStatus = Object.freeze({ type: "complete" });
 

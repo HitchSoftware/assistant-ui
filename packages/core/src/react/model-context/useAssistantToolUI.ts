@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useAui } from "@assistant-ui/store";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 import type { ToolCallMessagePartComponent } from "../types/MessagePartComponentTypes";
 
 /**

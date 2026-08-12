@@ -1,4 +1,4 @@
-import type { ThreadMessageLike } from "@assistant-ui/react";
+import type { ThreadMessageLike } from "@hitchsoftware/assistant-ui-react";
 
 const SEED_COUNT = 500;
 

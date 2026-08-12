@@ -1,5 +1,5 @@
 {
-  "name": "@assistant-ui/x-changelog",
+  "name": "@hitchsoftware/assistant-ui-x-changelog",
   "version": "0.0.0",
   "private": true,
   "description": "Internal changesets changelog generator for assistant-ui",

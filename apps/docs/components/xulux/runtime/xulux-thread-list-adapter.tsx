@@ -1,14 +1,14 @@
 "use client";
 
-import { createAssistantStream } from "assistant-stream";
+import { createAssistantStream } from "@hitchsoftware/assistant-stream";
 import { type FC, type PropsWithChildren, useMemo, useRef } from "react";
 import {
   type AssistantCloud,
   RuntimeAdapterProvider,
   type RemoteThreadListAdapter,
   type ThreadMessage,
-} from "@assistant-ui/react";
-import { useAssistantCloudThreadHistoryAdapter } from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-react";
+import { useAssistantCloudThreadHistoryAdapter } from "@hitchsoftware/assistant-ui-core/react";
 import {
   findXuluxSessionStub,
   findXuluxThread,

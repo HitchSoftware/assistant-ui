@@ -1,11 +1,11 @@
-# `@assistant-ui/react-ai-sdk`
+# `@hitchsoftware/assistant-ui-react-ai-sdk`
 
-[Vercel AI SDK](https://sdk.vercel.ai) v6 integration for `@assistant-ui/react`. Wraps the AI SDK chat in an assistant-ui runtime and forwards system messages and frontend tools through `AssistantChatTransport`.
+[Vercel AI SDK](https://sdk.vercel.ai) v6 integration for `@hitchsoftware/assistant-ui-react`. Wraps the AI SDK chat in an assistant-ui runtime and forwards system messages and frontend tools through `AssistantChatTransport`.
 
 ## Installation
 
 ```bash
-npm install @assistant-ui/react @assistant-ui/react-ai-sdk
+npm install @hitchsoftware/assistant-ui-react @hitchsoftware/assistant-ui-react-ai-sdk
 ```
 
 ## Usage
@@ -13,8 +13,8 @@ npm install @assistant-ui/react @assistant-ui/react-ai-sdk
 ```tsx
 "use client";
 
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { Thread } from "@/components/assistant-ui/thread";
 
 export function Chat() {

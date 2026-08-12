@@ -7,7 +7,7 @@ import {
   AuiIf,
   ComposerPrimitive,
   AttachmentPrimitive,
-} from "@assistant-ui/react-native";
+} from "@hitchsoftware/assistant-ui-react-native";
 import { Icon } from "@/components/ui/icon";
 import { useTheme } from "@/hooks/use-theme";
 import { Radius, Spacing } from "@/constants/theme";

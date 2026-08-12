@@ -5,14 +5,14 @@ import {
   AuiProvider,
   AuiConfig,
   Suggestions,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   useA2ATask,
   useA2AArtifacts,
   useA2AAgentCard,
   type A2ATaskState,
   type A2APart,
-} from "@assistant-ui/react-a2a";
+} from "@hitchsoftware/assistant-ui-react-a2a";
 import { Thread } from "@/components/assistant-ui/thread";
 
 const STATE_CONFIG: Record<

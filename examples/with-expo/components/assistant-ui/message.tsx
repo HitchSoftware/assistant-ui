@@ -6,7 +6,7 @@ import {
   MessagePrimitive,
   ErrorPrimitive,
   type TextMessagePartComponent,
-} from "@assistant-ui/react-native";
+} from "@hitchsoftware/assistant-ui-react-native";
 import { useTheme } from "@/hooks/use-theme";
 import { Radius } from "@/constants/theme";
 import { MessageActionBar } from "./message-action-bar";

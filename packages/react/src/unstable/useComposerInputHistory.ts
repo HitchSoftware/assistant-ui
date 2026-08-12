@@ -8,10 +8,10 @@ import {
   type KeyboardEvent,
   type KeyboardEventHandler,
 } from "react";
-import { useAui } from "@assistant-ui/store";
-import { flushTapSync } from "@assistant-ui/tap";
-import type { ThreadMessage } from "@assistant-ui/core";
-import { getThreadMessageText } from "@assistant-ui/core/internal";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
+import { flushTapSync } from "@hitchsoftware/assistant-ui-tap";
+import type { ThreadMessage } from "@hitchsoftware/assistant-ui-core";
+import { getThreadMessageText } from "@hitchsoftware/assistant-ui-core/internal";
 import { useTriggerPopoverRootContextOptional } from "../primitives/composer/trigger/TriggerPopoverRootContext";
 
 export type Unstable_ComposerInputHistory = {

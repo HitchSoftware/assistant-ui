@@ -4,21 +4,21 @@
 [![npm downloads](https://img.shields.io/npm/dm/assistant-cloud)](https://www.npmjs.com/package/assistant-cloud)
 [![GitHub stars](https://img.shields.io/github/stars/assistant-ui/assistant-ui)](https://github.com/assistant-ui/assistant-ui)
 
-Server- and client-side SDK for [Assistant Cloud](https://cloud.assistant-ui.com), the managed thread-history, telemetry, and file-storage backend for `@assistant-ui/react`.
+Server- and client-side SDK for [Assistant Cloud](https://cloud.assistant-ui.com), the managed thread-history, telemetry, and file-storage backend for `@hitchsoftware/assistant-ui-react`.
 
 ## Installation
 
 ```bash
-npm install @assistant-ui/react @assistant-ui/react-ai-sdk assistant-cloud
+npm install @hitchsoftware/assistant-ui-react @hitchsoftware/assistant-ui-react-ai-sdk assistant-cloud
 ```
 
 ## Usage
 
-Pass an `AssistantCloud` instance to your runtime hook (typically `useChatRuntime` from `@assistant-ui/react-ai-sdk`):
+Pass an `AssistantCloud` instance to your runtime hook (typically `useChatRuntime` from `@hitchsoftware/assistant-ui-react-ai-sdk`):
 
 ```tsx
-import { AssistantCloud, AssistantRuntimeProvider } from "@assistant-ui/react";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+import { AssistantCloud, AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 
 const cloud = new AssistantCloud({
   baseUrl: process.env.NEXT_PUBLIC_ASSISTANT_BASE_URL!,

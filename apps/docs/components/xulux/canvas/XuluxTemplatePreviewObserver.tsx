@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef } from "react";
 import type { XuluxPreviewFrame } from "../templates/types";
-import { useAuiState, type ToolCallMessagePart } from "@assistant-ui/react";
+import { useAuiState, type ToolCallMessagePart } from "@hitchsoftware/assistant-ui-react";
 import type { XuluxJsonObject } from "../runtime/types";
 
 type OpenTemplatePreviewResult =

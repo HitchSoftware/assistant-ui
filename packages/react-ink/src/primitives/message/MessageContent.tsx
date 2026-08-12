@@ -8,13 +8,13 @@ import type {
   ThreadUserMessagePart,
   ThreadAssistantMessagePart,
   MessagePartState,
-} from "@assistant-ui/core";
-import { useAui, useAuiState } from "@assistant-ui/store";
+} from "@hitchsoftware/assistant-ui-core";
+import { useAui, useAuiState } from "@hitchsoftware/assistant-ui-store";
 import type {
   ToolCallMessagePartProps,
   DataMessagePartProps,
-} from "@assistant-ui/core/react";
-import { PartByIndexProvider } from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";
+import { PartByIndexProvider } from "@hitchsoftware/assistant-ui-core/react";
 import { ToolFallback } from "../toolCall/ToolFallback";
 import * as MessagePartPrimitive from "../messagePart";
 

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Pressable, type PressableProps } from "react-native";
-import { useComposerCancel } from "@assistant-ui/core/react";
+import { useComposerCancel } from "@hitchsoftware/assistant-ui-core/react";
 
 export type ComposerCancelProps = Omit<PressableProps, "onPress"> & {
   children: ReactNode;

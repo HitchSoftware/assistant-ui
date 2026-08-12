@@ -1,4 +1,4 @@
-import { createTapRoot, useResource } from "@assistant-ui/tap";
+import { createTapRoot, useResource } from "@hitchsoftware/assistant-ui-tap";
 import { describe, expect, it, vi } from "vitest";
 import { McpAppsRemoteHost } from "./McpAppsRemoteHost";
 

@@ -6,9 +6,9 @@ import {
   onScopeDispose,
   type SlotsType,
 } from "vue";
-import { AuiConfig, Derived } from "@assistant-ui/store/client";
-import { flushTapSync } from "@assistant-ui/tap";
-import type { SuggestionMethods } from "@assistant-ui/core/store";
+import { AuiConfig, Derived } from "@hitchsoftware/assistant-ui-store/client";
+import { flushTapSync } from "@hitchsoftware/assistant-ui-tap";
+import type { SuggestionMethods } from "@hitchsoftware/assistant-ui-core/store";
 import { AuiProvider } from "../AuiProvider";
 import { isAttrDisabled } from "./attrDisabled";
 import { createLastValidCache, createStaleReporter } from "./lastValidCache";

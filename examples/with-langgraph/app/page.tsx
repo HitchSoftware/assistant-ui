@@ -8,7 +8,7 @@ import {
   AuiConfig,
   Suggestions,
   Tools,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import toolkit from "./toolkit";
 
 function ThreadWithSuggestions() {

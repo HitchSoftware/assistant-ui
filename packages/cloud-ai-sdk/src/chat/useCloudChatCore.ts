@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import type { UIMessage } from "@ai-sdk/react";
 import type { ChatTransport } from "ai";
 import { DefaultChatTransport } from "ai";
-import type { AssistantCloud } from "assistant-cloud";
+import type { AssistantCloud } from "@hitchsoftware/assistant-cloud";
 import type { UseThreadsResult } from "../types";
 import type { CloudChatConfig } from "../core/CloudChatCore";
 import { CloudChatCore } from "../core/CloudChatCore";

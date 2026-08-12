@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 import { Rocket } from "lucide-react";
-import * as HeatGraph from "heat-graph";
+import * as HeatGraph from "@hitchsoftware/heat-graph";
 import type { ActivityPoint } from "@/lib/traction";
 
 const COMMIT_COLORS = [

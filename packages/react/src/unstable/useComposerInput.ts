@@ -1,10 +1,10 @@
 "use client";
 
 import { useCallback } from "react";
-import { useAui } from "@assistant-ui/store";
-import { flushTapSync } from "@assistant-ui/tap";
-import { useComposerSend } from "@assistant-ui/core/react";
-import type { ComposerSendOptions } from "@assistant-ui/core/store";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
+import { flushTapSync } from "@hitchsoftware/assistant-ui-tap";
+import { useComposerSend } from "@hitchsoftware/assistant-ui-core/react";
+import type { ComposerSendOptions } from "@hitchsoftware/assistant-ui-core/store";
 import {
   type TriggerPopoverAriaProps,
   useComposerInputDisabled,

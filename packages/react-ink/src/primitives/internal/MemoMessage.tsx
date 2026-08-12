@@ -1,7 +1,7 @@
 import { type ReactNode, memo } from "react";
-import type { ThreadMessage } from "@assistant-ui/core";
-import { RenderChildrenWithAccessor } from "@assistant-ui/store";
-import { MessageByIndexProvider } from "@assistant-ui/core/react";
+import type { ThreadMessage } from "@hitchsoftware/assistant-ui-core";
+import { RenderChildrenWithAccessor } from "@hitchsoftware/assistant-ui-store";
+import { MessageByIndexProvider } from "@hitchsoftware/assistant-ui-core/react";
 
 type MemoMessageProps = {
   index: number;

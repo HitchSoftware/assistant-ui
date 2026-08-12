@@ -8,7 +8,7 @@ import {
   type ForwardedRef,
   useCallback,
 } from "react";
-import { useAui, useAuiState } from "@assistant-ui/store";
+import { useAui, useAuiState } from "@hitchsoftware/assistant-ui-store";
 import { useManagedRef } from "../../utils/hooks/useManagedRef";
 import { useComposedRefs } from "@radix-ui/react-compose-refs";
 import {

@@ -1,9 +1,9 @@
 "use client";
 
-import { type ModelContext, tool } from "@assistant-ui/core";
-import type {} from "@assistant-ui/core/store";
-import { type ToolCallMessagePartComponent } from "@assistant-ui/core/react";
-import { useAui } from "@assistant-ui/store";
+import { type ModelContext, tool } from "@hitchsoftware/assistant-ui-core";
+import type {} from "@hitchsoftware/assistant-ui-core/store";
+import { type ToolCallMessagePartComponent } from "@hitchsoftware/assistant-ui-core/react";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 import { useEffect } from "react";
 import {
   type Field,

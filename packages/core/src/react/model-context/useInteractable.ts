@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useId, useMemo, useRef } from "react";
-import { useAui, useAuiState } from "@assistant-ui/store";
+import { useAui, useAuiState } from "@hitchsoftware/assistant-ui-store";
 import type { Unstable_InteractableStateSchema } from "../types/scopes/interactables";
 import type { ToolCallMessagePartComponent } from "../types/MessagePartComponentTypes";
 import {

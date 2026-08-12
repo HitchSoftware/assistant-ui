@@ -1,3 +1,3 @@
 "use client";
 
-export { CloudFileAttachmentAdapter } from "@assistant-ui/core/react";
+export { CloudFileAttachmentAdapter } from "@hitchsoftware/assistant-ui-core/react";

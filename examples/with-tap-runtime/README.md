@@ -1,6 +1,6 @@
 # Tap-Native Runtime Example
 
-This example demonstrates the first tap-native runtime implementation for assistant-ui using `@assistant-ui/tap` and `@assistant-ui/store`.
+This example demonstrates the first tap-native runtime implementation for assistant-ui using `@hitchsoftware/assistant-ui-tap` and `@hitchsoftware/assistant-ui-store`.
 
 ## Features
 
@@ -114,10 +114,10 @@ InMemoryThreadList({
 
 ### Client Registry
 
-Type-safe client definitions via module augmentation (defined in `@assistant-ui/react`):
+Type-safe client definitions via module augmentation (defined in `@hitchsoftware/assistant-ui-react`):
 
 ```typescript
-declare module "@assistant-ui/store" {
+declare module "@hitchsoftware/assistant-ui-store" {
   interface ScopeRegistry {
     threads: ThreadsClientSchema;
     thread: ThreadClientSchema;

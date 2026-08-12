@@ -1,4 +1,4 @@
-import type { AssistantStream, AssistantStreamChunk } from "assistant-stream";
+import type { AssistantStream, AssistantStreamChunk } from "@hitchsoftware/assistant-stream";
 import type {
   RemoteThreadInitializeResponse,
   RemoteThreadListAdapter,

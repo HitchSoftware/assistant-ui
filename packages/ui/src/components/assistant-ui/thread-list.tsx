@@ -11,7 +11,7 @@ import {
   ThreadListPrimitive,
   useAui,
   useAuiState,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   ArchiveIcon,
   Loader2Icon,

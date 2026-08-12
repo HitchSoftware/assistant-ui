@@ -1,12 +1,12 @@
 "use client";
 
 import { useMemo } from "react";
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";
 import {
   AssistantChatTransport,
   createResumableSessionStorage,
   useChatRuntime,
-} from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { Thread } from "@/components/assistant-ui/thread";
 
 const storage = createResumableSessionStorage();

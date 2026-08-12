@@ -1,4 +1,4 @@
-import type { ReadonlyJSONValue } from "assistant-stream/utils";
+import type { ReadonlyJSONValue } from "@hitchsoftware/assistant-stream/utils";
 import { isJSONValue, isRecord } from "./is-json";
 
 const MAX_JSON_DEPTH = 100;

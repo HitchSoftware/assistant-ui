@@ -13,7 +13,7 @@ import {
   ErrorPrimitive,
   MessagePrimitive,
   ThreadPrimitive,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { SampleFrame } from "./sample-frame";
 import { TooltipIconButton } from "@/components/assistant-ui/tooltip-icon-button";
 import type { FC } from "react";

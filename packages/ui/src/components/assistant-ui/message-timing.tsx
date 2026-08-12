@@ -1,6 +1,6 @@
 "use client";
 
-import { useMessageTiming } from "@assistant-ui/react";
+import { useMessageTiming } from "@hitchsoftware/assistant-ui-react";
 import {
   Tooltip,
   TooltipContent,

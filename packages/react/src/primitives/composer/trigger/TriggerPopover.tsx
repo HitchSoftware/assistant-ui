@@ -1,8 +1,8 @@
 "use client";
 
-import { useAui, useAuiState } from "@assistant-ui/store";
-import { useResource } from "@assistant-ui/tap";
-import type { Unstable_TriggerAdapter } from "@assistant-ui/core";
+import { useAui, useAuiState } from "@hitchsoftware/assistant-ui-store";
+import { useResource } from "@hitchsoftware/assistant-ui-tap";
+import type { Unstable_TriggerAdapter } from "@hitchsoftware/assistant-ui-core";
 import {
   createContext,
   forwardRef,

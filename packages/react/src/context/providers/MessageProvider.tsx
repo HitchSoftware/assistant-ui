@@ -1,11 +1,11 @@
 "use client";
 
 import type { FC, PropsWithChildren } from "react";
-import { useAui, AuiConfig, AuiProvider } from "@assistant-ui/store";
+import { useAui, AuiConfig, AuiProvider } from "@hitchsoftware/assistant-ui-store";
 import {
   type ThreadMessageClientProps,
   ThreadMessageClient,
-} from "@assistant-ui/core/store";
+} from "@hitchsoftware/assistant-ui-core/store";
 
 export const MessageProvider: FC<
   PropsWithChildren<ThreadMessageClientProps>

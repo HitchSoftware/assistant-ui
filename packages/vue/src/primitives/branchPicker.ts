@@ -5,7 +5,7 @@ import {
   type ComputedRef,
   type SlotsType,
 } from "vue";
-import type {} from "@assistant-ui/core/store";
+import type {} from "@hitchsoftware/assistant-ui-core/store";
 import { isAttrDisabled } from "./attrDisabled";
 import { useAui } from "../useAui";
 import { useAuiState } from "../useAuiState";

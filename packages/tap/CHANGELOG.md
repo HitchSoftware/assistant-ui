@@ -1,4 +1,4 @@
-# @assistant-ui/tap
+# @hitchsoftware/assistant-ui-tap
 
 ## 0.9.12
 
@@ -22,7 +22,7 @@
 
 ### Patch Changes
 
-- [#5399](https://github.com/assistant-ui/assistant-ui/pull/5399) [`b8daa96`](https://github.com/assistant-ui/assistant-ui/commit/b8daa967f4e5cb181c3e9ed065ab6949ee848fa4) - re-add the deprecated useMemoCache export for older @assistant-ui/store versions ([@Yonom](https://github.com/Yonom))
+- [#5399](https://github.com/assistant-ui/assistant-ui/pull/5399) [`b8daa96`](https://github.com/assistant-ui/assistant-ui/commit/b8daa967f4e5cb181c3e9ed065ab6949ee848fa4) - re-add the deprecated useMemoCache export for older @hitchsoftware/assistant-ui-store versions ([@Yonom](https://github.com/Yonom))
 
 ## 0.9.8
 
@@ -110,7 +110,7 @@
 
 - [#4385](https://github.com/assistant-ui/assistant-ui/pull/4385) [`ae59baf`](https://github.com/assistant-ui/assistant-ui/commit/ae59baf3bb9b1779f403d378aca19bb3d83781ff) - feat: precompile packages with React Compiler ([@Yonom](https://github.com/Yonom))
   - aui-build runs React Compiler over packages that depend on tap and remaps `react/compiler-runtime` to the tap shim subpath, so compiled hooks and components work both in React components and inside tap resource renders
-  - `@assistant-ui/tap/react-shim` exports `useMemoCache` (tap inside a resource render, `React.__COMPILER_RUNTIME.c` otherwise, with a React 18 polyfill); new `@assistant-ui/tap/react-shim/compiler-runtime` subpath mirrors `react/compiler-runtime`'s `c` export
+  - `@hitchsoftware/assistant-ui-tap/react-shim` exports `useMemoCache` (tap inside a resource render, `React.__COMPILER_RUNTIME.c` otherwise, with a React 18 polyfill); new `@hitchsoftware/assistant-ui-tap/react-shim/compiler-runtime` subpath mirrors `react/compiler-runtime`'s `c` export
   - tap implements `useSyncExternalStore` and a no-op `useDebugValue`; `useSubscribable` now builds on `useSyncExternalStore` so its store reads stay visible to the compiler
   - `AssistantProviderBase` opts out via `"use no memo"` because the runtime receives options through an effect inside a re-rendered child element
 
@@ -201,10 +201,10 @@
 
 - [#4282](https://github.com/assistant-ui/assistant-ui/pull/4282) [`01cf957`](https://github.com/assistant-ui/assistant-ui/commit/01cf957c209b1a58c69f5621565397de6d1eb794) - feat: React integration ([@Yonom](https://github.com/Yonom))
 
-  `@assistant-ui/tap` now requires `react` as a peer dependency and ships a React integration:
+  `@hitchsoftware/assistant-ui-tap` now requires `react` as a peer dependency and ships a React integration:
   - Resource API at the package root: `useResource` (host a resource element), `useResources` (keyed lists), and `useResourceRoot` (a subscribable `{ getValue, subscribe }` boundary). Each is isomorphic: it works inside a resource render and inside a React component.
   - Author resource state and effects with plain React hooks. A React dispatcher installed around every resource render makes `import { useState } from "react"` (and `useReducer`/`useRef`/`useMemo`/`useCallback`/`useEffect`/`useEffectEvent`/`use`) route to tap inside a resource, with no build step. It also backs `react/compiler-runtime`'s `useMemoCache`, so React Compiler output runs in a resource without a `"use no memo"` opt-out. Hooks tap has no equivalent for throw when called inside a resource.
-  - `@assistant-ui/tap/react-shim`: a runtime drop-in for `"react"` that assistant-ui's own packages are built against (their `react` imports are pre-routed to it), so they route to tap inside a resource render and to React otherwise without depending on the consumer's bundler. It ships no type declarations; keep importing from `"react"` so React's own types apply.
+  - `@hitchsoftware/assistant-ui-tap/react-shim`: a runtime drop-in for `"react"` that assistant-ui's own packages are built against (their `react` imports are pre-routed to it), so they route to tap inside a resource render and to React otherwise without depending on the consumer's bundler. It ships no type declarations; keep importing from `"react"` so React's own types apply.
   - Also exports `resource`, `withKey`, `createResourceRoot`, `flushResourcesSync`, the `createResourceContext` / `withContextProvider` context API, and the `Resource` / `ContravariantResource` / `ResourceElement` types.
 
 ### Patch Changes
@@ -234,8 +234,8 @@
   Tsdown drives both JS and `.d.ts` emission. Reference-directive restoration is preserved (tsdown/oxc drop `/// <reference>` lines, so we re-inject them in a `build:done` hook). `deps.skipNodeModulesBundle: true` keeps the old "never bundle anything from `node_modules`" behavior — devDependencies stay external instead of getting inlined into `dist`.
 
   Side fixes the new strict dts pipeline surfaced:
-  - `@assistant-ui/tap`: dropped the `fnSymbol` brand from the public `ResourceElement` type. It referenced an `@internal` symbol that `stripInternal` removed from emit, leaving the published `.d.ts` with a dangling reference.
-  - `@assistant-ui/store`: un-marked `ClientSchema` as `@internal`. It was already re-exported from the public package index; treating the re-export as authoritative.
+  - `@hitchsoftware/assistant-ui-tap`: dropped the `fnSymbol` brand from the public `ResourceElement` type. It referenced an `@internal` symbol that `stripInternal` removed from emit, leaving the published `.d.ts` with a dangling reference.
+  - `@hitchsoftware/assistant-ui-store`: un-marked `ClientSchema` as `@internal`. It was already re-exported from the public package index; treating the re-export as authoritative.
 
 ## 0.5.11
 

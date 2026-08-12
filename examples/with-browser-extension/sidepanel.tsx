@@ -2,7 +2,7 @@ import { createRoot } from "react-dom/client";
 import {
   AssistantRuntimeProvider,
   useExternalStoreRuntime,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { MyThread } from "./MyThread";
 import { useMockStore } from "./mock-store";
 

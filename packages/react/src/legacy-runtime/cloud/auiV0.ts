@@ -4,14 +4,14 @@ import type {
   SourceProviderMetadata,
   ThreadMessage,
   ToolApprovalOption,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import { fromThreadMessageLike } from "../runtime-cores/external-store/ThreadMessageLike";
-import type { CloudMessage } from "assistant-cloud";
-import { isJSONValue } from "@assistant-ui/core/internal";
+import type { CloudMessage } from "@hitchsoftware/assistant-cloud";
+import { isJSONValue } from "@hitchsoftware/assistant-ui-core/internal";
 import type {
   ReadonlyJSONObject,
   ReadonlyJSONValue,
-} from "assistant-stream/utils";
+} from "@hitchsoftware/assistant-stream/utils";
 import type { ExportedMessageRepositoryItem } from "../runtime-cores/utils/MessageRepository";
 
 type AuiV0ToolApproval = {

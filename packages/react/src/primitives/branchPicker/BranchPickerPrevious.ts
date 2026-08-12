@@ -5,7 +5,7 @@ import {
   type ActionButtonProps,
   createActionButton,
 } from "../../utils/createActionButton";
-import { useBranchPickerPrevious as useBranchPickerPreviousBehavior } from "@assistant-ui/core/react";
+import { useBranchPickerPrevious as useBranchPickerPreviousBehavior } from "@hitchsoftware/assistant-ui-core/react";
 
 const useBranchPickerPrevious = () => {
   const { disabled, previous } = useBranchPickerPreviousBehavior();

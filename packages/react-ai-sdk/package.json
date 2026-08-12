@@ -1,5 +1,5 @@
 {
-  "name": "@assistant-ui/react-ai-sdk",
+  "name": "@hitchsoftware/assistant-ui-react-ai-sdk",
   "version": "1.4.5",
   "description": "Vercel AI SDK adapter for assistant-ui",
   "keywords": [
@@ -53,11 +53,11 @@
   "dependencies": {
     "@ai-sdk/mcp": "^2.0.27",
     "@ai-sdk/react": "^4.0.59",
-    "@assistant-ui/core": "^0.3.10",
-    "@assistant-ui/store": "^0.3.8",
+    "@hitchsoftware/assistant-ui-core": "^0.3.10",
+    "@hitchsoftware/assistant-ui-store": "^0.3.8",
     "ai": "^7.0.56",
-    "assistant-cloud": "*",
-    "assistant-stream": "^0.3.36"
+    "@hitchsoftware/assistant-cloud": "*",
+    "@hitchsoftware/assistant-stream": "^0.3.36"
   },
   "peerDependencies": {
     "@types/react": "*",
@@ -69,7 +69,7 @@
     }
   },
   "devDependencies": {
-    "@assistant-ui/x-buildutils": "workspace:*",
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
     "@testing-library/react": "^16.3.2",
     "@types/json-schema": "^7.0.15",
     "@types/react": "^19.2.18",
@@ -79,8 +79,8 @@
     "vitest": "^4.1.10"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://www.assistant-ui.com/",
   "repository": {

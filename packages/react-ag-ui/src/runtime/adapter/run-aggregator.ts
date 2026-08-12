@@ -7,13 +7,13 @@ import {
   type ThreadAssistantMessagePart,
   type ToolCallMessagePart,
   type ToolModelContentPart,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import {
   applyA2uiOperations,
   convertSurfaceToUISpec,
   type A2uiState,
   type A2uiSurfaceState,
-} from "@assistant-ui/react-generative-ui/a2ui";
+} from "@hitchsoftware/assistant-ui-react-generative-ui/a2ui";
 import { readMcpAppResourceUri } from "../mcp-tool-result";
 import type { AgUiEvent, AgUiInterrupt } from "../types";
 import type { Logger } from "../logger";

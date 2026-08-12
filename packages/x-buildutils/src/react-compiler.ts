@@ -6,7 +6,7 @@ import type { Plugin, SourceMapInput } from "rolldown";
  * Infer mode: only `use*`-named hooks and PascalCase components are compiled;
  * anonymous resource bodies are left alone. Compiled output allocates its memo
  * cache through `react/compiler-runtime`, which the `output.paths` remap routes
- * to `@assistant-ui/tap/react-shim/compiler-runtime` so it works inside tap
+ * to `@hitchsoftware/assistant-ui-tap/react-shim/compiler-runtime` so it works inside tap
  * resource renders too. Babel only parses TS here (no transform), so the code
  * handed back to rolldown is still TS.
  */

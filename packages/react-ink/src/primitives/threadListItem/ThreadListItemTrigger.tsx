@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { useThreadListItemTrigger } from "@assistant-ui/core/react";
+import { useThreadListItemTrigger } from "@hitchsoftware/assistant-ui-core/react";
 import { Pressable, type PressableProps } from "../internal/Pressable";
 
 export type ThreadListItemTriggerProps = Omit<PressableProps, "onPress"> & {

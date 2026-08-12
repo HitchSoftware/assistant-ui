@@ -11,7 +11,7 @@ import {
   createAssistantClient,
   type AssistantClient,
   type AuiConfig,
-} from "@assistant-ui/store/client";
+} from "@hitchsoftware/assistant-ui-store/client";
 import { auiInjectionKey, createClientFacade } from "./context";
 import { isDevelopment } from "./isDevelopment";
 

@@ -1,4 +1,4 @@
-import type { SpanData } from "@assistant-ui/react-o11y";
+import type { SpanData } from "@hitchsoftware/assistant-ui-react-o11y";
 
 const BASE = Date.now() - 5000;
 

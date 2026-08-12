@@ -7,10 +7,10 @@ import type {
   MessageFormatAdapter,
   MessageFormatRepository,
   ExportedMessageRepository,
-} from "@assistant-ui/core";
-import { getExternalStoreMessages } from "@assistant-ui/core";
-import { MessageRepository } from "@assistant-ui/core/internal";
-import { useAui } from "@assistant-ui/store";
+} from "@hitchsoftware/assistant-ui-core";
+import { getExternalStoreMessages } from "@hitchsoftware/assistant-ui-core";
+import { MessageRepository } from "@hitchsoftware/assistant-ui-core/internal";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 import {
   useRef,
   useEffect,

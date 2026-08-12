@@ -11,7 +11,7 @@ import {
   BracesIcon,
   DownloadIcon,
 } from "lucide-react";
-import type { FileMessagePartComponent } from "@assistant-ui/react";
+import type { FileMessagePartComponent } from "@hitchsoftware/assistant-ui-react";
 import { cn } from "@/lib/utils";
 
 const fileVariants = cva(

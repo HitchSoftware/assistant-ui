@@ -17,7 +17,7 @@ For two years, assistant-ui has been the go-to library for building AI chat on t
 
 **Build AI chat for iOS and Android.**
 
-We're launching `@assistant-ui/react-native` — native React Native bindings that bring the full assistant-ui experience to mobile.
+We're launching `@hitchsoftware/assistant-ui-react-native` — native React Native bindings that bring the full assistant-ui experience to mobile.
 
 Everything you know from the web version carries over:
 
@@ -34,10 +34,10 @@ npx assistant-ui@latest create --example with-expo my-chat-app
 Or add it to an existing Expo project:
 
 ```sh
-npx expo install @assistant-ui/react-native @assistant-ui/react-ai-sdk
+npx expo install @hitchsoftware/assistant-ui-react-native @hitchsoftware/assistant-ui-react-ai-sdk
 ```
 
-The API mirrors the web version closely. If you've built with `@assistant-ui/react`, you already know how to use it.
+The API mirrors the web version closely. If you've built with `@hitchsoftware/assistant-ui-react`, you already know how to use it.
 
 [Read the docs →](/docs/react-native)
 
@@ -47,12 +47,12 @@ The API mirrors the web version closely. If you've built with `@assistant-ui/rea
 
 **Build AI chat for the terminal.**
 
-We're launching `@assistant-ui/react-ink` — terminal UI bindings powered by [Ink](https://github.com/vadimdemedes/ink), the React renderer for CLIs.
+We're launching `@hitchsoftware/assistant-ui-react-ink` — terminal UI bindings powered by [Ink](https://github.com/vadimdemedes/ink), the React renderer for CLIs.
 
 Build rich, interactive AI chat interfaces that run in any terminal:
 
 - **Composable primitives.** `ThreadRoot`, `ComposerInput`, `MessageContent` — the same component model, adapted for the terminal.
-- **Markdown rendering.** Ship with `@assistant-ui/react-ink-markdown` for formatted headings, code blocks with syntax highlighting, tables, and lists — all in your terminal.
+- **Markdown rendering.** Ship with `@hitchsoftware/assistant-ui-react-ink-markdown` for formatted headings, code blocks with syntax highlighting, tables, and lists — all in your terminal.
 - **Code diff rendering.** Built-in `DiffView` component and composable `DiffPrimitive` components for displaying code diffs with syntax highlighting, line numbers, and context folding.
 - **Tool calls with live feedback.** Built-in `ToolFallback` component shows spinners and formatted JSON output while tools execute.
 - **Shared backend.** Same adapters, same runtime core. Switch platforms without touching your backend code.
@@ -114,7 +114,7 @@ npx assistant-ui@latest cloud
 Or integrate directly with the AI SDK using `useCloudChat`:
 
 ```sh
-npm install @assistant-ui/cloud-ai-sdk @ai-sdk/react ai
+npm install @hitchsoftware/assistant-ui-cloud-ai-sdk @ai-sdk/react ai
 ```
 
 Works with any assistant-ui runtime — AI SDK, LangGraph, or custom backends. No migration required.
@@ -174,7 +174,7 @@ Then use it:
 
 **Add cloud persistence to any AI SDK app. Just change your import.**
 
-We're launching `@assistant-ui/cloud-ai-sdk` — a standalone package that adds full thread persistence and management to any Vercel AI SDK application with a single hook change. No providers, no context, no runtime objects.
+We're launching `@hitchsoftware/assistant-ui-cloud-ai-sdk` — a standalone package that adds full thread persistence and management to any Vercel AI SDK application with a single hook change. No providers, no context, no runtime objects.
 
 ### Before
 
@@ -187,7 +187,7 @@ const { messages, sendMessage } = useChat();
 ### After
 
 ```tsx
-import { useCloudChat } from "@assistant-ui/cloud-ai-sdk";
+import { useCloudChat } from "@hitchsoftware/assistant-ui-cloud-ai-sdk";
 
 const { messages, sendMessage, threads } = useCloudChat();
 ```
@@ -206,7 +206,7 @@ The package exports just two hooks (`useCloudChat` and `useThreads`) and four ty
 Get started:
 
 ```sh
-npm install @assistant-ui/cloud-ai-sdk @ai-sdk/react ai
+npm install @hitchsoftware/assistant-ui-cloud-ai-sdk @ai-sdk/react ai
 ```
 
 [Read the docs →](/docs/cloud/ai-sdk)
@@ -250,9 +250,9 @@ npx shadcn@latest add https://r.assistant-ui.com/heat-graph
 The big picture: assistant-ui is now a **universal AI chat framework**. Web, mobile, terminal — one codebase for your backend, one set of adapters, one way to register tools. The only thing that changes is the UI layer.
 
 ```
-@assistant-ui/react          → Web (React + Radix UI)
-@assistant-ui/react-native   → Mobile (React Native)
-@assistant-ui/react-ink      → Terminal (Ink)
+@hitchsoftware/assistant-ui-react          → Web (React + Radix UI)
+@hitchsoftware/assistant-ui-react-native   → Mobile (React Native)
+@hitchsoftware/assistant-ui-react-ink      → Terminal (Ink)
 ```
 
 We'll be updating this post throughout the week as we ship new announcements. Follow [@assistant-ui](https://x.com/assistantui) for daily updates or join our [Discord](https://discord.gg/S9dwgCNEFs) for early access.

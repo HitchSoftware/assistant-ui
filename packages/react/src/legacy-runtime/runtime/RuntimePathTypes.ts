@@ -5,4 +5,4 @@ export type {
   MessagePartRuntimePath,
   AttachmentRuntimePath,
   ComposerRuntimePath,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";

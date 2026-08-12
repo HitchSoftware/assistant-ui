@@ -7,20 +7,20 @@ import type {
   ChatModelAdapter,
   ChatModelRunOptions,
   ThreadMessage,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import {
   useLocalRuntime,
   splitLocalRuntimeOptions,
   type LocalRuntimeOptions,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";
 import {
   AssistantMessageAccumulator,
   DataStreamDecoder,
   toToolsJSONSchema,
   UIMessageStreamDecoder,
   unstable_toolResultStream,
-} from "assistant-stream";
-import { asAsyncIterableStream } from "assistant-stream/utils";
+} from "@hitchsoftware/assistant-stream";
+import { asAsyncIterableStream } from "@hitchsoftware/assistant-stream/utils";
 
 type HeadersValue = Record<string, string> | Headers;
 
@@ -209,7 +209,7 @@ class DataStreamRuntimeAdapter implements ChatModelAdapter {
       ) {
         didWarnProtocolFallback = true;
         console.warn(
-          '@assistant-ui/react-data-stream could not detect a stream protocol header; falling back to "ui-message-stream". Pass protocol explicitly or expose x-vercel-ai-data-stream / x-vercel-ai-ui-message-stream from the response.',
+          '@hitchsoftware/assistant-ui-react-data-stream could not detect a stream protocol header; falling back to "ui-message-stream". Pass protocol explicitly or expose x-vercel-ai-data-stream / x-vercel-ai-ui-message-stream from the response.',
         );
       }
       const decoder =

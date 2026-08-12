@@ -1,5 +1,5 @@
-import type { RealtimeVoiceAdapter } from "@assistant-ui/react";
-import { createVoiceSession } from "@assistant-ui/react";
+import type { RealtimeVoiceAdapter } from "@hitchsoftware/assistant-ui-react";
+import { createVoiceSession } from "@hitchsoftware/assistant-ui-react";
 import {
   Room,
   RoomEvent,

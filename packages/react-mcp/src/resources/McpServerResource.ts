@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useMemo, useEffectEvent } from "react";
-import { resource } from "@assistant-ui/tap";
-import type { ClientOutput } from "@assistant-ui/store";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
+import type { ClientOutput } from "@hitchsoftware/assistant-ui-store";
 import {
   Client,
   StreamableHTTPClientTransport,

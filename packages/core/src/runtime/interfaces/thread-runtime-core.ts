@@ -1,5 +1,5 @@
-import type { ToolModelContentPart } from "assistant-stream";
-import type { ReadonlyJSONValue } from "assistant-stream/utils";
+import type { ToolModelContentPart } from "@hitchsoftware/assistant-stream";
+import type { ReadonlyJSONValue } from "@hitchsoftware/assistant-stream/utils";
 import type { ModelContext } from "../../model-context/types";
 import type { Unsubscribe } from "../../types/unsubscribe";
 import type { AppendMessage, ThreadMessage } from "../../types/message";

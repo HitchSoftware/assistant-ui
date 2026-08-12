@@ -4,7 +4,7 @@ import type { MouseEvent, ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { createRoot } from "react-dom/client";
 import type { Root } from "react-dom/client";
-import type * as AssistantStore from "@assistant-ui/store";
+import type * as AssistantStore from "@hitchsoftware/assistant-ui-store";
 import type * as ComposerSendModule from "./ComposerSend";
 import { fireEvent, render } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
@@ -36,7 +36,7 @@ const { storeState } = vi.hoisted((): { storeState: StoreState } => ({
 
 (globalThis as Record<string, unknown>).IS_REACT_ACT_ENVIRONMENT = true;
 
-vi.mock("@assistant-ui/store", async (importOriginal) => {
+vi.mock("@hitchsoftware/assistant-ui-store", async (importOriginal) => {
   const actual = await importOriginal<typeof AssistantStore>();
   return {
     ...actual,

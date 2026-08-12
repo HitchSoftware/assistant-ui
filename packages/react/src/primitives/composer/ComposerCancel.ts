@@ -5,7 +5,7 @@ import {
   type ActionButtonProps,
   createActionButton,
 } from "../../utils/createActionButton";
-import { useComposerCancel as useComposerCancelBehavior } from "@assistant-ui/core/react";
+import { useComposerCancel as useComposerCancelBehavior } from "@hitchsoftware/assistant-ui-core/react";
 
 const useComposerCancel = () => {
   const { disabled, cancel } = useComposerCancelBehavior();

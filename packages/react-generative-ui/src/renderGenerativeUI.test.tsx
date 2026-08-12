@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import { isValidElement, type ReactElement } from "react";
-import { parsePartialJsonObject } from "assistant-stream/utils";
+import { parsePartialJsonObject } from "@hitchsoftware/assistant-stream/utils";
 import { z } from "zod";
 import { renderGenerativeUI } from "./renderGenerativeUI";
 import { buildPresentParameters } from "./buildPresentParameters";
@@ -286,7 +286,7 @@ describe("buildPresentParameters", () => {
 
       expect(warn).toHaveBeenCalledTimes(1);
       expect(warn).toHaveBeenCalledWith(
-        '[@assistant-ui/react-generative-ui] Prop "value" is declared by "Select", "DatePicker", and "Combobox"; keeping "Select"\'s schema. Rename or align the prop type to avoid an ambiguous schema.',
+        '[@hitchsoftware/assistant-ui-react-generative-ui] Prop "value" is declared by "Select", "DatePicker", and "Combobox"; keeping "Select"\'s schema. Rename or align the prop type to avoid an ambiguous schema.',
       );
     } finally {
       warn.mockRestore();

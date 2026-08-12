@@ -6,8 +6,8 @@ import {
   type TextInputKeyPressEventData,
   type TextInputProps,
 } from "react-native";
-import { useAui, useAuiState } from "@assistant-ui/store";
-import { flushTapSync } from "@assistant-ui/tap";
+import { useAui, useAuiState } from "@hitchsoftware/assistant-ui-store";
+import { flushTapSync } from "@hitchsoftware/assistant-ui-tap";
 
 export type ComposerInputProps = Omit<
   TextInputProps,

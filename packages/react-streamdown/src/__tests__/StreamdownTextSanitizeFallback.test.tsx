@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, afterEach } from "vitest";
 import { cleanup, render } from "@testing-library/react";
-import { TextMessagePartProvider } from "@assistant-ui/react";
+import { TextMessagePartProvider } from "@hitchsoftware/assistant-ui-react";
 import { StreamdownTextPrimitive } from "../primitives/StreamdownText";
 
 vi.mock("streamdown", async (importOriginal) => ({

@@ -6,8 +6,8 @@ import {
   createActionButton,
 } from "../../utils/createActionButton";
 import { useCallback } from "react";
-import { useAui } from "@assistant-ui/store";
-import { useComposerAddAttachment as useComposerAddAttachmentBehavior } from "@assistant-ui/core/react";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
+import { useComposerAddAttachment as useComposerAddAttachmentBehavior } from "@hitchsoftware/assistant-ui-core/react";
 
 const useComposerAddAttachment = ({
   multiple = true,

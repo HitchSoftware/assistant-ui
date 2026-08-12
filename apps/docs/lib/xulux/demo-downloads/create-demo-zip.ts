@@ -160,8 +160,8 @@ function nodeCliPackageJson(
 ) {
   const packagePath = "examples/with-react-ink/package.json";
   const dependencies = dependencyVersionsFromPackage(snapshot, packagePath, [
-    "@assistant-ui/react-ink",
-    "@assistant-ui/react-ink-markdown",
+    "@hitchsoftware/assistant-ui-react-ink",
+    "@hitchsoftware/assistant-ui-react-ink-markdown",
     "ink",
     "react",
   ]);
@@ -270,7 +270,7 @@ function pageTsx(manifest: DemoDownloadManifest) {
 }
 
 function runtimeProviderTsx() {
-  return `"use client";\n\nimport { AssistantRuntimeProvider } from "@assistant-ui/react";\nimport { AssistantChatTransport, useChatRuntime } from "@assistant-ui/react-ai-sdk";\n\nexport function DemoRuntimeProvider({ children }: { children: React.ReactNode }) {\n  const runtime = useChatRuntime({\n    transport: new AssistantChatTransport({ api: "/api/chat" }),\n  });\n\n  return (\n    <AssistantRuntimeProvider runtime={runtime}>\n      {children}\n    </AssistantRuntimeProvider>\n  );\n}\n`;
+  return `"use client";\n\nimport { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react";\nimport { AssistantChatTransport, useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";\n\nexport function DemoRuntimeProvider({ children }: { children: React.ReactNode }) {\n  const runtime = useChatRuntime({\n    transport: new AssistantChatTransport({ api: "/api/chat" }),\n  });\n\n  return (\n    <AssistantRuntimeProvider runtime={runtime}>\n      {children}\n    </AssistantRuntimeProvider>\n  );\n}\n`;
 }
 
 function chatRouteTs() {
@@ -278,7 +278,7 @@ function chatRouteTs() {
 }
 
 function markdownTextShim() {
-  return `"use client";\n\nimport { MarkdownTextPrimitive } from "@assistant-ui/react-markdown";\nimport remarkGfm from "remark-gfm";\n\nexport function MarkdownText() {\n  return <MarkdownTextPrimitive remarkPlugins={[remarkGfm]} className="aui-md" />;\n}\n`;
+  return `"use client";\n\nimport { MarkdownTextPrimitive } from "@hitchsoftware/assistant-ui-react-markdown";\nimport remarkGfm from "remark-gfm";\n\nexport function MarkdownText() {\n  return <MarkdownTextPrimitive remarkPlugins={[remarkGfm]} className="aui-md" />;\n}\n`;
 }
 
 function shikiHighlighterShim() {
@@ -286,7 +286,7 @@ function shikiHighlighterShim() {
 }
 
 function toolFallbackShim() {
-  return `"use client";\n\nimport type { ToolCallMessagePartComponent } from "@assistant-ui/react";\n\nexport const ToolFallback: ToolCallMessagePartComponent = ({ toolName, argsText, result }) => {\n  return (\n    <div className="rounded-md border border-border bg-muted/40 p-3 text-sm">\n      <div className="font-medium">{toolName}</div>\n      {argsText ? <pre className="mt-2 overflow-auto text-xs">{argsText}</pre> : null}\n      {result ? <pre className="mt-2 overflow-auto text-xs">{JSON.stringify(result, null, 2)}</pre> : null}\n    </div>\n  );\n};\n`;
+  return `"use client";\n\nimport type { ToolCallMessagePartComponent } from "@hitchsoftware/assistant-ui-react";\n\nexport const ToolFallback: ToolCallMessagePartComponent = ({ toolName, argsText, result }) => {\n  return (\n    <div className="rounded-md border border-border bg-muted/40 p-3 text-sm">\n      <div className="font-medium">{toolName}</div>\n      {argsText ? <pre className="mt-2 overflow-auto text-xs">{argsText}</pre> : null}\n      {result ? <pre className="mt-2 overflow-auto text-xs">{JSON.stringify(result, null, 2)}</pre> : null}\n    </div>\n  );\n};\n`;
 }
 
 function tooltipIconButtonShim() {

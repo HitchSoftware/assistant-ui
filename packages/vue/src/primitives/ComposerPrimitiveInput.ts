@@ -1,6 +1,6 @@
 import { defineComponent, h, mergeProps, type SlotsType } from "vue";
-import { flushTapSync } from "@assistant-ui/tap";
-import type {} from "@assistant-ui/core/store";
+import { flushTapSync } from "@hitchsoftware/assistant-ui-tap";
+import type {} from "@hitchsoftware/assistant-ui-core/store";
 import { isAttrDisabled } from "./attrDisabled";
 import { useAui } from "../useAui";
 import { useAuiState } from "../useAuiState";

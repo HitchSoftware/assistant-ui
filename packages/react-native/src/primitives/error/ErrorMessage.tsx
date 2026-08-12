@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Text, type TextProps } from "react-native";
-import { useMessageError } from "@assistant-ui/core/react";
+import { useMessageError } from "@hitchsoftware/assistant-ui-core/react";
 
 export type ErrorMessageProps = TextProps & {
   children?: ReactNode;

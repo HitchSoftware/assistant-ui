@@ -3,7 +3,7 @@ import { getDistinctId, posthogServer } from "@/lib/posthog-server";
 import { createPrismTracer, prismAISDK } from "@/lib/prism-server";
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import { injectQuoteContext } from "@assistant-ui/react-ai-sdk";
+import { injectQuoteContext } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { validateDocChatInput } from "@/lib/validate-input";
 import {
@@ -13,7 +13,7 @@ import {
   getTapDocsPage,
 } from "@/lib/source";
 import { getModel, withTracing } from "@/lib/ai/provider";
-import { frontendTools } from "@assistant-ui/react-ai-sdk";
+import { frontendTools } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { createBashTool } from "bash-tool";
 import {
   convertToModelMessages,
@@ -306,7 +306,7 @@ Use inline code (\`backticks\`) for:
 - Components: \`Thread\`, \`Composer\`, \`Message\`
 - Hooks: \`useChat\`, \`useThreadRuntime\`
 - Props, parameters, types
-- Packages: \`@assistant-ui/react\`
+- Packages: \`@hitchsoftware/assistant-ui-react\`
 - File paths
 </formatting>
 `;
@@ -391,7 +391,7 @@ export async function POST(req: Request): Promise<Response> {
                   type: "folder",
                   name: "tap",
                   description:
-                    "Documentation for @assistant-ui/tap and @assistant-ui/store, the reactive primitives the runtime is built on.",
+                    "Documentation for @hitchsoftware/assistant-ui-tap and @hitchsoftware/assistant-ui-store, the reactive primitives the runtime is built on.",
                 },
               ];
             }

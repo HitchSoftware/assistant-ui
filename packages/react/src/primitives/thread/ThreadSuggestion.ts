@@ -5,7 +5,7 @@ import {
   type ActionButtonProps,
   createActionButton,
 } from "../../utils/createActionButton";
-import { useSuggestionTrigger as useSuggestionTriggerBehavior } from "@assistant-ui/core/react";
+import { useSuggestionTrigger as useSuggestionTriggerBehavior } from "@hitchsoftware/assistant-ui-core/react";
 
 const useThreadSuggestion = ({
   prompt,

@@ -5,7 +5,7 @@ import { MyRuntimeProvider } from "./MyRuntimeProvider";
 export const metadata: Metadata = {
   title: "Custom Thread List Example",
   description:
-    "Example using @assistant-ui/react with a custom thread list adapter",
+    "Example using @hitchsoftware/assistant-ui-react with a custom thread list adapter",
 };
 
 export default function RootLayout({

@@ -1,4 +1,4 @@
-import type { FrontendTools } from "@assistant-ui/react-ai-sdk";
+import type { FrontendTools } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { createAppBuilderTools, createLearnAgentTools } from "./tools";
 import { appBuilderAgent, learnAgent } from "./agents";
 

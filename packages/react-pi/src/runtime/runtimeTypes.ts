@@ -2,7 +2,7 @@ import type {
   ExternalStoreAdapter,
   ExternalStoreSharedOptions,
   ThreadMessageLike,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import type { PiThreadControllerLike } from "./ThreadController";
 import type { PiInterruptAnswer } from "./hostUi";
 import type { PiThreadState } from "./threadState";

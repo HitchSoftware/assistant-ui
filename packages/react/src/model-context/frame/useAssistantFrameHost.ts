@@ -1,8 +1,8 @@
 "use client";
 
-import type { Unsubscribe } from "@assistant-ui/core";
+import type { Unsubscribe } from "@hitchsoftware/assistant-ui-core";
 import { useEffect, type RefObject } from "react";
-import { AssistantFrameHost } from "@assistant-ui/core";
+import { AssistantFrameHost } from "@hitchsoftware/assistant-ui-core";
 
 type UseAssistantFrameHostOptions = {
   iframeRef: Readonly<RefObject<HTMLIFrameElement | null | undefined>>;

@@ -4,7 +4,7 @@ import {
   CloudTelemetryReporter,
   type TelemetryFinishEvent,
 } from "./CloudTelemetryReporter";
-import type { AssistantCloud } from "assistant-cloud";
+import type { AssistantCloud } from "@hitchsoftware/assistant-cloud";
 
 function assistantMsg(
   id: string,

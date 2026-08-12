@@ -4,7 +4,7 @@ import {
   forwardRef,
 } from "react";
 import { Primitive } from "@radix-ui/react-primitive";
-import { useAui, useAuiState } from "@assistant-ui/store";
+import { useAui, useAuiState } from "@hitchsoftware/assistant-ui-store";
 
 export namespace McpServerPrimitiveDisconnectButton {
   export type Element = ComponentRef<typeof Primitive.button>;

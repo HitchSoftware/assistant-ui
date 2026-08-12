@@ -1,5 +1,5 @@
 /**
- * Node-only entry: `@assistant-ui/react-pi/node`.
+ * Node-only entry: `@hitchsoftware/assistant-ui-react-pi/node`.
  *
  * This is the ONLY public entry that pulls in `@earendil-works/pi-coding-agent`
  * (via the supervisor). It is never imported by `index.ts`, so the browser

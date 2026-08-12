@@ -13,7 +13,7 @@ LangGraph emits a rich stream of events: top-level message chunks, subgraph even
 import {
   LangGraphMessageAccumulator,
   appendLangChainChunk,
-} from "@assistant-ui/react-langgraph";
+} from "@hitchsoftware/assistant-ui-react-langgraph";
 
 const accumulator = new LangGraphMessageAccumulator({
   appendMessage: appendLangChainChunk,
@@ -29,7 +29,7 @@ if (event.event === "messages/partial") {
 `convertLangChainMessages` transforms LangChain messages to assistant-ui's format. Use it when bridging into a custom adapter or rendering messages outside the runtime.
 
 ```ts
-import { convertLangChainMessages } from "@assistant-ui/react-langgraph";
+import { convertLangChainMessages } from "@hitchsoftware/assistant-ui-react-langgraph";
 
 const threadMessage = convertLangChainMessages(langChainMessage);
 ```
@@ -92,7 +92,7 @@ const runtime = useLangGraphRuntime({
 When using `streamMode: "messages-tuple"`, each chunk includes metadata from the LangGraph server. Access accumulated metadata per message with `useLangGraphMessageMetadata`:
 
 ```ts
-import { useLangGraphMessageMetadata } from "@assistant-ui/react-langgraph";
+import { useLangGraphMessageMetadata } from "@hitchsoftware/assistant-ui-react-langgraph";
 
 function MyComponent() {
   const metadata = useLangGraphMessageMetadata();

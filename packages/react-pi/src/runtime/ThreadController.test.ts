@@ -1,5 +1,5 @@
 import { describe, expect, it, onTestFinished, vi } from "vitest";
-import type { AppendMessage } from "@assistant-ui/react";
+import type { AppendMessage } from "@hitchsoftware/assistant-ui-react";
 import { PiThreadController } from "./ThreadController";
 import type {
   PiClient,

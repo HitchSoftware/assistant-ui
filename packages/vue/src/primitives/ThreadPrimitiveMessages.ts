@@ -1,5 +1,5 @@
 import { defineComponent, h, type SlotsType } from "vue";
-import type {} from "@assistant-ui/core/store";
+import type {} from "@hitchsoftware/assistant-ui-core/store";
 import { useAuiState } from "../useAuiState";
 import { MessageByIndexProvider } from "./MessageByIndexProvider";
 

@@ -22,7 +22,7 @@ import {
 
 const ANALYTICS_PAGE = "react-o11y" as const;
 
-const INSTALL_COMMAND = "npm install @assistant-ui/react-o11y";
+const INSTALL_COMMAND = "npm install @hitchsoftware/assistant-ui-react-o11y";
 
 const FEATURES = [
   {

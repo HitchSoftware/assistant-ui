@@ -8,7 +8,7 @@ import {
   useVoiceControls,
   useVoiceState,
   useVoiceVolume,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { MicIcon, MicOffIcon, PhoneIcon, PhoneOffIcon } from "lucide-react";
 import { type FC, memo, useCallback, useEffect, useRef, useState } from "react";
 

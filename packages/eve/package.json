@@ -1,5 +1,5 @@
 {
-  "name": "@assistant-ui/eve",
+  "name": "@hitchsoftware/assistant-ui-eve",
   "version": "0.0.13",
   "description": "Eve runtime adapter for assistant-ui",
   "keywords": [
@@ -33,7 +33,7 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@assistant-ui/core": "^0.3.13"
+    "@hitchsoftware/assistant-ui-core": "^0.3.13"
   },
   "peerDependencies": {
     "@types/react": "*",
@@ -46,7 +46,7 @@
     }
   },
   "devDependencies": {
-    "@assistant-ui/x-buildutils": "workspace:*",
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/react": "^16.3.2",
     "@types/react": "^19.2.18",
@@ -57,8 +57,8 @@
     "vitest": "^4.1.10"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://www.assistant-ui.com/",
   "repository": {

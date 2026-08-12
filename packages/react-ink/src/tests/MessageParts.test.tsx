@@ -4,9 +4,9 @@ import { renderFrame } from "./helpers";
 
 const capturedProps = vi.fn();
 
-vi.mock("@assistant-ui/core/react", async (importOriginal) => {
+vi.mock("@hitchsoftware/assistant-ui-core/react", async (importOriginal) => {
   const actual =
-    await importOriginal<typeof import("@assistant-ui/core/react")>();
+    await importOriginal<typeof import("@hitchsoftware/assistant-ui-core/react")>();
   return {
     ...actual,
     MessagePrimitiveParts: (props: unknown) => {

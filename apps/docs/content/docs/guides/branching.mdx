@@ -20,7 +20,7 @@ Branches are automatically tracked by assistant-ui by observing changes to the `
 Place a branch picker inside your message component:
 
 ```tsx
-import { BranchPickerPrimitive } from "@assistant-ui/react";
+import { BranchPickerPrimitive } from "@hitchsoftware/assistant-ui-react";
 
 const BranchPicker = () => (
   <BranchPickerPrimitive.Root hideWhenSingleBranch>
@@ -38,7 +38,7 @@ const BranchPicker = () => (
 `ActionBarPrimitive.Reload` creates a new branch on an assistant message and re-runs from there:
 
 ```tsx
-import { ActionBarPrimitive, MessagePrimitive } from "@assistant-ui/react";
+import { ActionBarPrimitive, MessagePrimitive } from "@hitchsoftware/assistant-ui-react";
 
 const AssistantMessage = () => (
   <MessagePrimitive.Root>
@@ -57,7 +57,7 @@ const AssistantMessage = () => (
 For headless or keyboard-shortcut flows, navigate directly to a branch by id via `aui.message.switchToBranch`:
 
 ```tsx
-import { useAui } from "@assistant-ui/react";
+import { useAui } from "@hitchsoftware/assistant-ui-react";
 
 const SwitchToBranch = ({ branchId }: { branchId: string }) => {
   const aui = useAui();

@@ -1,9 +1,9 @@
 import { useMemo } from "react";
-import { useAuiState } from "@assistant-ui/store";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 import {
   getPartialJsonObjectFieldState,
   getPartialJsonObjectMeta,
-} from "assistant-stream/utils";
+} from "@hitchsoftware/assistant-stream/utils";
 
 type PropFieldStatus = "streaming" | "complete";
 

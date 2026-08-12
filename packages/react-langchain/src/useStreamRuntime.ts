@@ -1,21 +1,21 @@
-/// <reference types="@assistant-ui/core/store" />
+/// <reference types="@hitchsoftware/assistant-ui-core/store" />
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import type { AppendMessage, ToolExecutionStatus } from "@assistant-ui/core";
+import type { AppendMessage, ToolExecutionStatus } from "@hitchsoftware/assistant-ui-core";
 import {
   generateId,
   getExternalStoreMessages,
   pickExternalStoreSharedOptions,
-} from "@assistant-ui/core";
-import type { ThreadMessage } from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
+import type { ThreadMessage } from "@hitchsoftware/assistant-ui-core";
 import {
   useCloudThreadListAdapter,
   useExternalStoreRuntime,
   useExternalMessageConverter,
   useRemoteThreadListRuntime,
-} from "@assistant-ui/core/react";
-import { useAuiState } from "@assistant-ui/store";
+} from "@hitchsoftware/assistant-ui-core/react";
+import { useAuiState } from "@hitchsoftware/assistant-ui-store";
 import { STREAM_CONTROLLER, useChannel, useStream } from "@langchain/react";
 import type { Channel } from "@langchain/react";
 import type {
@@ -442,8 +442,8 @@ const useStreamThreadRuntime = (
  *
  * @example
  * ```tsx
- * import { useStreamRuntime } from "@assistant-ui/react-langchain";
- * import { AssistantRuntimeProvider, Thread } from "@assistant-ui/react";
+ * import { useStreamRuntime } from "@hitchsoftware/assistant-ui-react-langchain";
+ * import { AssistantRuntimeProvider, Thread } from "@hitchsoftware/assistant-ui-react";
  *
  * function App() {
  *   const runtime = useStreamRuntime({

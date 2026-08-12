@@ -1,7 +1,7 @@
 type CliSurfaceSnapshot = Record<string, unknown>;
 
 export const cliSurface: CliSurfaceSnapshot = {
-  "name": "assistant-ui",
+  "name": "@hitchsoftware/assistant-ui",
   "description": "add components and dependencies to your project",
   "usage": "[options] [command]",
   "arguments": [],

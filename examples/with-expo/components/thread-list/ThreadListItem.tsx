@@ -3,7 +3,7 @@ import {
   ThreadListItemPrimitive,
   useAui,
   useAuiState,
-} from "@assistant-ui/react-native";
+} from "@hitchsoftware/assistant-ui-react-native";
 import { useTheme } from "@/hooks/use-theme";
 import { Radius } from "@/constants/theme";
 import { haptics } from "@/lib/haptics";

@@ -8,7 +8,7 @@ const h = vi.hoisted(() => ({
   state: { disabled: false },
 }));
 
-vi.mock("@assistant-ui/core/react", () => ({
+vi.mock("@hitchsoftware/assistant-ui-core/react", () => ({
   useBranchPickerNext: () => ({ next: h.next, disabled: h.state.disabled }),
 }));
 

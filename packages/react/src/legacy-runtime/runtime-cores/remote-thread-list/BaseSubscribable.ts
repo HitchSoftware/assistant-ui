@@ -1,1 +1,1 @@
-export { BaseSubscribable } from "@assistant-ui/core/internal";
+export { BaseSubscribable } from "@hitchsoftware/assistant-ui-core/internal";

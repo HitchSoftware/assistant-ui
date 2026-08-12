@@ -9,7 +9,7 @@ import {
   ThreadPrimitive,
   useAuiState,
   useMessageTiming,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   ArrowUpIcon,
   CheckIcon,

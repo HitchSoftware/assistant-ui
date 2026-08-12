@@ -8,8 +8,8 @@ import {
   type Component,
   type ComputedRef,
 } from "vue";
-import { flushTapSync } from "@assistant-ui/tap";
-import { AuiConfig } from "@assistant-ui/store/client";
+import { flushTapSync } from "@hitchsoftware/assistant-ui-tap";
+import { AuiConfig } from "@hitchsoftware/assistant-ui-store/client";
 import { AuiProvider } from "../AuiProvider";
 import { useAui } from "../useAui";
 import { useAuiState } from "../useAuiState";

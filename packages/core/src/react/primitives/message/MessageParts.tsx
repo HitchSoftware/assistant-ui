@@ -10,7 +10,7 @@ import {
   RenderChildrenWithAccessor,
   useAuiState,
   useAui,
-} from "@assistant-ui/store";
+} from "@hitchsoftware/assistant-ui-store";
 import type { PartState } from "../../../store/scopes/part";
 import { PartByIndexProvider } from "../../providers/PartByIndexProvider";
 import { TextMessagePartProvider } from "../../providers/TextMessagePartProvider";
@@ -309,7 +309,7 @@ export namespace MessagePrimitiveParts {
     /**
      * @deprecated Use `<MessagePrimitive.GroupedParts>` with a `groupBy`
      * that returns `["group-thought", ...]` for reasoning and tool-call
-     * parts. See `@assistant-ui/ui` for a worked example.
+     * parts. See `@hitchsoftware/assistant-ui-ui` for a worked example.
      */
     ChainOfThought: ComponentType;
 

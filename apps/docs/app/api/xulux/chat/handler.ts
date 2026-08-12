@@ -3,7 +3,7 @@ import { createPrismTracer, prismAISDK } from "@/lib/prism-server";
 import {
   injectQuoteContext,
   type FrontendTools,
-} from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { validateDocChatInput } from "@/lib/validate-input";
 import { getModel, openai, withTracing } from "@/lib/ai/provider";

@@ -15,7 +15,7 @@ import {
   useExternalStoreRuntime,
   type ExternalStoreThreadData,
   type ThreadMessage,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { SampleFrame } from "./sample-frame";
 
 const titles = [

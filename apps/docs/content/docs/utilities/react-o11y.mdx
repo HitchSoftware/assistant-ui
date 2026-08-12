@@ -12,10 +12,10 @@ import {
 } from "@/components/docs/samples/o11y/capability-samples";
 
 <Callout type="warn">
-`@assistant-ui/react-o11y` is experimental. The API may change without notice.
+`@hitchsoftware/assistant-ui-react-o11y` is experimental. The API may change without notice.
 </Callout>
 
-`@assistant-ui/react-o11y` provides headless, Radix-style primitives for rendering observability spans as collapsible, indented hierarchical UIs. Use it to build trace inspectors, waterfall debug panels, or LLM call timelines on top of your own span data source.
+`@hitchsoftware/assistant-ui-react-o11y` provides headless, Radix-style primitives for rendering observability spans as collapsible, indented hierarchical UIs. Use it to build trace inspectors, waterfall debug panels, or LLM call timelines on top of your own span data source.
 
 - **Headless** — Zero styling opinions, bring your own CSS / Tailwind.
 - **Composable** — Radix-style primitive parts you fully control.
@@ -28,7 +28,7 @@ import {
 
 ## Installation
 
-<InstallCommand npm={["@assistant-ui/react-o11y"]} />
+<InstallCommand npm={["@hitchsoftware/assistant-ui-react-o11y"]} />
 
 ## Quick start
 
@@ -41,8 +41,8 @@ import {
   SpanPrimitive,
   SpanResource,
   type SpanData,
-} from "@assistant-ui/react-o11y";
-import { AuiConfig, AuiProvider } from "@assistant-ui/store";
+} from "@hitchsoftware/assistant-ui-react-o11y";
+import { AuiConfig, AuiProvider } from "@hitchsoftware/assistant-ui-store";
 
 function SpanRow() {
   return (
@@ -103,7 +103,7 @@ import {
   SpanPrimitive,
   SpanResource,
   SpanByIndexProvider,
-} from "@assistant-ui/react-o11y";
+} from "@hitchsoftware/assistant-ui-react-o11y";
 
 // Top-level: mount SpanResource via AuiProvider
 const config = AuiConfig({ span: SpanResource({ spans }) });

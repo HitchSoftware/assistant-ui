@@ -1,6 +1,6 @@
 import type { ModelContextProvider, ModelContext } from "../types";
 import type { Unsubscribe } from "../../types/unsubscribe";
-import { type Tool, toJSONSchema } from "assistant-stream";
+import { type Tool, toJSONSchema } from "@hitchsoftware/assistant-stream";
 import {
   type FrameMessage,
   FRAME_MESSAGE_CHANNEL,

@@ -4,7 +4,7 @@ import {
   useAuiState,
   AuiConfig,
   AuiProvider,
-} from "@assistant-ui/store";
+} from "@hitchsoftware/assistant-ui-store";
 import { ChainOfThoughtClient } from "../../store/clients/chain-of-thought-client";
 import type { ChainOfThoughtPart } from "../../store/scopes/chain-of-thought";
 

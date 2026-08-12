@@ -5,4 +5,4 @@ export {
   ThreadPrimitiveMessagesImpl,
   ThreadPrimitiveMessageByIndex,
   ThreadPrimitiveUnstable_MessageById,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";

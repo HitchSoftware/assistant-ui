@@ -8,7 +8,7 @@ import {
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { MessageBubble } from "./message";
 import { Composer } from "./composer";
-import { ThreadPrimitive } from "@assistant-ui/react-native";
+import { ThreadPrimitive } from "@hitchsoftware/assistant-ui-react-native";
 import { useTheme } from "@/hooks/use-theme";
 import { Radius, Spacing } from "@/constants/theme";
 import { haptics } from "@/lib/haptics";

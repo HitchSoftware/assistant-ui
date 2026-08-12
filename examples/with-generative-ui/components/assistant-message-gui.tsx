@@ -25,7 +25,7 @@ import {
   parseRenderGuiResult,
 } from "@/lib/render-gui-tool";
 import { cn } from "@/lib/utils";
-import type { GenerativeUISpec } from "@assistant-ui/react";
+import type { GenerativeUISpec } from "@hitchsoftware/assistant-ui-react";
 import {
   ActionBarPrimitive,
   AuiIf,
@@ -34,7 +34,7 @@ import {
   getMcpAppFromToolPart,
   MessagePrimitive,
   useAuiState,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   CheckIcon,
   ChevronLeftIcon,

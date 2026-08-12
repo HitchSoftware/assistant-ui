@@ -5,7 +5,7 @@ import type {
   LangChainToolCallChunk,
   MessageContentText,
 } from "./types";
-import { parsePartialJsonObject } from "assistant-stream/utils";
+import { parsePartialJsonObject } from "@hitchsoftware/assistant-stream/utils";
 
 type AiMessage = Extract<LangChainMessage, { type: "ai" }>;
 

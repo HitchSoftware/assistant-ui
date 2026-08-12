@@ -10,7 +10,7 @@ By default, `useLocalRuntime` manages threads and messages on-device. You can co
 The simplest approach — keep thread management local, but send messages to your backend for inference.
 
 ```tsx title="adapters/my-chat-adapter.ts"
-import type { ChatModelAdapter } from "@assistant-ui/react-native";
+import type { ChatModelAdapter } from "@hitchsoftware/assistant-ui-react-native";
 
 export const myChatAdapter: ChatModelAdapter = {
   async *run({ messages, abortSignal }) {
@@ -40,7 +40,7 @@ export const myChatAdapter: ChatModelAdapter = {
 ```
 
 ```tsx title="hooks/use-app-runtime.ts"
-import { useLocalRuntime } from "@assistant-ui/react-native";
+import { useLocalRuntime } from "@hitchsoftware/assistant-ui-react-native";
 import { myChatAdapter } from "@/adapters/my-chat-adapter";
 
 export function useAppRuntime() {
@@ -64,8 +64,8 @@ When you want your backend to own thread state (e.g. for cross-device sync, team
 ### Implement the adapter
 
 ```tsx title="adapters/my-thread-list-adapter.ts"
-import type { RemoteThreadListAdapter } from "@assistant-ui/react-native";
-import { createAssistantStream } from "assistant-stream";
+import type { RemoteThreadListAdapter } from "@hitchsoftware/assistant-ui-react-native";
+import { createAssistantStream } from "@hitchsoftware/assistant-stream";
 
 const API_BASE = "https://my-api.com";
 
@@ -149,7 +149,7 @@ export const myThreadListAdapter: RemoteThreadListAdapter = {
 import {
   useLocalRuntime,
   useRemoteThreadListRuntime,
-} from "@assistant-ui/react-native";
+} from "@hitchsoftware/assistant-ui-react-native";
 import { myChatAdapter } from "@/adapters/my-chat-adapter";
 import { myThreadListAdapter } from "@/adapters/my-thread-list-adapter";
 
@@ -167,7 +167,7 @@ export function useAppRuntime() {
 ### Use in your app
 
 ```tsx title="app/index.tsx"
-import { AssistantRuntimeProvider } from "@assistant-ui/react-native";
+import { AssistantRuntimeProvider } from "@hitchsoftware/assistant-ui-react-native";
 import { useAppRuntime } from "@/hooks/use-app-runtime";
 
 export default function App() {

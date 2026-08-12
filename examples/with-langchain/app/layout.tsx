@@ -5,7 +5,7 @@ import { MyRuntimeProvider } from "./MyRuntimeProvider";
 export const metadata: Metadata = {
   title: "LangChain useStream Example",
   description:
-    "Example using @assistant-ui/react-langchain with LangChain's useStream hook.",
+    "Example using @hitchsoftware/assistant-ui-react-langchain with LangChain's useStream hook.",
 };
 
 export default function RootLayout({

@@ -12,7 +12,7 @@ import { AuiIf } from "@/generated/typeDocs";
 ## Anatomy
 
 ```tsx
-import { AuiIf } from "@assistant-ui/react";
+import { AuiIf } from "@hitchsoftware/assistant-ui-react";
 
 <AuiIf condition={(s) => s.thread.isEmpty}>
   <WelcomeScreen />
@@ -165,7 +165,7 @@ The condition function receives an `AssistantState` object with the following pr
 You can import the `AuiIf.Condition` type for typing your condition functions:
 
 ```tsx
-import { AuiIf } from "@assistant-ui/react";
+import { AuiIf } from "@hitchsoftware/assistant-ui-react";
 
 const isThreadEmpty: AuiIf.Condition = (s) => s.thread.isEmpty;
 

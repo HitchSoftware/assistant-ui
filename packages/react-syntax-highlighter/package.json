@@ -1,5 +1,5 @@
 {
-  "name": "@assistant-ui/react-syntax-highlighter",
+  "name": "@hitchsoftware/assistant-ui-react-syntax-highlighter",
   "version": "0.14.5",
   "description": "Syntax highlighting for assistant-ui",
   "keywords": [
@@ -37,8 +37,8 @@
     "build": "aui-build"
   },
   "peerDependencies": {
-    "@assistant-ui/react": "^0.15.0",
-    "@assistant-ui/react-markdown": "^0.14.8",
+    "@hitchsoftware/assistant-ui-react": "^0.15.0",
+    "@hitchsoftware/assistant-ui-react-markdown": "^0.14.8",
     "@types/react": "*",
     "@types/react-syntax-highlighter": "*",
     "react": "^18 || ^19",
@@ -53,17 +53,17 @@
     }
   },
   "devDependencies": {
-    "@assistant-ui/react": "workspace:*",
-    "@assistant-ui/react-markdown": "workspace:*",
-    "@assistant-ui/x-buildutils": "workspace:*",
+    "@hitchsoftware/assistant-ui-react": "workspace:*",
+    "@hitchsoftware/assistant-ui-react-markdown": "workspace:*",
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
     "@types/react": "^19.2.18",
     "@types/react-syntax-highlighter": "^15.5.13",
     "react": "^19.2.8",
     "react-syntax-highlighter": "^16.1.1"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://www.assistant-ui.com/",
   "repository": {

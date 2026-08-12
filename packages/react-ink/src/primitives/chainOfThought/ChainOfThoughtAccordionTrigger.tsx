@@ -1,5 +1,5 @@
 import { useCallback, type ReactNode } from "react";
-import { useAuiState, useAui } from "@assistant-ui/store";
+import { useAuiState, useAui } from "@hitchsoftware/assistant-ui-store";
 import { Pressable, type PressableProps } from "../internal/Pressable";
 
 export type ChainOfThoughtAccordionTriggerProps = Omit<

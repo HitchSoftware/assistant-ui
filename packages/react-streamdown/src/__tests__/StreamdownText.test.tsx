@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, afterEach } from "vitest";
 import { cleanup, render, screen } from "@testing-library/react";
-import { TextMessagePartProvider } from "@assistant-ui/react";
+import { TextMessagePartProvider } from "@hitchsoftware/assistant-ui-react";
 import type { ReactNode } from "react";
 import { defaultRehypePlugins } from "streamdown";
 import { StreamdownTextPrimitive } from "../primitives/StreamdownText";

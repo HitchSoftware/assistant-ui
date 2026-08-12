@@ -1,4 +1,4 @@
-import type { UISpec } from "@assistant-ui/react-generative-ui";
+import type { UISpec } from "@hitchsoftware/assistant-ui-react-generative-ui";
 
 export type GalleryCategory =
   | "Data"
@@ -1734,9 +1734,9 @@ export function getGalleryTemplate(slug: string): GalleryTemplate | undefined {
   return GALLERY_TEMPLATES.find((template) => template.slug === slug);
 }
 
-export const GALLERY_USAGE_SNIPPET = `import { JSONGenerativeUI } from "@assistant-ui/react-generative-ui";
+export const GALLERY_USAGE_SNIPPET = `import { JSONGenerativeUI } from "@hitchsoftware/assistant-ui-react-generative-ui";
 import { styledGenerativeUILibrary } from "@/components/assistant-ui/generative-ui";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 
 const generative = new JSONGenerativeUI({
   library: styledGenerativeUILibrary,
@@ -1754,9 +1754,9 @@ import {
   JSONGenerativeUI,
   defaultGenerativeUILibrary,
   defineGenerativeComponents,
-} from "@assistant-ui/react-generative-ui";
+} from "@hitchsoftware/assistant-ui-react-generative-ui";
 import { styledGenerativeUILibrary } from "@/components/assistant-ui/generative-ui";
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 
 const markdown = defaultGenerativeUILibrary.Markdown!;
 

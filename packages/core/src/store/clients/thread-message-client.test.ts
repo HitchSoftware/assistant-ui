@@ -1,4 +1,4 @@
-import { createTapRoot, useResource } from "@assistant-ui/tap";
+import { createTapRoot, useResource } from "@hitchsoftware/assistant-ui-tap";
 import { describe, expect, it } from "vitest";
 import type { ThreadAssistantMessage } from "../../types/message";
 import { ThreadMessageClient } from "./thread-message-client";

@@ -1,10 +1,10 @@
-import { withAui } from "@assistant-ui/next";
+import { withAui } from "@hitchsoftware/assistant-ui-next";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   transpilePackages: [
-    "@assistant-ui/react",
-    "@assistant-ui/react-ai-sdk",
-    "@assistant-ui/react-markdown",
+    "@hitchsoftware/assistant-ui-react",
+    "@hitchsoftware/assistant-ui-react-ai-sdk",
+    "@hitchsoftware/assistant-ui-react-markdown",
   ],
 };
 

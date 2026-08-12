@@ -1,7 +1,7 @@
 "use client";
 
-import type { AssistantCloud } from "assistant-cloud";
-import type { AssistantRuntime } from "@assistant-ui/core";
+import type { AssistantCloud } from "@hitchsoftware/assistant-cloud";
+import type { AssistantRuntime } from "@hitchsoftware/assistant-ui-core";
 import { useRemoteThreadListRuntime } from "../runtime-cores/remote-thread-list/useRemoteThreadListRuntime";
 import { useCloudThreadListAdapter } from "../runtime-cores/remote-thread-list/adapter/cloud";
 

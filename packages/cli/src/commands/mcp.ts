@@ -28,9 +28,9 @@ const MCP_CONFIGS: Record<
     getPath: () => path.join(process.cwd(), ".cursor", "mcp.json"),
     config: {
       mcpServers: {
-        "assistant-ui": {
+        "@hitchsoftware/assistant-ui": {
           command: "npx",
-          args: ["-y", "@assistant-ui/mcp-docs-server"],
+          args: ["-y", "@hitchsoftware/assistant-ui-mcp-docs-server"],
         },
       },
     },
@@ -43,9 +43,9 @@ const MCP_CONFIGS: Record<
       path.join(os.homedir(), ".codeium", "windsurf", "mcp_config.json"),
     config: {
       mcpServers: {
-        "assistant-ui": {
+        "@hitchsoftware/assistant-ui": {
           command: "npx",
-          args: ["-y", "@assistant-ui/mcp-docs-server"],
+          args: ["-y", "@hitchsoftware/assistant-ui-mcp-docs-server"],
         },
       },
     },
@@ -56,9 +56,9 @@ const MCP_CONFIGS: Record<
     getPath: () => path.join(process.cwd(), ".vscode", "mcp.json"),
     config: {
       servers: {
-        "assistant-ui": {
+        "@hitchsoftware/assistant-ui": {
           command: "npx",
-          args: ["-y", "@assistant-ui/mcp-docs-server"],
+          args: ["-y", "@hitchsoftware/assistant-ui-mcp-docs-server"],
           type: "stdio",
         },
       },
@@ -79,10 +79,10 @@ const MCP_CONFIGS: Record<
     },
     config: {
       context_servers: {
-        "assistant-ui": {
+        "@hitchsoftware/assistant-ui": {
           command: {
             path: "npx",
-            args: ["-y", "@assistant-ui/mcp-docs-server"],
+            args: ["-y", "@hitchsoftware/assistant-ui-mcp-docs-server"],
           },
         },
       },
@@ -109,9 +109,9 @@ const MCP_CONFIGS: Record<
     },
     config: {
       mcpServers: {
-        "assistant-ui": {
+        "@hitchsoftware/assistant-ui": {
           command: "npx",
-          args: ["-y", "@assistant-ui/mcp-docs-server"],
+          args: ["-y", "@hitchsoftware/assistant-ui-mcp-docs-server"],
         },
       },
     },
@@ -161,7 +161,7 @@ async function installForTarget(target: MCPTarget): Promise<void> {
         "--",
         "npx",
         "-y",
-        "@assistant-ui/mcp-docs-server",
+        "@hitchsoftware/assistant-ui-mcp-docs-server",
       ],
       {
         stdio: "inherit",

@@ -1,12 +1,12 @@
 import { randomUUID } from "node:crypto";
 import { readFile, mkdir, rename, rm, writeFile } from "node:fs/promises";
 import { join } from "node:path";
-import type { RemoteThreadListAdapter } from "@assistant-ui/core";
+import type { RemoteThreadListAdapter } from "@hitchsoftware/assistant-ui-core";
 import {
   createLocalStorageAdapter,
   type AsyncStorageLike,
   type TitleGenerationAdapter,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";
 
 export type CreateFileStorageAdapterOptions = {
   dir: string;

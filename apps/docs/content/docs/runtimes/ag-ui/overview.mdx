@@ -3,7 +3,7 @@ title: AG-UI Agent Runtime
 description: Wire AG-UI (Agent-User Interaction) protocol agents into a React chat UI with assistant-ui — bidirectional events, generative UI, and human-in-the-loop.
 ---
 
-`@assistant-ui/react-ag-ui` is a runtime adapter for the [AG-UI (Agent-User Interaction) protocol](https://github.com/ag-ui-protocol/ag-ui). It lets your assistant-ui frontend speak to any AG-UI-compliant agent server, including CopilotKit-based backends.
+`@hitchsoftware/assistant-ui-react-ag-ui` is a runtime adapter for the [AG-UI (Agent-User Interaction) protocol](https://github.com/ag-ui-protocol/ag-ui). It lets your assistant-ui frontend speak to any AG-UI-compliant agent server, including CopilotKit-based backends.
 
 ## When to use it
 
@@ -17,7 +17,7 @@ If your backend is not AG-UI-compliant, see [picking a runtime](/docs/runtimes/p
 
 ## Architecture
 
-`@assistant-ui/react-ag-ui` is layered on `ExternalStoreRuntime` (see [architecture](/docs/runtimes/concepts/architecture)). The runtime owns AG-UI event parsing and message reconstruction; you provide an `HttpAgent` from `@ag-ui/client` and the adapter handles the wire protocol.
+`@hitchsoftware/assistant-ui-react-ag-ui` is layered on `ExternalStoreRuntime` (see [architecture](/docs/runtimes/concepts/architecture)). The runtime owns AG-UI event parsing and message reconstruction; you provide an `HttpAgent` from `@ag-ui/client` and the adapter handles the wire protocol.
 
 Shared adapters (attachments, speech, dictation, feedback, history) work the same way described in [adapters](/docs/runtimes/concepts/adapters).
 
@@ -31,17 +31,17 @@ Shared adapters (attachments, speech, dictation, feedback, history) work the sam
 <PlatformTabs>
 <Tab value="React">
 
-<InstallCommand npm={["@assistant-ui/react", "@assistant-ui/react-ag-ui", "@ag-ui/client"]} />
+<InstallCommand npm={["@hitchsoftware/assistant-ui-react", "@hitchsoftware/assistant-ui-react-ag-ui", "@ag-ui/client"]} />
 
 </Tab>
 <Tab value="React Native">
 
-<InstallCommand expo={["@assistant-ui/react-native", "@assistant-ui/react-ag-ui", "@ag-ui/client"]} />
+<InstallCommand expo={["@hitchsoftware/assistant-ui-react-native", "@hitchsoftware/assistant-ui-react-ag-ui", "@ag-ui/client"]} />
 
 </Tab>
 <Tab value="React Ink">
 
-<InstallCommand npm={["@assistant-ui/react-ink", "@assistant-ui/react-ag-ui", "@ag-ui/client", "ink", "react"]} />
+<InstallCommand npm={["@hitchsoftware/assistant-ui-react-ink", "@hitchsoftware/assistant-ui-react-ag-ui", "@ag-ui/client", "ink", "react"]} />
 
 </Tab>
 </PlatformTabs>

@@ -1,5 +1,5 @@
 {
-  "name": "heat-graph",
+  "name": "@hitchsoftware/heat-graph",
   "version": "0.0.15",
   "description": "Headless, Radix-style React components for rendering activity heatmap graphs",
   "keywords": [
@@ -45,7 +45,7 @@
     }
   },
   "devDependencies": {
-    "@assistant-ui/x-buildutils": "workspace:*",
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
     "@testing-library/react": "^16.3.2",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
@@ -54,8 +54,8 @@
     "vitest": "^4.1.10"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://www.assistant-ui.com/",
   "repository": {

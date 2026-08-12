@@ -16,7 +16,7 @@ npm install heat-graph
 ## Usage
 
 ```tsx
-import * as HeatGraph from "heat-graph";
+import * as HeatGraph from "@hitchsoftware/heat-graph";
 
 const COLORS = ["#ebedf0", "#c6d7f9", "#8fb0f3", "#5888e8", "#2563eb"];
 

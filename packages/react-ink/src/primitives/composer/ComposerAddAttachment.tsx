@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { useComposerAddAttachment } from "@assistant-ui/core/react";
+import { useComposerAddAttachment } from "@hitchsoftware/assistant-ui-core/react";
 import { Pressable, type PressableProps } from "../internal/Pressable";
 
 export type ComposerAddAttachmentProps = Omit<PressableProps, "onPress"> & {

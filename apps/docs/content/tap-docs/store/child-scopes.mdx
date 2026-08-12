@@ -29,9 +29,9 @@ todo scope (child, via Derived)
 ### 1. Register both scopes
 
 ```ts title="lib/store/todo-scope.ts"
-import type { ClientOutput } from "@assistant-ui/store";
+import type { ClientOutput } from "@hitchsoftware/assistant-ui-store";
 
-declare module "@assistant-ui/store" {
+declare module "@hitchsoftware/assistant-ui-store" {
   interface ScopeRegistry {
     todoList: {
       methods: {
@@ -59,9 +59,9 @@ The `todo` scope declares `meta: { source: "todoList"; query: { index: number } 
 `useClientLookup` wraps a list of resource elements into clients that can be accessed by index or key:
 
 ```ts title="lib/store/todo-list-resource.ts"
-import { resource, withKey } from "@assistant-ui/tap";
-import { useClientLookup } from "@assistant-ui/store";
-import type { ClientOutput } from "@assistant-ui/store";
+import { resource, withKey } from "@hitchsoftware/assistant-ui-tap";
+import { useClientLookup } from "@hitchsoftware/assistant-ui-store";
+import type { ClientOutput } from "@hitchsoftware/assistant-ui-store";
 import { useState, useMemo } from "react";
 
 const useTodoResource = ({
@@ -123,7 +123,7 @@ Each element must have a key via `withKey`. Keys let Store track identity across
 `Derived` creates a scope that points to one item from the parent:
 
 ```tsx title="app/TodoApp.tsx"
-import { AuiConfig, AuiProvider, useAui, useAuiState, Derived } from "@assistant-ui/store";
+import { AuiConfig, AuiProvider, useAui, useAuiState, Derived } from "@hitchsoftware/assistant-ui-store";
 
 const TodoApp = () => {
   const config = AuiConfig({ todoList: TodoListResource() });
@@ -196,7 +196,7 @@ const TodoDisplay = () => {
 If your parent only needs to expose a single child (not a list), use `useClientResource` directly:
 
 ```ts
-import { useClientResource } from "@assistant-ui/store";
+import { useClientResource } from "@hitchsoftware/assistant-ui-store";
 
 const useThreadResource = (): ClientOutput<"thread"> => {
   const composer = useClientResource(ComposerResource());
@@ -217,7 +217,7 @@ const ThreadResource = resource(useThreadResource);
 For dynamic lists where users can add and remove items, use `useClientList`:
 
 ```ts
-import { useClientList } from "@assistant-ui/store";
+import { useClientList } from "@hitchsoftware/assistant-ui-store";
 import { useState } from "react";
 
 const useTodoItem = ({

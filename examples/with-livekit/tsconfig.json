@@ -1,5 +1,5 @@
 {
-  "extends": "@assistant-ui/x-buildutils/ts/base",
+  "extends": "@hitchsoftware/assistant-ui-x-buildutils/ts/base",
   "compilerOptions": {
     "target": "ES6",
     "module": "ESNext",
@@ -25,13 +25,13 @@
         "../../packages/ui/src/components/ui/radix/*"
       ],
       "@/lib/utils": ["../../packages/ui/src/lib/utils"],
-      "@assistant-ui/ui/*": ["../../packages/ui/src/*"],
-      "@assistant-ui/store/client": ["../../packages/store/src/client"],
+      "@hitchsoftware/assistant-ui-ui/*": ["../../packages/ui/src/*"],
+      "@hitchsoftware/assistant-ui-store/client": ["../../packages/store/src/client"],
       "@assistant-ui/*": ["../../packages/*/src"],
-      "@assistant-ui/core/*": ["../../packages/core/src/*"],
-      "@assistant-ui/react/*": ["../../packages/react/src/*"],
-      "@assistant-ui/tap/*": ["../../packages/tap/src/*"],
-      "assistant-stream": ["../../packages/assistant-stream/src"],
+      "@hitchsoftware/assistant-ui-core/*": ["../../packages/core/src/*"],
+      "@hitchsoftware/assistant-ui-react/*": ["../../packages/react/src/*"],
+      "@hitchsoftware/assistant-ui-tap/*": ["../../packages/tap/src/*"],
+      "@hitchsoftware/assistant-stream": ["../../packages/assistant-stream/src"],
       "assistant-stream/*": ["../../packages/assistant-stream/src/*"]
     }
   },

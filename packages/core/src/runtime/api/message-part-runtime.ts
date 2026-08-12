@@ -11,7 +11,7 @@ import type { SubscribableWithState } from "../../subscribable/subscribable";
 import type { ThreadRuntimeCoreBinding } from "./thread-runtime";
 import type { MessageStateBinding } from "./bindings";
 import type { MessagePartRuntimePath } from "./paths";
-import { ToolResponse } from "assistant-stream";
+import { ToolResponse } from "@hitchsoftware/assistant-stream";
 
 export type MessagePartState = (
   | ThreadUserMessagePart

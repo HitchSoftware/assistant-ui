@@ -19,7 +19,7 @@ In your `"use generative"` file, give the tool its description, parameters, and 
 ```tsx title="app/task-board-toolkit.tsx"
 "use generative";
 
-import { defineToolkit, stubTool } from "@assistant-ui/react";
+import { defineToolkit, stubTool } from "@hitchsoftware/assistant-ui-react";
 import { manageTasksParameters } from "./state";
 
 export default defineToolkit({
@@ -48,7 +48,7 @@ import {
   Tools,
   useAui,
   useAuiToolOverrides,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { useState, type Dispatch, type SetStateAction } from "react";
 import type { Task } from "./state";
 import toolkit from "./task-board-toolkit";

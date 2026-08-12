@@ -1,1 +1,1 @@
-export { DefaultThreadComposerRuntimeCore } from "@assistant-ui/core/internal";
+export { DefaultThreadComposerRuntimeCore } from "@hitchsoftware/assistant-ui-core/internal";

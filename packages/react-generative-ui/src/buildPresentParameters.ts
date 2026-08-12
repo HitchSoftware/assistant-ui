@@ -1,4 +1,4 @@
-import { toJSONSchema } from "assistant-stream";
+import { toJSONSchema } from "@hitchsoftware/assistant-stream";
 import type { JSONSchema7, JSONSchema7Definition } from "json-schema";
 import { TYPE_KEY } from "./constants";
 import type { GenerativeUILibrary } from "./types";
@@ -35,7 +35,7 @@ export function buildPresentParameters(
     const propsSchema = toJSONSchema(library[name]!.properties);
     if (propsSchema.type !== "object") {
       throw new Error(
-        `[@assistant-ui/react-generative-ui] Component "${name}": ` +
+        `[@hitchsoftware/assistant-ui-react-generative-ui] Component "${name}": ` +
           "`properties` must be an object schema (e.g. `z.object({ ... })`).",
       );
     }
@@ -53,7 +53,7 @@ export function buildPresentParameters(
       if (owners.length < 2) continue;
       // eslint-disable-next-line no-console
       console.warn(
-        `[@assistant-ui/react-generative-ui] Prop "${key}" is declared by ` +
+        `[@hitchsoftware/assistant-ui-react-generative-ui] Prop "${key}" is declared by ` +
           `${formatComponentList(owners)}; keeping "${owners[0]}"'s schema. ` +
           "Rename or align the prop type to avoid an ambiguous schema.",
       );

@@ -1,6 +1,6 @@
 ---
 title: Generative UI
-description: Let the model compose an interface at runtime from a component vocabulary you ship, using the present tool from @assistant-ui/react-generative-ui.
+description: Let the model compose an interface at runtime from a component vocabulary you ship, using the present tool from @hitchsoftware/assistant-ui-react-generative-ui.
 platforms: ["react"]
 ---
 
@@ -31,7 +31,7 @@ Browse every component the default vocabulary offers in the [component vocabular
 
 ### Install the package
 
-<InstallCommand npm={["@assistant-ui/react-generative-ui"]} />
+<InstallCommand npm={["@hitchsoftware/assistant-ui-react-generative-ui"]} />
 
 The vocabulary renders as unstyled semantic HTML with `data-aui` attributes. Add the styled library to get the shipped look:
 
@@ -48,14 +48,14 @@ This merges the vocabulary stylesheet and theme variables into your CSS, which i
 The `"use generative"` directive lets one file declare tools that both the browser and your server route can import: the compiler strips the browser-only halves out of the server build and the schemas out of the client build.
 
 ```ts title="next.config.ts"
-import { withAui } from "@assistant-ui/next";
+import { withAui } from "@hitchsoftware/assistant-ui-next";
 
 export default withAui({
   /* your Next config */
 });
 ```
 
-Vite and TanStack Start use `aui()` from `@assistant-ui/vite`; Expo and bare React Native use `withAui` from `@assistant-ui/metro`.
+Vite and TanStack Start use `aui()` from `@hitchsoftware/assistant-ui-vite`; Expo and bare React Native use `withAui` from `@hitchsoftware/assistant-ui-metro`.
 
 </Step>
 
@@ -68,11 +68,11 @@ Vite and TanStack Start use `aui()` from `@assistant-ui/vite`; Expo and bare Rea
 ```tsx title="app/toolkit.tsx"
 "use generative";
 
-import { defineToolkit } from "@assistant-ui/react";
+import { defineToolkit } from "@hitchsoftware/assistant-ui-react";
 import {
   JSONGenerativeUI,
   defaultGenerativeUILibrary,
-} from "@assistant-ui/react-generative-ui";
+} from "@hitchsoftware/assistant-ui-react-generative-ui";
 
 const generative = new JSONGenerativeUI({
   library: defaultGenerativeUILibrary,
@@ -98,8 +98,8 @@ import {
   AssistantRuntimeProvider,
   AuiConfig,
   Tools,
-} from "@assistant-ui/react";
-import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react";
+import { useChatRuntime } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { lastAssistantMessageIsCompleteWithToolCalls } from "ai";
 import toolkit from "./toolkit";
 
@@ -135,7 +135,7 @@ The route imports the same toolkit module. The compiler resolves that import to 
 
 ```ts title="app/api/chat/route.ts"
 import { openai } from "@ai-sdk/openai";
-import { AISDKToolkit } from "@assistant-ui/react-ai-sdk";
+import { AISDKToolkit } from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { convertToModelMessages, stepCountIs, streamText } from "ai";
 import toolkit from "@/app/toolkit";
 
@@ -207,7 +207,7 @@ import {
   JSONGenerativeUI,
   defaultGenerativeUILibrary,
   defineGenerativeComponents,
-} from "@assistant-ui/react-generative-ui";
+} from "@hitchsoftware/assistant-ui-react-generative-ui";
 import { WeatherCard } from "@/components/weather-card";
 
 const generative = new JSONGenerativeUI({
@@ -241,7 +241,7 @@ import {
   JSONGenerativeUI,
   createActionRegistry,
   defaultGenerativeUILibrary,
-} from "@assistant-ui/react-generative-ui";
+} from "@hitchsoftware/assistant-ui-react-generative-ui";
 
 const actions = createActionRegistry({
   purchase: async ({ payload }) => {
@@ -316,7 +316,7 @@ Props are a separate question. Each component's zod schema validates what the mo
 
 The tree is plain JSON, so it is not tied to the browser. Four React-free subpaths let a server action, queue worker, or webhook handler consume it without pulling React:
 
-- `@assistant-ui/react-generative-ui/ir` holds the tree types, normalization, and token enums.
-- `@assistant-ui/react-generative-ui/slack` converts the tree into Block Kit and decodes `block_actions` back into `$action`. See [Generative UI on Slack](/docs/tools/generative-ui-slack).
-- `@assistant-ui/react-generative-ui/teams` converts it into an Adaptive Card and decodes the submit payload. See [Generative UI on Microsoft Teams](/docs/tools/generative-ui-teams).
-- `@assistant-ui/react-generative-ui/a2ui` consumes [A2UI surfaces over AG-UI](/docs/tools/a2ui).
+- `@hitchsoftware/assistant-ui-react-generative-ui/ir` holds the tree types, normalization, and token enums.
+- `@hitchsoftware/assistant-ui-react-generative-ui/slack` converts the tree into Block Kit and decodes `block_actions` back into `$action`. See [Generative UI on Slack](/docs/tools/generative-ui-slack).
+- `@hitchsoftware/assistant-ui-react-generative-ui/teams` converts it into an Adaptive Card and decodes the submit payload. See [Generative UI on Microsoft Teams](/docs/tools/generative-ui-teams).
+- `@hitchsoftware/assistant-ui-react-generative-ui/a2ui` consumes [A2UI surfaces over AG-UI](/docs/tools/a2ui).

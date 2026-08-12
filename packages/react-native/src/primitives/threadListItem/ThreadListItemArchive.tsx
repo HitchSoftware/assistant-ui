@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Pressable, type PressableProps } from "react-native";
-import { useThreadListItemArchive } from "@assistant-ui/core/react";
+import { useThreadListItemArchive } from "@hitchsoftware/assistant-ui-core/react";
 
 export type ThreadListItemArchiveProps = Omit<PressableProps, "onPress"> & {
   children: ReactNode;

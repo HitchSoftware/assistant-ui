@@ -6,7 +6,7 @@ import {
   MessagePrimitive,
   ThreadPrimitive,
   useAuiState,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import { ArrowDownIcon, SendHorizontalIcon } from "lucide-react";
 import {

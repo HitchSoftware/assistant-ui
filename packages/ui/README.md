@@ -1,4 +1,4 @@
-# `@assistant-ui/ui`
+# `@hitchsoftware/assistant-ui-ui`
 
 Internal monorepo-only package. **Not published to npm.**
 

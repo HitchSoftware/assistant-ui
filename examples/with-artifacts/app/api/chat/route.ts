@@ -5,7 +5,7 @@ import {
   AISDKToolkit,
   unstable_injectInteractableContext,
   type AISDKToolkitToolsOptions,
-} from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import toolkit from "../../toolkit";
 
 export const maxDuration = 30;

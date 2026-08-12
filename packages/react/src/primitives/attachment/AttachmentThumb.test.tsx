@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import type * as AssistantStore from "@assistant-ui/store";
+import type * as AssistantStore from "@hitchsoftware/assistant-ui-store";
 import { AttachmentPrimitiveThumb } from "./AttachmentThumb";
 
 const mockUseAuiState = vi.fn();
@@ -8,7 +8,7 @@ type UseAuiStateSelector = Parameters<
   (typeof AssistantStore)["useAuiState"]
 >[0];
 
-vi.mock("@assistant-ui/store", async (importOriginal) => {
+vi.mock("@hitchsoftware/assistant-ui-store", async (importOriginal) => {
   const actual = await importOriginal<typeof AssistantStore>();
   return {
     ...actual,

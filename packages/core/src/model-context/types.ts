@@ -1,5 +1,5 @@
 import type { Unsubscribe } from "../types/unsubscribe";
-import type { Tool } from "assistant-stream";
+import type { Tool } from "@hitchsoftware/assistant-stream";
 
 export type LanguageModelV1CallSettings = {
   maxTokens?: number;

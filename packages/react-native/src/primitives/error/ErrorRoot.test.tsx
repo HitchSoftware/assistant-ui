@@ -8,7 +8,7 @@ const h = vi.hoisted(() => ({
   error: undefined as unknown,
 }));
 
-vi.mock("@assistant-ui/core/react", () => ({
+vi.mock("@hitchsoftware/assistant-ui-core/react", () => ({
   useMessageError: () => h.error,
 }));
 

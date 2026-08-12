@@ -12,7 +12,7 @@ import {
   useAdkAgentInfo,
   useAdkSessionState,
   useAdkSend,
-} from "@assistant-ui/react-google-adk";
+} from "@hitchsoftware/assistant-ui-react-google-adk";
 
 function MyComponent() {
   // Current active agent name and branch path (multi-agent)
@@ -39,7 +39,7 @@ When ADK's `SecurityPlugin` or tool callbacks request user confirmation before e
 import {
   useAdkToolConfirmations,
   useAdkConfirmTool,
-} from "@assistant-ui/react-google-adk";
+} from "@hitchsoftware/assistant-ui-react-google-adk";
 
 function ToolConfirmationUI() {
   const confirmations = useAdkToolConfirmations();
@@ -66,7 +66,7 @@ function ToolConfirmationUI() {
 import {
   useAdkToolConfirmations,
   useAdkConfirmTool,
-} from "@assistant-ui/react-google-adk";
+} from "@hitchsoftware/assistant-ui-react-google-adk";
 import { Pressable, Text, View } from "react-native";
 
 function ToolConfirmationUI() {
@@ -102,7 +102,7 @@ function ToolConfirmationUI() {
 import {
   useAdkToolConfirmations,
   useAdkConfirmTool,
-} from "@assistant-ui/react-google-adk";
+} from "@hitchsoftware/assistant-ui-react-google-adk";
 import { Box, Text, useInput } from "ink";
 
 function ToolConfirmationUI() {
@@ -144,7 +144,7 @@ import {
   useAdkAuthRequests,
   useAdkSubmitAuth,
   type AdkAuthCredential,
-} from "@assistant-ui/react-google-adk";
+} from "@hitchsoftware/assistant-ui-react-google-adk";
 
 function AuthUI() {
   const authRequests = useAdkAuthRequests();
@@ -178,7 +178,7 @@ import {
   useAdkAuthRequests,
   useAdkSubmitAuth,
   type AdkAuthCredential,
-} from "@assistant-ui/react-google-adk";
+} from "@hitchsoftware/assistant-ui-react-google-adk";
 import { Pressable, Text, View } from "react-native";
 
 function AuthUI() {
@@ -216,7 +216,7 @@ import {
   useAdkAuthRequests,
   useAdkSubmitAuth,
   type AdkAuthCredential,
-} from "@assistant-ui/react-google-adk";
+} from "@hitchsoftware/assistant-ui-react-google-adk";
 import { Box, Text, useInput } from "ink";
 
 function AuthUI() {
@@ -257,8 +257,8 @@ When an ADK Python 2.0+ Workflow's `RequestInput` node pauses execution to ask t
 <Tab value="React">
 
 ```tsx
-import type { ToolCallMessagePartComponent } from "@assistant-ui/react";
-import { useAdkSubmitInput } from "@assistant-ui/react-google-adk";
+import type { ToolCallMessagePartComponent } from "@hitchsoftware/assistant-ui-react";
+import { useAdkSubmitInput } from "@hitchsoftware/assistant-ui-react-google-adk";
 
 type RequestInputArgs = {
   interrupt_id?: string;
@@ -299,8 +299,8 @@ export const RequestInputToolUI: ToolCallMessagePartComponent<
 <Tab value="React Native">
 
 ```tsx
-import type { ToolCallMessagePartComponent } from "@assistant-ui/react-native";
-import { useAdkSubmitInput } from "@assistant-ui/react-google-adk";
+import type { ToolCallMessagePartComponent } from "@hitchsoftware/assistant-ui-react-native";
+import { useAdkSubmitInput } from "@hitchsoftware/assistant-ui-react-google-adk";
 import { useState } from "react";
 import { Pressable, Text, TextInput, View } from "react-native";
 
@@ -338,8 +338,8 @@ export const RequestInputToolUI: ToolCallMessagePartComponent<
 <Tab value="React Ink">
 
 ```tsx
-import type { ToolCallMessagePartComponent } from "@assistant-ui/react-ink";
-import { useAdkSubmitInput } from "@assistant-ui/react-google-adk";
+import type { ToolCallMessagePartComponent } from "@hitchsoftware/assistant-ui-react-ink";
+import { useAdkSubmitInput } from "@hitchsoftware/assistant-ui-react-google-adk";
 import { useState } from "react";
 import { Box, Text, useInput } from "ink";
 
@@ -392,11 +392,11 @@ import {
   AuiConfig,
   defineToolkit,
   Tools,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   createAdkStream,
   useAdkRuntime,
-} from "@assistant-ui/react-google-adk";
+} from "@hitchsoftware/assistant-ui-react-google-adk";
 import { Thread } from "@/components/assistant-ui/thread";
 
 const toolkit = defineToolkit({
@@ -428,11 +428,11 @@ import {
   AuiConfig,
   defineToolkit,
   Tools,
-} from "@assistant-ui/react-native";
+} from "@hitchsoftware/assistant-ui-react-native";
 import {
   createAdkStream,
   useAdkRuntime,
-} from "@assistant-ui/react-google-adk";
+} from "@hitchsoftware/assistant-ui-react-google-adk";
 import { View } from "react-native";
 import { Thread } from "@/components/assistant-ui/thread";
 
@@ -469,11 +469,11 @@ import {
   AuiConfig,
   defineToolkit,
   Tools,
-} from "@assistant-ui/react-ink";
+} from "@hitchsoftware/assistant-ui-react-ink";
 import {
   createAdkStream,
   useAdkRuntime,
-} from "@assistant-ui/react-google-adk";
+} from "@hitchsoftware/assistant-ui-react-google-adk";
 import { Box } from "ink";
 import { Thread } from "./components/thread.js";
 
@@ -513,7 +513,7 @@ function App() {
 Track file artifacts created or modified by the agent:
 
 ```ts
-import { useAdkArtifacts } from "@assistant-ui/react-google-adk";
+import { useAdkArtifacts } from "@hitchsoftware/assistant-ui-react-google-adk";
 
 function ArtifactList() {
   const artifacts = useAdkArtifacts();
@@ -555,7 +555,7 @@ Detect when an agent requests escalation to a human operator:
 <Tab value="React">
 
 ```tsx
-import { useAdkEscalation } from "@assistant-ui/react-google-adk";
+import { useAdkEscalation } from "@hitchsoftware/assistant-ui-react-google-adk";
 
 function EscalationBanner() {
   const escalated = useAdkEscalation();
@@ -568,7 +568,7 @@ function EscalationBanner() {
 <Tab value="React Native">
 
 ```tsx
-import { useAdkEscalation } from "@assistant-ui/react-google-adk";
+import { useAdkEscalation } from "@hitchsoftware/assistant-ui-react-google-adk";
 import { Text } from "react-native";
 
 function EscalationBanner() {
@@ -582,7 +582,7 @@ function EscalationBanner() {
 <Tab value="React Ink">
 
 ```tsx
-import { useAdkEscalation } from "@assistant-ui/react-google-adk";
+import { useAdkEscalation } from "@hitchsoftware/assistant-ui-react-google-adk";
 import { Text } from "ink";
 
 function EscalationBanner() {
@@ -603,7 +603,7 @@ Track tools that are executing asynchronously and awaiting external input:
 <Tab value="React">
 
 ```tsx
-import { useAdkLongRunningToolIds } from "@assistant-ui/react-google-adk";
+import { useAdkLongRunningToolIds } from "@hitchsoftware/assistant-ui-react-google-adk";
 
 function PendingToolsIndicator() {
   const pendingToolIds = useAdkLongRunningToolIds();
@@ -616,7 +616,7 @@ function PendingToolsIndicator() {
 <Tab value="React Native">
 
 ```tsx
-import { useAdkLongRunningToolIds } from "@assistant-ui/react-google-adk";
+import { useAdkLongRunningToolIds } from "@hitchsoftware/assistant-ui-react-google-adk";
 import { Text } from "react-native";
 
 function PendingToolsIndicator() {
@@ -630,7 +630,7 @@ function PendingToolsIndicator() {
 <Tab value="React Ink">
 
 ```tsx
-import { useAdkLongRunningToolIds } from "@assistant-ui/react-google-adk";
+import { useAdkLongRunningToolIds } from "@hitchsoftware/assistant-ui-react-google-adk";
 import { Text } from "ink";
 
 function PendingToolsIndicator() {
@@ -650,7 +650,7 @@ This hook reports every tool call ADK marked via `long_running_tool_ids`, includ
 Access grounding, citation, and token usage metadata per message:
 
 ```ts
-import { useAdkMessageMetadata } from "@assistant-ui/react-google-adk";
+import { useAdkMessageMetadata } from "@hitchsoftware/assistant-ui-react-google-adk";
 
 function MessageMetadata({ messageId }: { messageId: string }) {
   const metadataMap = useAdkMessageMetadata();
@@ -670,7 +670,7 @@ import {
   useAdkAppState,
   useAdkUserState,
   useAdkTempState,
-} from "@assistant-ui/react-google-adk";
+} from "@hitchsoftware/assistant-ui-react-google-adk";
 
 function StateDebug() {
   const appState = useAdkAppState(); // app:* keys (app-level, shared)
@@ -690,7 +690,7 @@ import {
   toAdkStructuredEvents,
   AdkEventType,
   type AdkStructuredEvent,
-} from "@assistant-ui/react-google-adk";
+} from "@hitchsoftware/assistant-ui-react-google-adk";
 
 const structured = toAdkStructuredEvents(event);
 for (const e of structured) {

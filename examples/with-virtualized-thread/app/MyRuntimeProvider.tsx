@@ -5,7 +5,7 @@ import {
   type AppendMessage,
   type ThreadMessageLike,
   useExternalStoreRuntime,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { useRef, useState, type ReactNode } from "react";
 import { generateSeedMessages, REPLY_CHUNKS } from "./seed-messages";
 

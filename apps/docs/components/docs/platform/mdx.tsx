@@ -82,13 +82,13 @@ export function PlatformOnly({
   return <>{children}</>;
 }
 
-// Negative lookahead avoids matching siblings like `@assistant-ui/react-langgraph`.
+// Negative lookahead avoids matching siblings like `@hitchsoftware/assistant-ui-react-langgraph`.
 const PACKAGE_PATTERN = /@assistant-ui\/react(?![-\w])/g;
 
 const PLATFORM_PACKAGE: Record<Platform, string> = {
-  react: "@assistant-ui/react",
-  rn: "@assistant-ui/react-native",
-  ink: "@assistant-ui/react-ink",
+  react: "@hitchsoftware/assistant-ui-react",
+  rn: "@hitchsoftware/assistant-ui-react-native",
+  ink: "@hitchsoftware/assistant-ui-react-ink",
 };
 
 function rewrite(node: ReactNode, replacement: string): ReactNode {

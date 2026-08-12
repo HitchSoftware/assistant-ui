@@ -6,7 +6,7 @@ description: Guide to upgrading to the simplified LangGraph integration API.
 
 ## Overview
 
-This guide helps you migrate from the previous LangGraph integration pattern to the new simplified API introduced in `@assistant-ui/react-langgraph` v0.7. The new API consolidates thread management directly into `useLangGraphRuntime`, eliminating the need for separate runtime hooks and manual thread state management.
+This guide helps you migrate from the previous LangGraph integration pattern to the new simplified API introduced in `@hitchsoftware/assistant-ui-react-langgraph` v0.7. The new API consolidates thread management directly into `useLangGraphRuntime`, eliminating the need for separate runtime hooks and manual thread state management.
 
 ## Key Changes
 
@@ -39,8 +39,8 @@ Cloud persistence can now be configured directly in `useLangGraphRuntime` with t
 import {
   useCloudThreadListRuntime,
   useThreadListItemRuntime,
-} from "@assistant-ui/react";
-import { useLangGraphRuntime } from "@assistant-ui/react-langgraph";
+} from "@hitchsoftware/assistant-ui-react";
+import { useLangGraphRuntime } from "@hitchsoftware/assistant-ui-react-langgraph";
 
 const useMyLangGraphRuntime = () => {
   const threadListItemRuntime = useThreadListItemRuntime();
@@ -80,7 +80,7 @@ const runtime = useCloudThreadListRuntime({
 #### After (New Pattern)
 
 ```tsx
-import { useLangGraphRuntime } from "@assistant-ui/react-langgraph";
+import { useLangGraphRuntime } from "@hitchsoftware/assistant-ui-react-langgraph";
 
 // Directly in your component:
 const runtime = useLangGraphRuntime({
@@ -119,8 +119,8 @@ Remove unused imports:
 - import {
 -   useCloudThreadListRuntime,
 -   useThreadListItemRuntime,
-- } from "@assistant-ui/react";
-+ import { AssistantCloud } from "@assistant-ui/react";
+- } from "@hitchsoftware/assistant-ui-react";
++ import { AssistantCloud } from "@hitchsoftware/assistant-ui-react";
 ```
 
 </Step>
@@ -254,8 +254,8 @@ import {
   AssistantRuntimeProvider,
   useCloudThreadListRuntime,
   useThreadListItemRuntime,
-} from "@assistant-ui/react";
-import { useLangGraphRuntime } from "@assistant-ui/react-langgraph";
+} from "@hitchsoftware/assistant-ui-react";
+import { useLangGraphRuntime } from "@hitchsoftware/assistant-ui-react-langgraph";
 
 const useMyRuntime = () => {
   const threadListItemRuntime = useThreadListItemRuntime();
@@ -294,8 +294,8 @@ export function Provider({ children }) {
 import {
   AssistantCloud,
   AssistantRuntimeProvider,
-} from "@assistant-ui/react";
-import { useLangGraphRuntime } from "@assistant-ui/react-langgraph";
+} from "@hitchsoftware/assistant-ui-react";
+import { useLangGraphRuntime } from "@hitchsoftware/assistant-ui-react-langgraph";
 
 export function Provider({ children }) {
   const cloud = new AssistantCloud({ /* config */ });

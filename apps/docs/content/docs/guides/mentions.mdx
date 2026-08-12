@@ -36,7 +36,7 @@ The rest of this guide covers the underlying concepts and customization points.
 A `Unstable_TriggerAdapter` provides the data for the popover. All methods are **synchronous** — use external state management (React Query, SWR, local state) for async data, then expose loaded results through the adapter.
 
 ```ts
-import type { Unstable_TriggerAdapter } from "@assistant-ui/core";
+import type { Unstable_TriggerAdapter } from "@hitchsoftware/assistant-ui-core";
 
 const myAdapter: Unstable_TriggerAdapter = {
   categories() {
@@ -86,7 +86,7 @@ The built-in `unstable_useLiveCompletionAdapter` wraps an async fetcher with deb
 import {
   unstable_useLiveCompletionAdapter,
   unstable_defaultDirectiveFormatter,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { ComposerTriggerPopover } from "@/components/assistant-ui/composer-trigger-popover";
 
 function MentionPopover() {
@@ -114,7 +114,7 @@ The adapter interface is itself synchronous, so you can also wire async data by 
 
 ```tsx
 import { useState, useEffect, useMemo } from "react";
-import type { Unstable_TriggerAdapter } from "@assistant-ui/core";
+import type { Unstable_TriggerAdapter } from "@hitchsoftware/assistant-ui-core";
 
 function useUserMentionAdapter(query: string) {
   const [users, setUsers] = useState<{ id: string; name: string }[]>([]);
@@ -145,7 +145,7 @@ function useUserMentionAdapter(query: string) {
 
 ```tsx
 import { useQuery } from "@tanstack/react-query";
-import type { Unstable_TriggerAdapter } from "@assistant-ui/core";
+import type { Unstable_TriggerAdapter } from "@hitchsoftware/assistant-ui-core";
 
 function useMentionAdapter(query: string): Unstable_TriggerAdapter {
   const { data = [] } = useQuery({
@@ -166,8 +166,8 @@ function useMentionAdapter(query: string): Unstable_TriggerAdapter {
 Pass the adapter to `TriggerPopover` and declare a `Directive` sub-primitive to bind the insertion behavior:
 
 ```tsx
-import { ComposerPrimitive } from "@assistant-ui/react";
-import { unstable_defaultDirectiveFormatter } from "@assistant-ui/react";
+import { ComposerPrimitive } from "@hitchsoftware/assistant-ui-react";
+import { unstable_defaultDirectiveFormatter } from "@hitchsoftware/assistant-ui-react";
 
 <ComposerPrimitive.Unstable_TriggerPopoverRoot>
   <ComposerPrimitive.Root>
@@ -217,7 +217,7 @@ Exactly one behavior sub-primitive (`Directive` or `Action`) is allowed per `Tri
 **Tools from model context (default):**
 
 ```tsx
-import { unstable_useMentionAdapter } from "@assistant-ui/react";
+import { unstable_useMentionAdapter } from "@hitchsoftware/assistant-ui-react";
 
 const mention = unstable_useMentionAdapter();
 // → { adapter, directive } — spread into <ComposerTriggerPopover {...mention} />
@@ -325,7 +325,7 @@ When `id` equals `label`, the `{name=…}` attribute is omitted for brevity:
 Implement `Unstable_DirectiveFormatter` to use a different format:
 
 ```ts
-import type { Unstable_DirectiveFormatter } from "@assistant-ui/react";
+import type { Unstable_DirectiveFormatter } from "@hitchsoftware/assistant-ui-react";
 
 const slashFormatter: Unstable_DirectiveFormatter = {
   serialize(item) {
@@ -385,7 +385,7 @@ The mention system supports two input modes:
 | --- | --- | --- |
 | **Input component** | `ComposerPrimitive.Input` | `LexicalComposerInput` |
 | **Mention display in composer** | Raw directive text (`:tool[Label]`) | Inline chips (atomic nodes) |
-| **Dependencies** | None | `@assistant-ui/react-lexical`, `lexical`, `@lexical/react` |
+| **Dependencies** | None | `@hitchsoftware/assistant-ui-react-lexical`, `lexical`, `@lexical/react` |
 | **Best for** | Simple setups, minimal bundle | Rich editing, polished UX |
 
 With **textarea**, selecting a mention inserts the directive string directly into the text. The user sees `:tool[Get Weather]{name=get_weather}` in the input.
@@ -393,7 +393,7 @@ With **textarea**, selecting a mention inserts the directive string directly int
 With **Lexical**, selected mentions appear as styled inline chips that behave as atomic units — they can be selected, deleted, and undone as a whole. The underlying text still uses the directive format.
 
 ```tsx
-import { LexicalComposerInput } from "@assistant-ui/react-lexical";
+import { LexicalComposerInput } from "@hitchsoftware/assistant-ui-react-lexical";
 
 <ComposerPrimitive.Unstable_TriggerPopoverRoot>
   <ComposerPrimitive.Root>
@@ -482,7 +482,7 @@ You can use the extracted mentions to:
 Use `unstable_useTriggerPopoverScopeContext` inside the `TriggerPopover` to programmatically access the popover state for that trigger:
 
 ```tsx
-import { unstable_useTriggerPopoverScopeContext } from "@assistant-ui/react";
+import { unstable_useTriggerPopoverScopeContext } from "@hitchsoftware/assistant-ui-react";
 
 function MyPopoverContent() {
   const scope = unstable_useTriggerPopoverScopeContext();

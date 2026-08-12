@@ -1,5 +1,5 @@
 {
-  "name": "assistant-stream",
+  "name": "@hitchsoftware/assistant-stream",
   "version": "0.3.37",
   "description": "Streaming utilities for AI assistants",
   "keywords": [
@@ -71,7 +71,7 @@
     }
   },
   "devDependencies": {
-    "@assistant-ui/x-buildutils": "workspace:*",
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
     "@types/json-schema": "^7.0.15",
     "ioredis": "^6.0.0",
     "ioredis-v5": "npm:ioredis@^5.11.1",
@@ -79,8 +79,8 @@
     "vitest": "^4.1.10"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://www.assistant-ui.com/",
   "repository": {

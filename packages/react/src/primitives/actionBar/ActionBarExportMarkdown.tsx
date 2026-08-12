@@ -4,7 +4,7 @@ import { forwardRef, useCallback } from "react";
 import type { ActionButtonProps } from "../../utils/createActionButton";
 import { composeEventHandlers } from "@radix-ui/primitive";
 import { Primitive } from "../../utils/Primitive";
-import { useAuiState, useAui } from "@assistant-ui/store";
+import { useAuiState, useAui } from "@hitchsoftware/assistant-ui-store";
 
 const useActionBarExportMarkdown = ({
   filename,

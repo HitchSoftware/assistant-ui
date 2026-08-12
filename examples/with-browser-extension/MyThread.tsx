@@ -1,10 +1,10 @@
-import { Thread } from "@assistant-ui/ui/components/assistant-ui/thread.tsx";
+import { Thread } from "@hitchsoftware/assistant-ui-ui/components/assistant-ui/thread.tsx";
 import {
   useAui,
   AuiProvider,
   AuiConfig,
   Suggestions,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 
 const suggestions = Suggestions([
   {

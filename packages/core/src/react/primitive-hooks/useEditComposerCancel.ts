@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useAui } from "@assistant-ui/store";
+import { useAui } from "@hitchsoftware/assistant-ui-store";
 
 export const useEditComposerCancel = () => {
   const aui = useAui();

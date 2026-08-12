@@ -3,7 +3,7 @@
 import {
   ThreadListItemPrimitive,
   ThreadListPrimitive,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import { MessageSquare, Plus } from "lucide-react";
 
 export function ThreadList() {

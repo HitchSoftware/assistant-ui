@@ -5,7 +5,7 @@ import {
   type ActionButtonProps,
   createActionButton,
 } from "../../utils/createActionButton";
-import { useActionBarReload as useActionBarReloadBehavior } from "@assistant-ui/core/react";
+import { useActionBarReload as useActionBarReloadBehavior } from "@hitchsoftware/assistant-ui-core/react";
 
 /**
  * Hook that provides reload functionality for action bar buttons.

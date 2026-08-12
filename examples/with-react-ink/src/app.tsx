@@ -6,7 +6,7 @@ import {
   useLocalRuntime,
   StatusBarPrimitive,
   Tools,
-} from "@assistant-ui/react-ink";
+} from "@hitchsoftware/assistant-ui-react-ink";
 import { Thread } from "./components/thread.js";
 import { createScriptedAdapter, MODEL_NAME } from "./scripted-adapter.js";
 import toolkit from "./tools.js";

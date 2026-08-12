@@ -55,22 +55,22 @@ export const API_REFERENCE_DIR = path.join(
 export const INTEGRATION_PACKAGES = [
   {
     slug: "react-ai-sdk",
-    packageName: "@assistant-ui/react-ai-sdk",
+    packageName: "@hitchsoftware/assistant-ui-react-ai-sdk",
     entry: path.join(REPO_ROOT, "packages/react-ai-sdk/src/index.ts"),
   },
   {
     slug: "react-data-stream",
-    packageName: "@assistant-ui/react-data-stream",
+    packageName: "@hitchsoftware/assistant-ui-react-data-stream",
     entry: path.join(REPO_ROOT, "packages/react-data-stream/src/index.ts"),
   },
   {
     slug: "cloud-ai-sdk",
-    packageName: "@assistant-ui/cloud-ai-sdk",
+    packageName: "@hitchsoftware/assistant-ui-cloud-ai-sdk",
     entry: path.join(REPO_ROOT, "packages/cloud-ai-sdk/src/index.ts"),
   },
   {
     slug: "eve",
-    packageName: "@assistant-ui/eve",
+    packageName: "@hitchsoftware/assistant-ui-eve",
     entry: path.join(REPO_ROOT, "packages/eve/src/index.ts"),
   },
 ] as const;

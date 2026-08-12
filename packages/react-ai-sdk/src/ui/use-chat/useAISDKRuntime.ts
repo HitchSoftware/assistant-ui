@@ -12,12 +12,12 @@ import {
   useExternalStoreRuntime,
   useRuntimeAdapters,
   type JoinStrategy,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";
 import type {
   SuggestionAdapter,
   ThreadSuggestion,
   ToolExecutionStatus,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import type {
   ExternalStoreAdapter,
   ExternalStoreSharedOptions,
@@ -30,13 +30,13 @@ import type {
   AppendMessage,
   RunConfig,
   McpAppMetadata,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import {
   getExternalStoreMessages,
   pickExternalStoreSharedOptions,
-} from "@assistant-ui/core";
-import { consumeSuggestionResult } from "@assistant-ui/core/internal";
-import type { ReadonlyJSONObject } from "assistant-stream/utils";
+} from "@hitchsoftware/assistant-ui-core";
+import { consumeSuggestionResult } from "@hitchsoftware/assistant-ui-core/internal";
+import type { ReadonlyJSONObject } from "@hitchsoftware/assistant-stream/utils";
 import { sliceMessagesUntil } from "../utils/sliceMessagesUntil";
 import { toCreateMessage } from "../utils/toCreateMessage";
 import { vercelAttachmentAdapter } from "../utils/vercelAttachmentAdapter";

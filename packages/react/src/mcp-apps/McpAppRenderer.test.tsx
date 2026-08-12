@@ -1,11 +1,11 @@
 // @vitest-environment jsdom
 import { render, waitFor } from "@testing-library/react";
-import { resource, useResource, withKey } from "@assistant-ui/tap";
+import { resource, useResource, withKey } from "@hitchsoftware/assistant-ui-tap";
 import { memo } from "react";
 import type {
   ToolCallMessagePartComponent,
   ToolCallMessagePartProps,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type {
   McpAppBridgeHandlers,
@@ -15,7 +15,7 @@ import type {
 
 const { framePropsMock } = vi.hoisted(() => ({ framePropsMock: vi.fn() }));
 
-vi.mock("@assistant-ui/store", async (importOriginal) => ({
+vi.mock("@hitchsoftware/assistant-ui-store", async (importOriginal) => ({
   ...(await importOriginal()),
   useAui: () => ({
     thread: () => ({ append: vi.fn() }),

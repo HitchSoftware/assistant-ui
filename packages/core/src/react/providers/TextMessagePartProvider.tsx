@@ -4,10 +4,10 @@ import {
   AuiConfig,
   AuiProvider,
   type ClientOutput,
-} from "@assistant-ui/store";
+} from "@hitchsoftware/assistant-ui-store";
 import type { PartState } from "../../store/scopes/part";
 
-import { resource } from "@assistant-ui/tap";
+import { resource } from "@hitchsoftware/assistant-ui-tap";
 
 const useTextMessagePartClient = ({
   text,

@@ -1,7 +1,7 @@
 "use client";
 
-import type { MessageStatus, ThreadAssistantMessage } from "@assistant-ui/core";
-import { httpUrlPattern, parseDataUrl } from "@assistant-ui/core/internal";
+import type { MessageStatus, ThreadAssistantMessage } from "@hitchsoftware/assistant-ui-core";
+import { httpUrlPattern, parseDataUrl } from "@hitchsoftware/assistant-ui-core/internal";
 import type { A2AMessage, A2APart, A2ATaskState } from "./types";
 
 function isImageMediaType(mediaType?: string): boolean {

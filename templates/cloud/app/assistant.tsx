@@ -1,10 +1,10 @@
 "use client";
 
-import { AssistantRuntimeProvider, AssistantCloud } from "@assistant-ui/react";
+import { AssistantRuntimeProvider, AssistantCloud } from "@hitchsoftware/assistant-ui-react";
 import {
   useChatRuntime,
   AssistantChatTransport,
-} from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { lastAssistantMessageIsCompleteWithToolCalls } from "ai";
 import { Thread } from "@/components/assistant-ui/thread";
 import {

@@ -4,7 +4,7 @@ description: Pass values through resource boundaries without prop drilling.
 ---
 
 <Callout type="info">
-Tap context is supported as of `@assistant-ui/tap` 0.9 and is no longer deprecated.
+Tap context is supported as of `@hitchsoftware/assistant-ui-tap` 0.9 and is no longer deprecated.
 </Callout>
 
 Context lets you pass values through the resource tree without threading props through every level, the same idea as React's `createContext` / `useContext`.
@@ -39,7 +39,7 @@ const Button = resource(useButton);
 Provide a context value to all resources rendered within the callback.
 
 ```ts
-import { useContextProvider, useResource } from "@assistant-ui/tap";
+import { useContextProvider, useResource } from "@hitchsoftware/assistant-ui-tap";
 
 const useApp = () => {
   const child = useContextProvider(ThemeContext, "dark", () => {

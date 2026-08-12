@@ -11,7 +11,7 @@ export { useContextProvider } from "./core/context";
 // hooks
 import { useMemoCache as useMemoCacheInternal } from "./react-hooks/useMemoCache";
 /**
- * @deprecated Internal API kept for older @assistant-ui/store versions; do not use.
+ * @deprecated Internal API kept for older @hitchsoftware/assistant-ui-store versions; do not use.
  */
 export const useMemoCache = useMemoCacheInternal;
 export { useResource } from "./hooks/useResource";

@@ -8,8 +8,8 @@ const SRC_DIR = resolve(__dirname, "..");
 const FORBIDDEN_MODULES = new Set([
   "react",
   "react/jsx-runtime",
-  "@assistant-ui/store",
-  "@assistant-ui/tap",
+  "@hitchsoftware/assistant-ui-store",
+  "@hitchsoftware/assistant-ui-tap",
 ]);
 
 const STORE_ALLOWED_REACT_NAMES = new Set([
@@ -141,11 +141,11 @@ function nonTypeImportNames(clause: string): string[] {
 }
 
 describe("framework neutral boundary", () => {
-  it("the default entry graph must not import react, react/jsx-runtime, @assistant-ui/tap, or @assistant-ui/store", () => {
+  it("the default entry graph must not import react, react/jsx-runtime, @hitchsoftware/assistant-ui-tap, or @hitchsoftware/assistant-ui-store", () => {
     const { forbidden, jsxFiles } = walkFrom(resolve(SRC_DIR, "index.ts"));
     expect(
       forbidden,
-      `The default entry must stay loadable without react, @assistant-ui/tap, or @assistant-ui/store installed.\n` +
+      `The default entry must stay loadable without react, @hitchsoftware/assistant-ui-tap, or @hitchsoftware/assistant-ui-store installed.\n` +
         `These modules in the src/index.ts graph import a forbidden package:\n` +
         forbidden.map((f) => `  - ${f}`).join("\n"),
     ).toEqual([]);
@@ -156,11 +156,11 @@ describe("framework neutral boundary", () => {
     ).toEqual([]);
   });
 
-  it("the internal entry graph must not import react, react/jsx-runtime, @assistant-ui/tap, or @assistant-ui/store", () => {
+  it("the internal entry graph must not import react, react/jsx-runtime, @hitchsoftware/assistant-ui-tap, or @hitchsoftware/assistant-ui-store", () => {
     const { forbidden, jsxFiles } = walkFrom(resolve(SRC_DIR, "internal.ts"));
     expect(
       forbidden,
-      "The internal entry must stay loadable without react, react/jsx-runtime, @assistant-ui/tap, or @assistant-ui/store installed.\nViolations:\n" +
+      "The internal entry must stay loadable without react, react/jsx-runtime, @hitchsoftware/assistant-ui-tap, or @hitchsoftware/assistant-ui-store installed.\nViolations:\n" +
         forbidden.map((f) => `  - ${f}`).join("\n"),
     ).toEqual([]);
     expect(
@@ -181,7 +181,7 @@ describe("framework neutral boundary", () => {
 
     // Walks the runtime graph only: type-only imports are erased at build, so
     // they neither carry runtime dependencies nor get traversed. This is also
-    // why type imports may keep using the @assistant-ui/store barrel: the
+    // why type imports may keep using the @hitchsoftware/assistant-ui-store barrel: the
     // augmentations target that specifier, and splitting types across entries
     // would fork the ScopeRegistry seen by src-mapped consumers.
     const RUNTIME_IMPORT_RE =
@@ -213,9 +213,9 @@ describe("framework neutral boundary", () => {
             `${relative(SRC_DIR, file)} imports "react/jsx-runtime"`,
           );
         }
-        if (spec === "@assistant-ui/store") {
+        if (spec === "@hitchsoftware/assistant-ui-store") {
           violations.push(
-            `${relative(SRC_DIR, file)} value-imports the "@assistant-ui/store" barrel; use "@assistant-ui/store/client"`,
+            `${relative(SRC_DIR, file)} value-imports the "@hitchsoftware/assistant-ui-store" barrel; use "@hitchsoftware/assistant-ui-store/client"`,
           );
         }
         const resolved = resolveRelative(file, spec);
@@ -244,7 +244,7 @@ describe("framework neutral boundary", () => {
       violations,
       `The store entry graphs run inside tap roots on every framework, so they may ` +
         `only use react names the tap shim dispatches, never react/jsx-runtime, and ` +
-        `never the @assistant-ui/store barrel (whose module scope requires React).\n` +
+        `never the @hitchsoftware/assistant-ui-store barrel (whose module scope requires React).\n` +
         `Violations:\n` +
         violations.map((f) => `  - ${f}`).join("\n"),
     ).toEqual([]);

@@ -1,7 +1,7 @@
 "use client";
 
-import type { EveAuthorizationData } from "@assistant-ui/eve";
-import { makeAssistantDataUI } from "@assistant-ui/react";
+import type { EveAuthorizationData } from "@hitchsoftware/assistant-ui-eve";
+import { makeAssistantDataUI } from "@hitchsoftware/assistant-ui-react";
 
 export const EveAuthorization = makeAssistantDataUI<EveAuthorizationData>({
   name: "authorization",

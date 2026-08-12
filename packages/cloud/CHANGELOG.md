@@ -225,7 +225,7 @@
 - 93910bd: Rename .tsx files to .ts where no JSX syntax is used
 - 58a8472: feat: Add standalone AI SDK hooks for cloud persistence without assistant-ui
 
-  New `@assistant-ui/cloud-ai-sdk` package with `useCloudChat` and `useThreads` hooks. Wraps AI SDK's `useChat` with automatic message persistence, thread management, and auto-title generation.
+  New `@hitchsoftware/assistant-ui-cloud-ai-sdk` package with `useCloudChat` and `useThreads` hooks. Wraps AI SDK's `useChat` with automatic message persistence, thread management, and auto-title generation.
 
 - Updated dependencies [61b54e9]
 - Updated dependencies [93910bd]

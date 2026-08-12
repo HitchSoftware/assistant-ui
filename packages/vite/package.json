@@ -1,5 +1,5 @@
 {
-  "name": "@assistant-ui/vite",
+  "name": "@hitchsoftware/assistant-ui-vite",
   "version": "0.0.12",
   "description": "Vite plugin for assistant-ui: the \"use generative\" directive compiler that colocates a tool's schema, server-only execute, and client-only render in one file. Works with Vite apps and TanStack Start.",
   "keywords": [
@@ -33,20 +33,20 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@assistant-ui/x-generative-compiler": "workspace:^"
+    "@hitchsoftware/assistant-ui-x-generative-compiler": "workspace:^"
   },
   "peerDependencies": {
     "vite": ">=6"
   },
   "devDependencies": {
-    "@assistant-ui/x-buildutils": "workspace:*",
+    "@hitchsoftware/assistant-ui-x-buildutils": "workspace:*",
     "@types/node": "^26.1.2",
     "vite": "^8.2.1",
     "vitest": "^4.1.10"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://www.assistant-ui.com/",
   "repository": {

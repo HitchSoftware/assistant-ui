@@ -1,4 +1,4 @@
-import type { Tool } from "assistant-stream";
+import type { Tool } from "@hitchsoftware/assistant-stream";
 import { describe, expect, it, vi } from "vitest";
 import {
   ToolInvocationTracker,
@@ -11,7 +11,7 @@ import type {
 import type {
   ReadonlyJSONObject,
   ReadonlyJSONValue,
-} from "assistant-stream/utils";
+} from "@hitchsoftware/assistant-stream/utils";
 
 async function waitFor(
   predicate: () => unknown,

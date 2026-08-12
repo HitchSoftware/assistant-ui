@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import { useEffect, useState } from "react";
-import { flushTapSync, resource } from "@assistant-ui/tap";
+import { flushTapSync, resource } from "@hitchsoftware/assistant-ui-tap";
 import {
   createAssistantClient,
   type AssistantClientHandle,

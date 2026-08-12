@@ -3,4 +3,4 @@ export type {
   DictationState,
   ComposerRuntimeCore,
   ThreadComposerRuntimeCore,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";

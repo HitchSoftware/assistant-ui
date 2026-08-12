@@ -1,13 +1,13 @@
 import { describe, expect, it, vi } from "vitest";
 import { createApp, defineComponent, h, nextTick, type Component } from "vue";
-import { flushTapSync } from "@assistant-ui/tap";
-import { AuiConfig } from "@assistant-ui/store/client";
-import { RuntimeAdapter, Suggestions } from "@assistant-ui/core/store";
-import type { ExternalStoreAdapter } from "@assistant-ui/core";
+import { flushTapSync } from "@hitchsoftware/assistant-ui-tap";
+import { AuiConfig } from "@hitchsoftware/assistant-ui-store/client";
+import { RuntimeAdapter, Suggestions } from "@hitchsoftware/assistant-ui-core/store";
+import type { ExternalStoreAdapter } from "@hitchsoftware/assistant-ui-core";
 import {
   AssistantRuntimeImpl,
   ExternalStoreRuntimeCore,
-} from "@assistant-ui/core/internal";
+} from "@hitchsoftware/assistant-ui-core/internal";
 import { AuiProvider } from "../AuiProvider";
 import {
   SuggestionPrimitiveDescription,

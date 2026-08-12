@@ -3,7 +3,7 @@ import type {
   ToolkitDefinition,
   ProviderToolConfig,
   defineToolkit as CoreDefineToolkit,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";
 
 /**
  * Runtime `"use generative"` toolkit helpers for Ink.
@@ -18,7 +18,7 @@ import type {
  * compiler would. The authoring API (and its typed args) is identical to the web.
  */
 
-const MARKER = Symbol.for("@assistant-ui/react-ink.tool-marker");
+const MARKER = Symbol.for("@hitchsoftware/assistant-ui-react-ink.tool-marker");
 
 type MarkerKind = "human" | "stub" | "provider";
 

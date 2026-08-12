@@ -29,10 +29,10 @@ import {
   KEY_TAB_COMMAND,
 } from "lexical";
 import { mergeRegister } from "@lexical/utils";
-import { useAui, useAuiState } from "@assistant-ui/store";
-import type { Unstable_DirectiveFormatter } from "@assistant-ui/core";
-import { unstable_defaultDirectiveFormatter } from "@assistant-ui/core";
-import { INTERNAL } from "@assistant-ui/react";
+import { useAui, useAuiState } from "@hitchsoftware/assistant-ui-store";
+import type { Unstable_DirectiveFormatter } from "@hitchsoftware/assistant-ui-core";
+import { unstable_defaultDirectiveFormatter } from "@hitchsoftware/assistant-ui-core";
+import { INTERNAL } from "@hitchsoftware/assistant-ui-react";
 import {
   DirectiveNode,
   DirectiveChipProvider,

@@ -6,14 +6,14 @@ import {
   useAuiState,
   useExternalStoreRuntime,
   useRemoteThreadListRuntime,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import type {
   AssistantRuntime,
   ExternalStoreAdapter,
   ExternalThreadQueueAdapter,
   ThreadMessage,
   ThreadMessageLike,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   useEffect,
   useEffectEvent,

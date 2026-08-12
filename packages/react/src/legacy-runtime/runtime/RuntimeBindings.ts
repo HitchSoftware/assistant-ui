@@ -3,9 +3,9 @@ export type {
   ThreadComposerRuntimeCoreBinding,
   EditComposerRuntimeCoreBinding,
   MessageStateBinding,
-} from "@assistant-ui/core/internal";
+} from "@hitchsoftware/assistant-ui-core/internal";
 
-export type { ThreadListItemState } from "@assistant-ui/core";
+export type { ThreadListItemState } from "@hitchsoftware/assistant-ui-core";
 
 // NOTE: ThreadRuntimeCoreBinding and ThreadListRuntimeCoreBinding were defined here
 // but never imported by any consumer. They are intentionally not re-exported.

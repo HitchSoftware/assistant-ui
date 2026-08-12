@@ -2,8 +2,8 @@
 
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import type { GenerativeUILibrary } from "@assistant-ui/react-generative-ui";
-import { defaultGenerativeUILibrary } from "@assistant-ui/react-generative-ui";
+import type { GenerativeUILibrary } from "@hitchsoftware/assistant-ui-react-generative-ui";
+import { defaultGenerativeUILibrary } from "@hitchsoftware/assistant-ui-react-generative-ui";
 
 const markdownBase = defaultGenerativeUILibrary.Markdown!;
 

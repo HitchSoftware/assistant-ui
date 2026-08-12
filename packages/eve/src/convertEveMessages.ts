@@ -13,8 +13,8 @@ import {
   type ThreadUserMessagePart,
   type ToolApprovalOption,
   type ToolCallMessagePart,
-} from "@assistant-ui/core";
-import { httpUrlPattern, parseDataUrl } from "@assistant-ui/core/internal";
+} from "@hitchsoftware/assistant-ui-core";
+import { httpUrlPattern, parseDataUrl } from "@hitchsoftware/assistant-ui-core/internal";
 import type {
   EveAuthorizationOutcome,
   EveAuthorizationPart,

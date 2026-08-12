@@ -1,7 +1,7 @@
 import {
   createInMemoryResumableStreamStore,
   createResumableStreamContext,
-} from "assistant-stream/resumable";
+} from "@hitchsoftware/assistant-stream/resumable";
 import { after } from "next/server";
 
 const store = createInMemoryResumableStreamStore();

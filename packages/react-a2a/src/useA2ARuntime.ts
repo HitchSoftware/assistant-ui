@@ -5,13 +5,13 @@ import {
   useExternalStoreRuntime,
   useExternalStoreSharedOptions,
   useRuntimeAdapters,
-} from "@assistant-ui/core/react";
+} from "@hitchsoftware/assistant-ui-core/react";
 import type {
   AssistantRuntime,
   AppendMessage,
   ExternalStoreAdapter,
   ThreadMessage,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import { A2AClient, type A2AClientOptions } from "./A2AClient";
 import { A2AThreadRuntimeCore } from "./A2AThreadRuntimeCore";
 import { a2aExtras } from "./a2aExtras";

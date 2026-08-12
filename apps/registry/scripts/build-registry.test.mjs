@@ -540,7 +540,7 @@ const bundleFixtures = () => {
         sourcePath: "../../packages/ui/src/components/assistant-ui/thread.tsx",
       },
     ],
-    dependencies: ["@assistant-ui/react"],
+    dependencies: ["@hitchsoftware/assistant-ui-react"],
     radixDependencies: ["radix-ui"],
     registryDependencies: [
       "button",
@@ -568,7 +568,7 @@ const bundleFixtures = () => {
       files: [
         { type: "registry:file", path: "app/page.tsx", target: "app/page.tsx" },
       ],
-      dependencies: ["@assistant-ui/eve"],
+      dependencies: ["@hitchsoftware/assistant-ui-eve"],
       bundledRegistryDependencies: ["https://r.assistant-ui.com/thread.json"],
     },
     itemsByName: new Map(
@@ -614,8 +614,8 @@ test("bundling inlines the closure as targeted files and merges its dependencies
     ],
   );
   assert.deepEqual(expanded.dependencies, [
-    "@assistant-ui/eve",
-    "@assistant-ui/react",
+    "@hitchsoftware/assistant-ui-eve",
+    "@hitchsoftware/assistant-ui-react",
     "tw-shimmer",
   ]);
   assert.deepEqual(expanded.radixDependencies, ["radix-ui"]);
@@ -643,7 +643,7 @@ test("bundling leaves an item without bundled dependencies untouched and rejects
   const item = {
     name: "thread",
     type: "registry:component",
-    dependencies: ["@assistant-ui/react"],
+    dependencies: ["@hitchsoftware/assistant-ui-react"],
   };
 
   assert.deepEqual(

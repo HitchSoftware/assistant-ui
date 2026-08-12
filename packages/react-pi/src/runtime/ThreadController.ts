@@ -12,8 +12,8 @@
  * Browser-safe; imports no `@earendil-works/pi-*` packages.
  */
 
-import { ExportedMessageRepository } from "@assistant-ui/react";
-import type { AppendMessage, ThreadMessageLike } from "@assistant-ui/react";
+import { ExportedMessageRepository } from "@hitchsoftware/assistant-ui-react";
+import type { AppendMessage, ThreadMessageLike } from "@hitchsoftware/assistant-ui-react";
 import {
   createPiThreadState,
   reducePiThreadState,

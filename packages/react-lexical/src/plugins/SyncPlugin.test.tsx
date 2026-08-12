@@ -13,8 +13,8 @@ const mocks = vi.hoisted(() => ({
   aui: undefined as unknown,
 }));
 
-vi.mock("@assistant-ui/store", async (importOriginal) => {
-  const actual = await importOriginal<typeof import("@assistant-ui/store")>();
+vi.mock("@hitchsoftware/assistant-ui-store", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@hitchsoftware/assistant-ui-store")>();
   return {
     ...actual,
     useAui: () => mocks.aui,

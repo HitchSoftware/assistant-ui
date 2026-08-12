@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { PlayIcon } from "lucide-react";
-import type { ToolCallMessagePartStatus } from "@assistant-ui/react";
+import type { ToolCallMessagePartStatus } from "@hitchsoftware/assistant-ui-react";
 import {
   ToolFallbackRoot,
   ToolFallbackTrigger,

@@ -12,19 +12,19 @@ import {
   useExternalStoreRuntime,
   useExternalStoreSharedOptions,
   useRuntimeAdapters,
-} from "@assistant-ui/core/react";
-import { createMessageQueue } from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core/react";
+import { createMessageQueue } from "@hitchsoftware/assistant-ui-core";
 import type {
   MessageQueueController,
   ToolExecutionStatus,
-} from "@assistant-ui/core";
+} from "@hitchsoftware/assistant-ui-core";
 import type {
   AssistantRuntime,
   AppendMessage,
   ExternalStoreAdapter,
   ThreadMessage,
-} from "@assistant-ui/core";
-import type { ReadonlyJSONValue } from "assistant-stream/utils";
+} from "@hitchsoftware/assistant-ui-core";
+import type { ReadonlyJSONValue } from "@hitchsoftware/assistant-stream/utils";
 import { makeLogger } from "./runtime/logger";
 import type {
   AgUiInterrupt,
@@ -33,7 +33,7 @@ import type {
 } from "./runtime/types";
 import { AgUiThreadRuntimeCore } from "./runtime/AgUiThreadRuntimeCore";
 import { agUiExtras } from "./agUiExtras";
-import type { QueueItemState } from "@assistant-ui/core/store";
+import type { QueueItemState } from "@hitchsoftware/assistant-ui-core/store";
 
 const EMPTY_INTERRUPTS: readonly AgUiInterrupt[] = [];
 const EMPTY_QUEUE_ITEMS: readonly QueueItemState[] = Object.freeze([]);

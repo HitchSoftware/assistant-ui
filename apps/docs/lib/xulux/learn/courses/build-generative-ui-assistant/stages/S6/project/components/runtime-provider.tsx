@@ -5,11 +5,11 @@ import {
   unstable_Interactables,
   useAui,
   useRemoteThreadListRuntime,
-} from "@assistant-ui/react";
+} from "@hitchsoftware/assistant-ui-react";
 import {
   AssistantChatTransport,
   useChatRuntime,
-} from "@assistant-ui/react-ai-sdk";
+} from "@hitchsoftware/assistant-ui-react-ai-sdk";
 import { useMemo } from "react";
 import { createBrowserThreadListAdapter } from "../lib/browser-thread-list-adapter";
 

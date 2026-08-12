@@ -1,4 +1,4 @@
-import type { AssistantClient } from "@assistant-ui/react";
+import type { AssistantClient } from "@hitchsoftware/assistant-ui-react";
 import { isRecord, isStringArray } from "../utils/common";
 import {
   sanitizeAndRedact,

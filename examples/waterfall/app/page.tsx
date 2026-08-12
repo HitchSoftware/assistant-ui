@@ -9,7 +9,7 @@ export default function Home() {
             Waterfall Timeline
           </h1>
           <p className="text-muted-foreground text-lg">
-            Span visualization powered by @assistant-ui/react-o11y
+            Span visualization powered by @hitchsoftware/assistant-ui-react-o11y
           </p>
         </div>
 

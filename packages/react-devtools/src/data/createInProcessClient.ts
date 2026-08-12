@@ -1,4 +1,4 @@
-import { DevToolsHooks } from "@assistant-ui/react";
+import { DevToolsHooks } from "@hitchsoftware/assistant-ui-react";
 import { projectApi } from "./projectApi";
 import {
   EMPTY_SNAPSHOT,
