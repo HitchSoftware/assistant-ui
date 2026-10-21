@@ -82,7 +82,7 @@
   },
   "publishConfig": {
     "access": "restricted",
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://us-central1-npm.pkg.dev/hitch-software-link/npm/"
   },
   "homepage": "https://www.assistant-ui.com/",
   "repository": {
