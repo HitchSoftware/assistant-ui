@@ -8,6 +8,8 @@
     "cleanup": "bash scripts/cleanup-monorepo.sh",
     "docs:dev": "turbo run dev --filter=@hitchsoftware/assistant-ui-docs",
     "build": "turbo build --concurrency=4",
+    "build:ci": "turbo build --concurrency=1 --filter='./packages/*' --env-mode=loose",
+    "test:ci": "pnpm --filter @hitchsoftware/assistant-ui-core exec vitest run --maxWorkers=1 --reporter=junit --outputFile=../../test-results/core.xml && turbo test --filter='./packages/*' --concurrency=1 --env-mode=loose && turbo test:react-compiler --filter=@hitchsoftware/assistant-ui-core --filter=@hitchsoftware/assistant-ui-store --concurrency=1 --env-mode=loose && pnpm -r --filter './packages/*' --workspace-concurrency=1 --no-bail exec sh -c '! test -f tsconfig.json || tsc --noEmit'",
     "api-surface": "pnpm api-surface:build && node scripts/generate-api-surface.mjs",
     "api-surface:build": "pnpm exec turbo build --filter='./packages/*' --force",
     "api-surface:check": "node scripts/check-api-surface.mjs",
