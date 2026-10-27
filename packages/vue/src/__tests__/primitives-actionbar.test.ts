@@ -52,7 +52,7 @@ const createEditableRuntime = () => {
     convertMessage: convertDemoMessage,
     onNew: async () => {},
     setMessages: (next) => {
-      messages = next;
+      messages = [...next];
       sync();
     },
     onEdit: async (message) => {

@@ -8,8 +8,12 @@ const sdk = vi.hoisted(() => ({
   listAll: vi.fn(),
   modelRuntimeCreate: vi.fn(async () => ({
     refresh: vi.fn(async () => ({})),
-    getAvailableSnapshot: vi.fn(() => []),
-    getModels: vi.fn(() => []),
+    getAvailableSnapshot: vi.fn(
+      (): { provider: string; id: string; name: string }[] => [],
+    ),
+    getModels: vi.fn(
+      (): { provider: string; id: string; name: string }[] => [],
+    ),
     getModel: vi.fn(),
   })),
   open: vi.fn(),

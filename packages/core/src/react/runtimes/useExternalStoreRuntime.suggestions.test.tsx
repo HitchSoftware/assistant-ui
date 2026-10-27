@@ -38,7 +38,7 @@ const App = ({
     ...(suggestions && { suggestions }),
   });
   const tree = (
-    <AssistantRuntimeProvider runtime={runtime} config={config}>
+    <AssistantRuntimeProvider runtime={runtime} {...(config && { config })}>
       <Consumer />
     </AssistantRuntimeProvider>
   );

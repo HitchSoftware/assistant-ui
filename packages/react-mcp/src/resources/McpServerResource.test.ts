@@ -121,7 +121,7 @@ const requestElicitation = (
       method: "elicitation/create",
       params: { message, requestedSchema },
     },
-    context,
+    { mcpReq: context },
   );
 };
 

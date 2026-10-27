@@ -3,10 +3,8 @@
 import { act, render, waitFor } from "@testing-library/react";
 import { type FC, useEffect } from "react";
 import { describe, expect, it } from "vitest";
-import {
-  useRemoteThreadListRuntime,
-  type AssistantRuntime,
-} from "@hitchsoftware/assistant-ui-core/react";
+import { useRemoteThreadListRuntime } from "@hitchsoftware/assistant-ui-core/react";
+import type { AssistantRuntime } from "@hitchsoftware/assistant-ui-core";
 import { makeAdapter } from "./remote-thread-list-test-helpers";
 import { useLocalRuntime } from "../legacy-runtime/runtime-cores/local/useLocalRuntime";
 import { AssistantRuntimeProvider } from "../context";

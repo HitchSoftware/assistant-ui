@@ -30,7 +30,7 @@ export const ThreadListItemByIndexProvider = defineComponent({
       default: false,
     },
   },
-  slots: Object as SlotsType<{ default?: () => unknown }>,
+  slots: Object as SlotsType<{ default?: () => import("vue").VNodeChild }>,
   setup(props, { slots }) {
     const aui = useAui();
     let disposed = false;
@@ -90,7 +90,7 @@ export const ThreadListPrimitiveItems = defineComponent({
       default: false,
     },
   },
-  slots: Object as SlotsType<{ default?: () => unknown }>,
+  slots: Object as SlotsType<{ default?: () => import("vue").VNodeChild }>,
   setup(props, { slots }) {
     const count = useAuiState((s) =>
       props.archived
@@ -115,7 +115,7 @@ export const ThreadListPrimitiveItems = defineComponent({
 export const ThreadListPrimitiveNew = defineComponent({
   name: "ThreadListPrimitiveNew",
   inheritAttrs: false,
-  slots: Object as SlotsType<{ default?: () => unknown }>,
+  slots: Object as SlotsType<{ default?: () => import("vue").VNodeChild }>,
   setup(_, { attrs, slots }) {
     const aui = useAui();
     const active = useAuiState(
@@ -137,7 +137,7 @@ export const ThreadListPrimitiveNew = defineComponent({
           }),
           onClick,
         }),
-        slots.default?.(),
+        [slots.default?.()],
       );
   },
 });
@@ -149,10 +149,12 @@ export const ThreadListPrimitiveNew = defineComponent({
 export const ThreadListItemPrimitiveTrigger = defineComponent({
   name: "ThreadListItemPrimitiveTrigger",
   inheritAttrs: false,
-  slots: Object as SlotsType<{ default?: () => unknown }>,
+  slots: Object as SlotsType<{ default?: () => import("vue").VNodeChild }>,
   setup(_, { attrs, slots }) {
     const aui = useAui();
-    const active = useAuiState((s) => s.threadListItem.isMain);
+    const active = useAuiState(
+      (s) => s.threads.mainThreadId === s.threadListItem.id,
+    );
     const onClick = (event: MouseEvent) => {
       if (event.defaultPrevented || isAttrDisabled(attrs)) return;
       aui.threadListItem.switchTo();
@@ -169,7 +171,7 @@ export const ThreadListItemPrimitiveTrigger = defineComponent({
           }),
           onClick,
         }),
-        slots.default?.(),
+        [slots.default?.()],
       );
   },
 });
@@ -186,7 +188,7 @@ export const ThreadListItemPrimitiveTitle = defineComponent({
       default: "",
     },
   },
-  slots: Object as SlotsType<{ default?: () => unknown }>,
+  slots: Object as SlotsType<{ default?: () => import("vue").VNodeChild }>,
   setup(props, { slots }) {
     const title = useAuiState((s) => s.threadListItem.title);
     return () =>

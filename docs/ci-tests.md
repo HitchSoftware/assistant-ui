@@ -19,10 +19,11 @@ tests, and 57/57 Turbo test tasks passed. Builds passed 40/40 tasks.
 The tap replay fixture now calls its zero-argument resource without a spurious
 argument, and tap's typecheck includes Node types for its filesystem tests.
 
-The overall lane is **held**, not green: many package typechecks fail in the
-existing source and test fixtures. Examples include stale core runtime fixtures,
-store scope augmentation conflicts, and MCP production context types. Do not
-exclude tests, weaken typechecking, or alter product runtime to hide these errors.
+All 45 package typechecks now pass, with no test exclusions or relaxed compiler
+diagnostics. Fixtures use current argument/metadata shapes, checked narrowing,
+and correctly typed mocks. Production fixes cover the empty-array conditional
+type, MCP request-context cancellation signal, and Vue's renderable slot/active
+thread contracts. The full `test:ci` command passes, including its final type gate.
 The baseline root `test` script also includes docs/examples typechecks; this
 package lane explicitly scopes to `packages/*`, matching its publish inventory.
 

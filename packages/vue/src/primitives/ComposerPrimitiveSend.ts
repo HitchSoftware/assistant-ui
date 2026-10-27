@@ -11,7 +11,7 @@ import { useComposerSendState } from "./useComposerSendState";
 export const ComposerPrimitiveSend = defineComponent({
   name: "ComposerPrimitiveSend",
   inheritAttrs: false,
-  slots: Object as SlotsType<{ default?: () => unknown }>,
+  slots: Object as SlotsType<{ default?: () => import("vue").VNodeChild }>,
   setup(_, { attrs, slots }) {
     const { disabled, send } = useComposerSendState();
     const onClick = (event: MouseEvent) => {
@@ -27,7 +27,7 @@ export const ComposerPrimitiveSend = defineComponent({
           disabled: disabled.value || isAttrDisabled(attrs),
           onClick,
         }),
-        slots.default?.(),
+        [slots.default?.()],
       );
   },
 });

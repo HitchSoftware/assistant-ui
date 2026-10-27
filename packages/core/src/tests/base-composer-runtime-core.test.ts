@@ -500,14 +500,17 @@ describe("BaseComposerRuntimeCore.retractDraft", () => {
 
   it("leaves a changed quote alone", () => {
     const composer = new TestComposerCore();
-    const draft = { text: "returned", quote: { text: "quoted" } };
+    const draft = {
+      text: "returned",
+      quote: { messageId: "m1", text: "quoted" },
+    };
 
     expect(composer.restoreDraft(draft)).toBe(true);
-    composer.setQuote({ text: "other" });
+    composer.setQuote({ messageId: "m2", text: "other" });
     composer.retractDraft(draft);
 
     expect(composer.text).toBe("returned");
-    expect(composer.quote).toEqual({ text: "other" });
+    expect(composer.quote).toEqual({ messageId: "m2", text: "other" });
   });
 
   it("leaves changed attachments alone", () => {

@@ -89,12 +89,21 @@ describe("ExternalThread attachments", () => {
 
   it("preserves foreign files that expose content", async () => {
     const aui = renderThread();
-    const foreignFile = {
-      name: "photo.png",
-      type: "image/png",
-      lastModified: 0,
-      content: [{ type: "text", text: "implementation detail" }],
-    } as File;
+    const foreignFile = Object.assign(
+      new NodeFile([], "photo.png", { type: "image/png", lastModified: 0 }),
+      {
+        webkitRelativePath: "",
+        stream: () =>
+          new ReadableStream<Uint8Array<ArrayBuffer>>({
+            start(controller) {
+              controller.close();
+            },
+          }),
+        slice: (...args: Parameters<Blob["slice"]>) =>
+          new Blob([]).slice(...args),
+        content: [{ type: "text", text: "implementation detail" }],
+      },
+    );
 
     await act(() => aui().thread.composer().addAttachment(foreignFile));
 
@@ -249,10 +258,10 @@ describe("ExternalThread attachments", () => {
     act(() => {
       composer().setText("first message");
       composer().setRole("assistant");
-      composer().setRunConfig({ model: "model-a" });
+      composer().setRunConfig({ custom: { model: "model-a" } });
       composer().send();
       composer().setRole("system");
-      composer().setRunConfig({ model: "model-b" });
+      composer().setRunConfig({ custom: { model: "model-b" } });
     });
     await act(async () => {
       resolveSend({
@@ -268,7 +277,7 @@ describe("ExternalThread attachments", () => {
     await waitFor(() => expect(onNew).toHaveBeenCalledTimes(1));
     expect(onNew.mock.calls[0]![0]).toMatchObject({
       role: "assistant",
-      runConfig: { model: "model-a" },
+      runConfig: { custom: { model: "model-a" } },
     });
   });
 
@@ -582,3 +591,4 @@ describe("ExternalThread attachments", () => {
     vi.restoreAllMocks();
   });
 });
+import { File as NodeFile } from "node:buffer";

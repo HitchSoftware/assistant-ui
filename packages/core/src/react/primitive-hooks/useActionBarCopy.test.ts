@@ -21,13 +21,13 @@ const mocks = vi.hoisted(() => {
     },
     aui: {
       message: {
-        getCopyText: () => "Hello",
+        getCopyText: (): string => "Hello",
         setIsCopied,
       },
     },
     currentAui: {
       message: {
-        getCopyText: () => "Hello",
+        getCopyText: (): string => "Hello",
         setIsCopied,
       },
     },
@@ -35,10 +35,12 @@ const mocks = vi.hoisted(() => {
 });
 
 vi.mock("@hitchsoftware/assistant-ui-store", async (importOriginal) => ({
-  ...(await importOriginal<typeof import("@hitchsoftware/assistant-ui-store")>()),
+  ...(await importOriginal<
+    typeof import("@hitchsoftware/assistant-ui-store")
+  >()),
   useAui: () => mocks.currentAui,
-  useAuiState: ((selector: (state: typeof mocks.state) => unknown) =>
-    selector(mocks.state)) as typeof import("@hitchsoftware/assistant-ui-store").useAuiState,
+  useAuiState: (selector: (state: typeof mocks.state) => unknown) =>
+    selector(mocks.state),
 }));
 
 import { useActionBarCopy } from "./useActionBarCopy";

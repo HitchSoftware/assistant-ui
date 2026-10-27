@@ -989,9 +989,10 @@ describe("toAdaptiveCard", () => {
         name: "s",
         options: [{ label: "ok", value: "a" }, { label: "bad" }, "nope"],
       });
-      expect((card.body[0] as { choices: unknown[] }).choices).toEqual([
-        { title: "ok", value: "a" },
-      ]);
+      const choiceSet = card.body[0];
+      if (!choiceSet || !("choices" in choiceSet))
+        throw new Error("Choice set was not rendered");
+      expect(choiceSet.choices).toEqual([{ title: "ok", value: "a" }]);
       expect(warnings).toContainEqual({
         code: "dropped",
         component: "Select",

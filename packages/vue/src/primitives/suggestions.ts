@@ -27,7 +27,7 @@ export const SuggestionByIndexProvider = defineComponent({
       required: true,
     },
   },
-  slots: Object as SlotsType<{ default?: () => unknown }>,
+  slots: Object as SlotsType<{ default?: () => import("vue").VNodeChild }>,
   setup(props, { slots }) {
     const aui = useAui();
     let disposed = false;
@@ -71,7 +71,7 @@ export const SuggestionByIndexProvider = defineComponent({
  */
 export const ThreadPrimitiveSuggestions = defineComponent({
   name: "ThreadPrimitiveSuggestions",
-  slots: Object as SlotsType<{ default?: () => unknown }>,
+  slots: Object as SlotsType<{ default?: () => import("vue").VNodeChild }>,
   setup(_, { slots }) {
     const count = useAuiState((s) => s.suggestions.suggestions.length);
     return () =>
@@ -104,7 +104,7 @@ export const SuggestionPrimitiveTrigger = defineComponent({
       default: true,
     },
   },
-  slots: Object as SlotsType<{ default?: () => unknown }>,
+  slots: Object as SlotsType<{ default?: () => import("vue").VNodeChild }>,
   setup(props, { attrs, slots }) {
     const aui = useAui();
     const prompt = useAuiState((s) => s.suggestion.prompt);
@@ -149,7 +149,7 @@ export const SuggestionPrimitiveTrigger = defineComponent({
           disabled: disabled.value || isAttrDisabled(attrs),
           onClick,
         }),
-        slots.default?.(),
+        [slots.default?.()],
       );
   },
 });

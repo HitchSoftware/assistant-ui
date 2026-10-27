@@ -223,6 +223,8 @@ type ExternalStoreAdapterBase<T> = {
 
 export type ExternalStoreAdapter<T = ThreadMessage> =
   ExternalStoreAdapterBase<T> &
-    (T extends ThreadMessage
+    ([T] extends [never]
       ? object
-      : ExternalStoreMessageConverterAdapter<T>);
+      : T extends ThreadMessage
+        ? object
+        : ExternalStoreMessageConverterAdapter<T>);

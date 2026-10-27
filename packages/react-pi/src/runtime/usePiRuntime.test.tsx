@@ -3,7 +3,10 @@
 import { act, createElement } from "react";
 import { createRoot, type Root } from "react-dom/client";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import type { AppendMessage, ExternalStoreAdapter } from "@hitchsoftware/assistant-ui-react";
+import type {
+  AppendMessage,
+  ExternalStoreAdapter,
+} from "@hitchsoftware/assistant-ui-react";
 import type { PiClient } from "../types";
 
 const mocks = vi.hoisted(() => ({
@@ -17,7 +20,9 @@ const mocks = vi.hoisted(() => ({
 }));
 
 vi.mock("@hitchsoftware/assistant-ui-react", async (importOriginal) => ({
-  ...(await importOriginal<typeof import("@hitchsoftware/assistant-ui-react")>()),
+  ...(await importOriginal<
+    typeof import("@hitchsoftware/assistant-ui-react")
+  >()),
   useAui: () => ({
     threadListItem: { initialize: vi.fn().mockResolvedValue(undefined) },
   }),
@@ -122,6 +127,11 @@ describe("usePiRuntime error callbacks", () => {
       const adapter = mocks.adapters.at(-1)!;
       const message: AppendMessage = {
         role: "user",
+        createdAt: new Date(0),
+        metadata: { custom: {} },
+        parentId: null,
+        sourceId: null,
+        runConfig: undefined,
         content: [{ type: "text", text: "hello" }],
       };
 

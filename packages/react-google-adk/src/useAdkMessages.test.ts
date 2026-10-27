@@ -60,7 +60,7 @@ describe("ADK runtime callbacks", () => {
       };
       const eventHandlers = {
         [callbackName]: callback,
-      } as UseAdkMessagesOptions["eventHandlers"];
+      } satisfies NonNullable<UseAdkMessagesOptions["eventHandlers"]>;
       const { result } = renderHook(() =>
         useAdkMessages({ stream, eventHandlers }),
       );

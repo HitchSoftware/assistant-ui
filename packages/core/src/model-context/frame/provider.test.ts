@@ -40,7 +40,10 @@ describe("AssistantFrameProvider", () => {
       {
         getModelContext: () => ({
           tools: {
-            sensitiveTool: { execute },
+            sensitiveTool: {
+              execute,
+              parameters: { type: "object", properties: {} },
+            },
           },
         }),
       },

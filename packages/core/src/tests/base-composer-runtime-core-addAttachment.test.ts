@@ -451,12 +451,21 @@ describe("BaseComposerRuntimeCore.addAttachment error events", () => {
   it("uses the adapter for foreign files that expose content", async () => {
     const add = vi.fn(makeAdapter().add);
     const composer = makeComposer(makeAdapter({ add }));
-    const foreignFile = {
-      name: "photo.png",
-      type: "image/png",
-      lastModified: 0,
-      content: [{ type: "text", text: "implementation detail" }],
-    } as File;
+    const foreignFile = Object.assign(
+      new NodeFile([], "photo.png", { type: "image/png", lastModified: 0 }),
+      {
+        webkitRelativePath: "",
+        stream: () =>
+          new ReadableStream<Uint8Array<ArrayBuffer>>({
+            start(controller) {
+              controller.close();
+            },
+          }),
+        slice: (...args: Parameters<Blob["slice"]>) =>
+          new Blob([]).slice(...args),
+        content: [{ type: "text", text: "implementation detail" }],
+      },
+    );
 
     await composer.addAttachment(foreignFile);
 
@@ -629,3 +638,4 @@ describe("BaseComposerRuntimeCore.addAttachment error events", () => {
     expect(onAdd).not.toHaveBeenCalled();
   });
 });
+import { File as NodeFile } from "node:buffer";

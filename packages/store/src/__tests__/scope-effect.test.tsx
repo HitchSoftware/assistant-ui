@@ -3,7 +3,11 @@
 import { useState } from "react";
 import { act, cleanup, render } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { flushTapSync, resource, withKey } from "@hitchsoftware/assistant-ui-tap";
+import {
+  flushTapSync,
+  resource,
+  withKey,
+} from "@hitchsoftware/assistant-ui-tap";
 import { AuiProvider } from "../AuiProvider";
 import { useAui } from "../useAui";
 import { Derived } from "../Derived";
@@ -83,7 +87,7 @@ describe("useAssistantScopeEffect", () => {
         target: targetDerived(),
         registrar: RegistrarClient({ tag }),
       } as never);
-      return <AuiProvider value={aui as never} />;
+      return <AuiProvider value={aui as never}>{null}</AuiProvider>;
     };
     const view = render(<Harness tag="a" />);
 
@@ -129,7 +133,7 @@ describe("useAssistantScopeEffect", () => {
         target: targetDerived(),
         registrar: FlakyRegistrarClient({ tag: "a" }),
       } as never);
-      return <AuiProvider value={aui as never} />;
+      return <AuiProvider value={aui as never}>{null}</AuiProvider>;
     };
     render(<Harness />);
     expect(log).toEqual(["+t0:a"]);
@@ -161,7 +165,7 @@ describe("useAssistantScopeEffect", () => {
         ),
         registrar: RegistrarClient({ tag: "a" }),
       } as never);
-      return <AuiProvider value={aui as never} />;
+      return <AuiProvider value={aui as never}>{null}</AuiProvider>;
     };
     const view = render(<Harness generation={0} />);
     expect(log).toEqual(["+t0:a"]);
@@ -187,7 +191,7 @@ describe("useAssistantScopeEffect", () => {
               registrar: RegistrarClient({ tag: "a" }),
             }) as never,
       );
-      return <AuiProvider value={aui as never} />;
+      return <AuiProvider value={aui as never}>{null}</AuiProvider>;
     };
     const view = render(<Harness hasTarget={false} />);
     expect(log).toEqual([]);

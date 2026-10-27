@@ -50,7 +50,7 @@ export const ThreadPrimitiveViewport = defineComponent({
       default: true,
     },
   },
-  slots: Object as SlotsType<{ default?: () => unknown }>,
+  slots: Object as SlotsType<{ default?: () => import("vue").VNodeChild }>,
   setup(props, { slots }) {
     const divRef = shallowRef<HTMLElement | null>(null);
     let intent: ScrollBehavior | null = null;
@@ -184,10 +184,8 @@ export const ThreadPrimitiveViewport = defineComponent({
     });
 
     return () =>
-      h(
-        "div",
-        { ref: divRef, onScroll: handleScroll, onPointerdown },
+      h("div", { ref: divRef, onScroll: handleScroll, onPointerdown }, [
         slots.default?.(),
-      );
+      ]);
   },
 });

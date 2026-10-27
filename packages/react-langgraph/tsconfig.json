@@ -1,4 +1,5 @@
 {
   "extends": "@hitchsoftware/assistant-ui-x-buildutils/ts/base",
+  "compilerOptions": { "types": ["node"] },
   "include": ["src"]
 }

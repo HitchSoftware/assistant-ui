@@ -30,7 +30,7 @@ export const ThreadPrimitiveScrollToBottom = defineComponent({
       default: "auto",
     },
   },
-  slots: Object as SlotsType<{ default?: () => unknown }>,
+  slots: Object as SlotsType<{ default?: () => import("vue").VNodeChild }>,
   setup(props, { attrs, slots }) {
     const viewport = inject(viewportInjectionKey, null);
     if (isDevelopment && !viewport && !warnedOutsideViewport) {
@@ -58,7 +58,7 @@ export const ThreadPrimitiveScrollToBottom = defineComponent({
             !viewport || viewport.isAtBottom.value || isAttrDisabled(attrs),
           onClick,
         }),
-        slots.default?.(),
+        [slots.default?.()],
       );
   },
 });

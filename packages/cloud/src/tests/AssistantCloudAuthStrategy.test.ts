@@ -1,4 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { Buffer } from "node:buffer";
 import {
   AssistantCloudAnonymousAuthStrategy,
   AssistantCloudJWTAuthStrategy,
@@ -14,7 +15,9 @@ const refreshToken = {
 
 let originalLocalStorageDescriptor: PropertyDescriptor | undefined;
 
-const installLocalStorage = (storage: Storage): void => {
+const installLocalStorage = (
+  storage: Pick<Storage, "getItem" | "setItem" | "removeItem">,
+): void => {
   Object.defineProperty(globalThis, "localStorage", {
     configurable: true,
     value: storage,
@@ -149,7 +152,7 @@ describe("AssistantCloudAnonymousAuthStrategy", () => {
     const removeItem = vi.fn(() => {
       throw new DOMException("blocked", "SecurityError");
     });
-    installLocalStorage({ getItem, setItem, removeItem } as Storage);
+    installLocalStorage({ getItem, setItem, removeItem });
     mockAnonymousTokenFetch();
 
     await expect(
