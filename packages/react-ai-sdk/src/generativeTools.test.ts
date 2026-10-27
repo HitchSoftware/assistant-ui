@@ -544,8 +544,13 @@ describe("AISDKToolkit", () => {
       toolCallId: "call-docs-search",
       messages: [],
     };
+    const execute = toolSet.docs_search?.execute;
+    if (!execute) throw new Error("MCP search execute was not exposed");
     await expect(
-      toolSet.docs_search?.execute?.({ query: "assistant-ui" }, executeOptions),
+      Reflect.apply(execute, undefined, [
+        { query: "assistant-ui" },
+        executeOptions,
+      ]),
     ).resolves.toBe("docs result");
     expect(docsExecute).toHaveBeenCalledWith(
       { query: "assistant-ui" },

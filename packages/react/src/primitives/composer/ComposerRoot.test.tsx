@@ -364,7 +364,10 @@ describe("ComposerPrimitiveRoot compact mode", () => {
       compact: true,
       children: <Probe />,
     });
-    const context = compactContext;
+    function readContext(): ComposerCompactContextValue | null {
+      return compactContext;
+    }
+    const context = readContext();
     expect(context).not.toBeNull();
     if (!context) throw new Error("Composer compact context was not provided");
     expect(form.hasAttribute("data-compact")).toBe(true);

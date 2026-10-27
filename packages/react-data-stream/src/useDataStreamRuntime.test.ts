@@ -11,7 +11,9 @@ const mocks = vi.hoisted(() => ({
 }));
 
 vi.mock("@hitchsoftware/assistant-ui-core/react", async (importOriginal) => ({
-  ...(await importOriginal<typeof import("@hitchsoftware/assistant-ui-core/react")>()),
+  ...(await importOriginal<
+    typeof import("@hitchsoftware/assistant-ui-core/react")
+  >()),
   useLocalRuntime: mocks.useLocalRuntime,
 }));
 
@@ -50,7 +52,12 @@ const runToCompletion = async (
   adapter: ChatModelAdapter,
   options: ChatModelRunOptions,
 ) => {
-  for await (const _ of adapter.run(options)) void _;
+  const result = adapter.run(options);
+  if (Symbol.asyncIterator in result) {
+    for await (const _ of result) void _;
+  } else {
+    await result;
+  }
 };
 
 afterEach(() => {

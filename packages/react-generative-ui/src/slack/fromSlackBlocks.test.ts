@@ -1107,7 +1107,9 @@ describe("fromSlackBlocks checkbox and radio caps", () => {
         ],
       },
     ]);
-    const radio = nodes[0] as { options: unknown[] };
+    const radio = nodes[0];
+    if (!radio || !("options" in radio))
+      throw new Error("Radio options were not rendered");
     expect(radio.options).toHaveLength(10);
     expect(
       warnings.some(

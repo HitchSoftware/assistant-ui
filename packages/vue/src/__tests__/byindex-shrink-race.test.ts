@@ -36,7 +36,7 @@ const createShrinkRuntime = () => {
     convertMessage: convertDemoMessage,
     onNew: async () => {},
     setMessages: (next) => {
-      messages = next;
+      messages = [...next];
       sync();
     },
     onReload: async () => {
@@ -95,12 +95,12 @@ const mountChat = (runtime: AssistantRuntimeImpl) => {
   return { el, unmount: () => app.unmount() };
 };
 
-const lookupErrors = (spy: ReturnType<typeof vi.spyOn>) =>
+const lookupErrors = (spy: { mock: { calls: unknown[][] } }) =>
   spy.mock.calls.filter((args) =>
     args.some((arg) => String(arg).includes("useClientLookup")),
   );
 
-const staleReports = (spy: ReturnType<typeof vi.spyOn>) =>
+const staleReports = (spy: { mock: { calls: unknown[][] } }) =>
   spy.mock.calls.filter((args) =>
     args.some((arg) =>
       String(arg).includes(

@@ -2266,9 +2266,9 @@ describe("toSlackBlocks data_table integrity", () => {
       columns: [{ label: "A" }, { label: "B" }],
       rows: [[{ nested: true }, "kept"]],
     });
-    const table = blocks[0] as {
-      rows: { type: string; text: string }[][];
-    };
+    const table = blocks[0];
+    if (!table || !("rows" in table))
+      throw new Error("Table rows were not rendered");
     expect(table.rows[1]).toEqual([
       { type: "raw_text", text: "" },
       { type: "raw_text", text: "kept" },
@@ -2281,7 +2281,9 @@ describe("toSlackBlocks data_table integrity", () => {
       columns: [{ label: "A" }, { label: "B" }, { label: "C" }],
       rows: [["x"], ["x", "y", "z"]],
     });
-    const table = blocks[0] as { rows: unknown[][] };
+    const table = blocks[0];
+    if (!table || !("rows" in table))
+      throw new Error("Table rows were not rendered");
     expect(new Set(table.rows.map((row) => row.length))).toEqual(new Set([3]));
   });
 

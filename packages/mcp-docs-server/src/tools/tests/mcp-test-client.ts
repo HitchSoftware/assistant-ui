@@ -5,7 +5,7 @@ import {
 
 type RawMcpRequest = {
   method: string;
-  params?: unknown;
+  params?: Record<string, unknown> | undefined;
 };
 
 type JsonRpcResponse = {
@@ -71,7 +71,7 @@ export async function createMcpTestClient(
   const request = <Result>(rawRequest: RawMcpRequest): Promise<Result> => {
     const id = nextRequestId++;
 
-    return new Promise((resolve, reject) => {
+    return new Promise<unknown>((resolve, reject) => {
       pendingRequests.set(id, { resolve, reject });
       void clientTransport
         .send({ jsonrpc: "2.0", id, ...rawRequest })

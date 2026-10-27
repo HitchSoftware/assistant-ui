@@ -18,7 +18,9 @@ describe("withAui", () => {
     for (const glob of ["*.ts", "*.tsx"]) {
       const rule = ourRule(rules[glob]);
       expect(rule.loaders).toHaveLength(1);
-      expect(rule.loaders[0]!.loader).toBe("@hitchsoftware/assistant-ui-next/loader");
+      expect(rule.loaders[0]!.loader).toBe(
+        "@hitchsoftware/assistant-ui-next/loader",
+      );
       expect(rule.condition.content.test('"use generative";')).toBe(true);
       expect(rule.condition.content.test("export const a = 1;")).toBe(false);
     }
@@ -38,7 +40,10 @@ describe("withAui", () => {
   it("honors custom globs", () => {
     expect(
       Object.keys(
-        withAui({}, { rules: ["*.generative.tsx"] }).turbopack?.rules ?? {},
+        withAui<NonNullable<Parameters<typeof withAui>[0]>>(
+          {},
+          { rules: ["*.generative.tsx"] },
+        ).turbopack?.rules ?? {},
       ),
     ).toEqual(["*.generative.tsx"]);
   });
@@ -82,7 +87,7 @@ describe("withAui", () => {
   });
 
   it("delegates to the caller's webpack function", () => {
-    const userWebpack = vi.fn((config) => config);
+    const userWebpack = vi.fn((config, _context: unknown) => config);
     const config = { module: { rules: [] as unknown[] } };
 
     withAui({ webpack: userWebpack }).webpack!(config, {});

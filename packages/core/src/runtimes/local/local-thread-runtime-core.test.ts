@@ -1257,7 +1257,7 @@ describe("LocalThreadRuntimeCore runs", () => {
       ],
       status: { type: "requires-action", reason: "tool-calls" },
       metadata: {
-        steps: [{ usage: { promptTokens: 10, completionTokens: 5 } }],
+        steps: [{ usage: { inputTokens: 10, outputTokens: 5 } }],
       },
     }));
     const thread = createPlainThread({ run }, { maxSteps: 1 });

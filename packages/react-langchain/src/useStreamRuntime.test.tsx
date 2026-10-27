@@ -159,7 +159,11 @@ describe("useStreamRuntime thread options", () => {
         unstable_threadListAdapter: threadListAdapter,
       } as never);
       capture.runtime = runtime;
-      return <AssistantRuntimeProvider runtime={runtime} />;
+      return (
+        <AssistantRuntimeProvider runtime={runtime}>
+          {null}
+        </AssistantRuntimeProvider>
+      );
     };
 
     const view = render(<TestRuntime />);

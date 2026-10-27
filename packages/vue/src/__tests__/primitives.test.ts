@@ -21,7 +21,7 @@ const createTestRuntime = () => {
   let messages: DemoMessage[] = [];
   let isRunning = false;
   let isDisabled = false;
-  const onNew = vi.fn(async () => {});
+  const onNew = vi.fn<ExternalStoreAdapter["onNew"]>(async () => {});
   const onCancel = vi.fn(async () => {});
   const makeAdapter = (): ExternalStoreAdapter<DemoMessage> => ({
     messages,

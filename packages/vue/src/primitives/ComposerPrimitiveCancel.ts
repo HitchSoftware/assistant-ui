@@ -12,7 +12,7 @@ import { useAuiState } from "../useAuiState";
 export const ComposerPrimitiveCancel = defineComponent({
   name: "ComposerPrimitiveCancel",
   inheritAttrs: false,
-  slots: Object as SlotsType<{ default?: () => unknown }>,
+  slots: Object as SlotsType<{ default?: () => import("vue").VNodeChild }>,
   setup(_, { attrs, slots }) {
     const aui = useAui();
     const disabled = useAuiState((s) => !s.composer.canCancel);
@@ -29,7 +29,7 @@ export const ComposerPrimitiveCancel = defineComponent({
           disabled: disabled.value || isAttrDisabled(attrs),
           onClick,
         }),
-        slots.default?.(),
+        [slots.default?.()],
       );
   },
 });

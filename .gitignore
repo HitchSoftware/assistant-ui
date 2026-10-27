@@ -27,6 +27,7 @@ next-env.d.ts
 .vercel
 
 # testing
+test-results/
 coverage
 .stryker-tmp/
 reports/mutation/

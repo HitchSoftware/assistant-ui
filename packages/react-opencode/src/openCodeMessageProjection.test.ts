@@ -900,7 +900,11 @@ describe("projectOpenCodeThreadMessages", () => {
     const readNested = (
       projected: ReturnType<typeof projectOpenCodeThreadMessages>,
     ) => {
-      const part = projected[0]?.content.find((p) => p.type === "tool-call");
+      const content = projected[0]?.content;
+      const part =
+        typeof content === "string"
+          ? undefined
+          : content?.find((p) => p.type === "tool-call");
       return part?.type === "tool-call" ? part.messages : undefined;
     };
 
@@ -965,10 +969,13 @@ describe("projectOpenCodeThreadMessages", () => {
         },
       }) satisfies OpenCodeThreadState;
 
-    const toolPart = (loadState: OpenCodeThreadState["loadState"]) =>
-      projectOpenCodeThreadMessages(state(loadState))[0]?.content.find(
-        (p) => p.type === "tool-call",
-      );
+    const toolPart = (loadState: OpenCodeThreadState["loadState"]) => {
+      const content = projectOpenCodeThreadMessages(state(loadState))[0]
+        ?.content;
+      return typeof content === "string"
+        ? undefined
+        : content?.find((p) => p.type === "tool-call");
+    };
 
     expect(toolPart({ type: "loading" })).toBeDefined();
     expect(toolPart({ type: "loading" })).not.toHaveProperty("messages");

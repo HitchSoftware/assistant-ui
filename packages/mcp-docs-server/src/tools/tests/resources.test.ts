@@ -70,7 +70,7 @@ describe("MCP resources", () => {
 
     expect(read.contents[0]?.mimeType).toBe("text/markdown");
     expect(typeof read.contents[0]?.text).toBe("string");
-    expect(read.contents[0]?.text.length).toBeGreaterThan(0);
+    expect(read.contents[0]?.text?.length).toBeGreaterThan(0);
   });
 
   it("reads a slash-containing documentation resource", async () => {
@@ -94,7 +94,7 @@ describe("MCP resources", () => {
     });
 
     expect(read.contents[0]?.mimeType).toBe("text/markdown");
-    expect(read.contents[0]?.text.length).toBeGreaterThan(0);
+    expect(read.contents[0]?.text?.length).toBeGreaterThan(0);
   });
 
   it("errors on an unknown documentation resource", async () => {
@@ -119,7 +119,7 @@ describe("MCP resources", () => {
 
     expect(read.contents[0]?.mimeType).toBe("text/markdown");
     expect(typeof read.contents[0]?.text).toBe("string");
-    expect(read.contents[0]?.text.length).toBeGreaterThan(0);
+    expect(read.contents[0]?.text?.length).toBeGreaterThan(0);
   });
 
   it("errors on an unknown example resource", async () => {

@@ -1,6 +1,9 @@
 import { describe, expect, it, vi } from "vitest";
 import { flushTapSync } from "@hitchsoftware/assistant-ui-tap";
-import { AuiConfig, createAssistantClient } from "@hitchsoftware/assistant-ui-store/client";
+import {
+  AuiConfig,
+  createAssistantClient,
+} from "@hitchsoftware/assistant-ui-store/client";
 import { RuntimeAdapter } from "../store";
 import { ExternalStoreRuntimeCore } from "../runtimes/internal";
 import { AssistantRuntimeImpl } from "../runtime/internal";
@@ -11,7 +14,9 @@ type DemoMessage = { role: "user" | "assistant"; text: string };
 const createRuntime = (
   overrides?: Partial<ExternalStoreAdapter<DemoMessage>>,
 ) => {
-  const onNew = vi.fn(async () => {});
+  const onNew = vi.fn<ExternalStoreAdapter<DemoMessage>["onNew"]>(
+    async () => {},
+  );
   const adapter: ExternalStoreAdapter<DemoMessage> = {
     messages: [{ role: "user", text: "hi" }],
     convertMessage: (message) => ({

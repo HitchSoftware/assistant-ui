@@ -2,7 +2,10 @@ import { describe, expect, it, vi } from "vitest";
 import { createApp, defineComponent, h, nextTick, type Component } from "vue";
 import { flushTapSync } from "@hitchsoftware/assistant-ui-tap";
 import { AuiConfig } from "@hitchsoftware/assistant-ui-store/client";
-import { RuntimeAdapter, Suggestions } from "@hitchsoftware/assistant-ui-core/store";
+import {
+  RuntimeAdapter,
+  Suggestions,
+} from "@hitchsoftware/assistant-ui-core/store";
 import type { ExternalStoreAdapter } from "@hitchsoftware/assistant-ui-core";
 import {
   AssistantRuntimeImpl,
@@ -20,7 +23,7 @@ type DemoMessage = { id: string; role: "user" | "assistant"; text: string };
 
 const createSuggestingRuntime = () => {
   let isRunning = false;
-  const onNew = vi.fn(async () => {});
+  const onNew = vi.fn<ExternalStoreAdapter["onNew"]>(async () => {});
   const makeAdapter = (): ExternalStoreAdapter<DemoMessage> => ({
     messages: [],
     isRunning,

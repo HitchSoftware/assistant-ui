@@ -15,7 +15,7 @@ import { useAuiState } from "../useAuiState";
 export const ActionBarPrimitiveEdit = defineComponent({
   name: "ActionBarPrimitiveEdit",
   inheritAttrs: false,
-  slots: Object as SlotsType<{ default?: () => unknown }>,
+  slots: Object as SlotsType<{ default?: () => import("vue").VNodeChild }>,
   setup(_, { attrs, slots }) {
     const aui = useAui();
     const disabled = useAuiState((s) => s.composer.isEditing);
@@ -32,7 +32,7 @@ export const ActionBarPrimitiveEdit = defineComponent({
           disabled: disabled.value || isAttrDisabled(attrs),
           onClick,
         }),
-        slots.default?.(),
+        [slots.default?.()],
       );
   },
 });
@@ -45,7 +45,7 @@ export const ActionBarPrimitiveEdit = defineComponent({
 export const ActionBarPrimitiveReload = defineComponent({
   name: "ActionBarPrimitiveReload",
   inheritAttrs: false,
-  slots: Object as SlotsType<{ default?: () => unknown }>,
+  slots: Object as SlotsType<{ default?: () => import("vue").VNodeChild }>,
   setup(_, { attrs, slots }) {
     const aui = useAui();
     const disabled = useAuiState(
@@ -67,7 +67,7 @@ export const ActionBarPrimitiveReload = defineComponent({
           disabled: disabled.value || isAttrDisabled(attrs),
           onClick,
         }),
-        slots.default?.(),
+        [slots.default?.()],
       );
   },
 });
@@ -94,7 +94,7 @@ export const ActionBarPrimitiveCopy = defineComponent({
       default: 3000,
     },
   },
-  slots: Object as SlotsType<{ default?: () => unknown }>,
+  slots: Object as SlotsType<{ default?: () => import("vue").VNodeChild }>,
   setup(props, { attrs, slots }) {
     const aui = useAui();
     const disabled = useAuiState(
@@ -162,7 +162,7 @@ export const ActionBarPrimitiveCopy = defineComponent({
           ...(isCopied.value && { "data-copied": "" }),
           onClick,
         }),
-        slots.default?.(),
+        [slots.default?.()],
       );
   },
 });

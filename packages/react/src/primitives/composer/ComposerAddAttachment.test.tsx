@@ -86,6 +86,7 @@ describe("ComposerPrimitiveAddAttachment", () => {
     const input =
       document.querySelector<HTMLInputElement>('input[type="file"]');
     expect(input).not.toBeNull();
+    if (!input) throw new Error("Attachment input was not rendered");
 
     const files = [
       new File(["a"], "unsupported.bin"),

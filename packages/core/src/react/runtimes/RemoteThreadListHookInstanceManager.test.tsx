@@ -120,7 +120,7 @@ describe("RemoteThreadListHookInstanceManager.__internal_restartThreadRuntime", 
 
     let settledWith = "NOT_SETTLED";
     manager.__internal_restartThreadRuntime("thread-1").then((r) => {
-      settledWith = (r as { tag: string }).tag;
+      settledWith = Reflect.get(r, "tag");
     });
 
     // the outgoing runtime rides across the restart (stays readable)…

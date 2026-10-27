@@ -28,7 +28,7 @@ const setup = () => {
     return null;
   };
   render(<Harness />);
-  return aui as AssistantClient & AnyClient;
+  return aui;
 };
 
 afterEach(() => {
@@ -75,7 +75,7 @@ describe("optional client view", () => {
       return null;
     };
     render(
-      <AuiProvider value={parent}>
+      <AuiProvider value={parent as AssistantClient}>
         <Child />
       </AuiProvider>,
     );

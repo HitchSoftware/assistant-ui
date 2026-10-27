@@ -18,7 +18,7 @@ const branchButton = (
   defineComponent({
     name,
     inheritAttrs: false,
-    slots: Object as SlotsType<{ default?: () => unknown }>,
+    slots: Object as SlotsType<{ default?: () => import("vue").VNodeChild }>,
     setup(_, { attrs, slots }) {
       const aui = useAui();
       const disabled = useDisabled();
@@ -35,7 +35,7 @@ const branchButton = (
             disabled: disabled.value || isAttrDisabled(attrs),
             onClick,
           }),
-          slots.default?.(),
+          [slots.default?.()],
         );
     },
   });

@@ -55,13 +55,15 @@ describe("listVocabulary", () => {
 });
 
 describe("listVocabulary $action dispatch", () => {
-  const rowOut = (dispatch: (a: unknown) => unknown) =>
+  const rowOut = (
+    dispatch: ReturnType<typeof createActionRegistry>["dispatch"],
+  ) =>
     listVocabulary.ListViewItem.render({
       $status: "done",
       $action: { type: "open" },
       $dispatch: dispatch,
       children: "row",
-    }) as ReactElement;
+    }) as ReactElement<{ children: ReactElement }>;
 
   it("clicking the trigger fires $action with no $input", () => {
     const handler = vi.fn();
@@ -79,7 +81,9 @@ describe("listVocabulary $action dispatch", () => {
     preventDefault: () => void;
   };
 
-  const getOnKeyDown = (dispatch: (a: unknown) => unknown) => {
+  const getOnKeyDown = (
+    dispatch: ReturnType<typeof createActionRegistry>["dispatch"],
+  ) => {
     const trigger = rowOut(dispatch).props.children as ReactElement;
     return (trigger.props as { onKeyDown: (e: KeyDownEvent) => void })
       .onKeyDown;
