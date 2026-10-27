@@ -19,7 +19,8 @@ tests, and 57/57 Turbo test tasks passed. Builds passed 40/40 tasks.
 The tap replay fixture now calls its zero-argument resource without a spurious
 argument, and tap's typecheck includes Node types for its filesystem tests.
 
-All 45 package typechecks now pass, with no test exclusions or relaxed compiler
+All 42 configured TypeScript projects now pass across the 45 package checks
+(tw-glass, tw-shimmer, and private x-changelog have no tsconfig). There are no test exclusions or relaxed compiler
 diagnostics. Fixtures use current argument/metadata shapes, checked narrowing,
 and correctly typed mocks. Production fixes cover the empty-array conditional
 type, MCP request-context cancellation signal, and Vue's renderable slot/active
